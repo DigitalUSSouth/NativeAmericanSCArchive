@@ -1,0 +1,13 @@
+*.egg-info
+*.pot
+*.py[co]
+__pycache__
+MANIFEST
+Scripts/
+Lib/
+Include/
+*.json
+*.sqlite3
+static/
+settings.py
+migrations/

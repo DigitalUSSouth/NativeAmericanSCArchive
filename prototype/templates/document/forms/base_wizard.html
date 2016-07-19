@@ -1,0 +1,34 @@
+{% extends 'centered.html' %}
+{% load i18n %}
+
+{% block body_style %}background-image: url('https://static.pexels.com/photos/3933/snow-black-and-white-mountains-nature.jpeg');background-size:cover;min-height:1500px
+{% endblock %}
+
+{% block centered_content %}
+<div id="wizard-container">
+  <form enctype="multipart/form-data" action="" method="POST">
+    {% csrf_token %}
+
+    <table>
+      {{ wizard.management_form }}
+      {% if wizard.form.forms %}
+          {{ wizard.form.management_form }}
+          {% for form in wizard.form.forms %}
+              <!-- block below accesses a customized form layout for each step -->
+              {% block form_if %}{% endblock %}
+          {% endfor %}
+      {% else %}
+          <!-- block below accesses a customized form layout for each step -->
+          <!-- using the with statement makes it possible to use the same layout used in the form_if block -->
+          {% with form=wizard.form %}
+          {% block form_else %}{% endblock %}
+          {% endwith %}
+      {% endif %}
+    </table>
+
+    <hr/> 
+    <input type="submit" value="{% if wizard.steps.next %}{% trans 'Next Section' %}{% else %}{% trans 'Submit' %}{% endif %}" class="btn btn-primary pull-right"/>
+    <div class="clearfix"></div>
+  </form>
+</div>
+{% endblock %}

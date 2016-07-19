@@ -1,0 +1,5 @@
+{% if right == 'True' %}
+  {{text}}&nbsp;<i class="fa fa-{{icon_name}} fa-{{size|default:'1x'}}"></i>
+{% else %}
+  <i class="fa fa-{{icon_name}} fa-{{size|default:'1x'}}">&nbsp;{{text|default:''}}</i>
+{% endif %}

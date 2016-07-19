@@ -1,0 +1,25 @@
+{% extends 'prototype/forms/base_wizard.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block form_if %}{% block form_else %}
+    <h1 class="text-center"><strong>Document Form:</strong></h1>
+    <hr/>
+    {% if wizard.steps.prev %}
+    <div class="text-center">
+      <button name="wizard_goto_step" value="{{ wizard.steps.first }}" class="btn btn-default pull-right">{% trans "First Step" %}</button>
+      <button name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-default pull-left">
+        <i class="fa fa-hand-o-left text-primary"></i>
+        &nbsp;{% trans "Previous Step" %}
+      </button>
+      <div class="clearfix"></div>
+    </div>
+    <hr/>
+  {% endif %}
+
+  {% if form.helper %}
+    {% crispy form %}
+  {% else %}
+    {{ form|crispy }}
+  {% endif %}
+{% endblock %}{% endblock %}
