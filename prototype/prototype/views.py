@@ -12,9 +12,6 @@ from django.forms.formsets import ManagementForm
 
 from django.db.models import Prefetch
 
-from django.utils import six
-from django.utils.datastructures import SortedDict
-
 from .models import *
 from .forms import (
     DocumentForm1, DocumentForm2, DocumentForm3,
