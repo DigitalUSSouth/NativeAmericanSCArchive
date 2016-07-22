@@ -1,9 +1,47 @@
 from django.db import models
 from django.conf import settings
+from django.utils.encoding import python_2_unicode_compatible
+from django.db import connection
 
 from .constants import (CONTENT_TYPE_CHOICES, ARCHIVES, ROLES,
 	INSTITUTIONS, FILE_FORMATS, ZIP_CODES)
 
+# class DocumentManager(models.Manager):
+
+# 	use_for_related_fields = True 
+
+# 	def most_recent(self):
+
+# 		return self.filter(created=)
+
+# 	@classmethod
+# 	def date_filter(self,  _type, *args):
+
+# 		from django.db import connection
+# 		cursor = connection.cursor()
+# 		cursor.execute(SELECT * FROM ? )		
+
+# 	def within_dates(self, start, end):
+
+# 		cursor = connection.cursor()
+# 		cursor.execute("""
+# 			SELECT * FROM Document d WHERE 
+# 			)""")
+# 		for row in cursor.fetchall():
+# 			yield row
+
+# 	def within_digitaldates(self, start, end):
+
+# 		print(self)
+# 		print(self.__dict__['model'])
+
+
+# class DocumentImage(models.Model):
+
+# image = models.ImageField(upload_to='ds',
+	# validators=[])
+
+@python_2_unicode_compatible
 class Document(models.Model):
 
 	created = models.DateTimeField(auto_now_add=True)
@@ -49,16 +87,35 @@ class Document(models.Model):
 	notes = models.TextField(blank=True, null=False, max_length=500,
 		help_text='Add any additional notes that are pertinent to this ' +
 		'document.')
+	
+	class Meta:
+
+		# unique_together = 
+		ordering = ['title']
+		get_latest_by = 'created'
+
+	@property
+	def uri(self):
+
+		return self.url
+
+	def get_semantic_schema(self):
+
+		pass
 
 	def __str__(self):
 
 		return "%s: %s" % (self.title, self.url)
 
+@python_2_unicode_compatible
 class Role(models.Model):
 
 	role = models.CharField(blank=False, null=False, choices=ROLES,
-		max_length=30, help_text='Enter the role(s) you\'ve played in the creation ' +
+		max_length=30, 
+		help_text='Enter the role(s) you\'ve played in the creation ' +
 		'of the document you are uploading.')
+	name = models.CharField(blank=False, null=False, max_length=100, 
+		help_text='Enter your first and last name.')
 	document = models.ForeignKey(Document)
 
 	@property
@@ -68,8 +125,9 @@ class Role(models.Model):
 
 	def __str__(self):
 
-		return self.role
+		return "%s: %s" % (self.role, self.name)
 
+@python_2_unicode_compatible
 class GeographicLocationMachine(models.Model):
 
 	longitude = models.DecimalField(max_digits=9, decimal_places=6,
@@ -80,27 +138,38 @@ class GeographicLocationMachine(models.Model):
 		'You may specify a maximum of nine digits and six decimal places.')
 	document = models.ForeignKey(Document)
 
+	class Meta:
+
+		verbose_name = 'Machine Geographic Location'
+		verbose_name_plural = verbose_name + 's'
+
 	def __str__(self):
 
 		return "(%.6f, %.6f)" % (self.longitude, self.latitude)
 
+@python_2_unicode_compatible
 class GeographicLocationHuman(models.Model):
 
 	city = models.CharField(max_length=50, blank=True, null=False)
 	county = models.CharField(max_length=75, blank=True, null=False)
 	state = models.CharField(max_length=60, blank=True, null=False)
-	zip_code = models.IntegerField(verbose_name='Zip Code',
-		choices=ZIP_CODES, blank=True, null=True)
+	zip_code = models.IntegerField(verbose_name='Zip Code')
 	country = models.CharField(max_length=100, blank=True, null=False)
 	document = models.ForeignKey(Document)
 
+	class Meta:
+
+		# unique_together = 	
+		verbose_name = 'Human Geographic Location'
+		verbose_name_plural = verbose_name + 's'
+
 	def __str__(self):
 
-		return "%s, %s, %s, %s, %s" % (self.city, self.state, 
-									   self.county, 
-									   str(self.zip_code), 
-									   self.country)
+		base = ",".join(str(x) for x in 
+			[self.city, self.county, self.state, self.zip_code, self.country] if x)
+		return "%s" % base
 
+@python_2_unicode_compatible
 class ShelfMark(models.Model):
 
 	collection_level = models.CharField(max_length=75, blank=True, 
@@ -113,14 +182,20 @@ class ShelfMark(models.Model):
 		null=False, verbose_name='Folder Level')
 	document = models.ForeignKey(Document)
 
+	class Meta:
+
+		# unique_together = 
+		verbose_name = 'Shelf Mark'
+		verbose_name_plural = 'Shelf Marks'
+
 	def __str__(self):
 
-		# shelf_mark = ("%s %s %s %s" % (self.collection_level, self.box_level,
-									   # self.series_level, self.folder_level))
-		# print("SHELF MARK", shelf_mark, len(shelf_mark))
-		# return shelf_mark if len(shelf_mark) != 3 else "NULL: %s" % self.document.__str__()
-		return "Document: %s" % self.document.__str__()
+		shelf_mark = ",".join(x for x in 
+			[self.collection_level, self.box_level, self.series_level, self.folder_level]
+			if x)
+		return "%s: (%s)" % (self.document.title, shelf_mark)
 
+@python_2_unicode_compatible
 class ContributingInstitution(models.Model):
 
 	contributing_institution = models.CharField(blank=False, null=False,
@@ -128,15 +203,26 @@ class ContributingInstitution(models.Model):
 		verbose_name='Contributing Institution')
 	document = models.ForeignKey(Document)
 
+	class Meta:
+
+		verbose_name = 'Contributing Institution'
+		verbose_name_plural = 'Contributing Institutions'
+
 	def __str__(self):
 
 		return self.contributing_institution
 
+@python_2_unicode_compatible
 class AlternativeTitle(models.Model):
 
 	alternative_title = models.CharField(blank=True, null=False,
 		max_length=100, verbose_name='Alternative Title')
 	document = models.ForeignKey(Document)
+
+	class Meta:
+
+		verbose_name = 'Alternative Title'
+		verbose_name_plural = 'Alternative Titles'
 
 	def __str__(self):
 

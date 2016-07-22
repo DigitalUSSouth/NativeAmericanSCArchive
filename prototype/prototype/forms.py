@@ -8,22 +8,42 @@ from crispy_forms.layout import (Layout, Field, Div, Row,
 from crispy_forms.bootstrap import (FormActions, PrependedText,
 	PrependedAppendedText, FieldWithButtons, StrictButton)
 
-from django.forms.models import inlineformset_factory
+from django.forms.models import inlineformset_factory, \
+	modelformset_factory
+from .constants import ZIP_CODES
+
+DELETE_HTML = ("<button class='btn btn-danger delete-formset pull-right'>" +
+	"<i class='fa fa-close'></i>&nbsp;Delete</button>")
 
 class RoleForm(forms.ModelForm):
 
 	class Meta:
 
 		model = Role
-		fields = ('role',)
+		fields = ('role', 'name',)
 
 	def __init__(self, *args, **kwargs):
 
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
-		self.helper.form_tags = False
+		self.helper.form_tag = False
 		self.helper.layout = Layout(
-			Row(Div(Field('role'), css_class='col-xs-6'),),
+			Row(
+				Div(
+					Field('role'),
+					css_class='col-xs-6',
+				),
+				Div(
+					Field('name'),
+					css_class="col-xs-6"
+				),
+				css_class='parent',
+			),
+			Div(
+				HTML(DELETE_HTML),
+				Div(css_class='clearfix'),
+				css_class='delete-formset-parent',
+			),
 		)
 
 class GeoMachineForm(forms.ModelForm):
@@ -37,20 +57,18 @@ class GeoMachineForm(forms.ModelForm):
 
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
-		self.helper.form_tags = False
+		self.helper.form_tag = False
 		self.helper.layout = Layout(
 			Row(
 				Div(Field('latitude'), css_class='col-xs-6'),
-				Div(Field('longitude'), css_class='col-xs-6')
+				Div(Field('longitude'), css_class='col-xs-6'),
+				css_class='parent'
 			),
-			Row(
-				Div(
-					HTML("<button class='btn btn-danger delete pull-right'>" +
-							"<i class='fa fa-close'></i>&nbsp;Delete" +
-						 "</button>"),
-					css_class='col-xs-12'
-				),
-			),
+			Div(
+				HTML(DELETE_HTML),
+				Div(css_class='clearfix'),
+				css_class='delete-formset-parent',
+			)
 		)
 
 class GeoHumanForm(forms.ModelForm):
@@ -58,20 +76,70 @@ class GeoHumanForm(forms.ModelForm):
 	class Meta:
 
 		model = GeographicLocationHuman
-		fields = ('city', 'country', 'state', 'zip_code', 'country',)
+		fields = ('city', 'state', 'zip_code', 'country',)
 
-	# def clean_zip_code(self):
+	def __init__(self, *args, **kwargs):
 
-	# 	zip_code = self.cleaned_data['zip_code']
-	# 	if zip_code not in constants.ZIP_CODES:
-	# 		raise forms.ValidationError("The zip code you entered is not " +
-	# 			"valid. Please try again.")
-	# 	return zip_code
+		super().__init__(*args, **kwargs)
+		self.helper = FormHelper(self)
+		self.helper.form_tag = False
+		self.helper.layout = Layout(
+			Div(
+				Row(
+					Div(Field('city'), css_class='col-xs-6'),
+					Div(Field('state'), css_class='col-xs-6'),
+				),
+				Row(
+					Div(Field('zip_code'), css_class='col-xs-6'),
+					Div(Field('country'), css_class='col-xs-6'),	
+				),
+				css_class='parent',
+			),
+			Div(
+				HTML(DELETE_HTML),
+				Div(css_class='clearfix'),
+				css_class='delete-formset-parent',
+			),
+		)
 
-# VALIDATE_MAX VALIDATES THE MAX_NUM argument, similarly VALIDATE_MIN
+	def clean_zip_code(self):
 
-AlternateTitleFormSet = inlineformset_factory(Document, 
-	AlternativeTitle, fields=('alternative_title',),
+		zip_code = self.cleaned_data['zip_code']
+		if zip_code and zip_code not in ZIP_CODES:
+			raise forms.ValidationError("The zip code you entered is not " +
+				"valid. Please try again.")
+		return zip_code
+
+class AlternativeTitleForm(forms.ModelForm):
+
+	class Meta:
+
+		model = AlternativeTitle
+		fields = ('alternative_title',)
+
+	def __init__(self, *args, **kwargs):
+
+		super().__init__(*args, **kwargs)
+		self.helper = FormHelper(self)
+		self.helper.form_tag = False
+		self.helper.disable_csrf = True
+		self.helper.layout = Layout(
+			Row(
+				Div(
+					Field('alternative_title'), 
+					css_class='col-xs-12',
+				),
+				css_class='parent',
+			),
+			Div(
+				HTML(DELETE_HTML),
+				Div(css_class='clearfix'),
+				css_class='delete-formset-parent',
+			),
+		)
+
+AlternateTitleFormSet = inlineformset_factory(Document,
+	AlternativeTitle, form=AlternativeTitleForm,
 	extra=0, min_num=1, max_num=5, validate_max=True,
 	validate_min=True)
 
@@ -80,13 +148,12 @@ RoleFormSet = inlineformset_factory(Document, Role,
 	min_num=1, max_num=5,
 	validate_min=True, validate_max=True,)
 
-GeoMachineFormSet = inlineformset_factory(Document, 
+GeoMachineFormSet = inlineformset_factory(Document,
 	GeographicLocationMachine, form=GeoMachineForm,
 	extra=0, min_num=1, validate_min=True,
 )
 GeoHumanFormSet = inlineformset_factory(Document,
 	GeographicLocationHuman, form=GeoHumanForm, #form is implemented for possible zip clean.
-	# fields=('city', 'county', 'state', 'zip_code', 'country',),
 	extra=0, min_num=1, max_num=5,
 	validate_min=True, validate_max=True
 )
@@ -158,12 +225,20 @@ class ShelfMarkForm(forms.ModelForm):
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper(self)
 		self.helper.layout = Layout(
-			Row(
-				Div(Field('collection_level'), css_class='col-xs-6'),
-				Div(Field('box_level'), css_class='col-xs-6'),
+			Div(
+				Row(
+					Div(Field('collection_level'), css_class='col-xs-6'),
+					Div(Field('box_level'), css_class='col-xs-6'),
+				),
+				Row(
+					Div(Field('series_level'), css_class='col-xs-6'),
+					Div(Field('folder_level'), css_class='col-xs-6'),
+				),
+				css_class='parent',
 			),
-			Row(
-				Div(Field('series_level'), css_class='col-xs-6'),
-				Div(Field('folder_level'), css_class='col-xs-6'),
+			Div(
+				HTML(DELETE_HTML),
+				Div(css_class='clearfix'),
+				css_class='delete-formset-parent',
 			),
 		)

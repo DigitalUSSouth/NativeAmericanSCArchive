@@ -19,12 +19,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import DocumentWizard, DocumentDetail, DocumentDirectory
+from .views import DocumentWizard, DocumentDetail, DocumentDirectory, INSTANCE_DICT
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', "prototype.views.home", name="home"),
-    url(r'^submit-document/$', DocumentWizard.as_view(),
+    url(r'^submit-document/$', DocumentWizard.as_view(instance_dict=INSTANCE_DICT),
     	name="submit_document"),
     url(r'^document/(?P<pk>\d+)$', DocumentDetail.as_view(),
         name='document_detail'),

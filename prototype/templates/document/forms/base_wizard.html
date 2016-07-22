@@ -1,25 +1,38 @@
 {% extends 'centered.html' %}
 {% load i18n %}
+{% load formwizard_tools %}
 
 {% block body_style %}background-image: url('https://static.pexels.com/photos/3933/snow-black-and-white-mountains-nature.jpeg');background-size:cover;min-height:1500px
 {% endblock %}
 
 {% block centered_content %}
 <div id="wizard-container">
+  <h1 class="text-center"><strong>{{wizard.steps.current|readable_name}}</strong></h1>
+  <hr/>
+
   <form enctype="multipart/form-data" action="" method="POST">
     {% csrf_token %}
+    {% with wizard.form.forms as wforms %}
+
+    <div class="text-center">
+      <button name="wizard_goto_step" value="{{ wizard.steps.first }}" class="btn btn-default pull-right">{% trans "First Step" %}</button>
+      <button name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="btn btn-default pull-left">
+        <i class="fa fa-hand-o-left text-primary"></i>
+        &nbsp;{% trans "Previous Step" %}
+      </button>
+      <div class="clearfix"></div>
+    </div>
+    <hr/>
 
     <table>
       {{ wizard.management_form }}
-      {% if wizard.form.forms %}
+
+      {% if wforms %}
           {{ wizard.form.management_form }}
-          {% for form in wizard.form.forms %}
-              <!-- block below accesses a customized form layout for each step -->
+          {% for form in wforms %}
               {% block form_if %}{% endblock %}
           {% endfor %}
       {% else %}
-          <!-- block below accesses a customized form layout for each step -->
-          <!-- using the with statement makes it possible to use the same layout used in the form_if block -->
           {% with form=wizard.form %}
           {% block form_else %}{% endblock %}
           {% endwith %}
@@ -27,8 +40,14 @@
     </table>
 
     <hr/> 
+    {% if wforms %}
+     <!--  <a href="#add-form" class="btn btn-primary pull-left" id="add-formset">Add Form</a> -->
+    {% endif %}
     <input type="submit" value="{% if wizard.steps.next %}{% trans 'Next Section' %}{% else %}{% trans 'Submit' %}{% endif %}" class="btn btn-primary pull-right"/>
     <div class="clearfix"></div>
+
+    {% endwith %}
+
   </form>
 </div>
 {% endblock %}

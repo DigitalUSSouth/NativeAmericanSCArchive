@@ -47,7 +47,7 @@ body {
 }
 
 #document-directory-sidebar {
-	background: linear-gradient(to bottom, #eee6ee , #e5e5e5);;
+	/*background: linear-gradient(to bottom, #eee6ee , #e5e5e5);;*/
 	padding: 1rem;
 	box-shadow: 10px 10px 5px #888888;
 }
@@ -55,12 +55,6 @@ body {
 #document-detail-container {
 	margin: 1.5rem;
 	background: red;
-}
-
-#main-duss-description {
-	margin-top: 1.75rem;
-	margin-left: 3rem;
-	margin-right: 3rem;
 }
 
 #home-info-section {
@@ -176,7 +170,21 @@ body {
 	background: rgba(0, 0, 0, .5);
 }
 
-.parallax-content-half {
+.parallax-top {
+
+	top:0;
+	position:absolute;
+	right:0;
+	left:0;
+	background: rgba(0, 0, 0, .8);
+}
+
+.parallax-top-content {
+	margin-left: 3rem;
+	margin-right: 3rem;
+}
+
+.parallax-header-half {
 
 	background-color: transparent;
 	-webkit-transform: translateY(-50%);
@@ -188,7 +196,7 @@ body {
 	overflow-y: hidden;
 }
 
-.parallax-content-quarter {
+.parallax-header-quarter {
 	background-color: transparent;
 	-webkit-transform: translateY(-25%);
 	transform: translateY(-25%);
@@ -207,6 +215,13 @@ body {
 	width: 100%;
 }
 
+#main-duss-description {
+	margin-top: 1.75rem;
+	margin-left: 3rem;
+	margin-right: 3rem;
+}
+
+
 @media (max-width: 768px){
 
 	.no-gutter {
@@ -216,5 +231,19 @@ body {
 
 	#document-directory-sidebar {
 		margin-bottom: 1.5rem;
+	}
+
+	#wizard-container {
+
+		padding: 2rem;
+		margin: 0;
+	 	border: none;
+	 	border-radius: 0;
+	 	color: white;
+	}
+
+	body {
+		/* Override {% block body_style %} w/ !important */
+		min-height: 0px !important;
 	}
 }
