@@ -1,0 +1,145 @@
+abr - Abridger
+act - Actor
+adp - Adapter
+rcp - Addressee
+anl - Analyst
+anm - Animator
+ann - Annotator
+arc - Architect
+arr - Arranger
+acp - Art copyist
+adi - Art director
+art - Artist
+ard - Artistic director
+asn - Associated name
+auc - Auctioneer
+aut - Author
+aqt - Author in quotations or text abstracts
+aft - Author of afterword, colophon, etc.
+aud - Author of dialog
+aui - Author of introduction, etc.
+ato - Autographer
+ant - Bibliographic antecedent
+bnd - Binder
+bdd - Binding designer
+blw - Blurb writer
+bkd - Book designer
+bkp - Book producer
+bjd - Bookjacket designer
+bpd - Bookplate designer
+brd - Broadcaster
+cll - Calligrapher
+ctg - Cartographer
+cas - Caster
+cns - Censor
+chr - Choreographer
+cng - Cinematographer
+cor - Collection registrar
+col - Collector
+clt - Collotyper
+clr - Colorist
+cmm - Commentator
+cwt - Commentator for written text
+com - Compiler
+cmp - Composer
+cmt - Compositor
+ccp - Conceptor
+cnd - Conductor
+con - Conservator
+csl - Consultant
+csp - Consultant to a project
+ctb - Contributor
+cpc - Copyright claimant
+cph - Copyright holder
+crr - Corrector
+crp - Correspondent
+cst - Costume designer
+cov - Cover designer
+cre - Creator
+cur - Curator
+dnc - Dancer
+dtc - Data contributor
+dtm - Data manager
+dte - Dedicatee
+dto - Dedicator
+dpc - Depicted
+dpt - Depositor
+dsr - Designer
+drt - Director
+dnr - Donor
+drm - Draftsman
+dub - Dubious author
+edt - Editor
+edc - Editor of compilation
+edm - Editor of moving image work
+egr - Engraver
+etr - Etcher
+exp - Expert
+fld - Field director
+fmd - Film director
+flm - Film editor
+fmp - Film producer
+fmk - Filmmaker
+frg - Forger
+fmo - Former owner
+ilu - Illuminator
+ill - Illustrator
+ins - Inscriber
+itr - Instrumentalist
+ive - Interviewee
+ivr - Interviewer
+inv - Inventor
+lsa - Landscape architect
+led - Lead
+ltg - Lithographer
+lyr - Lyricist
+mfr - Manufacturer
+mrb - Marbler
+med - Medium
+mte - Metal-engraver
+mcp - Music copyist
+msd - Musical director
+mus - Musician
+nrt - Narrator
+oth - Other
+prf - Performer
+pht - Photographer
+plt - Platemaker
+prt - Printer
+prm - Printmaker
+pro - Producer
+pdr - Project director
+pfr - Proofreader
+pbl - Publisher
+pbd - Publishing director
+ppt - Puppeteer
+rcd - Recordist
+res - Researcher
+rsr - Restorationist
+aus - Screenwriter
+scr - Scribe
+scl - Sculptor
+sgn - Signer
+sng - Singer
+sds - Sound designer
+spk - Speaker
+sgd - Stage director
+stm - Stage manager
+stl - Storyteller
+tch - Teacher
+tcd - Technical Director
+trc - Transcriber
+trl - Translator
+tyd - Type designer
+tyg - Typographer
+vdg - Videographer
+vac - Voice actor
+wde - Wood engraver
+wdc - Woodcutter
+wam - Writer of accompanying material
+wac - Writer of added commentary
+wal - Writer of added lyrics
+wat - Writer of added text
+win - Writer of introduction
+wpr - Writer of preface
+wst - Writer of supplementary textual content
