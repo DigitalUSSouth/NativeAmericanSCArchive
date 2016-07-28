@@ -28,10 +28,10 @@
           This will be the checkbutton field.
         {% endcomment %}
           {% if field.name == 'DELETE' %} 
-            <!-- <div class="delete-formset-parent">
+            <div class="delete-formset-parent">
               <a href="#delete-form" class="btn btn-danger pull-right delete-formset" id="{{field.auto_id}}" name="{{field.auto_id}}">Delete</a>
               <div class="clearfix"></div>
-            </div> -->
+            </div>
           {% else %}
             {{field|as_crispy_field}}
           {% endif %}

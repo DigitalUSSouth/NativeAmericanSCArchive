@@ -19,18 +19,28 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import DocumentWizard, DocumentDetail, DocumentDirectory, INSTANCE_DICT
+# from .views import DocumentWizard, DocumentDetail, DocumentDirectory, INSTANCE_DICT
+from .views import submit_file
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', "prototype.views.home", name="home"),
-    url(r'^submit-document/$', DocumentWizard.as_view(instance_dict=INSTANCE_DICT),
-    	name="submit_document"),
-    url(r'^document/(?P<pk>\d+)$', DocumentDetail.as_view(),
-        name='document_detail'),
-    # url(r'^document/(?P<pk>\d+)/read$', something_here,
-        # name='document_read'),
-    url(r'^documents/$', DocumentDirectory.as_view(),
-        name='document_directory'),
+
+    # ----------------------------------------------------- #
+    #          OLD URLS WITH OLD METADATA SCHEMA            #
+    # ----------------------------------------------------- #
+
+    # url(r'^submit-document/$', DocumentWizard.as_view(instance_dict=INSTANCE_DICT),
+    # 	name="submit_document"),
+    # url(r'^document/(?P<pk>\d+)$', DocumentDetail.as_view(),
+    #     name='document_detail'),
+    # url(r'^documents/$', DocumentDirectory.as_view(),
+        # name='document_directory'),
+
+    # ----------------------------------------------------- #
+    #          NEW URLS WITH NEW METADATA SCHEMA            #
+    # ----------------------------------------------------- #
+
+    url(r'^submit-file/$', submit_file, name='submit_file')
 
 ]   +	static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

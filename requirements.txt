@@ -1,0 +1,4 @@
+Django==1.8.3
+django-crispy-forms==1.6.0
+django-formtools==1.0
+Pillow==3.3.0
