@@ -1,0 +1,15 @@
+[type_content_id TINYINT(255), type_content VARCHAR(31),description TINYTEXT]
+[
+[(0),(Collection),(An aggregation of resources.)],
+[(1),(Dataset),(Data encoded in a defined structure.)],
+[(2),(Event),(A non-persistent, time-based occurrence.)],
+[(3),(Image),(A visual representation other than text.)],
+[(4),(Interactive Resource),(A resource requiring interaction from the user to be understood, executed, or experienced.)],
+[(5),(Moving Image),(A series of visual representations imparting an impression of motion when shown in succession.)],
+[(6),(Physical Object),(An inanimate, three-dimensional object or substance.)],
+[(7),(Service),(A system that provides one or more functions.)],
+[(8),(Software),(A computer program in source or compiled form.)],
+[(9),(Sound),(A resource primarily intended to be heard.)],
+[(10),(Still Image),(A static visual representation.)],
+[(11),(Text),(A resource consisting primarily of words for reading.)],
+]
