@@ -134,16 +134,16 @@ Private Sub Worksheet_Change(ByVal Target As Range)
                 Case 4
                     Call HandleReferentialColumn("CONSTANTS", 1, newVal, oldVal, TargetRef)
                 'Type of Digital Artifact column in "Sheet 1"
-                Case 14
+                Case 13
                     Call HandleReferentialColumn("CONSTANTS", 5, newVal, oldVal, TargetRef)
                 'Role column in "Sheet 1"
-                Case 15
+                Case 14
                     Call HandleReferentialColumn("Role", 1, newVal, oldVal, TargetRef, True)
                 'Geographic Location column in "Sheet 1"
-                Case 20
+                Case 19
                     Call HandleReferentialColumn("Geographic Location", 1, newVal, oldVal, TargetRef, True)
                 'Langugage column in "Sheet 1"
-                Case 26
+                Case 25
                     Call HandleReferentialColumn("CONSTANTS", 8, newVal, oldVal, TargetRef)
                 Case Else
                     Target.value = newVal
@@ -178,32 +178,71 @@ Private Sub MakeDropdown(ws As String, startrow As Integer, _
     End With
 End Sub
 
+Private Sub DeleteValidation(Target As Range)
+
+    On Error Resume Next
+    For Each Cell In Target
+        Cell.Validation.Delete
+    Next Cell
+End Sub
+
 Private Sub Worksheet_SelectionChange(ByVal Target As Range)
 
     Select Case Target.column
+        'The format for these arguments are worksheet name,
+        'the row the data starts for the dropdown menu, the
+        'column the dropdown is being made for, the column
+        'number the data starts at
+
         'Archive - Digital Collection column in "Sheet 1"
         Case 3
+            Call DeleteValidation(Target)
             Call MakeDropdown("CONSTANTS", 2, 3, 2)
         'Contributing Institution(s) column in "Sheet 1"
         Case 4
+            Call DeleteValidation(Target)
             Call MakeDropdown("CONSTANTS", 2, 4, 1)
         'Type of Content column in "Sheet 1"
-        Case 12
-            Call MakeDropdown("CONSTANTS", 2, 12, 4)
+        Case 11
+            Call DeleteValidation(Target)
+            Call MakeDropdown("CONSTANTS", 2, 11, 4)
         'Type of Digital Artifact column in "Sheet 1"
-        Case 14
-            Call MakeDropdown("CONSTANTS", 2, 14, 5)
+        Case 13
+            Call DeleteValidation(Target)
+            Call MakeDropdown("CONSTANTS", 2, 13, 5)
         'Role column in "Sheet 1"
-        Case 15
-            Call MakeDropdown("Role", 2, 15, 1, , , "This field accepts integer values(), that reference the ID column in the 'Role' sheet.", "Your value must be a value within the ID column of the 'Role' Sheet")
+        Case 14
+            Call DeleteValidation(Target)
+            Call MakeDropdown("Role", 2, 14, 1, , , "This field accepts integer values(), that reference the ID column in the 'Role' sheet.", "Your value must be a value within the ID column of the 'Role' Sheet")
         'Geographic Location column in "Sheet 1"
-        Case 20
-            Call MakeDropdown("Geographic Location", 2, 20, 1)
+        Case 19
+            Call DeleteValidation(Target)
+            Call MakeDropdown("Geographic Location", 2, 19, 1)
         'Language column in "Sheet 1"
-        Case 26
-            Call MakeDropdown("CONSTANTS", 2, 26, 8)
+        Case 25
+            Call DeleteValidation(Target)
+            Call MakeDropdown("CONSTANTS", 2, 25, 8)
         'File Format column in "Sheet 1"
-        Case 27
-            Call MakeDropdown("CONSTANTS", 2, 27, 7)
+        Case 26
+            Call DeleteValidation(Target)
+            Call MakeDropdown("CONSTANTS", 2, 26, 7)
     End Select
+End Sub
+
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+    Dim strkey As Variant, rng As Range
+    Dim Deletions As Scripting.Dictionary
+    Set Deletions = New Scripting.Dictionary
+
+    Deletions.Add Key:="Sheet 1", Item:=Array(3, 4, 11, 13, 14, 19, 25, 26)
+    Deletions.Add Key:="Role", Item:=Array(2)
+    For Each strkey In Deletions.Keys()
+        With Worksheets(strkey)
+            For Each col In Deletions(strkey)
+                Set rng = .Range(.Cells(2, col), .Cells(Rows.Count, col).End(xlUp))
+                DeleteValidation (rng)
+            Next col
+        End With
+    Next
+    ThisWorkbook.Close
 End Sub

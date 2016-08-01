@@ -1,3 +1,9 @@
+DIGITAL_TYPES = (
+	('Digital Image', 'Digital Image'), 
+	('Digital Transcription of Text', 
+	 'Digital Transcription of Text'),
+)
+
 CONTENT_TYPE_CHOICES = (
 	('img', 'Image'), 
 	('txt', 'Text'),

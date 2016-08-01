@@ -8,8 +8,7 @@ from crispy_forms.layout import (Layout, Field, Div, Row,
 
 class UploadFileForm(forms.Form):
 
-	_file = forms.FileField(label="Upload a File", 
-		help_text='Max 100 mb.',)
+	_file = forms.FileField(label="Upload a File",)
 
 	def __init__(self, *args, **kwargs):
 
@@ -23,3 +22,8 @@ class UploadFileForm(forms.Form):
 			),
 			Submit('save', 'save', css_class='ajax_submit'),
 		)
+
+	def clean__file(self,):
+
+		pass
+		raise forms.ValidationError()

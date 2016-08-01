@@ -8,7 +8,6 @@ from django.views.generic import ListView, DetailView
 
 from django.db.models import Prefetch
 
-import threading
 from .models import *
 from .forms import (UploadFileForm,)
 
