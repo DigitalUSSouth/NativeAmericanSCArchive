@@ -21,7 +21,7 @@ End Function
 Public Function RangeAsString(wsname As String, column As Integer)
     Dim SheetRange As Range
     Dim arr() As Variant
-    With Worksheets(wsname)
+    With ThisWorkbook.Worksheets(wsname)
         Set SheetRange = .Range(.Cells(2, column), .Cells(Rows.Count, column).End(xlUp))
         arr = SheetRange
         For i = 1 To UBound(arr)
@@ -40,7 +40,7 @@ Private Function InRange(wsname As String, column As Integer, _
     Dim ColumnRange As Range
     Dim i As Integer, j As Integer
     Dim arr() As Variant
-    With Worksheets(wsname)
+    With ThisWorkbook.Worksheets(wsname)
         Set ColumnRange = .Range(.Cells(2, column), .Cells(Rows.Count, column).End(xlUp))
         arr = ColumnRange
         For i = 1 To UBound(arr)
@@ -237,7 +237,7 @@ Private Sub Workbook_BeforeClose(Cancel As Boolean)
     Deletions.Add Key:="Sheet 1", Item:=Array(3, 4, 11, 13, 14, 19, 25, 26)
     Deletions.Add Key:="Role", Item:=Array(2)
     For Each strkey In Deletions.Keys()
-        With Worksheets(strkey)
+        With ThisWorkbook.Worksheets(strkey)
             For Each col In Deletions(strkey)
                 Set rng = .Range(.Cells(2, col), .Cells(Rows.Count, col).End(xlUp))
                 DeleteValidation (rng)
