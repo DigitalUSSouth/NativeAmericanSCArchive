@@ -21,10 +21,12 @@ from django.conf.urls.static import static
 
 # from .views import DocumentWizard, DocumentDetail, DocumentDirectory, INSTANCE_DICT
 from .views import submit_file
+import registration
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', "prototype.views.home", name="home"),
+    url(r'^accounts/', include('registration.urls')),
 
     # ----------------------------------------------------- #
     #          OLD URLS WITH OLD METADATA SCHEMA            #

@@ -59,7 +59,12 @@ def check_size(value, limit, kb):
 	if (kb and size > limit * 1024) or (size > limit * 1024 * 1024):
 		raise ValidationError('File must not exceed %.2f %s' % 
 			(limit, 'kilobytes' if kb else 'megabytes'))
-		
+
+""" Wrapping with extra partials like this is redundant in Django 1.9+
+they fixed the infinite recursion error when using singular partials in
+the migrations file(s). However, we will keep this same schema for 
+backwards compatibility. """
+
 #We must partial this again in order to make it compatible
 #with Django.
 def size(limit, kb=False):
