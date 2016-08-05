@@ -77,14 +77,21 @@ class BaseRegistrationForm(forms.ModelForm, ToSMixin):
 
         fields = ('first_name', 'last_name', 'username', 'email', 'password',)
         model = User
+        widgets = {'password': forms.PasswordInput()}
 
     def __init__(self, *args, **kwargs):
 
         super(BaseRegistrationForm, self).__init__(*args, **kwargs)
+
+        """ COME UP WITH A CLEANER WAY """
+
+        self.bases = [x.__name__ for x in self.__class__.__bases__]
+
+
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
         self.fields['email'].required = True
-        self.fields['password'].widget = forms.PasswordInput(attrs={})
+
         self.helper = FormHelper(self)
         self.helper.layout = Layout(
             Row(
@@ -124,7 +131,10 @@ class BaseRegistrationForm(forms.ModelForm, ToSMixin):
         the super().clean_email() object (i.e. - the email string) has
         no adverse side affects. """
 
-        return super().clean_email()
+        if 'BannedDomainMixin' in self.bases:
+            return super().clean_email()
+        else:
+            return email
 
     def save(self, commit=False):
 
@@ -148,9 +158,7 @@ class VerifyRegistrationForm(BaseRegistrationForm, VerifyPasswordMixin, VerifyEm
 
     def __init__(self, *args, **kwargs):
 
-        BaseRegistrationForm.__init__(self, *args, **kwargs)
-        VerifyEmailMixin.__init__(self, *args, **kwargs)
-        VerifyPasswordMixin.__init__(self, *args, **kwargs)
+        super(VerifyRegistrationForm, self).__init__(*args, **kwargs)
         del self.helper.layout.fields[-2]
         self.helper.layout.insert(-1,
             Row(

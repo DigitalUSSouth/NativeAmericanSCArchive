@@ -2,11 +2,14 @@ from django.conf import settings, global_settings
 
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
+
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
 from django.utils.http import is_safe_url
 
-from django.contrib.auth import REDIRECT_FIELD_NAME, login, logout
+from django.contrib import messages
 
+from django.contrib.auth import REDIRECT_FIELD_NAME, login, logout
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import (AccessMixin, 
     PermissionRequiredMixin, UserPassesTestMixin)
 
@@ -15,9 +18,7 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 
-from django.views.generic import FormView
-
-from django.contrib.auth.forms import AuthenticationForm
+from django.views.generic import FormView, ListView, UpdateView
 
 from .forms import (BannedVerifyRegistrationForm, 
     BaseRegistrationForm, DualLoginForm)
@@ -43,6 +44,7 @@ class LoginView(FormView):
 
     @method_decorator(sensitive_post_parameters('password'))
     @method_decorator(never_cache)
+    @method_decorator(csrf_protect)
     #If login isn't allowed we don't care about the others...
     @login_allowed
     def dispatch(self, *args, **kwargs):
@@ -108,17 +110,18 @@ class LoginView(FormView):
             redirect if "/" not in redirect else reverse(redirect))
         return redirect if "/" not in redirect else reverse(redirect)
 
-# def login(request):
 
-#     if request.method == "POST":
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             user = form.save(commit=False)
-#             message.info(request, 'You have successfully been authenticated.')
-#             return HttpResponseRedirect(reverse("home"))
-#     else:
-#         form = LoginForm()
-#     return render(request, "registration/login.html", {'form': form})
+class UserDirectory(ListView):
+
+    model = User
+    context_object_name = "users"
+    template_name = 'registration/directory.html'
+
+def logout_view(request):
+
+    logout(request)
+    messages.info(request, "You have been successfully logged out.")
+    return HttpResponseRedirect("/")
 
 def profile(request):
 
@@ -130,12 +133,14 @@ def registration_closed(request):
 
 def register(request):
 
+    form = BannedVerifyRegistrationForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
             user = form.save(commit=False)
-            message.info(request, "Your account has been submitted for approval. " +
+            print("USER", user)
+            user.save()
+            messages.info(request, "Your account has been submitted for approval. " +
                 "You will not be able to restricted content until this process " +
                 "has been completed.")
             return HttpResponseRedirect(reverse("login"))
-    form = BaseRegistrationForm(request.POST or None)
     return render(request, 'registration/register.html', {'form': form})

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block base_content %}
+  <div class="list-group">
+    {% for user in users %}
+      <div class="list-group-item">
+        {{user}}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
