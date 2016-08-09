@@ -31,9 +31,7 @@ $.extend(AccountManager.prototype, {
           msgs.append(
             "<div class='alert alert-success' role='alert'>" +
               json.msg + "</div>");
-          console.log(msgs);
           $('#item-' + id).remove();
-          console.log("CHILDREN", $('.list-group').children());
           if (!$('.list-group').children().length){
             msgs.append("<div class='alert alert-info' role='alert'>" +
               "There are no users to manage at this time.</div>");
