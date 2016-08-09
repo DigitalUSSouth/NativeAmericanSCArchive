@@ -12,7 +12,7 @@ def login_allowed(func):
 	@wraps(func)
 	def wrapper(cls, request, *args, **kwargs):
 		if request is not None:
-			if request.user.is_authenticated:
+			if request.user.is_authenticated():
 				messages.info(request, "You are already authenticated.")
 				return HttpResponseRedirect(reverse("profile"))
 			if not getattr(settings, 'LOGIN_CLOSED', False):

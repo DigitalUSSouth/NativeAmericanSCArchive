@@ -20,10 +20,9 @@ class UploadFileForm(forms.Form):
 					css_class='col-xs-12',
 				),
 			),
-			Submit('save', 'save', css_class='ajax_submit'),
+			Submit('save', 'save'),
 		)
 
 	def clean__file(self,):
 
 		pass
-		raise forms.ValidationError()

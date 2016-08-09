@@ -1,3 +1,5 @@
+import abc
+
 from django.conf import settings, global_settings
 
 from django.shortcuts import render
@@ -10,19 +12,23 @@ from django.contrib import messages
 
 from django.contrib.auth import REDIRECT_FIELD_NAME, login, logout
 from django.contrib.auth.models import User
-from django.contrib.auth.mixins import (AccessMixin, 
-    PermissionRequiredMixin, UserPassesTestMixin)
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin, UserPassesTestMixin, PermissionRequiredMixin,
+)
 
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 
-from django.views.generic import FormView, ListView, UpdateView
+from django.views.generic import View, FormView, ListView, UpdateView
 
 from .forms import (BannedVerifyRegistrationForm, 
     BaseRegistrationForm, DualLoginForm)
 from .decorators import login_allowed
+
+from responses import (AjaxPostMixin, AjaxGetMixin, 
+    AjaxView, FormResponse)
 
 """ All class based views inheriting from FormView, as you would expect
 represent a view with a singular form. In your urls.py you should denote 
@@ -34,6 +40,93 @@ You can view the class details here:
     https://ccbv.co.uk/projects/Django/1.9/django.views.generic.edit/FormView/
 
 and the respective overloaded methods. """
+
+""" 
+
+    **** YOU CANNOT STACK UserPassesTextMixin WITH INHERITANCE **** 
+
+"""
+
+class ProtectedNASCAMixin(UserPassesTestMixin):
+
+    login_url = "/accounts/login/"
+    redirect_field_name = "next"
+    redirect_unauthenticated_users = True
+    raise_exception = False
+
+    def test_func(self):
+
+        user = self.request.user
+        return all([user.is_superuser or user.is_staff,])
+
+class AccountManagementMixin(ProtectedNASCAMixin, PermissionRequiredMixin, View):
+
+    """ This is arguably useless, but it's just to allow a user to 
+    splice the delegate should they wish to in the future... """
+
+    pass
+
+class BaseAccountManagement(AccountManagementMixin, AjaxPostMixin, metaclass=abc.ABCMeta):
+
+    def check_mixin_attributes(self):
+
+        """ FIX THIS FOR ACTUALLY CHECKING THE
+        ATTRIBUTES """
+
+        if not self.permission_required:
+            raise AttributeError("You must set the " +
+                "permission required attribute for " +
+                "derivatives that use the " + 
+                "'PermissionRequiredMixin'.")
+    
+    """ Need to re-order responses in order to fix this redundancy.."""
+
+    def get_default_response(self):
+
+        pass
+
+    def get_success_message(self):
+
+        return "You have successfully %s %s." % (self.msg_type, 
+                                                 self.user.username)
+
+    def get_json_response(self, ):
+
+        return {'data': {'success': True, 
+                         'msg': self.get_success_message(),},}
+
+    @abc.abstractmethod
+    def change_user(self):
+
+        pass
+
+    def post(self, request, pk):
+
+        """ This is the method on the base class of all
+        classes in "responses" AbstractResponse. """
+
+        self.user = User.objects.get(pk=pk)
+        self.change_user()
+        return self.return_response()
+
+class AccountApprovalView(BaseAccountManagement):
+
+    permission_required = "user.can_add_user"
+    msg_type = "approved"
+
+    def change_user(self):
+
+        self.user.is_active = True
+        self.user.save()
+
+class AccountDenyView(BaseAccountManagement):
+
+    permission_required = "user.can_delete_user"
+    msg_type = "deleted"
+
+    def change_user(self, user):
+
+        self.user.delete()
 
 class LoginView(FormView):
 
@@ -74,10 +167,14 @@ class LoginView(FormView):
 
         return self.form_class.redirect_field_name
 
+    #Nor does this...
     @property
     def next(self):
 
-        if self.redirect_name in self.request.POST:
+        full_path = self.request.get_full_path()
+        if "?next=" in full_path:
+            return full_path.split("?next=")[-1]
+        elif self.redirect_name in self.request.POST:
             return self.request.POST[self.redirect_name]
 
     def get_redirect_url(self):
@@ -106,16 +203,34 @@ class LoginView(FormView):
 
         reverse(name) will go get this named path and return the real url. """
 
-        print("URL RETURNED BY GET_SUCCESS_URL",
-            redirect if "/" not in redirect else reverse(redirect))
-        return redirect if "/" not in redirect else reverse(redirect)
+        return redirect if "/" in redirect else reverse(redirect)
 
+""" It should be noted here that for any user that doesn't have the
+permissions for ProtectedNASCAMixin, then they will be redirected to
+account/login since this is denoted as the attribute login_url.
+However, since the user will already be authenticated this will 
+redirect them to account/profile. """
 
-class UserDirectory(ListView):
+class UserManagementDirectory(LoginRequiredMixin, ProtectedNASCAMixin, ListView):
 
     model = User
     context_object_name = "users"
     template_name = 'registration/directory.html'
+
+    def get_queryset(self):
+
+        queryset = super(UserManagementDirectory, self).get_queryset()
+
+        """ We don't want a user that would be looking at the 
+        management directory to be seeing users that have already been
+        approved or see their own account.... """
+
+        #We can simply chain the calls we need since the queryset 
+        #wasn't evaluated yet... Queryset's are evaluated lazily 
+        #unless you force their evaluation.
+
+        return queryset.filter(is_active=False).\
+                        exclude(pk=self.request.user.pk)
 
 def logout_view(request):
 
