@@ -1,0 +1,13 @@
+{% block messages_container %}
+  <div class="container" id="messages-container">
+    {% block messages_content %}
+      {% if messages %}
+        {% for message in messages %}
+          {% block message_html %}
+            <div class="alert {% if 'success' in message.tags %}alert-success{% elif 'error' in message.tags %}alert-error{% else %}alert-warning{% endif %}" role="alert">{{message}}</div>
+          {% endblock %}
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+  </div>
+{% endblock %}

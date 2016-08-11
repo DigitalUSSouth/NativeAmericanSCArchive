@@ -5,7 +5,6 @@ from .views import (register, registration_closed,
 	AccountApprovalView, AccountDenyView,
 )
 
-from django.contrib.auth.forms import AuthenticationForm
 from .forms import DualLoginForm
 
 urlpatterns = [

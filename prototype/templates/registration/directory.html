@@ -29,12 +29,17 @@
           </p>
           <div class="clearfix"></div>
         </div>
+      {% empty %}
+      <div class="alert alert-info" role="alert">
+        There are currently no users to manage at this time.
+      </div>
       {% endfor %}
     </div>
   </div>
 {% endblock %}
 
 {% block scripts %}
+{{block.super}}
 <script src="{% static 'js/form_helpers/main.js' %}"></script>
 <script src="{% static 'js/account_manager.js' %}"></script>
 <script type='text/javascript'>

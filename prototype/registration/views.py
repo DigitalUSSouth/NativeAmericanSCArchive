@@ -1,8 +1,10 @@
+#Standard library imports
 import abc
 
+#Django imports
 from django.conf import settings, global_settings
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.urlresolvers import reverse
 
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
@@ -23,10 +25,12 @@ from django.views.decorators.debug import sensitive_post_parameters
 
 from django.views.generic import View, FormView, ListView, UpdateView
 
+#Local imports
 from .forms import (BannedVerifyRegistrationForm, 
     BaseRegistrationForm, DualLoginForm)
 from .decorators import login_allowed
 
+#Project imports
 from responses import (AjaxPostMixin, AjaxGetMixin, 
     AjaxView, FormResponse)
 
@@ -64,14 +68,11 @@ class AccountManagementMixin(ProtectedNASCAMixin, PermissionRequiredMixin, View)
     """ This is arguably useless, but it's just to allow a user to 
     splice the delegate should they wish to in the future... """
 
-    pass
+    username_field = 'username'
 
 class BaseAccountManagement(AccountManagementMixin, AjaxPostMixin, metaclass=abc.ABCMeta):
 
     def check_mixin_attributes(self):
-
-        """ FIX THIS FOR ACTUALLY CHECKING THE
-        ATTRIBUTES """
 
         if not self.permission_required:
             raise AttributeError("You must set the " +
@@ -81,19 +82,22 @@ class BaseAccountManagement(AccountManagementMixin, AjaxPostMixin, metaclass=abc
     
     """ Need to re-order responses in order to fix this redundancy.."""
 
-    def get_default_response(self):
+    @property
+    def username(self):
 
-        pass
+        return getattr(self.user, self.username_field)
 
-    def get_success_message(self):
+    @property
+    def success_msg(self):
 
         return "You have successfully %s %s." % (self.msg_type, 
-                                                 self.user.username)
+                                                 self.username)
 
     def get_json_response(self, ):
 
-        return {'data': {'success': True, 
-                         'msg': self.get_success_message(),},}
+        return {
+            'data': {'success': True, 'msg': self.success_msg,},
+        }
 
     @abc.abstractmethod
     def change_user(self):
@@ -102,10 +106,7 @@ class BaseAccountManagement(AccountManagementMixin, AjaxPostMixin, metaclass=abc
 
     def post(self, request, pk):
 
-        """ This is the method on the base class of all
-        classes in "responses" AbstractResponse. """
-
-        self.user = User.objects.get(pk=pk)
+        self.user = get_object_or_404(User, pk=pk)
         self.change_user()
         return self.return_response()
 
@@ -124,10 +125,12 @@ class AccountDenyView(BaseAccountManagement):
     permission_required = "user.can_delete_user"
     msg_type = "deleted"
 
-    def change_user(self, user):
+    def change_user(self):
 
         self.user.delete()
 
+#NOTE: If a user is already authenticated... they will be by default 
+#redirected to accounts/profile/
 class LoginView(FormView):
 
     form_class = DualLoginForm

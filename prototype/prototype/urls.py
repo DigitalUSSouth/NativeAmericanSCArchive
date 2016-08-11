@@ -19,14 +19,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-# from .views import DocumentWizard, DocumentDetail, DocumentDirectory, INSTANCE_DICT
-from .views import home, submit_file
-import registration
+from .views import home
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', home, name="home"),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.urls')),
-    url(r'^submit-file/$', submit_file, name='submit_file')
-
+    url(r'^archive/', include('archive.urls')),
 ]   +	static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

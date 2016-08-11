@@ -4,9 +4,10 @@ from .models import *
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import (Layout, Field, Div, Row, 
-	Submit, Button, Column, HTML)
+	Submit, Button, Column, HTML,
+)
 
-class UploadFileForm(forms.Form):
+class UploadEntryForm(forms.Form):
 
 	_file = forms.FileField(label="Upload a File",)
 

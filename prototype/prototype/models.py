@@ -4,7 +4,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.db import connection
 
 from .constants import (CONTENT_TYPE_CHOICES, ARCHIVES, ROLES,
-	INSTITUTIONS, FILE_FORMATS, ZIP_CODES, DIGITAL_TYPES)
+	INSTITUTIONS, FILE_FORMATS, DIGITAL_TYPES)
 
 """ The string representations for all of these need to be
 tweaked, they were set to a random base for the prototype. """
@@ -14,6 +14,9 @@ class File(models.Model):
 
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now_add=True)
+
+	mime_type = models.CharField(blank=True, null=False, 
+		max_length=30)
 
 	archive = models.CharField(blank=False, null=False, 
 		choices=ARCHIVES, max_length=200, 
