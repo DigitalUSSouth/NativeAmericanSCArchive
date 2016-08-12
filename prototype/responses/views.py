@@ -2,7 +2,7 @@
 #to provide the metaclass delegate at the same level in order
 #to prevent metaclass conflicts.
 from django.views.generic.edit import FormMixinBase, FormView
-from .forms import FormResponse, FormResponseDelegate, FormResponseViewMeta
+from .forms import FormResponse, FormResponseDelegate
 
 #For the AjaxView
 from django.views.generic import View
