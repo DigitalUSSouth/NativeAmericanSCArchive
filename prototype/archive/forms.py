@@ -1,11 +1,12 @@
+#core Django imports
 from django import forms
 
-from .models import *
-
+#3rd-Party packages
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import (Layout, Field, Div, Row, 
-	Submit, Button, Column, HTML,
-)
+from crispy_forms.layout import Layout, Field, Div, Row, Submit
+
+#Local imports
+from .models import *
 
 class UploadEntryForm(forms.Form):
 
@@ -17,11 +18,11 @@ class UploadEntryForm(forms.Form):
 		self.helper = FormHelper(self)
 		self.helper.layout = Layout(
 			Row(
-				Div(Field('_file'),
+				Div(Field('_file', css_class='file-input'),
 					css_class='col-xs-12',
 				),
 			),
-			Submit('save', 'save'),
+			Submit('save', 'Submit Entry'),
 		)
 
 	def clean__file(self,):
