@@ -1,0 +1,7 @@
+{% extends 'registration/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block registration_content %}
+  {% block form_base_content %}{% endblock %}
+  {% crispy form %}
+{% endblock %}
