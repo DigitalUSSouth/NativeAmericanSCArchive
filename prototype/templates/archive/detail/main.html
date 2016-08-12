@@ -1,0 +1,31 @@
+{% extends 'archive/base.html' %}
+
+{% block archive_content %}
+
+<div class="container space-all">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-lg-9">
+      {% include 'archive/detail/table.html' %}
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-3">
+      <div class="file-detail-sidebar">
+      <!--   <div class="row">
+          <div class="col-xs-6 col-md-12">
+            <a href="#view-doc" class="btn btn-primary btn-block">View Document</a>
+          </div>
+          <div class="col-xs-6 col-md-12">
+            <a href="#view-doc" class="btn btn-primary btn-block">View Document Text</a>
+          </div>
+        </div> -->
+        {% include 'archive/detail/panel.html' with header='Roles' queryset=file.role_set.all %}
+        {% include 'archive/detail/panel.html' with header='Alternative Titles' queryset=file.alternativetitle_set.all %}
+        {% include 'archive/detail/panel.html' with header='Shelfmarks' queryset=archive.shelfmark_set.all %}
+        {% include 'archive/detail/panel.html' with header='Machine Location' queryset=file.geographiclocationmachine_set.all %}
+        {% include 'archive/detail/panel.html' with header='Human Location' queryset=file.geographiclocationhuman_set.all %}
+        {% include 'archive/detail/panel.html' with header='Contributing Institutions' queryset=file.contributinginstitution_set.all %}
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

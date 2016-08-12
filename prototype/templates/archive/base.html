@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% comment %}
+
+  Yes, this is completely useless right now.... But, as the 
+  front end gets more complex you will want the nested base
+  hierarchy for extendable layouts. 
+
+{% endcomment %}
+
+{% block base_content %}
+  {% block archive_content %}
+  {% endblock %}
+{% endblock %}

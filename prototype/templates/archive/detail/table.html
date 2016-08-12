@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  <table class="table table-hover" id="file-detail-table">
+    <tbody>
+      {% include 'archive/detail/row.html' with field='Title' value=file.title %}
+      {% include 'archive/detail/row.html' with field='Archive' value=file.archive %}
+      {% include 'archive/detail/row.html' with field='URL' value=file.url %}
+      {% include 'archive/detail/row.html' with field='Date' value=file.date %}
+      {% include 'archive/detail/row.html' with field='Human Date' value=file.date %}
+      {% include 'archive/detail/row.html' with field='Digital Date' value=file.date_digital %}
+      {% include 'archive/detail/row.html' with field='Human Digital Date' value=file.date_digital_human %}
+      {% include 'archive/detail/row.html' with field='Copyright Holder' value=file.copyright_holder %}
+      {% include 'archive/detail/row.html' with field='Language' value=file.language %}
+      {% include 'archive/detail/row.html' with field='Thumbnail URL' value=file.thumbnail_url %}
+      {% include 'archive/detail/row.html' with field='Description' value=file.description %}
+      {% include 'archive/detail/row.html' with field='Full Text Preview' value=file.full_text|truncatechars:"250" %}
+      {% include 'archive/detail/row.html' with field='Usage Rights' value=file.usage_rights %}
+      {% include 'archive/detail/row.html' with field='File Format' value=file.file_format %}
+      {% include 'archive/detail/row.html' with field='Document Notes' value=file.notes %}
+    </tbody>
+  </table>
+</div>

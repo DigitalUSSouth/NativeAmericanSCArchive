@@ -1,0 +1,21 @@
+{% for item in queryset %}
+  {% if forloop.first %}
+    <div class="panel panel-default">
+      {% if header %}
+      <div class="panel-heading">
+        <strong>{{header}}</strong>
+      </div>
+      {% endif %}
+      <div class="panel-body">
+  {% endif %}
+
+  {{item}}
+
+  {% if forloop.last %}
+      {% comment %} We need to close the opening tags from the if above {% endcomment %}
+      </div>
+    </div>
+  {% else %}
+    <hr/>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,19 @@
+{% extends 'centered.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block centered_content %}
+  {% crispy form %}
+{% endblock %}
+
+{% comment %} 
+
+  This is so we can add the message returned by get_json_response
+  --> get_success_json easily by simply using messages.add from
+  add_msg.js 
+
+{% endcomment %}
+
+{% block scripts %}
+  <script src="{% static 'js/add_msg.js' %}"></script>
+{% endblock %}
