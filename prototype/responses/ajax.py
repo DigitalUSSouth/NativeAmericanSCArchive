@@ -14,8 +14,13 @@ BaseFormMixin metaclass will cause a metaclass conflict.... """
 
 class BaseAbstractAjaxMixin(metaclass=abc.ABCMeta):
 
+    def __init__(self):
+
+        super().__init__()
+        # print("In BaseAbstractAjaxMixin __init__")
+
     @abc.abstractmethod
-    def get_json_response(self):
+    def get_json(self):
 
         """ A dictionary should be returned here. 
 
@@ -29,7 +34,7 @@ class BaseAbstractAjaxMixin(metaclass=abc.ABCMeta):
     def return_response(self):
 
         if self.request.is_ajax():
-            return JsonResponse(**self.get_json_response())
+            return JsonResponse(**self.get_json())
         else:
             return self.get_default_response()
 
@@ -46,16 +51,25 @@ class AbstractAjaxMixin(BaseAbstractAjaxMixin, BaseAbstractResponse):
 
 class AjaxGetMixin(AbstractAjaxMixin):
 
+    def __init__(self):
+
+        super().__init__()
+        # print("In AjaxGetMixin __init__")
+
     @abc.abstractmethod
     def get(self, request, *args, **kwargs):
 
-        print("GET", request)
         """ This is to provide an abstract base method so 
         that every derivative of this class must override the
         get method, since the purpose of using this is to 
         provide an ajax get method..... """
 
 class AjaxPostMixin(AbstractAjaxMixin):
+
+    def __init__(self):
+
+        super().__init__()
+        # print("In AjaxPostMixin __init__")
 
     @abc.abstractmethod
     def post(self, request, *args, **kwargs):
@@ -67,17 +81,14 @@ class AjaxPostMixin(AbstractAjaxMixin):
 
 class AjaxMixin(AjaxGetMixin, AjaxPostMixin):
 
+    def __init__(self):
+
+        super().__init__()
+        # print("In AjaxMixin __init__")
+
     """ AjaxMixin merges poth AjaxPostMixin and AjaxGetMixin, and
     thus it has both abstractmethods post and get. So, this
     creates a fully abstract ajax view with both methods.
 
     We could extend this further for PUT, DELETE, HEAD, etc...
     But, these aren't needed.... """
-
-#Note, view does not have the post and get methods, etc. 
-#The mro here won't overload the abstract methodss
-#We use View here since we'd just have to use it anyway in 
-#any class that uses this....
-class AjaxView(AjaxMixin, View):
-
-    pass

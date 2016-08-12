@@ -5,8 +5,9 @@ class ResponseMixin(type):
 
     def __call__(cls, *args, **kwargs):
 
+        # print("Called ResponseMixin")
         _object = type.__call__(cls, *args, **kwargs)
-        _object.check_mixin_attributes(cls)
+        _object.check_mixin_attributes()
         return _object
 
 class AbstractResponseMixin(ResponseMixin, abc.ABCMeta):
@@ -27,6 +28,12 @@ class BaseResponse:
 
      def dispatch(self, request, *args, **kwargs):
 
+        #UNCOMMENT THIS WHEN YOU MOVE TO PRODUCTION!!!!
+
+        #Having this redirect locally won't work... You'd be trying
+        #to redirect to https://localhost:8000 but the development
+        #server (local) only accepts HTTP.
+
         # if not request.is_secure():
         #     return HttpResponseRedirect(
         #         request.build_absolute_uri(
@@ -34,10 +41,16 @@ class BaseResponse:
         #         ).\
         #         replace("http", "https")
         #     )
-        print("Called base response dispatch")
-        return super(self.__class__, self).dispatch(request, *args, **kwargs)
+
+        # print("Called base response dispatch")
+        
+        return super().dispatch(request, *args, **kwargs)
 
 class BaseAbstractResponse(BaseResponse, metaclass=AbstractResponseMixin):
+
+    def __init__(self):
+
+        super().__init__()
 
     @abc.abstractmethod
     def check_mixin_attributes(self):
@@ -61,6 +74,7 @@ class BaseAbstractResponse(BaseResponse, metaclass=AbstractResponseMixin):
         e.g. - Let's say for all derivatives we want to ensure that
         raise_exceptions is True for mixins from django.contrib.auth. """
 
+        # print("Called BaseAbstractResponse check_mixin_attributes")
         return True #Simplest answer, no mixins = no missing attrs.
 
     @abc.abstractmethod
@@ -74,6 +88,11 @@ class AbstractResponse(BaseAbstractResponse):
     #where you may want to do more than return the response. It is by
     #fair easier to overload a single function and keep `return_response`
     #in tact by splicing both logical routes...
+
+    def __init__(self):
+
+        super().__init__()
+    
     @abc.abstractmethod
     def get_default_response(self, response):
 
