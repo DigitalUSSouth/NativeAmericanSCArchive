@@ -2,20 +2,30 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, UpdateView
 
 from .forms import UploadEntryForm
+from .models import File
 from responses.views import FormResponseView
 
 class ArchiveDirectory(ListView):
 
-    pass
+    model = File
+    # template_name = 'archive/detail/list.html'
 
 class ArchiveEntryDetail(DetailView):
 
-    pass
+    model = File
+    pk_url_kwarg = 'pk'
+    template_name = "archive/detail/main.html"
+
+    # def get_queryset(self):
+
+        # queryset = super().get_queryset()
+        # return queryset.prefetch_related(
+            # Prefetch())
 
 class SubmitArchiveEntry(FormResponseView):
 
     form_class = UploadEntryForm
-    template_name = 'submit_file.html'
+    template_name = 'archive/submit.html'
     success_url = "."
 
     def __init__(self):
@@ -23,9 +33,9 @@ class SubmitArchiveEntry(FormResponseView):
         # print("SubmitArchiveEntry __init__")
         super().__init__()
 
-    def get_success_json(self):
+    def get_success_msg(self):
 
-        return {'data': 'sdfsdfds'}
+        return "You have successfully submitted a new archive entry."
 
     def check_mixin_attributes(self):
 
