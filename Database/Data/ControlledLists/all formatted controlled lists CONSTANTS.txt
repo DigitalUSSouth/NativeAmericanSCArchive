@@ -20,7 +20,6 @@
 #Probably be queried from DB into a prepared statement on page load like this...
 #   SELECT DISTINCT collection FROM archive_entry
 
-
 #
 #
 #[type_digital_id TINYINT(255), type_digital VARCHAR(63), description TEXT(1023)]

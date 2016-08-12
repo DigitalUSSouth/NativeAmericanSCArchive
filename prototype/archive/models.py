@@ -3,72 +3,97 @@ from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
 from django.db import connection
 
-from .constants import (CONTENT_TYPE_CHOICES, ARCHIVES, ROLES,
-	INSTITUTIONS, FILE_FORMATS, DIGITAL_TYPES)
+#THESE ARE JUST TUPLE CONSTANTS
+#WILL BE REPLACED BY CONTROLLED LISTS IN DATABASE DOWN THE LINE
+from .constants import (TYPE_DIGITAL, TYPE_CONTENT, ROLE, FILE_FORMAT,
+						GENRE, LANGUAGE)
 
-""" The string representations for all of these need to be
-tweaked, they were set to a random base for the prototype. """
+#NAMING SCHEME SHOULD ALIGN WITH
+#METADATA SCHEMA
+#AND
+#DIAGRAM AT /Database/Diagram/ERdiagram
 
 @python_2_unicode_compatible
-class File(models.Model):
+class archive_entry(models.Model):
 
-	created = models.DateTimeField(auto_now_add=True)
-	modified = models.DateTimeField(auto_now_add=True)
+	#create/modify metadata
+	created = models.DateTimeField(auto_now_add=True)///
+	modified = models.DateTimeField(auto_now_add=True)///
 
-	mime_type = models.CharField(blank=True, null=False, 
-		max_length=30)
+	#all fields for archive_entry table
+	collection = models.CharField(blank = ///, null = ///,
+		max_length=255, verbose_name = 'Entry Collection',
+		help_text = 'Enter the collection which this entry belongs to.')
 
-	archive = models.CharField(blank=False, null=False, 
-		choices=ARCHIVES, max_length=200, 
-		help_text='Enter the archive this document belongs to. e.g. - Simms')
-	url = models.URLField(blank=False, null=False, max_length=200,
-		help_text='This URL denotes a unique URI for this document.')
-	title = models.CharField(blank=False, null=False, max_length=100,
-		help_text='Enter the name for this document.')
-	date = models.DateTimeField(null=False, blank=False,
-		help_text='Specify the date(s) of the original artifact. ' +
-		'This may be a range in ISO (date) format.',
-		verbose_name='Original Artifact Date')
-	date_human = models.CharField(blank=True, null=False, max_length=60,
-		help_text='You may enter a human readable date. e.g - 20th Century',
-		verbose_name='Human Original Artifact Date')
-	date_digital = models.DateTimeField(null=False, blank=False,
-		help_text='Specify the date(s) of the digital surrogate in ISO format.',
-		verbose_name='Digital Date')
-	date_digital_human = models.CharField(blank=True, null=False,
-		max_length=80, verbose_name='Human Digital Date')
+	url = models.URLField(blank = ///, null = ///,
+		max_length = 511, verbose_name = 'Entry URL'
+		help_text = 'Specify a unique URI for this archival.')
+
+	thumbnail_url = models.URLField(blank = ///, null = ///,
+		max_length = 511, verbose_name = 'Thumbnail URL',
+		help_text = 'Specify the URI for the thumbnail image of this archival.')
+
+	video_url = models.URLField(blank = ///, null = ///,
+		max_length = 511, verbose_name = 'Embedded Video URL',
+		help_text = ''///)
+	
+	static_identifier = models.CharField(blank = ///, null = ///,
+		max_length = 511, verbose_name = 'Media File Path',
+		help_text = 'Specify the file path to the associated media on DUSS\' static server.' +
+		' This should be an image or audio file. Videos are not hosted by DUSS.')
+
+	title = models.CharField(blank = ///, null = ///,
+		max_length = 511, verbose_name = 'Entry Title'
+		help_text = ''///)
+
+	description = models.TextField(blank = ///, null = ///,
+		max_length = 65535, verbose_name = "Entry Description",
+		help_text = ''///)
 
 	shelf_mark = models.CharField(blank=True, null=False,
 		max_length=200)
+	
 	copyright_holder = models.CharField(blank=False, null=False,
 		max_length=100, verbose_name='Copyright Holder')
 	# language = models.CharField(blank=False, null=False,
 		# choices=settings.LANGUAGES, max_length=10)
 
-	thumbnail_url = models.URLField(blank=True, null=False,
-		max_length=100, verbose_name='Thumbnail URL')
-	description = models.TextField(blank=True, null=False,
-		max_length=2500)
+	extent = models.CharField(blank = ///, null = ///,
+		max_length = 255, verbose_name = ''///,
+		help_text = '')
 
-	extent = models.CharField(blank=True, null=False,
-		max_length=35)
-	genre = models.CharField(blank=True, null=False, max_length=100)
-
-	#Should probs be binary, but whatevs for now \_O_/
-	full_text = models.TextField(max_length=50000, verbose_name='Full Text',
-		help_text='You may enter the full text for this document in ' +
-		'order to allow (OCR) support.')
+	full_text = models.TextField(blank = ///, null = ///,
+		max_length=16777215, verbose_name='Full Text',
+		help_text=''///)
 
 	use_rights = models.TextField(max_length=10000,
 		verbose_name='Usage Rights')
+
 	file_format = models.CharField(blank=False, null=False,
 		choices=FILE_FORMATS, max_length=10, verbose_name='File Format')
+
 	notes = models.TextField(blank=True, null=False, max_length=500,
 		help_text='Add any additional notes that are pertinent to this ' +
 		'document.')
 
 	is_part_of = models.ManyToManyField('self', blank=True, 
 		verbose_name='Parent File', related_name='children')
+
+	date = models.DateTimeField(null=False, blank=False,
+		help_text='Specify the date(s) of the original artifact. ' +
+		'This may be a range in ISO (date) format.',
+		verbose_name='Original Artifact Date')
+	
+	date_human = models.CharField(blank=True, null=False, max_length=60,
+		help_text='You may enter a human readable date. e.g - 20th Century',
+		verbose_name='Human Original Artifact Date')
+	
+	date_digital = models.DateTimeField(null=False, blank=False,
+		help_text='Specify the date(s) of the digital surrogate in ISO format.',
+		verbose_name='Digital Date')
+	
+	date_digital_human = models.CharField(blank=True, null=False,
+		max_length=80, verbose_name='Human Digital Date')
 	
 	class Meta:
 
