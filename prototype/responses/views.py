@@ -11,8 +11,6 @@ from .ajax import AjaxMixin
 #This is needed to resolve the metaclass conflict....
 class FormResponseViewMeta(FormResponseDelegate, FormMixinBase):
 
-    """ This is to avoid metaclass conflicts again.... """
-
     def __new__(meta, name, bases, dct):
 
         # print("FormResponseViewMeta __new__")
