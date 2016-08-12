@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import *
+from archive.models import File
 
 def home(request):
 
