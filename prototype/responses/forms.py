@@ -92,7 +92,7 @@ class FormResponse(AjaxMixin, metaclass=FormResponseDelegate):
                 "django.views.generic.")
 
     @abc.abstractmethod
-    def get_success_json(self):
+    def get_success_msg(self):
 
         """ Every form is different, it provides a different
         functionality and purpose. Because of this, what every
@@ -116,7 +116,7 @@ class FormResponse(AjaxMixin, metaclass=FormResponseDelegate):
 
             #We will detect this display a time for redirection
             #and then change the location through jquery.
-            return {'data': {'msg': self.get_success_json()}, 
+            return {'data': {'msg': self.get_success_msg()}, 
                     'status': 301}
 
     def get_default_response(self):
