@@ -1,30 +1,33 @@
 {% extends 'archive/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{entry.title}}{% endblock %}
+
+{% block icon_link %}
+  {% static 'images/icons/detail.png' %}
+{% endblock %}
+
+{% block extra_head %}
+  {{block.super}}
+  <link rel="stylesheet" href="{% static 'css/archive/detail.css' %}">
+{% endblock %}
 
 {% block archive_content %}
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-lg-9">
+    {% include 'archive/detail/table.html' %}
+  </div>
+  <div class="col-xs-12 col-md-4 col-lg-3">
+    <div class="row file-detail-sidebar">
+      {% include 'archive/detail/panel.html' with header='Roles' queryset=file.role_set %}
 
-<div class="container space-all">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-lg-9">
-      {% include 'archive/detail/table.html' %}
-    </div>
-    <div class="col-xs-12 col-md-4 col-lg-3">
-      <div class="file-detail-sidebar">
-      <!--   <div class="row">
-          <div class="col-xs-6 col-md-12">
-            <a href="#view-doc" class="btn btn-primary btn-block">View Document</a>
-          </div>
-          <div class="col-xs-6 col-md-12">
-            <a href="#view-doc" class="btn btn-primary btn-block">View Document Text</a>
-          </div>
-        </div> -->
-        {% include 'archive/detail/panel.html' with header='Roles' queryset=file.role_set.all %}
-        {% include 'archive/detail/panel.html' with header='Alternative Titles' queryset=file.alternativetitle_set.all %}
-        {% include 'archive/detail/panel.html' with header='Shelfmarks' queryset=archive.shelfmark_set.all %}
-        {% include 'archive/detail/panel.html' with header='Machine Location' queryset=file.geographiclocationmachine_set.all %}
-        {% include 'archive/detail/panel.html' with header='Human Location' queryset=file.geographiclocationhuman_set.all %}
-        {% include 'archive/detail/panel.html' with header='Contributing Institutions' queryset=file.contributinginstitution_set.all %}
-        
-      </div>
+      {% include 'archive/detail/panel.html' with header='Alternative Title' queryset=file.alternativetitle_set %}
+
+      {% include 'archive/detail/panel.html' with header='Contributing Institutions' queryset=file.contributinginstitution_set %}
+
+      {% include 'archive/detail/panel.html' with header='Geographic Location' queryset=file.geographiclocation_set %}
+
+      {% include 'archive/detail/panel.html' with header='Library of Congress Subject Heading' queryset=accessor.lc_subject_headings %}
     </div>
   </div>
 </div>
