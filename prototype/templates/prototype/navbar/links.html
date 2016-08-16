@@ -1,1 +1,18 @@
-<li class="active"><a href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
+<li class="active">
+  <a href="{% url 'home' %}">Home <span class="sr-only">(current)</span>
+  </a>
+</li>
+<li>
+  <a href="{% url 'archive_directory' %}">Archives</a>
+</li>
+<li>
+  <a href="{% url 'about' %}">About</a>
+</li>
+<li>
+  <a href="{% url 'contact_us' %}">Contact</a>
+</li>
+{% if request.user.is_superuser or request.user.is_staff %}
+<li>
+  <a href="{% url 'submit_archive_entry' %}">Submit Entry</a>
+</li>
+{% endif %}
