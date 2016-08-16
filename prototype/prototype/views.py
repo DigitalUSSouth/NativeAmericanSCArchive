@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from archive.models import File
+from archive.models import Entry
 
 from .forms import ContactForm
 
 def home(request):
 
-    ctx = {'num_docs': File.objects.all().count()}
+    ctx = {'num_docs': Entry.objects.all().count()}
     return render(request, "prototype/home.html", ctx)
 
 def about(request):
