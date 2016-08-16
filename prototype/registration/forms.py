@@ -39,7 +39,7 @@ class VerifyPasswordMixin(forms.Form):
         cdata = self.cleaned_data
         p1, p2 = cdata.get('password'), cdata.get('confirm_password')
         if p1 != p2:
-            raise forms.ValidationError(_("Passwords must match."))
+            raise forms.ValidationError(_noop("Passwords must match."))
         return p2
 
 class VerifyEmailMixin(forms.Form):
@@ -52,10 +52,13 @@ class VerifyEmailMixin(forms.Form):
         cdata = self.cleaned_data
         e1, e2 = cdata.get('email'), cdata.get('confirm_email')
         if e1 != e2:
-            raise forms.ValidationError(_("Emails must match."))
+            raise forms.ValidationError(_noop("Emails must match."))
         return e2
 
 class BannedDomainMixin(forms.Form):
+
+    #If you want to disallow registration from all domains except
+    #for some subset of domains, then add those domains here.
 
     allowed_domains = ['email.sc.edu',]
 
@@ -64,7 +67,7 @@ class BannedDomainMixin(forms.Form):
         email = self.cleaned_data['email']
         domain = email.split("@")[-1]
         if domain not in self.allowed_domains:
-            raise forms.ValidationError(_("The domain you have used is " +
+            raise forms.ValidationError(_noop("The domain you have used is " +
                 "not a domain that is permitted for registration."))
         return email
 
@@ -372,26 +375,16 @@ class DualInsensitiveLoginForm(DualLoginForm):
         self.error_messages['invalid_login'] = _('Please enter a correct %(field)s and password. '
             "These fields are case-insensitive.")
 
-    def try_email(self, email):
-
-        try:
-            email = User.objects.get(email__iexact=email).email
-        except ObjectDoesNotExist:
-            raise forms.ValidationError(
-                self.error_messages['invalid_login'],
-                code='invalid_login',
-                params={'field': self.get_verbose_name('email')}
-            )
-        return email
+    #Emails aren't case-sensitive so we need only overload the
+    #try_username method...
 
     def try_username(self, username):
 
         try:
-            username = User.objects.get(username__iexact=username).username
+             User.objects.get(username__iexact=username).username
         except ObjectDoesNotExist:
             raise forms.ValidationError(
                 self.error_messages['invalid_login'],
                 code='invalid_login',
                 params={'field': self.get_verbose_name('password')},
             )
-        return username
