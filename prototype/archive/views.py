@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView, UpdateView
 from django.db.models import Prefetch
 
 from .forms import UploadEntryForm
-from .models import File
+from .models import Entry
 
 from responses.views import FormResponseView
 #This is needed for ArchiveDirectory's searching
@@ -19,7 +19,7 @@ from utilities import PrefetchMixin
 
 class ArchiveDirectory(AjaxGetMixin, ListView):
 
-    model = File
+    model = Entry
     template_name = 'archive/directory/main.html'
     context_object_name = 'entries'
 
@@ -55,7 +55,7 @@ class ArchiveDirectory(AjaxGetMixin, ListView):
 
 class ArchiveTimeline(ListView):
 
-    model = File
+    model = Entry
     context_object_name = "entries"
     template_name = 'archive/timeline/main.html'
 
@@ -72,7 +72,7 @@ class ArchiveEntryDetail(PrefetchMixin, DetailView):
          'geographiclocation_set', 'digitaltype_set', 
          'lcsubjectheading_set', 'language_set',
     ]
-    model = File
+    model = Entry
     template_name = "archive/detail/main.html"
 
 #By default this isn't ajax, but let's say you wanted to put a
