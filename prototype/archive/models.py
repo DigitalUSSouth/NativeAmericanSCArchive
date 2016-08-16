@@ -1,10 +1,16 @@
+from django.utils.translation import ugettext as _, ugettext_noop as _noop
 from django.db import models
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
-from django.db import connection
 
-from .constants import (CONTENT_TYPE_CHOICES, ARCHIVES, ROLES,
-	INSTITUTIONS, FILE_FORMATS, DIGITAL_TYPES)
+from .constants import (
+	CONTENT_TYPE_CHOICES, 
+	ARCHIVE_CHOICES, ROLE_CHOICES,
+	INSTITUTION_CHOICES, FILE_FORMAT_CHOICES, 
+	DIGITAL_TYPE_CHOICES,
+)
+
+from utilities import get_max
 
 """ The string representations for all of these need to be
 tweaked, they were set to a random base for the prototype. """
@@ -19,34 +25,40 @@ class File(models.Model):
 		max_length=30)
 
 	archive = models.CharField(blank=False, null=False, 
-		choices=ARCHIVES, max_length=200, 
-		help_text='Enter the archive this document belongs to. e.g. - Simms')
+		choices=ARCHIVE_CHOICES, 
+		max_length=get_max(ARCHIVE_CHOICES), 
+		help_text=_('Enter the archive this document belongs to.'
+			' e.g. - Simms')
+	)
 	url = models.URLField(blank=False, null=False, max_length=200,
-		help_text='This URL denotes a unique URI for this document.')
+		help_text=_('This URL denotes a unique URI for this '
+			'document.')
+	)
 	title = models.CharField(blank=False, null=False, max_length=100,
-		help_text='Enter the name for this document.')
+		help_text=_('Enter the name for this document.'))
 	date = models.DateTimeField(null=False, blank=False,
-		help_text='Specify the date(s) of the original artifact. ' +
-		'This may be a range in ISO (date) format.',
+		help_text=_('Specify the date(s) of the original artifact'
+			'. This may be a range in ISO (date) format.'),
 		verbose_name='Original Artifact Date')
 	date_human = models.CharField(blank=True, null=False, max_length=60,
-		help_text='You may enter a human readable date. e.g - 20th Century',
-		verbose_name='Human Original Artifact Date')
+		help_text=_('You may enter a human readable date. e.g '
+			'- 20th Century'), verbose_name='Human Original Artifact Date')
 	date_digital = models.DateTimeField(null=False, blank=False,
-		help_text='Specify the date(s) of the digital surrogate in ISO format.',
-		verbose_name='Digital Date')
+		help_text=_('Specify the date(s) of the digital '
+			'surrogate in ISO format.'), 
+		verbose_name=_('Digital Date'))
 	date_digital_human = models.CharField(blank=True, null=False,
-		max_length=80, verbose_name='Human Digital Date')
+		max_length=80, verbose_name=_('Human Digital Date'))
 
 	shelf_mark = models.CharField(blank=True, null=False,
 		max_length=200)
 	copyright_holder = models.CharField(blank=False, null=False,
-		max_length=100, verbose_name='Copyright Holder')
+		max_length=100, verbose_name=_('Copyright Holder'))
 	# language = models.CharField(blank=False, null=False,
 		# choices=settings.LANGUAGES, max_length=10)
 
 	thumbnail_url = models.URLField(blank=True, null=False,
-		max_length=100, verbose_name='Thumbnail URL')
+		max_length=100, verbose_name=_('Thumbnail URL'))
 	description = models.TextField(blank=True, null=False,
 		max_length=2500)
 
@@ -55,20 +67,25 @@ class File(models.Model):
 	genre = models.CharField(blank=True, null=False, max_length=100)
 
 	#Should probs be binary, but whatevs for now \_O_/
-	full_text = models.TextField(max_length=50000, verbose_name='Full Text',
-		help_text='You may enter the full text for this document in ' +
-		'order to allow (OCR) support.')
+	full_text = models.TextField(max_length=50000, 
+		verbose_name=_('Full Text'),
+		help_text=_('You may enter the full text for this '
+			'document in order to allow (OCR) support.'),
+	)
 
 	use_rights = models.TextField(max_length=10000,
-		verbose_name='Usage Rights')
+		verbose_name=_('Usage Rights'))
+
 	file_format = models.CharField(blank=False, null=False,
-		choices=FILE_FORMATS, max_length=10, verbose_name='File Format')
+		choices=FILE_FORMAT_CHOICES, 
+		max_length=get_max(FILE_FORMAT_CHOICES), 
+		verbose_name=_('File Format'))
 	notes = models.TextField(blank=True, null=False, max_length=500,
-		help_text='Add any additional notes that are pertinent to this ' +
-		'document.')
+		help_text=_('Add any additional notes that are pertinent to this ' +
+		'document.'))
 
 	is_part_of = models.ManyToManyField('self', blank=True, 
-		verbose_name='Parent File', related_name='children')
+		verbose_name=_('Parent File'), related_name='children')
 	
 	class Meta:
 
@@ -93,7 +110,8 @@ class File(models.Model):
 class Language(models.Model):
 
 	language = models.CharField(blank=False, null=False,
-		choices=settings.LANGUAGES, max_length=3)
+		choices=settings.LANGUAGES, 
+		max_length=get_max(settings.LANGUAGES))
 	_file = models.ForeignKey(File)
 
 	def __str__(self):
@@ -105,7 +123,7 @@ class LCSubjectHeading(models.Model):
 
 	lc_subject = models.CharField(blank=False, null=False,
 		max_length=150, 
-		verbose_name="Library of Congress Subject Heading")
+		verbose_name=_("Library of Congress Subject Heading"))
 	_file = models.ForeignKey(File)
 
 	class Meta:
@@ -122,29 +140,31 @@ class LCSubjectHeading(models.Model):
 class DigitalType(models.Model):
 
 	type_digital = models.CharField(blank=False, null=False,
-		choices=DIGITAL_TYPES, verbose_name="Digital Type",
-		max_length=50)
+		choices=DIGITAL_TYPE_CHOICES, verbose_name=_("Digital Type"),
+		max_length=get_max(DIGITAL_TYPE_CHOICES))
 	_file = models.ForeignKey(File)
 
 	class Meta:
 
-		ordering = ['type_digital']
+		# ordering = ['type_digital',]
 		verbose_name = "Digital Type"
 		verbose_name_plural = "Digital Types"
 
 	def __str__(self):
 
-		"%d: %s" % (self._file.id, self.type_digital)
+		return self.type_digital
 
 @python_2_unicode_compatible
 class Role(models.Model):
 
 	role = models.CharField(blank=False, null=False, 
-		choices=ROLES, max_length=30, 
-		help_text='Enter the role(s) you\'ve played in the creation ' +
-		'of the file you are uploading.')
-	name = models.CharField(blank=False, null=False, max_length=100, 
-		help_text='Enter your first and last name.')
+		choices=ROLE_CHOICES, max_length=get_max(ROLE_CHOICES), 
+		help_text=_('Enter the role(s) you\'ve played in the '
+			'creation of the file you are uploading.'),
+	)
+	name = models.CharField(blank=False, null=False, 
+		max_length=100, 
+		help_text=_('Enter your first and last name.'))
 	_file = models.ForeignKey(File)
 
 	@property
@@ -162,11 +182,15 @@ class GeographicLocation(models.Model):
 
 	human = models.CharField(blank=False, null=False, max_length=75)
 	longitude = models.DecimalField(max_digits=9, decimal_places=6,
-		help_text='Enter the longitude coordinates of this item in signed degrees.' +
-		'You may specify a maximum of nine digits and six decimal places.')
+		help_text=_('Enter the longitude coordinates of this '
+			'item in signed degrees.You may specify a maximum '
+			'of nine digits and six decimal places.'),
+	)
 	latitude = models.DecimalField(max_digits=9, decimal_places=6,
-		help_text='Enter the latitude coordinates of this item in signed degrees.' +
-		'You may specify a maximum of nine digits and six decimal places.')
+		help_text=_('Enter the latitude coordinates of this item'
+			' in signed degrees.You may specify a maximum of '
+			'nine digits and six decimal places.'),
+	)
 	_file = models.ForeignKey(File)
 
 	class Meta:
@@ -176,14 +200,18 @@ class GeographicLocation(models.Model):
 
 	def __str__(self):
 
-		return "%s" % self.human
+		base = "%s" % self.human
+		if all([self.latitude, self.longitude]):
+			base = base + ", (%.2f, %.2f)" % (self.latitude, self.longitude)
+		return base
 
 @python_2_unicode_compatible
 class ContributingInstitution(models.Model):
 
-	contributing_institution = models.CharField(blank=False, null=False,
-		choices=INSTITUTIONS, max_length=300,
-		verbose_name='Contributing Institution')
+	contributing_institution = models.CharField(blank=False, 
+		null=False, choices=INSTITUTION_CHOICES, 
+		max_length=get_max(INSTITUTION_CHOICES),
+		verbose_name=_('Contributing Institution'))
 	_file = models.ForeignKey(File)
 
 	class Meta:
@@ -193,14 +221,13 @@ class ContributingInstitution(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._file.id, 
-						   self.contributing_institution)
+		return self.contributing_institution
 
 @python_2_unicode_compatible
 class AlternativeTitle(models.Model):
 
 	alternative_title = models.CharField(blank=True, null=False,
-		max_length=100, verbose_name='Alternative Title')
+		max_length=100, verbose_name=_('Alternative Title'))
 	_file = models.ForeignKey(File)
 
 	class Meta:
@@ -210,4 +237,4 @@ class AlternativeTitle(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._file.id, self.alternative_title)
+		return self.alternative_title
