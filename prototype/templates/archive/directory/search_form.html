@@ -12,11 +12,19 @@
             </li>
             <li role="seperator" class="divider"></li>
             <li>
+              <a href="#" data-value="title">Title</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
               <a href="#" data-value="language">Language</a>
             </li>
             <li role="seperator" class="divider"></li>
             <li>
-              <a href="#" data-value="archive">Archive</a>
+              <a href="#" data-value="collection">Collection</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="genre">Genre</a>
             </li>
             <li role="seperator" class="divider"></li>
             <li>
@@ -24,7 +32,15 @@
             </li>
             <li role="seperator" class="divider"></li>
             <li>
-              <a href="#" data-value="digital-type">Digital Types</a>
+              <a href="#" data-value="digital-type">Digital Type</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="physical-type">Physical Type</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="content-type">Content Type</a>
             </li>
             <li role="seperator" class="divider"></li>
             {% comment %}
@@ -38,6 +54,10 @@
             </li>
             <li role="seperator" class="divider"></li>
             <li>
+              <a href="#" data-value="copyright-holder">Copyright Holder</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
               <a href="#" data-value="file-format">File Format</a>
             </li>
           </ul>
@@ -45,7 +65,7 @@
       </div>
       <input type="search" class="form-control" name="query"/>
       <span class="input-group-btn">
-        <button class="btn btn-md btn-default btn-block">
+        <button class="btn btn-md btn-default btn-block" id="search-btn">
           {% include 'font_awesome.html' with icon_name='search' text='Search' %}
         </button>
       </span>
