@@ -1,0 +1,22 @@
+Currently being used in the following places:
+
+archive/views.py
+
+	SubmitArchiveEntry(FormResponseView)
+
+		This is to handle ajax and regular form submits dynamically
+		so you may include this in a modal + ajax submit for a 
+		smoother file upload, rather than transitioning all the way
+		to a new view etc
+
+search_utils.py
+
+	Everything here inherits from AjaxGetView in order to return
+	the constants needs for the dynamic search bar functionality
+
+	You can see an example of this by going to localhost:8000/archive/
+	and playing with the search bar there.
+
+	The jquery / javascript that implements this is located in:
+
+		static/js/archive/search_form.js
