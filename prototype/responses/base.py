@@ -28,19 +28,19 @@ class BaseResponse:
 
      def dispatch(self, request, *args, **kwargs):
 
-        #UNCOMMENT THIS WHEN YOU MOVE TO PRODUCTION!!!!
+        """ UNCOMMENT THIS WHEN YOU MOVE TO PRODUCTION!!!!
 
-        #Having this redirect locally won't work... You'd be trying
-        #to redirect to https://localhost:8000 but the development
-        #server (local) only accepts HTTP.
+        Having this redirect locally won't work... You'd be trying
+        to redirect to https://localhost:8000 but the development
+        server (local) only accepts HTTP. """
 
         # if not request.is_secure():
-        #     return HttpResponseRedirect(
-        #         request.build_absolute_uri(
-        #             request.get_full_path()
-        #         ).\
-        #         replace("http", "https")
-        #     )
+        #      return HttpResponseRedirect(
+        #          request.build_absolute_uri(
+        #              request.get_full_path()
+        #          ).\
+        #          replace("http", "https")
+        #      )
 
         # print("Called base response dispatch")
         
@@ -50,6 +50,7 @@ class BaseAbstractResponse(BaseResponse, metaclass=AbstractResponseMixin):
 
     def __init__(self):
 
+        #Calling the hierarchies __init__
         super().__init__()
 
     @abc.abstractmethod
@@ -91,10 +92,11 @@ class AbstractResponse(BaseAbstractResponse):
 
     def __init__(self):
 
+        #Calling the hierarchies __init__
         super().__init__()
     
     @abc.abstractmethod
-    def get_default_response(self, response):
+    def get_default_response(self):
 
         return super(AbstractResponse, self).\
                render_to_response(self.get_context_data())
