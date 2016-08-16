@@ -2,6 +2,12 @@
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 
+{% block title %}Upload Archive Entry{% endblock %}
+
+{% block icon_link %}
+  {% static 'images/icons/upload.png' %}
+{% endblock %}
+
 {% block centered_content %}
   {% crispy form %}
 {% endblock %}
