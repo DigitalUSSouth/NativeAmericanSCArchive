@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
 
+<<<<<<< HEAD
 from .constants import (
 	CONTENT_TYPE_CHOICES, 
 	ARCHIVE_CHOICES, ROLE_CHOICES,
@@ -11,9 +12,6 @@ from .constants import (
 )
 
 from utilities import get_max
-
-""" The string representations for all of these need to be
-tweaked, they were set to a random base for the prototype. """
 
 @python_2_unicode_compatible
 class File(models.Model):
@@ -86,7 +84,7 @@ class File(models.Model):
 
 	is_part_of = models.ManyToManyField('self', blank=True, 
 		verbose_name=_('Parent File'), related_name='children')
-	
+
 	class Meta:
 
 		# unique_together = 
@@ -116,7 +114,7 @@ class Language(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._file.id, self.language)
+		return "%d: %s" % (self._entry.id, self.language)
 
 @python_2_unicode_compatible
 class LCSubjectHeading(models.Model):
@@ -134,7 +132,7 @@ class LCSubjectHeading(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._file.id, self.lc_subject)
+		return "%d: %s" % (self._entry.id, self.lc_subject)
 
 @python_2_unicode_compatible
 class DigitalType(models.Model):
@@ -143,7 +141,6 @@ class DigitalType(models.Model):
 		choices=DIGITAL_TYPE_CHOICES, verbose_name=_("Digital Type"),
 		max_length=get_max(DIGITAL_TYPE_CHOICES))
 	_file = models.ForeignKey(File)
-
 	class Meta:
 
 		# ordering = ['type_digital',]
@@ -174,7 +171,7 @@ class Role(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s - %s" % (self._file.id, self.role, 
+		return "%d: %s - %s" % (self._entry.id, self.role, 
 								self.name)
 
 @python_2_unicode_compatible
@@ -187,10 +184,8 @@ class GeographicLocation(models.Model):
 			'of nine digits and six decimal places.'),
 	)
 	latitude = models.DecimalField(max_digits=9, decimal_places=6,
-		help_text=_('Enter the latitude coordinates of this item'
-			' in signed degrees.You may specify a maximum of '
-			'nine digits and six decimal places.'),
-	)
+		help_text='Enter the latitude coordinates of this item in signed degrees.' +
+		'You may specify a maximum of nine digits and six decimal places.')
 	_file = models.ForeignKey(File)
 
 	class Meta:
