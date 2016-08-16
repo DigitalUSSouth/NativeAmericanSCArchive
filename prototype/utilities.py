@@ -38,6 +38,7 @@ Python 2 it is cubic due to the evaluation of map directly.
 
 """
 
+get_choice_verbose_name = lambda x, y: [tup[-1] for tup in y if tup[0] == x].pop()
 num_largest = lambda x, y: sum(map(len, (val[0] for val in nlargest(x, y))))
 
 #This is for getting the maximum length for a list of two-tuples for
