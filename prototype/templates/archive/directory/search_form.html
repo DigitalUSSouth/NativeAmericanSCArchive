@@ -1,0 +1,59 @@
+<form class="form" role="form">
+  <div class="form-group">
+    <div class="input-group" id="filter-btn-group">
+      <div class="input-group-btn">
+        <div class="btn-group">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" name="dropdown">
+            <li>
+              <a href="#" data-value="all">All</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="language">Language</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="archive">Archive</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="contributing-institution">Contributing Institution</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="digital-type">Digital Types</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            {% comment %}
+              Extend this (jquery + parsing) to split this into two 
+              fields for the roles returned + a name field.
+
+              For specific role searching.
+            {% endcomment %} 
+            <li>
+              <a href="#" data-value="role">Role</a>
+            </li>
+            <li role="seperator" class="divider"></li>
+            <li>
+              <a href="#" data-value="file-format">File Format</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <input type="search" class="form-control" name="query"/>
+      <span class="input-group-btn">
+        <button class="btn btn-md btn-default btn-block">
+          {% include 'font_awesome.html' with icon_name='search' text='Search' %}
+        </button>
+      </span>
+    </div>
+  </div>
+  {% comment %}
+    Placed here to make some jquery cleaner.
+  {% endcomment %}
+  <input type="hidden" name="filter-type" value="all">
+
+</form>
