@@ -11,12 +11,10 @@ from .constants import (
 	GENRE, LANGUAGE
 )
 
-from utilities import get_max
+from utilities import get_max, get_choice_verbose_name
 
-""" Naming schema should align with the 
-metadata schema and diagram located at:
-	/Database/Diagram/ERdiagram
-"""
+""" Naming schema should align with the metadata schema 
+and diagram located at: /Database/Diagram/ERdiagram """
 
 @python_2_unicode_compatible
 class Entry(models.Model):
@@ -168,7 +166,7 @@ class Entry(models.Model):
 
 	def __str__(self):
 
-		return "%s: %s" % (self.title, self.url)
+		return self.title
 
 @python_2_unicode_compatible
 class Language(models.Model):
@@ -184,7 +182,7 @@ class Language(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._entry.id, self.language)
+		return get_choice_verbose_name(self.language, LANGUAGE)
 
 @python_2_unicode_compatible
 class LCSubjectHeading(models.Model):
@@ -204,7 +202,7 @@ class LCSubjectHeading(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._entry.id, self.lc_subject)
+		return self.lc_subject
 
 @python_2_unicode_compatible
 class DigitalType(models.Model):
@@ -226,7 +224,7 @@ class DigitalType(models.Model):
 
 	def __str__(self):
 
-		"%d: %s" % (self._entry.id, self.type_digital)
+		get_choices_verbose_name(self.type_digital, TYPE_DIGITAL)
 
 @python_2_unicode_compatible
 class Role(models.Model):
@@ -242,7 +240,7 @@ class Role(models.Model):
 		max_length=255, verbose_name=_(''),
 		help_text=_('The first and last name of the person associated with the role.'),
 	)
-	
+
 	_entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
 
 	@property
@@ -252,7 +250,7 @@ class Role(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s - %s" % (self._entry.id, self.role, self.individual_name)
+		return "%s - %s" % (get_choice_verbose_name(self.role, ROLE), self.individual_name)
 
 @python_2_unicode_compatible
 class GeographicLocation(models.Model):
@@ -277,7 +275,7 @@ class GeographicLocation(models.Model):
 
 		base = self.human
 		if all([self.latitude, self.longitude]):
-			base += " (%.2f, %.2f)" % (self.latitude, self.longitude)
+			base += " - (%.2f, %.2f)" % (self.latitude, self.longitude)
 		return base
 
 @python_2_unicode_compatible
@@ -297,7 +295,7 @@ class ContributingInstitution(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._entry.id, self.contributing_institution)
+		return self.contributing_institution
 
 @python_2_unicode_compatible
 class AlternativeTitle(models.Model):
@@ -316,4 +314,4 @@ class AlternativeTitle(models.Model):
 
 	def __str__(self):
 
-		return "%d: %s" % (self._entry.id, self.alternative_title)
+		return self.alternative_title
