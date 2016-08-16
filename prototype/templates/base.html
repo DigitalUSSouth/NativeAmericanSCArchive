@@ -39,10 +39,12 @@
         {% include 'messages/base.html' %}
       {% endblock %}
 
+      {% block base_container %}
       <div class="container top-btm-spacer">
         {% block base_content %}
         {% endblock %}
       </div>
+      {% endblock %}
 
     {% endblock %}
  
