@@ -64,7 +64,9 @@ def parse_TYPE_DIGITAL():
 	global index_of_file
 
 	index_of_file = navigateTo("TYPE_DIGITAL", file, index_of_file)
-	file = removeElement(file, index_of_file, 2)
+	file = addTabs(file, index_of_file)
+	file = addCommas(file, index_of_file)
+	file = changeToTuples(file, index_of_file)
 
 	print("TYPE DIGITAL parsed")
 
@@ -75,7 +77,9 @@ def parse_TYPE_CONTENT():
 	global index_of_file
 
 	index_of_file = navigateTo("TYPE_CONTENT", file, index_of_file)
-	file = removeElement(file, index_of_file, 2)
+	file = addTabs(file, index_of_file)
+	file = addCommas(file, index_of_file)
+	file = changeToTuples(file, index_of_file)
 	
 	print("TYPE CONTENT parsed")
 
@@ -86,12 +90,9 @@ def parse_ROLE():
 	global index_of_file
 
 	index_of_file = navigateTo("ROLE", file, index_of_file)
-	while file[index_of_file] != "]\n":
-		file[index_of_file] = file[index_of_file][:-2] + "]\n"
-		index_of_file += 1
-		if file[index_of_file] != "]\n": #still haven't hit the close bracket?
-			file[index_of_file] = ""
-			index_of_file += 1
+	file = addTabs(file, index_of_file)
+	file = addCommas(file, index_of_file)
+	file = changeToTuples(file, index_of_file)
 	
 	print("ROLE parsed")
 
@@ -102,7 +103,9 @@ def parse_FILE_FORMAT():
 	global index_of_file
 
 	index_of_file = navigateTo("FILE_FORMAT", file, index_of_file)
-	file = removeElement(file, index_of_file, 0)
+	file = addTabs(file, index_of_file)
+	file = addCommas(file, index_of_file)
+	file = changeToTuples(file, index_of_file)
 	
 	print("FILE FORMAT parsed")
 
@@ -113,7 +116,9 @@ def parse_GENRE():
 	global index_of_file
 
 	index_of_file = navigateTo("GENRE", file, index_of_file)
-	file = removeElement(file, index_of_file, 2)
+	file = addTabs(file, index_of_file)
+	file = addCommas(file, index_of_file)
+	file = changeToTuples(file, index_of_file)
 	
 	print("GENRE parsed")
 
@@ -123,7 +128,10 @@ def parse_LANGUAGE():
 	global file
 	global index_of_file
 
-	#index_of_file = navigateTo("LANGUAGE", file, index_of_file)
+	index_of_file = navigateTo("LANGUAGE", file, index_of_file)
+	file = addTabs(file, index_of_file)
+	file = addCommas(file, index_of_file)
+	file = changeToTuples(file, index_of_file)
 
 	print("LANGUAGE parsed")
 
@@ -132,7 +140,7 @@ def write_new_constants_py():
 	global file
 	global index_of_file
 	
-	with open("constants_tuples.py", "w") as new_file:
+	with open("constants_new.py", "w") as new_file:
 		for line in file:
 			new_file.write(line)
 	print("new file printed")
@@ -146,22 +154,27 @@ def navigateTo(header, file, index_of_file):
 	return index_of_file
 
 
-def removeElement(file, index_of_file, elementID):
+def addTabs(file, index_of_file):
 	#cycle through lines
 	while(file[index_of_file] != "]\n"):
-		#format current line into list
-		line_as_string = file[index_of_file].strip()
-		line_as_string = line_as_string.replace("','", "|")
-		line_as_string = line_as_string.replace("', '", "|")
-		line_as_string = line_as_string.replace(",'", "|")
-		line_as_string = line_as_string.replace(", '", "|")
-		line_as_string = line_as_string.replace("['", "", 1)
-		line_as_string = line_as_string.replace("[", "", 1)
-		line_as_string = line_as_string.replace("'],", "")
-		line_as_list = line_as_string.split("|")
-		line_as_list.pop(elementID)
-		line_as_string = str(line_as_list) + ",\n"
-		file[index_of_file] = line_as_string
+		if("\t" not in file[index_of_file]):
+			file[index_of_file] = "\t" + file[index_of_file]
+		index_of_file += 1
+	return file
+
+
+def addCommas(file, index_of_file):
+	while(file[index_of_file] != "]\n"):
+		if("']," not in file[index_of_file]):
+			file[index_of_file] = file[index_of_file][:-1] + ",\n"
+		index_of_file += 1
+	return file
+
+
+def changeToTuples(file, index_of_file):
+	while(file[index_of_file] != "]\n"):
+		file[index_of_file] = file[index_of_file].replace("['", "('", 1)
+		file[index_of_file] = file[index_of_file].replace("']", "')", 1)
 		index_of_file += 1
 	return file
 
