@@ -10,15 +10,6 @@ from django.contrib.contenttypes.models import ContentType
 #between the largest values for the number of choices available set on the
 #field. The list of tuples is y, num_choices is x.
 
-################################################################################
-#                                                                              #
-#    TTTTTTT IIIII  M       M  EEEEEE     CCCCCCC  OOOOOO  M       M  PPPPPP   #
-#       T      I    M M   M M  E          C        O    O  M M   M M  P    P   #
-#       T      I    M   M   M  EEEE       C        O    O  M   M   M  PPPPPP   #
-#       T      I    M       M  E          C        O    O  M       M  P        #
-#       T    IIIII  M       M  EEEEEE     CCCCCCC  OOOOOO  M       M  P        #
-#                                                                              #
-################################################################################
 
 """
 Time complexity of num_largest in.....
@@ -96,6 +87,15 @@ def extension(formats=['.pdf']):
 
 	return partial(check_ext, formats=formats)
 
+""" SHOULD BE USED FOR LOCAL DEBUGGING ONLY !!! """
+def log_queries(func):
+	def wrapper(*args, **kwargs):
+		from django.db import connection
+		result = func(*args, **kwargs)
+		print(len(connection.queries))
+		return result
+	return wrapper
+
 # def compress_img(image):
 
 # 	img = Image.open(StringIO.StringIO(image.read()))
@@ -125,3 +125,60 @@ class SelfAwareModel:
 	def get_model_name(self):
 
 		return self.get_ct().model
+
+""" Note: This must be provided AFTER the class based view.
+Yes, this goes against the notion of a Mixin since you generally
+put them on the leftmost side. However, consider this:"""
+
+class PrefetchMixin(object):
+
+	@log_queries
+	def get_queryset(self):
+
+		if not hasattr(self, 'prefetches'):
+			raise AttributeError("You must define the prefetch " +
+				"attribute on all classes that use the prefetch mixin.")
+
+		if not isinstance(self.prefetches, (list, tuple)):
+			raise ValueError("The prefetches attribute of PrefetchMixin" +
+				" must be a list or tuple.")
+		q = super().get_queryset().\
+			   prefetch_related(*self.prefetches)
+		return q
+
+class PrefetchDetailMixin(object):
+
+	allowed_attributes = ['lookup', 'queryset', 'to_attr']
+
+	def build_kwargs(self):
+
+		attrs = []
+
+		for k, v in prefetches.items():
+			if not isinstance(v, dict):
+				raise ValueError("All values of keys in the " +
+					"self.prefetches attribute must themselves " +
+					"be dictionary instances. More specifically")
+			#Note, this is the XOR bitwise operator.
+			if not all((x in allowed_attributes for x in v.keys())):
+				raise AttributeError("You have passed an invalid " +
+					"attribute to the key %s in self.prefetches:" % k +
+					' \n  The allowed attributes are %s' % 
+					', '.join(self.allowed_attributes))
+			attrs.append(Prefetch(k, **v))
+		return attrs
+
+	def get_queryset(self):
+
+		if not hasattr(self, 'prefetches'):
+
+			raise AttributeError("You must define the prefetch " +
+				"attribute on all classes that use the prefetch mixin.")
+
+		if not isinstance(prefetches, dict):
+			raise ValueError('The prefetches attribute of ' +
+				'PrefetchDetailMixin must be a dictionary ' +
+				'instance.')
+
+		return super().get_queryset().\
+			   prefetch_related(*self.build_kwargs)
