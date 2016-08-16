@@ -19,38 +19,6 @@
     </div>
 
     <div class="col-xs-12 col-sm-9 col-sm-pull-3 col-lg-8 col-lg-pull-4">
-      <form class="form" role="form">
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-btn">
-              <div class="btn-group">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                  <li>
-                    <a href="#">1</a>
-                  </li>
-                  <li role="seperator" class="divider"></li>
-                  <li>
-                    <a href="#">2</a>
-                  </li>
-                  <li role="seperator" class="divider"></li>
-                  <li>
-                    <a href="#">3</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <input type="search" id="document-directory-filter" class="form-control"/>
-            <span class="input-group-btn">
-              <button class="btn btn-md btn-default btn-block">
-                {% include 'font_awesome.html' with icon_name='search' text='Search' %}
-              </button>
-            </span>
-          </div>
-        </div>
-      </form>
 
       <span class="pull-left">
         {{documents|length}} Document(s)
