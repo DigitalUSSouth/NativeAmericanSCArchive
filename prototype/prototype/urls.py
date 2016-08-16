@@ -22,19 +22,25 @@ from django.conf.urls.static import static
 from .views import home, about, contact
 
 from search_utils import (
-    GetLanguages, GetArchives, GetDigitalTypes,
-    GetContributingInstitutions, GetRoles,
-    GetFileFormats,
+    GetLanguages, GetRoles, 
+    GetDigitalTypes,GetContentTypes, GetPhysicalTypes,
+    GetContributingInstitutions, GetCollections,
+    GetFileFormats, GetGenres,
+    GetCopyrightHolders,
 )
 
 urlpatterns = [
     url(r'^$', home, name="home"),
     url(r'^get-languages/$', GetLanguages.as_view(), name="get_languages"),
-    url(r'^get-archives/$', GetArchives.as_view(), name="get_archives"),
+    url(r'^get-collections/$', GetCollections.as_view(), name="get_collections"),
     url(r'^get-digital-types/$', GetDigitalTypes.as_view(), name="get_digital_types"),
+    url(r'^get-physical-types/$', GetPhysicalTypes.as_view(), name="get_physical_types"),
+    url(r'^get-content-types/$', GetContentTypes.as_view(), name="get_content_types"),
     url(r'^get-contributing-institutions/$', GetContributingInstitutions.as_view(), name="get_contributing_institutions"),
     url(r'^get-roles/$', GetRoles.as_view(), name="get_roles"),
     url(r'^get-file-formats/$', GetFileFormats.as_view(), name="get_file_formats"),
+    url(r'^get-genres/$', GetGenres.as_view(), name="get_genres"),
+    url(r'^get-copyright-holders/$', GetCopyrightHolders.as_view(), name="get_copyright_holders"),
     url(r'^about/$', about, name='about'),
     url(r'^contact/$', contact, name='contact_us'),
     url(r'^admin/', include(admin.site.urls)),
