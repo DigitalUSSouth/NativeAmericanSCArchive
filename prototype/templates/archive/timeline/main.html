@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load helpers %}
+
+{% block title %}Archive Timeline{% endblock %}
+{% block icon_link %}
+  {% static 'images/icons/timeline.png' %}
+{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/flex.css' %}">
+  <link rel="stylesheet" href="{% static 'css/archive/timeline.css' %}">
+{% endblock %}
+
+{% block base_content %}
+<div id="timeline-container">
+  {% for entry in entries %}
+  <div class="row row-flex no-gutter">
+    <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-1 col-lg-6 col-lg-offset-2">
+      <div class="{% if not forloop.first %}timeline-phase-bottom-{{ forloop.counter|minus:1 }}{% if forloop.counter > 3 %} timeline-hidden{% endif %}{% else %}timeline-current{% endif %}" id="{{forloop.counter}}">
+
+        {% include 'archive/timeline/embed.html' with src="//www.youtube.com/embed/ePbKGoIGAXY" description=entry.description %}
+        <div class="timeline-description">
+          <div class="timeline-description-dark">
+            {% lorem %}...
+            <p>
+              <a href="#" class="text-danger pull-right">
+                Read More
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-1 timeline-icon-container {% if forloop.counter > 3 %}timeline-hidden{% endif %} no-padding">
+      <div class="timeline-icon">
+        {% if entry.mime_type|startswith:'video'%}
+          <img src="{% static 'images/icons/video.png' %}" class="img-fluid img-responsive">
+        {% elif entry.mime_type|startswith:'image' %}
+          <img src="{% static 'images/icons/image.png' %}" class="img-fluid img-responsive">
+        {% else %}
+          <img src="{% static 'images/icons/letter.png' %}" class="img-fluid img-responsive">
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-1 col-lg-1 {% if forloop.counter > 3 %}timeline-hidden{% endif %} no-padding timeline-date-container">
+      <span class="timeline-date">{{entry.date|date:"Y"}}</span>
+    </div>
+
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/archive/timeline.js' %}"></script>
+{% endblock %}
