@@ -1,9 +1,8 @@
 import abc, inspect #For continued abstractmethods + metaclass
+from django.contrib import messages
 
 from .base import AbstractResponseMixin
 from .ajax import AjaxMixin
-
-from .helpers import inject_wrapped_method
 
 class FormResponseMixin(type):
 
@@ -55,6 +54,11 @@ class FormResponse(AjaxMixin, metaclass=FormResponseDelegate):
         super().__init__()
         self._response = None
         self._valid = False
+        self.ajax = False
+
+    def dispatch(self, request, *args, **kwargs):
+
+        return super().dispatch(request, *args, **kwargs)
 
     @property
     def valid(self):
@@ -109,6 +113,11 @@ class FormResponse(AjaxMixin, metaclass=FormResponseDelegate):
         #class. Available since by check_valid_base all
         #derivatives of this class must have this base parent ==> 
         #having this method.
+
+        #Note: self.get_form().errors is a dictionary of all of
+        #the errors hence it abides by the abstractmethod's 
+        #requirements that the 'data' attribute for JsonResponse
+        #be a dict instance.
         if not self.valid:
             return {'data': self.get_form().errors, 'status': 400}
         else:
@@ -132,12 +141,14 @@ class FormResponse(AjaxMixin, metaclass=FormResponseDelegate):
     def form_valid(self, form):
 
         self.valid = True
+        if not self.ajax:
+            messages.success(self.request, self.get_success_msg())
         self.response = super().form_valid(form)
         return self.return_response()
 
     def return_response(self):
 
-        if self.request.is_ajax():
+        if self.ajax:
             return JsonResponse(**self.get_json())
         else:
             return self.response
