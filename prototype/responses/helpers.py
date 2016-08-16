@@ -1,5 +1,9 @@
 from functools import wraps
 
+""" Currently not being used, but may be useful in the future in
+case anyone ever needs to inject a method to resolve mro 
+complications. """
+
 def inject_wrapped_method(method):
     print("Injecting method....", method)
     @wraps(method)
