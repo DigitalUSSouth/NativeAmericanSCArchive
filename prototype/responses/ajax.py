@@ -2,7 +2,7 @@ import abc
 from django.http import JsonResponse
 from django.views.generic import View
 
-from .base import AbstractResponseMixin, BaseAbstractResponse
+from .base import AbstractResponseMixin, BaseAbstractResponse, AbstractResponse
 
 
 """ You'd think this should inherit from BaseAbstractResponse, so 
@@ -12,10 +12,11 @@ However, for using the mixins below with FormResponse in
 forms.py and with things such as FormView, which uses 
 BaseFormMixin metaclass will cause a metaclass conflict.... """
 
-class BaseAbstractAjaxMixin(metaclass=abc.ABCMeta):
+class BaseAbstractAjaxMixin(AbstractResponse):
 
     def __init__(self):
 
+        #Calling the hierarchies __init__
         super().__init__()
         # print("In BaseAbstractAjaxMixin __init__")
 
@@ -24,12 +25,21 @@ class BaseAbstractAjaxMixin(metaclass=abc.ABCMeta):
 
         """ A dictionary should be returned here. 
 
+        NOTE: JsonResponse takes two attributes:
+
+            'data' and 'status'.
+
+        -- status: must be an integer -> valid response code
+
+        -- data: Must also be a dict. 
+
         If you wish to arbitraily nest / extend the data returned 
         here, you can keep calling super() on the derivatives and
-        .update() on the returned data to merge the dictionaries.
+        .update() on the returned data to merge the dictionaries
 
-        We perform in all regions that call this method by unpacking
-        the key / value pairs as keyword arguemnts + their values. """
+        A dictionary in all regions that call this method, because
+        JsonResponse uses ** -->  unpacking the key / value pairs
+        as keyword arguments + their values. """
 
     def return_response(self):
 
@@ -53,6 +63,7 @@ class AjaxGetMixin(AbstractAjaxMixin):
 
     def __init__(self):
 
+        #Calling the hierarchies __init__
         super().__init__()
         # print("In AjaxGetMixin __init__")
 
@@ -68,6 +79,7 @@ class AjaxPostMixin(AbstractAjaxMixin):
 
     def __init__(self):
 
+        #Calling the hierarchies __init__
         super().__init__()
         # print("In AjaxPostMixin __init__")
 
@@ -83,6 +95,7 @@ class AjaxMixin(AjaxGetMixin, AjaxPostMixin):
 
     def __init__(self):
 
+        #Calling the hierarchies __init__
         super().__init__()
         # print("In AjaxMixin __init__")
 
