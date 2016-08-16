@@ -102,7 +102,7 @@ def facet_queryset(cls):
                 queryset = model.objects.filter(collection=query)
             elif _type == "digital-type":
                 queryset = model.objects.filter(digitaltype__type_digital=query)
-             elif _type == "physical-type":
+            elif _type == "physical-type":
                 queryset = model.objects.filter(type_physical=query)
             elif _type == "content-type":
                 queryset = model.objects.filter(type_content=query)
