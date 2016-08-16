@@ -9,13 +9,18 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">
-        <strong>Prototype</strong>
+        <strong>DUSS</strong>
       </a>
     </div>
 
     <div class="collapse navbar-collapse" id="home-navbar">
       <ul class="nav navbar-nav">
         {% include 'prototype/navbar/links.html' %}
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+       <li>
+        <a href="{% url 'login' %}">Login</a>
+      </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
