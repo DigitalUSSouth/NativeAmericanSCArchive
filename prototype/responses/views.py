@@ -6,7 +6,7 @@ from .forms import FormResponse, FormResponseDelegate
 
 #For the AjaxView
 from django.views.generic import View
-from .ajax import AjaxMixin
+from .ajax import AjaxMixin, AjaxGetMixin, AjaxPostMixin
 
 #This is needed to resolve the metaclass conflict....
 class FormResponseViewMeta(FormResponseDelegate, FormMixinBase):
@@ -36,6 +36,7 @@ class FormResponseView(FormResponse, FormView, metaclass=FormResponseViewMeta):
 
     def __init__(self):
 
+        #Calling the hierarchies __init__
         super().__init__()
 
     def check_mixin_attributes(self):
@@ -59,10 +60,18 @@ class FormResponseView(FormResponse, FormView, metaclass=FormResponseViewMeta):
                 ", ".join(missing) + "\nThese variables must not be " +
                 "'None'.")
 
+class AjaxGetView(AjaxGetMixin, View):  
+
+    allowed_http_methods = ['get']
+
+class AjaxPostView(AjaxPostMixin, View):
+
+    allowed_http_methods = ['post']
+
 #Note, view does not have the post and get methods, etc. 
 #The mro here won't overload the abstract methodss
 #We use View here since we'd just have to use it anyway in 
 #any class that uses this....
 class AjaxView(AjaxMixin, View):
 
-    pass
+    allowed_http_methods = ['get', 'post']
