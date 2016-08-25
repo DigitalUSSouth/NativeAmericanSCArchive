@@ -19,18 +19,24 @@ and diagram located at: /Database/Diagram/ERdiagram """
 @python_2_unicode_compatible
 class Entry(models.Model):
 
-	created = models.DateTimeField(auto_now_add=True)#editable = false, blank = true
-	modified = models.DateTimeField(auto_now_add=True)#editable = false, blank = true
+	created = models.DateTimeField(editable=False, blank=False, null=True,
+		auto_now_add=True, auto_now=False,
+		verbose_name=_('Created'),
+	)
+
+	updated = models.DateTimeField(editable=False, blank=False, null=True,
+		auto_now_add=False, auto_now=True,
+		verbose_name=_('Updated'),
+	)
 
 	collection = models.CharField(blank=False, null=False,
 		max_length=255, verbose_name=_('Collection'),
-		help_text=_('The collection which this entry belongs to.')
+		help_text=_('The collection which this entry belongs to.'),
 	)
 	#^^ INTENDED TO BE AN AUTOCOMPLETE FIELD ^^
 
-	url = models.URLField(blank=False, null=False, 
-		unique=True, max_length=511, 
-		verbose_name=_('URL'),
+	url = models.URLField(blank=False, null=False, unique=True,
+		max_length=511, verbose_name=_('URL'),
 		help_text=_('A unique URI for this archival.'),
 	)
 
@@ -41,13 +47,13 @@ class Entry(models.Model):
 
 	video_url = models.URLField(blank=True, null=False,
 		max_length=511, verbose_name=_('Embedded Video URL'),
-		help_text=_("A URI for the entry's embedded video content, if applicable."),
+		help_text=_('A URI for the entry\'s embedded video content, if applicable.'),
 	)
 	
 	static_identifier = models.CharField(blank=False, null=False,
 		max_length=511, verbose_name=_('Media File Path / Static Identifier'),
-		help_text=_("A file path to the associated media on DUSS' static server." +
-		" This is usually an image or audio file. Videos are not hosted by DUSS."),
+		help_text=_('A file path to the associated media on DUSS\' static server.' +
+		' This is usually an image or audio file. Videos are not hosted by DUSS.'),
 	)
 
 	title = models.CharField(blank=False, null=False, unique=True,
@@ -57,11 +63,12 @@ class Entry(models.Model):
 
 	description = models.TextField(blank=True, null=False,
 		verbose_name=_('Entry Description'),
-		help_text = 'A summary account of the content of this entry.')
+		help_text = 'A summary account of the content of this entry.',
+	)
 
 	genre = models.CharField(blank=True, null=False,
-		verbose_name=_('Literary Genre'), choices=GENRE,
-		max_length=get_max(GENRE),
+		choices=GENRE,
+		max_length=get_max(GENRE), verbose_name=_('Literary Genre'),
 		help_text=_('An optional literary genre, primarily for text entries.'),
 	)
 	#TODO: Make this reference control list
@@ -73,8 +80,8 @@ class Entry(models.Model):
 	)
 
 	type_content = models.CharField(blank=False, null=False,
-		verbose_name=_('Type of Content'), choices=TYPE_CONTENT,
-		max_length=get_max(TYPE_CONTENT),
+		choices=TYPE_CONTENT,
+		max_length=get_max(TYPE_CONTENT), verbose_name=_('Type of Content'),
 		help_text=_('The type of content that the entry contains. e.g. text, image, ' +
 		'video, etc'),
 	)
@@ -105,8 +112,8 @@ class Entry(models.Model):
 	)
 
 	file_format = models.CharField(blank=False, null=False,
-		choices=FILE_FORMAT, verbose_name=_('File Format'),
-		max_length=get_max(FILE_FORMAT),
+		choices=FILE_FORMAT,
+		max_length=get_max(FILE_FORMAT), verbose_name=_('File Format'),
 		help_text=_('The file format of the entry\'s digital surrogate'),
 	)
 	#TODO: Make this reference control list
@@ -125,6 +132,7 @@ class Entry(models.Model):
 	#is_part_of = models.ManyToManyField('self', blank=True, 
 		#verbose_name='Parent File', related_name='children')
 
+	#ALL DATE STUFF BELOW..................
 	date_range_start = models.DateTimeField(blank=False, null=False,
 		verbose_name=_('Date of Original Artifact'),
 		help_text=_('Specify the date of the original artifact, or start date if it ' +
@@ -171,9 +179,9 @@ class Entry(models.Model):
 @python_2_unicode_compatible
 class Language(models.Model):
 
-	language = models.CharField(blank=True, null=False,
-		choices=LANGUAGE, verbose_name=_('Language'),
-		max_length=get_max(LANGUAGE),
+	language = models.CharField(blank=False, null=False,
+		choices=LANGUAGE,
+		max_length=get_max(LANGUAGE), verbose_name=_('Language'),
 		help_text=_('The language of the object.'),
 	)
 	#TODO: Make this reference control list
@@ -187,9 +195,10 @@ class Language(models.Model):
 @python_2_unicode_compatible
 class LCSubjectHeading(models.Model):
 
-	lc_subject = models.CharField(blank=True, null=False,
+	lc_subject = models.CharField(blank=False, null=False,
 		max_length=255, verbose_name=_('Library of Congress Subject Heading'),
-		help_text=_(''),
+		help_text=_('Any Library of Congress subject headings that may be associated'+
+					' with the entry'),
 	)
 
 	_entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
@@ -209,8 +218,7 @@ class DigitalType(models.Model):
 
 	type_digital = models.CharField(blank=False, null=False,
 		choices=TYPE_DIGITAL, 
-		max_length=get_max(TYPE_DIGITAL),
-		verbose_name=_("Type of Digital Artifact"),
+		max_length=get_max(TYPE_DIGITAL), verbose_name=_('Type of Digital Artifact'),
 		help_text=_('The type of digital artifact that is accessible in the entry.'),
 	)
 
@@ -224,20 +232,20 @@ class DigitalType(models.Model):
 
 	def __str__(self):
 
-		get_choices_verbose_name(self.type_digital, TYPE_DIGITAL)
+		return get_choice_verbose_name(self.type_digital, TYPE_DIGITAL)
 
 @python_2_unicode_compatible
 class Role(models.Model):
 
 	role = models.CharField(blank=False, null=False,
-		choices=ROLE, verbose_name=_(''), 
-		max_length=get_max(ROLE),
+		choices=ROLE,
+		max_length=get_max(ROLE), verbose_name=_('Role Type'),
 		help_text=_('The role(s) played by one or more individuals in the creation ' +
 		'of the entry\'s content.'),
 	)
 	
 	individual_name = models.CharField(blank=False, null=False,
-		max_length=255, verbose_name=_(''),
+		max_length=255, verbose_name=_('Role Individual'),
 		help_text=_('The first and last name of the person associated with the role.'),
 	)
 
@@ -255,15 +263,22 @@ class Role(models.Model):
 @python_2_unicode_compatible
 class GeographicLocation(models.Model):
 
-	human = models.CharField(blank=False, null=False, max_length=75)
-	longitude = models.DecimalField(max_digits=9, decimal_places=6,
+	geolocation_human = models.CharField(blank=False, null=False,
+		max_length=511, verbose_name=_('Human-Readable Geographic Location'),
+		help_text=_('Describes the location the content is related to. City, State, etc.'),
+	)
+
+	geolocation_machine_longitude = models.DecimalField(blank=True, null=True,
+		max_digits=9, decimal_places=6,
 		help_text=_('Enter the longitude coordinates of this item in signed degrees.' +
 		'You may specify a maximum of nine digits and six decimal places.'),
 	)
-	latitude = models.DecimalField(max_digits=9, decimal_places=6,
+	geolocation_machine_latitude = models.DecimalField(blank=True, null=True,
+		max_digits=9, decimal_places=6,
 		help_text=_('Enter the latitude coordinates of this item in signed degrees.' +
 		'You may specify a maximum of nine digits and six decimal places.'),
 	)
+
 	_entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
 
 	class Meta:
@@ -273,9 +288,11 @@ class GeographicLocation(models.Model):
 
 	def __str__(self):
 
-		base = self.human
-		if all([self.latitude, self.longitude]):
-			base += " - (%.2f, %.2f)" % (self.latitude, self.longitude)
+		base = self.geolocation_human
+		if all([self.geolocation_machine_latitude,
+				self.geolocation_machine_longitude]):
+			base += " - (%.2f, %.2f)" % (self.geolocation_machine_latitude,
+										self.geolocation_machine_longitude)
 		return base
 
 @python_2_unicode_compatible
@@ -286,6 +303,7 @@ class ContributingInstitution(models.Model):
 		help_text=_('The proper title of the institution which owns the physical ' +
 		'collection. e.g. University of South Carolina. South Caroliniana Library.'),
 	)
+
 	_entry = models.ForeignKey(Entry, on_delete=models.CASCADE)
 
 	class Meta:
