@@ -1,0 +1,63 @@
+body {
+	background-image: url("http://imgview.info/download/20150418/amazing-dark-background-1920x1080.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	min-height: 1500px;
+}
+
+.form-group > .controls > span.help-block,
+.form-group > .controls > small.text-muted,
+.form-group > .controls > p.help-block,
+.form-group > .controls > p.text-muted {
+
+	display: block;
+	margin-top: 10px;
+}
+
+.asteriskField {
+
+	margin-left: 5px;
+	color: red;
+}
+
+.no-gutter {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.no-padding{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.my-navbar {
+	border-radius: 0;
+	margin-bottom: 0rem;
+}
+
+/*#wizard-container {
+
+	padding: 2rem;
+ 	border: 1px ridge #fafafa;
+ 	border-radius: .75rem;
+ 	margin-top: 6rem;
+ 	margin-bottom: .75rem;
+ 	background-color: #191919;
+ 	color: white;
+}*/
+
+.top-btm-spacer {
+	margin-bottom: 1.5rem;
+	margin-top: 5rem;
+}
+
+
+@media (max-width: 768px){
+
+	.no-gutter {
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+
+}

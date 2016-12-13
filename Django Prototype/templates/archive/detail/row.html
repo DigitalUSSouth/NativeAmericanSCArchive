@@ -1,0 +1,31 @@
+{% comment %}
+  We could condense some of this by using includes etc, but
+  let's limit the abstractness....
+{% endcomment %}
+
+{% if queryset %}
+  {% with value.all as items %}
+    {% if items %}
+      {% with total=items.count %}
+      <tr>
+        <td><strong>{{field}}{{ total|pluralize }}:</strong></td>
+        <td class="text-center">
+          {% for item in items %}
+            {{item}}{% if not forloop.last %},&nbsp;{% endif %}
+          {% endfor %}
+        </td>    
+      </tr>
+      {% endwith %}
+    {% endif %}
+  {% endwith %}
+{% else %}
+  {% comment %} Why display if the field's empty? {% endcomment %}
+  {% if value %}
+  <tr>
+    <td><strong>{{field}}{{ total|pluralize }}:</strong></td>  
+    <td class="text-center">
+      {{value}}
+    </td>
+  </tr>
+  {% endif %}
+{% endif %}

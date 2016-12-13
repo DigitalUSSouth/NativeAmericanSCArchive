@@ -1,0 +1,53 @@
+{% extends 'registration/base.html' %}
+{% load staticfiles %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/archive/directory.css' %}">
+{% endblock %}
+
+{% block registration_content %}
+  <br/>
+  <div class="container">
+    <div class="list-group">
+      {% for user in users %}
+        <div class="list-group-item" id="item-{{user.pk}}">
+          <div>
+            <span class="lead pull-left">{{user.username}}</span>
+            <div class="btn-group pull-right">
+              <a href="#" class="btn btn-success account-approval-btn" id="approve-{{user.pk}}">Approve</a>
+              <a href="#" class="btn btn-danger account-deny-btn" id="deny-{{user.pk}}">Deny</a>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <p class="small">
+            <span class="pull-left">
+              Email: {{user.email}}
+            </span>
+            <span class="pull-right hidden-xs">
+              Joined: {{user.date_joined}}
+            </span>
+          </p>
+          <div class="clearfix"></div>
+        </div>
+      {% empty %}
+      <div class="alert alert-info" role="alert">
+        There are currently no users to manage at this time.
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {{block.super}}
+  <script src="{% static 'js/form_helpers/main.js' %}"></script>
+  <script src="{% static 'js/registration/account_manager.js' %}"></script>
+  <script type='text/javascript'>
+    $('.account-deny-btn').click(function(){
+      DenyAccount.callback(this);
+    });
+    $('.account-approval-btn').click(function(){
+      ApproveAccount.callback(this);
+    });    
+  </script>
+{% endblock %}

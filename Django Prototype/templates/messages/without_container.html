@@ -1,0 +1,12 @@
+{% extends 'messages/base.html' %}
+
+{% comment %} This is simply a way to remove the container that
+is by default always in the html. This is necessary in order to
+have the javascript / jquery (add_msg.js in static/js/) work
+without getting ugly. {% endcomment %}
+
+{% block messages_container %}
+	{% block message_content %}
+		{{block.super}}
+	{% endblock %}
+{% endblock %}
