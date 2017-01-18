@@ -4,13 +4,14 @@ html{
 }
 
 body{
-    margin:0 auto;
+    margin:0;
     padding:0;
     height: 100vh;
 }
 
 header{
-    display:block;
+    display:flex;
+    align-content: space-between;
     width: 1080px;
     height:100%;
     margin:0;
@@ -31,7 +32,7 @@ header{
     margin:0;
     padding:0;
     width:35%;
-    height:8rem;
+    height:auto;
 }
 
 #logo img{
@@ -133,17 +134,17 @@ footer{
     justify-content: center;
     width:100%;
     height:auto;
-    margin:3rem 0 0 0;
-    padding: 0;
+    margin:0;
+    padding:3rem;
     background-color:#f5f3f3;
 }
 
 footer p{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    margin:0 0 4rem 0;
-    padding:0;
+    align-items: center;
+    margin:0 auto;
+    padding:1rem;
     width:100%;
     height:auto;
 }
