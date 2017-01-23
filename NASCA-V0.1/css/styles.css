@@ -67,24 +67,26 @@ nav ul li a{
     margin:0;
     padding:2.5rem;
     color:grey;
-    transition:0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 nav ul li a:hover{
     text-decoration: none;
     color:white;
-    background-color:#61080B;
-}
+    background-color:#61080B; 
+} 
 
 section{
+    display: flex;
+    justify-content: center;
     width:100%;
-    height:auto;
-    margin:0;
-    padding:0;
+    height: auto;
 }
 
 #images{
     display:block;
+    width: 100%;
+    height:auto;
     margin:0;
     padding:0;
 }
@@ -148,3 +150,7 @@ footer p{
     width:100%;
     height:auto;
 }
+
+/* IFRAME TIMELINE *//* IFRAME TIMELINE *//* IFRAME TIMELINE */
+/* IFRAME TIMELINE *//* IFRAME TIMELINE *//* IFRAME TIMELINE */
+/* IFRAME TIMELINE *//* IFRAME TIMELINE *//* IFRAME TIMELINE */
