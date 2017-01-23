@@ -14,7 +14,7 @@ header{
     padding: 0;
 }
 
-.container{
+#container{
     margin: 0 auto;
     padding: 0;
     width: 100%;
@@ -127,13 +127,39 @@ section{
 }
 
 .row ul li a{
+    display: block;
     background: url('http://www.utne.com/~/media/Images/UTR/Editorial/Blogs/Community/American%20Students%20Think%20Native%20Americans%20Are%20All%20Dead/native-american%20jpg.jpg?la=en&hash=F84A2BF8CF20F2462E6EF1F8D7BB19EDB01C5285');
     background-size: cover;
+    text-decoration: none;
     width: 100%;
     height: auto;
     padding: 0;
     margin: 0;
 }
+
+.wrapper .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: 100%;
+    font-size: 8rem;
+    font-weight: bold;
+    color: #fff;
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+.wrapper:hover .text{
+    opacity:1;
+}
+
 
 footer{
     position: relative;
