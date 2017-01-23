@@ -1,155 +1,160 @@
 html{
-    padding:0;
+    padding: 0;
     margin: 0;
 }
 
 body{
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     height: 100vh;
 }
 
 header{
-    display:flex;
-    align-content: space-between;
-    width: 1080px;
-    height:100%;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 .container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin:0 auto 0 auto;
-    padding: 2rem 0 0 0;
-    width:50%;
-    height:100%;
-    transition:1s ease;
-}
-
-#logo{
-    margin:0;
-    padding:0;
-    width:35%;
-    height:auto;
-}
-
-#logo img{
-    display: inline-block;
-    margin:0;
-    padding:0;
-    width:100%;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    transition: 1s ease;
 }
 
 nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0 1rem 0;
+    margin: 0;
+    background-color: #f5f3f3;
+    z-index: 100;
+}
+
+#logo{
     display: block;
-    height:auto;
-    padding:0;
-    margin:0;
+    float: left;
+    margin: 0;
+    padding: 0;
+    max-width: 500px;
+    min-width: 300px;
+    height: auto;
+}
+
+#logo img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    max-width: 500px;
+    min-width: 320px;
 }
 
 nav ul li{
-    float:left;
-    width:9.26rem;
-    height:auto;
-    padding:0.5rem;
-    margin:0;
-    list-style:none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     text-decoration: none;
 }
 
 nav ul li a{
-    display:flex;
-    justify-content:center;
-    text-align:center;
-    text-decoration:none;
-    margin:0;
-    padding:2.5rem;
-    color:grey;
-    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    width: 83px;
+    margin: 0;
+    padding: 3rem;
+    color: grey;
+    transition: 0.3s ease-in-out;
 }
 
 nav ul li a:hover{
     text-decoration: none;
-    color:white;
-    background-color:#61080B; 
+    color: white;
+    background-color: #61080B;
+    -webkit-transform: translate(0,-5px);
+    transform: translate(0,-5px);
 } 
 
 section{
+    position: relative;
     display: flex;
     justify-content: center;
-    width:100%;
-    height: auto;
-}
-
-#images{
-    display:block;
+    align-content: center;
     width: 100%;
-    height:auto;
-    margin:0;
-    padding:0;
+    height: 75%;
+    padding: 0.5rem;
+    margin: 0;
 }
 
 .row{
-    display:inline-block;
-    width:33.333333%;
-    height:100%;
-    padding:0;
-    margin:0 auto;
-    float:left;
+    position: relative;
+    width: 33.333333%;
+    height: auto;
+    padding: 0;
+    margin: 0;
 }
 
 .row ul{
-    display:flex;
-    flex-direction: column;
     list-style: none;
+    width: 100%;
     height: 100%;
-    margin:0;
-    padding:0;
+    padding: 0;
+    margin: 0;
 }
 
-.row li{
-    text-decoration: none;
-    height:33.333333%;
-    margin:0;
-    padding:0.5rem;
+.row ul li{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 33.333333%;
+    padding: 0.5rem;
+    margin: 0;
 }
 
-.row img{
-    width:100%;
-    height:100%;
-    margin:0;
-    padding:0;
-    opacity: 1;
-    transition: opacity .5s ease;
-}
-
-.row img:hover{
-    width:100%;
-    margin:0;
-    opacity:.5;
+.row ul li a{
+    background: url('http://www.utne.com/~/media/Images/UTR/Editorial/Blogs/Community/American%20Students%20Think%20Native%20Americans%20Are%20All%20Dead/native-american%20jpg.jpg?la=en&hash=F84A2BF8CF20F2462E6EF1F8D7BB19EDB01C5285');
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
 }
 
 footer{
-    display:flex;
-    justify-content: center;
-    width:100%;
-    height:auto;
-    margin:0;
-    padding:3rem;
-    background-color:#f5f3f3;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 3rem;
+    background-color: #f5f3f3;
+    z-index: 99;
 }
 
 footer p{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:0 auto;
-    padding:1rem;
-    width:100%;
-    height:auto;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    height: auto;
 }
 
 /* IFRAME TIMELINE *//* IFRAME TIMELINE *//* IFRAME TIMELINE */
