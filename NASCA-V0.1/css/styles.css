@@ -25,11 +25,12 @@ header{
 
 nav{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     height: auto;
-    padding: 0 1rem;
-    margin: 0;
+    padding: 2rem 0 0 0;
+    margin: 0 0 1rem 0;
     background-color: #f5f3f3;
     border-bottom: 1px solid #a0a0a0;
     z-index: 100;
@@ -37,10 +38,9 @@ nav{
 
 #logo{
     display: block;
-    margin: 0 2rem;
-    padding: 0;
-    max-width: 500px;
-    min-width: 300px;
+    margin: 0;
+    padding: 0 0 1.9rem 0;
+    width: 580px;
     height: auto;
 }
 
@@ -59,7 +59,7 @@ nav ul{
     float: right;
     padding: 0;
     margin: 0;
-    width: 70%;
+    width: 69%;
 }
 
 nav ul li{
@@ -84,7 +84,8 @@ nav ul li a{
 nav ul li a:hover{
     text-decoration: none;
     color: white;
-    background-color: #cfcfcf;
+    background-color: #541312;
+    border: 1px solid white;
     -webkit-transform: translate(0,-5px);
     transform: translate(0,-5px);
     box-shadow: 0px 11px 2px -3px rgba(160, 160, 160, 1);
