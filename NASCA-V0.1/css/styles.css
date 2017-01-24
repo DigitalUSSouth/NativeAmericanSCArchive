@@ -23,13 +23,10 @@ header{
 }
 
 nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-wrap: wrap;
+    display: inline-block;
     width: 100%;
     height: auto;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem;
     margin: 0;
     background-color: #f5f3f3;
     z-index: 100;
@@ -52,12 +49,12 @@ nav{
 }
 
 nav ul{
-    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    float: right;
     padding: 0;
-    margin: 0;
+    margin: 3.5rem 0 0 0;
     max-width: 500px;
     min-width: 320px;
 }
@@ -137,29 +134,59 @@ section{
     margin: 0;
 }
 
+.wrapper h1{
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-end;
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper p{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
 .wrapper .text{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
     position: relative;
-    padding: 0;
+    padding: 1.5rem;
     margin: 0;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
+    width: 100%;
     height: 100%;
-    font-size: 8rem;
-    font-weight: bold;
     color: #fff;
     transition: 0.5s ease;
     opacity: 0;
 }
 
 .wrapper:hover .text{
-    opacity:1;
+    opacity: 1;
 }
 
+.wrapper .subText{
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-end;
+    position:absolute;
+    padding: 1rem;
+    margin: 0;
+    top:-60px;
+    left:0;
+}
 
 footer{
     position: relative;
@@ -181,6 +208,13 @@ footer p{
     padding: 1rem;
     width: 100%;
     height: auto;
+}
+
+footer .logo{
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
 }
 
 /* IFRAME TIMELINE *//* IFRAME TIMELINE *//* IFRAME TIMELINE */
