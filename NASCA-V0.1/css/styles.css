@@ -12,6 +12,7 @@ body{
 header{
     margin: 0;
     padding: 0;
+    background-color:#a0a0a0;
 }
 
 #container{
@@ -23,19 +24,20 @@ header{
 }
 
 nav{
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 0 1rem;
     margin: 0;
     background-color: #f5f3f3;
+    border-bottom: 1px solid #a0a0a0;
     z-index: 100;
 }
 
 #logo{
     display: block;
-    float: left;
-    margin: 0;
+    margin: 0 2rem;
     padding: 0;
     max-width: 500px;
     min-width: 300px;
@@ -50,13 +52,14 @@ nav{
 
 nav ul{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: flex-end;
     flex-wrap: wrap;
     float: right;
     padding: 0;
-    margin: 3.5rem 0 0 0;
-    max-width: 500px;
-    min-width: 320px;
+    margin: 0;
+    width: 70%;
 }
 
 nav ul li{
@@ -81,9 +84,10 @@ nav ul li a{
 nav ul li a:hover{
     text-decoration: none;
     color: white;
-    background-color: #61080B;
+    background-color: #cfcfcf;
     -webkit-transform: translate(0,-5px);
     transform: translate(0,-5px);
+    box-shadow: 0px 11px 2px -3px rgba(160, 160, 160, 1);
 } 
 
 section{
@@ -93,8 +97,8 @@ section{
     align-content: center;
     width: 100%;
     height: 75%;
-    padding: 0.5rem;
-    margin: 0;
+    padding: 0 1rem;
+    margin: 1rem 0;
 }
 
 .row{
@@ -132,6 +136,13 @@ section{
     height: auto;
     padding: 0;
     margin: 0;
+    border: 1px solid #cfcfcf;
+    transition: 0.5s ease-in-out;
+}
+
+.row ul li a:hover{
+    transform: translateX(5px) translateY(-2px);
+    box-shadow: -5px 5px 15px -2px rgba(80,80,80, 1);
 }
 
 .wrapper h1{
@@ -148,8 +159,8 @@ section{
     display: inline-block;
     font-size: 1.5rem;
     font-weight: normal;
-    padding: 0;
-    margin: 0;
+    padding: 0 0 0 .3rem;
+    margin: 0.5rem 0 0 0;
     width: 100%;
     height: auto;
 }
@@ -175,6 +186,7 @@ section{
 
 .wrapper:hover .text{
     opacity: 1;
+    transform: translateX(9px);
 }
 
 footer{
@@ -184,8 +196,9 @@ footer{
     width: 100%;
     height: auto;
     margin: 0;
-    padding: 3rem;
+    padding: 3.15rem;
     background-color: #f5f3f3;
+    border-top: 1px solid white;
     z-index: 99;
 }
 
