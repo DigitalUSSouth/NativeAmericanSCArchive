@@ -12,7 +12,6 @@ body{
 header{
     margin: 0;
     padding: 0;
-    background-color:#a0a0a0;
 }
 
 #container{
@@ -31,8 +30,6 @@ nav{
     height: auto;
     padding: 0 1rem 0 0;
     margin: 0;
-    background-color: #f5f3f3;
-    border-bottom: 1px solid #a0a0a0;
     z-index: 100;
 }
 
@@ -88,7 +85,7 @@ nav ul li a:hover{
     border-bottom: 3px solid white;
     -webkit-transform: translate(0,-5px);
     transform: translate(0,-5px);
-    box-shadow: 0px 11px 2px -3px rgba(160, 160, 160, 1);
+    box-shadow: 0px 7px 2px -3px rgba(160, 160, 160, 1);
 } 
 
 section{
@@ -137,13 +134,13 @@ section{
     height: auto;
     padding: 0;
     margin: 0;
-    border-left: 3px solid #9E1C20;
-    transition: 0.5s ease-in-out;
+    box-shadow: 0px 0px 0px 2px rgba(100, 100, 100, 1);
+    transition: 0.3s ease-in-out;
 }
 
 .row ul li a:hover{
-    transform: translateX(5px) translateY(-2px);
-    box-shadow: -5px 5px 7px rgba(80,80,80, 1);
+    transform: translatey(-4px);
+    box-shadow: 0px 10px 2px -5px rgba(160,160,160, 1);
 }
 
 .wrapper h1{
@@ -198,16 +195,14 @@ footer{
     width: 100%;
     height: auto;
     margin: 0;
-    padding: 1rem 0;
-    background-color: #f5f3f3;
-    border-top: 1px solid white;
+    padding: 3rem 0;
     z-index: 99;
 }
 
 #tribes{
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
@@ -223,7 +218,7 @@ footer #tribes ul{
 
 footer #tribes ul li {
     padding: 0;
-    margin: 0.7rem;
+    margin: .7rem;
     width: 50px;
     height: auto;
 }
@@ -232,9 +227,10 @@ footer p{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #a0a0a0;
     margin: 0 auto;
     padding: 1rem;
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
