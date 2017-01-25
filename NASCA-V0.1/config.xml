@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<cdm>
-		<server>http://digital.tcl.sc.edu</server>
-		<port>:81</port>
-		<api_query_base>/dmwebservices/index.php?q=</api-query-base>
-		<collection>/nasca</collection>
-	</cdm>
-	<site>
-		<home>http://sc.edu/nasca</home>
-	</site>
+  <cdm>
+    <server>http://digital.tcl.sc.edu</server>
+    <port>:81</port>
+    <api_query_base>/dmwebservices/index.php?q=</api_query_base>
+    <collection>/nasca</collection>
+  </cdm>
+  <site>
+    <home>http://sc.edu/nasca</home>
+  </site>
 </configuration>
