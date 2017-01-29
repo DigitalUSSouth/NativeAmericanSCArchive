@@ -87,8 +87,8 @@ def transcription_to_JSON(_data):
 		triple = list(filter(bool, triple))
 		# verify that there are exactly 3 elements left
 		if len(triple) is not 3:
-			transcription_error_call(lineNum,
-				"There aren't three separate elements.")
+			transcription_error_call(lineNum, lineContent,
+				"There aren't three separate elements. (" + str(len(triple)) + ")")
 		
 		# now we make sure each entry of triple is consistently formatted
 		
@@ -162,11 +162,11 @@ def json_formatted_line(_tabs, _type, _value):
 	return returnStr
 
 def transcription_error_call(_lineNum):
-	sys.exit("Error at line " + _lineNum + " of transcription\n")
+	sys.exit("Error at line " + str(_lineNum) + " of transcription\n")
 
 
-def transcription_error_call(_lineNum, extra):
-	sys.exit("Error at line " + lineNum + " of transcription\n" + extra + "\n")
+def transcription_error_call(_lineNum, _lineContent, extra):
+	sys.exit("Error at line " + str(_lineNum) + " of transcription: " + _lineContent + "\n" + extra + "\n")
 
 #RUN SCRIPT
 verify_argument()
