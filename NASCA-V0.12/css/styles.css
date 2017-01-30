@@ -128,7 +128,7 @@ section{
 
 .row ul li a{
     display: block;
-    background: url('http://www.utne.com/~/media/Images/UTR/Editorial/Blogs/Community/American%20Students%20Think%20Native%20Americans%20Are%20All%20Dead/native-american%20jpg.jpg?la=en&hash=F84A2BF8CF20F2462E6EF1F8D7BB19EDB01C5285');
+    /*background: url('');*/
     background-size: cover;
     text-decoration: none;
     width: 100%;
