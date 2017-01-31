@@ -125,8 +125,8 @@ def transcription_to_JSON(_data):
 def write_JSON(_header, _triples):
 	filename = sys.argv[1]
 	filename = filename[:-5] + ".json"
-	slashIndex = filename.rfind("/")
-	filename = filename[(slashIndex+1):]
+	#slashIndex = filename.rfind("/")
+	#filename = filename[(slashIndex+1):]
 
 	##print(filename)		#debug
 
