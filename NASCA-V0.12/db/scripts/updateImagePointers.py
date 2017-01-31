@@ -3,7 +3,8 @@
 
 #IMPORT PACKAGES
 import urllib.request, json, codecs
-import xmltodict #OPEN SOURCE PACKAGE ON GITHUB, INSTALL VIA pip install xmltodict
+import xml.etree.ElementTree as ET
+#import xmltodict #OPEN SOURCE PACKAGE ON GITHUB, INSTALL VIA pip install xmltodict
 
 
 def main():
@@ -34,7 +35,7 @@ def writeJSON(records):
 	filename = "../data/images/imagePointers.json"
 	with open(filename, 'w') as file:
 		file.write("{\n")
-		file.write("\tpointers:[\n")
+		file.write("\t\"pointers\":[\n")
 		
 		for i, rec in enumerate(records):
 			file.write(pointer_object(i, rec))
@@ -53,12 +54,21 @@ def pointer_object(_id, _triple):
 
 def getdbConfiguration():
 	global server,port,api_query_base,collection
-	with open("../config.xml") as xmlFile:
-		dbconfig = xmltodict.parse(xmlFile.read())
-		server = dbconfig['configuration']['cdm']['server']
-		port = dbconfig['configuration']['cdm']['port']
-		api_query_base = dbconfig['configuration']['cdm']['api_query_base']
-		collection = dbconfig['configuration']['cdm']['collection']
+
+	cdmconfig = ET.parse("../config.xml").getroot()
+	cdmconfig = cdmconfig.find('cdm')
+	server = cdmconfig.find('server').text
+	port = cdmconfig.find('port').text
+	api_query_base = cdmconfig.find('api_query_base').text
+	collection = cdmconfig.find('collection').text
+	
+	#......old code using non-standard package.....
+	#with open("../config.xml") as xmlFile:
+		#dbconfig = xmltodict.parse(xmlFile.read())
+		#server = dbconfig['configuration']['cdm']['server']
+		#port = dbconfig['configuration']['cdm']['port']
+		#api_query_base = dbconfig['configuration']['cdm']['api_query_base']
+		#collection = dbconfig['configuration']['cdm']['collection']
 
 
 #RUN SCRIPT

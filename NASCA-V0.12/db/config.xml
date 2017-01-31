@@ -6,7 +6,10 @@
     <api_query_base>/dmwebservices/index.php?q=</api_query_base>
     <collection>/nasca</collection>
   </cdm>
-  <site>
+  <frontend>
     <home>http://www.duss.sc.edu/nasca/html</home>
-  </site>
+  </frontend>
+  <backend>
+  	<python_version>3.5.2</python_version>
+  </backend>
 </configuration>
