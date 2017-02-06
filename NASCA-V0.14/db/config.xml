@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <cdm>
+    <server>http://digital.tcl.sc.edu</server>
+    <port>:81</port>
+    <api_query_base>/dmwebservices/index.php?q=</api_query_base>
+    <collection>/nasca</collection>
+  </cdm>
+  <frontend>
+    <home>http://www.duss.sc.edu/nasca/html</home>
+  </frontend>
+  <backend>
+  	<python_version>3.5.2</python_version>
+  </backend>
+</configuration>
