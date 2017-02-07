@@ -2,16 +2,26 @@
 
 //fade in
 $(document).ready(function() {
-  $('body').fadeIn("slow");
-  $("#thumb1").css("background","url(../images/native_1.jpg)")
-  $("#thumb2").css("background","url(../images/native_2.jpg)")
-  $("#thumb3").css("background","url(../images/native_3.jpg)")
-  $("#thumb4").css("background","url(../images/native_4.jpg)")
-  $("#thumb5").css("background","url(../images/native_5.jpg)")
-  $("#thumb6").css("background","url(../images/native_6.jpg)")
-  $("#thumb7").css("background","url(../images/native_7.jpg)")
-  $("#thumb8").css("background","url(../images/native_8.jpg)")
-  $("#thumb9").css("background","url(../images/native_9.jpg)")
+  //set EVERYTHING that will fade in to invisible
+  $('header').css("display","none");
+  $('section').css("display","none");
+  $('footer').css("display","none");  
+
+  //set thumbnails
+  var image = "";
+  for(var i = 1; i <= 9; i++) {
+    image = "#thumb" + i.toString();
+    url = "url(../images/native_"+i.toString()+".jpg)"
+    $(image).css("background",url);//http://digital.tcl.sc.edu/utils/getthumbnail/collection/nasca/id/" + pointers[i] + ")");
+  }
+
+  //fade everything in
+  $('header').fadeIn("slow", function() {
+    $('section').fadeIn("slow", function() {
+   	  $('footer').fadeIn("slow");
+    });
+  });
+
 });
 
 //for old browsers -->
