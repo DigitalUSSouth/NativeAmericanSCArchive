@@ -2,7 +2,7 @@
 
 //fade in
 $(document).ready(function() {
-  //set EVERYTHING that will fade in to invisible
+  //set invisible EVERYTHING that will fade in
   var fadeIns = ['header', 'section', 'footer'];
   for(var i = 0; i < fadeIns.length; i++) {
   	$(fadeIns[i]).css("display","none");

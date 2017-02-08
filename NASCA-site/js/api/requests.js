@@ -1,6 +1,6 @@
 <!-- //for old browsers
 
-var SITE_ROOT = "file:///home/titus/Github/NativeAmericanSCArchive/NASCA-site";
+var SITE_ROOT = "http://localhost:8000";
 
 function createXmlHttpRequestObject() {
   var xmlHttp;
@@ -38,7 +38,7 @@ function getXML(URL) {
   } else {
   	response = request.responseText;
   }
-  return fullURL;
+  return response;
 }
 /*
 function getJSON(URL) {
