@@ -2,6 +2,7 @@
 <configuration>
   <cdm>
     <server>http://digital.tcl.sc.edu</server>
+    <!-- add this server to 'var SITE_ROOT' in /js/api/requests.js as well -->
     <port>:81</port>
     <api_query_base>/dmwebservices/index.php?q=</api_query_base>
     <collection>/nasca</collection>

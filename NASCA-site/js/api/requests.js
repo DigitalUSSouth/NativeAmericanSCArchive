@@ -26,8 +26,8 @@ function createXmlHttpRequestObject() {
   }
 }
 
-//receives xml from file as string
-function getXML(URL) {
+//receives xml object from file as string
+function getXMLobject(URL) {
   var fullURL = SITE_ROOT + URL;
   var request = createXmlHttpRequestObject();
   request.open('GET',fullURL,false);
@@ -36,13 +36,24 @@ function getXML(URL) {
   if(request.status === 404) {
   	response = "NOT FOUND";
   } else {
-  	response = request.responseText;
+  	response = request.responseXML;
   }
   return response;
+}
+
+//inputs: object XMLDocument,
+//        string tag (tag to search for)
+//output: finds first tag of argument name and passes string value
+function getXMLtag(object, tag) {
+  
 }
 /*
 function getJSON(URL) {
 
+}
+
+function getJSONtag(object, tag) {
+  
 }
 */
 //for old browsers -->
