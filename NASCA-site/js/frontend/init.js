@@ -3,10 +3,11 @@
 //fade in
 $(document).ready(function() {
   //set EVERYTHING that will fade in to invisible
-  $('header').css("display","none");
-  $('section').css("display","none");
-  $('footer').css("display","none");  
-
+  var fadeIns = ['header', 'section', 'footer'];
+  for(var i = 0; i < fadeIns.length; i++) {
+  	$(fadeIns[i]).css("display","none");
+  }
+  
   //set thumbnails
   var image = "";
   for(var i = 1; i <= 9; i++) {

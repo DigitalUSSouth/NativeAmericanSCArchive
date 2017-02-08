@@ -11,3 +11,4 @@ Include/
 static/
 settings.py
 migrations/
+/NASCA-site/nbproject/private/

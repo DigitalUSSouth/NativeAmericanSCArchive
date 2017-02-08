@@ -7,9 +7,15 @@
     <collection>/nasca</collection>
   </cdm>
   <frontend>
-    <home>http://www.duss.sc.edu/nasca/html</home>
+    <url>
+      <home>http://www.duss.sc.edu/nasca/html</home>
+      <timeline></timeline>
+      <oralhistory></oralhistory>
+      <video></video>
+    </url>
   </frontend>
   <backend>
-  	<python_version>3.5.2</python_version>
+  	<python version="3.5.2"></python>
+  	<php version="7.0.13"></php>
   </backend>
 </configuration>

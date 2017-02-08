@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>API Testing</title>
+</head>
+<body>
+  <div id='text'>
+    Hello there.
+  </div>
+
+  <script type='text/javascript' src='../js/api/requests.js'></script>
+  <script type='text/javascript'>
+  	var xml = getXML('/db/config.xml');
+    document.getElementById('text').innerHTML = xml;
+  </script>
+</body>
+</html>
