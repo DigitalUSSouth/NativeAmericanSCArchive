@@ -1,8 +1,10 @@
 /* Asterix selects all html elements */
-*{
+
+* {
     padding: 0;
     margin: 0;
 }
+
 
 /*
 colors{
@@ -14,11 +16,136 @@ colors{
 }
 */
 
-.gradient-wrapper{
+.gradient-wrapper {
     height: 100vh;
-    background: #F7F7F7; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(top, #AEADB8, #F7F7F7); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(top, #AEADB8, #F7F7F7); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(top, #AEADB8, #F7F7F7); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(top, #AEADB8, #F7F7F7); /* Standard syntax (must be last) */
+    background: #F7F7F7;
+    /* For browsers that do not support gradients */
+    /*background: -webkit-linear-gradient(bottom, #F7F7F7, #AEADB8);*/
+    /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(bottom, #F7F7F7, #AEADB8);*/
+    /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(bottom, #F7F7F7, #AEADB8);*/
+    /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(bottom, #F7F7F7, #AEADB8);*/
+    /* Standard syntax (must be last) */
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #840004;
+    border-radius: 0px;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem 0rem 0rem 3.5rem;
+}
+
+.logo img {
+    width: 200px;
+    height: 60px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.tabs ul {
+    display: flex;
+    list-style: none;
+    padding-right: 2rem;
+}
+
+.tabs ul li {
+    float: left;
+    text-align: center;
+    padding:4rem 0.1rem 0.5rem 0.1rem;
+}
+
+.tabs ul li a {
+    display: block;
+    width: 100px;
+    padding: 0.5rem 0rem;
+    font-family: 'Roboto Slab', serif;
+    text-transform:capitalize;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #F7F7F7;
+    transition: 0.5s ease;
+}
+
+.tabs ul li a:hover{
+    text-decoration: none;
+    transform: translateY(-5px);
+}
+
+.featured{
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #840004;
+    padding: 2rem 0rem 0rem 2rem;
+}
+
+.card{
+    display: block;
+    padding: 0;
+    margin: 15px;
+    width: 350px;
+    height: auto;
+    background-color: #3B3A3E;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.card a{
+    position: absolute;
+    top: 125px;
+    left: -5px;
+    padding: 0.5rem;
+    background-color: #840004;
+    color: #F7F7F7;
+    font-family: 'Roboto Slab', serif;
+    transition: 0.6s ease;
+}
+
+.card a:hover{
+    text-decoration: none;
+    transform: translateX(-10px);
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card img{
+    width: 100%;
+    border: 0.35rem solid #840004;
+}
+
+.col-md-4 p{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 170px;
+    color: #F7F7F7;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    padding: 1rem;
+    margin: 0;
+}
+
+.copyright{
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    color: #840004;
+    float: right;
+    margin: 1rem 3rem 0rem 0rem;
 }
