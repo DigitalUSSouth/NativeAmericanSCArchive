@@ -6,13 +6,18 @@
     <port>:81</port>
     <api_query_base>/dmwebservices/index.php?q=</api_query_base>
     <collection>/nasca</collection>
+    <functions>
+    </functions>
   </cdm>
   <frontend>
     <url>
       <home>http://www.duss.sc.edu/nasca/html</home>
-      <timeline></timeline>
-      <oralhistory></oralhistory>
-      <video></video>
+      <audio>http://www.duss.sc.edu/nasca/html/audio.html</audio>
+      <video>http://www.duss.sc.edu/nasca/html/video.html</video>
+      <map>http://www.duss.sc.edu/nasca/html/map.html</map>
+      <timeline>http://www.duss.sc.edu/nasca/html/timeline.html</timeline>
+      <census>http://www.duss.sc.edu/nasca/html/census.html</census>
+      <tribes>http://www.duss.sc.edu/nasca/html/tribes.html</tribes>
     </url>
   </frontend>
   <backend>
