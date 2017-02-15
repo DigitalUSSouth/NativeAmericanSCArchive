@@ -16,25 +16,23 @@ colors{
 }
 */
 
+/* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
+/* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
+/* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
+/* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
+/* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
+
 .gradient-wrapper {
     height: 100vh;
-    background: #F7F7F7;
-    /* For browsers that do not support gradients */
-    /*background: -webkit-linear-gradient(bottom, #F7F7F7, #AEADB8);*/
-    /* For Safari 5.1 to 6.0 */
-    /*background: -o-linear-gradient(bottom, #F7F7F7, #AEADB8);*/
-    /* For Opera 11.1 to 12.0 */
-    /*background: -moz-linear-gradient(bottom, #F7F7F7, #AEADB8);*/
-    /* For Firefox 3.6 to 15 */
-    /*background: linear-gradient(bottom, #F7F7F7, #AEADB8);*/
-    /* Standard syntax (must be last) */
+    background: #840004;
 }
 
 .header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: #840004;
+    background-color: #3B3A3E;
+    border-bottom: 0.5rem solid #1E1F1E;
     border-radius: 0px;
 }
 
@@ -58,13 +56,13 @@ colors{
 .tabs ul {
     display: flex;
     list-style: none;
-    padding-right: 2rem;
+    padding: 0rem 2rem 0rem 0rem;
 }
 
 .tabs ul li {
     float: left;
     text-align: center;
-    padding:4rem 0.1rem 0.5rem 0.1rem;
+    padding: 4rem 0.1rem 0.5rem 0.1rem;
 }
 
 .tabs ul li a {
@@ -72,7 +70,7 @@ colors{
     width: 100px;
     padding: 0.5rem 0rem;
     font-family: 'Open Sans', sans-serif;
-    text-transform:capitalize;
+    text-transform: uppercase;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -80,53 +78,55 @@ colors{
     transition: 0.5s ease;
 }
 
-.tabs ul li a:hover{
+.tabs ul li a:hover {
     text-decoration: none;
     transform: translateY(-5px);
+    background-color: #1E1F1E;
 }
 
-.featured{
+.featured {
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 5px;
-    color: #840004;
-    padding: 2rem 0rem 0rem 2rem;
+    color: #F7F7F7;
+    padding: 1.5rem 0rem 0rem 2rem;
 }
 
-.card{
+.card {
     display: block;
     padding: 0;
     margin: 15px;
     width: 350px;
     height: auto;
-    background-color: #3B3A3E;
+    background-color: #1E1F1E;
     transition: 0.3s ease-in-out;
-    border-radius: 5px 5px 0px 0px;
+    border-bottom: 0.4rem solid #F7F7F7;
+    border-radius: 0px 0px 0px 0px;
 }
 
-.card a{
+.card a {
     position: absolute;
-    top: 125px;
-    left: -10px;
+    top: 285px;
+    right: -10px;
     padding: 0.5rem;
-    background-color: #840004;
-    color: #F7F7F7;
+    background-color: #F7F7F7;
+    color: #840004;
     font-family: 'Roboto Slab', serif;
     transition: 0.6s ease;
 }
 
-.card a:hover{
+.card a:hover {
     text-decoration: none;
-    transform: translateX(-10px);
+    transform: translateX(5px);
 }
 
-.card img{
+.card img {
     width: 100%;
-    border: 0.35rem solid #840004;
+    height: 139px;
 }
 
-.col-md-4 p{
+.col-md-4 p {
     display: flex;
     align-items: center;
     width: 100%;
@@ -138,26 +138,33 @@ colors{
     margin: 0;
 }
 
-.audioTitle{
-    font-size: 3.5rem;
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+
+.audioTitle {
+    font-size: 3rem;
     font-family: 'Roboto Slab', serif;
-    color: #840004;
+    color: #AEADB8;
 }
 
-audio{
+audio {
     margin: 1rem 0rem 0rem 0rem;
 }
 
-p.textAudio{
-    color: #1E1F1E;
+p.textAudio {
+    color: #F7F7F7;
     font-family: 'Open Sans', sans-serif;
+    padding-left: 0;
     height: 100%;
 }
 
-.copyright{
+.copyright {
     text-align: center;
     font-family: 'Roboto Slab', serif;
-    color: #840004;
+    color: #F7F7F7;
     float: right;
     margin: 1rem 3rem 0rem 0rem;
 }
