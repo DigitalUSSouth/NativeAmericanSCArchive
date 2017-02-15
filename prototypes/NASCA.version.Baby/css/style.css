@@ -88,7 +88,7 @@ colors{
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
     font-size: 12px;
-    letter-spacing: 5px;
+    letter-spacing: 11px;
     color: #F7F7F7;
     padding: 1.5rem 0rem 0rem 2rem;
 }
@@ -118,7 +118,7 @@ colors{
 
 .card a:hover {
     text-decoration: none;
-    transform: translateX(5px);
+    color: #1E1F1E;
 }
 
 .card img {
