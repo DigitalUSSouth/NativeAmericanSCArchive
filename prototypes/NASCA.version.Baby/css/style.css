@@ -121,10 +121,6 @@ colors{
     transform: translateX(-10px);
 }
 
-.card:hover{
-    transform: translateY(-5px);
-}
-
 .card img{
     width: 100%;
     border: 0.35rem solid #840004;
