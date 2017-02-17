@@ -1,4 +1,4 @@
-<!-- //for older versions of html to ignore javascript
+//<!-- //for older versions of html to ignore javascript
 
 /*!
  * Lightbox v2.9.0

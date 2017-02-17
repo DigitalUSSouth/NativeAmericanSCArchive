@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 def getdbConfiguration():
 	global server,port,api_query_base,collection
 
-	cdmconfig = ET.parse("../config.xml").getroot()
+	cdmconfig = ET.parse("../../config.xml").getroot()
 	cdmconfig = cdmconfig.find('cdm')
 	server = cdmconfig.find('server').text
 	port = cdmconfig.find('port').text
@@ -48,6 +48,10 @@ def writeJSON(records, total):
 		
 		for i, rec in enumerate(records):
 			file.write(create_pointer_object(i, rec))
+			if not i==total-1:
+				file.write(",\n")
+			else:
+				file.write("\n")
 
 		file.write("]}")
 
@@ -56,7 +60,7 @@ def create_pointer_object(_id, _triple):
 	returnStr = "\t{\n\t\t\"id\":" + str(_id) +\
 						",\"pointer\":" + str(_triple[0]) +\
 						",\"type\":\"" + _triple[1] +\
-						"\",\"name\":\"" + _triple[2] + "\"\n\t},\n"
+						"\",\"name\":\"" + _triple[2] + "\"\n\t}"
 
 	return returnStr
 

@@ -1,4 +1,4 @@
-<!-- //for old browsers
+//<!-- //for old browsers
 
 var SITE_ROOT = "http://localhost:8000";
 

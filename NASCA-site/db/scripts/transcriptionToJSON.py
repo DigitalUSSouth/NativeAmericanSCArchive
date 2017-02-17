@@ -5,7 +5,11 @@ import docx
 
 
 def verify_argument():
-	filename = sys.argv[1]
+	filename = ""
+	try:
+		filename = sys.argv[1]
+	except Exception:
+		pass
 	PATH = Path("./" + filename)
 
 	if not filename:						# if file argument isn't passed
@@ -139,6 +143,10 @@ def write_JSON(_header, _triples):
 		
 		for i in range(0,len(_triples)):
 			file.write(json_formatted_text_object(i, _triples[i]))
+			if not i==len(_triples)-1:
+				file.write(",\n")
+			else:
+				file.write("\n")
 
 		file.write("\t]\n}")
 
@@ -150,7 +158,8 @@ def json_formatted_text_object(_id, _triple):
 	returnStr += json_formatted_line(3, "speaker", _triple[0])
 	returnStr += json_formatted_line(3, "text_bit", _triple[2])
 	returnStr += json_formatted_line(3, "timecode", _triple[1])
-	returnStr += "\t\t},\n"
+	returnStr = returnStr[:-2] + "\n"
+	returnStr += "\t\t}"
 	return returnStr
 
 

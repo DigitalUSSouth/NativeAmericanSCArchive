@@ -1,4 +1,4 @@
-<!-- //for old browsers
+//<!-- //for old browsers
 
 /*
 globals.js is intended to read in all necessary
@@ -18,7 +18,7 @@ var url_video = '';
 var url_map = '';
 var url_timeline = '';
 var url_census = '';
-var url_tribes = ''
+var url_tribes = '';
 
 function populateCdmGlobals() {
   var xml = getXmlObject('/config.xml');
