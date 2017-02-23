@@ -1,6 +1,6 @@
 //<!-- //for old browsers
 
-var SITE_ROOT = "http://localhost:8000";
+var SITE_ROOT = "http://www.duss.sc.edu/nasca";
 
 function createXmlHttpRequestObject() {
   var xmlHttp;
@@ -81,8 +81,9 @@ function getNodeText(node) {
   return node.childNodes[0].nodeValue;
 }
 /*
-function getJSON(URL) {
-
+//receives xml object from file
+function getJsonObject(URL) {
+  var fullURL = SITE_ROOT + URL;
 }
 
 function getJSONtag(object, tag) {

@@ -2,7 +2,6 @@
 <configuration>
   <cdm>
     <server>http://digital.tcl.sc.edu</server>
-    <!-- add this server to 'var SITE_ROOT' in /js/api/requests.js as well -->
     <port>:81</port>
     <api_query_base>/dmwebservices/index.php?q=</api_query_base>
     <collection>/nasca</collection>
@@ -11,13 +10,14 @@
   </cdm>
   <frontend>
     <url>
-      <home>http://www.duss.sc.edu/nasca/html</home>
-      <audio>http://www.duss.sc.edu/nasca/html/audio.html</audio>
-      <video>http://www.duss.sc.edu/nasca/html/video.html</video>
-      <map>http://www.duss.sc.edu/nasca/html/map.html</map>
-      <timeline>http://www.duss.sc.edu/nasca/html/timeline.html</timeline>
-      <census>http://www.duss.sc.edu/nasca/html/census.html</census>
-      <tribes>http://www.duss.sc.edu/nasca/html/tribes.html</tribes>
+      <home>http://www.duss.sc.edu/nasca</home>
+      <!-- add this url to 'var SITE_ROOT' in /js/api/requests.js as well -->
+      <audio>http://www.duss.sc.edu/nasca/audio.html</audio>
+      <video>http://www.duss.sc.edu/nasca/video.html</video>
+      <map>http://www.duss.sc.edu/nasca/map.html</map>
+      <timeline>http://www.duss.sc.edu/nasca/timeline.html</timeline>
+      <census>http://www.duss.sc.edu/nasca/census.html</census>
+      <tribes>http://www.duss.sc.edu/nasca/tribes.html</tribes>
     </url>
   </frontend>
   <backend>
