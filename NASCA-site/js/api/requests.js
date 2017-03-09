@@ -1,22 +1,43 @@
+/* global url_home */
+
 //<!-- //for old browsers
 
-var SITE_ROOT = "http://www.duss.sc.edu/nasca";
-
-function createXmlHttpRequestObject() {
+/*
+ * 
+ * @param {boolean} cross - is cross-domain
+ * @returns {ActiveXObject|XMLHttpRequest|Boolean}
+ */
+function createXmlHttpRequestObject(cross) {
+  if(cross === undefined) {
+    cross = false;
+  }
+  
   var xmlHttp;
 
-  if(window.ActiveXObject) {
-    try {
-      xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-    } catch(e) {
-    	xmlHttp = false;
+  if(cross) {
+    if(window.XDomainRequest) {
+      try {
+        xmlHttp = new window.XDomainRequest();
+      } catch(e) {
+        xmlHttp = false;
+      }
+    } else {
+      xmlHttp = new XMLHttpRequest();
     }
   } else {
-  	try {
-  		xmlHttp = new XMLHttpRequest();
-  	} catch(e) {
-  		xmlHttp = false;
-  	}
+    if(window.ActiveXObject) {
+      try {
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch(e) {
+        xmlHttp = false;
+      }
+    } else {
+      try {
+        xmlHttp = new XMLHttpRequest();
+      } catch(e) {
+        xmlHttp = false;
+      }
+    }
   }
 
   if(!xmlHttp) {
@@ -28,16 +49,39 @@ function createXmlHttpRequestObject() {
 
 //receives xml object from file
 function getXmlObject(URL) {
-  var fullURL = SITE_ROOT + URL;
-  var request = createXmlHttpRequestObject();
-  request.open('GET',fullURL,false);
-  request.send(null);
-  var response;
-  if(request.status === 404) {
-  	response = "NOT FOUND";
-  } else {
-  	response = request.responseXML;
+  //if url contains any of site root, then it is not cross domain
+  var cross = false;
+  if(!URL.includes(url_home)) {
+    cross = true;
   }
+  
+  var request = createXmlHttpRequestObject(cross);
+  var response;
+  
+  if(window.ActiveXObject || window.XDomainRequest) {
+    request.onload = function(){
+      response = request.responseXML;
+    };
+    request.open('GET',URL,false);
+    request.send(null);
+  } else {
+    request.open('GET',URL,false);
+    request.onreadystatechange = function(){
+      if(request.readyState == 4) {
+        if(request.status == 200) {
+          response = request.responseXML;
+        } else {
+          var warn = 'NOT FOUND\n' + URL;
+          response = warn;
+          alert(warn);
+        }
+      }
+    };
+    alert("before");
+    request.send(null);
+    alert("after");
+  }
+  
   return response;
 }
 
@@ -80,12 +124,13 @@ function getXmlNode(xml, element, num) {
 function getNodeText(node) {
   return node.childNodes[0].nodeValue;
 }
-/*
+
 //receives xml object from file
 function getJsonObject(URL) {
   var fullURL = SITE_ROOT + URL;
+  return "heyah"
 }
-
+/*
 function getJSONtag(object, tag) {
   
 }
