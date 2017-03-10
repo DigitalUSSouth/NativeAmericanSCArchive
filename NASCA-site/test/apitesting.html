@@ -9,18 +9,18 @@
     Hello there.
   </div>
 
-  <script type='text/javascript' src='../js/api/requests.js'></script>
+  <script type='text/javascript' src='../js/api/requests/xmlhttp.js'></script>
   <script type='text/javascript' src='../js/api/globals.js'></script>
   <script type='text/javascript' src='../js/api/cdm_functions.js'></script>
   <script type='text/javascript'>
     //try functions here and then print outputs to 'text'
     populateCdmGlobals();
-    var asXML = getCdmApiVersion('xmlz');
+    var asXML = getCdmApiVersion('xml');
     var response = 'nothing';
     //if(asXML) {
     //  response = 'something';
     //}
-    document.getElementById('text').innerHTML = asXML;
+    document.getElementById('text').innerHTML = response;
   </script>
 </body>
 </html>

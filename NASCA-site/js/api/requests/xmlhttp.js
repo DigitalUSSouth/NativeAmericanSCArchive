@@ -1,6 +1,5 @@
-/* global url_home */
-
 //<!-- //for old browsers
+/* global url_home */
 
 /*
  * 
@@ -67,8 +66,8 @@ function getXmlObject(URL) {
   } else {
     request.open('GET',URL,false);
     request.onreadystatechange = function(){
-      if(request.readyState == 4) {
-        if(request.status == 200) {
+      if(request.readyState === 4) {
+        if(request.status === 200) {
           response = request.responseXML;
         } else {
           var warn = 'NOT FOUND\n' + URL;
@@ -125,14 +124,4 @@ function getNodeText(node) {
   return node.childNodes[0].nodeValue;
 }
 
-//receives xml object from file
-function getJsonObject(URL) {
-  var fullURL = SITE_ROOT + URL;
-  return "heyah"
-}
-/*
-function getJSONtag(object, tag) {
-  
-}
-*/
 //for old browsers -->
