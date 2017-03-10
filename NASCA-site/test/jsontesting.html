@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>API Testing</title>
+  <title>JSON Testing</title>
 </head>
 <body>
   <div id='text'>
@@ -14,8 +14,7 @@
     var jsondata = '{"title": "Lula Samuel Henrietta Beck. Tape 1; side 1. August 11, 1982. Catawba Indian Nation.","description": "","audio_file": "LB-Aug-1982_96kbs.mp3","text":[{"id": "0","speaker": "TB","text_bit": "You chopped his fingers off. Just why did you do that Mrs. Beck [Laughs] ? ","timecode": "00:00:00.000"},{"id": "1","speaker": "LB","text_bit": "Well we were out doors playing. ","timecode": "00:00:07.000"},{"id": "2","speaker": "TB","text_bit": "Uh-huh [yes]. ","timecode": "00:00:08.000"},{"id": "3","speaker": "LB","text_bit": "My daddy and them had cut some of the big old trees down. ","timecode": "00:00:09.000"},{"id": "4","speaker": "TB","text_bit": "Uh-huh [yes]. ","timecode": "00:00:11.000"}]}';
     
     var jsonobject = JSON.parse(jsondata);
-    document.getElementById('text').innerHTML = jsonobject.title
-            + '<br>text id 0 text_bit<br>' + jsonobject.text[0].speaker;
+    document.getElementById('text').innerHTML = jsonobject.text.length;
     //
   </script>
 </body>

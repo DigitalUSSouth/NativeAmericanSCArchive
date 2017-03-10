@@ -23,7 +23,6 @@ colors{
 /* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
 
 .gradient-wrapper {
-    height: 100vh;
     background: #840004;
 }
 
@@ -158,17 +157,28 @@ audio {
     margin: 1rem 0rem 0rem 0rem;
 }
 
-p.textAudio {
-    color: #F7F7F7;
-    font-family: 'Open Sans', sans-serif;
-    padding-left: 0;
-    height: 100%;
-}
-
 .copyright {
     text-align: center;
     font-family: 'Roboto Slab', serif;
     color: #F7F7F7;
     float: right;
     margin: 1rem 3rem 0rem 0rem;
+}
+
+.transcript {
+    color: #F7F7F7;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 0;
+    height: 100%;
+}
+
+.ts-bit {
+    width: 80%;
+    color: #F7F7F7;
+    background: #840004;
+}
+
+#jp_container_1 {
+    width: 40%;
+    margin: 0 auto;
 }
