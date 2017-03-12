@@ -76,9 +76,9 @@ function getXmlObject(URL) {
         }
       }
     };
-    alert("before");
+    //alert("before");
     request.send(null);
-    alert("after");
+    //alert("after");
   }
   
   return response;

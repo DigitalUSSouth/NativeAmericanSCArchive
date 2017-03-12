@@ -8,8 +8,8 @@
   </cdm>
   <frontend>
     <url>
-      <!--<home>http://www.duss.sc.edu/nasca</home>-->
-      <home>http://localhost:8000</home>
+      <home>http://www.duss.sc.edu/nasca</home>
+      <!--<home>http://localhost:8000</home>-->
       <!-- add this url to 'var SITE_ROOT' in /js/api/requests.js as well -->
       <audio>http://www.duss.sc.edu/nasca/oral_histories.html</audio>
       <video>http://www.duss.sc.edu/nasca/video.html</video>
