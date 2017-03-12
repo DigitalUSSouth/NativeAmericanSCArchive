@@ -147,8 +147,8 @@ colors{
 /* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
 /* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
 
-.audioTitle {
-    font-size: 3rem;
+.title {
+    font-size: 2rem;
     font-family: 'Roboto Slab', serif;
     color: #AEADB8;
 }

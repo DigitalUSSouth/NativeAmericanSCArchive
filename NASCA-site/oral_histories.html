@@ -71,7 +71,7 @@
           <!-- === Audio Title === -->
           <!-- === Audio Title === -->
           <!-- === Audio Title === -->
-          <div class="audioTitle">Leading Title</div>
+          <div class="title" id="title">Transcript Title</div>
           
           <!-- === JPlayer === -->
           <!-- === JPlayer === -->
@@ -124,7 +124,6 @@
           <!-- === Cards === -->
           <!-- === Cards === -->
           <!-- === Cards === -->
-          <button onclick="highlight()">Highlight</button>
           <div class="transcript" id="transcript">
               Transcript goes here.
           </div>
@@ -134,7 +133,7 @@
           <!-- === Copyright === -->
           <div class="row">
             <div class="col-md-12">
-              <p class="copyright" id="copyright">NASCA &copy; 2017</p>
+              <p class="copyright" id="copyright">NASCA &copy; 2016</p>
             </div>
           </div>
         </div>
@@ -145,25 +144,8 @@
     <script type="text/javascript" src="js/init/oral_histories.js"></script>
     <!--<script type="text/javascript" src="js/init/fade.js"></script>-->
     <script type="text/javascript">
-      var state = true;
-      function highlight() {
-        //$('#ts0').toggle('highlight');
-        if(state) {
-          $('#ts0').animate({
-            backgroundColor: "#ffff60",
-            color: "#787788"
-          }, 800);
-        } else {
-          $('#ts0').animate({
-            backgroundColor: "#840004",
-            color: "#f7f7f7"
-          }, 800);
-        }
-        state = !state;
-      }
-      
       var d = new Date();
-      document.getElementById("copyright").innerHTML = "NASCA &copy; " + d.getFullYear();
+      document.getElementById('copyright').innerHTML = 'NASCA &copy; ' + d.getFullYear();
     </script>
     
   </body>
