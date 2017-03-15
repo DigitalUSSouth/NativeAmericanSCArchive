@@ -14,7 +14,7 @@ var cdm_collection = '';
 
 var BASE = '';
 
-var url_home = 'http://www.duss.sc.edu/nasca'; //root
+var url_home = 'http://localhost:8000'; //root
 var url_audio = '';
 var url_video = '';
 var url_map = '';

@@ -6,10 +6,14 @@ function getJsonObject(URL) {
   var fullURL = SITE_ROOT + URL;
   return "heyah"
 }
+
 /*
-function getJSONtag(object, tag) {
+ * Take in a parsed json object
+ * replace the value at a certain key with a new value
+ * return the new parsed json object
+ *
+function updateJsonTag(jsonobject,key,newValue) {
   
-}
-*/
+}*/
 
 //for old browsers -->

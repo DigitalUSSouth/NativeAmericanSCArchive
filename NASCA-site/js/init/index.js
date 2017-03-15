@@ -3,7 +3,7 @@
 //init stuff for index.html
 $(document).ready(function() {
   //populate global variables with info from configuration file
-  populateCdmGlobals();
+  //populateCdmGlobals();
   populateUrlGlobals();
 
   //set thumbnails
