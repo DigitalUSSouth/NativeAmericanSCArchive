@@ -68,7 +68,7 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
   
   var currentTime = event.jPlayer.status.currentTime;
   
-  var currentStepJson = lastStepJson;
+  var currentStepJson = jQuery.extend(true, {}, lastStepJson);
   currentStepJson.lastTime = currentTime;
   
   /*
@@ -77,7 +77,6 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
   if(currentTime > (lastStepJson.lastTime + 0.75) || currentTime < (lastStepJson.lastTime - 0.75)) {
     //unhighlight lastStepJson.lastHighlightedId and
     //any lastStepJson.additionalHighlightedIds
-    
     for(var i = 0; i <= lastStepJson.additionalHighlightedIds; i++) {
       highlight((divIdRoot + (lastStepJson.lastHighlightedId + i).toString()),'off');
     }
@@ -94,7 +93,7 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
     /*
      * If i is still zero at this point, the player must have been stopped and restarted.
     */
-    if(i === 0 && currentTime >= timecodeToString(transcriptAsJson.text[i].timecode)) {
+    if(i === 0 && currentTime >= timecodeToInt(transcriptAsJson.text[i].timecode)) {
       highlight((divIdRoot + i.toString()),'on');
       currentStepJson.lastHighlightedId = i;
       
