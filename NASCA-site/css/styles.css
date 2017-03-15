@@ -27,6 +27,9 @@ colors{
 }
 
 .header {
+    position: fixed;
+    height: 100px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -38,12 +41,12 @@ colors{
 .logo {
     display: flex;
     justify-content: flex-start;
-    padding: 2rem 0rem 0rem 3.5rem;
+    padding: 1rem 0rem 0rem 3rem;
 }
 
 .logo img {
-    width: 200px;
-    height: 60px;
+    width: 180px;
+    height: 50px;
 }
 
 .tabs {
@@ -61,7 +64,7 @@ colors{
 .tabs ul li {
     float: left;
     text-align: center;
-    padding: 4rem 0.1rem 0.5rem 0.1rem;
+    padding: 2rem 0.1rem 0.5rem 0.1rem;
 }
 
 .tabs ul li a {
@@ -81,6 +84,10 @@ colors{
     text-decoration: none;
     transform: translateY(-5px);
     background-color: #1E1F1E;
+}
+
+.container {
+  padding-top: 100px;
 }
 
 .featured {
