@@ -9,15 +9,18 @@
     Hello there.
   </div>
 
-  <audio controls>
-  	<source src="../db/data/oralhistory/LB-Aug-1982_96kbs.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-  </audio>
-
-  <script type='text/javascript' src='../js/api/requests.js'></script>
+  <script type='text/javascript' src='../js/api/requests/xmlhttp.js'></script>
+  <script type='text/javascript' src='../js/api/globals.js'></script>
+  <script type='text/javascript' src='../js/api/cdm_functions.js'></script>
   <script type='text/javascript'>
     //try functions here and then print outputs to 'text'
-    document.getElementById('text').innerHTML = 'API testing';
+    populateCdmGlobals();
+    var asXML = getCdmApiVersion('xml');
+    var response = 'nothing';
+    //if(asXML) {
+    //  response = 'something';
+    //}
+    document.getElementById('text').innerHTML = response;
   </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "NASCA Timeline",
+          "text": "<p>A decision tree walks into a random forest and couldn't decide where to go!</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": ""
+        },
+        "text": {
+          "headline": "",
+          "text": "<p></p>"
+        }
+      },
+      {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": ""
+        },
+        "text": {
+          "headline": "",
+          "text": "<p></p>"
+        }
+      }
+    ]
+}

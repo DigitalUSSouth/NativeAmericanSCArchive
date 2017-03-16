@@ -8,20 +8,25 @@
     <!-- metadata tags here -->
     <meta name="description" content="Native American South Carolina Archive"/>
     <meta name="author" content="Matthew Jendrasiak, Vassil Kurktchiev, Siddhartha Pathak"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700" rel="stylesheet">
-    
-    <!-- CSS & BootStrap -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/jplayer.blue.monday.css"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     
     <!-- minified jquery, jplayer, bootstrap, etcetera -->
+    <script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
+    <!--script type="text/javascript" src="js/jquery/external/jquery.js"></script-->
+    <script type="text/javascript" src="js/jquery/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+    
+    <!-- CSS & BootStrap -->
+    <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui/jquery-ui.min.css"/>
+    <!--link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.structure.min.css"/>
+    <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.theme.min.css"/-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jplayer.blue.monday.css"/>
+    
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700" rel="stylesheet"/>
     
   </head>
   
@@ -47,6 +52,7 @@
               <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="oral_histories.html">ORAL HISTORIES</a></li>
+                <li><a href="#">IMAGES</a></li>
                 <li><a href="#">VIDEO</a></li>
                 <li><a href="timeline.html">TIMELINE</a></li>
                 <li><a href="#">MAP</a></li>
@@ -66,7 +72,7 @@
           <!-- === Audio Title === -->
           <!-- === Audio Title === -->
           <!-- === Audio Title === -->
-          <div class="audioTitle">Leading Title</div>
+          <div class="title" id="title">Transcript Title</div>
           
           <!-- === JPlayer === -->
           <!-- === JPlayer === -->
@@ -119,16 +125,8 @@
           <!-- === Cards === -->
           <!-- === Cards === -->
           <!-- === Cards === -->
-          <div class="row">
-            <div class="col-md-4">
-              <p class="textAudio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae.</p>
-            </div>
-            <div class="col-md-4">
-              <p class="textAudio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae.   Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex.</p>
-            </div>
-            <div class="col-md-4">
-              <p class="textAudio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae.   Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex mollitia obcaecati vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum laborum in culpa ducimus minima similique sint consequatur ex.</p>
-            </div>
+          <div class="transcript" id="transcript">
+              Transcript goes here.
           </div>
           
           <!-- === Copyright === -->
@@ -136,7 +134,7 @@
           <!-- === Copyright === -->
           <div class="row">
             <div class="col-md-12">
-              <p class="copyright">NASCA &copy; 2017</p>
+              <p class="copyright" id="copyright">NASCA &copy; 2016</p>
             </div>
           </div>
         </div>
@@ -144,11 +142,13 @@
     </div>
     
     <!-- Local Javascript, Jquery, Ajax -->
-    <script type="text/javascript" src="js/frontend/jplayer.js"></script>
+    <script type="text/javascript" src="js/api/requests/xmlhttp.js"></script>
+    <script type="text/javascript" src="js/api/globals.js"></script>
+    <script type="text/javascript" src="js/init/oral_histories.js"></script>
     <script type="text/javascript" src="js/init/fade.js"></script>
     <script type="text/javascript">
       var d = new Date();
-      document.getElementById("copyright").innerHTML = "NASCA &copy; " + d.getFullYear();
+      document.getElementById('copyright').innerHTML = 'NASCA &copy; ' + d.getFullYear();
     </script>
     
   </body>
