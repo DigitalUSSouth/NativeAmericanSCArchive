@@ -44,7 +44,7 @@ colors{
     padding: 1rem 0rem 0rem 3rem;
 }
 
-.logo img {
+.logo a img {
     width: 180px;
     height: 50px;
 }
@@ -87,7 +87,7 @@ colors{
 }
 
 .container {
-  padding-top: 100px;
+  padding-top: 110px;
 }
 
 .featured {
@@ -169,7 +169,7 @@ audio {
     font-family: 'Roboto Slab', serif;
     color: #F7F7F7;
     float: right;
-    margin: 1rem 3rem 0rem 0rem;
+    padding-bottom: 15px;
 }
 
 .transcript {

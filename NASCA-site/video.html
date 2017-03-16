@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <title>NASCA</title>
+    
+    <!-- metadata tags here -->
+    <meta name="description" content="Native American South Carolina Archive"/>
+    <meta name="author" content="Matthew Jendrasiak, Vassil Kurktchiev, Siddhartha Pathak"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <!-- minified jquery, jplayer, bootstrap, etcetera -->
+    <script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    
+    <!-- CSS & BootStrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="css/lightbox.css"/>
+    
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700" rel="stylesheet"/>
+    
+  </head>
+  <body>
+    
+    <!-- === Gradient-Wrapper === -->
+    <!-- === Gradient-Wrapper === -->
+    <!-- === Gradient-Wrapper === -->
+    <div class="gradient-wrapper">
+      <!-- === Header === -->
+      <!-- === Header === -->
+      <!-- === Header === -->
+      <header class="header">
+        <!-- === Navigation === -->
+        <!-- === Navigation === -->
+        <!-- === Navigation === -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="logo"><a href="index.html"><img src="img/NASCA_logo.png"></a></div>
+          </div>
+          <div class="col-md-8">
+            <div class="tabs">
+              <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="oral_histories.html">ORAL HISTORIES</a></li>
+                <li><a href="#">IMAGES</a></li>
+                <li><a href="video.html">VIDEO</a></li>
+                <li><a href="timeline.html">TIMELINE</a></li>
+                <li><a href="map.html">MAP</a></li>
+                <li><a href="#">CENSUS</a></li>
+                <li><a href="#">TRIBES</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <!-- === Section === -->
+      <!-- === Section === -->
+      <!-- === Section === -->
+      <section>
+        <div class="container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/3hM0TogHKEI" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div>
+
+    <!-- Local Javascript, Jquery, Ajax -->
+    <script type="text/javascript" src="js/api/requests/xmlhttp.js"></script>
+    <script type="text/javascript" src="js/api/globals.js"></script>
+    <script type="text/javascript" src="js/init/index.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+    <script type="text/javascript" src="js/init/fade.js"></script>
+    <script type="text/javascript">
+      var d = new Date();
+      document.getElementById("copyright").innerHTML = "NASCA &copy; " + d.getFullYear();
+    </script>
+
+  </body>
+  
+</html>

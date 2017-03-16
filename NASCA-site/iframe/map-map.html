@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.33.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.33.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+</style>
+<div id='map'></div>
+<script>
+//defining the MAPBOX map specifics here
+mapboxgl.accessToken = 'pk.eyJ1IjoidGhlY3J5cHRpeCIsImEiOiJjaXBmb2ZhaWswMDBmdnFtamM1OWY2ajY1In0.EZ6bbL_Yc-oX8ZLykZzmFg';
+// 34.083767, -81.031824
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/thecryptix/cj0chts9d003k2rnoahk8r0nn',
+    center: [-81.031824, 34.083767],
+    zoom: 7
+});
+// Data is embedded in here for now; Can be in a seperate file later (JSON)
+// Icons and content can be changed and played with
+map.on('load', function () {
+
+    // Add a layer showing the places.
+    map.addLayer({
+        "id": "places",
+        "type": "symbol",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": [{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h1>Relative Heading</h1><p><a href=\"http://nativesouthcarolina.org/\" target=\"_blank\" title=\"Opens in a new window\">NACSA</a> Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text </p>",
+                        "icon": "music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-82.384805, 34.834276]
+                    }
+                },
+{
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h1>Relative Heading 2</h1><p><a href=\"http://nativesouthcarolina.org/\" target=\"_blank\" title=\"Opens in a new window\">NACSA</a> Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text </p>",
+                        "icon": "theatre"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-82.384805, 34.434276]
+                    }
+                }, {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "<h1>Relative Heading 3</h1><p><img src=\"http://www.duss.sc.edu/nasca/img/native_1.jpg\" alt=\"sample image\" style=\"width:404px;height:228px;\"> </p>",
+                        "icon": "theatre"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-81.019109, 34.944212]
+                    }
+                }]
+            }
+        },
+        "layout": {
+            "icon-image": "{icon}-15",
+            "icon-allow-overlap": true
+        }
+    });
+});
+
+
+// When a click event occurs near a place, open a popup at the location of
+// the feature, with description HTML from its properties.
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['places'] });
+
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    var popup = new mapboxgl.Popup()
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(feature.properties.description)
+        .addTo(map);
+});
+
+// Use the same approach as above to indicate that the symbols are clickable
+// by changing the cursor style to 'pointer'.
+map.on('mousemove', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['places'] });
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+});
+</script>
+
+</body>
+</html>
