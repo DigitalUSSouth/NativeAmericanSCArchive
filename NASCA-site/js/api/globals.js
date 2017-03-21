@@ -14,13 +14,7 @@ var cdm_collection = '';
 
 var BASE = '';
 
-var url_home = 'http://localhost:8000'; //root
-var url_audio = '';
-var url_video = '';
-var url_map = '';
-var url_timeline = '';
-var url_census = '';
-var url_tribes = '';
+var url_home = 'http://www.duss.sc.edu'; //root
 
 function populateCdmGlobals() {
   var xml = getXmlObject(url_home + '/config.xml');
@@ -30,16 +24,6 @@ function populateCdmGlobals() {
   cdm_collection = getXmlTag(xml,'collection');
   
   BASE = cdm_server + cdm_port + cdm_api_query_base;
-}
-
-function populateUrlGlobals() {
-  var xml = getXmlObject(url_home + '/config.xml');
-  url_audio = getXmlTag(xml,'audio');
-  url_video = getXmlTag(xml,'video');
-  url_map = getXmlTag(xml,'map');
-  url_timeline = getXmlTag(xml,'timeline');
-  url_census = getXmlTag(xml,'census');
-  url_tribes = getXmlTag(xml,'tribes');
 }
 
 //for old browsers -->

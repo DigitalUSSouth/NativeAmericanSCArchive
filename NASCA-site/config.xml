@@ -7,17 +7,9 @@
     <collection>/nasca</collection>
   </cdm>
   <frontend>
-    <url>
-      <!--<home>http://www.duss.sc.edu/nasca</home>-->
-      <home>http://localhost:8000</home>
-      <!-- add this url to 'var SITE_ROOT' in /js/api/requests.js as well -->
-      <audio>http://www.duss.sc.edu/nasca/oral_histories.html</audio>
-      <video>http://www.duss.sc.edu/nasca/video.html</video>
-      <map>http://www.duss.sc.edu/nasca/map.html</map>
-      <timeline>http://www.duss.sc.edu/nasca/timeline.html</timeline>
-      <census>http://www.duss.sc.edu/nasca/census.html</census>
-      <tribes>http://www.duss.sc.edu/nasca/tribes.html</tribes>
-    </url>
+    <home>http://www.duss.sc.edu/nasca</home>
+    <!--home>http://localhost:8000</home-->
+    <!-- add this url to 'var SITE_ROOT' in /js/api/globals.js as well -->
   </frontend>
   <backend>
   	<python version="3.5.2"></python>
