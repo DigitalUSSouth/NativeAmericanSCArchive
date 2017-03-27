@@ -61,7 +61,7 @@ function changePage(page) {
             case 'home':
               break;
             case 'interviews':
-              oralHistories();
+              launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
               break;
             case 'images':
               break;

@@ -91,7 +91,7 @@ def transcription_to_JSON(_data):
 		triple = list(filter(bool, triple))
 		# verify that there are exactly 3 elements left
 		if len(triple) is not 3:
-			transcription_error_call(lineNum, lineContent,
+			transcription_error_call(str(lineNum)+" out of "+str(len(_data)), lineContent,
 				"There aren't three separate elements. (" + str(len(triple)) + ")")
 		
 		# now we make sure each entry of triple is consistently formatted

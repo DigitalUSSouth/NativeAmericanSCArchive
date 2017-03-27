@@ -7,8 +7,8 @@
     <collection>/nasca</collection>
   </cdm>
   <frontend>
-    <home>http://www.duss.sc.edu/nasca</home>
-    <!--home>http://localhost:8000</home-->
+    <!--<home>http://www.duss.sc.edu/nasca</home>-->
+    <home>http://localhost:8000</home>
     <!-- add this url to 'var SITE_ROOT' in /js/api/globals.js as well -->
   </frontend>
   <backend>
