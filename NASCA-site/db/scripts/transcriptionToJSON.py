@@ -25,8 +25,9 @@ def verify_argument():
 	document = docx.Document(filename)
 	data = []
 	for paragraph in document.paragraphs:
-		data.append(paragraph.text)
-		#print(repr(paragraph.text))	#debug
+		if paragraph.text is not "":
+			data.append(paragraph.text)
+			#print(repr(paragraph.text))	#debug
 	
 	# pass data onto transcription_to_JSON
 	transcription_to_JSON(data)
@@ -38,37 +39,45 @@ def transcription_to_JSON(_data):
 	jsAudioFile = "Default JSON Audio File.mp3"
 	header = [jsTitle, jsDescription, jsAudioFile]
 
-	isInHeader = False
+	#isInHeader = False
 
 	index = 0
-	while not isInHeader:
-		if _data[index] is not "":
-			isInHeader = True
-		index += 1
-	index -= 1
+	#while not isInHeader:
+	#	if _data[index] is not "":
+	#		isInHeader = True
+	#	index += 1
+	#index -= 1
 
 	# now we're in the header, if there was any white space or
 	# new lines before it
 
 	header[0] = _data[index]
-	index += 1
-	header[1] = _data[index]
-	index += 1
-	header[2] = _data[index]
-
-	if((header[0] is "") | (header[2] is "")):
+	if ("\t" in header[index]) | ("   " in header[index]):
 		sys.exit("THERE WAS A PROBLEM PARSING THE HEADER:\n" +
-					"One or many of the header requirements look empty.")
-	elif(header[2][-4:] != ".mp3"):
+					"One or many of the header requirements look empty or are containing tabs and triple spaces.")
+	index += 1
+
+	header[1] = _data[index]
+	if ("\t" in header[index]) | ("   " in header[index]):
+		sys.exit("THERE WAS A PROBLEM PARSING THE HEADER:\n" +
+					"One or many of the header requirements look empty or are containing tabs and triple spaces.")
+	index += 1
+
+	header[2] = _data[index]
+	if ("\t" in header[index]) | ("   " in header[index]):
+		sys.exit("THERE WAS A PROBLEM PARSING THE HEADER:\n" +
+					"One or many of the header requirements look empty or are containing tabs and triple spaces.")
+	
+	if(header[2][-4:] != ".mp3"):
 		sys.exit("THE AUDIO FILE LISTED (" + header[2] +
 					") IN THE TRANSCRIPTION IS NOT .mp3")
 
 	index += 1
-	while isInHeader:
-		if _data[index] is not "":
-			isInHeader = False
-		index += 1
-	index -= 1
+	#while isInHeader:
+	#	if _data[index] is not "":
+	#		isInHeader = False
+	#	index += 1
+	#index -= 1
 	# 'current' index is the first line of the actual transcription
 	
 	# reallocate data to only include the transcription so that the first
