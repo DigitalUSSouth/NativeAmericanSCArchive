@@ -121,7 +121,18 @@ def transcription_to_JSON(_data):
 		second = tempTC[6:8]
 		millis = tempTC[9:]
 		tempTC = hour + ":" + minute + ":" + second + "." + millis
-		triple[1] = tempTC
+
+		lastTime = 0
+		try:
+			lastTime = timecodeToInt(triples[-1][1],0)
+		except IndexError:
+			pass
+		
+		if timecodeToInt(tempTC, 0) >= lastTime:
+			triple[1] = tempTC
+		else:
+			transcription_error_call(str(lineNum)+" out of "+str(len(_data)), lineContent,
+				"Timecode is not sequential.")
 		# FOR DIALOGUE/TEXT
 		# add a space to the end of the text line
 		triple[2] += " "
@@ -185,6 +196,16 @@ def transcription_error_call(_lineNum):
 
 def transcription_error_call(_lineNum, _lineContent, extra):
 	sys.exit("Error at line " + str(_lineNum) + " of transcription: " + _lineContent + "\n" + extra + "\n")
+
+
+def timecodeToInt(_timecode, _offset):
+	timeInt = _offset
+	#print(_timecode)
+	h, m, s = _timecode.split(':')
+	s, ms = s.split('.')
+	timeInt += (int(h) * 3600) + (int(m) * 60) + int(s)
+	#print(timeInt)
+	return timeInt
 
 #RUN SCRIPT
 verify_argument()
