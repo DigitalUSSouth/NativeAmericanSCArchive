@@ -14,10 +14,11 @@ var cdm_collection = '';
 
 var BASE = '';
 
-var url_home = 'http://localhost:8000'; //root
+var url_home = '';
 
-function populateCdmGlobals() {
-  var xml = getXmlObject(url_home + '/config.xml');
+function populateGlobals() {
+  var xml = getXmlObject('../../config.xml');
+  url_home = getXmlTag(xml,'home');
   cdm_server = getXmlTag(xml,'server');
   cdm_port = getXmlTag(xml,'port');
   cdm_api_query_base = getXmlTag(xml,'api_query_base');

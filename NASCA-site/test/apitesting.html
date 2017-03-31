@@ -8,19 +8,20 @@
   <div id='text'>
     Hello there.
   </div>
-
+  <script type='text/javascript' src='../js/jquery/jquery-3.1.1.min.js'></script>
   <script type='text/javascript' src='../js/api/requests/xmlhttp.js'></script>
+  <script type='text/javascript' src='../js/api/requests/json.js'></script>
   <script type='text/javascript' src='../js/api/globals.js'></script>
   <script type='text/javascript' src='../js/api/cdm_functions.js'></script>
   <script type='text/javascript'>
     //try functions here and then print outputs to 'text'
     populateCdmGlobals();
-    var asXML = getCdmApiVersion('xml');
-    var response = 'nothing';
+    //var data = getCdmApiVersion('json');
+    //var response = 'nothing';
     //if(asXML) {
     //  response = 'something';
     //}
-    document.getElementById('text').innerHTML = response;
+    document.getElementById('text').innerHTML = url_home;
   </script>
 </body>
 </html>

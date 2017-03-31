@@ -5,7 +5,7 @@ var currentPage = 'home';
 //init stuff for index.html
 function init_index() {
   //populate global variables with info from configuration file
-  //populateCdmGlobals();
+  populateGlobals();
   
   //set invisible EVERYTHING that will fade in
   var fadeIns = ['.header', '.content', '.copyright'];
