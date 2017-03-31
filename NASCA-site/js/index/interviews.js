@@ -1,45 +1,57 @@
+/* global modal */
+
 //<!-- //for old browsers
 
 //init stuff for oral_histories.html
-function launch_interview(filename) {
-  //grab json
-  var datalocation = url_home + '/db/data/interviews/';
-  var jsonobject = getJsonObject(datalocation + filename);
+function launch_interview_modal(filename) {
+  //put html in modal
+  $.get({
+    url: url_home + '/html/interviews-template.html',
+    success: function(data) {
+      $('.modal-body').html(data);
+      
+      //grab json
+      var datalocation = url_home + '/db/data/interviews/';
+      var jsonobject = getJsonObject(datalocation + "transcripts/json/minified/" + filename);
 
-  //set title
-  document.getElementById('title').innerHTML = jsonobject.title;
+      //set title
+      document.getElementById('title').innerHTML = jsonobject.title;
 
-  var lastStepJson = {"lastTime": 0.0,"lastBruteForce": 0.0,"lastUpdate": 0.0,"lastHighlightedId": -1,"additionalHighlightedIds": 0};
+      var lastStepJson = {"lastTime": 0.0,"lastBruteForce": 0.0,"lastUpdate": 0.0,"lastHighlightedId": -1,"additionalHighlightedIds": 0};
 
-  //set up jplayer with appropriate media
-  $('#jquery_jplayer_1').jPlayer({
-    ready: function() {
-      $(this).jPlayer('setMedia', {
-        title: jsonobject.title,
-        mp3: (datalocation + jsonobject.audio_file)
+      //set up jplayer with appropriate media
+      $('#jquery_jplayer_1').jPlayer({
+        ready: function() {
+          $(this).jPlayer('setMedia', {
+            title: jsonobject.title,
+            mp3: (datalocation + "compressed/" + jsonobject.audio_file)
+          });
+        },
+        timeupdate: function(event) {
+          lastStepJson = updateTranscript(event, jsonobject, '#ts', lastStepJson);
+        },
+        cssSelectorAncestor: '#jp_container_1',
+        swfPath: '../js',
+        supplied: 'mp3',
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true,
+        remainingDuration: true,
+        toggleDuration: true
       });
-    },
-    timeupdate: function(event) {
-      lastStepJson = updateTranscript(event, jsonobject, '#ts', lastStepJson);
-    },
-    cssSelectorAncestor: '#jp_container_1',
-    swfPath: '../js',
-    supplied: 'mp3',
-    useStateClassSkin: true,
-    autoBlur: false,
-    smoothPlayBar: true,
-    keyEnabled: true,
-    remainingDuration: true,
-    toggleDuration: true
+
+      //put all json in text field
+      var htmloutput = '';
+      for(var i = 0; i < jsonobject.text.length; i++) {
+        htmloutput += '<p class="ts-bit" id="ts' + i + '">' + jsonobject.text[i].speaker + ':<br>';
+        htmloutput += jsonobject.text[i].text_bit + '<br></p>';
+      }
+      document.getElementById('transcript').innerHTML = htmloutput;
+    }
   });
   
-  //put all json in text field
-  var htmloutput = '';
-  for(var i = 0; i < jsonobject.text.length; i++) {
-    htmloutput += '<p class="ts-bit" id="ts' + i + '">' + jsonobject.text[i].speaker + ':<br>';
-    htmloutput += jsonobject.text[i].text_bit + '<br></p>';
-  }
-  document.getElementById('transcript').innerHTML = htmloutput;
+  $('.modal').css('display','block');
 
 };
 

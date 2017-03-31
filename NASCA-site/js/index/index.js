@@ -60,8 +60,8 @@ function changePage(page) {
           switch(page) {
             case 'home':
               break;
-            case 'interviews':
-              launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
+            case 'interviews-list':
+              //launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
               break;
             case 'images':
               break;
