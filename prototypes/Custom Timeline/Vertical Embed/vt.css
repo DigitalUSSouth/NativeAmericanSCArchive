@@ -17,6 +17,7 @@ body {
 .intro {
   background: #ffffff;
   font-size: 5rem;
+  font-weight: bold;
   padding: 70px 0;
   height: 50px;
   margin: 0 auto;
@@ -106,6 +107,22 @@ time {
   font-weight: bold;
   margin-bottom: 8px;
 }
+
+
+/* bootstrap accordian */
+#accordion {
+	position: fixed;
+	bottom: 5px;
+	border-radius:none !important;
+	padding-left:10px;
+	padding-right:10px;
+	z-index:1030;
+	margin-bottom: 0px;
+}
+.opacity{
+
+}
+
 
 
 /* EFFECTS */
