@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  <cdm>
-    <server>http://digital.tcl.sc.edu</server>
-    <port>:81</port>
-    <api_query_base>/dmwebservices/index.php?q=</api_query_base>
-    <collection>/nasca</collection>
-  </cdm>
+  <databases>
+  	<cdm>
+      <server>http://digital.tcl.sc.edu</server>
+      <port>:81</port>
+      <api_query_base>/dmwebservices/index.php?q=</api_query_base>
+      <collection>/nasca</collection>
+    </cdm>
+    <youtube>
+    </youtube>
+  </databases>
   <frontend>
     <!--<home>http://www.duss.sc.edu/nasca</home>-->
     <home>http://localhost:8000</home>
-    <!-- add this url to 'var SITE_ROOT' in /js/api/globals.js as well -->
   </frontend>
   <backend>
   	<python version="3.5.2"></python>
-  	<php version="7.0.13"></php>
+  	<php version="7.0.15"></php>
   </backend>
 </configuration>
