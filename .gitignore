@@ -6,5 +6,5 @@
 *.mts
 *.mpg
 /NASCA-site/nbproject/private/
-/NASCA-site/config.xml
+config.xml
 NASCA_Contact.xlsx
