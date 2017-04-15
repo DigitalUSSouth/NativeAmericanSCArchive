@@ -17,7 +17,7 @@ var BASE = '';
 var url_home = '';
 
 function populateGlobals() {
-  var xml = getXmlObject('../../config.xml');
+  var xml = getXmlObject('config.xml');
   url_home = getXmlTag(xml,'home');
   cdm_server = getXmlTag(xml,'server');
   cdm_port = getXmlTag(xml,'port');
