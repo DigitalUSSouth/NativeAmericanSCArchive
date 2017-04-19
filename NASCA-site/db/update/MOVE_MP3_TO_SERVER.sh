@@ -3,7 +3,7 @@ PORT=$1
 ADDR=$2
 WHO=$3
 REL="../data/interviews/compressed/"
-FILES=("Earl-Robbins-May-1987" "George-Landrum-Mar-22-1983_Tape1" "George-Landrum-Mar-22-1983_Tape2" "George-Landrum-Mar-22-1983_Tape3" "Georgia-Harris-Mar-19-1980_Tape2" "Georgia-Harris-Mar-20-1980" "Lula-Samuel-Henrietta-Beck-Aug-11-1982")
+FILES=("George-Landrum-Mar-22-1983_Tape2" "Georgia-Harris-Mar-19-1980_Tape2")
 PRE="Catawba_"
 SUF="_64kbs.mp3"
 for f in "${FILES[@]}"; do

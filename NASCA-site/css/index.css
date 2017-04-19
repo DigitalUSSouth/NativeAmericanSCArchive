@@ -1,10 +1,11 @@
-/* Asterix selects all html elements*/
-
-* {
-    padding: 0;
-    margin: 0;
+html, body {
+  padding: 0;
+  margin: 0;
+  top:0px;
+  left:0px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
-
 
 /*
 colors{
@@ -177,34 +178,10 @@ colors{
   margin: 0;
 }
 
-/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
-/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
-/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
-/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
-/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
-
-.title {
-    font-size: 2rem;
-    font-family: 'Roboto Slab', serif;
-    color: #AEADB8;
-}
-
-.transcript {
-    color: #F7F7F7;
-    font-family: 'Open Sans', sans-serif;
-    padding-left: 0;
-    height: 100%;
-}
-
-.ts-bit {
-    width: 80%;
-    color: #F7F7F7;
-}
-
 /* IFRAMES */
 
-.iframe {
+.map-frame {
   margin: auto;
-  width: 80%;
-  height: 80vh;
+  width: 90%;
+  height: 85vh;
 }

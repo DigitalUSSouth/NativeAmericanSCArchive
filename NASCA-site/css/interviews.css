@@ -1,0 +1,23 @@
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+/* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS *//* AUDIO HTML CSS */
+
+.title {
+    font-size: 2rem;
+    font-family: 'Roboto Slab', serif;
+    color: #AEADB8;
+}
+
+.transcript {
+    color: #F7F7F7;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 0;
+    height: 100%;
+}
+
+.ts-bit {
+    width: 80%;
+    color: #F7F7F7;
+}

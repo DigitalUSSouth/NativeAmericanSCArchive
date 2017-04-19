@@ -1,0 +1,15 @@
+{
+  "type": "Feature",
+  "geometry":
+  {
+    "type": "Point",
+    "coordinates": [0.000000, 0.000000]
+  },
+  "properties":
+  {
+    "description": "Sample Description",
+    "marker-color": "#990000",
+    "marker-size": "medium",
+    "marker-symbol": ""
+  }
+}

@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" type="text/css" href="css/jplayer.blue.monday.css"/>
     <link rel="stylesheet" type="text/css" href="css/modal.css"/>
+    <link rel="stylesheet" type="text/css" href="css/interviews.css"/>
     
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700" rel="stylesheet"/>
@@ -67,7 +68,7 @@
       <!-- === Header === -->
       <header class="header">
         <div class="logo">
-          <a href="index.html"><img src="img/NASCA_logo.png"></a>
+          <a href="index.php"><img src="img/NASCA_logo.png"></a>
         </div>
         <!-- === Navigation === -->
         <!-- === Navigation === -->

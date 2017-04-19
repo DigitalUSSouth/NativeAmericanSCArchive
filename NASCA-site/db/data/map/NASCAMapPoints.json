@@ -6,7 +6,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "",
-        "long": -80.770182,
+        "lng": -80.770182,
         "lat": 34.719727
     },
     {
@@ -16,7 +16,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/wWh5bveJAo8",
-        "long": -79.707045,
+        "lng": -79.707045,
         "lat": 34.381568
     },
     {
@@ -26,7 +26,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "",
-        "long": -79.242887,
+        "lng": -79.242887,
         "lat": 33.278699
     },
     {
@@ -36,17 +36,17 @@
         "description": "",
         "img_embed": "http://www.scencyclopedia.org/sce/wp-content/uploads/2016/04/Catawba-People-in-Rock-Hill-SC-300x226.jpg",
         "yt_embed": "",
-        "long": -79.242887,
+        "lng": -79.242887,
         "lat": 33.278699
     },
     {
         "site_name": "Sewee Shell Ring",
         "web_link": "https://www.fs.usda.gov/recarea/scnfs/recarea/?recid=47387",
         "web_link_hover": "",
-        "description": "Sample Description",
+        "description": "",
         "img_embed": "",
         "yt_embed": "",
-        "long": -79.609097,
+        "lng": -79.609097,
         "lat": 33.001073
     },
     {
@@ -56,7 +56,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "",
-        "long": -80.43783,
+        "lng": -80.43783,
         "lat": 33.53896
     },
     {
@@ -66,7 +66,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/-eQIZqofvwg",
-        "long": -81.244916,
+        "lng": -81.244916,
         "lat": 33.013573
     },
     {
@@ -76,7 +76,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "",
-        "long": -81.048125,
+        "lng": -81.048125,
         "lat": 33.999332
     },
     {
@@ -86,7 +86,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/HqBThdC4zAE",
-        "long": -80.776078,
+        "lng": -80.776078,
         "lat": 32.139857
     },
     {
@@ -96,7 +96,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "",
-        "long": -83.068118,
+        "lng": -83.068118,
         "lat": 34.764566
     }
 ]}

@@ -1,94 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset=utf-8 />
+  <meta charset=utf-8>
   <title></title>
   <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
-  <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+  <script src='../../js/jquery/jquery-3.1.1.min.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet'>
+  <link href='../../css/map.css' rel='stylesheet'>
   <style>
-    body { margin:0; padding:0; }
-    .map { position:absolute; top:0; bottom:0; width:100%; }
+    .leaflet-popup-tip-container {
+      width:600px;
+      height:450px;
+    }
   </style>
 </head>
 <body>
 <!-- built on top of sample example at mapbox.com -->
 <div id='map-tooltips' class='map'> </div>
-<script>
-L.mapbox.accessToken = 'pk.eyJ1IjoidGhlY3J5cHRpeCIsImEiOiJjaXBmb2ZhaWswMDBmdnFtamM1OWY2ajY1In0.EZ6bbL_Yc-oX8ZLykZzmFg';
-var mapTooltips = L.mapbox.map('map-tooltips', 'mapbox.light')
-  .setView([33.583767, -81.031824], 8);
-var myLayer = L.mapbox.featureLayer().addTo(mapTooltips);
-var geojson = generateGeoJson(parent.url_home + '/db/data/map/NASCAMapPoints.json');
-myLayer.setGeoJSON(geojson);
-mapTooltips.scrollWheelZoom.enable();
-
-function generateGeoJson(_dataFile) {
-	//get json data from file
-	var data = parent.getJsonObject(_dataFile);
-
-	var jsonString = '[';
-
-	//iteratively add to json string
-	for(var i = 0; i < data.features.length; i++) {
-		jsonString += '{"type":"Feature","geometry":{"type":"Point","coordinates":[' + data.features[i].long + ',' + data.features[i].lat +
-						']},"properties":{"title":"[' + data.features[i].long + ',' + data.features[i].lat + ']",';
-		//add description
-		jsonString += '"description":"<h1 class=\\"map-point-heading\\"><a href=\\"' + data.features[i].web_link +
-						'\\" target=\\"_blank\\" title=\\"' + data.features[i].web_link_hover + '\\">' + data.features[i].site_name + '</a></h1>",';
-		jsonString += '"marker-color":"#990000","marker-size":"medium","marker-symbol":""}}';
-		if(i != data.features.length-1) {
-			jsonString += ','
-		}
-	}
-	jsonString += ']';
-
-	var jsonObj = JSON.parse(jsonString);
-	return jsonObj;
-/*	[
-  {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-82.384805, 34.834276]
-    },
-    properties: {
-      title: 'Tooltip1',
-      description: "<h1>Relative Heading</h1><p><a href=\"http://nativesouthcarolina.org/\" target=\"_blank\" title=\"Opens in a new window\">NACSA</a> Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text </p>",
-      'marker-color': '#990000',
-      'marker-size': 'large',
-      'marker-symbol': ''
-    }
-  },
-{
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-81.019109, 34.944212]
-    },
-    properties: {
-      title: 'Tooltip2',
-      description:  "<h1>Relative Heading 2</h1><p><img src=\"http://www.duss.sc.edu/nasca/img/native_1.jpg\" alt=\"sample image\" style=\"width:404px;height:228px;\"> </p>",
-      'marker-color': '#990000',
-      'marker-size': 'small',
-      'marker-symbol': ''
-    }
-  },
-  {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [-82.384805, 34.434276]
-    },
-    properties: {
-      title: 'Tooltip3',
-      description: "<h1>Relative Heading 3</h1><p><a href=\"http://nativesouthcarolina.org/\" target=\"_blank\" title=\"Opens in a new window\">NACSA</a> Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text </p>",
-      'marker-color': '#990000',
-      'marker-size': 'medium',
-      'marker-symbol': ''
-    }
-  }
-];*/
-}
-</script>
+<script src='../../js/index/map.js'></script>
 </body>
 </html>
