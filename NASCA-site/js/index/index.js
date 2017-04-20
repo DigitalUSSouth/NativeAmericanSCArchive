@@ -20,8 +20,11 @@ function init_index() {
   document.getElementById('copyright').innerHTML = "NASCA &copy; " + d.getFullYear();
   
   //get home page content
-  $.get({
-    url: SITE_ROOT + '/html/home.html',
+  $.ajax({
+    type:'POST',
+    url: SITE_ROOT + '/html/home.php',
+    async: true,
+    dataType: 'html',
     success: function(data) {
       $('.content').html(data);
     }
@@ -54,8 +57,11 @@ function changePage(page) {
     $('.content').fadeOut(750,function(){
       //callback when fadeOut complete
       //set html content
-      $.get({
-        url: SITE_ROOT + '/html/' + page + '.html',
+      $.ajax({
+        type:'POST',
+        url: SITE_ROOT + '/html/' + page + '.php',
+        async: true,
+        dataType: 'html',
         success: function(data) {
           //callback when html retrieved
           $('.content').html(data);
@@ -84,6 +90,7 @@ function changePage(page) {
         }
       });
     });
+      
     currentPage = page;
   }
 }

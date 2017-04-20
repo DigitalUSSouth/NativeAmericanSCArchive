@@ -30,14 +30,18 @@ colors{
   position: fixed;
   min-height: 80px;
   width: 100%;
-  background-color: #3B3A3E;
+  background: #3B3A3E; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #1E1F1E, #3B3A3E); /* Standard syntax */
   border-bottom: 0.4rem solid #1E1F1E;
   border-radius: 0px;
-  z-index: 1;
+  z-index: 5;
 }
 
 .logo {
-  width: 25%;
+  width: 30%;
   float: left;
 }
 

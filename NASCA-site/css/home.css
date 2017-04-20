@@ -3,8 +3,7 @@
 
 .book {
   width: 100%;
-  max-height: 90vh;
-  min-height: 200px;
+  min-height: 400px;
   display: block;
 }
 
@@ -16,10 +15,12 @@
   display: flex;
   flex-wrap: wrap;
   width: 60%;
+  height: 100%;
 }
 
 #home_right {
   width: auto;
+  height: 100%;
 }
 
 .home_card {
@@ -30,9 +31,10 @@
   width: 215px;
   height: 300px;
   overflow: hidden;
-  background: #000;
+  background: #1E1F1E;
   transition: 0.2s ease-in-out;
   background-clip: content-box;
+  z-index: 1;
 }
 
 .home_card:hover {
@@ -40,7 +42,7 @@
 }
 
 .home_card img {
-  z-index: 1;
+  z-index: 3;
   position: absolute;
   height: 100%;
   opacity: 0.75;
@@ -52,15 +54,16 @@
 }
 
 .home_card h1 {
-  z-index: 0;
+  z-index: 2;
   display: block;
-  position: relative;
+  position: absolute;
   text-align: center;
+  top: 20%;
   color: #ffffff;
 }
 
 .readmore {
-  z-index: 2;
+  z-index: 4;
   display: block;
   position: absolute;
   bottom: 10px;
@@ -69,6 +72,11 @@
   height: 15%;
   background: #ffffff;
   /*background-clip: content-box;*/
+  transition: 0.2s ease-in-out;
+}
+
+.readmore:hover {
+  background: #840004;
 }
 
 .readmore a {
@@ -78,6 +86,11 @@
   font-size: large;
   font-weight: bold;
   text-align: center;
-  color: #000;
+  color: #1E1F1E;
   text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.readmore:hover > a {
+  color: #ffffff;
 }
