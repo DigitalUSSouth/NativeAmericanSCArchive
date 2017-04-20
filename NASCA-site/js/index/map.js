@@ -136,7 +136,7 @@ function generateGeoJson(_dataFile) {
   }
      * 
      */
-    geojson[i].properties.description = '<iframe width="560" height="315" src="https://www.youtube.com/embed/WKtS0z9Wgno" frameborder="0" allowfullscreen></iframe>';//descriptionStr;
+    geojson[i].properties.description = descriptionStr;
 	}
 	return geojson;
 }

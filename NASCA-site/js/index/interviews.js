@@ -5,8 +5,11 @@
 //init stuff for oral_histories.html
 function launch_interview_modal(filename) {
   //put html in modal
-  $.get({
-    url: SITE_ROOT + '/html/interviews-template.html',
+  $.ajax({
+		type:'POST',
+    url: SITE_ROOT + '/html/interviews-template.php',
+    async: true,
+    dataType: 'html',
     success: function(data) {
       $('.modal-body').html(data);
       
