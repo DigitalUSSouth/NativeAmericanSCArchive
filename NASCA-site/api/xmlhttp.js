@@ -50,7 +50,7 @@ function createXmlHttpRequestObject(cross) {
 function getXmlObject(URL) {
   //if url contains any of site root, then it is not cross domain
   var cross = false;
-  if(!URL.includes(url_home)) {
+  if(!URL.includes(SITE_ROOT)) {
     cross = true;
   }
   

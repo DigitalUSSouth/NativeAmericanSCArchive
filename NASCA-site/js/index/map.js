@@ -1,5 +1,9 @@
+/* global SITE_ROOT, REL_HOME, CDM_BASE, CDM_COLLECTION, CDM_QUERY_BASE, CDM_PORT, CDM_SERVER */
+
+//<!-- //for old browsers
+
 function generateGeoJson(_dataFile) {
-	var geojson_template = parent.getJsonObject(parent.url_home + '/db/data/map/geojson-template.json');
+	var geojson_template = parent.getJsonObject(parent.SITE_ROOT + '/db/data/map/geojson-template.json');
   //get json data from file
 	var data = parent.getJsonObject(_dataFile);
   
@@ -141,6 +145,8 @@ L.mapbox.accessToken = 'pk.eyJ1IjoidGhlY3J5cHRpeCIsImEiOiJjaXBmb2ZhaWswMDBmdnFta
 var mapTooltips = L.mapbox.map('map-tooltips', 'mapbox.light')
   .setView([33.583767, -81.031824], 8);
 var myLayer = L.mapbox.featureLayer().addTo(mapTooltips);
-var geojson = generateGeoJson(parent.url_home + '/db/data/map/NASCAMapPoints.json');
+var geojson = generateGeoJson(parent.SITE_ROOT + '/db/data/map/NASCAMapPoints.json');
 myLayer.setGeoJSON(geojson);
 mapTooltips.scrollWheelZoom.enable();
+
+//for old browsers -->

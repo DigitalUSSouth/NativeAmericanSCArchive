@@ -1,4 +1,4 @@
-/* global modal */
+/* global SITE_ROOT, REL_HOME, CDM_BASE, CDM_COLLECTION, CDM_QUERY_BASE, CDM_PORT, CDM_SERVER */
 
 //<!-- //for old browsers
 
@@ -6,12 +6,12 @@
 function launch_interview_modal(filename) {
   //put html in modal
   $.get({
-    url: url_home + '/html/interviews-template.html',
+    url: SITE_ROOT + '/html/interviews-template.html',
     success: function(data) {
       $('.modal-body').html(data);
       
       //grab json
-      var datalocation = url_home + '/db/data/interviews/';
+      var datalocation = SITE_ROOT + '/db/data/interviews/';
       var jsonobject = getJsonObject(datalocation + "transcripts/json/minified/" + filename);
 
       //set title

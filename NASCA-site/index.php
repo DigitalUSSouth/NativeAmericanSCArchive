@@ -1,3 +1,7 @@
+<?php
+  require_once 'api/configuration.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,9 +41,9 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
 
     <!-- Local Javascript, Jquery, Ajax -->
-    <script type="text/javascript" src="js/api/requests/xmlhttp.js"></script>
-    <script type="text/javascript" src="js/api/requests/json.js"></script>
-    <script type="text/javascript" src="js/api/globals.js"></script>
+    <script type="text/javascript" src="api/xmlhttp.js"></script>
+    <script type="text/javascript" src="api/json.js"></script>
+    <script type="text/javascript" src="api/globals.js"></script>
     <script type="text/javascript" src="js/index/fade.js"></script>
     <script type="text/javascript" src="js/index/index.js"></script>
     <script type="text/javascript" src="js/index/interviews.js"></script>

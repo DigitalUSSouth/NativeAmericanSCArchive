@@ -1,3 +1,5 @@
+/* global SITE_ROOT, REL_HOME, CDM_BASE, CDM_COLLECTION, CDM_QUERY_BASE, CDM_PORT, CDM_SERVER */
+
 //<!-- //for old browsers
 
 var currentPage = 'home';
@@ -5,7 +7,7 @@ var currentPage = 'home';
 //init stuff for index.html
 function init_index() {
   //populate global variables with info from configuration file
-  populateGlobals();
+  setGlobals();
   
   //set invisible EVERYTHING that will fade in
   var fadeIns = ['.header', '.content', '.copyright'];
@@ -19,7 +21,7 @@ function init_index() {
   
   //get home page content
   $.get({
-    url: url_home + '/html/home.html',
+    url: SITE_ROOT + '/html/home.html',
     success: function(data) {
       $('.content').html(data);
     }
@@ -53,7 +55,7 @@ function changePage(page) {
       //callback when fadeOut complete
       //set html content
       $.get({
-        url: url_home + '/html/' + page + '.html',
+        url: SITE_ROOT + '/html/' + page + '.html',
         success: function(data) {
           //callback when html retrieved
           $('.content').html(data);
