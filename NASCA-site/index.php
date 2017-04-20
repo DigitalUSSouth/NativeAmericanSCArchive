@@ -11,12 +11,10 @@
     
     <!-- metadata tags here -->
     <meta name="description" content="Native American South Carolina Archive"/>
-    <meta name="author" content="Matthew Jendrasiak, Vassil Kurktchiev, Siddhartha Pathak"/>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+    <meta name="author" content="Matthew Jendrasiak"/>
     
     <!-- minified jquery, jplayer, bootstrap, etcetera -->
     <script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
-    <!--script type="text/javascript" src="js/jquery/external/jquery.js"></script-->
     <script type="text/javascript" src="js/jquery/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
@@ -33,9 +31,7 @@
     <link rel="stylesheet" type="text/css" href="css/jplayer.blue.monday.css"/>
     <link rel="stylesheet" type="text/css" href="css/modal.css"/>
     <link rel="stylesheet" type="text/css" href="css/interviews.css"/>
-    
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/home.css"/>
     
     <!-- ICON -->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
@@ -80,13 +76,11 @@
         <div class="nav">
           <ul class="tabs">
             <li><a id="tb-home" href="#" onclick="changePage('home')">HOME</a></li>
-            <li><a id="tb-interviews" href="#" onclick="changePage('interviews-list')">INTERVIEWS</a></li>
+            <li><a id="tb-interviews" href="#" onclick="changePage('interviews-list')">INTERVIEW</a></li>
             <li><a id="tb-images" href="#" onclick="changePage('images')">IMAGES</a></li>
             <li><a id="tb-video" href="#" onclick="changePage('video')">VIDEO</a></li>
-            <li><a id="tb-timeline" href="#" onclick="changePage('timeline')">TIMELINE</a></li>
             <li><a id="tb-map" href="#" onclick="changePage('map')">MAP</a></li>
-            <li><a id="tb-census" href="#" onclick="changePage('census')">CENSUS</a></li>
-            <li><a id="tb-tribes" href="#" onclick="changePage('tribes')">TRIBES</a></li>
+            <li><a id="tb-timeline" href="#" onclick="changePage('timeline')">TIMELINE</a></li>
           </ul>
         </div>
       </header>
