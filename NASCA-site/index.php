@@ -92,10 +92,7 @@
         <!-- === Copyright === -->
         <!-- === Copyright === -->
         <!-- === Copyright === -->
-        <div class="row">
-          <div class="col-md-12">
-            <p id="copyright" class="copyright">NASCA &copy; 2016</p>
-          </div>
+        <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
         </div>
       </div>
     </div>

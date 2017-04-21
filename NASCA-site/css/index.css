@@ -1,8 +1,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  top:0px;
-  left:0px;
+  height: 100%;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -24,11 +23,13 @@ colors{
   background: #840004;
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
+  z-index: -1;
 }
 
 .header {
   position: fixed;
-  min-height: 80px;
+  min-height: 90px;
   width: 100%;
   background: #3B3A3E; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E); /* For Safari 5.1 to 6.0 */
@@ -80,10 +81,11 @@ colors{
 
 .tabs li a {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
   text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-size: 3.5;
+  font-weight: 600;
+  letter-spacing: 2px;
   color: #F7F7F7;
   transition: 0.5s ease;
   padding-left: 0.3rem;
@@ -97,22 +99,29 @@ colors{
 }
 
 .body-container {
+  height: 100%;
   /*padding-top: 125px;*/
+  width: 100%;
 }
 
 .content {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 25px;
+  height: 100%;
 }
 
 .copyright {
+  z-index: 6;
+  position: fixed;
   text-align: center;
-  font-family: 'Roboto Slab', serif;
+  /*font-family: 'Roboto Slab', serif;*/
   color: #F7F7F7;
-  float: right;
-  padding-bottom: 1rem;
-  padding-right: 1rem;
+  right: 25px;
+  bottom: 10px;
+  font-weight: bold;
+  opacity: 0.4;
 }
 
 /* IFRAMES */
