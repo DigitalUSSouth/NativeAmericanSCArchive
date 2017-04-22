@@ -57,7 +57,7 @@
 .home_card {
   /*margin: 0 auto;*/
   position: relative;
-  padding-left: 20px;
+  margin-left: 20px;
   display: block;
   width: 215px;
   height: 300px;
@@ -66,21 +66,24 @@
   transition: 0.2s ease-in-out;
   background-clip: content-box;
   z-index: 1;
+  border-radius: 5px;
 }
 
 .home_card:hover {
   transform: translateY(-5px);
 }
 
-.home_card img {
+.home_card a img {
   z-index: 3;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
   position: absolute;
   height: 100%;
   opacity: 0.75;
   transition: 0.3s ease-in-out;
 }
 
-.home_card:hover > img {
+.home_card:hover > a > img {
   opacity: 0.25;
 }
 
@@ -97,8 +100,8 @@
   z-index: 4;
   display: block;
   position: absolute;
-  bottom: 10px;
-  left: 30px;
+  bottom: 15px;
+  left: 15px;
   width: 60%;
   height: 15%;
   background: #ffffff;

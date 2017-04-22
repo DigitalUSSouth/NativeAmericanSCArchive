@@ -35,11 +35,11 @@ function init_index() {
     async: true,
     dataType: 'html',
     success: function(data) {
-      $('.content').html(data);
+      $('.content').html(data).promise().done(function() {
+        init_home();
+      });
     }
   });
-  
-  init_home();
   
   //dynamic css function
   //handles content top padding when nav bar resizes
@@ -53,24 +53,6 @@ function init_index() {
   intervalFade(fadeIns,500);
 
 };
-
-function init_home() {
-  //set thumbnails of home content
-  //var image = "";
-  //for(var i = 1; i <= 1; i++) {
-  //  image = "#thumb" + i.toString();
-  //  url = "url("+window.url_home+"/img/native_"+i.toString()+".jpg)";
-  //  $(image).css("background",url);//http://digital.tcl.sc.edu/utils/getthumbnail/collection/nasca/id/" + pointers[i] + ")");
-  //}
-  
-  var interval_home = setInterval(function() {
-    var bookLeftHeight = $('#home_left').height();
-    var bookMinHeight = parseInt(($('.book').css('min-height')).replace('px',''));
-    if(bookLeftHeight >= bookMinHeight && bookLeftHeight <= 900) {
-      $('#home_right').css('height',bookLeftHeight);
-    }
-  },interval);
-}
 
 function clearPageIntervals() {
   var pages = [interval_home, interval_interviews, interval_images, interval_video, interval_map, interval_timeline];
@@ -103,25 +85,26 @@ function changePage(page) {
         dataType: 'html',
         success: function(data) {
           //callback when html retrieved
-          $('.content').html(data);
-          switch(page) {
-            case 'home':
-              init_home();
-              break;
-            case 'interviews-list':
-              //launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
-              break;
-            case 'images':
-              break;
-            case 'video':
-              break;
-            case 'map':
-              break;
-            case 'timeline':
-              break;
-            default:
-              //code
-          }
+          $('.content').html(data).promise().done(function() {
+            switch(page) {
+              case 'home':
+                init_home();
+                break;
+              case 'interviews-list':
+                //launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
+                break;
+              case 'images':
+                break;
+              case 'video':
+                break;
+              case 'map':
+                break;
+              case 'timeline':
+                break;
+              default:
+                //code
+            }
+          });
           $('.content').fadeIn(750);
         }
       });
