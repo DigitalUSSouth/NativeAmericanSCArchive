@@ -4,6 +4,7 @@
 
 var currentPage = 'home';
 
+var interval = 100; //length for all setInterval functions in milliseconds
 var interval_index = null;
 var interval_home = null;
 var interval_interviews = null;
@@ -46,7 +47,7 @@ function init_index() {
     var navHeight = $('.header').height();
     $('.body-container').css('padding-top', navHeight+'px');
     
-  },100);
+  },interval);
   
   //fade in
   intervalFade(fadeIns,500);
@@ -68,7 +69,7 @@ function init_home() {
     if(bookLeftHeight >= bookMinHeight && bookLeftHeight <= 900) {
       $('#home_right').css('height',bookLeftHeight);
     }
-  },100);
+  },interval);
 }
 
 function clearPageIntervals() {

@@ -42,23 +42,13 @@
     <script type="text/javascript" src="api/globals.js"></script>
     <script type="text/javascript" src="js/index/fade.js"></script>
     <script type="text/javascript" src="js/index/index.js"></script>
-    <script type="text/javascript" src="js/index/interviews.js"></script>
-    
+    <script type="text/javascript" src="js/index/interview.js"></script>
+    <script type="text/javascript" src="js/index/home.js"></script>
   </head>
   <body>
-    <div class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="modal-close">&times;</span>
-        </div>
-        <div class="modal-body">
-          <p>Modal layout here.</p>
-        </div>
-        <div class="modal-footer">
-
-        </div>
-      </div>
-    </div>
+    <?php
+      include_once 'html/modal.php';
+    ?>
     <!-- === Gradient-Wrapper === -->
     <!-- === Gradient-Wrapper === -->
     <!-- === Gradient-Wrapper === -->
@@ -93,7 +83,6 @@
         <!-- === Copyright === -->
         <!-- === Copyright === -->
         <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
-        </div>
       </div>
     </div>
 

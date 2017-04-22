@@ -1,3 +1,7 @@
+/* global SITE_ROOT, REL_HOME, CDM_BASE, CDM_COLLECTION, CDM_QUERY_BASE, CDM_PORT, CDM_SERVER */
+
+//<!-- //for old browsers
+
 (function() {
 
   'use strict';
@@ -41,3 +45,5 @@ $('#collapseOne').on('hide.bs.collapse', function () {
   window.addEventListener("scroll", callbackFunc);
 
 })();
+
+//for old browsers -->

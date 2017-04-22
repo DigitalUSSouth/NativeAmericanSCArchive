@@ -122,13 +122,16 @@ colors{
   right: 40px;
   bottom: 10px;
   font-weight: bold;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .row {
   width: 100%;
 }
 
+.additional {
+  display: none;
+}
 /* IFRAMES */
 
 .map-frame {

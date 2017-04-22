@@ -11,13 +11,14 @@ if($count <= 0) {
   $count = 6;
 }
 for($i = 1; $i <= $count; $i++) {
-  echo '<div class="home_card" id="home_card_' . $i . '">';
+  echo '<div class="home_card" id="home_card_' . $i . '">';// . indexValue
+  echo '  <div class="additional">' . $i . '</div>';
   echo '  <a href="img/native_' . $i . '.jpg" data-lightbox="featured" data-title="native ' . $i . '" onclick="">';
   echo '    <img src="img/native_' . $i . '.jpg">';
   echo '  </a>';
   echo '  <h1>Sample Title ' . $i . '</h1>';
   echo '  <div class="readmore">';
-  echo '    <a href="#" onclick="">READ MORE</a>';
+  echo '    <a href="#" onclick="readMore(\'image\',' . $i . ')">READ MORE</a>';
   echo '  </div>';
   echo '</div>';
 }
@@ -25,6 +26,7 @@ for($i = 1; $i <= $count; $i++) {
   </div>
   <div class="col" id="home_right">
     <div class="preview">
+      <div id="details"></div>
       <div class="preview_lower">
         <div class="viewmore">
           <a href="#" data-lightbox="more" data-title="more" onclick="">VIEW MORE</a>
