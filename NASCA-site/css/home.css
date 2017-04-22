@@ -1,6 +1,17 @@
 /* HOME HOME HOME HOME */
 /* HOME HOME HOME HOME */
 
+.featured {
+  position: relative;
+  float: left;
+  padding-left: 35px;
+  padding-bottom: 20px;
+  font-size: large;
+  font-weight: 550;
+  font-style: italic;
+  color: #AEADB8;
+}
+
 .book {
   margin: 0;
   display: -webkit-box;
@@ -13,7 +24,7 @@
   /*flex-direction: row;*/
   /*flex-flow: row;*/
   height: 100%;
-  min-height: 800px;
+  min-height: 600px;
   width: 100%;
   /*align-items: center;*/
   justify-content: center;
@@ -39,7 +50,7 @@
   width: 40%;
   min-width: 400px;
   max-width: 800px;
-  min-height: inherit;
+  height: 600px;
 }
 
 .home_card {
@@ -101,7 +112,8 @@
 .readmore a {
   display: block;
   position: relative;
-  top: 15%;
+  margin: auto;
+  line-height: 200%;
   font-size: large;
   font-weight: bold;
   text-align: center;
@@ -119,5 +131,54 @@
   height: 100%;
   width: 100%;
   display: block;
-  background: #1E1F1E;
+  background: #3B3A3E; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #1E1F1E, #3B3A3E); /* Standard syntax */
+  border: 0.4rem solid #1E1F1E;
+  border-radius: 5px;
+}
+
+.preview_lower {
+  position:absolute;
+  display: table;
+  height: 12%;
+  min-height: 100px;
+  width: 100%;
+  display: block;
+  background: #AEADB8;
+  bottom: 0px;
+}
+
+.viewmore {
+  width: 200px;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
+.viewmore:hover {
+  background: #840004;
+}
+
+.viewmore a {
+  display: block;
+  position: relative;
+  margin: auto;
+  line-height: 200%;
+  width: 90%;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  color: #1E1F1E;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.viewmore:hover > a {
+  color: #ffffff;
 }

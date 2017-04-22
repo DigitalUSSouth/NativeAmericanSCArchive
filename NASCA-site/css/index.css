@@ -109,6 +109,7 @@ colors{
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 25px;
+  padding-bottom: 25px;
   height: 100%;
 }
 
@@ -118,10 +119,14 @@ colors{
   text-align: center;
   /*font-family: 'Roboto Slab', serif;*/
   color: #F7F7F7;
-  right: 25px;
+  right: 40px;
   bottom: 10px;
   font-weight: bold;
   opacity: 0.4;
+}
+
+.row {
+  width: 100%;
 }
 
 /* IFRAMES */

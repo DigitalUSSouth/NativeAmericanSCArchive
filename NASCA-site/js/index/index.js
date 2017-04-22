@@ -4,6 +4,14 @@
 
 var currentPage = 'home';
 
+var interval_index = null;
+var interval_home = null;
+var interval_interviews = null;
+var interval_images = null;
+var interval_video = null;
+var interval_map = null;
+var interval_timeline = null;
+
 //init stuff for index.html
 function init_index() {
   //populate global variables with info from configuration file
@@ -30,6 +38,22 @@ function init_index() {
     }
   });
   
+  init_home();
+  
+  //dynamic css function
+  //handles content top padding when nav bar resizes
+  var interval_index = setInterval(function(){
+    var navHeight = $('.header').height();
+    $('.body-container').css('padding-top', navHeight+'px');
+    
+  },100);
+  
+  //fade in
+  intervalFade(fadeIns,500);
+
+};
+
+function init_home() {
   //set thumbnails of home content
   //var image = "";
   //for(var i = 1; i <= 1; i++) {
@@ -38,17 +62,29 @@ function init_index() {
   //  $(image).css("background",url);//http://digital.tcl.sc.edu/utils/getthumbnail/collection/nasca/id/" + pointers[i] + ")");
   //}
   
-  //dynamic css function
-  //handles content top padding when nav bar resizes
-  var intervalId = setInterval(function(){
-    var height = $('.header').height();
-    $('.body-container').css('padding-top', height+'px');
-  },250);
-  
-  //fade in
-  intervalFade(fadeIns,500);
+  var interval_home = setInterval(function() {
+    var bookLeftHeight = $('#home_left').height();
+    var bookMinHeight = parseInt(($('.book').css('min-height')).replace('px',''));
+    if(bookLeftHeight >= bookMinHeight && bookLeftHeight <= 900) {
+      $('#home_right').css('height',bookLeftHeight);
+    }
+  },100);
+}
 
-};
+function clearPageIntervals() {
+  var pages = [interval_home, interval_interviews, interval_images, interval_video, interval_map, interval_timeline];
+  for(var i = 0; i < pages.length; i++) {
+    if(pages[i] !== null) {
+      clearInterval(pages[i]);
+    }
+    pages[i] = null;
+  }
+}
+
+function clearPageInterval(pageInterVar) {
+  clearInterval(pageInterVar);
+  pageInterVar = null;
+}
 
 function changePage(page) {
   //check if page is already up
@@ -56,6 +92,8 @@ function changePage(page) {
     //fade out content
     $('.content').fadeOut(750,function(){
       //callback when fadeOut complete
+      //clear all interval actions
+      clearPageIntervals();
       //set html content
       $.ajax({
         type:'POST',
@@ -67,6 +105,7 @@ function changePage(page) {
           $('.content').html(data);
           switch(page) {
             case 'home':
+              init_home();
               break;
             case 'interviews-list':
               //launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
@@ -75,13 +114,9 @@ function changePage(page) {
               break;
             case 'video':
               break;
-            case 'timeline':
-              break;
             case 'map':
               break;
-            case 'census':
-              break;
-            case 'tribes':
+            case 'timeline':
               break;
             default:
               //code
