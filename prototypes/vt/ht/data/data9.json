@@ -1,0 +1,64 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "European Contact",
+          "text": "<p>A.D. 1521-1543</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1521"
+        },
+        "text": {
+          "headline": "Spanish in Winyah Bay",
+          "text": "Georgetown SC <a href =\"http://lsupress.org/books/detail/a-new-andalucia-and-a-way-to-the-orient/\">More</a>"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1526"
+        },
+        "text": {
+          "headline": "Ayllon Settlement",
+          "text": "A.D. 1526-1528 <a href =\"http://www.scencyclopedia.org/sce/entries/ayllon-lucas-vasquez-de/\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 3",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1539"
+        },
+        "text": {
+          "headline": "DeSoto Expedition",
+          "text": "<p>Expedition Route Map</p>A.D. 1539-1543 <br> SC coast s. of McClellanville <a href =\"http://www.scencyclopedia.org/sce/entries/wateree-river/\">More</a>"
+        }
+      }
+      
+    ]
+}

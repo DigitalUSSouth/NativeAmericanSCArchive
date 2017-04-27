@@ -1,0 +1,288 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "ENGLISH CONTACT",
+          "text": "<p>A.D. 1668-1</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1668"
+        },
+        "text": {
+          "headline": "Hilton among the Edisto",
+          "text": "<a href =\"http://www.scencyclopedia.org/sce/entries/hilton-head-island/\">More</a>"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1669"
+        },
+        "text": {
+          "headline": "Woodward among coastal Tribes",
+          "text": "A.D. 1526-1528 <a href =\"http://www.scencyclopedia.org/sce/entries/ayllon-lucas-vasquez-de/\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 3",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1670"
+        },
+        "text": {
+          "headline": "Charles Towne Founded",
+          "text": "<a href =\"http://www.southcarolinaparks.com/ctl/introduction.aspx\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 4",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1672"
+        },
+        "text": {
+          "headline": "Woodward visits Cofitachequi",
+          "text": "<a href =\"http://www.scencyclopedia.org/sce/entries/woodward-henry/\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 5",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1675"
+        },
+        "text": {
+          "headline": "Kusso Treaty for Kiawah Island ",
+          "text": "<a href =\"http://www.charlestonfootprints.com/charleston-blog/1675-deed-for-kiawah-island/2013/09/05/\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 6",
+          "credit": "http://docsouth.unc.edu/nc/lawson/menu.html"
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1700"
+        },
+        "text": {
+          "headline": "Lawson's Travels",
+          "text": "<p>lawson's map</p> A.D. 1700-1701<a href =\"http://www.lawsontrek.com/\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 7",
+          "credit": "http://docsouth.unc.edu/commland/monument/369/"
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1711"
+        },
+        "text": {
+          "headline": "Tuscarora War",
+          "text": "A.D. 1711-1715<a href =\"http://www.scencyclopedia.org/sce/entries/tuscarora-war/\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 8",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1714"
+        },
+        "text": {
+          "headline": "Indian Slavery in SC",
+          "text": "<a href =\"http://ldhi.library.cofc.edu/exhibits/show/africanpassageslowcountryadapt/sectionii_introduction/american_indian_slavery_caroli\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 9",
+          "credit": "http://www.scencyclopedia.org/sce/entries/yamassee-war/"
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1715"
+        },
+        "text": {
+          "headline": "Yamasee War",
+          "text": "A.D. 1715-1717<a href =\"http://www.scencyclopedia.org/sce/entries/yamassee-war/\">More</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 10",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1718"
+        },
+        "text": {
+          "headline": "Forts/Indian Trading Posts Established",
+          "text": "<p>Ft Congaree painting by pete</p>A.D. 1718"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 11",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1736"
+        },
+        "text": {
+          "headline": "Cheraw sell lands along Pee Dee River",
+          "text": "<p>Von Reck water color</p>A.D. 1736"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 12",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1756"
+        },
+        "text": {
+          "headline": "Catawba/Cherokee Treaty with Virginia",
+          "text": "A.D. 1756"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 13",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1759"
+        },
+        "text": {
+          "headline": "Cherokee Treaty",
+          "text": "<p>state archive copies</p>A.D. 1759"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 14",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1760"
+        },
+        "text": {
+          "headline": "Treaty of Pine Tree Hill",
+          "text": "A.D. 1760"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 15",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1761"
+        },
+        "text": {
+          "headline": "Cherokee Peace Treaty",
+          "text": "<p>state archive copies</p>A.D. 1761"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 16",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1763"
+        },
+        "text": {
+          "headline": "Treaty of Augusta",
+          "text": "(Catawbas retreat to 15 square mile reservation) <br> A.D. 1763"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 17",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1777"
+        },
+        "text": {
+          "headline": "Treaty of Dewit's Corner (Cherokee) ",
+          "text": "<p>state archive copies</p>A.D. 1777"
+        }
+      }
+      
+    ]
+}

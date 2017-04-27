@@ -1,0 +1,48 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "Later Paleoindian Period",
+          "text": "<p>10,000 years ago..</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-8000"
+        },
+        "text": {
+          "headline": "Steen Daltons",
+          "text": "<p>Darlington SC</p><a href =\"38DA75.com\">More</a>"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-8000"
+        },
+        "text": {
+          "headline": "End of Ice Age",
+          "text": "More"
+        }
+      }
+      
+    ]
+}
