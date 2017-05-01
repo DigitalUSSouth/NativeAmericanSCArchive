@@ -1,5 +1,5 @@
 Native American South Carolina Archive (NASCA)
-Live website at www.duss.sc.edu/nasca
+Live website at www.duss.sc.edu/nasca/
 
 Source code for the Native American SC Archive, curated at USC Lancaster and coded at USC Columbia by student staff.
 
