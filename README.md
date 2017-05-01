@@ -6,46 +6,45 @@ Source code for the Native American SC Archive, curated at USC Lancaster and cod
 PREREQUISITES
 
 If you wish to run the source code at home, you'll have to run on a local Apache server, and have the following installed:
-PHP (version TBD)
+PHP
 Latest Flash Player
-...
 
 APPROVED BROWSERS
 
 Google Chrome
 Chromium
-...
+Firefox
+
+*TODO: Specify Version #'s, operating systems, and browsers and test as many combos as possible*
 
 BUILT WITH
 
-contentDM
-Netbeans IDE
-Sublime Text
+HTML5
+JavaScript
+PHP
 jQuery
 jPlayer
-php
+contentDM
+YouTube
 ...
-
-VERSIONING
-
-Current latest version: 0.5
-
-	NASCA V0.5
-	Entire site has been consolidated to a single HTML page that is dynamically animated and updated as the user uses
-	the nav bar. The site now uses a fixed nav bar. The algorithm that handles interactive transcripts under INTERVIEWS
-	has been overhauled to be less buggy, less computationally hungry, and more responsive. PHP is beginning to be implemented
-	to access data from contentDM, and facilitate dynamic content on the web page. 'HOME', 'INTERVIEWS', 'TIMELINE', and
-	'MAP' are considered complete. 
-
 
 AUTHORS
 
-Matthew Jendrasiak - Javascript/PHP Backend Coding, Final CSS Styles
-Siddhartha Pathak - Javascript/HTML Frontend Coding
-Vassil Kurktchiev - Professional Bulgarian
+Matthew Jendrasiak:
+	Backend/Server/Database Management
+	Nav Bar
+	All PHP implementation
+	Home, Images, Video, Map, and Interviews Tabs
+
+Siddhartha Pathak:
+	Map and Timeline Tabs
+	
+Vassil Kurktchiev:
+	Graphic Design
 
 See also the list of contributors who participated in this project.
-...
+
+*TODO: add archivists and other contributors*
 
 LICENSE
 
@@ -53,4 +52,4 @@ This project is licensed under the GNU General Purpose License V3 - see the LICE
 
 ACKNOWLEDGMENTS
 
-...
+*TODO: add acknowledgments*
