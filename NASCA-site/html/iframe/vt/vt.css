@@ -8,7 +8,7 @@
 
 body {
   font: normal 16px/1.5 "Helvetica Neue", sans-serif;
-  background: #990000;
+  background: #840004;
   color: #666666;
   overflow-x: hidden;
   padding-bottom: 0px;
@@ -39,7 +39,7 @@ https://webdesign.tutsplus.com/ */
 /* TIMELINE */
 
 .timeline ul {
-  background: #990000;
+  background: #840004;
   padding: 50px 0;
 }
 

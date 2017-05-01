@@ -58,6 +58,7 @@
   /*margin: 0 auto;*/
   position: relative;
   margin-left: 20px;
+  margin-right: 0px;
   display: block;
   width: 215px;
   height: 300px;
@@ -96,6 +97,22 @@
   color: #ffffff;
 }
 
+.home_card #point {
+  border-radius: 5px;
+  z-index: 3;
+  position: absolute;
+  bottom: 25px;
+  right: 80px;
+  width: 50px;
+  height: 25px;
+  display: block;
+  overflow: hidden;
+}
+
+.home_card #point object {
+  width: 100%;
+}
+
 .readmore {
   z-index: 4;
   display: block;
@@ -111,7 +128,7 @@
 }
 
 .readmore:hover {
-  background: #840004;
+  background: #840004!important;
 }
 
 .readmore a {
@@ -128,7 +145,7 @@
 }
 
 .readmore:hover > a {
-  color: #ffffff;
+  color: #ffffff!important;
 }
 
 .preview {

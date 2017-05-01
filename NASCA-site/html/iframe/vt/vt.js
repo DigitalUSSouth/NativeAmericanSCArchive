@@ -1,7 +1,3 @@
-/* global SITE_ROOT, REL_HOME, CDM_BASE, CDM_COLLECTION, CDM_QUERY_BASE, CDM_PORT, CDM_SERVER */
-
-//<!-- //for old browsers
-
 (function() {
 
   'use strict';
@@ -27,6 +23,16 @@
     }
   }
 
+function iframeChange() {
+    var buttons = document.querySelector(".loadiframe"),
+        iframe = document.getElementById('frame');
+
+    buttons.addEventListener("click", function (e) {
+        iframe.src = e.target.dataset.src;
+    });
+}
+window.onload = iframeChange;
+
 $('#collapseOne').on('show.bs.collapse', function () {    
     $('.panel-heading').animate({
         backgroundColor: "#515151"
@@ -45,5 +51,3 @@ $('#collapseOne').on('hide.bs.collapse', function () {
   window.addEventListener("scroll", callbackFunc);
 
 })();
-
-//for old browsers -->

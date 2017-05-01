@@ -1,0 +1,48 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "Paleoindian Period",
+          "text": "<p>13,000-10,000 years ago..</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-11000"
+        },
+        "text": {
+          "headline": "The Storyteller by Martin Pate",
+          "text": "<a href =\"http://uscsalkehatchie.sc.edu/home/news-post/topper-artifacts-unveiled-at-exhibit/\">More</a>"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": " Archaeology in South Carolina:  Exploring the Hidden Heritage of the Palmetto State"
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-10000"
+        },
+        "text": {
+          "headline": "Clovis",
+          "text": "<h3>Fluted Projectile Point</h3> <a href =\"http://www.southeasternpaleoamerican.org\">More</a>"
+        }
+      }
+      
+    ]
+}

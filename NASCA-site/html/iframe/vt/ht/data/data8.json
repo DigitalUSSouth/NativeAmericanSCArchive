@@ -1,0 +1,64 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "Mississippian Period",
+          "text": "<p>1,000-400 years ago..</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": "Archaeology in South Carolina:  Exploring the Hidden Heritage of the Palmetto State"
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1000"
+        },
+        "text": {
+          "headline": "Ruckers Bottom by Martin Pate",
+          "text": "More"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": "  "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1200"
+        },
+        "text": {
+          "headline": "Platform Mounds",
+          "text": "<p>Fort Watson Mound photo </p>Camden SC<a href =\"https://www.fws.gov/uploadedFiles/Santee%20Indian%20Mound%20Rev%20Jun%202008.pdf\">More</a> "
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 3",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1500"
+        },
+        "text": {
+          "headline": "Cofitachequi",
+          "text": "<p>Air Photo Fig Island Shell Ring</p> <br> SC coast s. of McClellanville <a href =\"http://www.scencyclopedia.org/sce/entries/lady-of-cofitachiqui/\">More</a>"
+        }
+      }
+      
+    ]
+}

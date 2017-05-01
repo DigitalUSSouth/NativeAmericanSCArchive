@@ -1,0 +1,1 @@
+<p>dummy page for images</p>
