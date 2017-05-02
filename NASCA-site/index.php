@@ -66,7 +66,7 @@
         <div class="nav">
           <ul class="tabs">
             <li><a id="tb-home" href="#" onclick="changePage('home')">HOME</a></li>
-            <li><a id="tb-interviews" href="#" onclick="changePage('interviews-list')">INTERVIEW</a></li>
+            <li><a id="tb-interviews" href="#" onclick="changePage('interviews')">INTERVIEWS</a></li>
             <li><a id="tb-images" href="#" onclick="changePage('images')">IMAGES</a></li>
             <li><a id="tb-video" href="#" onclick="changePage('video')">VIDEO</a></li>
             <li><a id="tb-map" href="#" onclick="changePage('map')">MAP</a></li>

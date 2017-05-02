@@ -49,13 +49,51 @@ function init_home() {
 }
 
 /*
+ * @param {type} card - jQuery selector for cards to animate off
+ */
+function animateOff(card) {
+  $(card + ' .readmore').css({'background': '#ffffff'});
+  $(card + ' .readmore a').css({'color': '#1E1F1E'});
+  $(card + ' #point').animate({
+    'right': '80px'
+  }, {duration: 150, queue: false});
+  $(card + ' .additional #toggle').html('0');
+}
+
+/*
+ * @param {type} card - jQuery selector for cards to animate on
+ */
+function animateOn(card) {
+  $(card + ' .readmore').css({'background': '#840004'});
+  $(card + ' .readmore a').css({'color': '#ffffff'});
+  $(card + ' #point').animate({
+    'right': '10px'
+  }, {duration: 150, queue: false});
+  $(card + ' .additional #toggle').html('1');
+}
+
+/*
  * @param {string} type - may be 'image' 'video' or 'transcript'
  * @param {number/int} id - id on cdm or wherever of entry to load data from
  */
-function readMore(type, id) {
+function readMoreToggle(type, id, card) {
+  var state = parseInt($(card + ' .additional #toggle').text());
+  var url = SITE_ROOT + '/html/home-more.php';
+  if(state === 0) {
+    //turn every other card off
+    animateOff('.home_card');
+    //turn current card on
+    animateOn(card);
+    //add relevant info to url
+    url += '?type=' + type + '&id=' + id;
+  } else {
+    //then the card is already on. Turn it off and set readmore back to default
+    animateOff(card);
+    //leave url as is
+  }
   $.ajax({
     type:'POST',
-    url: SITE_ROOT + '/html/home-more.php?type=' + type + '&id=' + id,
+    url: url,
     async: true,
     dataType: 'html',
     success: function(data) {
@@ -63,39 +101,6 @@ function readMore(type, id) {
     }
   });
   $('.viewmore a').attr({'onclick': 'changePage(\'' + type + '\')'});
-}
-
-/*
- * @param {string} card - id of card 
- */
-function cardToggle(card) {
-  var displacement = 20;
-  var state = parseInt($(card+' .additional #toggle').text());
-  if(state === 0) {
-    //turn every other card off
-    $('.home_card .readmore').css({'background': '#ffffff'});
-    $('.home_card .readmore a').css({'color': '#1E1F1E'});
-    /*$('.home_card').animate({
-      'width': '215px',
-      'margin-right': '0px'
-    }, {duration: 200, queue: false});*/
-    $('.home_card #point').animate({
-      'right': '80px'
-    }, {duration: 150, queue: false});
-    $('.home_card .additional #toggle').html('0');
-    
-    //turn current card on
-    $(card + ' .readmore').css({'background': '#840004'});
-    $(card + ' .readmore a').css({'color': '#ffffff'});
-    /*$(card).animate({
-      'width': '-='+displacement+'px',
-      'margin-right': displacement+'px'
-    }, {duration: 200, queue: false});*/
-    $(card + ' #point').animate({
-      'right': '10px'
-    }, {duration: 150, queue: false});
-    $(card+' .additional #toggle').html('1');
-  }
 }
 
 //for old browsers -->

@@ -1,14 +1,10 @@
 <?php
 	//type and id args
-	if(isset($_GET['type'])) {
-    //if type isn't interview, images, video, then there's a problem as well
-		echo $_GET['type'];
+	if(isset($_GET['type']) && isset($_GET['id'])) {
+    //if type isn't interview, images, video, then there's a problem as well 
+		echo $_GET['type'] . $_GET['id'];
 	} else {
-    die('there was a problem');
-  }
-	if(isset($_GET['id'])) {
-		echo $_GET['id'];
-	} else {
-      die('there was a problem');
+    //default page
+    echo 'default';
   }
 ?>

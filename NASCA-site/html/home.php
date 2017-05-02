@@ -21,7 +21,7 @@ for($i = 1; $i <= $count; $i++) {
   echo '  </a>';
   echo '  <h1>Sample Title ' . $i . '</h1>';
   echo '  <div class="readmore">';
-  echo '    <a href="#" onclick="readMore(\'images\',' . $i . ');cardToggle(\'#home_card_' . $i . '\');">READ MORE</a>';
+  echo '    <a href="#" onclick="readMoreToggle(\'images\',' . $i . ',\'#home_card_' . $i . '\')">READ MORE</a>';
   echo '  </div>';
   echo '  <div id="point">';
   echo '    <object data="img/card-point.svg" type="image/svg+xml">';
@@ -34,7 +34,11 @@ for($i = 1; $i <= $count; $i++) {
   </div>
   <div class="col" id="home_right">
     <div class="preview">
-      <div id="details"></div>
+      <div id="details">
+        <?php
+          include ('home-more.php');
+        ?>
+      </div>
       <div class="preview_lower">
         <div class="viewmore">
           <a href="#" onclick="">VIEW MORE</a>
