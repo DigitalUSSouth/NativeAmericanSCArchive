@@ -19,7 +19,7 @@ for($i = 1; $i <= $count; $i++) {
   echo '  <a href="img/native_' . $i . '.jpg" data-lightbox="featured" data-title="native ' . $i . '" onclick="">';
   echo '    <img src="img/native_' . $i . '.jpg">';
   echo '  </a>';
-  echo '  <h1>Sample Title ' . $i . '</h1>';
+  echo '  <h2>Title From CDM ID ' . $i . '</h2>';
   echo '  <div class="readmore">';
   echo '    <a href="#" onclick="readMoreToggle(\'images\',' . $i . ',\'#home_card_' . $i . '\')">READ MORE</a>';
   echo '  </div>';

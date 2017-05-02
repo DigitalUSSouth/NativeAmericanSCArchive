@@ -7,7 +7,6 @@
     //be sure id is a number like it should be
     $id = $_GET['id'];
     if(is_numeric($id)) {
-      $idint = intval($id);
       //if type isn't interview, images, video, then there's a problem as well 
       switch($_GET['type']) {
         case 'interviews':
@@ -15,8 +14,7 @@
           echo 'The id is ' . $id;
           break;
         case 'images':
-          echo 'This is an image';
-          echo 'The id is ' . $id;
+          printImageDetails($id);
           break;
         case 'video':
           echo 'This is a video';
@@ -44,9 +42,20 @@
   }
   
   function printDefault() {
-    echo '<h1>Welcome to the Native American South Carolina Archive!</h1>';
+    echo '<h2><b>Welcome to the Native American South Carolina Archive!</b></h2>';
+    echo '<hr />';
     echo '<p>Click any of the cards on the left to get more information in this window about featured pictures, interviews, and videos in our archive.</p>';
     echo '<p><i>OR</i></p>';
     echo '<p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You\'re also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>';
+  }
+  
+  function printImageDetails($cdm_id) {
+    $idint = intval($cdm_id);
+    echo '<p><b><i>From Images...</i></b></p>';
+    echo '<h2><b>Name from cdm id ' . $cdm_id . '</b></h2>';
+    echo '<hr />';
+    echo '<p>Description from id ' . $cdm_id . '</p>';
+    echo '<hr />';
+    echo '<p><b><i>Click \'View More\' to browse all of our archived images.</i></b></p>';
   }
 ?>
