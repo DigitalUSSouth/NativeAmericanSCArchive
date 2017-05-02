@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 def getdbConfiguration():
 	global server,port,api_query_base,collection
 
-	cdmconfig = ET.parse("../../config.xml").getroot()
+	cdmconfig = ET.parse("../../api/configuration.xml").getroot()
 	cdmconfig = cdmconfig.find('cdm')
 	server = cdmconfig.find('server').text
 	port = cdmconfig.find('port').text
