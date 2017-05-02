@@ -12,10 +12,10 @@ function recursiveFade(fadeIns) {
   if(len === 0) {
     return 0;
   } else if(len === 1) {
-    $(id).fadeIn("slow");
+    $(id).fadeIn('slow');
   } else {
     var temp = fadeIns.slice(1,len);
-    $(id).fadeIn("slow",recursiveFade(temp));
+    $(id).fadeIn('slow',recursiveFade(temp));
   }
 }
 

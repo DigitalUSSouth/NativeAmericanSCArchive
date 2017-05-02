@@ -176,11 +176,10 @@
 
 .preview_lower {
   position:absolute;
-  display: table;
   height: 12%;
   min-height: 100px;
   width: 100%;
-  display: block;
+  display: none;
   background: #AEADB8;
   bottom: 0px;
   opacity: 0.9;

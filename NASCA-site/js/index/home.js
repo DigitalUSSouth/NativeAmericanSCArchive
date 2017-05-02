@@ -86,10 +86,15 @@ function readMoreToggle(type, id, card) {
     animateOn(card);
     //add relevant info to url
     url += '?type=' + type + '&id=' + id;
+    //change what view more button does
+    $('.preview_lower').fadeIn('slow');
+    $('.viewmore a').attr({'onclick': 'changePage(\'' + type + '\')'});
   } else {
     //then the card is already on. Turn it off and set readmore back to default
     animateOff(card);
     //leave url as is
+    //change what view more button does
+    $('.preview_lower').fadeOut('slow');
   }
   $.ajax({
     type:'POST',
@@ -100,7 +105,6 @@ function readMoreToggle(type, id, card) {
       $('.preview #details').html(data);
     }
   });
-  $('.viewmore a').attr({'onclick': 'changePage(\'' + type + '\')'});
 }
 
 //for old browsers -->
