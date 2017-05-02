@@ -8,8 +8,11 @@ import xml.etree.ElementTree as ET
 def getdbConfiguration():
 	global server,port,api_query_base,collection
 
-	cdmconfig = ET.parse("../../api/configuration.xml").getroot()
-	cdmconfig = cdmconfig.find('cdm')
+	cdmconfig = ET.parse('../../api/configuration.xml').getroot()
+	#for el in cdmconfig:
+	#	print(el.tag)
+	#exit()
+	cdmconfig = cdmconfig.find('databases').find('cdm')
 	server = cdmconfig.find('server').text
 	port = cdmconfig.find('port').text
 	api_query_base = cdmconfig.find('api_query_base').text
@@ -23,8 +26,8 @@ def main():
 	#simplify json to {id,pointer,type,name}
 	#output as db/data/images/imagePointers.json
 	getdbConfiguration()
-	url = server + port + api_query_base + "dmQuery" + collection +\
-		"/CISOSEARCHALL/field/nosort/1024/0/0/0/0/0/0/0/json"
+	url = 'http://' + server + ':' + port + api_query_base + 'dmQuery' + collection +\
+		'/CISOSEARCHALL/field/nosort/1024/0/0/0/0/0/0/0/json'
 	reader = codecs.getreader("utf-8")
 	urlrequest = urllib.request.urlopen(url)
 	data = json.load(reader(urlrequest))
