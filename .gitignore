@@ -5,6 +5,7 @@
 *.wmv
 *.mts
 *.mpg
+*.mp4
 /NASCA-site/nbproject/private/
 /NASCA-site/api/configuration.xml
 NASCA_Contact.xlsx
