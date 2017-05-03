@@ -90,7 +90,7 @@ function changePage(page) {
               case 'home':
                 init_home();
                 break;
-              case 'interviews-list':
+              case 'interviews':
                 //launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
                 break;
               case 'images':
@@ -100,6 +100,7 @@ function changePage(page) {
               case 'map':
                 break;
               case 'timeline':
+                init_timeline();
                 break;
               default:
                 //code

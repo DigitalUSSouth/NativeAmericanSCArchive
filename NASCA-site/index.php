@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="css/modal.css"/>
     <link rel="stylesheet" type="text/css" href="css/interviews.css"/>
     <link rel="stylesheet" type="text/css" href="css/home.css"/>
+    <link rel="stylesheet" type="text/css" href="css/timeline.css"/>
     
     <!-- ICON -->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
@@ -44,6 +45,7 @@
     <script type="text/javascript" src="js/index/index.js"></script>
     <script type="text/javascript" src="js/index/interview.js"></script>
     <script type="text/javascript" src="js/index/home.js"></script>
+    <script type="text/javascript" src="js/index/timeline.js"></script>
   </head>
   <body>
     <?php
