@@ -139,3 +139,24 @@ colors{
   width: 95%;
   height: 85vh;
 }
+
+/* UNIVERSAL */
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+}
+
+hr.red {
+  color: #840004;
+  background-color: #840004;
+  border-color: #840004; 
+}
+
+hr.darkgrey {
+  color: #1E1F1E;
+  background-color: #1E1F1E;
+  border-color: #1E1F1E;
+}

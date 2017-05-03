@@ -216,13 +216,3 @@
 .viewmore:hover > a {
   color: #ffffff;
 }
-
-hr {
-  color: #840004;
-  background-color: #840004;
-  border-color: #840004;
-  display: block;
-  height: 1px;
-  margin: 1em 0;
-  padding: 0; 
-}
