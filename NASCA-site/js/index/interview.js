@@ -70,7 +70,7 @@ function launch_interview_modal(filename) {
  *    'lastTime': 0.0,
  *    'lastBruteForce': 0.0,
  *    'lastUpdate': 0.0,
- *    'lastHighlightedId': 0,
+ *    'lastHighlightedId': -1,
  *    'additionalHighlightedIds': 0
  * }
  */
@@ -85,20 +85,31 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
    * If the user navigated the time forward or back
   */
   if(currentTime > (lastStepJson.lastTime + 0.75) || currentTime < (lastStepJson.lastTime - 0.75)) {
+    console.log('skip');
+    console.log('lastStep: ' + lastStepJson.lastTime + ', ' + lastStepJson.lastUpdate + ', ' + lastStepJson.lastHighlightedId + ', ' + lastStepJson.additionalHighlightedIds);
+    console.log('currentStep: ' + currentStepJson.lastTime + ', ' + currentStepJson.lastUpdate + ', ' + currentStepJson.lastHighlightedId + ', ' + currentStepJson.additionalHighlightedIds);
     //unhighlight lastStepJson.lastHighlightedId and
     //any lastStepJson.additionalHighlightedIds
     for(var i = 0; i <= lastStepJson.additionalHighlightedIds; i++) {
-      highlight((divIdRoot + (lastStepJson.lastHighlightedId + i).toString()),'off');
+      if(lastStepJson.lastHighlightedId > -1) {
+        highlight((divIdRoot + (lastStepJson.lastHighlightedId + i).toString()),'off');
+      }
     }
     
     currentStepJson.lastHighlightedId = -1; //temp
-    currentStepJson.additionalHighlightedIds = 0 //temp
+    currentStepJson.additionalHighlightedIds = 0; //temp
+
+    console.log('lastStep: ' + lastStepJson.lastTime + ', ' + lastStepJson.lastUpdate + ', ' + lastStepJson.lastHighlightedId + ', ' + lastStepJson.additionalHighlightedIds);
+    console.log('currentStep: ' + currentStepJson.lastTime + ', ' + currentStepJson.lastUpdate + ', ' + currentStepJson.lastHighlightedId + ', ' + currentStepJson.additionalHighlightedIds);
 
     var i = 0;
+    console.log('init i');
     while((timecodeToInt(transcriptAsJson.text[i].timecode) < (currentTime - 0.05)) &&
 												i < transcriptAsJson.text.length) {
       i++;
     }
+    
+    console.log(i);
     
     /*
      * If i is still zero at this point, the player must have been stopped and restarted.
@@ -130,6 +141,9 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
       //find out if any before (i-1) have the same timecode
       var count = 0;
       while((i-1-count) >= 0) {
+        if(typeof transcriptAsJson.text[i-2-count] === 'undefined') {
+          break;
+        }
         if(timecodeToInt(transcriptAsJson.text[i-2-count].timecode) ===
                 timecodeToInt(transcriptAsJson.text[i-1].timecode)) {
 
@@ -140,7 +154,6 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
           break;
 				
         }
-        
       }
 
       //highlight i-1-count and any additionals
@@ -193,7 +206,7 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
     
     var nextId = lastStepJson.lastHighlightedId + lastStepJson.additionalHighlightedIds + 1;
     var nextTime = timecodeToInt(transcriptAsJson.text[nextId].timecode);
-
+    console.log('update');
     /*
      * If the currentTime has surpassed the next time in the transcript
      *  (I added that little minus 0.05 just for a little padding,
@@ -210,7 +223,7 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
       }
 
       currentStepJson.lastHighlightedId = -1; //temp
-      currentStepJson.additionalHighlightedIds = 0 //temp
+      currentStepJson.additionalHighlightedIds = 0; //temp
 
       //highlight nextId
       highlight((divIdRoot + (nextId).toString()),'on');
