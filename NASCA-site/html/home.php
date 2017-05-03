@@ -10,7 +10,12 @@ $count = intval($config->frontend->home->card_count);
 if($count <= 0) {
   $count = 6;
 }
+//$imagePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/images/imagePointers.json'));
+//$numbers = range(0,intval($imagePointers->total)-1);
+//shuffle($numbers);
+//$numbers = array_slice($numbers, 0, $count);
 for($i = 1; $i <= $count; $i++) {
+  //$id = $numbers[$i-1];
   echo '<div class="home_card" id="home_card_' . $i . '">';// . indexValue
   echo '  <div class="additional">';
   echo '    <p id="index">' . $i . '</p>';
