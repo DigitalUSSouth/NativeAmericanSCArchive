@@ -11,11 +11,12 @@ Latest Flash Player
 
 APPROVED BROWSERS
 
-Google Chrome
-Chromium
-Firefox
-
-*TODO: Specify Version #'s, operating systems, and browsers and test as many combos as possible*
+*************************| Windows 7+ | Mac OSX 10.0+ | Linux Ubuntu 14.04+ |
+Google Chrome & Chromium | Supported  |   Untested    |     Supported       |
+Mozilla Firefox          | Supported  |   Untested    |      Untested       |
+Microsoft Edge           |  Untested  |   Untested    |      Untested       |
+Apple Safari             |  Untested  |   Untested    |      Untested       |
+Opera                    |  Untested  |   Untested    |      Untested       |
 
 BUILT WITH
 
@@ -40,7 +41,7 @@ Siddhartha Pathak:
 	Map and Timeline Tabs
 	
 Vassil Kurktchiev:
-	Graphic Design
+	Graphic Design, Concepts, Some HTML5
 
 See also the list of contributors who participated in this project.
 
