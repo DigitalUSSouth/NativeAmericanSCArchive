@@ -85,9 +85,9 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
    * If the user navigated the time forward or back
   */
   if(currentTime > (lastStepJson.lastTime + 0.75) || currentTime < (lastStepJson.lastTime - 0.75)) {
-    console.log('skip');
-    console.log('lastStep: ' + lastStepJson.lastTime + ', ' + lastStepJson.lastUpdate + ', ' + lastStepJson.lastHighlightedId + ', ' + lastStepJson.additionalHighlightedIds);
-    console.log('currentStep: ' + currentStepJson.lastTime + ', ' + currentStepJson.lastUpdate + ', ' + currentStepJson.lastHighlightedId + ', ' + currentStepJson.additionalHighlightedIds);
+    //console.log('skip');
+    //console.log('lastStep: ' + lastStepJson.lastTime + ', ' + lastStepJson.lastUpdate + ', ' + lastStepJson.lastHighlightedId + ', ' + lastStepJson.additionalHighlightedIds);
+    //console.log('currentStep: ' + currentStepJson.lastTime + ', ' + currentStepJson.lastUpdate + ', ' + currentStepJson.lastHighlightedId + ', ' + currentStepJson.additionalHighlightedIds);
     //unhighlight lastStepJson.lastHighlightedId and
     //any lastStepJson.additionalHighlightedIds
     for(var i = 0; i <= lastStepJson.additionalHighlightedIds; i++) {
@@ -99,17 +99,17 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
     currentStepJson.lastHighlightedId = -1; //temp
     currentStepJson.additionalHighlightedIds = 0; //temp
 
-    console.log('lastStep: ' + lastStepJson.lastTime + ', ' + lastStepJson.lastUpdate + ', ' + lastStepJson.lastHighlightedId + ', ' + lastStepJson.additionalHighlightedIds);
-    console.log('currentStep: ' + currentStepJson.lastTime + ', ' + currentStepJson.lastUpdate + ', ' + currentStepJson.lastHighlightedId + ', ' + currentStepJson.additionalHighlightedIds);
+    //console.log('lastStep: ' + lastStepJson.lastTime + ', ' + lastStepJson.lastUpdate + ', ' + lastStepJson.lastHighlightedId + ', ' + lastStepJson.additionalHighlightedIds);
+    //console.log('currentStep: ' + currentStepJson.lastTime + ', ' + currentStepJson.lastUpdate + ', ' + currentStepJson.lastHighlightedId + ', ' + currentStepJson.additionalHighlightedIds);
 
     var i = 0;
-    console.log('init i');
+    //console.log('init i');
     while((timecodeToInt(transcriptAsJson.text[i].timecode) < (currentTime - 0.05)) &&
 												i < transcriptAsJson.text.length) {
       i++;
     }
     
-    console.log(i);
+    //console.log(i);
     
     /*
      * If i is still zero at this point, the player must have been stopped and restarted.
@@ -206,7 +206,7 @@ function updateTranscript(event, transcriptAsJson, divIdRoot, lastStepJson) {
     
     var nextId = lastStepJson.lastHighlightedId + lastStepJson.additionalHighlightedIds + 1;
     var nextTime = timecodeToInt(transcriptAsJson.text[nextId].timecode);
-    console.log('update');
+    //console.log('update');
     /*
      * If the currentTime has surpassed the next time in the transcript
      *  (I added that little minus 0.05 just for a little padding,
