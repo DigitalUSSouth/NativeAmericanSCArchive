@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="css/interviews.css"/>
     <link rel="stylesheet" type="text/css" href="css/home.css"/>
     <link rel="stylesheet" type="text/css" href="css/timeline.css"/>
+    <link rel="stylesheet" type="text/css" href="css/images.css"/>
     
     <!-- ICON -->
     <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
