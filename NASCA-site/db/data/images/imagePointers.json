@@ -1,4 +1,4 @@
-{"total":321,
+{"total":287,
 	"pointers":[
 	{
 		"id":0,"pointer":557,"type":"jp2","name":"1027.jp2"
@@ -860,5 +860,5 @@
 	},
 	{
 		"id":286,"pointer":1107,"type":"jp2","name":"820.jp2"
-	},
+	}
 ]}

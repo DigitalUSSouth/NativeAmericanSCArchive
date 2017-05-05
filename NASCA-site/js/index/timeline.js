@@ -5,10 +5,10 @@
 var items;
 
 function init_timeline() {
-  $("a").click(function(e) {
-    e.preventDefault();
-    $("#someFrame").attr("src", $(this).attr("href"));
-  });
+  //$("a").click(function(e) {
+  //  e.preventDefault();
+  //  $("#someFrame").attr("src", $(this).attr("href"));
+  //});
   $('.closeall').click(function(){
     $('.panel-collapse.in').collapse('hide');
   });

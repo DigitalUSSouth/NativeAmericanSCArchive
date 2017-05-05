@@ -41,6 +41,7 @@ def main():
 			recordsList.append([data['records'][i]['pointer'],\
 							data['records'][i]['filetype'],\
 							data['records'][i]['find']])
+	totalRecords = len(recordsList)
 	writeJSON(recordsList, totalRecords)
 
 
