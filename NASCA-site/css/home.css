@@ -13,6 +13,11 @@
   opacity: 0.8;
 }
 
+#home_book {
+  height: 100%;
+  min-height: 600px;
+}
+
 #home_left {
   display: flex;
   flex-wrap: wrap;
