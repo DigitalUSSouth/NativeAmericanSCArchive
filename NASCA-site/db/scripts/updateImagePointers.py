@@ -37,7 +37,8 @@ def main():
 	totalRecords = data['pager']['total']
 	recordsList = []
 	for i in range(0,totalRecords):
-		recordsList.append([data['records'][i]['pointer'],\
+		if 'jp2' in data['records'][i]['filetype']:	
+			recordsList.append([data['records'][i]['pointer'],\
 							data['records'][i]['filetype'],\
 							data['records'][i]['find']])
 	writeJSON(recordsList, totalRecords)
