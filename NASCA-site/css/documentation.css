@@ -4,17 +4,27 @@
   margin: 0;
 }
 
-html, body {
+html {
   height: 100%;
-  max-width: 100%;
+}
+
+html, body {
+  box-sizing: border-box;
   overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
   background: #840004;
   background-color: #840004;
   color: #ffffff;
-  min-height: 100vh;
+  min-height: 100%;
+  padding-bottom: 6rem;
 }
 
 .header {
@@ -67,12 +77,13 @@ body {
   text-decoration: none;
 }
 
-.bottom_bar {
+.footer{
+  height: 60px; 
+  width:100%;
   position: absolute;
-  bottom: 0px;
-  width: 100%;
-  height: 60px;
-  z-index: 6;
+  left: 0;
+  right: 0;
+  bottom: 0;
   color: #F7F7F7;
   background: -webkit-linear-gradient(
       rgba(30, 31, 30, 0) 0%,
@@ -97,32 +108,52 @@ body {
   opacity: 0.9;
 }
 
-.bottom_bar div {
-  position: relative;
+.footer div {
   padding-top: 1.5rem;
   text-align: center;
 }
 
-.bottom_bar .copyright {
+.footer .copyright {
   padding-right: 2rem;
   float: right;
+  font-size: 1.2em;
   font-weight: bold;
   font-style: italic;
 }
 
-h1 {
-  color: #1e1f1e;
-  font-size: 2em;
+.topology {
+  padding-top: 1rem;
+}
+
+.topology .home b {
+  color: peachpuff;
+}
+
+.topology .dir b {
+  color: #2aabd2;
+}
+
+.topology .file b {
+  color: #5cb85c;
+}
+
+h1, h2, h3 {
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
+h1 {
+  color: #1e1f1e;
+  font-size: 2.2em;
+}
+
 h2 {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 
 h3 {
   color: #aeadb8;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 p b {
@@ -130,12 +161,12 @@ p b {
 }
 
 small {
-  font-size: small;
+  font-size: 1rem;
 }
 
 hr {
   display: block;
-  margin: 1em;
+  margin: 0.9em;
   padding: 0;
   border: 0;
   height: 2px;

@@ -18,7 +18,7 @@
     <div class="body-container">
       <div class="content">
         <h1><b>NASCA Developer Resources</b></h1>
-        <h2><i>The Native American South Carolina Archive is an open-source project developed by Digital US South at the University of South Carolina. <small>Almost all of</small> These resources are openly provided to anyone who wishes to use them. Some resources, however, may be password protected. These are intended only for the future maintainers of the site. A gift, from the coders, just for them, and probably not for you.</i></h2>
+        <h2><i>The Native American South Carolina Archive is an open-source project developed by Digital US South at the University of South Carolina. <small>Almost all of</small> These resources are openly provided to anyone who wishes to use them. Some resources, now or in the future, may be password protected. These will be intended only for the future maintainers of the site. A gift, from the coders, just for them, and probably not for the general public.</i></h2>
         <hr class='darkgrey' />
         <a href="readme.html">README <small>the pretty version</small></a>
         <a href="documentation.html">Site Documentation</a>
@@ -28,13 +28,13 @@
         <p>. . .</p>
       </div>
     </div>
-    <div class="bottom_bar">
+    <div class="footer">
       <!-- === Copyright === -->
       <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
     </div>
     <!-- Local Javascript, Jquery, Ajax -->
     <script type="text/javascript">
-      $(document).ready(function() {
+      document.addEventListener("DOMContentLoaded", function(event) {
         //set date of copyright
         var d = new Date();
         document.getElementById('copyright').innerHTML = "NASCA &copy; " + d.getFullYear();

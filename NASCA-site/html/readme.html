@@ -21,13 +21,13 @@
         <p>. . .</p>
       </div>
     </div>
-    <div class="bottom_bar">
+    <div class="footer">
       <!-- === Copyright === -->
       <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
     </div>
     <!-- Local Javascript, Jquery, Ajax -->
     <script type="text/javascript">
-      $(document).ready(function() {
+      document.addEventListener("DOMContentLoaded", function(event) {
         //set date of copyright
         var d = new Date();
         document.getElementById('copyright').innerHTML = "NASCA &copy; " + d.getFullYear();
