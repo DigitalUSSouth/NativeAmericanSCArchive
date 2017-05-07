@@ -93,9 +93,12 @@ colors{
 }
 
 .tabs li a:hover {
-  text-decoration: none;
   transform: translateY(-5px);
   background-color: #1E1F1E;
+}
+
+.tabs li a:hover, .tabs li a:visited, .tabs li a:active, .tabs li a:link {
+  text-decoration: none;
 }
 
 .body-container {

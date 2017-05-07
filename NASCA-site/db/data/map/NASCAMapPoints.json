@@ -2,7 +2,7 @@
     {
         "site_name": "Native American South Carolina",
         "web_link": "http://usclancaster.sc.edu/NAS/index.html",
-        "web_link_hover": "Go To NASC Online...",
+        "web_link_hover": "USC-Lancaster Native American Studies Center",
         "description": "",
         "img_embed": "",
         "yt_embed": "",
@@ -10,10 +10,10 @@
         "lat": 34.719727
     },
     {
-        "site_name": "Johannes Kolb",
+        "site_name": "Johannes Kolb Site",
         "web_link": "https://38da75.com/",
-        "web_link_hover": "",
-        "description": "",
+        "web_link_hover": "Johannes Kolb Archaeological Site",
+        "description": "A feature film about this site was made in 2015. Information about that film is available at http://www.imdb.com/title/tt4481412/",
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/wWh5bveJAo8",
         "lng": -79.707045,
@@ -22,8 +22,8 @@
     {
         "site_name": "Winyah Bay",
         "web_link": "http://www.scencyclopedia.org/sce/entries/chicora-francisco-de/",
-        "web_link_hover": "",
-        "description": "",
+        "web_link_hover": "Francisco de Chicora, 16th Century Native of Winyah Bay",
+        "description": "Francisco de Chicora was a 16th-century Native American captive, whose personal history is connected to Winyah Bay. His enslavement to the powerful Spainard Lucas Vázquez de Ayllón led to his descriptions of coastal South Carolina having a profound effect on the imagination of the Spanish court.",
         "img_embed": "",
         "yt_embed": "",
         "lng": -79.242887,
@@ -32,8 +32,8 @@
     {
         "site_name": "Catawba Reservation",
         "web_link": "http://catawbaindian.net/about-us/our-culture/catawba-cultural-center/",
-        "web_link_hover": "Go To Catawba Cultural Center Online...",
-        "description": "",
+        "web_link_hover": "Catawba Cultural Center",
+        "description": "Information about the Catawba Cultural Center, located on the tribal reservation. More information about the Catawba can be found at: http://www.scencyclopedia.org/sce/entries/catawbas/",
         "img_embed": "http://www.scencyclopedia.org/sce/wp-content/uploads/2016/04/Catawba-People-in-Rock-Hill-SC-300x226.jpg",
         "yt_embed": "",
         "lng": -79.242887,
@@ -42,8 +42,8 @@
     {
         "site_name": "Sewee Shell Ring",
         "web_link": "https://www.fs.usda.gov/recarea/scnfs/recarea/?recid=47387",
-        "web_link_hover": "",
-        "description": "",
+        "web_link_hover": "Sewee Shell Ring",
+        "description": "A guide to an interpretive hiking trail around the Sewee Shell Ring in the Francis Marion and Sumter National Forests.",
         "img_embed": "",
         "yt_embed": "",
         "lng": -79.609097,
@@ -52,8 +52,8 @@
     {
         "site_name": "Fort Watson Mound",
         "web_link": "https://www.fws.gov/refuge/santee/",
-        "web_link_hover": "",
-        "description": "",
+        "web_link_hover": "Santee Indian Mound and Fort Watson",
+        "description": "A PDF brochure guide to the Fort Watson Mound",
         "img_embed": "",
         "yt_embed": "",
         "lng": -80.43783,
@@ -61,9 +61,9 @@
     },
     {
         "site_name": "Topper Site",
-        "web_link": "http://www.southeasternpaleoamerican.org/",
-        "web_link_hover": "",
-        "description": "",
+        "web_link": "http://www.pbs.org/time-team/explore-the-sites/topper/",
+        "web_link_hover": "Topper Site",
+        "description": "Brief overview of the Topper Site, including two videos, from PBS.",
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/-eQIZqofvwg",
         "lng": -81.244916,
@@ -72,7 +72,7 @@
     {
         "site_name": "South Carolina State Museum",
         "web_link": "http://scmuseum.org/",
-        "web_link_hover": "Go To The Museum's Website...",
+        "web_link_hover": "South Carolina State Museum",
         "description": "",
         "img_embed": "",
         "yt_embed": "",
@@ -82,8 +82,8 @@
     {
         "site_name": "Sea Pines Shell Ring",
         "web_link": "https://www.seapines.com/pdf/Forest%20Preserve%20Map.pdf",
-        "web_link_hover": "",
-        "description": "",
+        "web_link_hover": "Sea Pines Forest Preserve Map",
+        "description": "A PDF brochure guide to the Sea Pines Forest Preserve",
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/HqBThdC4zAE",
         "lng": -80.776078,
@@ -92,11 +92,118 @@
     {
         "site_name": "Museum of the Cherokee",
         "web_link": "http://www.cherokeemuseumsc.org/",
-        "web_link_hover": "Go To The Museum's Website",
-        "description": "",
+        "web_link_hover": "Museum of the Cherokee in South Carolina",
+        "description": "The Walhalla, SC-based museum of the Cherokee people in South Carolina.",
         "img_embed": "",
         "yt_embed": "",
         "lng": -83.068118,
         "lat": 34.764566
+    },
+    {
+        "site_name": "Coosaw Island Shell Ring",
+        "web_link": "https://www.nps.gov/nhl/learn/themes/ArchaicShellRings.pdf",
+        "web_link_hover": "Archaic Shell Rings of the Southeast U.S.",
+        "description": "Link to a pdf discussion of shell rings in the southeast.",
+        "img_embed": "",
+        "yt_embed": "https://www.youtube.com/embed/7P55Do4oQ1c",
+        "lng": -80.5923250250261,
+        "lat": 32.4715039394753
+    },
+    {
+        "site_name": "Hagood Creek Petroglyph Site",
+        "web_link": "http://www.visitpickenscounty.com/vendor/61/hagood-mill/",
+        "web_link_hover": "Hagood Mill Site",
+        "description": "Information about the Hagood Mill Site, including the Hagood Mill Petroglyph Site, from the Pickens Country tourism board.",
+        "img_embed": "",
+        "yt_embed": "https://www.youtube.com/embed/GgtPoEzFAs",
+        "lng": -82.72231,
+        "lat": 34.927329
+    },
+    {
+        "site_name": "Coastal Discovery Native Pottery Exhibit",
+        "web_link": "http://www.coastaldiscovery.org/",
+        "web_link_hover": "Coastal Discovery Museum",
+        "description": "The Coastal Discovery Museum, a Lowcountry-focused affiliate of the Smithsonian, located on Hilton Head Island.",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.744012,
+        "lat": 32.211744
+
+    },
+    {
+        "site_name": "The Charleston Museum",
+        "web_link": "https://www.charlestonmuseum.org",
+        "web_link_hover": "The Charleston Museum",
+        "description": "The Charleston Museum, located in downtown Charleston, preserves the history and culture of Charleston and the Lowcountry in a variety of perspectives. Information about their new Native American exhibits can be found at: https://www.charlestonmuseum.org/news-events/new-native-american-exhibits-in/",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.936053,
+        "lat": 32.792292
+
+    },
+    {
+        "site_name": "12,000 Year History Park",
+        "web_link": "http://riveralliance.org/project/12000-year-history-park/",
+        "web_link_hover": "12,000 Year History Park",
+        "description": "Information about a planned public park that explores the natural and cultural history of the Midlands of South Carolina",
+        "img_embed": "",
+        "yt_embed": "https://www.youtube.com/embed/tZEG3Lz62Ms",
+        "lng": -81.028665,
+        "lat": 33.937396
+    },
+    {
+        "site_name": "Fort Congaree",
+        "web_link": "http://scholarcommons.sc.edu/cgi/viewcontent.cgi?article=1192&context=archanth_books",
+        "web_link_hover": "The Discovery of Old Fort Congaree",
+        "description": "Academic article from 1989 about the Old Fort Congaree site, its history, importance, and archaelogical rediscovery. Further information about Fort Congaree, including an artist's rendering of the site, can be found in another pdf available at: http://www.historysoft.com/granby/Fort_Congaree_II_Revised.pdf",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.02775,
+        "lat": 33.94022
+
+    },
+    {
+        "site_name": "Fort Moore",
+        "web_link": "http://mdgroover.iweb.bsu.edu/GPR%20Ft.%20Moore.htm",
+        "web_link_hover": "Exploring Fort Moore",
+        "description": "A brief overview of the history of Fort Moore, as well as the archaeological fieldwork done there in the last 20th century.",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.910106,
+        "lat": 33.439594
+
+    },
+    {
+        "site_name": "Charlesfort",
+        "web_link": "http://www.scencyclopedia.org/sce/entries/charlesfort/",
+        "web_link_hover": "Charlesfort",
+        "description": "SC Encyclopedia entry on Charlesfort.",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.675512,
+        "lat": 32.3085
+
+    },
+    {
+        "site_name": "Santa Elena",
+        "web_link": "http://www.scencyclopedia.org/sce/entries/santa-elena/",
+        "web_link_hover": "Santa Elena",
+        "description": "SC Encyclopedia entry on Santa Elena.",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.675512,
+        "lat": 32.3085
+
+    },
+    {
+        "site_name": "Fig Island Shell Ring/Spanish Mount",
+        "web_link": "https://www.nps.gov/nhl/learn/themes/ArchaicShellRings.pdf",
+        "web_link_hover": "Archaic Shell Rings of the Southeast U.S.",
+        "description": "Link to a pdf discussion of shell rings in the southeast.",
+        "img_embed": "",
+        "yt_embed": "https://www.youtube.com/embed/7P55Do4oQ1c",
+        "lng": -80.253431,
+        "lat": 32.54454
+
     }
 ]}
