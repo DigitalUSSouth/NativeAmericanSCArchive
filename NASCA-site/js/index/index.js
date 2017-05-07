@@ -12,6 +12,7 @@ var interval_images = null;
 var interval_video = null;
 var interval_map = null;
 var interval_timeline = null;
+var interval_letters = null;
 
 //init stuff for index.html
 function init_index() {
@@ -55,7 +56,7 @@ function init_index() {
 };
 
 function clearPageIntervals() {
-  var pages = [interval_home, interval_interviews, interval_images, interval_video, interval_map, interval_timeline];
+  var pages = [interval_home, interval_interviews, interval_images, interval_video, interval_map, interval_timeline, interval_letters];
   for(var i = 0; i < pages.length; i++) {
     if(pages[i] !== null) {
       clearInterval(pages[i]);
@@ -101,6 +102,8 @@ function changePage(page) {
                 break;
               case 'timeline':
                 init_timeline();
+                break;
+              case 'letters':
                 break;
               default:
                 //code
