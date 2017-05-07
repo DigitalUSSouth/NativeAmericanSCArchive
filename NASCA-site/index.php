@@ -82,10 +82,13 @@
         <div class="content">
           Content
         </div>
-        <!-- === Copyright === -->
-        <!-- === Copyright === -->
-        <!-- === Copyright === -->
-        <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
+        <div class="bottom_bar">
+          <div id="dev_resources"><a href="html/dev_resources.html">Developer Resources</a></div>
+          <!-- === Copyright === -->
+          <!-- === Copyright === -->
+          <!-- === Copyright === -->
+          <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
+        </div>
       </div>
     </div>
 

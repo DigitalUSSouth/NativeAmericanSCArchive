@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>NASCA Developer Documentation</title>
+    <!-- metadata tags here -->
+    <meta name="description" content="Native American South Carolina Archive - Documentation of code and update procedures." />
+    <!-- Styling -->
+    <link rel="stylesheet" type="text/css" href="../css/documentation.css"/>
+  </head>
+  <body>
+    <!-- === Header === -->
+    <header class="header">
+      <div class="logo">
+        <a href="../index.php"><img src="../img/NASCA_logo.png"></a>
+      </div>
+    </header>
+    <div class="body-container">
+      <div class="content">
+        <h1><b>NASCA Developer Documentation</b></h1>
+        <h2><i>Documentation of code and update procedures for Native American South Carolina Archive</i></h2>
+        <hr class='dark' />
+        <h3>Site Topology <small><i>as seen when ssh'd into your Apache server</i></small></h3>
+        <p><b>The following illustrates what goes where in the website hierarchy. This will be useful whenever you need to add things directly to the site directory on your server, rather than making changes externally (like in contentDM or YouTube).</b></p>
+        <p><b>/NASCA-site</b><small><i>ROOT: www.duss.sc.edu/nasca/ or www.NativeSouthCarolina.org will be set to this directory.</i></small></p>
+        <p>. . . . <b>/dir-or-file</b><small><i>Use Case</i></small></p>
+        <p>. . . . . . . . <b>/dir-or-file</b><small><i>Use Case</i></small></p>
+        <p>. . . . . . . . <b>/dir-or-file</b><small><i>Use Case</i></small></p>
+        <p>. . . . <b>/dir-or-file</b><small><i>Use Case</i></small></p>
+        <p>. . . . <b>/dir-or-file</b><small><i>Use Case</i></small></p>
+        <p>. . . . <b>/dir-or-file</b><small><i>Use Case</i></small></p>
+        <p>. . . . . . . <b>/dir-or-file</b><small><i>Use Case</i></small></p>
+        <hr class='dark' />
+        <h3>Configuration</h3>
+        <p><b>Sample Description</b></p>
+        <p>...</p>
+        <hr class='dark' />
+        <h3>Update Procedures</h3>
+        <p><b>Sample Description</b></p>
+        <p>...</p>
+        <hr class='dark' />
+        <h3>API</h3>
+        <p><b>Sample Description</b></p>
+        <p>...</p>
+      </div>
+    </div>
+    <div class="bottom_bar">
+      <!-- === Copyright === -->
+      <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
+    </div>
+    <!-- Local Javascript, Jquery, Ajax -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //set date of copyright
+        var d = new Date();
+        document.getElementById('copyright').innerHTML = "NASCA &copy; " + d.getFullYear();
+      });
+    </script>
+  </body>
+</html>

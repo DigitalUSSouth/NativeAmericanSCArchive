@@ -1,0 +1,148 @@
+* {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #840004;
+  background-color: #840004;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.header {
+  height: 90px;
+  width: 100%;
+  background: #3B3A3E; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #1E1F1E, #3B3A3E); /* Standard syntax */
+  border-bottom: 0.4rem solid #1E1F1E;
+  border-radius: 0px;
+  z-index: 5;
+}
+
+.logo {
+  width: 30%;
+  float: left;
+}
+
+.logo a img {
+  height: 60px;
+  width: 200px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.body-container {
+  margin: 15px;
+}
+
+.content {
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 100%;
+}
+
+.content a {
+  font-size: 1.1em;
+  display: list-item;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.content a:hover {
+  color: #3B3A3E;
+  text-decoration: none;
+}
+
+.bottom_bar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  z-index: 6;
+  color: #F7F7F7;
+  background: -webkit-linear-gradient(
+      rgba(30, 31, 30, 0) 0%,
+      rgba(30, 31, 30, 0.9) 80%
+  ); 
+  background-image: -moz-linear-gradient(
+      rgba(30, 31, 30, 0) 0%,
+      rgba(30, 31, 30, 0.9) 80%
+  );
+  background-image: -o-linear-gradient(
+      rgba(30, 31, 30, 0) 0%,
+      rgba(30, 31, 30, 0.9) 80%
+  );
+  background-image: linear-gradient(
+      rgba(30, 31, 30, 0) 0%,
+      rgba(30, 31, 30, 0.9) 80%
+  );
+  background-image: -ms-linear-gradient(
+      rgba(30, 31, 30, 0) 0%,
+      rgba(30, 31, 30, 0.9) 80%
+  );
+  opacity: 0.9;
+}
+
+.bottom_bar div {
+  position: relative;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.bottom_bar .copyright {
+  padding-right: 2rem;
+  float: right;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1 {
+  color: #1e1f1e;
+  font-size: 2em;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  color: #aeadb8;
+  font-size: 1.2em;
+}
+
+p b {
+  padding-right: 2rem;
+}
+
+small {
+  font-size: small;
+}
+
+hr {
+  display: block;
+  margin: 1em;
+  padding: 0;
+  border: 0;
+  height: 2px;
+}
+
+hr.darkgrey {
+  color: #1e1f1e;
+  background-color: #1e1f1e;
+  border-color: #1e1f1e;
+}
