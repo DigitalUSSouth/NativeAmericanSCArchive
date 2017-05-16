@@ -52,47 +52,54 @@
     <?php
       include_once 'html/modal.php';
     ?>
-    <!-- === Gradient-Wrapper === -->
-    <!-- === Gradient-Wrapper === -->
-    <!-- === Gradient-Wrapper === -->
-    <div class="gradient-wrapper">
-      <!-- === Header === -->
-      <!-- === Header === -->
-      <!-- === Header === -->
-      <header class="header">
-        <div class="logo">
-          <a href="index.php"><img src="img/NASCA_logo.png"></a>
+    <div id="body-container">
+      <div id="header-positioner">
+        <div id="header-container">
+          <div id="header">
+            <div id="logo">
+              <a href="index.php"><img src="img/NASCA_logo.png"></a>
+            </div>
+            <div id="nav-bar">
+              <ul id="tabs">
+                <li><a id="tabs-home" href="#" onclick="changePage('home')">HOME</a></li>
+                <li><a id="tabs-interviews" href="#" onclick="changePage('interviews')">INTERVIEWS</a></li>
+                <li><a id="tabs-letters" href="#" onclick="changePage('letters')">LETTERS</a></li>
+                <li><a id="tabs-images" href="#" onclick="changePage('images')">IMAGES</a></li>
+                <li><a id="tabs-video" href="#" onclick="changePage('video')">VIDEO</a></li>
+                <li><a id="tabs-map" href="#" onclick="changePage('map')">MAP</a></li>
+                <li><a id="tabs-timeline" href="#" onclick="changePage('timeline')">TIMELINE</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <!-- === Navigation === -->
-        <!-- === Navigation === -->
-        <!-- === Navigation === -->
-        <div class="nav">
-          <ul class="tabs">
-            <li><a id="tb-home" href="#" onclick="changePage('home')">HOME</a></li>
-            <li><a id="tb-interviews" href="#" onclick="changePage('interviews')">INTERVIEWS</a></li>
-            <li><a id="tb-letters" href="#" onclick="changePage('letters')">LETTERS</a></li>
-            <li><a id="tb-images" href="#" onclick="changePage('images')">IMAGES</a></li>
-            <li><a id="tb-video" href="#" onclick="changePage('video')">VIDEO</a></li>
-            <li><a id="tb-map" href="#" onclick="changePage('map')">MAP</a></li>
-            <li><a id="tb-timeline" href="#" onclick="changePage('timeline')">TIMELINE</a></li>
-          </ul>
-        </div>
-      </header>
-      
-      <div class="body-container">
-        <div class="content">
-          Content
-        </div>
-        <div class="bottom_bar">
-          <div id="dev_resources"><a href="html/dev_resources.html">Developer Resources</a></div>
-          <!-- === Copyright === -->
-          <!-- === Copyright === -->
-          <!-- === Copyright === -->
-          <div id="copyright" class="copyright"><p>NASCA &copy; 2016</p></div>
+      </div>
+      <div id="header-positioner-height-offset"></div>
+      <div id="page-container">
+        <div id="page">
+          The page failed to load it's content.
         </div>
       </div>
     </div>
-
+    <div id="footer-container">
+      <div id="footer">
+        <div id="footer-links-container">
+          <ul id="footer-links">
+            <li id="footer-links-about" class="footer-link">
+              <a href="html/about.html">About</a>
+            </li>
+            <li id="footer-links-credits" class="footer-link">
+              <a href="html/credits.html">Credits</a>
+            </li>
+            <li id="footer-links-dev-resources" class="footer-link">
+              <a href="html/dev_resources.html">Developer Resources</a>
+            </li>
+          </ul>
+        </div>
+        <div id="copyright-container">
+          <div id="copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
+        </div>
+      </div>
+    </div>
     <!-- Local Javascript, Jquery, Ajax -->
     <script type="text/javascript">
       $(document).ready(function() {

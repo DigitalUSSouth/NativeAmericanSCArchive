@@ -1,9 +1,24 @@
-html, body {
+* {
   padding: 0;
   margin: 0;
+}
+
+html, body {
   height: 100%;
+  min-height: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  background: #840004;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /*
@@ -19,17 +34,34 @@ colors{
 /* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
 /* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
 
-.gradient-wrapper {
-  background: #840004;
+#body-container {
   width: 100%;
-  min-height: 100vh;
   overflow-x: hidden;
+  min-height: 100vh;
+  height: 100%;
   z-index: -1;
+  padding-bottom: 100px;
 }
 
-.header {
+#header-positioner {
   position: fixed;
+  display: block;
   min-height: 90px;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 5;
+}
+
+#header-container {
+  position: relative;
+  display: table;
+  height: inherit;
   width: 100%;
   background: #3B3A3E; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E); /* For Safari 5.1 to 6.0 */
@@ -38,15 +70,19 @@ colors{
   background: linear-gradient(to right, #1E1F1E, #3B3A3E); /* Standard syntax */
   border-bottom: 0.4rem solid #1E1F1E;
   border-radius: 0px;
-  z-index: 5;
 }
 
-.logo {
+#header-positioner-height-offset {
+  height: 90px;
+  width: 100%;
+}
+
+#logo {
   width: 30%;
   float: left;
 }
 
-.logo a img {
+#logo a img {
   float: left;
   height: 65px;
   width: 205px;
@@ -56,12 +92,12 @@ colors{
   padding-right: 1.2rem;
 }
 
-.nav {
+#nav-bar {
   width: 65%;
   float: right;
 }
 
-.tabs {
+#tabs {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -70,7 +106,7 @@ colors{
   padding-right: 1.4rem;
 }
 
-.tabs li {
+#tabs li {
   height: 50px;
   min-width: 80px;
   text-align: center;
@@ -79,35 +115,35 @@ colors{
   padding-right: 0.5rem;
 }
 
-.tabs li a {
+#tabs li a {
   display: block;
   /*font-family: 'Open Sans', sans-serif;*/
   text-transform: uppercase;
-  font-size: 3.5;
+  font-size: medium;
   font-weight: 600;
   letter-spacing: 2px;
   color: #F7F7F7;
   transition: 0.5s ease;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
+  border-radius: 5px;
 }
 
-.tabs li a:hover {
+#tabs li a:hover {
   transform: translateY(-5px);
   background-color: #1E1F1E;
 }
 
-.tabs li a:hover, .tabs li a:visited, .tabs li a:active, .tabs li a:link {
+#tabs li a:hover, #tabs li a:visited, #tabs li a:active, #tabs li a:link {
   text-decoration: none;
 }
 
-.body-container {
+#page-container {
   height: 100%;
-  /*padding-top: 125px;*/
   width: 100%;
 }
 
-.content {
+#page {
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
@@ -116,57 +152,93 @@ colors{
   height: 100%;
 }
 
-.bottom_bar {
+#footer-container {
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   width: 100%;
   z-index: 6;
-  position: fixed;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
   color: #F7F7F7;
-  padding: 1.5rem;
-  padding-right: 2.5rem;
-  margin: 0px;
-  bottom: 0px;
   background: -webkit-linear-gradient(
       rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 0.9) 80%
+      rgba(30, 31, 30, 1) 100%
   ); 
   background-image: -moz-linear-gradient(
       rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 0.9) 80%
+      rgba(30, 31, 30, 1) 100%
   );
   background-image: -o-linear-gradient(
       rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 0.9) 80%
+      rgba(30, 31, 30, 1) 100%
   );
   background-image: linear-gradient(
       rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 0.9) 80%
+      rgba(30, 31, 30, 1) 100%
   );
   background-image: -ms-linear-gradient(
       rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 0.9) 80%
+      rgba(30, 31, 30, 1) 100%
   );
   opacity: 0.9;
 }
 
-.bottom_bar div {
+#footer {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 15px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+#footer-links-container {
+  height: 40px;
+  width: 100%;
+}
+
+#footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.footer-link {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.footer-link a, .footer-link a:hover, .footer-link a:active, .footer-link a:visited {
+  border-radius: 5px;
+  padding: 5px;
+  font-size: small;
   text-align: center;
-  position: relative;
-  text-decoration: none;
-}
-
-.bottom_bar .copyright {
-  float: right;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.bottom_bar #dev_resources {
-  float: left;
-}
-
-#dev_resources a, #dev_resources a:hover, #dev_resources a:active, #dev_resources a:visited {
   text-decoration: none;
   color: #ffffff;
+  transition: 0.5s ease;
+}
+
+.footer-link a:hover {
+  transform: translateY(-5px);
+  background-color: #1E1F1E;
+}
+
+#copyright-container {
+  height: 20px;
+  width: 100%;
+}
+
+#copyright {
+  float: right;
+  font-size: small;
+  font-style: italic;
+  opacity: 0.5;
 }
 
 .additional {

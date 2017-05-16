@@ -20,14 +20,14 @@ function init_index() {
   setGlobals();
   
   //set invisible EVERYTHING that will fade in
-  var fadeIns = ['.header', '.content', '.bottom_bar'];
+  var fadeIns = ['#header', '#page', '#footer'];
   for(var i = 0; i < fadeIns.length; i++) {
     $(fadeIns[i]).css('display','none');
   }
   
   //set date of copyright
   var d = new Date();
-  document.getElementById('copyright').innerHTML = "NASCA &copy; " + d.getFullYear();
+  document.getElementById('copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();
   
   //get home page content
   $.ajax({
@@ -36,7 +36,7 @@ function init_index() {
     async: true,
     dataType: 'html',
     success: function(data) {
-      $('.content').html(data).promise().done(function() {
+      $('#page').html(data).promise().done(function() {
         init_home();
       });
     }
@@ -45,8 +45,8 @@ function init_index() {
   //dynamic css function
   //handles content top padding when nav bar resizes
   var interval_index = setInterval(function(){
-    var navHeight = $('.header').height();
-    $('.body-container').css('padding-top', navHeight+'px');
+    var navHeight = $('#header-positioner').height();
+    $('#header-positioner-height-offset').css('height', navHeight+'px');
     
   },interval);
   
@@ -74,7 +74,7 @@ function changePage(page) {
   //check if page is already up
   if(!(page === currentPage)) {
     //fade out content
-    $('.content').fadeOut(750,function(){
+    $('#page').fadeOut(750,function(){
       //callback when fadeOut complete
       //clear all interval actions
       clearPageIntervals();
@@ -86,7 +86,7 @@ function changePage(page) {
         dataType: 'html',
         success: function(data) {
           //callback when html retrieved
-          $('.content').html(data).promise().done(function() {
+          $('#page').html(data).promise().done(function() {
             switch(page) {
               case 'home':
                 init_home();
@@ -109,7 +109,7 @@ function changePage(page) {
                 //code
             }
           });
-          $('.content').fadeIn(750);
+          $('#page').fadeIn(750);
         }
       });
     });
