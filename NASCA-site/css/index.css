@@ -5,20 +5,19 @@
 
 html, body {
   height: 100%;
-  min-height: 100%;
-  max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-}
-
-body {
-  background: #840004;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  background: #840004;
+  font-family: 'Droid Serif', serif;
 }
 
 /*
@@ -31,37 +30,29 @@ colors{
 }
 */
 
-/* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
-/* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS *//* Wrapper CSS */
-
 #body-container {
+  position: relative;
   width: 100%;
   overflow-x: hidden;
-  min-height: 100vh;
-  height: 100%;
-  z-index: -1;
+  min-height: 100%;
   padding-bottom: 100px;
 }
 
 #header-positioner {
   position: fixed;
   display: block;
-  min-height: 90px;
   top: 0;
   right: 0;
   left: 0;
+  height: auto;
   width: 100%;
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   z-index: 5;
 }
 
 #header-container {
   position: relative;
-  display: table;
-  height: inherit;
+  display: inline-flex;
+  min-height: 100px;
   width: 100%;
   background: #3B3A3E; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E); /* For Safari 5.1 to 6.0 */
@@ -73,63 +64,58 @@ colors{
 }
 
 #header-positioner-height-offset {
-  height: 90px;
+  height: 100px;
   width: 100%;
 }
 
 #logo {
-  width: 30%;
-  float: left;
+  height: 100%;
 }
 
 #logo a img {
-  float: left;
-  height: 65px;
-  width: 205px;
-  padding-top: 0.75rem;
-  padding-bottom: 0.3rem;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
+  height: 3.5rem;
+  width: auto;
+  margin: 20px;
+  margin-bottom: 25px;
+  margin-left: 30px;
 }
 
 #nav-bar {
-  width: 65%;
-  float: right;
+  width: 100%;
+  display: flex;
+  padding: 10px;
 }
 
 #tabs {
+  width: 100%;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  padding-top: 1.25rem;
-  padding-right: 1.4rem;
+  justify-content: end;
+  align-items: end;
 }
 
 #tabs li {
-  height: 50px;
-  min-width: 80px;
   text-align: center;
   line-height: 50px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  height: 3.5rem;
+  transition: 0.5s ease;
 }
 
 #tabs li a {
   display: block;
-  /*font-family: 'Open Sans', sans-serif;*/
   text-transform: uppercase;
-  font-size: medium;
+  font-size: larger;
   font-weight: 600;
   letter-spacing: 2px;
   color: #F7F7F7;
-  transition: 0.5s ease;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  padding: 0.3rem;
   border-radius: 5px;
 }
 
-#tabs li a:hover {
+#tabs li:hover{
   transform: translateY(-5px);
   background-color: #1E1F1E;
 }
@@ -141,6 +127,7 @@ colors{
 #page-container {
   height: 100%;
   width: 100%;
+  z-index: 0;
 }
 
 #page {
@@ -153,16 +140,9 @@ colors{
 }
 
 #footer-container {
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  position: relative;
+  margin-top: -100px;
   width: 100%;
-  z-index: 6;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   height: 100px;
   color: #F7F7F7;
   background: -webkit-linear-gradient(
@@ -186,6 +166,7 @@ colors{
       rgba(30, 31, 30, 1) 100%
   );
   opacity: 0.9;
+  z-index: 6;
 }
 
 #footer {
@@ -207,25 +188,30 @@ colors{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  padding-top: 10px;
 }
 
 .footer-link {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.footer-link a, .footer-link a:hover, .footer-link a:active, .footer-link a:visited {
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 5px;
-  padding: 5px;
-  font-size: small;
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;
+  opacity: 0.8;
   transition: 0.5s ease;
 }
 
-.footer-link a:hover {
-  transform: translateY(-5px);
+.footer-link a {
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-link a, .footer-link a:hover, .footer-link a:active, .footer-link a:visited {
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  transform: translateY(-4px);
   background-color: #1E1F1E;
 }
 
