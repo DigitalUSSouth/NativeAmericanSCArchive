@@ -242,7 +242,8 @@ colors{
 
 hr {
   display: block;
-  height: 1px;
+  height: 2px;
+  border: 0;
   margin: 1em 0;
   padding: 0;
 }
@@ -285,3 +286,4 @@ hr.darkgrey {
 .row {
   width: 100%;
 }
+
