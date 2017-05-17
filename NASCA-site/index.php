@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="css/home.css"/>
     <link rel="stylesheet" type="text/css" href="css/timeline.css"/>
     <link rel="stylesheet" type="text/css" href="css/images.css"/>
+    <link rel="stylesheet" type="text/css" href="css/tribes.css"/>
     
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
@@ -51,6 +52,7 @@
     <script type="text/javascript" src="js/index/interview.js"></script>
     <script type="text/javascript" src="js/index/home.js"></script>
     <script type="text/javascript" src="js/index/timeline.js"></script>
+    <script type="text/javascript" src="js/index/tribes.js"></script>
   </head>
   <body>
     <?php
@@ -71,6 +73,7 @@
               <li><a id="tabs-video" href="#" onclick="changePage('video')">VIDEO</a></li>
               <li><a id="tabs-map" href="#" onclick="changePage('map')">MAP</a></li>
               <li><a id="tabs-timeline" href="#" onclick="changePage('timeline')">TIMELINE</a></li>
+              <li><a id="tabs-tribes" href="#" onclick="changePage('tribes')">TRIBES</a></li>
             </ul>
           </div>
         </div>

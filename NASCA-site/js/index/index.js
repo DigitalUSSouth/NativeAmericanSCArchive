@@ -105,6 +105,9 @@ function changePage(page) {
                 break;
               case 'letters':
                 break;
+              case 'tribes':
+                init_tribes();
+                break;
               default:
                 //code
             }
