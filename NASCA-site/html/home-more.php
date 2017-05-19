@@ -1,6 +1,7 @@
 <?php
   $api_dir = preg_replace('/html.home-more\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
   include_once ($api_dir . 'configuration.php');
+  include_once ($api_dir . 'cdm.php');
   //if there are http args called 'type' and 'id', then load a view more page
   //corresponding to that id and type. Usually this will be
   //type = images
@@ -54,7 +55,7 @@
   function printImageDetails($cdm_id) {
     $idint = intval($cdm_id);
     echo '<p><b><i>From Images...</i></b></p>';
-    echo '<h2><b>Name from cdm id ' . $cdm_id . '</b></h2>';
+    echo '<h2><b>' . getImageTitle($cdm_id) . '</b></h2>';
     echo '<hr class="red"/>';
     echo '<p>Description from id ' . $cdm_id . '</p>';
     $type = 'not found';

@@ -5,7 +5,8 @@ var CDM_PORT = '';
 var CDM_QUERY_BASE = '';
 var CDM_COLLECTION = '';
   
-var CDM_BASE = '';
+var CDM_API_WEBSERVICE = '';
+var CDM_API_UTILS = '';
   
 var REL_HOME = '';
 var SITE_ROOT = '';
@@ -24,7 +25,8 @@ function setGlobals() {
       CDM_QUERY_BASE = json.CDM_QUERY_BASE;
       CDM_COLLECTION = json.CDM_COLLECTION;
 
-      CDM_BASE = json.CDM_BASE;
+      CDM_API_WEBSERVICE = json.CDM_API_WEBSERVICE;
+      CDM_API_UTILS = json.CDM_API_UTILS;
 
       REL_HOME = json.REL_HOME;
       SITE_ROOT = json.SITE_ROOT;

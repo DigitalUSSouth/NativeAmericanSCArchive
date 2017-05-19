@@ -8,7 +8,8 @@
   $arr['CDM_PORT'] = CDM_PORT;
   $arr['CDM_QUERY_BASE'] = CDM_QUERY_BASE;
   $arr['CDM_COLLECTION'] = CDM_COLLECTION;
-  $arr['CDM_BASE'] = CDM_BASE;
+  $arr['CDM_API_WEBSERVICE'] = CDM_API_WEBSERVICE;
+  $arr['CDM_API_UTILS'] = CDM_API_UTILS;
   $arr['REL_HOME'] = REL_HOME;
   $arr['SITE_ROOT'] = SITE_ROOT;
   echo json_encode($arr);

@@ -20,7 +20,7 @@ function init_index() {
   setGlobals();
   
   //set invisible EVERYTHING that will fade in
-  var fadeIns = ['#header', '#page', '#footer'];
+  var fadeIns = ['#header-positioner', '#page-container', '#footer-container'];
   for(var i = 0; i < fadeIns.length; i++) {
     $(fadeIns[i]).css('display','none');
   }

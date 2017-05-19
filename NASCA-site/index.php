@@ -81,7 +81,7 @@
       <div id="header-positioner-height-offset"></div>
       <div id="page-container">
         <div id="page">
-          The page failed to load it's content.
+          Loading . . .
         </div>
       </div>
     </div>
