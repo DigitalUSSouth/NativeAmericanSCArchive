@@ -52,7 +52,7 @@
   }
   
   function getImageReference($pointer, $size) {
-    $query = CDM_API_UTILS . 'CISOROOT=' . substr($CDM_COLLECTION, 1) . '&CISOPTR=' . $pointer . '&action=2&DMSCALE=';
+    $query = CDM_API_UTILS . 'CISOROOT=' . substr(CDM_COLLECTION, 1) . '&CISOPTR=' . $pointer . '&action=2&DMSCALE=';
     $arr = getImageDimensions($pointer);
     $width = $arr['width'];
     $height = $arr['height'];
