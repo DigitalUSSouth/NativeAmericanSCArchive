@@ -25,21 +25,30 @@
       foreach(libxml_get_errors() as $error) {
         $err .= '<br>' . $error->message;
       }
-      die($err);
+      return 'F' . $err;
     }
     return $response;
   }
   
   function getImageDimensions($pointer) {
     $info = getImageInfo($pointer);
-    $arr['width'] = $info->width;
-    $arr['height'] = $info->height;
+    if($info[0] === 'F') {
+      $arr['width'] = 100;
+      $arr['height'] = 100;
+    } else {
+      $arr['width'] = $info->width;
+      $arr['height'] = $info->height;
+    }
     return $arr;
   }
   
   function getImageTitle($pointer) {
     $info = getImageInfo($pointer);
-    return $info->title;
+    if($info[0] === 'F') {
+      return $info;
+    } else {
+      return $info->title;
+    }
   }
   
   function getImageReference($pointer, $size) {
