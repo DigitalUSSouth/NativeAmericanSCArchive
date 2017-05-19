@@ -20,7 +20,7 @@
   function getImageInfo($pointer) {
     $query = CDM_API_WEBSERVICE . 'dmGetImageInfo' . CDM_COLLECTION . '/' . $pointer . '/xml';
     $response = simplexml_load_file($query);
-    if ($config === false) {
+    if ($response === false) {
       $err = '';
       foreach(libxml_get_errors() as $error) {
         $err .= '<br>' . $error->message;
