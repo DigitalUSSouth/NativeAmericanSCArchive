@@ -40,7 +40,7 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
     
     <!-- ICON -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico"/>
 
     <!-- Local Javascript, Jquery, Ajax -->
     <script type="text/javascript" src="js/dynamic_css.js"></script>
@@ -62,7 +62,9 @@
       <div id="header-positioner">
         <div id="header-container">
           <div id="logo">
-            <a href="index.php"><img src="img/NASCA_logo.png"></a>
+            <a href="index.php">
+                <img src="img/coloredLogos/logo/NASCA_single_logo_white.svg" />
+            </a>
           </div>
           <div id="nav-bar">
             <ul id="tabs">

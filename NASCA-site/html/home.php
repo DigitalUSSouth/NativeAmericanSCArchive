@@ -31,8 +31,8 @@ for($i = 1; $i <= $count; $i++) {
   echo '    <a href="#" onclick="readMoreToggle(\'images\',' . $id . ',\'#home_card_' . $i . '\')">READ MORE</a>';
   echo '  </div>';
   echo '  <div id="point">';
-  echo '    <object data="img/card-point.svg" type="image/svg+xml">';
-  echo '      <img src="img/card-point.jpg" />';
+  echo '    <object data="img/cardPoint/new/cardPoint.svg" type="image/svg+xml">';
+  echo '      <img src="img/cardPoint/new/cardPoint.png" />';
   echo '    </object>';
   echo '  </div>';
   echo '</div>';
