@@ -1,6 +1,7 @@
 <?php
   $current_dir = str_replace('update.php','',__FILE__);
   require_once($current_dir . 'configuration.php');
+  require_once($current_dir . 'cdm.php');
   
   function getImages() {
     $query = 'http://digital.tcl.sc.edu:81/dmwebservices/index.php?q=dmQuery/nasca/0/fields/nosort/1024/0/0/0/0/0/0/0/json';
@@ -11,17 +12,16 @@
       if($collection->records[$i]->filetype === 'cpd') {
         $pointer = $collection->records[$i]->pointer;
         $find = $collection->records[$i]->find;
-        $query = 'http://digital.tcl.sc.edu/utils/collection/nasca/id/' . $pointer . '/filename/' . $find;
+        $query = 'digital.tcl.sc.edu/utils/getfile/collection/nasca/id/1110/filename/1111.cpd';
         //echo $pointer;
         //echo $find;
         
-        $data = parse_url($query);
-        print_r($data);
-        
-        break;
+        $cpd = simplexml_load_string(curl($query));
+        print_r($cpd);
       }
     }
   }
-  
+    
   getImages();
+  
 ?>
