@@ -16,13 +16,13 @@ html, body {
 }
 
 body {
-  background: #840004;
+  background: #A80505;
   font-family: 'Droid Serif', serif;
 }
 
 /*
 colors{
-    red - #840004
+    red - #840004 A80505
     dark-grey - #1E1F1E
     grey - #3B3A3E
     light-grey - #AEADB8
@@ -249,9 +249,9 @@ hr {
 }
 
 hr.red {
-  color: #840004;
-  background-color: #840004;
-  border-color: #840004; 
+  color: #A80505;
+  background-color: #A80505;
+  border-color: #A80505; 
 }
 
 hr.darkgrey {
