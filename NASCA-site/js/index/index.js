@@ -25,6 +25,15 @@ function init_index() {
     $(fadeIns[i]).css('display','none');
   }
   
+  //set onhover onclick stuff
+  $('#logo').hover(function() {
+    //enter
+    $('#logo-verbose img').animate({width:'95%',opacity:1.0},'fast');
+  }, function() {
+    //exit
+    $('#logo-verbose img').animate({width:'60%',opacity:0},'fast');
+  });
+  
   //set date of copyright
   var d = new Date();
   document.getElementById('copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();

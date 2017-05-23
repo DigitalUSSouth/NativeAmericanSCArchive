@@ -61,10 +61,15 @@
     <div id="body-container">
       <div id="header-positioner">
         <div id="header-container">
-          <div id="logo">
-            <a href="index.php">
+          <div id="logo-container">
+            <div id="logo">
+              <a href="index.php">
                 <img src="img/coloredLogos/logo/NASCA_single_logo_white.svg" />
-            </a>
+              </a>
+            </div>
+            <div id="logo-verbose">
+              <img src="img/coloredLogos/type/NASCA_type_white.png" />
+            </div>
           </div>
           <div id="nav-bar">
             <ul id="tabs">

@@ -60,7 +60,7 @@
     $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
     echo '<p><b><i>From Images...</i></b></p>';
     echo '<h2><b>' . $homePointers->data[$homeptr]->title . '</b></h2>';
-    echo '<hr class="red"/>';
+    echo '<hr class="darkgrey"/>';
     echo '<p>Description from id ' . $cdmptr . '</p>';
     $fn = $homePointers->data[$homeptr]->filename;
     echo '<p>Filename is ' . $fn . '</p>';
@@ -72,7 +72,7 @@
     $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
     echo '<p><b><i>From Letters...</i></b></p>';
     echo '<h2><b>' . $homePointers->data[$homeptr]->title . '</b></h2>';
-    echo '<hr class="red"/>';
+    echo '<hr class="darkgrey"/>';
     echo '<p>...</p>';
     echo '<hr class="red"/>';
     echo '<p><b><i>Click \'View More\' to browse all of our archived letters.</i></b></p>';

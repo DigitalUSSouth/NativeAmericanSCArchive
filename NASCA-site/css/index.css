@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-  background: #A80505;
+  background: #F7F7F7;
   font-family: 'Droid Serif', serif;
 }
 
@@ -54,13 +54,13 @@ colors{
   display: inline-flex;
   min-height: 100px;
   width: 100%;
-  background: #3B3A3E; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #1E1F1E, #3B3A3E); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #1E1F1E, #3B3A3E); /* Standard syntax */
+  background: #A80505; /* For browsers that do not support gradients */
+  /*background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E);
+  background: -o-linear-gradient(right, #1E1F1E, #3B3A3E);
+  background: -moz-linear-gradient(right, #1E1F1E, #3B3A3E);
+  background: linear-gradient(to right, #1E1F1E, #3B3A3E);
   border-bottom: 0.4rem solid #1E1F1E;
-  border-radius: 0px;
+  border-radius: 0px;*/
 }
 
 #header-positioner-height-offset {
@@ -68,16 +68,34 @@ colors{
   width: 100%;
 }
 
-#logo {
+#logo-container {
+  min-width: 510px;
   height: 100%;
+  margin: 20px;
+  margin-bottom: 15px;
+  margin-left: 25px;
+}
+
+#logo {
+  width: 275px;
+  float: left;
 }
 
 #logo a img {
-  height: 3.5rem;
-  width: auto;
-  margin: 20px;
-  margin-bottom: 20px;
-  margin-left: 30px;
+  height: auto;
+  width: 275px;
+}
+
+#logo-verbose {
+  overflow: hidden;
+  height: 75px;
+  margin-top: 1px;
+  padding-left: 20px;
+}
+
+#logo-verbose img {
+  width: 60%;
+  opacity: 0;
 }
 
 #nav-bar {
@@ -146,24 +164,24 @@ colors{
   height: 100px;
   color: #F7F7F7;
   background: -webkit-linear-gradient(
-      rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 1) 100%
+      rgba(168, 5, 5, 0) 0%,
+      rgba(168, 5, 5, 1) 100%
   ); 
   background-image: -moz-linear-gradient(
-      rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 1) 100%
+      rgba(168, 5, 5, 0) 0%,
+      rgba(168, 5, 5, 1) 100%
   );
   background-image: -o-linear-gradient(
-      rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 1) 100%
+      rgba(168, 5, 5, 0) 0%,
+      rgba(168, 5, 5, 1) 100%
   );
   background-image: linear-gradient(
-      rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 1) 100%
+      rgba(168, 5, 5, 0) 0%,
+      rgba(168, 5, 5, 1) 100%
   );
   background-image: -ms-linear-gradient(
-      rgba(30, 31, 30, 0) 0%,
-      rgba(30, 31, 30, 1) 100%
+      rgba(168, 5, 5, 0) 0%,
+      rgba(168, 5, 5, 1) 100%
   );
   opacity: 0.9;
   z-index: 6;
