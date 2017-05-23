@@ -94,5 +94,5 @@
     $query .= $scale . '&DMWIDTH=' . $new_width . '&DMHEIGHT=' . $new_height;
     return $query;
   }
-  
+
 ?>
