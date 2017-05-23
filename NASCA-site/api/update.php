@@ -21,7 +21,7 @@
         $arr['filename'] = $rec->find;
         $arr['title'] = $title;
         array_push($imageData, $arr);
-        $arr['type'] = 'image';
+        $arr['type'] = 'images';
         array_push($homeData, $arr);
       }
     }
@@ -44,7 +44,7 @@
           $page['filename'] = $page_file;
           $page['title'] = $page_title;
           array_push($letter, $page);
-          $page['type'] = 'letter';
+          $page['type'] = 'letters';
           if($j === 0) {
             array_push($homeData, $page);
           }
@@ -54,13 +54,22 @@
     }
     $path = $_SERVER['DOCUMENT_ROOT'] . REL_HOME;
     $fp = fopen($path . '/db/data/images/data.json', 'w');
-    fwrite($fp, json_encode($imageData));
+    $arr = array();
+    $arr['count'] = count($imageData);
+    $arr['data'] = $imageData;
+    fwrite($fp, json_encode($arr));
     fclose($fp);
     $fp = fopen($path . '/db/data/letters/data.json', 'w');
-    fwrite($fp, json_encode($letterData));
+    $arr = array();
+    $arr['count'] = count($letterData);
+    $arr['data'] = $letterData;
+    fwrite($fp, json_encode($arr));
     fclose($fp);
     $fp = fopen($path . '/db/data/home/data.json', 'w');
-    fwrite($fp, json_encode($homeData));
+    $arr = array();
+    $arr['count'] = count($homeData);
+    $arr['data'] = $homeData;
+    fwrite($fp, json_encode($arr));
     fclose($fp);
   }
     

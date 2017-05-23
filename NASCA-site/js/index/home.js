@@ -64,7 +64,7 @@ function animateOff(card) {
  * @param {type} card - jQuery selector for cards to animate on
  */
 function animateOn(card) {
-  $(card + ' .readmore').css({'background': '#840004'});
+  $(card + ' .readmore').css({'background': '#A80505'});
   $(card + ' .readmore a').css({'color': '#ffffff'});
   $(card + ' #point').animate({
     'right': '10px'
@@ -76,7 +76,7 @@ function animateOn(card) {
  * @param {string} type - may be 'image' 'video' or 'transcript'
  * @param {number/int} id - id on cdm or wherever of entry to load data from
  */
-function readMoreToggle(type, id, card) {
+function readMoreToggle(homePtr, cdmPtr, type, card) {
   var state = parseInt($(card + ' .additional #toggle').text());
   var url = SITE_ROOT + '/html/home-more.php';
   if(state === 0) {
@@ -85,7 +85,7 @@ function readMoreToggle(type, id, card) {
     //turn current card on
     animateOn(card);
     //add relevant info to url
-    url += '?type=' + type + '&id=' + id;
+    url += '?type=' + type + '&cdmptr=' + cdmPtr + '&homeptr=' + homePtr;
     //change what view more button does
     $('.preview_lower').fadeIn('fast');
     $('.viewmore a').attr({'onclick': 'changePage(\'' + type + '\')'});

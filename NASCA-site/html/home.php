@@ -10,26 +10,31 @@ $count = intval($config->frontend->home->card_count);
 if($count <= 0) {
   $count = 6;
 }
-$imagePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/images/imagePointers.json'));
-$numbers = range(0,intval($imagePointers->total)-1);
+$pointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
+$numbers = range(0,intval($pointers->count)-1);
 shuffle($numbers);
 $numbers = array_slice($numbers, 0, $count);
 include_once ($api_dir . 'cdm.php');
 for($i = 1; $i <= $count; $i++) {
-  $id = $imagePointers->pointers[$numbers[$i-1]]->pointer;
-  $title = getImageTitle($id);
+  $id = $pointers->data[$numbers[$i-1]]->pointer;
+  $title = $pointers->data[$numbers[$i-1]]->title;
+  $type = $pointers->data[$numbers[$i-1]]->type;
   echo '<div class="home_card" id="home_card_' . $i . '">';// . indexValue
   echo '  <div class="additional">';
   echo '    <p id="index">' . $id . '</p>';
   echo '    <p id="toggle">0</p>';
   echo '  </div>';
-  echo '  <a href="' . getImageReference($id, 'large') . '" data-lightbox="featured" data-title="' . $title . '" onclick="">';
+  $trimmed = $title;
+  if(strlen($trimmed) > 20) {
+    $trimmed = substr($trimmed,0,20) . '...';
+  }
+  echo '  <a href="' . getImageReference($id, 'large') . '" data-lightbox="featured" data-title="' . $trimmed . '" onclick="">';
   echo '    <img src="' . getImageReference($id, 'small') . '">';
   echo '  </a>';
-  echo '  <h2>' . $title . '</h2>';
+  echo '  <h2>' . $trimmed . '</h2>';
   echo '  <div class="readmore">';
-  echo '    <a href="#" onclick="readMoreToggle(\'images\',' . $id . ',\'#home_card_' . $i . '\')">READ MORE</a>';
-  echo '  </div>';
+  echo '    <a href="#" onclick="readMoreToggle(' . $numbers[$i-1] . ',' . $id . ',\'' . $type . '\',\'#home_card_' . $i . '\')">READ MORE</a>';
+  echo '  </div>'; //readMoreToggle(homePtr, cdmPtr, type, card
   echo '  <div id="point">';
   echo '    <object data="img/cardPoint/new/cardPoint.svg" type="image/svg+xml">';
   echo '      <img src="img/cardPoint/new/cardPoint.png" />';

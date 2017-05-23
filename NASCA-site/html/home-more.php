@@ -6,9 +6,10 @@
   //corresponding to that id and type. Usually this will be
   //type = images
   //id = some cdm image id
-	if(isset($_GET['type']) && isset($_GET['id'])) {
+	if(isset($_GET['type']) && isset($_GET['cdmptr']) && isset($_GET['homeptr'])) {
     //be sure id is a number like it should be
-    $id = $_GET['id'];
+    $id = $_GET['cdmptr'];
+    $homeptr = $_GET['homeptr'];
     if(is_numeric($id)) {
       //if type isn't interview, images, video, then there's a problem as well 
       switch($_GET['type']) {
@@ -17,11 +18,14 @@
           echo 'The id is ' . $id;
           break;
         case 'images':
-          printImageDetails($id);
+          printImageDetails($id,$homeptr);
           break;
         case 'video':
           echo 'This is a video';
           echo 'The id is ' . $id;
+          break;
+        case 'letters':
+          printLetterDetails($id,$homeptr);
           break;
         default:
           errorMessage();   
@@ -52,24 +56,26 @@
     echo '<p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You\'re also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>';
   }
   
-  function printImageDetails($cdm_id) {
-    $idint = intval($cdm_id);
+  function printImageDetails($cdmptr, $homeptr) {
+    $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
     echo '<p><b><i>From Images...</i></b></p>';
-    echo '<h2><b>' . getImageTitle($cdm_id) . '</b></h2>';
+    echo '<h2><b>' . $homePointers->data[$homeptr]->title . '</b></h2>';
     echo '<hr class="red"/>';
-    echo '<p>Description from id ' . $cdm_id . '</p>';
-    $type = 'not found';
-    $fn = 'not found';
-    $imagePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/images/imagePointers.json'));
-    foreach($imagePointers->pointers as $el) {
-      if($el->pointer === $idint) {
-        $type = $el->type;
-        $fn = $el->name;
-      }
-    }
-    echo '<p>Type is ' . $type . '</p>';
+    echo '<p>Description from id ' . $cdmptr . '</p>';
+    $fn = $homePointers->data[$homeptr]->filename;
     echo '<p>Filename is ' . $fn . '</p>';
     echo '<hr class="red"/>';
     echo '<p><b><i>Click \'View More\' to browse all of our archived images.</i></b></p>';
   }
+  
+  function printLetterDetails($cdmptr, $homeptr) {
+    $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
+    echo '<p><b><i>From Letters...</i></b></p>';
+    echo '<h2><b>' . $homePointers->data[$homeptr]->title . '</b></h2>';
+    echo '<hr class="red"/>';
+    echo '<p>...</p>';
+    echo '<hr class="red"/>';
+    echo '<p><b><i>Click \'View More\' to browse all of our archived letters.</i></b></p>';
+  }
+  
 ?>
