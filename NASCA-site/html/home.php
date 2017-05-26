@@ -48,7 +48,7 @@ for($i = 1; $i <= $count; $i++) {
     <div class="preview">
       <div id="details">
         <?php
-          include ('home-more.php');
+        //  include ('home-more.php');
         ?>
       </div>
       <div class="preview_lower">

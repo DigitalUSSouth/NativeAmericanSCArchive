@@ -5,10 +5,11 @@
   
   $config = simplexml_load_file($current_dir . 'configuration.xml');
   if ($config === false) {
-    echo 'Failed to get site configuration: ';
+    $str = 'Failed to get site configuration: ';
     foreach(libxml_get_errors() as $error) {
-      echo '<br>', $error->message;
+      $str .= '<br>'. $error->message;
     }
+    exit($str);
   }
 
   define('REL_HOME', $config->rel_home);

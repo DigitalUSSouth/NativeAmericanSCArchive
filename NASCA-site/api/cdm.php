@@ -1,21 +1,6 @@
 <?php
-  $current_dir = str_replace('cdm.php','',__FILE__);
-  require_once($current_dir . 'configuration.php');
-
-  function getApiVersion($format) {
-    //grab information from
-    $query = CDM_API_WEBSERVICE . 'wsAPIDescribe/' . $format;
-    if($format === 'json') {
-      $response = json_decode(file_get_contents($query));
-      echo $response->version;
-    } else if($format === 'xml') {
-      $response = simplexml_load_file($query);
-      echo $response->version;
-    } else {
-      $notice = 'bad argument: getCdmApiVersion (use \'xml\' or \'json\')';
-      echo $notice . '\n' . $query;
-    }
-  }
+  $api_dir = str_replace('cdm.php','',__FILE__);
+  require_once($api_dir . 'configuration.php');
   
   function curl($url) {
     $ch = curl_init();
@@ -30,21 +15,22 @@
   function getImageInfo($pointer) {
     $query = CDM_API_WEBSERVICE . 'dmGetImageInfo' . CDM_COLLECTION . '/' . $pointer . '/xml';
     $response = simplexml_load_file($query);
-    if ($response === false) {
+    if ($response == FALSE) {
       $err = '';
-      foreach(libxml_get_errors() as $error) {
-        $err .= '<br>' . $error->message;
-      }
-      return 'F' . $err;
+      //foreach(libxml_get_errors() as $error) {
+      //  $err .= '<br>' . $error->message;
+      //}
+      return 'FAILURE';
     }
     return $response;
   }
   
   function getImageDimensions($pointer) {
     $info = getImageInfo($pointer);
-    if($info[0] === 'F') {
-      $arr['width'] = 100;
-      $arr['height'] = 100;
+    if($info === 'FAILURE') {
+      //$arr['width'] = 100;
+      //$arr['height'] = 100;
+      return $info;
     } else {
       $arr['width'] = $info->width;
       $arr['height'] = $info->height;
@@ -54,7 +40,7 @@
   
   function getImageTitle($pointer) {
     $info = getImageInfo($pointer);
-    if($info[0] === 'F') {
+    if($info === 'FAILURE') {
       return $info;
     } else {
       return $info->title;
@@ -64,6 +50,9 @@
   function getImageReference($pointer, $size) {
     $query = CDM_API_UTILS . 'CISOROOT=' . substr(CDM_COLLECTION, 1) . '&CISOPTR=' . $pointer . '&action=2&DMSCALE=';
     $arr = getImageDimensions($pointer);
+    if($arr === 'FAILURE') {
+      return 'FAILURE';
+    }
     $width = $arr['width'];
     $height = $arr['height'];
     $scale = 100;
