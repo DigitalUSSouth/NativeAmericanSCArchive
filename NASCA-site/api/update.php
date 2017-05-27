@@ -7,7 +7,7 @@
   
   function updateImagesLetters() {
     $query = 'http://digital.tcl.sc.edu:81/dmwebservices/index.php?q=dmQuery/nasca/0/fields/nosort/1024/0/0/0/0/0/0/0/json';
-    $collection = json_decode(file_get_contents($query));
+    $collection = json_decode(curl($query));
     $total = $collection->pager->total;
     $letterData = array();
     $imageData = array();
@@ -15,11 +15,14 @@
     for($i = 0; $i < $total; $i++) {
       if($collection->records[$i]->filetype === 'jp2') {
         $rec = $collection->records[$i];
-        $title = (string) getImageTitle($rec->pointer);
+        $title = getImageTitle($rec->pointer);
+        if($title < 0) {
+          exit('Something went wrong.');
+        }
         $arr = array();
         $arr['pointer'] = $rec->pointer;
         $arr['filename'] = $rec->find;
-        $arr['title'] = $title;
+        $arr['title'] = (string)$title;
         array_push($imageData, $arr);
         $arr['type'] = 'images';
         array_push($homeData, $arr);
@@ -53,6 +56,7 @@
       }
     }
     $path = $_SERVER['DOCUMENT_ROOT'] . REL_HOME;
+    error_log($path);
     $fp = fopen($path . '/db/data/images/data.json', 'w');
     $arr = array();
     $arr['count'] = count($imageData);
