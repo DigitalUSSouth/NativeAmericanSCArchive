@@ -17,7 +17,19 @@ html, body {
 
 body {
   background: #F7F7F7;
-  font-family: 'Droid Serif', serif;
+  font-family: 'Source Serif Pro', serif;
+}
+
+.anton {
+  font-family: 'Anton', sans-serif;
+}
+
+.source-serif {
+  font-family: 'Source Serif Pro', serif;
+}
+
+.text-white {
+  color: #ffffff;
 }
 
 /*
@@ -52,9 +64,10 @@ colors{
 #header-container {
   position: relative;
   display: inline-flex;
+  height: 18vh;
   min-height: 100px;
   width: 100%;
-  background: #A80505; /* For browsers that do not support gradients */
+  background: #000000; /* For browsers that do not support gradients */
   /*background: -webkit-linear-gradient(left, #1E1F1E, #3B3A3E);
   background: -o-linear-gradient(right, #1E1F1E, #3B3A3E);
   background: -moz-linear-gradient(right, #1E1F1E, #3B3A3E);
@@ -116,26 +129,27 @@ colors{
 #tabs li {
   text-align: center;
   line-height: 50px;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   height: 3.5rem;
   transition: 0.5s ease;
-}
-
-#tabs li a {
   display: block;
   text-transform: uppercase;
-  font-size: larger;
-  font-weight: 600;
+  font-size: medium;
+  font-weight: 100;
   letter-spacing: 2px;
   color: #F7F7F7;
   padding: 0.3rem;
   border-radius: 5px;
 }
 
+#tabs li div {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 #tabs li:hover{
   transform: translateY(-5px);
   background-color: #1E1F1E;
+  font-weight: 600;
 }
 
 #tabs li a:hover, #tabs li a:visited, #tabs li a:active, #tabs li a:link {

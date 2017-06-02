@@ -53,11 +53,11 @@ function init_index() {
   
   //dynamic css function
   //handles content top padding when nav bar resizes
-  var interval_index = setInterval(function(){
-    var navHeight = $('#header-positioner').height();
-    $('#header-positioner-height-offset').css('height', navHeight+'px');
-    
-  },interval);
+  //var interval_index = setInterval(function(){
+  //  var navHeight = $('#header-positioner').height();
+  //  $('#header-positioner-height-offset').css('height', navHeight+'px');
+  //  
+  //},interval);
   
   //fade in
   intervalFade(fadeIns,500);
