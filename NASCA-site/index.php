@@ -44,7 +44,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico"/>
 
     <!-- Local Javascript, Jquery, Ajax -->
-    <script type="text/javascript" src="js/dynamic_css.js"></script>
+    <script type="text/javascript" src="js/index/dynamic_css.js"></script>
     <script type="text/javascript" src="api/xmlhttp.js"></script>
     <script type="text/javascript" src="api/json.js"></script>
     <script type="text/javascript" src="api/globals.js"></script>
@@ -59,9 +59,9 @@
     <?php
       include_once 'html/modal.php';
     ?>
-    <div id="body-container">
+    <div id="body-container" class="background-off-white">
       <div id="header-positioner">
-        <div id="header-container">
+        <div id="header-container" class="background-black">
           <div id="header-left">
             <div id="logo">
               <a href="index.php">
@@ -74,11 +74,12 @@
           </div>
           <div id="header-right" class="text-white">
             <div id="search">
-              <input type="submit" value="Search" id="search-go" class="anton button"/>
-              <input type="text" id="search-input" />
+              <div id="search-text" class="anton">Search</div>
+              <input id="search-input" type="text" />
+              <div id="search-go" onclick="">Go</div>
             </div>
             <div id="nav-bar">
-              <ul id="tabs">
+              <ul id="tabs" class="source-serif">
                 <li><div id="tabs-home" onclick="changePage('home')">Home</div></li>
                 <li><div id="tabs-interviews" onclick="changePage('interviews')">Interviews</div></li>
                 <li><div id="tabs-letters" onclick="changePage('letters')">Letters</div></li>
@@ -99,8 +100,8 @@
         </div>
       </div>
     </div>
-    <div id="footer-container">
-      <div id="footer">
+    <div id="footer-container" class="background-black">
+      <div id="footer" class="source-serif text-white">
         <div id="copyright-container">
           <div id="copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
         </div>
