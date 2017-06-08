@@ -69,7 +69,7 @@
               </a>
             </div>
             <div id="logo-verbose">
-              <img src="img/coloredLogos/type/NASCA_type_white.png" />
+              <img src="img/coloredLogos/type/NASCA_type_white.svg" />
             </div>
           </div>
           <div id="header-right" class="text-white">
@@ -107,13 +107,13 @@
         </div>
         <div id="footer-links-container">
           <ul id="footer-links">
-            <li id="footer-links-about" class="footer-link">
+            <li id="footer-links-about">
               <a href="html/about.html">about</a>
             </li>
-            <li id="footer-links-credits" class="footer-link">
+            <li id="footer-links-credits">
               <a href="html/credits.html">credits</a>
             </li>
-            <li id="footer-links-dev-resources" class="footer-link">
+            <li id="footer-links-dev-resources">
               <a href="html/dev_resources.html">developer-resources</a>
             </li>
           </ul>
