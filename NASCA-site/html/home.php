@@ -1,6 +1,3 @@
-<div class="row">
-  <div class="featured">FEATURED</div>
-</div>
 <div class="book" id="home_book">
   <div class="col" id="home_left">
 <?php
