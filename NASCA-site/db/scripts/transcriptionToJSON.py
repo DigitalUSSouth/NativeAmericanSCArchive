@@ -25,7 +25,7 @@ def verify_argument():
 	document = docx.Document(filename)
 	data = []
 	for paragraph in document.paragraphs:
-		if paragraph.text is not "":
+		if paragraph.text.strip() is not "":
 			data.append(paragraph.text)
 			#print(repr(paragraph.text))	#debug
 	
