@@ -27,11 +27,11 @@ for($i = 1; $i <= $count; $i++) {
   $small_ref = getImageReference($id, 'small');
   if($large_ref < 0) {
     echo 'large_ref = ' . $large_ref . '<br>';
-    $large_ref = SITE_ROOT . '/img/imgfallback.png';
+    $large_ref = SITE_ROOT . '/img/error.svg';
   }
   if($small_ref < 0) {
     echo 'small_ref = ' . $small_ref;
-    $small_ref = SITE_ROOT . '/img/imgfallback.png';
+    $small_ref = SITE_ROOT . '/img/error.svg';
   }
   echo '    </p>';
   echo '    <p id="index">' . $id . '</p>';
