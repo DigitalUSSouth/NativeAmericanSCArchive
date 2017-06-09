@@ -43,13 +43,14 @@ function dynamic_css() {
   $('#logo').css('width',$('#logo').height()*3.967);
   responsive_padding_horizontal('#page', 'left', 2.5, 48);
   responsive_padding_horizontal('#page', 'right', 2.5, 48);
-  responsive_padding_vertical('#page', 'top', 3.5, 34);
-  responsive_padding_vertical('#page', 'bottom', 3.5, 34);
-  
+  responsive_padding_vertical('#page', 'top', 3.2, 32);
+  responsive_padding_vertical('#page', 'bottom', 3.3, 32);
+  $('#page-container').css('min-height',$(window).height()-$('#header-positioner-height-offset').height()-$('#footer-container').height());
   //then set other bits depending on what page it's on
   switch(currentPage) {
     case 'home':
-      
+      responsive_padding_horizontal('#home_right', 'left', 3.75, 72);
+      responsive_padding_horizontal('#home_right', 'right', 3.75, 72);
       break;
     case 'interviews':
       
