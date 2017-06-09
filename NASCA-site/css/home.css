@@ -1,12 +1,73 @@
-#home_book {
+#home-book {
+  
 }
 
-#home_left {
+#home-left {
   display: flex;
   flex-wrap: wrap;
 }
 
-#home_right {
+#home-right {
   padding-left: 72px;
   padding-right: 72px;
+}
+
+.home-card {
+  
+}
+
+.home-card img {
+  
+}
+
+.card-title-container {
+  
+}
+
+.card-title {
+  
+}
+
+.card-read-more {
+  
+}
+
+.card-read-more div {
+  
+}
+
+.card-point {
+  
+}
+
+.card-point img {
+  
+}
+
+.card-hover {
+  
+}
+
+.card-hover:hover {
+  cursor: pointer;
+}
+
+#home-right {
+  
+}
+
+#home-preview {
+  
+}
+
+#preview-details {
+  
+}
+
+#preview-lower {
+  
+}
+
+#preview-view-more {
+  
 }

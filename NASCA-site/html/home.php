@@ -1,5 +1,5 @@
-<div class="book" id="home_book">
-  <div class="col" id="home_left">
+<div class="book" id="home-book">
+  <div id="home-left">
 <?php
 $api_dir = preg_replace('/html.home\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
 include_once ($api_dir . 'configuration.php');
@@ -16,7 +16,7 @@ for($i = 1; $i <= $count; $i++) {
   $id = $pointers->data[$numbers[$i-1]]->pointer;
   $title = $pointers->data[$numbers[$i-1]]->title;
   $type = $pointers->data[$numbers[$i-1]]->type;
-  echo '<div class="home_card" id="home_card_' . $i . '">';// . indexValue
+  echo '<div class="home-card background-red" id="home-card-' . $i . '">';// . indexValue
   echo '  <div class="additional">';
   echo '    <p id="errors">';
   $trimmed = $title;
@@ -37,33 +37,30 @@ for($i = 1; $i <= $count; $i++) {
   echo '    <p id="index">' . $id . '</p>';
   echo '    <p id="toggle">0</p>';
   echo '  </div>';
-  echo '  <a href="' . $large_ref . '" data-lightbox="featured" data-title="' . $trimmed . '" onclick="">';
-  echo '    <img src="' . $small_ref . '">';
-  echo '  </a>';
-  echo '  <h2>' . $trimmed . '</h2>';
-  echo '  <div class="readmore">';
-  echo '    <a href="#" onclick="readMoreToggle(' . $numbers[$i-1] . ',' . $id . ',\'' . $type . '\',\'#home_card_' . $i . '\')">READ MORE</a>';
-  echo '  </div>'; //readMoreToggle(homePtr, cdmPtr, type, card
-  echo '  <div id="point">';
-  echo '    <object data="img/cardPoint/new/cardPoint.svg" type="image/svg+xml">';
-  echo '      <img src="img/cardPoint/new/cardPoint.png" />';
-  echo '    </object>';
+  echo '  <img src="' . $small_ref . '" />';
+  echo '  <div class="card-title-container background-red">';
+  echo '    <div class="card-title text-white source-serif">' . $trimmed . '</div>';
   echo '  </div>';
+  echo '  <div class="card-read-more background-red">';
+  echo '    <div class="text-white source-serif">Read More</div>';
+  echo '  </div>'; //readMoreToggle(homePtr, cdmPtr, type, card
+  echo '  <div class="card-point">';
+  echo '    <img src="img/cardPoint/new/cardPoint.svg" />';
+  echo '  </div>';
+  echo '  <div class="card-hover" onclick="readMoreToggle(' . $numbers[$i-1] . ',' . $id . ',\'' . $type . '\',\'#home_card_' . $i . '\')"></div>';
   echo '</div>';
 }
 ?>
   </div>
-  <div class="col" id="home_right">
-    <div class="preview">
-      <div id="details">
+  <div id="home-right">
+    <div id="home-preview">
+      <div id="preview-details">
         <?php
           include ('home-more.php');
         ?>
       </div>
-      <div class="preview_lower">
-        <div class="viewmore">
-          <a href="#" onclick="">VIEW MORE</a>
-        </div>
+      <div id="preview-lower">
+        <div id="preview-view-more">View More</div>
       </div>
     </div>
   </div>

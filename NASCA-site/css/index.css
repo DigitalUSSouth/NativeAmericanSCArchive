@@ -41,6 +41,14 @@ body {
   background: #000000;
 }
 
+.background-grey {
+  background: #323A3B;
+}
+
+.background-red {
+  background: #930707;
+}
+
 .background-off-white {
   background: #EFEDED;
 }
@@ -295,8 +303,8 @@ colors{
   /*flex-basis: content;*/
   /*flex-direction: row;*/
   /*flex-flow: row;*/
-  min-height: 600px;
+  height: auto;
   width: 100%;
   /*align-items: center;*/
-  justify-content: center;
+  /*justify-content: center;*/
 }
