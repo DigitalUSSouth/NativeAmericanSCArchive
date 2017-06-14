@@ -55,7 +55,7 @@
     <script type="text/javascript" src="js/index/timeline.js"></script>
     <script type="text/javascript" src="js/index/tribes.js"></script>
   </head>
-  <body>
+  <body class="background-red">
     <?php
       include_once 'html/modal.php';
     ?>
@@ -73,10 +73,16 @@
             </div>
           </div>
           <div id="header-right" class="text-white">
-            <div id="search">
-              <div id="search-text" class="anton">Search</div>
-              <input id="search-input" type="text" />
-              <div id="search-go" onclick="">Go</div>
+            <div id="search-container">
+              <div id="search">
+                <div id="search-contents">
+                  <div id="search-text" class="anton">Search</div>
+                  <div id="search-input-container">
+                    <input id="search-input" type="text" value="..." />
+                  </div>
+                  <img id="search-go" onclick="" src="img/play-go.png" />
+                </div>
+              </div>
             </div>
             <div id="nav-bar">
               <ul id="tabs" class="source-serif">

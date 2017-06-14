@@ -165,13 +165,72 @@ colors{
   position: relative;
 }
 
-#search {
+#search-container {
   position: absolute;
   top: 0;
   right: 0;
-  padding-top: 32px;
-  padding-right: 64px;
-  display: inline-flex;
+  height: 32.143%;
+  min-height: 54px;
+  min-width: 348px;
+  width: 348px;
+}
+
+#search {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-height: 24px;
+  min-width: 282px;
+  height: 42.857%;
+  width: 81.034%;
+}
+
+#search-contents {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+#search-text {
+  font-size: 22px;
+  width: auto;
+  height: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  line-height: 24px;
+}
+
+#search-input-container {
+  height: 100%;
+  min-width: 168px;
+  width: 59.574%;
+  margin: 0 auto;
+  border-bottom: 2px solid white;
+  display: inline-block;
+}
+
+#search-input {
+  height: 90%;
+  width: 100%;
+  background: black;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+#search-go {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+#search-go:hover {
+  cursor: pointer;
 }
 
 #nav-bar {
@@ -195,15 +254,18 @@ colors{
 #tabs li {
   text-align: center;
   display: block;
-  font-weight: 100;
   padding-left: 42px;
 }
 
 #tabs li div {
+  font-weight: 300;
+  transition-duration: 0.1s;
 }
 
-#tabs li:hover{
+#tabs li div:hover{
   font-weight: 600;
+  border-bottom: 2px solid white;
+  cursor: pointer;
 }
 
 #tabs li a:hover, #tabs li a:visited, #tabs li a:active, #tabs li a:link {
@@ -219,8 +281,8 @@ colors{
 #page {
   padding-left: 48px;
   padding-right: 48px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 #footer-container {
@@ -257,7 +319,7 @@ colors{
 }
 
 #footer-links li a {
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
@@ -278,7 +340,7 @@ colors{
 }
 
 #copyright {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .additional {
@@ -307,4 +369,8 @@ colors{
   width: 100%;
   /*align-items: center;*/
   /*justify-content: center;*/
+}
+
+.row {
+  width: 100%;
 }
