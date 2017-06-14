@@ -111,6 +111,7 @@ colors{
   height: 17.355vh;
   min-height: 168px;
   width: 100%;
+  min-width: 810px;
 }
 
 #header-positioner-height-offset {
@@ -220,6 +221,7 @@ colors{
   border: none;
   color: white;
   font-weight: 600;
+  font-size: 15px;
 }
 
 #search-go {
@@ -233,20 +235,27 @@ colors{
   cursor: pointer;
 }
 
-#nav-bar {
+#nav-bar-container {
+  height: 36.905%;
+  min-width: 920px;
+  width: 920px;
   position: absolute;
   right: 0;
   bottom: 0;
-  padding-right: 64px;
-  padding-bottom: 46px;
-  width: auto;
+}
+
+#nav-bar {
+  position: relative;
+  float: left;
+  height: 29.032%;
+  width: 93.0435%;
 }
 
 #tabs {
   width: auto;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: flex-end;
 }

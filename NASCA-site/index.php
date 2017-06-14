@@ -84,17 +84,19 @@
                 </div>
               </div>
             </div>
-            <div id="nav-bar">
-              <ul id="tabs" class="source-serif">
-                <li><div id="tabs-home" onclick="changePage('home')">Home</div></li>
-                <li><div id="tabs-interviews" onclick="changePage('interviews')">Interviews</div></li>
-                <li><div id="tabs-letters" onclick="changePage('letters')">Letters</div></li>
-                <li><div id="tabs-images" onclick="changePage('images')">Images</div></li>
-                <li><div id="tabs-video" onclick="changePage('video')">Video</div></li>
-                <li><div id="tabs-map" onclick="changePage('map')">Map</div></li>
-                <li><div id="tabs-timeline" onclick="changePage('timeline')">Timeline</div></li>
-                <li><div id="tabs-tribes" onclick="changePage('tribes')">Tribes</div></li>
-              </ul>
+            <div id="nav-bar-container">
+              <div id="nav-bar">
+                <ul id="tabs" class="source-serif">
+                  <li><div id="tabs-home" onclick="changePage('home')">Home</div></li>
+                  <li><div id="tabs-interviews" onclick="changePage('interviews')">Interviews</div></li>
+                  <li><div id="tabs-letters" onclick="changePage('letters')">Letters</div></li>
+                  <li><div id="tabs-images" onclick="changePage('images')">Images</div></li>
+                  <li><div id="tabs-video" onclick="changePage('video')">Video</div></li>
+                  <li><div id="tabs-map" onclick="changePage('map')">Map</div></li>
+                  <li><div id="tabs-timeline" onclick="changePage('timeline')">Timeline</div></li>
+                  <li><div id="tabs-tribes" onclick="changePage('tribes')">Tribes</div></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
