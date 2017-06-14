@@ -1,63 +1,125 @@
+#featured {
+  font-size: 14px;
+  font-weight: 600;
+  height: auto;
+  margin-bottom: 16px;
+}
+
 #home-book {
   
 }
 
 #home-left {
+  min-width: 260px;
+  width: 57.0175%;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: flex-end;
 }
 
 #home-right {
-  padding-left: 72px;
-  padding-right: 72px;
+  min-width: 784px;
+  width: 42.9825%;
+  height: auto;
+}
+
+.home-card-container {
+  min-width: 260px;
+  width: 25%;
+  min-height: 352px;
+  height: 352px;
 }
 
 .home-card {
-  
+  position: relative;
+  overflow: hidden;
+  height: 91.477%;
+  width: 91.538%;
+  box-shadow: 3px 10px 18px -2px #323A3B;
+  z-index: 1;
+  transition-duration: 0.15s;
 }
 
 .home-card img {
-  
+  opacity: 0.5;
+  height: 100%;
+  width: auto;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
 }
 
 .card-title-container {
-  
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 54px;
+  height: 16.77%;
+  z-index: 3;
+  width: 100%;
 }
 
 .card-title {
-  
+  width: 88.235%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .card-read-more {
-  
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 7.453%;
+  min-height: 24px;
+  width: auto;
 }
 
 .card-read-more div {
-  
+  z-index: 3;
 }
 
 .card-point {
-  
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20%;
+  height: auto;
+  opacity: 1.0;
 }
 
 .card-point img {
-  
+  z-index: 4;
+  width: 100%;
+  height: auto;
+  opacity: 1.0;
 }
 
 .card-hover {
-  
+  z-index: 4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .card-hover:hover {
   cursor: pointer;
 }
 
-#home-right {
-  
-}
-
 #home-preview {
-  
+  margin: 0 auto;
+  width: 81.633%;
 }
 
 #preview-details {

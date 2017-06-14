@@ -1,3 +1,6 @@
+<div class="row source-serif text-dark-grey" id="featured">
+  Featured
+</div>
 <div class="book" id="home-book">
   <div id="home-left">
 <?php
@@ -16,6 +19,13 @@ for($i = 1; $i <= $count; $i++) {
   $id = $pointers->data[$numbers[$i-1]]->pointer;
   $title = $pointers->data[$numbers[$i-1]]->title;
   $type = $pointers->data[$numbers[$i-1]]->type;
+  $height = intval($pointers->data[$numbers[$i-1]]->height);
+  $width = intval($pointers->data[$numbers[$i-1]]->width);
+  $size = 'wide';
+  if($height > $width) {
+    $size = 'tall';
+  }
+  echo '<div class="home-card-container">';
   echo '<div class="home-card background-red" id="home-card-' . $i . '">';// . indexValue
   echo '  <div class="additional">';
   echo '    <p id="errors">';
@@ -34,20 +44,30 @@ for($i = 1; $i <= $count; $i++) {
     $small_ref = SITE_ROOT . '/img/error.svg';
   }
   echo '    </p>';
+  echo '    <p id="title">' . $trimmed . '</p>';
+  echo '    <p id="type">' . $type . '</p>';
+  echo '    <p id="ref-small">' . $small_ref . '</p>';
+  echo '    <p id="ref-large">' . $large_ref . '</p>';
+  echo '    <p id="size">' . $size . '</p>';
   echo '    <p id="index">' . $id . '</p>';
   echo '    <p id="toggle">0</p>';
   echo '  </div>';
-  echo '  <img src="' . $small_ref . '" />';
+  echo '  <img class="card-image" src="' . $small_ref . '" />';
   echo '  <div class="card-title-container background-red">';
-  echo '    <div class="card-title text-white source-serif">' . $trimmed . '</div>';
+  $type_formatted = $type;
+  if(substr($type,-1,1) === 's') {
+    $type_formatted = substr($type,0,strlen($type)-1);
+  }
+  echo '    <div class="card-title text-white source-serif">' . ucfirst($type_formatted) . '</div>';
   echo '  </div>';
   echo '  <div class="card-read-more background-red">';
   echo '    <div class="text-white source-serif">Read More</div>';
   echo '  </div>'; //readMoreToggle(homePtr, cdmPtr, type, card
-  echo '  <div class="card-point">';
-  echo '    <img src="img/cardPoint/new/cardPoint.svg" />';
+  echo '  <div class="card-point background-red">';
+  echo '    <img src="img/cardPoint.svg" />';
   echo '  </div>';
-  echo '  <div class="card-hover" onclick="readMoreToggle(' . $numbers[$i-1] . ',' . $id . ',\'' . $type . '\',\'#home_card_' . $i . '\')"></div>';
+  echo '  <div class="card-hover" onclick="readMoreToggle(' . $numbers[$i-1] . ',' . $id . ',\'' . $type . '\',\'#home-card-' . $i . '\')"></div>';
+  echo '</div>';
   echo '</div>';
 }
 ?>

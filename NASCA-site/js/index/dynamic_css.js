@@ -21,8 +21,8 @@ else {
  */
 function dynamic_css() {
   //set anything in index
-  responsive_font('#tabs',1.653,16);
-  responsive_font('#search-text',2.273,22);
+  responsive_font('#tabs','window',1.756,17);
+  responsive_font('#search-text','window',2.273,22);
   var newWid = ($('#header-left').height()+48)*2.726;
   var newWid2 = $(window).width()*0.2411;
   if(newWid < newWid2) {
@@ -33,6 +33,8 @@ function dynamic_css() {
   newWid = $('#search-container').height()*6.2143;
   $('#search-container').width(newWid);
   $('#search-text').css({'line-height':$('#search-text').height()+'px'});
+  newWid = $('#nav-bar-container').height()*14.8387;
+  $('#nav-bar-container').width(newWid);
   newWid = $('#logo a img').width()*0.605;
   newWid2 = $('#logo-verbose').width();
   if(newWid < newWid2) {
@@ -55,7 +57,8 @@ function dynamic_css() {
       //responsive_padding_horizontal('#home_right', 'left', 3.75, 72);
       //responsive_padding_horizontal('#home_right', 'right', 3.75, 72);
       $('.home-card-container').height($('.home-card-container').width()*1.3538);
-      responsive_font('#featured',1.446,14);
+      responsive_font('#featured','window',1.446,14);
+      responsive_font('.card-title','parent-div',32.14,18);
       break;
     case 'interviews':
       
@@ -133,18 +136,24 @@ function responsive_padding_vertical(selector, tb, responsive, min, max) {
   }
 }
 
-function responsive_font(selector, responsive, min, max) {
+function responsive_font(selector, relativeto, responsive, min, max) {
   if(typeof max === "undefined" || max === null) {
     max = 1000;
   }
   //this is the size it would be set to if set to 'responsive'
-  var size = ($(window).height())*responsive/100;
+  if(relativeto === 'window') {
+    var size = ($(window).height())*responsive/100;
+  } else if(relativeto === 'parent-div') {
+    var size = $(selector).parent().height()*responsive/100;
+  } else {
+    return 0;
+  }
   if(size < min) {
     $(selector).css('font-size',min.toString() + 'px');
   } else if(size > max) {
     $(selector).css('font-size',max.toString() + 'px');
   } else {
-    $(selector).css('font-size',responsive.toString() + 'vh');
+    $(selector).css('font-size',size+'px');
   }
 }
 
