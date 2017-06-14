@@ -19,10 +19,13 @@
         if($title < 0) {
           exit('Something went wrong.');
         }
+        $hw = getImageDimensions($rec->pointer);
         $arr = array();
         $arr['pointer'] = $rec->pointer;
         $arr['filename'] = $rec->find;
         $arr['title'] = (string)$title;
+        $arr['height'] = (string)$hw['height'][0];
+        $arr['width'] = (string)$hw['width'][0];
         array_push($imageData, $arr);
         $arr['type'] = 'images';
         array_push($homeData, $arr);
@@ -42,10 +45,13 @@
           $page_ptr = $pages->item($j)->getElementsByTagName('pageptr')->item(0)->nodeValue;
           $page_file = $pages->item($j)->getElementsByTagName('pagefile')->item(0)->nodeValue;
           $page_title = $pages->item($j)->getElementsByTagName('pagetitle')->item(0)->nodeValue;
+          $hw = getImageDimensions($page_ptr);
           $page = array();
           $page['pointer'] = $page_ptr;
           $page['filename'] = $page_file;
           $page['title'] = $page_title;
+          $page['height'] = (string)$hw['height'][0];
+          $page['width'] = (string)$hw['width'][0];
           array_push($letter, $page);
           $page['type'] = 'letters';
           if($j === 0) {
