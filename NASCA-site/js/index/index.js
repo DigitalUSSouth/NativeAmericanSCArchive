@@ -24,6 +24,17 @@ function init_index() {
     $('#logo-verbose img').animate({opacity:0},'fast');
   });
   
+  $('#menu').click(function() {
+    var cssval = $('#pullout-positioner').css('right');
+    cssval = cssval.substring(0,cssval.length-2);
+    cssval = parseInt(cssval);
+    if(cssval < 0) {
+      $('#pullout-positioner').css({right:0});
+    } else {
+      $('#pullout-positioner').css({right:'-100%'});
+    }
+  });
+  
   //set date of copyright
   var d = new Date();
   document.getElementById('copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();

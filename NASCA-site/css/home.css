@@ -11,7 +11,7 @@
 
 #home-left {
   min-width: 260px;
-  width: 57.0175%;
+  width: 57.0176%;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-end;
@@ -20,7 +20,7 @@
 
 #home-right {
   min-width: 784px;
-  width: 42.9825%;
+  width: 42.9824%;
   height: auto;
 }
 

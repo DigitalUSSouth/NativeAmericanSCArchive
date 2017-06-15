@@ -37,6 +37,10 @@ body {
   color: #323A3B;
 }
 
+.text-black {
+  color: #000000;
+}
+
 .background-black {
   background: #000000;
 }
@@ -51,6 +55,10 @@ body {
 
 .background-off-white {
   background: #EFEDED;
+}
+
+.background-white {
+  background: #FFFFFF;
 }
 
 hr {
@@ -242,6 +250,7 @@ colors{
   position: absolute;
   right: 0;
   bottom: 0;
+  display: block;
 }
 
 #nav-bar {
@@ -278,6 +287,70 @@ colors{
 }
 
 #tabs li a:hover, #tabs li a:visited, #tabs li a:active, #tabs li a:link {
+  text-decoration: none;
+}
+
+#menu-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: none;
+  height: 46.4286%;
+  width: 166px;
+  display: none;
+}
+
+#menu {
+  position: relative;
+  float: left;
+  width: 61.4458%;
+  height: 46.1538%;
+}
+
+#menu:hover {
+  cursor: pointer;
+  background: #930707
+}
+
+#menu-icon {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#menu-text {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#pullout-positioner {
+  position: fixed;
+  top: 168px;
+  right: -100%;
+  z-index: 4;
+  height: 100%;
+  width: auto;
+}
+
+#pullout-container {
+  border-left: 2px solid black;
+  height: 100%;
+  min-width: 214px;
+  width: 11.263vw;
+}
+
+#pullout-list {
+  list-style: none;
+}
+
+.pullout-list-el {
+  color: black;
+  text-decoration: none;
+}
+
+.pullout-list-el:hover {
+  cursor: pointer;
+  background: #930707;
+  color: white;
   text-decoration: none;
 }
 

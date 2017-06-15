@@ -21,7 +21,6 @@ else {
  */
 function dynamic_css() {
   //set anything in index
-  responsive_font('#tabs','window',1.756,17);
   responsive_font('#search-text','window',2.273,22);
   var newWid = ($('#header-left').height()+48)*2.726;
   var newWid2 = $(window).width()*0.2411;
@@ -33,8 +32,6 @@ function dynamic_css() {
   newWid = $('#search-container').height()*6.2143;
   $('#search-container').width(newWid);
   $('#search-text').css({'line-height':$('#search-text').height()+'px'});
-  newWid = $('#nav-bar-container').height()*14.8387;
-  $('#nav-bar-container').width(newWid);
   newWid = $('#logo a img').width()*0.605;
   newWid2 = $('#logo-verbose').width();
   if(newWid < newWid2) {
@@ -51,6 +48,20 @@ function dynamic_css() {
   responsive_padding_vertical('#page', 'top', 1.6, 16);
   responsive_padding_vertical('#page', 'bottom', 1.6, 16);
   $('#page-container').css('min-height',$(window).height()-$('#header-positioner-height-offset').height()-$('#footer-container').height());
+  var headerproportion = $('#header-container').width()/$('#header-container').height();
+  if(headerproportion > 7) {
+    $('#pullout-positioner').css({right:'-100%'});
+    responsive_font('#tabs','window',1.756,17);
+    newWid = $('#nav-bar-container').height()*14.8387;
+    $('#nav-bar-container').width(newWid);
+    $('#menu-container').css({display:'none'});
+    $('#nav-bar-container').css({display:'block'});
+  } else {
+    $('#pullout-positioner').css({top:$('#header-container').height()+'px'});
+    $('#menu-container').width($('#menu-container').height()*2.1282);
+    $('#nav-bar-container').css({display:'none'});
+    $('#menu-container').css({display:'block'});
+  }
   //then set other bits depending on what page it's on
   switch(currentPage) {
     case 'home':
