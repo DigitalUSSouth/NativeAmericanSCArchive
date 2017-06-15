@@ -21,33 +21,31 @@ else {
  */
 function dynamic_css() {
   //set anything in index
-  responsive_font('#search-text','window',2.273,22);
-  var newWid = ($('#header-left').height()+48)*2.726;
-  var newWid2 = $(window).width()*0.2411;
+  responsive_font('#search-text','window',2.3913,22);
+  var newWid = ($('#header-left').height()+52)*2.7607;
+  var newWid2 = $(window).width()*0.2514;
   if(newWid < newWid2) {
     $('#header-left').css('min-width',newWid2+2);
   } else {
     $('#header-left').css('min-width',newWid+2);
   }
-  newWid = $('#search-container').height()*6.2143;
+  newWid = $('#search-container').height()*6.3654;
   $('#search-container').width(newWid);
   $('#search-text').css({'line-height':$('#search-text').height()+'px'});
-  newWid = $('#logo a img').width()*0.605;
+  newWid = $('#logo a img').width()*0.6283;
   newWid2 = $('#logo-verbose').width();
   if(newWid < newWid2) {
     $('#logo-verbose img').css('width',newWid);
   } else {
     $('#logo-verbose img').css('width',newWid2);
   }
-  responsive_padding_horizontal('#header-left', 'left', 1.25, 24);
-  //responsive_padding_horizontal('#header-left', 'right', 1.25, 24);
-  responsive_padding_vertical('#header-left', 'top', 4.959, 48);
-  $('#logo').css('width',$('#logo').height()*3.967);
-  responsive_padding_horizontal('#page', 'left', 2.5, 48);
-  responsive_padding_horizontal('#page', 'right', 2.5, 48);
-  responsive_padding_vertical('#page', 'top', 1.6, 16);
-  responsive_padding_vertical('#page', 'bottom', 1.6, 16);
-  $('#page-container').css('min-height',$(window).height()-$('#header-positioner-height-offset').height()-$('#footer-container').height());
+  responsive_padding_horizontal('#header-left', 'left', 3.1285, 56);
+  responsive_padding_vertical('#header-left', 'top', 5.6522, 52);
+  $('#logo').css('width',$('#logo').height()*4.0357);
+  responsive_padding_horizontal('#page', 'left', 3.7989, 68);
+  responsive_padding_horizontal('#page', 'right', 3.7989, 68);
+  responsive_padding_vertical('#page', 'top', 2.8261, 26);
+  responsive_padding_vertical('#page', 'bottom', 1.3043, 12);
   var headerproportion = $('#header-container').width()/$('#header-container').height();
   if(headerproportion > 7) {
     var cssval = $('#pullout-positioner').css('right');
@@ -55,26 +53,24 @@ function dynamic_css() {
     if(cssval === '0') {
       $('#pullout-positioner').animate({right:'-100%'},'fast');
     }
-    responsive_font('#tabs','window',1.756,17);
-    newWid = $('#nav-bar-container').height()*14.8387;
+    responsive_font('#tabs','window',1.7391,16);
+    newWid = $('#nav-bar-container').height()*13.0143;
     $('#nav-bar-container').width(newWid);
     $('#menu-container').css({display:'none'});
     $('#nav-bar-container').css({display:'block'});
   } else {
-    responsive_font('.pullout-list-el','window',1.756,17,30);
+    responsive_font('.pullout-list-el','window',1.7391,16,30);
     $('#pullout-positioner').css({top:$('#header-container').height()+'px'});
-    $('#menu-container').width($('#menu-container').height()*2.1282);
+    $('#menu-container').width($('#menu-container').height()*2.328125);
     $('#nav-bar-container').css({display:'none'});
     $('#menu-container').css({display:'block'});
   }
   //then set other bits depending on what page it's on
   switch(currentPage) {
     case 'home':
-      //responsive_padding_horizontal('#home_right', 'left', 3.75, 72);
-      //responsive_padding_horizontal('#home_right', 'right', 3.75, 72);
-      $('.home-card-container').height($('.home-card-container').width()*1.3538);
-      responsive_font('#featured','window',1.446,14);
-      responsive_font('.card-title','parent-div',32.14,18);
+      $('.home-card-container').height($('.home-card-container').width()*1.3559);
+      responsive_font('#featured','window',1.3043,12);
+      responsive_font('.card-title','parent-div',30.4348,14);
       break;
     case 'interviews':
       
@@ -98,6 +94,7 @@ function dynamic_css() {
       
       break;
   }
+  $('#page-container').css('min-height',$(window).height()-$('#header-positioner-height-offset').height()-$('#footer-container').height());
 }
 
 /*

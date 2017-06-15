@@ -99,7 +99,7 @@ colors{
   position: relative;
   width: 100%;
   min-height: 100%;
-  padding-bottom: 56px;
+  padding-bottom: 52px;
 }
 
 #header-positioner {
@@ -116,31 +116,30 @@ colors{
 #header-container {
   position: relative;
   display: inline-flex;
-  height: 17.355vh;
-  min-height: 168px;
+  height: 17.7174vh;
+  min-height: 163px;
   width: 100%;
-  min-width: 810px;
+  min-width: 800px;
 }
 
 #header-positioner-height-offset {
-  height: 17.355vh;
-  min-height: 168px;
+  height: 17.7174vh;
+  min-height: 163px;
   width: 100%;
 }
 
 #header-left {
-  min-width: 458px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 48px;
+  min-width: 355px;
+  padding-left: 56px;
+  padding-top: 52px;
   display: inline-block;
 }
 
 #logo {
-  min-height: 60px;
-  height: 50%;
-  width: 238px;
-  min-width: 238px;
+  min-height: 56px;
+  height: 50.4505%;
+  width: 226px;
+  min-width: 226px;
   float: left;
 }
 
@@ -156,15 +155,16 @@ colors{
 
 #logo-verbose {
   overflow: hidden;
-  min-width: 172px;
+  min-width: 168px;
   height: 100%;
-  padding-left: 28px;
-  padding-top: 6px;
+  padding-left: 26px;
+  padding-top: 5px;
 }
 
 #logo-verbose img {
-  min-width: 144px;
-  width: 60%;
+  min-width: 142px;
+  width: 100%;
+  max-width: 100%;
   height: auto;
   opacity: 0;
 }
@@ -178,20 +178,20 @@ colors{
   position: absolute;
   top: 0;
   right: 0;
-  height: 32.143%;
-  min-height: 54px;
-  min-width: 348px;
-  width: 348px;
+  height: 31.9018%;
+  min-height: 52px;
+  min-width: 331px;
+  width: 331px;
 }
 
 #search {
   position: absolute;
   bottom: 0;
   left: 0;
-  min-height: 24px;
-  min-width: 282px;
-  height: 42.857%;
-  width: 81.034%;
+  min-height: 26px;
+  min-width: 274px;
+  height: 50%;
+  width: 82.7795%;
 }
 
 #search-contents {
@@ -210,20 +210,20 @@ colors{
   height: 100%;
   display: inline-block;
   margin: 0 auto;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 #search-input-container {
   height: 100%;
-  min-width: 168px;
-  width: 59.574%;
+  min-width: 158px;
+  width: 57.6642%;
   margin: 0 auto;
   border-bottom: 2px solid white;
   display: inline-block;
 }
 
 #search-input {
-  height: 90%;
+  height: 100%;
   width: 100%;
   background: black;
   border: none;
@@ -244,9 +244,9 @@ colors{
 }
 
 #nav-bar-container {
-  height: 36.905%;
-  min-width: 920px;
-  width: 920px;
+  height: 42.9448%;
+  min-width: 910px;
+  width: 910px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -256,11 +256,12 @@ colors{
 #nav-bar {
   position: relative;
   float: left;
-  height: 29.032%;
-  width: 93.0435%;
+  height: 57.1429%;
+  width: 93.7363%;
 }
 
 #tabs {
+  height: 100%;
   width: auto;
   list-style: none;
   display: flex;
@@ -270,13 +271,17 @@ colors{
 }
 
 #tabs li {
-  text-align: center;
-  display: block;
-  padding-left: 42px;
+  height: 100%;
+  display: table;
+  padding-left: 40px;
 }
 
 #tabs li div {
-  font-weight: 300;
+  height: 100%;
+  text-align: center;
+  font-weight: 400;
+  display: table-cell;
+  vertical-align: middle;
   transition-duration: 0.1s;
 }
 
@@ -295,16 +300,16 @@ colors{
   right: 0;
   bottom: 0;
   display: none;
-  height: 46.4286%;
-  width: 166px;
+  height: 39.2638%;
+  width: 149px;
   display: none;
 }
 
 #menu {
   position: relative;
   float: left;
-  width: 61.4458%;
-  height: 46.1538%;
+  width: 61.745%;
+  height: 50%;
 }
 
 #menu:hover {
@@ -324,7 +329,7 @@ colors{
 
 #pullout-positioner {
   position: fixed;
-  top: 168px;
+  top: 163px;
   right: -100%;
   z-index: 4;
   height: 100%;
@@ -334,8 +339,8 @@ colors{
 #pullout-container {
   border-left: 2px solid black;
   height: 100%;
-  min-width: 214px;
-  width: 11.263vw;
+  min-width: 200px;
+  width: 11.1732vw;
 }
 
 #pullout-list {
@@ -345,10 +350,10 @@ colors{
 .pullout-list-el {
   color: black;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
   text-align: right;
-  padding: 15px;
-  margin-bottom: 5px;
+  padding: 14px;
+  margin-bottom: 4px;
 }
 
 .pullout-list-el:hover {
@@ -365,47 +370,46 @@ colors{
 }
 
 #page {
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-left: 68px;
+  padding-right: 68px;
+  padding-top: 26px;
+  padding-bottom: 12px;
 }
 
 #footer-container {
   position: relative;
-  margin-top: -56px;
+  margin-top: -52px;
   width: 100%;
-  height: 56px;
+  height: 52px;
   z-index: 6;
 }
 
 #footer {
   width: 100%;
   height: 100%;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 20px;
+  padding-left: 56px;
+  padding-right: 48px;
+  padding-top: 18px;
 }
 
 #footer-links-container {
-  height: 40px;
+  height: 20px;
   width: 100%;
 }
 
 #footer-links {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
 }
 
 #footer-links li {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
 }
 
 #footer-links li a {
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
   text-decoration: none;
   color: #ffffff;

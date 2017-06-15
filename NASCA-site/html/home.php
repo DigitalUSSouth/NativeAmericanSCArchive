@@ -72,6 +72,7 @@ for($i = 1; $i <= $count; $i++) {
 }
 ?>
   </div>
+  <div id="home-middle"></div>
   <div id="home-right">
     <div id="home-preview">
       <div id="preview-details">

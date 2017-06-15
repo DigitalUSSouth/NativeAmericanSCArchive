@@ -10,32 +10,38 @@
 }
 
 #home-left {
-  min-width: 260px;
-  width: 57.0176%;
+  min-width: 236px;
+  width: 57.0738%;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-end;
   justify-content: flex-end;
 }
 
+#home-middle {
+  min-width: 100px;
+  width: 6.0459%;
+  height: 100%;
+}
+
 #home-right {
-  min-width: 784px;
-  width: 42.9824%;
+  min-width: 610px;
+  width: 36.8803%;
   height: auto;
 }
 
 .home-card-container {
-  min-width: 260px;
+  min-width: 236px;
   width: 25%;
-  min-height: 352px;
-  height: 352px;
+  min-height: 320px;
+  height: 320px;
 }
 
 .home-card {
   position: relative;
   overflow: hidden;
-  height: 91.477%;
-  width: 91.538%;
+  height: 91.25%;
+  width: 91.5254%;
   box-shadow: 3px 10px 18px -2px #323A3B;
   z-index: 1;
   transition-duration: 0.15s;
@@ -56,21 +62,21 @@
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 54px;
-  height: 16.77%;
+  min-height: 46px;
+  height: 15.7534%;
   z-index: 3;
   width: 100%;
 }
 
 .card-title {
-  width: 88.235%;
+  width: 88.8889%;
   height: auto;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .card-read-more {
@@ -78,8 +84,8 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 7.453%;
-  min-height: 24px;
+  height: 12.3288%;
+  min-height: 36px;
   width: auto;
 }
 
@@ -92,7 +98,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 20%;
+  width: 16.6667%;
   height: auto;
   opacity: 1.0;
 }
@@ -119,7 +125,7 @@
 
 #home-preview {
   margin: 0 auto;
-  width: 81.633%;
+  width: 100%;
 }
 
 #preview-details {
