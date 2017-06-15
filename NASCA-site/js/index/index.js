@@ -29,9 +29,9 @@ function init_index() {
     cssval = cssval.substring(0,cssval.length-2);
     cssval = parseInt(cssval);
     if(cssval < 0) {
-      $('#pullout-positioner').css({right:0});
+      $('#pullout-positioner').animate({right:0},'fast');
     } else {
-      $('#pullout-positioner').css({right:'-100%'});
+      $('#pullout-positioner').animate({right:'-100%'},'fast');
     }
   });
   
