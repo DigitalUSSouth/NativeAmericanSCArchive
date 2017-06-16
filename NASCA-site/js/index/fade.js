@@ -24,11 +24,14 @@ function intervalFade(fadeIns,interval) {
   var intervalId = setInterval(function(){
     $(fadeIns[i]).fadeIn('slow');
     i++;
+    dynamic_css();
     //if last one in list
     if(i === fadeIns.length) {
       clearInterval(intervalId);
+      dynamic_css();
     }
   },interval);
+  dynamic_css();
 }
 
 //for old browsers -->

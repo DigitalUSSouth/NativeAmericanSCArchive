@@ -42,7 +42,7 @@
   overflow: hidden;
   height: 91.25%;
   width: 91.5254%;
-  box-shadow: 3px 10px 18px -2px #323A3B;
+  box-shadow: 3px 10px 18px -2px rgb(150,150,150);
   z-index: 1;
   transition-duration: 0.15s;
 }

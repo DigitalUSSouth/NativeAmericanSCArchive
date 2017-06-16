@@ -50,8 +50,13 @@
     <script type="text/javascript" src="api/globals.js"></script>
     <script type="text/javascript" src="js/index/fade.js"></script>
     <script type="text/javascript" src="js/index/index.js"></script>
-    <script type="text/javascript" src="js/index/interview.js"></script>
+    
     <script type="text/javascript" src="js/index/home.js"></script>
+    <script type="text/javascript" src="js/index/interview.js"></script>
+    <script type="text/javascript" src="js/index/letters.js"></script>
+    <script type="text/javascript" src="js/index/images.js"></script>
+    <script type="text/javascript" src="js/index/video.js"></script>
+    <script type="text/javascript" src="js/index/map.js"></script>
     <script type="text/javascript" src="js/index/timeline.js"></script>
     <script type="text/javascript" src="js/index/tribes.js"></script>
   </head>
@@ -152,6 +157,8 @@
     <script type="text/javascript">
       $(document).ready(function() {
         init_index();
+        dynamic_css();
+        dynamic_css();
       });
     </script>
   </body>

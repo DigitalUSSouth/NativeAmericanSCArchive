@@ -68,8 +68,8 @@ function dynamic_css() {
   //then set other bits depending on what page it's on
   switch(currentPage) {
     case 'home':
-      $('.home-card-container').height($('.home-card-container').width()*1.3559);
       responsive_font('#featured','window',1.3043,12);
+      $('.home-card-container').height($('.home-card-container').width()*1.3559);
       responsive_font('.card-title','parent-div',30.4348,14);
       break;
     case 'interviews':

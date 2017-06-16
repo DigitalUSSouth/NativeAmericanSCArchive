@@ -5,6 +5,8 @@
 var items;
 
 function init_timeline() {
+  toggleSearch('off');
+  
   //$("a").click(function(e) {
   //  e.preventDefault();
   //  $("#someFrame").attr("src", $(this).attr("href"));

@@ -9,6 +9,8 @@ function init_index() {
   //populate global variables with info from configuration file
   setGlobals();
   
+  toggleSearch('off');
+  
   //set invisible EVERYTHING that will fade in
   var fadeIns = ['#header-positioner', '#page-container', '#footer-container'];
   for(var i = 0; i < fadeIns.length; i++) {
@@ -47,11 +49,14 @@ function init_index() {
     dataType: 'html',
     success: function(data) {
       $('#page').html(data).promise().done(function() {
+        dynamic_css();
         init_home();
         dynamic_css();
       });
     }
   });
+  
+  dynamic_css();
   
   //dynamic css function
   //handles content top padding when nav bar resizes
@@ -89,18 +94,22 @@ function changePage(page) {
                 init_home();
                 break;
               case 'interviews':
-                //launch_interview('Catawba_Earl-Robbins-May-1987-minified.json');
+                init_interview();
                 break;
               case 'images':
+                init_images();
                 break;
               case 'video':
+                init_video();
                 break;
               case 'map':
+                init_map();
                 break;
               case 'timeline':
                 init_timeline();
                 break;
               case 'letters':
+                init_letters();
                 break;
               case 'tribes':
                 init_tribes();
@@ -111,12 +120,27 @@ function changePage(page) {
             dynamic_css();
           });
           $('#page').fadeIn(650);
+          dynamic_css();
         }
       });
     });
       
     currentPage = page;
     dynamic_css();
+  }
+}
+
+function toggleSearch(val) {
+  var right = $('#search-container').css('right');
+  right = right.substring(0,1);
+  var off = true;
+  if(right === '0') {
+    off = false;
+  }
+  if(val === 'off' && off === false) {
+    $('#search-container').animate({right:'-100%'},400);
+  } else if(val === 'on' && off) {
+    $('#search-container').animate({right:'0'},400);
   }
 }
 

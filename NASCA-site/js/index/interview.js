@@ -2,6 +2,10 @@
 
 //<!-- //for old browsers
 
+function init_interview() {
+  toggleSearch('on');
+}
+
 //init stuff for oral_histories.html
 function launch_interview_modal(filename) {
   //put html in modal

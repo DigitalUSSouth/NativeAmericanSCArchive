@@ -3,17 +3,19 @@
 //<!-- //for old browsers
 
 function init_home() {
+  toggleSearch('off');
+  
   //set hover for cards
   $('.card-hover').hover(function() {
     //enter
     $(this).siblings('img.card-image').animate({opacity:1.0},150);
     $(this).parent().animate({top: "5px", left: "1px"},{duration: 100, queue: false});
-    $(this).parent().css({"box-shadow":"2px 5px 14px -2px #323A3B"});
+    $(this).parent().css({"box-shadow":"1px 3px 12px -2px rgb(150,150,150)"});
   }, function() {
     //exit
     $(this).siblings('img.card-image').animate({opacity:0.5},'fast');
     $(this).parent().animate({top: "0", left: "0"},{duration: 100, queue: false});
-    $(this).parent().css({"box-shadow":"3px 10px 18px -2px #323A3B"});
+    $(this).parent().css({"box-shadow":"3px 10px 18px -2px rgb(150,150,150)"});
   });
   var list = $('.home-card-container');
   var size = 'wide';
