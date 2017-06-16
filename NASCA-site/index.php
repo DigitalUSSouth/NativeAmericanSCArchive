@@ -37,13 +37,14 @@
     <link rel="stylesheet" type="text/css" href="css/tribes.css"/>
     
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Source+Serif+Pro" rel="stylesheet">
+    
     
     <!-- ICON -->
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico"/>
 
     <!-- Local Javascript, Jquery, Ajax -->
-    <script type="text/javascript" src="js/dynamic_css.js"></script>
+    <script type="text/javascript" src="js/index/dynamic_css.js"></script>
     <script type="text/javascript" src="api/xmlhttp.js"></script>
     <script type="text/javascript" src="api/json.js"></script>
     <script type="text/javascript" src="api/globals.js"></script>
@@ -54,35 +55,70 @@
     <script type="text/javascript" src="js/index/timeline.js"></script>
     <script type="text/javascript" src="js/index/tribes.js"></script>
   </head>
-  <body>
+  <body class="background-red">
     <?php
       include_once 'html/modal.php';
     ?>
-    <div id="body-container">
+    <div id="body-container" class="background-off-white">
       <div id="header-positioner">
-        <div id="header-container">
-          <div id="logo-container">
+        <div id="header-container" class="background-black">
+          <div id="header-left">
             <div id="logo">
               <a href="index.php">
                 <img src="img/coloredLogos/logo/NASCA_single_logo_white.svg" />
               </a>
             </div>
             <div id="logo-verbose">
-              <img src="img/coloredLogos/type/NASCA_type_white.png" />
+              <img src="img/coloredLogos/type/NASCA_type_white.svg" />
             </div>
           </div>
-          <div id="nav-bar">
-            <ul id="tabs">
-              <li><a id="tabs-home" href="#" onclick="changePage('home')">HOME</a></li>
-              <li><a id="tabs-interviews" href="#" onclick="changePage('interviews')">INTERVIEWS</a></li>
-              <li><a id="tabs-letters" href="#" onclick="changePage('letters')">LETTERS</a></li>
-              <li><a id="tabs-images" href="#" onclick="changePage('images')">IMAGES</a></li>
-              <li><a id="tabs-video" href="#" onclick="changePage('video')">VIDEO</a></li>
-              <li><a id="tabs-map" href="#" onclick="changePage('map')">MAP</a></li>
-              <li><a id="tabs-timeline" href="#" onclick="changePage('timeline')">TIMELINE</a></li>
-              <li><a id="tabs-tribes" href="#" onclick="changePage('tribes')">TRIBES</a></li>
-            </ul>
+          <div id="header-right" class="text-white">
+            <div id="search-container">
+              <div id="search">
+                <div id="search-contents">
+                  <div id="search-text" class="anton">Search</div>
+                  <div id="search-input-container">
+                    <input id="search-input" type="text" value="..." />
+                  </div>
+                  <img id="search-go" onclick="" src="img/play-go.png" />
+                </div>
+              </div>
+            </div>
+            <div id="nav-bar-container">
+              <div id="nav-bar">
+                <ul id="tabs" class="source-serif">
+                  <li><div id="tabs-home" onclick="changePage('home')">Home</div></li>
+                  <li><div id="tabs-interviews" onclick="changePage('interviews')">Interviews</div></li>
+                  <li><div id="tabs-letters" onclick="changePage('letters')">Letters</div></li>
+                  <li><div id="tabs-images" onclick="changePage('images')">Images</div></li>
+                  <li><div id="tabs-video" onclick="changePage('video')">Video</div></li>
+                  <li><div id="tabs-map" onclick="changePage('map')">Map</div></li>
+                  <li><div id="tabs-timeline" onclick="changePage('timeline')">Timeline</div></li>
+                  <li><div id="tabs-tribes" onclick="changePage('tribes')">Tribes</div></li>
+                </ul>
+              </div>
+            </div>
+            <div id="menu-container">
+              <div id="menu" class="background-grey">
+                <div id="menu-icon"></div>
+                <div id="menu-text" class="anton text-white">Menu</div>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+      <div id="pullout-positioner">
+        <div id="pullout-container" class="background-white">
+          <ul id="pullout-list" class="source-serif">
+            <li id="pullout-list-home" class="pullout-list-el" onclick="changePage('home')">Home</li>
+            <li id="pullout-list-interviews" class="pullout-list-el" onclick="changePage('interviews')">Interviews</li>
+            <li id="pullout-list-letters" class="pullout-list-el" onclick="changePage('letters')">Letters</li>
+            <li id="pullout-list-images" class="pullout-list-el" onclick="changePage('images')">Images</li>
+            <li id="pullout-list-video" class="pullout-list-el" onclick="changePage('video')">Video</li>
+            <li id="pullout-list-map" class="pullout-list-el" onclick="changePage('map')">Map</li>
+            <li id="pullout-list-timeline" class="pullout-list-el" onclick="changePage('timeline')">Timeline</li>
+            <li id="pullout-list-tribes" class="pullout-list-el" onclick="changePage('tribes')">Tribes</li>
+          </ul>
         </div>
       </div>
       <div id="header-positioner-height-offset"></div>
@@ -92,23 +128,23 @@
         </div>
       </div>
     </div>
-    <div id="footer-container">
-      <div id="footer">
-        <div id="footer-links-container">
-          <ul id="footer-links">
-            <li id="footer-links-about" class="footer-link">
-              <a href="html/about.html">About</a>
-            </li>
-            <li id="footer-links-credits" class="footer-link">
-              <a href="html/credits.html">Credits</a>
-            </li>
-            <li id="footer-links-dev-resources" class="footer-link">
-              <a href="html/dev_resources.html">Developer Resources</a>
-            </li>
-          </ul>
-        </div>
+    <div id="footer-container" class="background-black">
+      <div id="footer" class="source-serif text-white">
         <div id="copyright-container">
           <div id="copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
+        </div>
+        <div id="footer-links-container">
+          <ul id="footer-links">
+            <li id="footer-links-about">
+              <a href="html/about.html">about</a>
+            </li>
+            <li id="footer-links-credits">
+              <a href="html/credits.html">credits</a>
+            </li>
+            <li id="footer-links-dev-resources">
+              <a href="html/dev_resources.html">developer-resources</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

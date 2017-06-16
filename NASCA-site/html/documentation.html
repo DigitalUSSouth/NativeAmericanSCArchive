@@ -5,25 +5,39 @@
     <title>NASCA Developer Documentation</title>
     <!-- metadata tags here -->
     <meta name="description" content="Native American South Carolina Archive - Documentation of code and update procedures." />
+    <!-- ICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon/favicon.ico"/>
+    <!-- Local Javascript, Jquery, Ajax -->
+    <script type="text/javascript" src="../js/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/index/dynamic_css.js"></script>
+    <script type="text/javascript" src="../js/index/fade.js"></script>
+    <script type="text/javascript" src="../js/documentation.js"></script>
     <!-- Styling -->
     <link rel="stylesheet" type="text/css" href="../css/index.css"/>
     <link rel="stylesheet" type="text/css" href="../css/documentation.css"/>
   </head>
   <body>
-    <div id="body-container">
+    <div id="body-container" class="background-off-white">
       <div id="header-positioner">
-        <div id="header-container">
-          <div id="logo">
-            <a href="../index.php"><img src="../img/coloredLogos/logo/NASCA_single_logo_white.svg"></a>
+        <div id="header-container" class="background-black">
+          <div id="header-left">
+            <div id="logo">
+              <a href="../index.php">
+                <img src="../img/coloredLogos/logo/NASCA_single_logo_white.svg" />
+              </a>
+            </div>
+            <div id="logo-verbose">
+              <img src="../img/coloredLogos/type/NASCA_type_white.svg" />
+            </div>
           </div>
         </div>
       </div>
       <div id="header-positioner-height-offset"></div>
       <div id="page-container">
-        <div id="page">
+        <div id="page" class="text-dark-grey source-serif">
           <h1><b>NASCA Developer Documentation</b></h1>
           <h2><i>Documentation of code and update procedures for Native American South Carolina Archive</i></h2>
-          <hr class='darkgrey' />
+          <hr class='dark-grey' />
           <h3>Site Topology <small><i>as seen when ssh'd into your Apache server</i></small></h3>
           <p><b>The following illustrates what goes where in the website hierarchy. This will be useful whenever you need to add things directly to the site directory on your server, rather than making changes externally (like in contentDM or YouTube).</b></p>
           <div class="topology">
@@ -78,48 +92,40 @@
             <p class="file">| . . . | . . . <b>/...</b></p>
             <p class="file">| . . . <b>/index.php</b><small><i>Home index page. The entire site (except for documentation) is under this page. So for example, clicking the upper nav bar tabs doesn't actually take you to a new page. Just loads some PHP and HTML into index.php.</i></small></p>
           </div>
-          <hr class='darkgrey' />
+          <hr class='dark-grey' />
           <h3>Configuration</h3>
           <p><b>Sample Description</b></p>
           <p>...</p>
-          <hr class='darkgrey' />
+          <hr class='dark-grey' />
           <h3>Update Procedures</h3>
           <p><b>Sample Description</b></p>
           <p>...</p>
-          <hr class='darkgrey' />
+          <hr class='dark-grey' />
           <h3>API</h3>
           <p><b>Sample Description</b></p>
           <p>...</p>
         </div>
       </div>
     </div>
-    <div id="footer-container">
-      <div id="footer">
-        <div id="footer-links-container">
-          <ul id="footer-links">
-            <li id="footer-links-about" class="footer-link">
-              <a href="about.html">About</a>
-            </li>
-            <li id="footer-links-credits" class="footer-link">
-              <a href="credits.html">Credits</a>
-            </li>
-            <li id="footer-links-dev-resources" class="footer-link">
-              <a href="dev_resources.html">Developer Resources</a>
-            </li>
-          </ul>
-        </div>
+    <div id="footer-container" class="background-black">
+      <div id="footer" class="source-serif text-white">
         <div id="copyright-container">
           <div id="copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
         </div>
+        <div id="footer-links-container">
+          <ul id="footer-links">
+            <li id="footer-links-about" class="footer-link">
+              <a href="about.html">about</a>
+            </li>
+            <li id="footer-links-credits" class="footer-link">
+              <a href="credits.html">credits</a>
+            </li>
+            <li id="footer-links-dev-resources" class="footer-link">
+              <a href="dev_resources.html">developer-resources</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <!-- Local Javascript, Jquery, Ajax -->
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function(event) {
-        //set date of copyright
-        var d = new Date();
-        document.getElementById('copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();
-      });
-    </script>
   </body>
 </html>

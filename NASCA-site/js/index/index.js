@@ -4,16 +4,6 @@
 
 var currentPage = 'home';
 
-var interval = 100; //length for all setInterval functions in milliseconds
-var interval_index = null;
-var interval_home = null;
-var interval_interviews = null;
-var interval_images = null;
-var interval_video = null;
-var interval_map = null;
-var interval_timeline = null;
-var interval_letters = null;
-
 //init stuff for index.html
 function init_index() {
   //populate global variables with info from configuration file
@@ -28,10 +18,21 @@ function init_index() {
   //set onhover onclick stuff
   $('#logo').hover(function() {
     //enter
-    $('#logo-verbose img').animate({width:'95%',opacity:1.0},'fast');
+    $('#logo-verbose img').animate({opacity:1.0},'fast');
   }, function() {
     //exit
-    $('#logo-verbose img').animate({width:'60%',opacity:0},'fast');
+    $('#logo-verbose img').animate({opacity:0},'fast');
+  });
+  
+  $('#menu').click(function() {
+    var cssval = $('#pullout-positioner').css('right');
+    cssval = cssval.substring(0,cssval.length-2);
+    cssval = parseInt(cssval);
+    if(cssval < 0) {
+      $('#pullout-positioner').animate({right:0},'fast');
+    } else {
+      $('#pullout-positioner').animate({right:'-100%'},'fast');
+    }
   });
   
   //set date of copyright
@@ -47,46 +48,33 @@ function init_index() {
     success: function(data) {
       $('#page').html(data).promise().done(function() {
         init_home();
+        dynamic_css();
       });
     }
   });
   
   //dynamic css function
   //handles content top padding when nav bar resizes
-  var interval_index = setInterval(function(){
-    var navHeight = $('#header-positioner').height();
-    $('#header-positioner-height-offset').css('height', navHeight+'px');
-    
-  },interval);
+  //var interval_index = setInterval(function(){
+  //  var navHeight = $('#header-positioner').height();
+  //  $('#header-positioner-height-offset').css('height', navHeight+'px');
+  //  
+  //},interval);
   
   //fade in
   intervalFade(fadeIns,500);
 
+  //let dynamic_css do it's thing
+  dynamic_css();
+
 };
-
-function clearPageIntervals() {
-  var pages = [interval_home, interval_interviews, interval_images, interval_video, interval_map, interval_timeline, interval_letters];
-  for(var i = 0; i < pages.length; i++) {
-    if(pages[i] !== null) {
-      clearInterval(pages[i]);
-    }
-    pages[i] = null;
-  }
-}
-
-function clearPageInterval(pageInterVar) {
-  clearInterval(pageInterVar);
-  pageInterVar = null;
-}
 
 function changePage(page) {
   //check if page is already up
   if(!(page === currentPage)) {
     //fade out content
-    $('#page').fadeOut(750,function(){
+    $('#page').fadeOut(650,function(){
       //callback when fadeOut complete
-      //clear all interval actions
-      clearPageIntervals();
       //set html content
       $.ajax({
         type:'POST',
@@ -120,13 +108,15 @@ function changePage(page) {
               default:
                 //code
             }
+            dynamic_css();
           });
-          $('#page').fadeIn(750);
+          $('#page').fadeIn(650);
         }
       });
     });
       
     currentPage = page;
+    dynamic_css();
   }
 }
 

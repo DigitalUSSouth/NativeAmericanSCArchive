@@ -20,7 +20,6 @@ h1, h2, h3 {
 }
 
 h1 {
-  color: white;
   font-size: 2.2em;
 }
 
@@ -29,7 +28,6 @@ h2 {
 }
 
 h3 {
-  color: #aeadb8;
   font-size: 1.4em;
 }
 
@@ -46,7 +44,6 @@ small {
 }
 
 #dev-links a {
-  color: white;
   font-size: large;
 }
 
