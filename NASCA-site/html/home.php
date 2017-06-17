@@ -33,12 +33,7 @@ for($i = 1; $i <= $count; $i++) {
   if(strlen($trimmed) > 20) {
     $trimmed = substr($trimmed,0,20) . '...';
   }
-  $large_ref = getImageReference($id, 'large');
   $small_ref = getImageReference($id, 'small');
-  if($large_ref < 0) {
-    echo 'large_ref = ' . $large_ref . '<br>';
-    $large_ref = SITE_ROOT . '/img/error.svg';
-  }
   if($small_ref < 0) {
     echo 'small_ref = ' . $small_ref;
     $small_ref = SITE_ROOT . '/img/error.svg';
@@ -47,7 +42,6 @@ for($i = 1; $i <= $count; $i++) {
   echo '    <p id="title">' . $trimmed . '</p>';
   echo '    <p id="type">' . $type . '</p>';
   echo '    <p id="ref-small">' . $small_ref . '</p>';
-  echo '    <p id="ref-large">' . $large_ref . '</p>';
   echo '    <p id="size">' . $size . '</p>';
   echo '    <p id="index">' . $id . '</p>';
   echo '    <p id="toggle">0</p>';
@@ -66,7 +60,7 @@ for($i = 1; $i <= $count; $i++) {
   echo '  <div class="card-point background-red">';
   echo '    <img src="img/cardPoint.svg" />';
   echo '  </div>';
-  echo '  <div class="card-hover" onclick="readMoreToggle(' . $numbers[$i-1] . ',' . $id . ',\'' . $type . '\',\'#home-card-' . $i . '\')"></div>';
+  echo '  <div class="card-hover" onclick="readMoreToggle(' . $numbers[$i-1] . ',\'#home-card-' . $i . '\')"></div>';
   echo '</div>';
   echo '</div>';
 }
@@ -74,15 +68,10 @@ for($i = 1; $i <= $count; $i++) {
   </div>
   <div id="home-middle"></div>
   <div id="home-right">
-    <div id="home-preview">
-      <div id="preview-details">
-        <?php
-          include ('home-more.php');
-        ?>
-      </div>
-      <div id="preview-lower">
-        <div id="preview-view-more">View More</div>
-      </div>
+    <div id="preview">
+      <?php
+        include ('home-more.php');
+      ?>
     </div>
   </div>
 </div>

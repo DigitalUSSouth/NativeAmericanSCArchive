@@ -2,50 +2,72 @@
   $api_dir = preg_replace('/html.home-more\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
   include_once ($api_dir . 'configuration.php');
   include_once ($api_dir . 'cdm.php');
-  //if there are http args called 'type' and 'id', then load a view more page
-  //corresponding to that id and type. Usually this will be
-  //type = images
-  //id = some cdm image id
-	if(isset($_GET['type']) && isset($_GET['cdmptr']) && isset($_GET['homeptr'])) {
-    //be sure id is a number like it should be
-    $id = $_GET['cdmptr'];
-    $homeptr = $_GET['homeptr'];
-    if(is_numeric($id)) {
-      //if type isn't interview, images, video, then there's a problem as well 
-      switch($_GET['type']) {
-        case 'interviews':
-          echo 'This is an interview';
-          echo 'The id is ' . $id;
-          break;
-        case 'images':
-          printImageDetails($id,$homeptr);
-          break;
-        case 'video':
-          echo 'This is a video';
-          echo 'The id is ' . $id;
-          break;
-        case 'letters':
-          printLetterDetails($id,$homeptr);
-          break;
-        default:
-          errorMessage();   
+  
+  function driver() {
+    if(isset($_GET['homeptr'])) {
+      $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
+      $homeptr = $_GET['homeptr'];
+      $type = $homePointers->data[$homeptr]->type;
+      $title = $homePointers->data[$homeptr]->title;
+      $id = $homePointers->data[$homeptr]->pointer;
+      $size = '';
+      if(is_numeric($id)) {
+        //if type isn't interview, images, video, then there's a problem as well 
+        switch($type) {
+          case 'interviews':
+            echo 'This is an interview';
+            break;
+          case 'images':
+            if(isset($_GET['size'])) {
+              $size = $_GET['size'];
+            } else {
+              errorMessage(-1);
+              return -1;
+            }
+            $err = printImageDetails($id,$title,$size);
+            if($err < 0) {
+              return -1;
+            }
+            break;
+          case 'video':
+            echo 'This is a video';
+            break;
+          case 'letters':
+            if(isset($_GET['size'])) {
+              $size = $_GET['size'];
+            } else {
+              errorMessage(-1);
+              return -1;
+            }
+            $err = printLetterDetails($id, $title, $size);
+            if($err < 0) {
+              return -1;
+            }
+            break;
+          default:
+            errorMessage(-2);
+            return -1;
+        }
+      } else {
+        errorMessage(-3);
+        return -1;
       }
-    } else {
-      errorMessage();
+
     }
-    
-	}
-  //if there aren't any arguments, load a default page that goes in the view
-  //more box
-  else {
-    //default page
-    printDefault();
+    //if there aren't any arguments, load a default page that goes in the view
+    //more box
+    else {
+      //default page
+      printDefault();
+    }
+    return 0;
   }
   
-  function errorMessage() {
-    echo 'I\'m afraid you have encountered a bug.';
-    echo '"What should I do about this?"';
-    echo 'Please let the silly developers know that there\'s a problem in a file called \'home-more.php\'';
+  function errorMessage($code) {
+    echo 'I\'m afraid you have encountered a bug.<br/>';
+    echo 'Error Code: ' . $code . '<br/>';
+    echo '"What should I do about this?"<br/>';
+    echo 'Please let the silly developers know that there\'s a problem in a file called \'home-more.php\'<br/>';
   }
   
   function printDefault() {
@@ -56,26 +78,51 @@
     echo '<p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You\'re also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>';
   }
   
-  function printImageDetails($cdmptr, $homeptr) {
-    $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
-    echo '<p><b><i>From Images...</i></b></p>';
-    echo '<h2><b>' . $homePointers->data[$homeptr]->title . '</b></h2>';
-    echo '<hr class="darkgrey"/>';
-    echo '<p>Description from id ' . $cdmptr . '</p>';
-    $fn = $homePointers->data[$homeptr]->filename;
-    echo '<p>Filename is ' . $fn . '</p>';
-    echo '<hr class="red"/>';
-    echo '<p><b><i>Click \'View More\' to browse all of our archived images.</i></b></p>';
+  function printImageDetails($id, $title, $size) {
+    $trimmed = $title;
+    if(strlen($trimmed) > 20) {
+      $trimmed = substr($trimmed,0,20) . '...';
+    }
+    $ref_large = getImageReference($id, 'large');
+    $ref_full = getImageReference($id, 'full');
+    if(is_numeric($ref_large) && $ref_large < 0) {
+      errorMessage(-4);
+      return -1;
+    }
+    if(is_numeric($ref_full) && $ref_full < 0) {
+      errorMessage(-4);
+      return -1;
+    }
+    echo '<div id="preview-title-container" class="row">';
+    echo '  <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
+    echo '</div>';
+    echo '<div id="preview-layout" class="preview-' . $size . '">';
+    echo '  <div id="preview-media-container">';
+    echo '    <a href="' . $ref_full . '" data-lightbox="Featured" data-title="' . $trimmed . '">';
+    echo '      <img src="' . $ref_large . '" id="preview-media" />';
+    echo '    </a>';
+    echo '  </div>';
+    echo '  <div id="preview-desc-container">';
+    echo '    <div id="preview-desc" class="source-serif text-black">SAMPLE DESCRIPTION FOR AN IMAGE</div>';
+    echo '  </div>';
+    echo '  <div id="preview-lower" class="row">';
+    echo '    <div id="view-all-container" onclick="changePage(\'images\');">';
+    echo '      <div id="view-all" class=text-red>View All Images</div>';
+    echo '    </div>';
+    echo '  </div>';
+    echo '</div>';
+    return 0;
   }
   
-  function printLetterDetails($cdmptr, $homeptr) {
-    $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
+  function printLetterDetails($id, $title, $size) {
     echo '<p><b><i>From Letters...</i></b></p>';
-    echo '<h2><b>' . $homePointers->data[$homeptr]->title . '</b></h2>';
+    echo '<h2><b>' . $title . '</b></h2>';
     echo '<hr class="darkgrey"/>';
     echo '<p>...</p>';
     echo '<hr class="red"/>';
     echo '<p><b><i>Click \'View More\' to browse all of our archived letters.</i></b></p>';
   }
+  
+  driver();
   
 ?>

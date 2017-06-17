@@ -53,10 +53,10 @@ function animateOn(card) {
 }
 
 /*
- * @param {string} type - may be 'image' 'video' or 'transcript'
- * @param {number/int} id - id on cdm or wherever of entry to load data from
+ * @param {string} card - id of card to display on the right
+ * @param {number/int} homePtr - index of card information in home/data.json
  */
-function readMoreToggle(homePtr, cdmPtr, type, card) {
+function readMoreToggle(homePtr, card) {
   var state = parseInt($(card + ' .additional #toggle').text());
   var url = SITE_ROOT + '/html/home-more.php';
   if(state === 0) {
@@ -64,17 +64,13 @@ function readMoreToggle(homePtr, cdmPtr, type, card) {
     animateOff('.home-card');
     //turn current card on
     animateOn(card);
+    var cardType = $(card + ' .additional #type').text();
+    var size = $(card + ' .additional #size').text();
     //add relevant info to url
-    url += '?type=' + type + '&cdmptr=' + cdmPtr + '&homeptr=' + homePtr;
-    //change what view more button does
-    $('.preview-lower').fadeIn('fast');
-    $('.preview-view-more').attr({'onclick': 'changePage(\'' + type + '\')'});
+    url += '?homeptr=' + homePtr + '&size=' + size;
   } else {
-    //then the card is already on. Turn it off and set readmore back to default
+    //Then the card is already on. Turn it off.
     animateOff(card);
-    //leave url as is
-    //change what view more button does
-    $('.preview-lower').fadeOut('fast');
   }
   $.ajax({
     type:'POST',
@@ -82,7 +78,7 @@ function readMoreToggle(homePtr, cdmPtr, type, card) {
     async: true,
     dataType: 'html',
     success: function(data) {
-      var details = '#preview-details';
+      var details = '#preview';
       $(details).fadeOut('fast', function() {
         $(details).html(data).promise().done(function() {
           $(details).fadeIn('fast');
