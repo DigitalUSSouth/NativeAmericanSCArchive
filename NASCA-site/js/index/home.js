@@ -2,22 +2,41 @@
 
 //<!-- //for old browsers
 
+var card_anim_details = {duration: 150, queue: false};
+
 function init_home() {
   toggleSearch('off');
-  
   //set hover for cards
   $('.card-hover').hover(function() {
     //enter
-    $(this).siblings('img.card-image').animate({opacity:1.0},150);
-    $(this).parent().animate({top: "5px", left: "1px"},{duration: 100, queue: false});
-    $(this).parent().css({"box-shadow":"1px 3px 12px -2px rgb(150,150,150)"});
+    if($(this).siblings('div.additional').children('#toggle').html() === '0') {
+      $(this).siblings('img.card-image').animate({opacity:1.0},card_anim_details);
+      $(this).parent().css({top: "5px", left: "1px"});//,{duration: 100, queue: false});
+      $(this).parent().css({"box-shadow":"1px 3px 12px -2px rgb(150,150,150)"});
+      $(this).siblings('div.card-read-more').animate({left:0},card_anim_details);
+      $(this).siblings('div.card-point').animate({left:'100%'},card_anim_details);
+      $(this).siblings('div.card-point').css({'-webkit-transform':'translateX(-100%)'});
+    }
+    var title = $(this).siblings('div.additional').children('#title').html();
+    $(this).siblings('div.card-title-container').children('div.card-title').html(title);
   }, function() {
     //exit
-    $(this).siblings('img.card-image').animate({opacity:0.5},'fast');
-    $(this).parent().animate({top: "0", left: "0"},{duration: 100, queue: false});
-    $(this).parent().css({"box-shadow":"3px 10px 18px -2px rgb(150,150,150)"});
+    if($(this).siblings('div.additional').children('#toggle').html() === '0') {
+      $(this).siblings('img.card-image').animate({opacity:0.5},card_anim_details);
+      $(this).parent().css({top: "0", left: "0"});//,{duration: 100, queue: false});
+      $(this).parent().css({"box-shadow":"3px 10px 18px -2px rgb(150,150,150)"});
+      $(this).siblings('div.card-read-more').animate({left:'-50%'},card_anim_details);
+      $(this).siblings('div.card-point').animate({left:0},card_anim_details);
+      $(this).siblings('div.card-point').css({'-webkit-transform':'translateX(0)'});
+    }
+    var type = $(this).siblings('div.additional').children('#type').html();
+    if(type[type.length-1] === 's') {
+      type = type.substring(0,type.length-1);
+      type = jsUcfirst(type);
+    }
+    $(this).siblings('div.card-title-container').children('div.card-title').html(type);
   });
-  var list = $('.home-card-container');
+  /*var list = $('.home-card-container');
   var size = 'wide';
   for(var i = 0; i < list.length; i++) {
     size = list.eq(i).find('#size').html();
@@ -25,18 +44,19 @@ function init_home() {
       var el = list.eq(i).children('.home-card').children('img');
       el.css({height: 'auto', width: '100%'});
     }
-  }
+  }*/
 }
 
 /*
  * @param {type} card - jQuery selector for cards to animate off
  */
 function animateOff(card) {
-  /*$(card + ' .card-read-more').css({'background': '#ffffff'});
-  $(card + ' .card-read-more div').css({'color': '#1E1F1E'});
-  $(card + ' #point').animate({
-    'right': '80px'
-  }, {duration: 150, queue: false});*/
+  $(card + ' .card-read-more').animate({left:'-50%'},card_anim_details);
+  $(card + ' .card-point').animate({left:0},card_anim_details);
+  $(card + ' .card-point').css({'-webkit-transform':'translateX(0)'});
+  $(card + ' .card-image').animate({opacity:0.5},card_anim_details);
+  $(card).css({top: '0', left: '0'});//,{duration: 100, queue: false});
+  $(card).css({'box-shadow':'3px 10px 18px -2px rgb(150,150,150)'});
   $(card + ' .additional #toggle').html('0');
 }
 
@@ -44,11 +64,12 @@ function animateOff(card) {
  * @param {type} card - jQuery selector for cards to animate on
  */
 function animateOn(card) {
-  /*$(card + ' .readmore').css({'background': '#A80505'});
-  $(card + ' .readmore a').css({'color': '#ffffff'});
-  $(card + ' #point').animate({
-    'right': '10px'
-  }, {duration: 150, queue: false});*/
+  $(card + ' .card-read-more').animate({'left': 0},card_anim_details);
+  $(card + ' .card-point').animate({'left': '100%'},card_anim_details);
+  $(card + ' .card-point').css({'-webkit-transform':'translateX(-100%)'});
+  $(card + ' .card-image').animate({'opacity': 1.0},card_anim_details);
+  $(card).css({top: '5px', left: '1px'});//,{duration: 100, queue: false});
+  $(card).css({'box-shadow':'1px 3px 12px -2px rgb(150,150,150)'});
   $(card + ' .additional #toggle').html('1');
 }
 
@@ -78,15 +99,18 @@ function readMoreToggle(homePtr, card) {
     async: true,
     dataType: 'html',
     success: function(data) {
-      var details = '#preview';
+      var details = '#home-right';
       $(details).fadeOut('fast', function() {
         $(details).html(data).promise().done(function() {
+          dynamic_css();
           $(details).fadeIn('fast');
+          dynamic_css();
         });
       });
-      
+      dynamic_css()
     }
   });
+  dynamic_css();
 }
 
 //for old browsers -->

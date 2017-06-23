@@ -138,9 +138,9 @@ function toggleSearch(val) {
     off = false;
   }
   if(val === 'off' && off === false) {
-    $('#search-container').animate({right:'-100%'},400);
+    $('#search-container').animate({right:'-500px'},350);
   } else if(val === 'on' && off) {
-    $('#search-container').animate({right:'0'},400);
+    $('#search-container').animate({right:'0'},350);
   }
 }
 

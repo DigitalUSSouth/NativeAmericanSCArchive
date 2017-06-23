@@ -1,6 +1,7 @@
-/* global SITE_ROOT, REL_HOME, CDM_BASE, CDM_COLLECTION, CDM_QUERY_BASE, CDM_PORT, CDM_SERVER */
-
-//<!-- //for old browsers
+function jsUcfirst(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 /*
  * 
@@ -33,5 +34,3 @@ function intervalFade(fadeIns,interval) {
   },interval);
   dynamic_css();
 }
-
-//for old browsers -->

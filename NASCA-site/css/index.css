@@ -41,6 +41,10 @@ body {
   color: #000000;
 }
 
+.text-red {
+  color: #930707;
+}
+
 .background-black {
   background: #000000;
 }
@@ -177,7 +181,7 @@ colors{
 #search-container {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -500px;
   height: 31.9018%;
   min-height: 52px;
   min-width: 331px;

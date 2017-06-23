@@ -68,10 +68,8 @@ for($i = 1; $i <= $count; $i++) {
   </div>
   <div id="home-middle"></div>
   <div id="home-right">
-    <div id="preview">
-      <?php
-        include ('home-more.php');
-      ?>
-    </div>
+    <?php
+      include ('home-more.php');
+    ?>
   </div>
 </div>

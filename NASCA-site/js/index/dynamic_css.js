@@ -71,6 +71,30 @@ function dynamic_css() {
       responsive_font('#featured','window',1.3043,12);
       $('.home-card-container').height($('.home-card-container').width()*1.3559);
       responsive_font('.card-title','parent-div',30.4348,14);
+      responsive_font('.card-read-more div','parent-div',83.333,15);
+      
+      //title css for wide images
+      var newheight = $('.preview-wide #preview-title-container').width()*0.2098;
+      var font = (newheight*35.9375/100).toString()+'px';
+      $('.preview-wide #preview-title-container #preview-title').css({'font-size':font});
+      $('.preview-wide #preview-title-container #preview-title').css({'line-height':(newheight/2).toString()+'px'});
+      $('.preview-wide #preview-title-container').height(newheight);
+      //title css for tall images
+      newheight = $('.preview-tall #preview-title-container').width()*0.3833;
+      var font = (newheight*0.4).toString()+'px';
+      $('.preview-tall #preview-title-container #preview-title').css({'font-size':font});
+      $('.preview-tall #preview-title-container #preview-title').css({'line-height':(newheight/2).toString()+'px'});
+      $('.preview-tall #preview-title-container').height(newheight);
+      //image sizing
+      $('.preview-wide #preview-media-container').height($('.preview-wide #preview-media-container').width()*0.4557);
+      $('.preview-tall #preview-media-container').height($('.preview-tall #preview-media-container').width()*1.7818);
+      //lower view all css
+      newheight = $('#preview-lower').width()*0.052459;
+      $('#preview-lower').height(newheight);
+      var border = (newheight/8) + 'px solid #930707';
+      $('#view-all-underline').css({'border-top':border});
+      font = newheight*0.4375;
+      $('#view-all').css({'font-size':font+'px'});
       break;
     case 'interviews':
       

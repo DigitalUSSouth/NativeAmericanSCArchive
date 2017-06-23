@@ -156,5 +156,69 @@
     $query .= $scale . '&DMWIDTH=' . $new_width . '&DMHEIGHT=' . $new_height;
     return $query;
   }
+  
+  /*
+   * input - $pointer - cdm pointer to the item
+   *       - $attrib - php array of all attributes that the function should return
+   * returns - json formatted STRING with a value assigned to each attribute requested
+   */
+  function getItemInfo($pointer, $attrib) {
+    $response = array();
+    $query = CDM_API_WEBSERVICE . 'dmGetItemInfo' . CDM_COLLECTION . '/' . $pointer . '/json';
+    $json = json_decode((string)curl($query), true);
+    for($i = 0; $i < count($attrib); $i++) {
+      switch($attrib[$i]) {
+        case 'relati':
+          $response['relati'] = $json['relati'];
+          break;
+        case 'publis':
+          $response['publis'] = $json['publis'];
+          break;
+        case 'title':
+          $response['title'] = $json['title'];
+          break;
+        case 'descri':
+          $response['descri'] = $json['descri'];
+          break;
+        case 'type':
+          $response['type'] = $json['type'];
+          break;
+        case 'media':
+          $response['media'] = $json['media'];
+          break;
+        case 'creato':
+          $response['creato'] = $json['creato'];
+          break;
+        case 'dateb':
+          $response['dateb'] = $json['dateb'];
+          break;
+        case 'datea':
+          $response['datea'] = $json['datea'];
+          break;
+        case 'geogra':
+          $response['geogra'] = $json['geogra'];
+          break;
+        case 'source':
+          $response['source'] = $json['source'];
+          break;
+        case 'extent':
+          $response['extent'] = $json['extent'];
+          break;
+        case 'rights':
+          $response['rights'] = $json['rights'];
+          break;
+        case 'tribe':
+          if(gettype($json['tribe']) === 'string') {
+            $response['tribe'] = $json['tribe'];
+          } else {
+            $response['tribe'] = '';
+          }
+          break;
+        default:
+          //nothing
+      }
+    }
+    return $response;
+  }
 
 ?>

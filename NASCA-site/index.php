@@ -48,7 +48,7 @@
     <script type="text/javascript" src="api/xmlhttp.js"></script>
     <script type="text/javascript" src="api/json.js"></script>
     <script type="text/javascript" src="api/globals.js"></script>
-    <script type="text/javascript" src="js/index/fade.js"></script>
+    <script type="text/javascript" src="js/api/functions.js"></script>
     <script type="text/javascript" src="js/index/index.js"></script>
     
     <script type="text/javascript" src="js/index/home.js"></script>
