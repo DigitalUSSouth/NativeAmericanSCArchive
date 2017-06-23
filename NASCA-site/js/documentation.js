@@ -1,10 +1,12 @@
+var currentPage = 'documentation';
+
 $(document).ready(function() {
   //set invisible EVERYTHING that will fade in
   var fadeIns = ['#header-positioner', '#page-container', '#footer-container'];
   for(var i = 0; i < fadeIns.length; i++) {
     $(fadeIns[i]).css('display','none');
   }
-
+  
   //set onhover onclick stuff
   $('#logo').hover(function() {
     //enter
@@ -26,8 +28,8 @@ $(document).ready(function() {
   var cssinterval = setInterval(function(){
     dynamic_css();
     i++;
-    //if it's been 5 seconds since load
-    if(i > 24) {
+    //if it's been 4 seconds since load
+    if(i > 19) {
       clearInterval(cssinterval);
     }
   },200);

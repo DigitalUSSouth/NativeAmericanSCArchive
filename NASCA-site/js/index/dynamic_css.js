@@ -117,6 +117,11 @@ function dynamic_css() {
     case 'tribes':
       
       break;
+    case 'documentation':
+      console.log("You're on one of the documentation pages right?");
+      break;
+    default:
+      //nada
   }
   $('#page-container').css('min-height',$(window).height()-$('#header-positioner-height-offset').height()-$('#footer-container').height());
 }
