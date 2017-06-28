@@ -98,7 +98,7 @@
     echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
     echo '  </div>';
     echo '  <div id="preview-media-container">';
-    echo '    <a href="' . $ref_full . '" data-lightbox="Featured" data-title="' . $trimmed . '">';
+    echo '    <a href="' . $ref_full . '" data-fancybox="Featured" data-caption="' . $trimmed . '">';
     echo '      <img src="' . $ref_large . '" id="preview-media" />';
     echo '    </a>';
     echo '  </div>';

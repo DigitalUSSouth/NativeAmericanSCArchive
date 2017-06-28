@@ -22,7 +22,7 @@ function init_home() {
   }, function() {
     //exit
     if($(this).siblings('div.additional').children('#toggle').html() === '0') {
-      $(this).siblings('img.card-image').animate({opacity:0.5},card_anim_details);
+      $(this).siblings('img.card-image').animate({opacity:0.9},card_anim_details);
       $(this).parent().css({top: "0", left: "0"});//,{duration: 100, queue: false});
       $(this).parent().css({"box-shadow":"3px 10px 18px -2px rgb(150,150,150)"});
       $(this).siblings('div.card-read-more').animate({left:'-50%'},card_anim_details);

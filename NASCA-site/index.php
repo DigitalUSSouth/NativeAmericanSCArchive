@@ -17,7 +17,8 @@
     <script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery-ui/jquery-ui.min.js"></script>
     <!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
-    <script type="text/javascript" src="js/lightbox.js"></script>
+    <!--<script type="text/javascript" src="js/lightbox.js"></script>-->
+    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
     
@@ -26,7 +27,8 @@
     <!--link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.structure.min.css"/>
     <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.theme.min.css"/-->
     <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>-->
-    <link rel="stylesheet" type="text/css" href="css/lightbox.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="css/lightbox.css"/>-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" type="text/css" href="css/jplayer.blue.monday.css"/>
     <link rel="stylesheet" type="text/css" href="css/modal.css"/>
@@ -60,11 +62,11 @@
     <script type="text/javascript" src="js/index/timeline.js"></script>
     <script type="text/javascript" src="js/index/tribes.js"></script>
   </head>
-  <body class="background-red">
+  <body>
     <?php
       include_once 'html/modal.php';
     ?>
-    <div id="body-container" class="background-off-white">
+    <div id="body-container" class="background-checker">
       <div id="header-positioner">
         <div id="header-container" class="background-black">
           <div id="header-left">

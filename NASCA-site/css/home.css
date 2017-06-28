@@ -15,7 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 #home-middle {
@@ -48,7 +48,7 @@
 }
 
 .home-card img {
-  opacity: 0.5;
+  opacity: 0.9;
   height: 100%;
   width: 100%;
   z-index: 2;
@@ -181,7 +181,7 @@
 }
 
 #preview-media-container {
-  border: 2px solid #930707;
+  border: 3px solid #930707;
   overflow: hidden;
   position: relative;
 }

@@ -37,6 +37,14 @@ function init_index() {
     }
   });
   
+  //protect fancybox images from download
+  $('[data-fancybox]').fancybox({
+    protect: true,
+    fitToView: false,
+    aspectRatio: false,
+    scrolling: 'yes'
+  });
+  
   //set date of copyright
   var d = new Date();
   document.getElementById('copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();

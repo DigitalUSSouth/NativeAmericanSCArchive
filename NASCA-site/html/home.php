@@ -26,7 +26,7 @@ for($i = 1; $i <= $count; $i++) {
     $size = 'tall';
   }
   echo '<div class="home-card-container">';
-  echo '<div class="home-card background-red" id="home-card-' . $i . '">';// . indexValue
+  echo '<div class="home-card background-black" id="home-card-' . $i . '">';// . indexValue
   echo '  <div class="additional">';
   echo '    <p id="errors">';
   $trimmed = $title;
