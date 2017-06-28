@@ -3,15 +3,16 @@ body{
     width: 100%;
     padding: 0;
     margin: 0 auto;
+    background-color: #EFEDED;
 }
 
 /* http://www.patternify.com/ */
 
 .repeatBg{
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQUlEQVQoU2NkYGDwZWBg2MyAH/gyQuXxKQbLwRSC1GNTDBdDVoiuGEUjukKYYhCN4m6yFSJbh9NqojxDVPAQFeAAKGsQpaY3JDsAAAAASUVORK5CYII=) repeat;
-    position: relative;
+    background: url(../images/patternX.png) repeat;
+    background-size: auto, cover;
     height: inherit;
-    opacity: 0.25;
+    opacity: 1;
 }
 
 .paragraph{
