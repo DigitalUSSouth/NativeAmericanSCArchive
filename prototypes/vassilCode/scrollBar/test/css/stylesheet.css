@@ -1,0 +1,20 @@
+.box{
+    float: left;
+    width: calc(50% - 20px);
+}
+
+.demo1 {
+  margin: 10px 0;
+  width: 100%;
+  height: 300px;
+}
+    .demo1 p {
+    margin: 0;
+    padding: 10px;
+    min-width: 230px;
+    }
+      .demo1 p.odd {
+      background: #f0f0f0;
+      }
+  
+
