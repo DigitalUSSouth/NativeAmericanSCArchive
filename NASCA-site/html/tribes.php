@@ -216,8 +216,8 @@
 	</li>
 	</li>
 				<li>
-						<img src="../img/coloredLogos/logo/NASCA_single_logo.png" width="478" height="119" alt="NASCA_single_logo"/>
-						<p> tribes 13 </p>
+						<img src="../img/tribesLogos/PAIA.pdf" width="478" height="119" alt="NASCA_single_logo"/>
+						<p> PAIA </p>
 						<div class="og-expander">
 								<div class="og-expander-inner">
 										<span class="og-close"></span>

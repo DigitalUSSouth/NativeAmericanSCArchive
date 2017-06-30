@@ -1,4 +1,5 @@
 function init_tribes() {
+  //toggleSearch("off");
   console.log("Opened tribes page");
 }
 
@@ -29,7 +30,7 @@ var $grid = $( '#og-grid' ),
 		speed : 350,
 		easing : 'ease'
 	};
-        
+
 function init( config ) {
 		settings = $.extend( true, {}, settings, config );
 		$grid.imagesLoaded( function() {
@@ -124,30 +125,29 @@ function Preview( $item ) {
         this.expandedIdx = this.$item.index();
         this.create();
         this.update();
-}
-
-create : function() {
-        // create Preview structure:
-        this.$title = $( '<h3></h3>' );
-        this.$description = $( '<p></p>' );
-        this.$href = $( '<a href="#">Visit website</a>' );
-        this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
-        this.$loading = $( '<div class="og-loading"></div>' );
-        this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
-        this.$closePreview = $( '<span class="og-close"></span>' );
-        this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
-        this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
+  return {
+        create : function() {
+          // create Preview structure:
+          this.$title = $( '<h3></h3>' );
+          this.$description = $( '<p></p>' );
+          this.$href = $( '<a href="#">Visit website</a>' );
+          this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+          this.$loading = $( '<div class="og-loading"></div>' );
+          this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
+          this.$closePreview = $( '<span class="og-close"></span>' );
+          this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+          this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
         // append preview element to the item
         this.$item.append( this.getEl() );
         // set the transitions for the preview and the item
         if( support ) {
                 this.setTransition();
         }
-};
+},
 
-update : function( $item ) {
+  update : function( $item ) {
 
-        // update with new item´s details 
+        // update with new item´s details
         if( $item ) {
                 this.$item = $item;
         }
@@ -171,7 +171,7 @@ update : function( $item ) {
                         largesrc : $itemEl.data( 'largesrc' ),
                         title : $itemEl.data( 'title' ),
                         description : $itemEl.data( 'description' )
-                };
+                },
 
         this.$title.html( eldata.title );
         this.$description.html( eldata.description );
@@ -192,22 +192,22 @@ update : function( $item ) {
                         self.$loading.hide();
                         self.$largeImg = $( this ).fadeIn( 350 );
                         self.$fullimage.append( self.$largeImg );
-                } ).attr( 'src', eldata.largesrc );	
+                } ).attr( 'src', eldata.largesrc );
         }
 
-};
+},
 open : function() {
 
-        setTimeout( $.proxy( function() {	
+        setTimeout( $.proxy( function() {
                 // set the height for the preview and the item
                 this.setHeights();
                 // scroll to position the preview in the right place
                 this.positionPreview();
         }, this ), 25 );
 
-};
+},
 
-setHeights : function() {
+  setHeights : function() {
 
         var self = this,
                 onEndFn = function() {
@@ -225,9 +225,9 @@ setHeights : function() {
                 onEndFn.call();
         }
 
-};
+},
 
-calcHeight : function() {
+  calcHeight : function() {
 
         var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
                 itemHeight = winsize.height;
@@ -240,7 +240,7 @@ calcHeight : function() {
         this.height = heightPreview;
         this.itemHeight = itemHeight;
 
-};
+},
 
 positionPreview : function() {
 
@@ -254,7 +254,7 @@ positionPreview : function() {
 
         $body.animate( { scrollTop : scrollVal }, settings.speed );
 
-};
+},
 close : function() {
 
         var self = this,
@@ -284,4 +284,5 @@ close : function() {
 
         return false;
 
+}
 };
