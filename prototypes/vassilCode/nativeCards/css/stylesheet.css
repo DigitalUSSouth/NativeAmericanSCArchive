@@ -1,12 +1,32 @@
-body{
+html, body {
+    margin: 0;
     padding: 0;
-    margin: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    background: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+/* this centers the card in the middle of any browser */
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
     background-color: #D7D7DD;
 }
 
+/* You can rename this .wrapperCard or what ever you may have used.  The important thing to notice is the z-index relative to the .papaer div in order for this to work.  In the HTML document .space which contains the gradient at the bottom is out side of .paper that holds the information. */
+
 .wrapper{
-    padding: 3rem 0;
     margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    z-index: 98;
 }
 
 /* This is the div that contains all of the informoation, to be noted.  The div is set to a specific height of 41, it basically reaches to the bottom of the MORE button.  The reason being is so I can hide the gradient which is the div space, placed all the way at the bottom with a z-index of -1.  If you take out the height in div.paper you will see why I made the card a particular size, so keep that in mind when you are transfering the gradient code onto the cards for NASCA. */
@@ -14,15 +34,17 @@ body{
 .paper{
     font-family: 'Titilium Web', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
     margin: 0 auto;
     padding: 0;
     max-width: 300px;
     min-width: 300px;
-    height: 41rem;
     transition: 1s ease;
     background: white;
     text-align: justify;
+    z-index: 99;
 }
 
 .paper:hover{
@@ -50,7 +72,8 @@ a.noStyle:hover{
 }
 
 .poster{
-  flex: 1;
+    flex: 1;
+    height: auto;
 }
 
 h2{
@@ -120,7 +143,7 @@ a.button:hover{
     position: relative;
     padding: 0;
     margin: 0;
-    top:-6px;
+    top: -4px;
     left: 0;
     bottom: 0;
     width:100%;
@@ -136,7 +159,7 @@ a.button:hover{
 
 /* This calls onto the div.paper on hover and looks for div.space, if you take a way div.space your gradient will not longer dissapear on hover. */
 
-.paper:hover div.space{
+.wrapper:hover div.space{
     transform: translateY(-7px);
-    z-index: -1;
+    z-index:-1;
 }
