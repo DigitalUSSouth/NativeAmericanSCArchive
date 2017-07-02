@@ -1,12 +1,15 @@
 body{
     padding: 0;
     margin: 0 0 0 0;
+    background-color: #D7D7DD;
 }
 
 .wrapper{
-    padding: 2rem 0;
+    padding: 3rem 0;
     margin: 0;
 }
+
+/* This is the div that contains all of the informoation, to be noted.  The div is set to a specific height of 41, it basically reaches to the bottom of the MORE button.  The reason being is so I can hide the gradient which is the div space, placed all the way at the bottom with a z-index of -1.  If you take out the height in div.paper you will see why I made the card a particular size, so keep that in mind when you are transfering the gradient code onto the cards for NASCA. */
 
 .paper{
     font-family: 'Titilium Web', sans-serif;
@@ -16,15 +19,14 @@ body{
     padding: 0;
     max-width: 300px;
     min-width: 300px;
-    transition: .1s ease;
+    height: 41rem;
+    transition: 1s ease;
     background: white;
     text-align: justify;
-    border: 1px dashed #e44d6e;;
 }
 
 .paper:hover{
-    box-shadow: 0px 0px 0px 10px rgba(228,77,110, 1);
-    transform: translateX(-5px);
+    transform: translateY(5px);
 }
 
 a.noStyle{
@@ -45,6 +47,10 @@ a.noStyle:hover{
     text-align: none;
     box-shadow: none;
     transform: none;
+}
+
+.poster{
+  flex: 1;
 }
 
 h2{
@@ -75,19 +81,10 @@ h1:hover{
     transform: translateX(5px);
 }
 
-hr{
-    border-top: none;
-    border-color: #e44d6e;
-}
-
 .poster p{
     flex: 1;
-    padding: 0 0.85rem;
+    padding: 1rem 1rem;
     color:#333333;
-}
-
-.poster{
-  flex: 1;
 }
 
 a.button{
@@ -97,34 +94,49 @@ a.button{
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
-    line-height: 20px;
-    letter-spacing: .07rem;
-    background: white;
-    color: #29426d;
-    font-weight: bold;
     font-size: 0.8rem;
+    line-height: 20px;
+    letter-spacing: .06rem;
+    font-weight: bold;
+    color: white;
+    background: #e44d6e;
     margin: 0 auto;
     padding: 0.5rem 1rem;
-    width: 50%;
-    transition: 0.3s ease;
+    width: auto;
+    transition: 1s ease;
 }
 
 a.button:hover{
-    width:60%;
+    width:auto;
     font-size: 0.8rem;
-    letter-spacing: 0.12rem;
+    background-color: #29426d;
     box-shadow: none;
-    text-transform: uppercase;
-    transform: translateX(0px);
 }
+
+/* To be noted, the top selector is set to -4px because the gradient is too strong initially, pulling it up some makes it less harsh. */
 
 .space{
     flex: 1;
     position: relative;
     padding: 0;
     margin: 0;
+    top:-6px;
     left: 0;
     bottom: 0;
     width:100%;
     height: 1rem;
+    background: grey;
+    background: -webkit-linear-gradient(#333333, #D7D7DD);
+    background: -o-linear-gradient(#333333, #D7D7DD);
+    background: -mox-linear-gradient(#333333, #D7D7DD);
+    background: linear-gradient(#333333, #D7D7DD);
+    transition: 1s ease;
+    z-index: -1;
+}
+
+/* This calls onto the div.paper on hover and looks for div.space, if you take a way div.space your gradient will not longer dissapear on hover. */
+
+.paper:hover div.space{
+    transform: translateY(-7px);
+    z-index: -1;
 }
