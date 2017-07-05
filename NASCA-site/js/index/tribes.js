@@ -171,7 +171,7 @@ function Preview( $item ) {
                         largesrc : $itemEl.data( 'largesrc' ),
                         title : $itemEl.data( 'title' ),
                         description : $itemEl.data( 'description' )
-                },
+                };
 
         this.$title.html( eldata.title );
         this.$description.html( eldata.description );
@@ -285,4 +285,4 @@ close : function() {
         return false;
 
 }
-};
+};}

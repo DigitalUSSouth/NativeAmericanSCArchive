@@ -1,6 +1,8 @@
 <?php
   require_once '../api/configuration.php';
   include_once '../api/cdm.php';
+  
+  print_r($_SERVER);
 ?>
 
 <!DOCTYPE html>

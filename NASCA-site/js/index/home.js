@@ -54,7 +54,7 @@ function animateOff(card) {
   $(card + ' .card-read-more').animate({left:'-50%'},card_anim_details);
   $(card + ' .card-point').animate({left:0},card_anim_details);
   $(card + ' .card-point').css({'-webkit-transform':'translateX(0)'});
-  $(card + ' .card-image').animate({opacity:0.5},card_anim_details);
+  $(card + ' .card-image').animate({opacity:0.9},card_anim_details);
   $(card).css({top: '0', left: '0'});//,{duration: 100, queue: false});
   $(card).css({'box-shadow':'3px 10px 18px -2px rgb(150,150,150)'});
   $(card + ' .additional #toggle').html('0');
