@@ -1,4 +1,3 @@
-<p>This is the tribes page</p>
 <ul id="og-grid" class="og-grid">
 	<li>
     <img src="img/tribesLogos/beaver.jpg" width="478" height="119" alt="NASCA_single_logo"/>
