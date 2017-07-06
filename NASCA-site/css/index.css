@@ -89,6 +89,10 @@ hr.dark-grey {
   border-color: #323A3B;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .button {
   
 }
@@ -347,7 +351,7 @@ colors{
 #pullout-container {
   border-left: 2px solid black;
   height: 100%;
-  min-width: 100px; /*200px;*/
+  min-width: 150px; /*200px;*/
   width: 11.1732vw;
 }
 

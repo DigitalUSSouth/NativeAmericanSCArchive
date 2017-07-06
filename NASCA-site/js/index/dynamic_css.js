@@ -59,7 +59,7 @@ function dynamic_css() {
     $('#menu-container').css({display:'none'});
     $('#nav-bar-container').css({display:'block'});
   } else {
-    responsive_font('.pullout-list-el','window',1.7391,8,30);//16,30);
+    responsive_font('.pullout-list-el','window',1.7391,8,26);//16,30);
     $('#pullout-positioner').css({top:$('#header-container').height()+'px'});
     $('#menu-container').width($('#menu-container').height()*2.328125);
     $('#nav-bar-container').css({display:'none'});

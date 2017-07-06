@@ -246,6 +246,15 @@
   float: left;
 }
 
+.preview-default #preview-title-container #preview-title {
+  font-size: 22px;
+}
+
+.preview-default #preview-desc-container {
+  font-size: 16px;
+  line-height: 22px;
+}
+
 #view-all-container {
   position: absolute;
   right: -3.2787%;
