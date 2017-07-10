@@ -64,18 +64,44 @@
   }
   
   function errorMessage($code) {
+    echo '<div class="source-serif">';
     echo 'I\'m afraid you have encountered a bug.<br/>';
     echo 'Error Code: ' . $code . '<br/>';
-    echo '"What should I do about this?"<br/>';
-    echo 'Please let the silly developers know that there\'s a problem in a file called \'home-more.php\'<br/>';
+    
+    if($code === -4) {
+      echo '<br/>This means that the image, and probably the metadata with it, ';
+      echo 'could not be found in University of South Carolina\'s collection ';
+      echo 'hosted at ContentDM. It is most likely that the image is still there, ';
+      echo 'but the \'pointer\' has changed due to a change to the collection. If ';
+      echo 'this is the case, then the entry will be back up and running by 2 A.M., ';
+      echo 'when this website will be automatically updated in response.<br/><br/>';
+      echo 'Thank you for your patience!';
+    }
+    
+    echo '<hr class="red"/>';
+    echo '"What can I do about this?"<br/><br/>';
+    echo 'If the problem has not solved itself within a day, please let the silly developers know that there\'s a problem in a file called \'home-more.php\'<br/>';
+    echo '</div>';
   }
   
   function printDefault() {
-    echo '<h2><b>Welcome to the Native American South Carolina Archive!</b></h2>';
-    echo '<hr class="red"/>';
-    echo '<p>Click any of the cards on the left to get more information in this window about featured pictures, interviews, and videos in our archive.</p>';
-    echo '<p><i>OR</i></p>';
-    echo '<p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You\'re also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>';
+    echo '<div id="preview-layout" class="preview-default text-center">';
+    echo '  <div id="preview-title-container">';
+    echo '    <div id="preview-title" class="anton text-dark-grey">';
+    echo '      <b>Welcome to the Native American South Carolina Archive!</b>';
+    echo '    </div>';
+    echo '  </div>';
+    echo '  <hr class="red"/>';
+    echo '  <div id="preview-desc-container" class="source-serif text-red">';
+    //echo '    <div id="preview-desc">';
+    echo '      <p>Click any of the cards on the left to get more information in this window about featured pictures, interviews, and more from our archive.</p>';
+    echo '      <br/>';
+    echo '      <p><i>OR</i></p>';
+    echo '      <br/>';
+    echo '      <p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You\'re also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>';
+    //echo '    </div>';
+    echo '  </div>';
+    echo '</div>';
   }
   
   function printImageDetails($id, $title, $size) {

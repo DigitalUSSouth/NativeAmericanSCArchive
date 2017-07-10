@@ -10,5 +10,6 @@
 <button class="button" onclick="launch_interview_modal('Beaver-Creek_Helen-Jeffcoat-minified.json')">Helen Jeffcoat</button>
 <button class="button" onclick="launch_interview_modal('Beaver-Creek_John-Barry-Chavis-minified.json')">John Barry Chavis</button>
 <button class="button" onclick="launch_interview_modal('Beaver-Creek_Ms-Williams-minified.json')">Ms Williams</button>
+<button class="button" onclick="launch_interview_modal('Beaver-Creek_Louie-Chavis-minified.json')">Louie Chavis</button>
 <button class="button" onclick="launch_interview_modal('Pee-Dee_Chief-James-Caulder-minified.json')">Chief James Caulder</button>
 <button class="button" onclick="launch_interview_modal('Pee-Dee_Clayton-RC-Cummings-minified.json')">Clayton RC Cummings</button>

@@ -21,7 +21,7 @@ else {
  */
 function dynamic_css() {
   //set anything in index
-  responsive_font('#search-text','window',2.3913,22);
+  responsive_font('#search-text','window',2.3913,11);//22);
   var newWid = ($('#header-left').height()+52)*2.7607;
   var newWid2 = $(window).width()*0.2514;
   if(newWid < newWid2) {
@@ -39,13 +39,13 @@ function dynamic_css() {
   } else {
     $('#logo-verbose img').css('width',newWid2);
   }
-  responsive_padding_horizontal('#header-left', 'left', 3.1285, 56);
-  responsive_padding_vertical('#header-left', 'top', 5.6522, 52);
+  responsive_padding_horizontal('#header-left', 'left', 3.1285, 28);//56);
+  responsive_padding_vertical('#header-left', 'top', 5.6522, 26);//52);
   $('#logo').css('width',$('#logo').height()*4.0357);
-  responsive_padding_horizontal('#page', 'left', 3.7989, 68);
-  responsive_padding_horizontal('#page', 'right', 3.7989, 68);
-  responsive_padding_vertical('#page', 'top', 2.8261, 26);
-  responsive_padding_vertical('#page', 'bottom', 1.3043, 12);
+  responsive_padding_horizontal('#page', 'left', 3.7989, 34);//68);
+  responsive_padding_horizontal('#page', 'right', 3.7989, 34);//68);
+  responsive_padding_vertical('#page', 'top', 2.8261, 13);//26);
+  responsive_padding_vertical('#page', 'bottom', 1.3043, 6);//12);
   var headerproportion = $('#header-container').width()/$('#header-container').height();
   if(headerproportion > 7) {
     var cssval = $('#pullout-positioner').css('right');
@@ -53,13 +53,13 @@ function dynamic_css() {
     if(cssval === '0') {
       $('#pullout-positioner').animate({right:'-100%'},'fast');
     }
-    responsive_font('#tabs','window',1.7391,16);
+    responsive_font('#tabs','window',1.7391,8);//16);
     newWid = $('#nav-bar-container').height()*13.0143;
     $('#nav-bar-container').width(newWid);
     $('#menu-container').css({display:'none'});
     $('#nav-bar-container').css({display:'block'});
   } else {
-    responsive_font('.pullout-list-el','window',1.7391,16,30);
+    responsive_font('.pullout-list-el','window',1.7391,8,26);//16,30);
     $('#pullout-positioner').css({top:$('#header-container').height()+'px'});
     $('#menu-container').width($('#menu-container').height()*2.328125);
     $('#nav-bar-container').css({display:'none'});
@@ -68,10 +68,10 @@ function dynamic_css() {
   //then set other bits depending on what page it's on
   switch(currentPage) {
     case 'home':
-      responsive_font('#featured','window',1.3043,12);
+      responsive_font('#featured','window',1.3043,6);//12);
       $('.home-card-container').height($('.home-card-container').width()*1.3559);
-      responsive_font('.card-title','parent-div',30.4348,14);
-      responsive_font('.card-read-more div','parent-div',83.333,15);
+      responsive_font('.card-title','parent-div',30.4348,7);//14);
+      responsive_font('.card-read-more div','parent-div',83.333,7.5);//15);
       
       //title css for wide images
       var newheight = $('.preview-wide #preview-title-container').width()*0.2098;

@@ -13,7 +13,7 @@
   }
 
   define('REL_HOME', $config->rel_home);
-  define('SITE_ROOT', 'http://' . $_SERVER["SERVERNAME"] . REL_HOME);
+  define('SITE_ROOT', 'http://' . $_SERVER['SERVER_NAME'] . REL_HOME);
 
   define('CDM_SERVER', $config->databases->cdm->server);
   define('CDM_PORT', $config->databases->cdm->port);
