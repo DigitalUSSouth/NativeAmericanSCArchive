@@ -102,12 +102,10 @@ function readMoreToggle(homePtr, card) {
       var details = '#home-right';
       $(details).fadeOut('fast', function() {
         $(details).html(data).promise().done(function() {
-          dynamic_css();
           $(details).fadeIn('fast');
           dynamic_css();
         });
       });
-      dynamic_css()
     }
   });
   dynamic_css();

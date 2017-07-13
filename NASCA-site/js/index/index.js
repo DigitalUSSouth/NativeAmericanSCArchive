@@ -38,11 +38,12 @@ function init_index() {
   });
   
   //protect fancybox images from download
-  $('[data-fancybox]').fancybox({
+  $().fancybox({
+    selector: '[data-fancybox="Featured"]',
     protect: true,
-    fitToView: false,
-    aspectRatio: false,
-    scrolling: 'yes'
+    autoSize: false,
+    autoScale: false,
+    autoDimensions: false
   });
   
   //set date of copyright

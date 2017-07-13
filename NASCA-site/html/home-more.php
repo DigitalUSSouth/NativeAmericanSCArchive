@@ -111,6 +111,7 @@
     }
     $ref_large = getImageReference($id, 'large');
     $ref_full = getImageReference($id, 'full');
+    $dimensions = getImageDimensions($id);
     if(is_numeric($ref_large) && $ref_large < 0) {
       errorMessage(-4);
       return -1;
@@ -124,7 +125,7 @@
     echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
     echo '  </div>';
     echo '  <div id="preview-media-container">';
-    echo '    <a href="' . $ref_full . '" data-fancybox="Featured" data-caption="' . $trimmed . '">';
+    echo '    <a class="fancybox-home" href="' . $ref_full . '" data-fancybox="Featured" data-type="image" data-caption="' . $trimmed . '" data-width="' . $dimensions['width'] . '" data-height="' . $dimensions['height'] . '">';
     echo '      <img src="' . $ref_large . '" id="preview-media" />';
     echo '    </a>';
     echo '  </div>';

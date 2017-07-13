@@ -2,7 +2,7 @@
   require_once 'api/configuration.php';
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
@@ -14,20 +14,16 @@
     <meta name="author" content="Matthew Jendrasiak"/>
     
     <!-- minified jquery, jplayer, bootstrap, etcetera -->
-    <script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery-ui/jquery-ui.min.js"></script>
-    <!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
-    <!--<script type="text/javascript" src="js/lightbox.js"></script>-->
-    <script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
     
     <!-- CSS & BootStrap -->
     <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui/jquery-ui.min.css"/>
     <!--link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.structure.min.css"/>
     <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.theme.min.css"/-->
-    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>-->
-    <!--<link rel="stylesheet" type="text/css" href="css/lightbox.css"/>-->
     <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <link rel="stylesheet" type="text/css" href="css/jplayer.blue.monday.css"/>
