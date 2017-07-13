@@ -322,6 +322,9 @@ colors{
   float: left;
   width: 61.745%;
   height: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 #menu:hover {
@@ -330,13 +333,22 @@ colors{
 }
 
 #menu-icon {
-  display: inline-block;
-  margin: 0 auto;
+  display: inline-flex;
+  width: 20%;
+  margin-left: 13%;
+}
+
+#menu-icon-img {
+  width: 100%;
+  height: auto;
 }
 
 #menu-text {
-  display: inline-block;
-  margin: 0 auto;
+  display: inline-flex;
+  margin-left: 10%;
+  height: 100%;
+  line-height: 200%;
+  font-size: 16px;
 }
 
 #pullout-positioner {

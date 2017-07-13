@@ -64,6 +64,7 @@ function dynamic_css() {
     $('#menu-container').width($('#menu-container').height()*2.328125);
     $('#nav-bar-container').css({display:'none'});
     $('#menu-container').css({display:'block'});
+    responsive_font('#menu-text','parent-div',50);
   }
   //then set other bits depending on what page it's on
   switch(currentPage) {
@@ -181,6 +182,9 @@ function responsive_padding_vertical(selector, tb, responsive, min, max) {
 function responsive_font(selector, relativeto, responsive, min, max) {
   if(typeof max === "undefined" || max === null) {
     max = 1000;
+  }
+  if(typeof min === "undefined" || min === null) {
+    min = 0;
   }
   //this is the size it would be set to if set to 'responsive'
   if(relativeto === 'window') {

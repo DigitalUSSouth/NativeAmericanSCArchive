@@ -103,7 +103,9 @@
             </div>
             <div id="menu-container">
               <div id="menu" class="background-grey">
-                <div id="menu-icon"></div>
+                <div id="menu-icon">
+                  <img id="menu-icon-img" src="img/menuBar.svg" />
+                </div>
                 <div id="menu-text" class="anton text-white">Menu</div>
               </div>
             </div>
