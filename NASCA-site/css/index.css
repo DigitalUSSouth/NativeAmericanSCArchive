@@ -129,29 +129,29 @@ colors{
   position: relative;
   display: inline-flex;
   height: 17.7174vh;
-  min-height: 81.5px; /*163px;*/
+  min-height: 112px; /*163px;*/
   width: 100%;
   min-width: 800px;
 }
 
 #header-positioner-height-offset {
   height: 17.7174vh;
-  min-height: 81.5px; /*163px;*/
+  min-height: 112px; /*163px;*/
   width: 100%;
 }
 
 #header-left {
-  min-width: 177.5px; /*355px;*/
-  padding-left: 28px; /*56px;*/
-  padding-top: 26px; /*52px;*/
+  min-width: 236.667px; /*355px;*/
+  padding-left: 18.667px; /*56px;*/
+  padding-top: 34.667px; /*52px;*/
   display: inline-block;
 }
 
 #logo {
-  min-height: 28px; /*56px;*/
+  min-height: 18.667px; /*56px;*/
   height: 50.4505%;
-  width: 113px; /*226px;*/
-  min-width: 113px; /*226px;*/
+  width: 150.667px; /*226px;*/
+  min-width: 150.667px; /*226px;*/
   float: left;
 }
 
@@ -174,7 +174,7 @@ colors{
 }
 
 #logo-verbose img {
-  min-width: 71px; /*142px;*/
+  min-width: 94.667px; /*142px;*/
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -191,17 +191,17 @@ colors{
   top: 0;
   right: -500px;
   height: 31.9018%;
-  min-height: 26px; /*52px;*/
-  min-width: 165.5px; /*331px;*/
-  width: 165.5px; /*331px;*/
+  min-height: 34.667px; /*52px;*/
+  min-width: 220.667px; /*331px;*/
+  width: 220.667px; /*331px;*/
 }
 
 #search {
   position: absolute;
   bottom: 0;
   left: 0;
-  min-height: 13px; /*26px;*/
-  min-width: 137px; /*274px;*/
+  min-height: 17.333px; /*26px;*/
+  min-width: 182.667px; /*274px;*/
   height: 50%;
   width: 82.7795%;
 }
@@ -217,17 +217,17 @@ colors{
 }
 
 #search-text {
-  font-size: 11px; /*22px;*/
+  font-size: 14.667px; /*22px;*/
   width: auto;
   height: 100%;
   display: inline-block;
   margin: 0 auto;
-  line-height: 13px; /*26px;*/
+  line-height: 17.333px; /*26px;*/
 }
 
 #search-input-container {
   height: 100%;
-  min-width: 79px; /*158px;*/
+  min-width: 105.333px; /*158px;*/
   width: 57.6642%;
   margin: 0 auto;
   border-bottom: 2px solid white;
@@ -241,7 +241,7 @@ colors{
   border: none;
   color: white;
   font-weight: 600;
-  font-size: 7.5px; /*15px;*/
+  font-size: 10px; /*15px;*/
 }
 
 #search-go {
@@ -257,8 +257,8 @@ colors{
 
 #nav-bar-container {
   height: 42.9448%;
-  min-width: 455px; /*910px;*/
-  width: 455px; /*910px;*/
+  min-width: 606.667px; /*910px;*/
+  width: 606.667px; /*910px;*/
   position: absolute;
   right: 0;
   bottom: 0;
@@ -313,7 +313,7 @@ colors{
   bottom: 0;
   display: none;
   height: 39.2638%;
-  width: 74.5px; /*149px;*/
+  width: 99.333px; /*149px;*/
   display: none;
 }
 
@@ -353,7 +353,7 @@ colors{
 
 #pullout-positioner {
   position: fixed;
-  top: 81.5px; /*163px;*/
+  top: 108.667px; /*163px;*/
   right: -100%;
   z-index: 4;
   height: 100%;
@@ -374,7 +374,7 @@ colors{
 .pullout-list-el {
   color: black;
   text-decoration: none;
-  font-size: 8px; /*16px;*/
+  font-size: 10.667px; /*16px;*/
   text-align: right;
   padding: 14px;
   margin-bottom: 4px;
@@ -394,10 +394,10 @@ colors{
 }
 
 #page {
-  padding-left: 34px; /*68px;*/
-  padding-right: 34px; /*68px;*/
-  padding-top: 13px; /*26px;*/
-  padding-bottom: 6px; /*12px;*/
+  padding-left: 45.333px; /*68px;*/
+  padding-right: 45.333px; /*68px;*/
+  padding-top: 17.333px; /*26px;*/
+  padding-bottom: 8px; /*12px;*/
 }
 
 #footer-container {
