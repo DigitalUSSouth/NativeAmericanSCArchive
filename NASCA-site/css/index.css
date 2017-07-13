@@ -464,8 +464,7 @@ colors{
 
 .frame {
   margin: auto;
-  width: 95%;
-  height: 85vh;
+  width: 100%;
 }
 
 .book {

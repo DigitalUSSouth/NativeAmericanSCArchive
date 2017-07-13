@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="css/timeline.css"/>
     <link rel="stylesheet" type="text/css" href="css/images.css"/>
     <link rel="stylesheet" type="text/css" href="css/tribes.css"/>
+    <link rel="stylesheet" type="text/css" href="css/map.css"/>
     
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Source+Serif+Pro" rel="stylesheet">
