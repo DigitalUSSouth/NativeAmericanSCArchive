@@ -36,7 +36,8 @@ for($i = 1; $i <= $count; $i++) {
   $small_ref = getImageReference($id, 'small');
   if($small_ref < 0) {
     echo 'small_ref = ' . $small_ref;
-    $small_ref = SITE_ROOT . '/img/error.png';
+    $small_ref = SITE_ROOT . '/img/error/error-tall.svg';
+    $size = 'wide';
   }
   echo '    </p>';
   echo '    <p id="title">' . $trimmed . '</p>';
