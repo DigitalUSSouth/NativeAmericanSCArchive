@@ -62,6 +62,7 @@ for($i = 1; $i <= $count; $i++) {
   echo '  </div>';
   echo '  <div class="card-hover" onclick="readMoreToggle(' . $numbers[$i-1] . ',\'#home-card-' . $i . '\')"></div>';
   echo '</div>';
+  echo '<div class="shadow"></div>';
   echo '</div>';
 }
 ?>

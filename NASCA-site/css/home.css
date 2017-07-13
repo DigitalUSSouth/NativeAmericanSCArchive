@@ -42,9 +42,10 @@
   overflow: hidden;
   height: 91.25%;
   width: 91.5254%;
-  box-shadow: 3px 10px 18px -2px rgb(150,150,150);
+  top: 0px;
+  /*box-shadow: 3px 10px 18px -2px rgb(150,150,150);*/
   z-index: 1;
-  transition-duration: 0.15s;
+  transition-duration: 0.4s;
 }
 
 .home-card img {
@@ -248,6 +249,7 @@
 
 .preview-default #preview-title-container #preview-title {
   font-size: 22px;
+  letter-spacing: 0.5px;
 }
 
 .preview-default #preview-desc-container {
@@ -299,4 +301,13 @@
 #view-all-container:hover > #view-all-underline {
   transform: scaleY(8) translateY(-45%);
   /*border-top: 22px solid #930707;*/
+}
+
+.shadow {
+    flex: 1;
+    position: relative;
+    top: 0;
+    width: 91.5254%;
+    height: 4.5%;
+    background: linear-gradient(#333333 -280%, transparent 100%);
 }
