@@ -18,6 +18,7 @@
     <script type="text/javascript" src="js/jquery/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="js/modernizr-custom.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
     
     <!-- CSS & BootStrap -->
@@ -63,7 +64,7 @@
     <?php
       include_once 'html/modal.php';
     ?>
-    <div id="body-container" class="background-off-white">
+    <div id="body-container" class="background-checker">
       <div id="header-positioner">
         <div id="header-container" class="background-black">
           <div id="header-left">

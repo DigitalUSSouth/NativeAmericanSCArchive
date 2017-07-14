@@ -1,35 +1,36 @@
-function init_tribes() {
-  //toggleSearch("off");
-  console.log("Opened tribes page");
-}
+var $grid = null;
 
-var $grid = $( '#og-grid' ),
-	$items = $grid.children( 'li' ),
-	// current expanded item´s index
-	current = -1,
-	// position (top) of the expanded item
-	// used to know if the preview will expand in a different row
-	previewPos = -1,
-	scrollExtra = 0,
-	// extra margin when expanded (between the preview element and the next item row)
-	marginExpanded = 10,
-	$window = $( window ), winsize,
-	$body = $( 'html, body' ),
-	transEndEventNames = {
-		'WebkitTransition' : 'webkitTransitionEnd',
-		'MozTransition' : 'transitionend',
-		'OTransition' : 'oTransitionEnd',
-		'msTransition' : 'MSTransitionEnd',
-		'transition' : 'transitionend'
-	},
-	transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-	// support for csstransitions
-	support = Modernizr.csstransitions,
-	settings = {
-		minHeight : 500,
-		speed : 350,
-		easing : 'ease'
-	};
+function init_tribes() {
+  toggleSearch("off");
+  
+  $grid = $( '#og-grid' ),
+    $items = $grid.children( 'li' ),
+    // current expanded item´s index
+    current = -1,
+    // position (top) of the expanded item
+    // used to know if the preview will expand in a different row
+    previewPos = -1,
+    scrollExtra = 0,
+    // extra margin when expanded (between the preview element and the next item row)
+    marginExpanded = 10,
+    $window = $(window).width(), //this line originally said: $( window ), winsize, : which doesn't actually make any sense
+    $body = $( 'html, body' ),
+    transEndEventNames = {
+      'WebkitTransition' : 'webkitTransitionEnd',
+      'MozTransition' : 'transitionend',
+      'OTransition' : 'oTransitionEnd',
+      'msTransition' : 'MSTransitionEnd',
+      'transition' : 'transitionend'
+    },
+    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ], //.prefixed, even after modernizr include, doesn't seem to be a real function. Please fix these errors.
+    // support for csstransitions
+    support = Modernizr.csstransitions,
+    settings = {
+      minHeight : 500,
+      speed : 350,
+      easing : 'ease'
+    };
+}
 
 function init( config ) {
 		settings = $.extend( true, {}, settings, config );
