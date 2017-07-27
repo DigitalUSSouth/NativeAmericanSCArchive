@@ -10,4 +10,5 @@ RUN apt-get update && apt-get install -y \
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 RUN service apache2 start
 EXPOSE 80
+ENTRYPOINT service apache2 start  && bash
 
