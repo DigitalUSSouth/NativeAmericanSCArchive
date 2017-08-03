@@ -14,11 +14,14 @@
 html, body {
   height: 100%;
   box-sizing: border-box;
+  /*width: 100%;*/
 }
 
 body {
   overflow-x: hidden;
   overflow-y: scroll;
+  /*height: 100%;
+  width: 100%;*/
 }
 
 .anton {
@@ -391,6 +394,8 @@ colors{
   z-index: 0;
   overflow-y: hidden;
   overflow-x: scroll;
+  /*width: 100%;
+  height: 100%;*/
 }
 
 #page {
@@ -398,6 +403,8 @@ colors{
   padding-right: 45.333px; /*68px;*/
   padding-top: 17.333px; /*26px;*/
   padding-bottom: 8px; /*12px;*/
+  /*width: 100%;
+  height: 100%;*/
 }
 
 #footer-container {
