@@ -49,7 +49,7 @@ function dynamic_css() {
     responsive_padding_vertical('#page', 'bottom', 1.3043, 8);//12);
   }
   var headerproportion = $('#header-container').width()/$('#header-container').height();
-  if(headerproportion > 7) {
+  if(headerproportion > 7 && currentPage !== 'documentation') {
     var cssval = $('#pullout-positioner').css('right');
     cssval = cssval.substring(0,1);
     if(cssval === '0') {
@@ -60,7 +60,7 @@ function dynamic_css() {
     $('#nav-bar-container').width(newWid);
     $('#menu-container').css({display:'none'});
     $('#nav-bar-container').css({display:'block'});
-  } else {
+  } else if(currentPage !== 'documentation') {
     responsive_font('.pullout-list-el','window',1.7391,10.667,26);//16,30);
     $('#pullout-positioner').css({top:$('#header-container').height()+'px'});
     $('#menu-container').width($('#menu-container').height()*2.328125);
@@ -124,7 +124,7 @@ function dynamic_css() {
       
       break;
     case 'documentation':
-      console.log("You're on one of the documentation pages right?");
+      
       break;
     default:
       //nada
