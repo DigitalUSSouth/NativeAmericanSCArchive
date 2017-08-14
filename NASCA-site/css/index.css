@@ -114,7 +114,7 @@ colors{
   position: relative;
   width: 100%;
   min-height: 100%;
-  padding-bottom: 52px;
+  padding-bottom: 40px;
 }
 
 #header-positioner {
@@ -131,56 +131,75 @@ colors{
 #header-container {
   position: relative;
   display: inline-flex;
-  height: 17.7174vh;
-  min-height: 112px; /*163px;*/
+  height: 17.4267vh;
+  min-height: 107px; /*163px;*/
   width: 100%;
-  min-width: 800px;
+  min-width: 600px;
 }
 
 #header-positioner-height-offset {
-  height: 17.7174vh;
-  min-height: 112px; /*163px;*/
+  height: 17.4267vh;
+  min-height: 107px; /*163px;*/
   width: 100%;
 }
 
+#header-left-container {
+  position: relative;
+  float: left;
+  min-width: 316px;
+  width: 316px;
+  height: 66.6679%;
+  display: inline-block
+}
+
 #header-left {
-  min-width: 236.667px; /*355px;*/
-  padding-left: 18.667px; /*56px;*/
-  padding-top: 34.667px; /*52px;*/
-  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 55.141%;
+  width: 87.6582%;
+  display: inline;
 }
 
 #logo {
-  min-height: 18.667px; /*56px;*/
-  height: 50.4505%;
-  width: 150.667px; /*226px;*/
-  min-width: 150.667px; /*226px;*/
+  position: relative;
   float: left;
+  height: 100%;
+  width: 158px;
+  display: inline-block;
 }
 
 #logo a {
+  position: relative;
   height: 100%;
   width: 100%;
 }
 
 #logo a img {
+  position: relative;
   height: 100%;
-  width: auto;
+  width: 100%;
+}
+
+#logo-verbose-container {
+  position: relative;
+  height: 100%;
+  width: 119px;
+  display: inline-block;
 }
 
 #logo-verbose {
-  overflow: hidden;
-  min-width: 134px; /*168px;*/
-  height: 100%;
-  padding-left: 26px; /*13px;*/
-  padding-top: 5px; /*2.5px;*/
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 86.4377%;
+  width: 84.0336%;
 }
 
 #logo-verbose img {
-  min-width: 94.667px; /*142px;*/
+  position: relative;
+  height: 100%;
   width: 100%;
-  max-width: 100%;
-  height: auto;
   opacity: 0;
 }
 
@@ -193,20 +212,20 @@ colors{
   position: absolute;
   top: 0;
   right: -500px;
-  height: 31.9018%;
-  min-height: 34.667px; /*52px;*/
-  min-width: 220.667px; /*331px;*/
-  width: 220.667px; /*331px;*/
+  height: 36.4486%;
+  min-height: 39px; /*52px;*/
+  min-width: 235px; /*331px;*/
+  width: 235px; /*331px;*/
 }
 
 #search {
   position: absolute;
   bottom: 0;
   left: 0;
-  min-height: 17.333px; /*26px;*/
-  min-width: 182.667px; /*274px;*/
-  height: 50%;
-  width: 82.7795%;
+  min-height: 19px; /*26px;*/
+  min-width: 194px; /*274px;*/
+  height: 48.7179%;
+  width: 82.5532%;
 }
 
 #search-contents {
@@ -220,18 +239,18 @@ colors{
 }
 
 #search-text {
-  font-size: 14.667px; /*22px;*/
+  font-size: 15px; /*22px;*/
   width: auto;
   height: 100%;
   display: inline-block;
   margin: 0 auto;
-  line-height: 17.333px; /*26px;*/
+  line-height: 15px; /*26px;*/
 }
 
 #search-input-container {
   height: 100%;
-  min-width: 105.333px; /*158px;*/
-  width: 57.6642%;
+  min-width: 113px; /*158px;*/
+  width: 58.2474%;
   margin: 0 auto;
   border-bottom: 2px solid white;
   display: inline-block;
@@ -244,7 +263,7 @@ colors{
   border: none;
   color: white;
   font-weight: 600;
-  font-size: 10px; /*15px;*/
+  font-size: 12px; /*15px;*/
 }
 
 #search-go {
@@ -259,9 +278,9 @@ colors{
 }
 
 #nav-bar-container {
-  height: 42.9448%;
-  min-width: 606.667px; /*910px;*/
-  width: 606.667px; /*910px;*/
+  height: 42.9907%;
+  min-width: 642px; /*910px;*/
+  width: 642px; /*910px;*/
   position: absolute;
   right: 0;
   bottom: 0;
@@ -271,8 +290,8 @@ colors{
 #nav-bar {
   position: relative;
   float: left;
-  height: 57.1429%;
-  width: 93.7363%;
+  height: 56.5217%;
+  width: 93.6137%;
 }
 
 #tabs {
@@ -288,10 +307,11 @@ colors{
 #tabs li {
   height: 100%;
   display: table;
-  padding-left: 40px;
+  padding-left: 30px;
 }
 
-#tabs li div {
+#tabs li div.tab {
+  position: relative;
   height: 100%;
   text-align: center;
   font-weight: 400;
@@ -300,10 +320,25 @@ colors{
   transition-duration: 0.1s;
 }
 
-#tabs li div:hover{
+.tab-underline {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 100%;
+  border-bottom: 0px solid white;
+  transition-duration: 0.1s;
+}
+
+#tabs li div.tab:hover {
   font-weight: 600;
-  border-bottom: 2px solid white;
   cursor: pointer;
+}
+
+#tabs li div.tab:hover div.tab-underline {
+  border-bottom: 2px solid white;
 }
 
 #tabs li a:hover, #tabs li a:visited, #tabs li a:active, #tabs li a:link {
@@ -315,16 +350,16 @@ colors{
   right: 0;
   bottom: 0;
   display: none;
-  height: 39.2638%;
-  width: 99.333px; /*149px;*/
+  height: 42.9907%;
+  width: 117px; /*149px;*/
   display: none;
 }
 
 #menu {
   position: relative;
   float: left;
-  width: 61.745%;
-  height: 50%;
+  width: 64.9573%;
+  height: 56.5217%;
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
@@ -337,8 +372,8 @@ colors{
 
 #menu-icon {
   display: inline-flex;
-  width: 20%;
-  margin-left: 13%;
+  width: 26.3158%;
+  margin: 0 auto;
 }
 
 #menu-icon-img {
@@ -348,15 +383,15 @@ colors{
 
 #menu-text {
   display: inline-flex;
-  margin-left: 10%;
+  margin: 0 auto;
   height: 100%;
-  line-height: 200%;
-  font-size: 16px;
+  line-height: 190%;
+  font-size: 13px;
 }
 
 #pullout-positioner {
   position: fixed;
-  top: 108.667px; /*163px;*/
+  top: 107px; /*163px;*/
   right: -100%;
   z-index: 4;
   height: 100%;
@@ -366,8 +401,7 @@ colors{
 #pullout-container {
   border-left: 2px solid black;
   height: 100%;
-  min-width: 150px; /*200px;*/
-  width: 11.1732vw;
+  width: auto;
 }
 
 #pullout-list {
@@ -377,10 +411,13 @@ colors{
 .pullout-list-el {
   color: black;
   text-decoration: none;
-  font-size: 10.667px; /*16px;*/
+  font-size: 10px; /*16px;*/
   text-align: right;
-  padding: 14px;
-  margin-bottom: 4px;
+  padding-top: 9.5px;
+  padding-bottom: 9.5px;
+  padding-right: 14px;
+  padding-left: 30px;
+  margin-bottom: 5px;
 }
 
 .pullout-list-el:hover {
@@ -399,9 +436,9 @@ colors{
 }
 
 #page {
-  padding-left: 45.333px; /*68px;*/
-  padding-right: 45.333px; /*68px;*/
-  padding-top: 17.333px; /*26px;*/
+  padding-left: 54px; /*68px;*/
+  padding-right: 65px; /*68px;*/
+  padding-top: 20px; /*26px;*/
   padding-bottom: 8px; /*12px;*/
   /*width: 100%;
   height: 100%;*/
@@ -409,22 +446,22 @@ colors{
 
 #footer-container {
   position: relative;
-  margin-top: -52px;
+  margin-top: -40px;
   width: 100%;
-  height: 52px;
+  height: 40px;
   z-index: 6;
 }
 
 #footer {
   width: 100%;
   height: 100%;
-  padding-left: 56px;
-  padding-right: 48px;
-  padding-top: 18px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 12px;
 }
 
 #footer-links-container {
-  height: 20px;
+  height: 14px;
   width: 100%;
 }
 
@@ -436,11 +473,12 @@ colors{
 }
 
 #footer-links li {
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 #footer-links li a {
   font-size: 14px;
+  line-height: 14px;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
@@ -461,7 +499,7 @@ colors{
 }
 
 #copyright {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .additional {
