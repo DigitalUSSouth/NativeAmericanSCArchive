@@ -39,7 +39,7 @@ for($i = 1; $i <= $count; $i++) {
   $small_ref = getImageReference($id, 'small');
   if($small_ref < 0) {
     echo 'small_ref = ' . $small_ref;
-    $small_ref = SITE_ROOT . '/img/error/error-tall.svg';
+    $small_ref = SITE_ROOT . '/img/error/error.png';
     $size = 'wide';
   }
   echo '    </p>';
