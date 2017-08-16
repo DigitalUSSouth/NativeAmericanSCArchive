@@ -149,6 +149,10 @@
   margin-top: 96px;
 }
 
+.preview-default #preview-title-container {
+  width: 100%;
+}
+
 #preview-title-container {
   overflow-y: hidden;
   position: relative;
@@ -179,6 +183,18 @@
 .preview-tall #preview-title-container #preview-title {
   font-size: 29.333px; /*44px;*/
   line-height: 36.667px; /*55px;*/
+}
+
+.preview-default #preview-title-container #preview-title {
+  width: 100%;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.preview-default #preview-title-container #preview-title-secondary {
+  width: 100%;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 #preview-media-container {

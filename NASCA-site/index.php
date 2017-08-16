@@ -18,6 +18,7 @@
     <script type="text/javascript" src="js/jquery/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="js/jquery/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="js/modernizr-custom.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
     
     <!-- CSS & BootStrap -->
@@ -63,24 +64,28 @@
     <?php
       include_once 'html/modal.php';
     ?>
-    <div id="body-container" class="background-off-white">
+    <div id="body-container" class="background-checker">
       <div id="header-positioner">
         <div id="header-container" class="background-black">
-          <div id="header-left">
-            <div id="logo">
-              <a href="index.php">
-                <img src="img/coloredLogos/logo/NASCA_single_logo_white.svg" />
-              </a>
-            </div>
-            <div id="logo-verbose">
-              <img src="img/coloredLogos/type/NASCA_type_white.svg" />
+          <div id="header-left-container">
+            <div id="header-left">
+              <div id="logo">
+                <a href="index.php">
+                  <img src="img/coloredLogos/logo/NASCA_single_logo_white.svg" />
+                </a>
+              </div>
+              <div id="logo-verbose-container">
+                <div id="logo-verbose">
+                  <img src="img/coloredLogos/type/NASCA_type_white.svg" />
+                </div>
+              </div>
             </div>
           </div>
           <div id="header-right" class="text-white">
             <div id="search-container">
               <div id="search">
                 <div id="search-contents">
-                  <div id="search-text" class="anton">Search</div>
+                  <div id="search-text" class="anton text-white">Search</div>
                   <div id="search-input-container">
                     <input id="search-input" type="text" value="..." />
                   </div>
@@ -90,15 +95,55 @@
             </div>
             <div id="nav-bar-container">
               <div id="nav-bar">
-                <ul id="tabs" class="source-serif">
-                  <li><div id="tabs-home" onclick="changePage('home')">Home</div></li>
-                  <li><div id="tabs-interviews" onclick="changePage('interviews')">Interviews</div></li>
-                  <li><div id="tabs-letters" onclick="changePage('letters')">Letters</div></li>
-                  <li><div id="tabs-images" onclick="changePage('images')">Images</div></li>
-                  <li><div id="tabs-video" onclick="changePage('video')">Video</div></li>
-                  <li><div id="tabs-map" onclick="changePage('map')">Map</div></li>
-                  <li><div id="tabs-timeline" onclick="changePage('timeline')">Timeline</div></li>
-                  <li><div id="tabs-tribes" onclick="changePage('tribes')">Tribes</div></li>
+                <ul id="tabs" class="source-serif text-white">
+                  <li>
+                    <div id="tabs-home" class="tab" onclick="changePage('home')">
+                      Home
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="tabs-interviews" class="tab" onclick="changePage('interviews')">
+                      Interviews
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="tabs-letters" class="tab" onclick="changePage('letters')">
+                      Letters
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="tabs-images" class="tab" onclick="changePage('images')">
+                      Images
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="tabs-video" class="tab" onclick="changePage('video')">
+                      Video
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="tabs-map" class="tab" onclick="changePage('map')">
+                      Map
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="tabs-timeline" class="tab" onclick="changePage('timeline')">
+                      Timeline
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div id="tabs-tribes" class="tab" onclick="changePage('tribes')">
+                      Tribes
+                      <div class="tab-underline"></div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>

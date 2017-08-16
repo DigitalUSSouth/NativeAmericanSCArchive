@@ -34,22 +34,7 @@
 }
 .og-expander {
 	position: absolute;
-  background: #FFFFFF;
-	top: auto;
-	left: 0;
-	width: 100%;
-	margin-top: 10px;
-	text-align: left;
-	height: 0;
-	overflow: hidden;
-}
-
-.og-expander-inner {
-	padding: 50px 30px;
-	height: 100%;
-}
-.og-expander {
-	position: absolute;
+	background: #FFFFFF;
 	top: auto;
 	left: 0;
 	width: 100%;
@@ -80,11 +65,15 @@
 	width: 100%;
 	top: 50%;
 	height: 1px;
-  background: #930707;
+	background: #930707;
+	-webkit-transform:rotate(45deg);
+	-moz-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 
 .og-close::after {
+	-webkit-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 
@@ -160,7 +149,21 @@
 	top: 50%;
 	left: 50%;
 	margin: -25px 0 0 -25px;
+	-webkit-animation: loader 0.5s infinite ease-in-out both;
+	-moz-animation: loader 0.5s infinite ease-in-out both;
 	animation: loader 0.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes loader {
+	0% {background: #FFFFFF;}
+	33% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
+	66% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
+}
+
+@-moz-keyframes loader {
+	0% { background: #FFFFFF; }
+	33% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ddd; }
+	66% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
 }
 
 @keyframes loader {
@@ -168,6 +171,7 @@
 	33% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ddd; }
 	66% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
 }
+
 @media screen and (max-width: 830px) {
 
 	.og-expander h3 { font-size: 32px; }

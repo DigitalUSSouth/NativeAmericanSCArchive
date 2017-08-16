@@ -8,7 +8,7 @@
     <!-- ICON -->
     <link rel="icon" type="image/x-icon" href="../img/favicon/favicon.ico"/>
     <!-- Local Javascript, Jquery, Ajax -->
-    <script type="text/javascript" src="../js/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/index/dynamic_css.js"></script>
     <script type="text/javascript" src="../js/api/functions.js"></script>
     <script type="text/javascript" src="../js/documentation.js"></script>
@@ -20,14 +20,18 @@
     <div id="body-container" class="background-off-white">
       <div id="header-positioner">
         <div id="header-container" class="background-black">
-          <div id="header-left">
-            <div id="logo">
-              <a href="../index.php">
-                <img src="../img/coloredLogos/logo/NASCA_single_logo_white.svg" />
-              </a>
-            </div>
-            <div id="logo-verbose">
-              <img src="../img/coloredLogos/type/NASCA_type_white.svg" />
+          <div id="header-left-container">
+            <div id="header-left">
+              <div id="logo">
+                <a href="index.php">
+                  <img src="../img/coloredLogos/logo/NASCA_single_logo_white.svg" />
+                </a>
+              </div>
+              <div id="logo-verbose-container">
+                <div id="logo-verbose">
+                  <img src="../img/coloredLogos/type/NASCA_type_white.svg" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -63,5 +67,11 @@
         </div>
       </div>
     </div>
+    <!-- Local Javascript, Jquery, Ajax -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        dynamic_css();
+      });
+    </script>
   </body>
 </html>

@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   //fade in
   intervalFade(fadeIns,500);
-
+/*
   var i = 0;
   var cssinterval = setInterval(function(){
     dynamic_css();
@@ -32,5 +32,5 @@ $(document).ready(function() {
     if(i > 19) {
       clearInterval(cssinterval);
     }
-  },200);
+  },200);*/
 });
