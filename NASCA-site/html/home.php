@@ -1,5 +1,8 @@
-<div class="row source-serif text-dark-grey" id="featured">
-  Featured
+<div class="row source-serif text-dark-grey" id="featured-container">
+  <div id="featured">
+    Featured
+    <div class="half-underline-black"></div>
+  </div>
 </div>
 <div class="book" id="home-book">
   <div id="home-left">
@@ -30,8 +33,8 @@ for($i = 1; $i <= $count; $i++) {
   echo '  <div class="additional">';
   echo '    <p id="errors">';
   $trimmed = $title;
-  if(strlen($trimmed) > 20) {
-    $trimmed = substr($trimmed,0,20) . '...';
+  if(strlen($trimmed) > 19) {
+    $trimmed = substr($trimmed,0,19) . '...';
   }
   $small_ref = getImageReference($id, 'small');
   if($small_ref < 0) {

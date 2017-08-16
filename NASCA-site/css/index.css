@@ -92,6 +92,18 @@ hr.dark-grey {
   border-color: #323A3B;
 }
 
+.half-underline-black {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 100%;
+  border-bottom: 2px solid black;
+  transition-duration: 0.1s;
+}
+
 .text-center {
   text-align: center;
 }
@@ -317,7 +329,7 @@ colors{
   font-weight: 400;
   display: table-cell;
   vertical-align: middle;
-  transition-duration: 0.1s;
+  /*transition-duration: 0.1s;*/
 }
 
 .tab-underline {
@@ -329,7 +341,7 @@ colors{
   width: 50%;
   height: 100%;
   border-bottom: 0px solid white;
-  transition-duration: 0.1s;
+  /*transition-duration: 0.1s;*/
 }
 
 #tabs li div.tab:hover {

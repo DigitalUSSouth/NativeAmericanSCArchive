@@ -169,50 +169,46 @@
     for($i = 0; $i < count($attrib); $i++) {
       switch($attrib[$i]) {
         case 'relati':
-          $response['relati'] = $json['relati'];
+          $response['relati'] = outputVar($json['relati']);
           break;
         case 'publis':
-          $response['publis'] = $json['publis'];
+          $response['publis'] = outputVar($json['publis']);
           break;
         case 'title':
-          $response['title'] = $json['title'];
+          $response['title'] = outputVar($json['title']);
           break;
         case 'descri':
-          $response['descri'] = $json['descri'];
+          $response['descri'] = outputVar($json['descri']);
           break;
         case 'type':
-          $response['type'] = $json['type'];
+          $response['type'] = outputVar($json['type']);
           break;
         case 'media':
-          $response['media'] = $json['media'];
+          $response['media'] = outputVar($json['media']);
           break;
         case 'creato':
-          $response['creato'] = $json['creato'];
+          $response['creato'] = outputVar($json['creato']);
           break;
         case 'dateb':
-          $response['dateb'] = $json['dateb'];
+          $response['dateb'] = outputVar($json['dateb']);
           break;
         case 'datea':
-          $response['datea'] = $json['datea'];
+          $response['datea'] = outputVar($json['datea']);
           break;
         case 'geogra':
-          $response['geogra'] = $json['geogra'];
+          $response['geogra'] = outputVar($json['geogra']);
           break;
         case 'source':
-          $response['source'] = $json['source'];
+          $response['source'] = outputVar($json['source']);
           break;
         case 'extent':
-          $response['extent'] = $json['extent'];
+          $response['extent'] = outputVar($json['extent']);
           break;
         case 'rights':
-          $response['rights'] = $json['rights'];
+          $response['rights'] = outputVar($json['rights']);
           break;
         case 'tribe':
-          if(gettype($json['tribe']) === 'string') {
-            $response['tribe'] = $json['tribe'];
-          } else {
-            $response['tribe'] = '';
-          }
+          $response['tribe'] = outputVar($json['tribe']);
           break;
         default:
           //nothing
@@ -221,4 +217,14 @@
     return $response;
   }
 
+  function outputVar($var) {
+    if(gettype($var) === 'string') {
+      return $var;
+    } else if(gettype($var) === 'array') {
+      return implode(' ',$var);
+    } else {
+      return (string)gettype($var);
+    }
+  }
+  
 ?>

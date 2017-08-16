@@ -33,13 +33,13 @@
             echo 'This is a video';
             break;
           case 'letters':
-            if(isset($_GET['size'])) {
+            /*if(isset($_GET['size'])) {
               $size = $_GET['size'];
             } else {
               errorMessage(-1);
               return -1;
-            }
-            $err = printLetterDetails($id, $title, $size);
+            }*/
+            $err = printLetterDetails($id, $title);
             if($err < 0) {
               return -1;
             }
@@ -109,8 +109,8 @@
   
   function printImageDetails($id, $title, $size) {
     $trimmed = $title;
-    if(strlen($trimmed) > 20) {
-      $trimmed = substr($trimmed,0,20) . '...';
+    if(strlen($trimmed) > 19) {
+      $trimmed = substr($trimmed,0,19) . '...';
     }
     $ref_large = getImageReference($id, 'large');
     $ref_full = getImageReference($id, 'full');
@@ -149,13 +149,46 @@
     return 0;
   }
   
-  function printLetterDetails($id, $title, $size) {
-    echo '<p><b><i>From Letters...</i></b></p>';
-    echo '<h2><b>' . $title . '</b></h2>';
-    echo '<hr class="darkgrey"/>';
-    echo '<p>...</p>';
-    echo '<hr class="red"/>';
-    echo '<p><b><i>Click \'View More\' to browse all of our archived letters.</i></b></p>';
+  function printLetterDetails($id, $title) {
+    $trimmed = $title;
+    if(strlen($trimmed) > 19) {
+      $trimmed = substr($trimmed,0,19) . '...';
+    }
+    $ref_large = getImageReference($id, 'large');
+    $ref_full = getImageReference($id, 'full');
+    $dimensions = getImageDimensions($id);
+    if(is_numeric($ref_large) && $ref_large < 0) {
+      errorMessage(-4);
+      return -1;
+    }
+    if(is_numeric($ref_full) && $ref_full < 0) {
+      errorMessage(-4);
+      return -1;
+    }
+    echo '<div id="preview-layout" class="preview-letter">';
+    echo '  <div id="preview-title-container">';
+    echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
+    echo '  </div>';
+    echo '  <div id="preview-media-container">';
+    echo '    <a class="fancybox-home" href="' . $ref_full . '" data-fancybox="Featured" data-type="image" data-caption="' . $trimmed . '" data-width="' . $dimensions['width'] . '" data-height="' . $dimensions['height'] . '">';
+    echo '      <img src="' . $ref_large . '" id="preview-media" />';
+    echo '    </a>';
+    echo '  </div>';
+    echo '  <div id="preview-desc-container">';
+    $attrib = array('descri','type','media','creato','dateb','datea');
+    $details = getItemInfo($id,$attrib);
+    echo '    <div id="preview-desc" class="source-serif text-black">';
+    echo '      Description: ' . (string)$details['descri'] . '<br/>Type: ' . (string)$details['type'] . '<br/>Media: ' . (string)$details['media'] . '<br/>Creator: ' . (string)$details['creato'] . '<br/>dateb: ' . (string)$details['dateb'] . '<br/>datea: ' . (string)$details['datea'];
+    echo '    </div>';
+    echo '  </div>';
+    echo '  <div id="preview-lower" class="row">';
+    echo '    <div id="view-all-container" onclick="changePage(\'letters\');">';
+    echo '      <div id="view-all" class=text-red>View All Letters</div>';
+    echo '      <div id="view-all-underline"></div>';
+    echo '    </div>';
+    echo '  </div>';
+    echo '</div>';
+    return 0;
   }
   
   driver();

@@ -5,13 +5,13 @@
 if(window.attachEvent) {
   window.attachEvent('onresize', function() {
     dynamic_css();
-    dynamic_css();
+    //dynamic_css();
   });
 }
 else if(window.addEventListener) {
   window.addEventListener('resize', function() {
     dynamic_css();
-    dynamic_css();
+    //dynamic_css();
   }, true);
 }
 else {
@@ -47,9 +47,9 @@ function dynamic_css() {
     if(cssval === '0') {
       $('#pullout-positioner').animate({right:'-100%'},'fast');
     }
-    responsive_font('#tabs','parent-div',46.1538,12);//16);
     newWid = $('#nav-bar-container').height()*13.9565;
     $('#nav-bar-container').width(newWid);
+    responsive_font('#tabs','parent-div',46.1538,12);//16);
     $('#menu-container').css({display:'none'});
     $('#nav-bar-container').css({display:'block'});
   } else if(currentPage !== 'documentation') {
@@ -63,33 +63,66 @@ function dynamic_css() {
   //then set other bits depending on what page it's on
   switch(currentPage) {
     case 'home':
-      responsive_font('#featured','window',1.3043,6);//12);
-      $('.home-card-container').height($('.home-card-container').width()*1.3559);
-      responsive_font('.card-title','parent-div',30.4348,9.333);//14);
-      responsive_font('.card-read-more div','parent-div',83.333,10);//15);
-      
+      responsive_font('#featured','window',1.6287,10);//12);
+      $('#featured').css('margin-bottom',$('#featured').height());
+      $('.home-card-container').height($('.home-card-container').width()*1.2907);
+      responsive_font('.card-title','parent-div',33.3333,11);//14);
+      var newheight = responsive_font('.card-read-more div','parent-div',95.6522,11);//15);
+      $('.card-read-more div').css('line-height',newheight);
+      //title css for default
+      var divwidth = $('.preview-default #preview-title-container').width();
+      newheight = divwidth*0.09929;
+      var font = (newheight).toString()+'px';
+      $('.preview-default #preview-title-container #preview-title').css({'font-size':font});
+      $('.preview-default #preview-title-container #preview-title').css({'line-height':(newheight*1.2619).toString()+'px'});
+      newheight = divwidth*0.047281;
+      font = (newheight).toString()+'px';
+      $('.preview-default #preview-title-container #preview-title-secondary').css({'font-size':font});
+      $('.preview-default #preview-title-container #preview-title-secondary').css({'line-height':(newheight*3.25).toString()+'px'});
       //title css for wide images
-      var newheight = $('.preview-wide #preview-title-container').width()*0.2098;
-      var font = (newheight*35.9375/100).toString()+'px';
+      newheight = $('.preview-wide #preview-title-container').width()*0.22222;
+      font = (newheight*36.1702/100).toString()+'px';
       $('.preview-wide #preview-title-container #preview-title').css({'font-size':font});
       $('.preview-wide #preview-title-container #preview-title').css({'line-height':(newheight/2).toString()+'px'});
       $('.preview-wide #preview-title-container').height(newheight);
       //title css for tall images
-      newheight = $('.preview-tall #preview-title-container').width()*0.3833;
-      var font = (newheight*0.4).toString()+'px';
+      newheight = $('.preview-tall #preview-title-container').width()*0.4433;
+      font = (newheight*0.3778).toString()+'px';
       $('.preview-tall #preview-title-container #preview-title').css({'font-size':font});
       $('.preview-tall #preview-title-container #preview-title').css({'line-height':(newheight/2).toString()+'px'});
       $('.preview-tall #preview-title-container').height(newheight);
+      //title css for letters
+      newheight = $('.preview-letter #preview-title-container').width()*0.1158;
+      font = (newheight*0.6531).toString()+'px';
+      $('.preview-letter #preview-title-container #preview-title').css({'font-size':font});
+      $('.preview-letter #preview-title-container #preview-title').css({'line-height':(newheight).toString()+'px'});
+      $('.preview-letter #preview-title-container').height(newheight);
+      //media
       //image sizing
-      $('.preview-wide #preview-media-container').height($('.preview-wide #preview-media-container').width()*0.4557);
-      $('.preview-tall #preview-media-container').height($('.preview-tall #preview-media-container').width()*1.7818);
+      $('.preview-wide #preview-media-container').height($('.preview-wide #preview-media-container').width()*0.4563);
+      $('.preview-tall #preview-media-container').height($('.preview-tall #preview-media-container').width()*1.7725);
+      //letter sizing
+      $('.preview-letter #preview-media-container').height($('.preview-letter #preview-media-container').width()*1.7725);
+      //description
+      //image wide layout
+      
+      //image tall layout
+      
+      //letter layout
+      $('.preview-letter #preview-desc-container').height($('#preview-media-container').height());
       //lower view all css
-      newheight = $('#preview-lower').width()*0.052459;
+      newheight = $('#preview-lower').width()*0.05437;
       $('#preview-lower').height(newheight);
-      var border = (newheight/8) + 'px solid #930707';
+      var border = (newheight/6) + 'px solid #930707';
       $('#view-all-underline').css({'border-top':border});
-      font = newheight*0.4375;
+      font = newheight*0.3913;
       $('#view-all').css({'font-size':font+'px'});
+      //lower view padding for wide layout
+      $('.preview-wide #preview-lower').css('margin-top',(newheight*0.8261)+'px');
+      //lower view padding for tall layout
+      $('.preview-tall #preview-lower').css('margin-top',(newheight*1.5217)+'px');
+      //lower view padding for letter layout
+      $('.preview-letter #preview-lower').css('margin-top',(newheight*0.6957)+'px');
       break;
     case 'interviews':
       
@@ -190,14 +223,17 @@ function responsive_font(selector, relativeto, responsive, min, max) {
   } else if(relativeto === 'parent-div') {
     var size = $(selector).parent().height()*responsive/100;
   } else {
-    return 0;
+    return -1;
   }
   if(size < min) {
     $(selector).css('font-size',min.toString() + 'px');
+    return min.toString()+'px';
   } else if(size > max) {
     $(selector).css('font-size',max.toString() + 'px');
+    return max.toString()+'px';
   } else {
     $(selector).css('font-size',size+'px');
+    return size+'px';
   }
 }
 
