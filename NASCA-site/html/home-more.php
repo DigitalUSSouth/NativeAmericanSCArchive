@@ -127,7 +127,7 @@
     echo '  <div id="preview-title-container">';
     echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
     echo '  </div>';
-    echo '  <div id="preview-media-container">';
+    echo '  <div id="preview-media-container" class="border-red">';
     echo '    <a class="fancybox-home" href="' . $ref_full . '" data-fancybox="Featured" data-type="image" data-caption="' . $trimmed . '" data-width="' . $dimensions['width'] . '" data-height="' . $dimensions['height'] . '">';
     echo '      <img src="' . $ref_large . '" id="preview-media" />';
     echo '    </a>';

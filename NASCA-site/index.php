@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="css/images.css"/>
     <link rel="stylesheet" type="text/css" href="css/tribes.css"/>
     <link rel="stylesheet" type="text/css" href="css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="css/video.css"/>
     
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Source+Serif+Pro" rel="stylesheet">
@@ -99,49 +100,49 @@
                   <li>
                     <div id="tabs-home" class="tab" onclick="changePage('home')">
                       Home
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
                     <div id="tabs-interviews" class="tab" onclick="changePage('interviews')">
                       Interviews
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
                     <div id="tabs-letters" class="tab" onclick="changePage('letters')">
                       Letters
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
                     <div id="tabs-images" class="tab" onclick="changePage('images')">
                       Images
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
                     <div id="tabs-video" class="tab" onclick="changePage('video')">
                       Video
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
                     <div id="tabs-map" class="tab" onclick="changePage('map')">
                       Map
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
                     <div id="tabs-timeline" class="tab" onclick="changePage('timeline')">
                       Timeline
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
                     <div id="tabs-tribes" class="tab" onclick="changePage('tribes')">
                       Tribes
-                      <div class="tab-underline"></div>
+                      <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                 </ul>

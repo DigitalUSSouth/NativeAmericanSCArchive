@@ -5,13 +5,13 @@
 if(window.attachEvent) {
   window.attachEvent('onresize', function() {
     dynamic_css();
-    //dynamic_css();
+    dynamic_css();
   });
 }
 else if(window.addEventListener) {
   window.addEventListener('resize', function() {
     dynamic_css();
-    //dynamic_css();
+    dynamic_css();
   }, true);
 }
 else {
@@ -68,7 +68,7 @@ function dynamic_css() {
       $('.home-card-container').height($('.home-card-container').width()*1.2907);
       responsive_font('.card-title','parent-div',33.3333,11);//14);
       var newheight = responsive_font('.card-read-more div','parent-div',95.6522,11);//15);
-      $('.card-read-more div').css('line-height',newheight);
+      $('.card-read-more div').css('line-height',newheight.toString()+'px');
       //title css for default
       var divwidth = $('.preview-default #preview-title-container').width();
       newheight = divwidth*0.09929;
@@ -131,7 +131,9 @@ function dynamic_css() {
       
       break;
     case 'video':
-      
+      $('.video-single-container').height($('.video-single-container').width()*0.6424);
+      var newsize = responsive_font('.video-single-title','parent-div',72.4138,42);
+      $('.video-single-title').css('line-height',(newsize*1.381).toString()+'px');
       break;
     case 'map':
       $('#page').css({padding:0});
@@ -227,13 +229,13 @@ function responsive_font(selector, relativeto, responsive, min, max) {
   }
   if(size < min) {
     $(selector).css('font-size',min.toString() + 'px');
-    return min.toString()+'px';
+    return min;
   } else if(size > max) {
     $(selector).css('font-size',max.toString() + 'px');
-    return max.toString()+'px';
+    return max;
   } else {
     $(selector).css('font-size',size+'px');
-    return size+'px';
+    return size;
   }
 }
 

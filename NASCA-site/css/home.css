@@ -212,7 +212,6 @@
 }
 
 #preview-media-container {
-  border: 2.5px solid #930707;
   overflow: hidden;
   position: relative;
 }
@@ -252,7 +251,7 @@
   width: 100%;
   height: 64px; /*make dynamic*/
   margin-top: 30px; /*make dynamic*/
-  overflow: hidden;
+  /*overflow: hidden;*/
   padding-left: 16px; /*make dynamic*/
   padding-right: 16px; /*make dynamic*/
 }

@@ -1,3 +1,3 @@
 function init_video() {
-  toggleSearch('on');
+  toggleSearch('off');
 }
