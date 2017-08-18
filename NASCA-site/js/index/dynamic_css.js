@@ -37,6 +37,8 @@ function dynamic_css() {
   newWid = $('#logo-verbose-container').height()*3.0253;
   $('#logo-verbose-container').width(newWid);
   if(currentPage !== 'map') {
+    $('#page').css('padding-top',20);
+    $('#page').css('padding-bottom',8);
     responsive_padding_horizontal('#page', 'left', 4.2789, 54);
     responsive_padding_horizontal('#page', 'right', 5.1506, 65);
   }

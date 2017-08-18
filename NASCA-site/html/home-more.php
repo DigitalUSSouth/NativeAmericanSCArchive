@@ -124,7 +124,7 @@
       return -1;
     }
     echo '<div id="preview-layout" class="preview-' . $size . '">';
-    echo '  <div id="preview-title-container">';
+    echo '  <div id="preview-title-container" class="custom-title-overflow">';
     echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
     echo '  </div>';
     echo '  <div id="preview-media-container" class="border-red">';
@@ -166,7 +166,7 @@
       return -1;
     }
     echo '<div id="preview-layout" class="preview-letter">';
-    echo '  <div id="preview-title-container">';
+    echo '  <div id="preview-title-container" class="custom-title-overflow">';
     echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
     echo '  </div>';
     echo '  <div id="preview-media-container" class="border-red">';

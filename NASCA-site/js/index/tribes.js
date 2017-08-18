@@ -265,7 +265,7 @@ var Grid = (function() {
 			saveItemInfo();
 			getWinSize();
 			var preview = $.data( this, 'preview' );
-			if( typeof preview != 'undefined' ) {
+			if( typeof preview !== 'undefined' ) {
 				hidePreview();
 			}
 
@@ -300,7 +300,7 @@ var Grid = (function() {
 		scrollExtra = 0;
 
 		// if a preview exists and previewPos is different (different row) from item´s top then close it
-		if( typeof preview != 'undefined' ) {
+		if( typeof preview !== 'undefined' ) {
 
 			// not in the same row
 			if( previewPos !== position ) {
@@ -395,7 +395,7 @@ var Grid = (function() {
 			var self = this;
 			
 			// remove the current image in the preview
-			if( typeof self.$largeImg != 'undefined' ) {
+			if( typeof self.$largeImg !== 'undefined' ) {
 				self.$largeImg.remove();
 			}
 
@@ -508,11 +508,11 @@ var Grid = (function() {
 		getEl : function() {
 			return this.$previewEl;
 		}
-	}
+	};
 
 	return { 
 		init : init,
 		addItems : addItems
 	};
 
-})();
+});};

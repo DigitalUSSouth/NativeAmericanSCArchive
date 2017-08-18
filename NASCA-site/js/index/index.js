@@ -126,16 +126,14 @@ function changePage(page) {
               default:
                 //code
             }
-            dynamic_css();
           });
+          dynamic_css();
           $('#page').fadeIn(650);
           dynamic_css();
         }
       });
     });
-      
     currentPage = page;
-    dynamic_css();
   }
 }
 
