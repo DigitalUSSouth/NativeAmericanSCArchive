@@ -1,4 +1,7 @@
 <section class="timeline">
+<script>
+alert ("Debug: timeline page");
+</script>
   <ul>
     <li>
       <div>
