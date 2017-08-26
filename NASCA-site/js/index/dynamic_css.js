@@ -133,6 +133,14 @@ function dynamic_css() {
       
       break;
     case 'video':
+      //set margins
+      var newMargin = $(window).width()*0.02617;
+      if(newMargin < 33) {
+        newMargin = 33;
+      }
+      newMargin = '-'+newMargin.toString()+'px';
+      $('#video-list-container').css({'margin-left':newMargin,'margin-right':newMargin});
+      //set other things
       $('.video-single-container').height($('.video-single-container').width()*0.6424);
       var newsize = responsive_font('.video-single-title','parent-div',72.4138,42);
       $('.video-single-title').css('line-height',(newsize*1.381).toString()+'px');
@@ -150,7 +158,15 @@ function dynamic_css() {
       
       break;
     case 'tribes':
-      
+      //set margins
+      var newMargin = $(window).width()*0.01507;
+      if(newMargin < 19) {
+        newMargin = 19;
+      }
+      newMargin = '-'+newMargin.toString()+'px';
+      $('#tribes-list-container').css({'margin-left':newMargin,'margin-right':newMargin});
+      $('.tribe-single-container').height($('.tribe-single-container').width()*0.6373);
+      responsive_font('.tribe-single-title','parent-div',61.6667);
       break;
     case 'documentation':
       

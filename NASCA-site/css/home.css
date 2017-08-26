@@ -38,14 +38,16 @@
   width: 25%;
   min-height: 222px;
   height: 222px;
+  position: relative;
 }
 
 .home-card {
-  position: relative;
+  position: absolute;
   overflow: hidden;
   height: 91.4414%;
   width: 87.2093%;
-  top: 0px;
+  top: 0;
+  left: 0;
   /*box-shadow: 3px 10px 18px -2px rgb(150,150,150);*/
   z-index: 1;
   transition-duration: 0.4s;
@@ -119,15 +121,6 @@
   width: 100%;
   height: auto;
   opacity: 1.0;
-}
-
-.card-hover {
-  z-index: 4;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .card-hover:hover {
@@ -325,13 +318,4 @@
 #view-all-container:hover > #view-all-underline {
   transform: scaleY(6) translateY(-45%);
   /*border-top: 22px solid #930707;*/
-}
-
-.shadow {
-    flex: 1;
-    position: relative;
-    top: 0;
-    width: 87.2093%;
-    height: 4.5%;
-    background: linear-gradient(#333333 -280%, transparent 100%);
 }

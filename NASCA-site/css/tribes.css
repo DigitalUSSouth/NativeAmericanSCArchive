@@ -1,188 +1,51 @@
-.og-grid {
-    list-style: none;
-    padding: 20px 0;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
+#tribes-list-container {
+  position: relative;
+  margin-left: -19px;
+  margin-right: -19px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: auto;
+  height: auto;
 }
 
-.og-grid li {
-    display: inline-block;
-    margin: 10px 5px 0 5px;
-    vertical-align: top;
-    height: 250px
-}
-.og-grid li > a,
-.og-grid li > a img {
-	border: none;
-	outline: none;
-	display: block;
-	position: relative;
-}
-.og-grid li.og-expanded > a::after {
-	top: auto;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-  border-bottom-color: #FFFFFF;
-	border-width: 15px;
-	left: 50%;
-	margin: -20px 0 0 -15px;
-}
-.og-expander {
-	position: absolute;
-	background: #FFFFFF;
-	top: auto;
-	left: 0;
-	width: 100%;
-	margin-top: 10px;
-	text-align: left;
-	height: 0;
-	overflow: hidden;
+.tribe-single-container {
+  width: 25%;
+  min-width: 295px;
+  height: 188px;
+  position: relative;
+  z-index: 1;
 }
 
-.og-expander-inner {
-	padding: 50px 30px;
-	height: 100%;
+.tribe-single {
+  position: absolute;
+  top: 0;
+  left: 6.4407%;
+  width: 87.119%;
+  height: 93.085%;
+  transition-duration: 0.4s;
 }
 
-.og-close {
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	top: 20px;
-	right: 20px;
-	cursor: pointer;
+.tribe-single-title-container {
+  position: relative;
+  height: 17.143%;
 }
 
-.og-close::before,
-.og-close::after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	top: 50%;
-	height: 1px;
-	background: #930707;
-	-webkit-transform:rotate(45deg);
-	-moz-transform: rotate(45deg);
-	transform: rotate(45deg);
+.tribe-single-title {
+  /*line-height: 28px;*/
+  font-size: 18.5px;
+  padding-left: 6%;
+  padding-right: 6%;
 }
 
-.og-close::after {
-	-webkit-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+.tribe-single-logo-container {
+  position: relative;
+  height: 82.857%;
 }
 
-.og-close:hover::before,
-.og-close:hover::after {
-  background: #323A3B;
-}
-.og-fullimg,
-.og-details {
-	width: 50%;
-	float: left;
-	height: 100%;
-	overflow: hidden;
-	position: relative;
-}
-.og-details {
-	padding: 0 40px 0 20px;
-}
-
-.og-fullimg {
-	text-align: center;
-}
-
-.og-fullimg img {
-	display: inline-block;
-	max-height: 100%;
-	max-width: 100%;
-}
-.og-details h3 {
-	font-weight: 300;
-	font-size: 52px;
-	padding: 40px 0 10px;
-	margin-bottom: 10px;
-}
-
-.og-details p {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 22px;
-  color: #323A3B;
-}
-
-.og-details a {
-	font-weight: 700;
-	font-size: 16px;
-  color: #000000;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding: 10px 20px;
-	border: 3px solid #000000;
-	display: inline-block;
-	margin: 30px 0 0;
-	outline: none;
-}
-
-.og-details a::before {
-	content: '\2192';
-	display: inline-block;
-	margin-right: 10px;
-}
-
-.og-details a:hover {
-  border-color: #323A3B;
-  color: #323A3B;
-}
-.og-loading {
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	background: #FFFFFF;
-	box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ccc;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -25px 0 0 -25px;
-	-webkit-animation: loader 0.5s infinite ease-in-out both;
-	-moz-animation: loader 0.5s infinite ease-in-out both;
-	animation: loader 0.5s infinite ease-in-out;
-}
-
-@-webkit-keyframes loader {
-	0% {background: #FFFFFF;}
-	33% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
-	66% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
-}
-
-@-moz-keyframes loader {
-	0% { background: #FFFFFF; }
-	33% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ddd; }
-	66% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
-}
-
-@keyframes loader {
-	0% { background: #FFFFFF; }
-	33% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ddd; }
-	66% { background: #FFFFFF; box-shadow: 0 0 1px #FFFFFF, 15px 30px 1px #FFFFFF, -15px 30px 1px #ccc; }
-}
-
-@media screen and (max-width: 830px) {
-
-	.og-expander h3 { font-size: 32px; }
-	.og-expander p { font-size: 13px; }
-	.og-expander a { font-size: 12px; }
-
-}
-
-@media screen and (max-width: 650px) {
-
-	.og-fullimg { display: none; }
-	.og-details { float: none; width: 100%; }
-
+.tribe-single-logo {
+  opacity: 0.5;
+  height: 100%;
+  object-fit: contain;
 }

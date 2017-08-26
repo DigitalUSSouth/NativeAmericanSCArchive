@@ -12,10 +12,10 @@ function init_index() {
   toggleSearch('off');
   
   //set invisible EVERYTHING that will fade in
-  var fadeIns = ['#header-positioner', '#page-container', '#footer-container'];
-  for(var i = 0; i < fadeIns.length; i++) {
-    $(fadeIns[i]).css('display','none');
-  }
+  //var fadeIns = ['#header-positioner', '#page-container', '#footer-container'];
+  //for(var i = 0; i < fadeIns.length; i++) {
+  //  $(fadeIns[i]).css('display','none');
+  //}
   
   //set onhover onclick stuff
   $('#logo').hover(function() {
@@ -50,6 +50,10 @@ function init_index() {
   var d = new Date();
   document.getElementById('copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();
   
+  dynamic_css();
+  //fade in
+  //intervalFade(fadeIns,500);
+  
   //get home page content
   $.ajax({
     type:'POST',
@@ -64,23 +68,6 @@ function init_index() {
       });
     }
   });
-  
-  dynamic_css();
-  
-  //dynamic css function
-  //handles content top padding when nav bar resizes
-  //var interval_index = setInterval(function(){
-  //  var navHeight = $('#header-positioner').height();
-  //  $('#header-positioner-height-offset').css('height', navHeight+'px');
-  //  
-  //},interval);
-  
-  //fade in
-  intervalFade(fadeIns,500);
-
-  //let dynamic_css do it's thing
-  dynamic_css();
-
 };
 
 function changePage(page) {
@@ -98,6 +85,8 @@ function changePage(page) {
         success: function(data) {
           //callback when html retrieved
           $('#page').html(data).promise().done(function() {
+            dynamic_css();
+            $('#page').fadeIn(650);
             switch(page) {
               case 'home':
                 init_home();
@@ -126,10 +115,8 @@ function changePage(page) {
               default:
                 //code
             }
+            dynamic_css();
           });
-          dynamic_css();
-          $('#page').fadeIn(650);
-          dynamic_css();
         }
       });
     });
