@@ -86,7 +86,7 @@ hr.red {
   border-color: #930707; 
 }
 
-hr.dark-grey {
+hr.grey {
   color: #323A3B;
   background-color: #323A3B;
   border-color: #323A3B;
@@ -128,21 +128,28 @@ hr.dark-grey {
   border: 2px solid #930707;
 }
 
-.button {
-  
-}
-
 .custom-title-overflow {
   overflow-y: hidden;
   position: relative;
 }
 
 .custom-title-overflow div {
-  background: rgba(239,237,237,0);
   -webkit-transition: background .5s ease-out;
   -moz-transition: background .5s ease-out;
   -o-transition: background .5s ease-out;
   transition: background .5s ease-out;
+}
+
+.overflow-off-white div {
+  background: rgba(239,237,237,0);
+}
+
+.overflow-grey div {
+  background: rgba(50,58,59,0);
+}
+
+.overflow-red div {
+  background: rgba(147,7,7,0);
 }
 
 .custom-title-overflow:hover {
@@ -150,8 +157,61 @@ hr.dark-grey {
   z-index: 3 !important;
 }
 
-.custom-title-overflow:hover > div {
-  background: rgba(239,237,237,0.8);
+.overflow-off-white:hover > div {
+  background: rgba(239,237,237,0.75);
+}
+
+.overflow-grey:hover > div {
+  background: rgba(50,58,59,0.75);
+}
+
+.overflow-red:hover > div {
+  background: rgba(147,7,7,0.75);
+}
+
+.top-padding-20 {
+  position: relative;
+  min-height: 20px;
+  height: 3.2573vh;
+}
+
+.card-hover {
+  z-index: 4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.book {
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: nowrap;
+  /*flex-basis: content;*/
+  /*flex-direction: row;*/
+  /*flex-flow: row;*/
+  height: auto;
+  width: 100%;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+}
+
+.row {
+  width: 100%;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4.5%;
+    background: linear-gradient(#222222 -280%, transparent 100%);
 }
 
 /*
@@ -563,26 +623,5 @@ colors{
 
 .frame {
   margin: auto;
-  width: 100%;
-}
-
-.book {
-  margin: 0;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-wrap: nowrap;
-  /*flex-basis: content;*/
-  /*flex-direction: row;*/
-  /*flex-flow: row;*/
-  height: auto;
-  width: 100%;
-  /*align-items: center;*/
-  /*justify-content: center;*/
-}
-
-.row {
   width: 100%;
 }

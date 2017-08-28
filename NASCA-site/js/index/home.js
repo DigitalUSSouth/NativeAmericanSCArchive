@@ -6,6 +6,7 @@ var card_anim_details = {duration: 350, queue: false};
 
 function init_home() {
   toggleSearch('off');
+  init_shadows();
   //set hover for cards
   $('.card-hover').hover(function() {
     //enter
@@ -16,7 +17,7 @@ function init_home() {
       $(this).siblings('div.card-read-more').animate({left:0},card_anim_details);
       $(this).siblings('div.card-point').animate({left:'100%'},card_anim_details);
       $(this).siblings('div.card-point').css({'-webkit-transform':'translateX(-100%)'});
-      $(this).parent().siblings('div.shadow').animate({top:'-3px'},card_anim_details);
+      //$(this).parent().siblings('div.shadow').animate({top:'-3px'},card_anim_details);
     }
     var title = $(this).siblings('div.additional').children('#title').html();
     $(this).siblings('div.card-title-container').children('div.card-title').html(title);
@@ -29,7 +30,7 @@ function init_home() {
       $(this).siblings('div.card-read-more').animate({left:'-50%'},card_anim_details);
       $(this).siblings('div.card-point').animate({left:0},card_anim_details);
       $(this).siblings('div.card-point').css({'-webkit-transform':'translateX(0)'});
-      $(this).parent().siblings('div.shadow').animate({top:'0'},card_anim_details);
+      //$(this).parent().siblings('div.shadow').animate({top:'0'},card_anim_details);
     }
     var type = $(this).siblings('div.additional').children('#type').html();
     if(type[type.length-1] === 's') {

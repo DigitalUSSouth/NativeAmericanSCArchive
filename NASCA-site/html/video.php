@@ -1,4 +1,4 @@
-<div class="row" id="video-top-padding"></div>
+<div class="row top-padding-20""></div>
 <div id="video-list-container">
   <?php
   $api_dir = preg_replace('/html.video\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
@@ -12,7 +12,7 @@
     //<!--  START single video template  -->
     echo '<div class="video-single-container">';
     echo '  <div class="video-single">';
-    echo '    <div class="video-single-title-container custom-title-overflow row">';
+    echo '    <div class="video-single-title-container custom-title-overflow row overflow-off-white">';
     echo '      <div class="video-single-title anton text-black">';
     echo $el->title;
     echo '      </div>';

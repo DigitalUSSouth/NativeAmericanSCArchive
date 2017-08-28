@@ -1,23 +1,5 @@
-function jsUcfirst(string) 
-{
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-/*
- * 
- * Not working for some reason
- */
-function recursiveFade(fadeIns) {
-  var len = fadeIns.length;
-  var id = fadeIns[0];
-  if(len === 0) {
-    return 0;
-  } else if(len === 1) {
-    $(id).fadeIn('slow');
-  } else {
-    var temp = fadeIns.slice(1,len);
-    $(id).fadeIn('slow',recursiveFade(temp));
-  }
+function jsUcfirst(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function intervalFade(fadeIns,interval) {
@@ -33,4 +15,27 @@ function intervalFade(fadeIns,interval) {
     }
   },interval);
   dynamic_css();
+}
+
+function init_shadows() {
+  var caster = $('.shadow').siblings('div.shadow-caster');
+  var width = caster.width();
+  var parentWidth = caster.parent().width();
+  var percentWidth = 100*width/parentWidth;
+  var height = caster.height();
+  var parentHeight = caster.parent().height();
+  var percentHeight = 100*height/parentHeight;
+  var left = caster.css('left');
+  left = pxAsInt(left);
+  var percentLeft = 100*left/parentWidth;
+  var shadows = $('.shadow');
+  shadows.css({'width': asPercent(percentWidth), 'top': asPercent(percentHeight), 'left': asPercent(percentLeft)});
+}
+
+function asPercent(i) {
+  return i.toString()+'%';
+}
+
+function pxAsInt(px) {
+  return parseInt(px.substring(0,px.length-2));
 }
