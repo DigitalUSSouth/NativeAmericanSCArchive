@@ -27,13 +27,13 @@ function init_timeline() {
   });
   
   items = document.querySelectorAll(".timeline li");
-  
+  console.log(items)
   // listen for events
   window.addEventListener("load", callbackFunc);
   window.addEventListener("resize", callbackFunc);
   window.addEventListener("scroll", callbackFunc);
-  
-  iframeChange();
+  callbackFunc();
+  //iframeChange();
 }
   
 function isElementInViewport(el) {
@@ -61,4 +61,4 @@ function iframeChange() {
   });
 }
 
-//for old browsers -->
+//for old browsers --> 

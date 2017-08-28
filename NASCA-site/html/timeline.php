@@ -1,4 +1,9 @@
 <section class="timeline">
+  <script>
+    //console.log('b')
+    //callbackFunc();
+    //console.log('a')
+  </script>
   <ul>
     <li>
       <div>
