@@ -117,7 +117,7 @@ time {
   z-index:100;
 }
 
-#box{
+.box-t{
   position:fixed;
   top:-500px;
   left:5%;

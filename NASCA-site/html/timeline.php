@@ -1,13 +1,10 @@
 
 <div class="overlay" id="overlay" style="display:none;"></div>
-<div id="box">
+<div id="box1" class="box-t">
 <a class="boxclose" id="boxclose"><p>Close</p></a>
-  <div id="timeline-embed">
+  <div id="timeline-embed-01" class="timeline-embed">
     <div id="timeline"></div>
   </div>
-</div>
-<div id="hTimeline1">
-  
 </div>
 
 <section class="timeline">

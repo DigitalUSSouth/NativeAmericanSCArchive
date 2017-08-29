@@ -35,32 +35,49 @@ function init_timeline() {
   
   //we need to run this callback function the first time because we are loading the page via ajax
   callbackFunc();
-  
-  //iframeChange();
 
-  var embed = document.getElementById('timeline-embed');
-  embed.style.height = "400px";//getComputedStyle(document.body).height;
-  //embed.style.width = "100%"
-  var options =  { 
-    hash_bookmark: false
+
+  //iterate through timeline wrapper elements and add to array
+  var elements = [];
+  $(".timeline-embed").each(function(i,obj){
+    elements.push($(this).attr('id'))
+  });
+  console.log(elements);
+
+  //now we take array from above and run timeline initialization
+  var counter = 1;
+  for (var i in elements){
+      console.log(elements[i])
+      wrapperElement = elements[i]
+      var embed = document.getElementById(wrapperElement);
+      embed.style.height = "400px";//getComputedStyle(document.body).height;
+      //embed.style.width = "100%"
+      var options =  { 
+        hash_bookmark: false
+      }
+
+      var dataPath = "html/ht/data/data"+counter+".json"
+      counter++;
+      console.log(counter)
+      console.log(dataPath)
+      window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
+      window.addEventListener('resize', function() {
+        var embed = document.getElementById(wrapperElement);
+        //embed.style.height = getComputedStyle(document.body).height;
+        //timeline.updateDisplay();
+      })
   }
-  window.timeline = new TL.Timeline('timeline-embed', 'html/ht/data/data.json',options);
-  window.addEventListener('resize', function() {
-    var embed = document.getElementById('timeline-embed');
-    //embed.style.height = getComputedStyle(document.body).height;
-    //timeline.updateDisplay();
-  })
 
 
 
 
   $('#testBtn').click(function(){
     $('#overlay').fadeIn('fast',function(){
-        $('#box').animate({'top':'10%'},250);
+        $('#box1').animate({'top':'10%'},250);
     });
 });
 $('#boxclose').click(function(){
-    $('#box').animate({'top':'-500px'},250,function(){
+    $('#box1').animate({'top':'-500px'},250,function(){
         $('#overlay').fadeOut('fast');
     });
 });
