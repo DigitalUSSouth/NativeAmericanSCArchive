@@ -1,3 +1,15 @@
+
+<div class="overlay" id="overlay" style="display:none;"></div>
+<div id="box">
+<a class="boxclose" id="boxclose"><p>Close</p></a>
+  <div id="timeline-embed">
+    <div id="timeline"></div>
+  </div>
+</div>
+<div id="hTimeline1">
+  
+</div>
+
 <section class="timeline">
   <script>
     //console.log('b')
@@ -11,9 +23,9 @@
 				<button type="button" class="btn btn-secondary btn-sm" data-toggle="collapse" data-target="#demo">&#9660;</button>
         <p id="demo" class="collapse">
           Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here!
-          <button  id="b1" class="loadiframe btn btn-info btn-sm" data-toggle="collapse" data-parent="#accordion" href="#collapse1" >
+          <a id="testBtn" href="#">
             Show Timeline
-          </button>
+          </a>
         </p>
       </div>
     </li>
@@ -108,62 +120,29 @@
   </ul>
 </section>
 
-<div class="opacity"></div>
 
-<!--<div class="panel-group col-md-12 col-sm-12 col-xs-12" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading clearfix">
-      <div class="text-center">
-        <!--  <h4 class="panel-title text-center"><a class="pull-right" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> ACTION </a> <br> -
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="btn btn-info btn-sm" > Pre-Clovis &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="btn btn-info btn-sm" > Paledonian &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="btn btn-info btn-sm" > Later Paledonian &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="btn btn-info btn-sm" > Early Archaic &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="btn btn-info btn-sm" > Middle Archaic &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse6" class="btn btn-info btn-sm" > Late Archaic &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse7" class="btn btn-info btn-sm" > Woodland &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse8" class="btn btn-info btn-sm" > Mississippian &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse9" class="btn btn-info btn-sm" > European Contact &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse10" class="btn btn-info btn-sm" > French Expedition &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse11" class="btn btn-info btn-sm" > Spanish Exploration &#8691; </a> 
-        <a  data-toggle="collapse" data-parent="#accordion" href="#collapse12" class="btn btn-info btn-sm" > English Contact &#8691; </a> 
+
+
+<!-- Modal -->
+<div id="hTimelineModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-    <div id="collapse1" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse2" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex2.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse3" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex3.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse4" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex4.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse5" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex5.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse6" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex6.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse7" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex7.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse8" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex8.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse9" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex9.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse10" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex10.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse11" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex11.html" frameborder="0" scrolling="yes" align="middle" width="1500" height="444" seamless=""></iframe>
-    </div>
-    <div id="collapse12" class="panel-collapse collapse">
-    <iframe src="html/ht/htindex12.html"  scrolling="yes"  width="1500" height="550" ></iframe>
-    </div>
-  </div>-->
+
+  </div>
 </div>
+
+<div class="opacity"></div>
+

@@ -20,6 +20,10 @@
     <script type="text/javascript" src="js/jquery/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="js/modernizr-custom.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
+
+    <!-- timelineJS base code pulls -->
+  <link rel="stylesheet" href="//cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  <script type="text/javascript" src="//cdn.knightlab.com/libs/timeline3/latest/js/timeline-min.js"></script>
     
     <!-- CSS & BootStrap -->
     <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui/jquery-ui.min.css"/>

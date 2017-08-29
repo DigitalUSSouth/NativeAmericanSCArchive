@@ -27,13 +27,45 @@ function init_timeline() {
   });
   
   items = document.querySelectorAll(".timeline li");
-  console.log(items)
+  //console.log(items)
   // listen for events
   window.addEventListener("load", callbackFunc);
   window.addEventListener("resize", callbackFunc);
   window.addEventListener("scroll", callbackFunc);
+  
+  //we need to run this callback function the first time because we are loading the page via ajax
   callbackFunc();
+  
   //iframeChange();
+
+  var embed = document.getElementById('timeline-embed');
+  embed.style.height = "400px";//getComputedStyle(document.body).height;
+  //embed.style.width = "100%"
+  var options =  { 
+    hash_bookmark: false
+  }
+  window.timeline = new TL.Timeline('timeline-embed', 'html/ht/data/data.json',options);
+  window.addEventListener('resize', function() {
+    var embed = document.getElementById('timeline-embed');
+    //embed.style.height = getComputedStyle(document.body).height;
+    //timeline.updateDisplay();
+  })
+
+
+
+
+  $('#testBtn').click(function(){
+    $('#overlay').fadeIn('fast',function(){
+        $('#box').animate({'top':'10%'},250);
+    });
+});
+$('#boxclose').click(function(){
+    $('#box').animate({'top':'-500px'},250,function(){
+        $('#overlay').fadeOut('fast');
+    });
+});
+
+
 }
   
 function isElementInViewport(el) {
