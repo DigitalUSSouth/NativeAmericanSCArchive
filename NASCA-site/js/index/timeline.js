@@ -47,7 +47,7 @@ function init_timeline() {
   //now we take array from above and run timeline initialization
   var counter = 1;
   for (var i in elements){
-      console.log(elements[i])
+      //console.log(elements[i])
       wrapperElement = elements[i]
       var embed = document.getElementById(wrapperElement);
       embed.style.height = "400px";//getComputedStyle(document.body).height;
@@ -58,8 +58,8 @@ function init_timeline() {
 
       var dataPath = "html/ht/data/data"+counter+".json"
       counter++;
-      console.log(counter)
-      console.log(dataPath)
+      //console.log(counter)
+      //console.log(dataPath)
       window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
       window.addEventListener('resize', function() {
         var embed = document.getElementById(wrapperElement);
@@ -69,18 +69,21 @@ function init_timeline() {
   }
 
 
-
-
-  $('#testBtn').click(function(){
-    $('#overlay').fadeIn('fast',function(){
-        $('#box1').animate({'top':'10%'},250);
+  for(var i=1; i<=12; i++){
+  //continue;
+  $("#openTimeline"+i).click(function(){
+    var i = $(this).prev().attr('id') //have to redeclare because of scope
+    $("#overlay").fadeIn('fast',function(){
+      $("#"+i).animate({'top':'10%'},250);
     });
 });
-$('#boxclose').click(function(){
-    $('#box1').animate({'top':'-500px'},250,function(){
+$("#boxclose"+i).click(function(){
+  var i = $(this).parent().attr('id') //have to redeclare because of scope  
+    $("#"+i).animate({'top':'-500px'},250,function(){
         $('#overlay').fadeOut('fast');
     });
 });
+}
 
 
 }

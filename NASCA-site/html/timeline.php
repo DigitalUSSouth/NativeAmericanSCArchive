@@ -1,11 +1,15 @@
 
 <div class="overlay" id="overlay" style="display:none;"></div>
-<div id="box1" class="box-t">
-<a class="boxclose" id="boxclose"><p>Close</p></a>
-  <div id="timeline-embed-01" class="timeline-embed">
-    <div id="timeline"></div>
+<?php 
+for($i=1; $i<=12; $i++):?>
+<div id="box<?php print $i;?>" class="box-t">
+<a class="boxclose" id="boxclose<?php print $i;?>"><p>Close</p></a>
+  <div id="timeline-embed-<?php print $i;?>" class="timeline-embed">
+    <!--<div id="timeline"></div>-->
   </div>
 </div>
+<a id="openTimeline<?php print $i;?>" href="#"><h2><?php print $i;?></h2></a>
+<?php endfor;?>
 
 <section class="timeline">
   <script>
@@ -20,7 +24,7 @@
 				<button type="button" class="btn btn-secondary btn-sm" data-toggle="collapse" data-target="#demo">&#9660;</button>
         <p id="demo" class="collapse">
           Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here! Some additional desc might go here!
-          <a id="testBtn" href="#">
+          <a id="openTimeliness1" href="#">
             Show Timeline
           </a>
         </p>
