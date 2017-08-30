@@ -2,11 +2,19 @@ function init_tribes() {
   toggleSearch("off");
   init_shadows();
   
+  /*$('.card-hover').each(function () {
+    $(this).attr('href',SITE_ROOT + '/html/tribes.php');
+  });*/
   $('.card-hover').fancybox({
-    'type': 'iframe',
-    'width': 560,
-    'height': 315,
-    'href': $(this).siblings('.additional').find('#href').html()
+    loop : true,
+    protect: true,
+    //fitToView: false,
+    autoSize: false,
+    autoScale: false,
+    scrolling: false,
+    autoDimensions: false,
+    width: 900,
+    height: 315
   });
   //data-type\':\'iframe\',\'data-width\':560,\'data-fancybox\':\'Tribes\',\'data-height\':315})
   

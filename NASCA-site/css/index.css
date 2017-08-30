@@ -330,7 +330,7 @@ colors{
   min-height: 39px; /*52px;*/
   min-width: 235px; /*331px;*/
   width: 235px; /*331px;*/
-  opacity: 1.0;
+  opacity: 0;
 }
 
 #search {

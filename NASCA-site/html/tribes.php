@@ -26,7 +26,7 @@
     echo '        <img class="tribe-single-logo row" src="' . SITE_ROOT . $image_dir . '/' . $el->logo . '" alt="Error fetching tribal logo" onerror="this.onerror=null;this.src=\'' . SITE_ROOT . '/img/error/error.png\';" />';
     //echo '      </a>';
     echo '    </div>';
-    echo '    <a class="card-hover" href="html/tribes_history.php?tribe_id=' . $i . '" data-fancybox="Tribes" data-type="iframe" data-width="560" data-height="315">';
+    echo '    <a class="card-hover" href="' . SITE_ROOT . '/html/tribes_history.php?tribe_id=' . $i . '" data-type="ajax" data-fancybox="Tribes">';// data-width="560" data-height="315">';
     //echo '      <a class="tribe-single-logo-fancybox row" href="html/tribes_history.php?tribe_id=' . $i . '" data-fancybox="Tribes" data-type="iframe" data-width="560" data-height="315">';
     //echo '      </a>';
     echo '    </a>';
