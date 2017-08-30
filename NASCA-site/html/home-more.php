@@ -84,28 +84,28 @@
     echo '</div>';
   }
   
-  function printDefault() {
-    echo '<div id="preview-layout" class="preview-default">';
-    echo '  <div id="preview-title-container">';
-    echo '    <div id="preview-title" class="anton text-dark-grey">';
-    echo '      <b>Welcome,</b>';
-    echo '    </div>';
-    echo '    <div id="preview-title-secondary" class="anton text-red">';
-    echo '      to the Native American South Carolina Archive!';
-    echo '    </div>';
-    echo '  </div>';
-    echo '  <hr class="red"/>';
-    echo '  <div id="preview-desc-container" class="source-serif text-dark-grey">';
-    echo '    <div id="preview-desc">';
-    echo '      <p>Click any of the cards on the left to get more information in this window about featured pictures, interviews, and more from our archive.</p>';
-    echo '      <br/>';
-    echo '      <p><i>OR</i></p>';
-    echo '      <br/>';
-    echo '      <p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You\'re also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>';
-    echo '    </div>';
-    echo '  </div>';
-    echo '</div>';
-  }
+  function printDefault(){ ?>
+  <div id="preview-layout" class="preview-default">
+    <div id="preview-title-container">
+      <div id="preview-title" class="anton text-dark-grey">
+        <b>Welcome</b>
+      </div>
+      <div id="preview-title-secondary" class="anton text-red">
+        to the Native American South Carolina Archive!
+      </div>
+    </div>
+    <hr class="red"/>
+    <div id="preview-desc-container" class="source-serif text-dark-grey">
+      <div id="preview-desc">
+        <p>Click any of the cards on the left to get more information in this window about featured pictures, interviews, and more from our archive.</p>
+        <br/>
+        <p><i>OR</i></p>
+        <br/>
+        <p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You're also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>
+      </div>
+    </div>
+  </div>
+  <?php } //printDefault()
   
   function printImageDetails($id, $title, $size) {
     $trimmed = $title;
