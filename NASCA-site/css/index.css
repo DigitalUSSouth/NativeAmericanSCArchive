@@ -325,11 +325,12 @@ colors{
 #search-container {
   position: absolute;
   top: 0;
-  right: -500px;
+  right: -70%;
   height: 36.4486%;
   min-height: 39px; /*52px;*/
   min-width: 235px; /*331px;*/
   width: 235px; /*331px;*/
+  opacity: 1.0;
 }
 
 #search {
