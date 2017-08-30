@@ -40,7 +40,7 @@
         },
         "text": {
           "headline": "Woodland Pottery",
-          "text": "photo by Carl Steen <a href =\"http://www.scpottery.com/\">More</a> "
+          "text": "photo by Carl Steen <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scpottery.com/\">More</a> "
         }
       },
 	 { 
@@ -73,7 +73,7 @@
         },
         "text": {
           "headline": "Burial Mounds",
-          "text": "<p>McLeod Mound</p> <br> Darlington SC <a href =\"http://www.rla.unc.edu/Publications/NCArch/NCA_48%28e-book%29.pdf\">More</a> "
+          "text": "<p>McLeod Mound</p> <br> Darlington SC <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.rla.unc.edu/Publications/NCArch/NCA_48%28e-book%29.pdf\">More</a> "
         }
       }
       

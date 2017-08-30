@@ -24,7 +24,7 @@
         },
         "text": {
           "headline": "Topper-Tools and stratigraphy",
-          "text": "<p>Allendale SC</p> <a href =\"http://uscsalkehatchie.sc.edu/home/news-post/topper-artifacts-unveiled-at-exhibit/\">More at USC</a>"
+          "text": "<p>Allendale SC</p> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://uscsalkehatchie.sc.edu/home/news-post/topper-artifacts-unveiled-at-exhibit/\">More at USC</a>"
         }
       },
        { 
@@ -40,7 +40,7 @@
         },
         "text": {
           "headline": "Haw River Point",
-          "text": "<a href =\"http://pidba.utk.edu/southcarolina.htm\">More</a>"
+          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://pidba.utk.edu/southcarolina.htm\">More</a>"
         }
       }
     ]

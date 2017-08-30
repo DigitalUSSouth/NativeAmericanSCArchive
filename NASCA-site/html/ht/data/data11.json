@@ -24,7 +24,7 @@
         },
         "text": {
           "headline": "Santa Elena",
-          "text": "<p>Spanish & Indian Pottery</p> Beaufort SC <br> A.D. 1566-1587 <br> <a href =\"http://santa-elena.org\">Santa Elena website </a><br> <a href =\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> <br> <a href =\"http://www.scencyclopedia.org/sce/entries/santa-elena/\">Santa Elena More Info</a>"
+          "text": "<p>Spanish & Indian Pottery</p> Beaufort SC <br> A.D. 1566-1587 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://santa-elena.org\">Santa Elena website </a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/santa-elena/\">Santa Elena More Info</a>"
         }
       },
 	  { 
@@ -40,7 +40,7 @@
         },
         "text": {
           "headline": "Pardo Expeditions",
-          "text": "<p>exoedition route map</p> A.D. 1566-1568 <br> <a href =\"https://exploringjoara.org/\">More Info </a><br> <a href =\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> "
+          "text": "<p>exoedition route map</p> A.D. 1566-1568 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"https://exploringjoara.org/\">More Info </a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> "
         }
       },
 	 { 
