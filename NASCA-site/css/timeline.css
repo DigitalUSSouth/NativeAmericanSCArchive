@@ -106,7 +106,7 @@ time {
  
  
 /* CSS for horizontal timelines */
-#overlay{
+.overlay{
   background-color:black;
   opacity: 0.5;
   position:fixed;

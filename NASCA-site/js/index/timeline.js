@@ -3,9 +3,9 @@
 //<!-- //for old browsers
 
 var items;
+var el;
 
 function init_timeline() {
-  toggleSearch('off');
   
   //$("a").click(function(e) {
   //  e.preventDefault();
@@ -36,56 +36,49 @@ function init_timeline() {
   //we need to run this callback function the first time because we are loading the page via ajax
   callbackFunc();
 
-
   //iterate through timeline wrapper elements and add to array
+  //TODO remove .each() loop below. we don't need it anymore
   var elements = [];
   $(".timeline-embed").each(function(i,obj){
     elements.push($(this).attr('id'))
   });
   console.log(elements);
 
-  //now we take array from above and run timeline initialization
-  var counter = 1;
-  for (var i in elements){
-      //console.log(elements[i])
-      wrapperElement = elements[i]
-      var embed = document.getElementById(wrapperElement);
-      embed.style.height = "400px";//getComputedStyle(document.body).height;
-      //embed.style.width = "100%"
-      var options =  { 
-        hash_bookmark: false
-      }
-
-      var dataPath = "html/ht/data/data"+counter+".json"
-      counter++;
-      //console.log(counter)
-      //console.log(dataPath)
-      window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
-      window.addEventListener('resize', function() {
-        var embed = document.getElementById(wrapperElement);
-        //embed.style.height = getComputedStyle(document.body).height;
-        //timeline.updateDisplay();
-      })
-  }
-
 
   for(var i=1; i<=12; i++){
-  //continue;
-  $("#openTimeline"+i).click(function(){
-    var i = $(this).prev().attr('id') //have to redeclare because of scope
-    $("#overlay").fadeIn('fast',function(){
-      $("#"+i).animate({'top':'10%'},250);
-    });
-});
-$("#boxclose"+i).click(function(){
-  var i = $(this).parent().attr('id') //have to redeclare because of scope  
-    $("#"+i).animate({'top':'-500px'},250,function(){
-        $('#overlay').fadeOut('fast');
-    });
-});
-}
+    $("#openTimeline"+i).click(function(){
+      var i = $(this).attr('data-box-id') //have to redeclare because of scope
+      $("#overlay").fadeIn('fast',function(){
+        $("#"+i).animate({'top':'10%'},250);
+        var indexNum = $("#"+i).attr('data-box-index')
+        var selector = "#"+i+" .timeline-embed";
+        //console.log(selector);
+        wrapperElement = $(selector).attr('id');
+        //console.log(wrapperElement)
+        var embed = document.getElementById(wrapperElement);
+        embed.style.height = "400px";//getComputedStyle(document.body).height;
+        //embed.style.width = "100%"
+        $("#"+i).css('z-index','101');
+        var options =  { 
+          hash_bookmark: false
+        }
 
-
+        var dataPath = "html/ht/data/data"+indexNum+".json"
+        window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
+        window.addEventListener('resize', function() {
+          var embed = document.getElementById(wrapperElement);
+          //embed.style.height = getComputedStyle(document.body).height;
+          //timeline.updateDisplay();
+        })
+      });
+    });
+    $("#boxclose"+i).click(function(){
+      var i = $(this).parent().attr('id') //have to redeclare because of scope  
+        $("#"+i).animate({'top':'-500px'},250,function(){
+            $('#overlay').fadeOut('fast');
+        });
+    });
+  }
 }
   
 function isElementInViewport(el) {
