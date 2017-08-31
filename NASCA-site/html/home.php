@@ -1,4 +1,4 @@
-<div class="row source-serif text-dark-grey" id="featured-container">
+<div class="custom-row source-serif text-dark-grey" id="featured-container">
   <div id="featured">
     Featured
     <div class="half-underline-black"></div>

@@ -139,7 +139,7 @@
     echo (string)$details['descri'] . '<br/>Photographer: ' . (string)$details['creato'] . '<br/>Tribe: ' . (string)$details['tribe'];
     echo '    </div>';
     echo '  </div>';
-    echo '  <div id="preview-lower" class="row">';
+    echo '  <div id="preview-lower" class="custom-row">';
     echo '    <div id="view-all-container" onclick="changePage(\'images\');">';
     echo '      <div id="view-all" class=text-red>View All Images</div>';
     echo '      <div id="view-all-underline"></div>';
@@ -181,7 +181,7 @@
     echo '      Description: ' . (string)$details['descri'] . '<br/>Type: ' . (string)$details['type'] . '<br/>Media: ' . (string)$details['media'] . '<br/>Creator: ' . (string)$details['creato'] . '<br/>dateb: ' . (string)$details['dateb'] . '<br/>datea: ' . (string)$details['datea'];
     echo '    </div>';
     echo '  </div>';
-    echo '  <div id="preview-lower" class="row">';
+    echo '  <div id="preview-lower" class="custom-row">';
     echo '    <div id="view-all-container" onclick="changePage(\'letters\');">';
     echo '      <div id="view-all" class=text-red>View All Letters</div>';
     echo '      <div id="view-all-underline"></div>';

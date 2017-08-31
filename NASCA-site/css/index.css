@@ -201,7 +201,7 @@ hr.grey {
   /*justify-content: center;*/
 }
 
-.row {
+.custom-row {
   width: 100%;
 }
 
@@ -212,6 +212,7 @@ hr.grey {
     width: 0;
     height: 4.5%;
     background: linear-gradient(#222222 -280%, transparent 100%);
+    z-index: 1;
 }
 
 /*

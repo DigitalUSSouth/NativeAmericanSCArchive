@@ -15,7 +15,7 @@
   min-width: 295px;
   height: 188px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .tribe-single {
@@ -25,6 +25,7 @@
   width: 87.119%;
   height: 93.085%;
   transition-duration: 0.4s;
+  z-index: 2;
 }
 
 .tribe-single-title-container {
