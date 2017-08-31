@@ -21,3 +21,11 @@
     /*width: 80%;
     /color: #F7F7F7;*/
 }
+
+.interview-row {
+    padding-bottom: 5em;
+}
+
+.btn-interview {
+    white-space: normal !important;
+}
