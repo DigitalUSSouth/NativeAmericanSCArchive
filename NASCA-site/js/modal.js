@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   $('.modal-close').click(function() {
     $('.modal').css('display','none');
     $('.modal-body').html('');
@@ -9,4 +9,4 @@ $(document).ready(function() {
       $('.modal-body').html('');
     }
   });
-});
+});*/

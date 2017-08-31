@@ -19,6 +19,8 @@
     <script type="text/javascript" src="js/jquery/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="js/modernizr-custom.js"></script>
     <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 
     <!-- timelineJS base code pulls -->
   <link rel="stylesheet" href="//cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
@@ -39,6 +41,8 @@
     <link rel="stylesheet" type="text/css" href="css/tribes.css"/>
     <link rel="stylesheet" type="text/css" href="css/map.css"/>
     <link rel="stylesheet" type="text/css" href="css/video.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+
     
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Source+Serif+Pro" rel="stylesheet">
