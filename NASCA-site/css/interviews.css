@@ -23,9 +23,14 @@
 }
 
 .interview-row {
+    padding-top: 3em;
     padding-bottom: 5em;
 }
 
 .btn-interview {
     white-space: normal !important;
+}
+
+.interview-logo{
+    height: 300px !important;
 }

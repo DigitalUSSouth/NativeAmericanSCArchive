@@ -10,7 +10,7 @@
   <div id="catawba" class="tab-pane fade in active">
     <div class="row interview-row">
       <div class="col-xs-4">
-        image
+        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/catawba.png">
       </div>
       <div class="col-xs-8">
         <h1>Catawba</h1>
@@ -35,7 +35,7 @@
   <div id="beaver-creek" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        image
+        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/beaver.png">
       </div>
       <div class="col-xs-8">
         <h1>Beaver Creek</h1>
@@ -55,7 +55,7 @@
   <div id="pee-dee" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        image
+        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/pee_dee_nation.png">
       </div>
       <div class="col-xs-8">
         <h1>Pee Dee</h1>
@@ -72,7 +72,7 @@
   <div id="sumter-cheraw" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        image
+        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/sumter.png">
       </div>
       <div class="col-xs-8">
         <h1>Sumter Cheraw</h1>
@@ -88,7 +88,7 @@
   <div id="varnertown" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        image
+        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/.png">
       </div>
       <div class="col-xs-8">
         <h1>Varnertown</h1>
