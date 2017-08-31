@@ -50,3 +50,11 @@
   object-fit: contain;
   padding: 5px;
 }
+
+.fancybox-inner.tribes-inner{
+  margin: auto auto;
+  width:410px;
+}
+.fancybox-slide.tribes-slide div{
+  width: 300px;
+}

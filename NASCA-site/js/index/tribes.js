@@ -14,7 +14,11 @@ function init_tribes() {
     scrolling: false,
     autoDimensions: false,
     width: 900,
-    height: 315
+    height: 315,
+    beforeShow: function (){
+      $(".fancybox-inner").addClass("tribes-inner");
+      $(".fancybox-slide").addClass("tribes-slide");
+    }
   });
   //data-type\':\'iframe\',\'data-width\':560,\'data-fancybox\':\'Tribes\',\'data-height\':315})
   
