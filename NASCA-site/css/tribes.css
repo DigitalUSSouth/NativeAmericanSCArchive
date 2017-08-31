@@ -53,9 +53,11 @@
 }
 
 .fancybox-inner.tribes-inner{
-  margin: auto auto;
-  width:410px;
+  
 }
 .fancybox-slide.tribes-slide div{
-  width: 300px;
+  width: 85%;
+  min-width: 730px;
+  border-radius: 8px;
+  height: 300px;
 }

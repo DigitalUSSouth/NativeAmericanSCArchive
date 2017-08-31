@@ -13,11 +13,17 @@ function init_tribes() {
     autoScale: false,
     scrolling: false,
     autoDimensions: false,
-    width: 900,
-    height: 315,
+    padding: 20,
+    //width: 900,
+    //height: 315,
     beforeShow: function (){
-      $(".fancybox-inner").addClass("tribes-inner");
-      $(".fancybox-slide").addClass("tribes-slide");
+      $('.fancybox-inner').addClass('tribes-inner');
+      $('.fancybox-slide').addClass('tribes-slide');
+      $('.fancybox-slide.tribes-slide div').addClass('background-off-white');
+    },
+    afterLoad: function (){
+      var custom_fancybox = $('.fancybox-slide.tribes-slide div');
+      custom_fancybox.height(custom_fancybox.width()*0.41096);
     }
   });
   //data-type\':\'iframe\',\'data-width\':560,\'data-fancybox\':\'Tribes\',\'data-height\':315})
