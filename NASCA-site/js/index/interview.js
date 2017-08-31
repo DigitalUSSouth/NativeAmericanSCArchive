@@ -278,25 +278,30 @@ function timecodeToInt(timecode) {
 
 function highlight(id,state) {
   if(state === 'on') {
+    console.log("on")
+    $(id).toggleClass("bg-danger",250)
     //if the id IS NOT already highlighted
-    if(rgb2hex($(id).css('color')) === '#f7f7f7') {
+    if(rgb2hex($(id).css('color')) === '#f7f7f7') {//default
       //animate it on
-      $(id).animate({
+      /*$(id).animate({
         backgroundColor: '#ffff60',
-        color: '#787788'
-      }, 250);
+        color: '#787788'//highlight
+      }, 250);*/
     }
   } else if(state === "off") {
+    console.log("off")
+    $(id).toggleClass("bg-danger",250)
+    
     //if the id IS highlighted
     if(rgb2hex($(id).css('color')) === '#787788') {
       //animate it off
-      $(id).animate({
+      /*$(id).animate({
         backgroundColor: '#840004',
         color: '#f7f7f7'
-      }, 250);
+      }, 250);*/
     }
   } else {
-    alert('oral_histories.js:highlight(id,state) BAD INPUT');
+    console.log('oral_histories.js:highlight(id,state) BAD INPUT');
   }
 }
 
