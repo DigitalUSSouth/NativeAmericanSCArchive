@@ -1,8 +1,8 @@
 <!-- === Audio Title === -->
 <!-- === Audio Title === -->
 <!-- === Audio Title === -->
-<div class="title" id="title">Transcript Title</div>
-
+<div class="title"></div>
+ 
 <!-- === JPlayer === -->
 <!-- === JPlayer === -->
 <!-- === JPlayer === -->

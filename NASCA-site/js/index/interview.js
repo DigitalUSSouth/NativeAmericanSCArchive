@@ -4,6 +4,9 @@
 
 function init_interview() {
   toggleSearch('on');
+  $("#interviewsModal").on('shown.bs.modal', function(e){
+    launch_interview_modal(e.relatedTarget.dataset.filename);
+  });
 }
 
 //init stuff for oral_histories.html
@@ -15,14 +18,14 @@ function launch_interview_modal(filename) {
     async: true,
     dataType: 'html',
     success: function(data) {
-      $('.modal-body').html(data);
+      $('#interviewsModal .modal-body').html(data);
       
       //grab json
       var datalocation = SITE_ROOT + '/db/data/interviews/';
       var jsonobject = getJsonObject(datalocation + "transcripts/json/minified/" + filename);
 
       //set title
-      document.getElementById('title').innerHTML = jsonobject.title;
+      document.getElementById('interview-modal-title').innerHTML = jsonobject.title;
 
       var lastStepJson = {"lastTime": 0.0,"lastBruteForce": 0.0,"lastUpdate": 0.0,"lastHighlightedId": -1,"additionalHighlightedIds": 0};
 
@@ -58,7 +61,7 @@ function launch_interview_modal(filename) {
     }
   });
   
-  $('.modal').css('display','block');
+  //$('.modal').css('display','block');
 
 };
 
