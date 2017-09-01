@@ -139,7 +139,13 @@ function setNewState(page,subPage=null){
     subPage: subPage
   }
   var sPage = (subPage===null)?"":subPage;
-  var newUrl = SITE_ROOT+'/'+page+'/'+ sPage;
+  var newUrl
+  if (page!="home"){
+    newUrl = SITE_ROOT+'/'+page+'/'+ sPage;
+  }
+  else {
+    newUrl = SITE_ROOT+'/';
+  }
   history.pushState(stateObject,page,newUrl);
   console.log(newUrl);
 }
