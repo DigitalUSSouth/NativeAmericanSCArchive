@@ -65,6 +65,7 @@ function dynamic_css() {
   //then set other bits depending on what page it's on
   switch(currentPage) {
     case 'home':
+      $('#page').css('height','auto');
       responsive_font('#featured','window',1.6287,10);//12);
       $('#featured').css('margin-bottom',$('#featured').height());
       $('.home-card-container').height($('.home-card-container').width()*1.2907);
@@ -127,12 +128,15 @@ function dynamic_css() {
       $('.preview-letter #preview-lower').css('margin-top',(newheight*0.6957)+'px');
       break;
     case 'interviews':
+      $('#page').css('height','auto');
       
       break;
     case 'images':
+      $('#page').css('height','auto');
       
       break;
     case 'video':
+      $('#page').css('height','auto');
       //set margins
       var newMargin = $(window).width()*0.02617;
       if(newMargin < 33) {
@@ -152,12 +156,15 @@ function dynamic_css() {
       $('#map-container').height(newHeight);
       break;
     case 'timeline':
+      $('#page').css('height','auto');
       
       break;
     case 'letters':
+      $('#page').css('height','auto');
       
       break;
     case 'tribes':
+      $('#page').css('height','auto');
       //set margins
       var newMargin = $(window).width()*0.01507;
       if(newMargin < 19) {
@@ -171,6 +178,7 @@ function dynamic_css() {
       custom_fancybox.height(custom_fancybox.width()*0.41096);
       break;
     case 'documentation':
+      $('#page').css('height','auto');
       
       break;
     default:
