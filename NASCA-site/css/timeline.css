@@ -4,8 +4,8 @@ https://webdesign.tutsplus.com/ */
 /* TIMELINE */
 
 .timeline ul {
-  background: #A80505;
-  padding: 50px 0;
+  /*background: #A80505;*/
+  padding: 2em;
 }
 
 .timeline ul li {
@@ -14,7 +14,14 @@ https://webdesign.tutsplus.com/ */
   width: 6px;
   margin: 0 auto;
   padding-top: 50px;
-  background: #ffffff;
+  /*background: #ffffff;*/
+}
+
+.timeline ul li div {
+  border-radius: .7em;
+  /*background: #930707 !important;*/
+  
+  
 }
 
 .timeline ul li::after {
@@ -34,7 +41,7 @@ https://webdesign.tutsplus.com/ */
   bottom: 0;
   width: 400px;
   padding: 15px;
-  background: #ffffff;
+  /*background: #ffffff;*/
 }
 
 .timeline ul li div::before {
@@ -48,29 +55,30 @@ https://webdesign.tutsplus.com/ */
 
 .timeline ul li:nth-child(odd) div {
   left: 45px;
+  text-align: center;  
 }
 
 .timeline ul li:nth-child(odd) div::before {
   left: -15px;
   border-width: 8px 16px 8px 0;
-  border-color: transparent #ffffff transparent transparent;
+  border-color: transparent #930707 transparent transparent;
 }
 
 .timeline ul li:nth-child(even) div {
   left: -439px;
+  text-align: center;
 }
 
 .timeline ul li:nth-child(even) div::before {
   right: -15px;
   border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #ffffff;
+  border-color: transparent transparent transparent #930707;
 }
 
 time {
   display: block;
-  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 8px;
+
 }
 
 /* EFFECTS */
@@ -80,7 +88,7 @@ time {
 }
 
 .timeline ul li.in-view::after {
-  background: #ffffff;
+  background: #930707;
 }
 
 .timeline ul li div {
@@ -136,16 +144,17 @@ time {
 
 a.boxclose{
   float:right;
+  float: top;
   /*width:26px;
   height:26px;
   background:transparent url(images/cancel.png) repeat top left;*/
   /**/
-  margin-top:-30px;
+  /*margin-top:-30px;
   margin-right:-30px;
-  cursor:pointer;
+  cursor:pointer;*/
 }
 
-a.boxclose p{
-  background-color: lightgrey;
-  padding:1em;
+a.boxclose h2{
+  /*background-color: lightgrey;*/
+  padding:.2em;
 }

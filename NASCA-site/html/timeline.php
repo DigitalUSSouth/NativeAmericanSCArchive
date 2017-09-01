@@ -4,7 +4,7 @@
 <?php 
 for($i=1; $i<=12; $i++):?>
 <div id="box<?php print $i;?>" class="box-t" data-box-index="<?php print $i?>">
-<a class="boxclose" id="boxclose<?php print $i;?>"><p>Close</p></a>
+<a class="boxclose btn btn-danger" id="boxclose<?php print $i;?>"><strong>Close</strong></a>
   <div id="timeline-embed-<?php print $i;?>" class="timeline-embed">
     <!--<div id="timeline"></div>-->
   </div>
@@ -18,7 +18,7 @@ for($i=1; $i<=12; $i++):?>
     //callbackFunc();
     //console.log('a')
   </script>
-  <ul>
+  <ul class="">
     <?php 
     for ($i=1; $i<=12; $i++):
       $filename = "ht/data/data".$i.".json";
@@ -26,12 +26,13 @@ for($i=1; $i<=12; $i++):?>
       $time=$data["title"]["text"]["text"];
       $title = $data["title"]["text"]["headline"];
       ?>
-      <li>
-        <div>
-          <time><?php print $time;?></time> <?php print $title;?>
-            <a id="openTimeline<?php print $i;?>" href="#" data-box-id="<?php print "box".$i;?>">
+      <li class="background-red">
+        <div class="background-red text-white">
+          <h4><time><?php print $time;?></time> <?php print $title;?></h4>
+          <h4><a class="btn btn-default" id="openTimeline<?php print $i;?>" href="#" data-box-id="<?php print "box".$i;?>">
               Show Timeline
-            </a>
+          </a></h4>
+          
         </div>
       </li>
     <?php endfor;?>
