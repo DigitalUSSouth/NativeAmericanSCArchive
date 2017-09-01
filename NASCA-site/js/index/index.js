@@ -147,7 +147,7 @@ function setNewState(page,subPage=null){
     newUrl = SITE_ROOT+'/';
   }
   history.pushState(stateObject,page,newUrl);
-  console.log(newUrl);
+  //console.log(newUrl);
 }
 
 function toggleSearch(val) {

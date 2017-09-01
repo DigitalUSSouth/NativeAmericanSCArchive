@@ -49,7 +49,7 @@
     
     
     <!-- ICON -->
-    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="<?php print SITE_ROOT?>/img/favicon/favicon.ico"/>
 
     <!-- Local Javascript, Jquery, Ajax -->
     <script type="text/javascript" src="js/index/dynamic_css.js"></script>
