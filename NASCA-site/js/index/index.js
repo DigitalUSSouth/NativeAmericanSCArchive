@@ -58,8 +58,8 @@ function init_index() {
   if(typeof currentUrl != "undefined" && currentUrl != null && currentUrl.length > 0){
     //we have a page other than home
     var tabElem = document.getElementById("tabs-"+currentUrl[0]);
-    console.log(tabElem);
-    //changePage(currentUrl[0],tabElem);
+    //console.log(tabElem);
+    changePage(currentUrl[0],tabElem);
   }
   else {//home page
     //get home page content
