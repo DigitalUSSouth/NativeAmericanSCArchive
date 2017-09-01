@@ -1,9 +1,9 @@
 <ul class="nav nav-tabs nav-justified">
-  <li class="active"><a data-toggle="tab" href="#catawba">Catawba</a></li>
-  <li><a data-toggle="tab" href="#beaver-creek">Beaver Creek</a></li>
-  <li><a data-toggle="tab" href="#pee-dee">Pee Dee</a></li>
-  <li><a data-toggle="tab" href="#sumter-cheraw">Sumter Cheraw</a></li>
-  <li><a data-toggle="tab" href="#varnertown">Varnertown</a></li>
+  <li class="active"><a data-toggle="tab" href="#catawba" class="text-red"><strong><big>Catawba</strong></big></a></li>
+  <li><a data-toggle="tab" href="#beaver-creek" class="text-red"><strong><big>Beaver Creek</big></strong></a></li>
+  <li><a data-toggle="tab" href="#pee-dee" class="text-red"><strong><big>Pee Dee</strong></big></a></li>
+  <li><a data-toggle="tab" href="#sumter-cheraw" class="text-red"><strong><big>Sumter Cheraw</strong></big></a></li>
+  <li><a data-toggle="tab" href="#varnertown" class="text-red"><strong><big>Varnertown</strong></big></a></li>
 </ul>
 
 <div class="tab-content">
@@ -13,7 +13,7 @@
         <img class="img-responsive interview-logo center-block" src="img/tribesLogos/catawba.png">
       </div>
       <div class="col-xs-8">
-        <h1>Catawba</h1>
+        <h1 class="text-red">Catawba</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.</p>
       </div>
     </div>
@@ -38,7 +38,7 @@
         <img class="img-responsive interview-logo center-block" src="img/tribesLogos/beaver.png">
       </div>
       <div class="col-xs-8">
-        <h1>Beaver Creek</h1>
+        <h1 class="text-red">Beaver Creek</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.</p>
       </div>
     </div>
@@ -58,7 +58,7 @@
         <img class="img-responsive interview-logo center-block" src="img/tribesLogos/pee_dee_nation.png">
       </div>
       <div class="col-xs-8">
-        <h1>Pee Dee</h1>
+        <h1 class="text-red">Pee Dee</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.</p>
       </div>
     </div>
@@ -75,7 +75,7 @@
         <img class="img-responsive interview-logo center-block" src="img/tribesLogos/sumter.png">
       </div>
       <div class="col-xs-8">
-        <h1>Sumter Cheraw</h1>
+        <h1 class="text-red">Sumter Cheraw</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.</p>
       </div>
     </div>
@@ -91,7 +91,7 @@
         <img class="img-responsive interview-logo center-block" src="img/tribesLogos/wassamassa.png">
       </div>
       <div class="col-xs-8">
-        <h1>Varnertown</h1>
+        <h1 class="text-red">Varnertown</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.</p>
       </div>
     </div>
