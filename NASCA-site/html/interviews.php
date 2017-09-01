@@ -88,7 +88,7 @@
   <div id="varnertown" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/.png">
+        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/wassamassa.png">
       </div>
       <div class="col-xs-8">
         <h1>Varnertown</h1>
