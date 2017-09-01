@@ -7,6 +7,9 @@ function init_interview() {
   $("#interviewsModal").on('shown.bs.modal', function(e){
     launch_interview_modal(e.relatedTarget.dataset.filename);
   });
+  $("#interviewsModal").on('hidden.bs.modal',function(e){
+    $('#jquery_jplayer_1').jPlayer("destroy");
+  });
 }
 
 //init stuff for oral_histories.html
@@ -278,7 +281,7 @@ function timecodeToInt(timecode) {
 
 function highlight(id,state) {
   if(state === 'on') {
-    console.log("on")
+    //console.log("on")
     $(id).toggleClass("bg-danger",250)
     //if the id IS NOT already highlighted
     if(rgb2hex($(id).css('color')) === '#f7f7f7') {//default
@@ -289,7 +292,7 @@ function highlight(id,state) {
       }, 250);*/
     }
   } else if(state === "off") {
-    console.log("off")
+    //console.log("off")
     $(id).toggleClass("bg-danger",250)
     
     //if the id IS highlighted
