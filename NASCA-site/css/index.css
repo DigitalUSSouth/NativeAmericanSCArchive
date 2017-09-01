@@ -477,8 +477,12 @@ colors{
   text-decoration: none;
 }
 
-#tabs li div.tab-active {
+/*#tabs li div.tab-active {
   border-bottom: 4px solid #AB0909;
+}*/
+
+#tabs li div.tab-active div.tab-underline {
+  border-bottom: 2px solid white;
 }
 
 #menu-container {
