@@ -127,7 +127,21 @@ function changePage(page,tabElem) {
       });
     });
     currentPage = page;
+    setNewState(currentPage);
   }
+}
+
+//the following code sets a new state for browser history
+//this allows users to bookmark individual pages in the site
+function setNewState(page,subPage=null){
+  var stateObject = {
+    page: page,
+    subPage: subPage
+  }
+  var sPage = (subPage===null)?"":subPage;
+  var newUrl = SITE_ROOT+'/'+page+'/'+ sPage;
+  history.pushState(stateObject,page,newUrl);
+  console.log(newUrl);
 }
 
 function toggleSearch(val) {

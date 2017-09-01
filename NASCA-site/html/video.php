@@ -1,4 +1,4 @@
-<div class="custom-row top-padding-20""></div>
+<div class="custom-row top-padding-20"></div>
 <div id="video-list-container">
   <?php
   $api_dir = preg_replace('/html.video\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);

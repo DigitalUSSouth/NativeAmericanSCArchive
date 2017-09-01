@@ -1,3 +1,6 @@
+<?php
+require_once "../api/configuration.php";
+?>
 <ul class="nav nav-tabs nav-justified">
   <li class="active"><a data-toggle="tab" href="#catawba" class="text-red"><strong><big>Catawba</strong></big></a></li>
   <li><a data-toggle="tab" href="#beaver-creek" class="text-red"><strong><big>Beaver Creek</big></strong></a></li>
@@ -10,7 +13,7 @@
   <div id="catawba" class="tab-pane fade in active">
     <div class="row interview-row">
       <div class="col-xs-4">
-        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/catawba.png">
+        <img class="img-responsive interview-logo center-block" src="<?php print SITE_ROOT;?>/img/tribesLogos/catawba.png">
       </div>
       <div class="col-xs-8">
         <h1 class="text-red">Catawba</h1>
@@ -35,7 +38,7 @@
   <div id="beaver-creek" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/beaver.png">
+        <img class="img-responsive interview-logo center-block" src="<?php print SITE_ROOT;?>/img/tribesLogos/beaver.png">
       </div>
       <div class="col-xs-8">
         <h1 class="text-red">Beaver Creek</h1>
@@ -55,7 +58,7 @@
   <div id="pee-dee" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/pee_dee_nation.png">
+        <img class="img-responsive interview-logo center-block" src="<?php print SITE_ROOT;?>/img/tribesLogos/pee_dee_nation.png">
       </div>
       <div class="col-xs-8">
         <h1 class="text-red">Pee Dee</h1>
@@ -72,7 +75,7 @@
   <div id="sumter-cheraw" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/sumter.png">
+        <img class="img-responsive interview-logo center-block" src="<?php print SITE_ROOT;?>/img/tribesLogos/sumter.png">
       </div>
       <div class="col-xs-8">
         <h1 class="text-red">Sumter Cheraw</h1>
@@ -88,7 +91,7 @@
   <div id="varnertown" class="tab-pane fade">
     <div class="row interview-row">
       <div class="col-xs-4">
-        <img class="img-responsive interview-logo center-block" src="img/tribesLogos/wassamassa.png">
+        <img class="img-responsive interview-logo center-block" src="<?php print SITE_ROOT;?>/img/tribesLogos/wassamassa.png">
       </div>
       <div class="col-xs-8">
         <h1 class="text-red">Varnertown</h1>
