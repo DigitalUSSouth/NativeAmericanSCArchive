@@ -1,0 +1,6 @@
+RewriteEngine on
+
+RewriteRule ^/?$ index.php [L]
+RewriteCond %{REQUEST_URI} !^/pages.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?page=$1 [L]

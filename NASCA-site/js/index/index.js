@@ -53,21 +53,30 @@ function init_index() {
   dynamic_css();
   //fade in
   //intervalFade(fadeIns,500);
-  
-  //get home page content
-  $.ajax({
-    type:'POST',
-    url: SITE_ROOT + '/html/home.php',
-    async: true,
-    dataType: 'html',
-    success: function(data) {
-      $('#page').html(data).promise().done(function() {
-        dynamic_css();
-        init_home();
-        dynamic_css();
-      });
-    }
-  });
+
+  //check which main page is being requested and set page content automatically
+  if(typeof currentUrl != "undefined" && currentUrl != null && currentUrl.length > 0){
+    //we have a page other than home
+    var tabElem = document.getElementById("tabs-"+currentUrl[0]);
+    console.log(tabElem);
+    //changePage(currentUrl[0],tabElem);
+  }
+  else {//home page
+    //get home page content
+    $.ajax({
+      type:'POST',
+      url: SITE_ROOT + '/html/home.php',
+      async: true,
+      dataType: 'html',
+      success: function(data) {
+        $('#page').html(data).promise().done(function() {
+          dynamic_css();
+          init_home();
+          dynamic_css();
+        });
+      }
+    });
+  }
 };
 
 function updateActiveTab(tabElem){

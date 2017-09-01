@@ -1,5 +1,17 @@
 <?php
   require_once 'api/configuration.php';
+  global $currentUrl;
+  //this global is an array containing
+  // the elements of the url
+  // example:
+  // url: http://site.com/about/page1/page2/
+  // $currenUrl:
+  // array(
+  //   [0] => 'about',
+  //   [1] => 'page1',
+  //   [2] => 'page2'
+  // )
+  $currentUrl = array_filter(explode('/',$_GET['page']));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +24,23 @@
     <meta name="description" content="Native American South Carolina Archive"/>
     <meta name="author" content="Matthew Jendrasiak"/>
     
+    <?php 
+      // the following global js variable contains the same elements as the php $currentUrl
+    ?>
+    <script>
+      var currentUrl = <?php print json_encode($currentUrl);?>;
+      console.log (currentUrl);
+    </script>
+
+
     <!-- minified jquery, jplayer, bootstrap, etcetera -->
-    <script type="text/javascript" src="js/jquery/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery-ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.jplayer.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.fancybox.min.js"></script>
-    <script type="text/javascript" src="js/modernizr-custom.js"></script>
-    <script type="text/javascript" src="js/modal.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/modernizr-custom.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/modal.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/bootstrap.min.js"></script>
 
 
     <!-- timelineJS base code pulls -->
@@ -27,21 +48,21 @@
   <script type="text/javascript" src="//cdn.knightlab.com/libs/timeline3/latest/js/timeline-min.js"></script>
     
     <!-- CSS & BootStrap -->
-    <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/js/jquery/jquery-ui/jquery-ui.min.css"/>
     <!--link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.structure.min.css"/>
     <link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.theme.min.css"/-->
-    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <link rel="stylesheet" type="text/css" href="css/jplayer.blue.monday.css"/>
-    <link rel="stylesheet" type="text/css" href="css/modal.css"/>
-    <link rel="stylesheet" type="text/css" href="css/interviews.css"/>
-    <link rel="stylesheet" type="text/css" href="css/home.css"/>
-    <link rel="stylesheet" type="text/css" href="css/timeline.css"/>
-    <link rel="stylesheet" type="text/css" href="css/images.css"/>
-    <link rel="stylesheet" type="text/css" href="css/tribes.css"/>
-    <link rel="stylesheet" type="text/css" href="css/map.css"/>
-    <link rel="stylesheet" type="text/css" href="css/video.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/jplayer.blue.monday.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/modal.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/interviews.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/home.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/timeline.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/images.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/tribes.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/map.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/video.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/bootstrap.min.css"/>
 
     
     <!-- FONTS -->
@@ -52,21 +73,21 @@
     <link rel="icon" type="image/x-icon" href="<?php print SITE_ROOT?>/img/favicon/favicon.ico"/>
 
     <!-- Local Javascript, Jquery, Ajax -->
-    <script type="text/javascript" src="js/index/dynamic_css.js"></script>
-    <script type="text/javascript" src="api/xmlhttp.js"></script>
-    <script type="text/javascript" src="api/json.js"></script>
-    <script type="text/javascript" src="api/globals.js"></script>
-    <script type="text/javascript" src="js/api/functions.js"></script>
-    <script type="text/javascript" src="js/index/index.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/dynamic_css.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/api/xmlhttp.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/api/json.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/api/globals.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/api/functions.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/index.js"></script>
     
-    <script type="text/javascript" src="js/index/home.js"></script>
-    <script type="text/javascript" src="js/index/interview.js"></script>
-    <script type="text/javascript" src="js/index/letters.js"></script>
-    <script type="text/javascript" src="js/index/images.js"></script>
-    <script type="text/javascript" src="js/index/video.js"></script>
-    <script type="text/javascript" src="js/index/map.js"></script>
-    <script type="text/javascript" src="js/index/timeline.js"></script>
-    <script type="text/javascript" src="js/index/tribes.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/home.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/interview.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/letters.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/images.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/video.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/map.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/timeline.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/tribes.js"></script>
   </head>
   <body>
     <?php
@@ -78,13 +99,13 @@
           <div id="header-left-container">
             <div id="header-left">
               <div id="logo">
-                <a href="index.php">
-                  <img src="img/coloredLogos/logo/NASCA_single_logo_white.svg" />
+                <a href="<?php print SITE_ROOT; ?>/">
+                  <img src="<?php print SITE_ROOT; ?>/img/coloredLogos/logo/NASCA_single_logo_white.svg" />
                 </a>
               </div>
               <div id="logo-verbose-container">
                 <div id="logo-verbose">
-                  <img src="img/coloredLogos/type/NASCA_type_white.svg" />
+                  <img src="<?php print SITE_ROOT; ?>/img/coloredLogos/type/NASCA_type_white.svg" />
                 </div>
               </div>
             </div>
@@ -97,7 +118,7 @@
                   <div id="search-input-container">
                     <input id="search-input" type="text" value="..." />
                   </div>
-                  <img id="search-go" onclick="" src="img/play-go.png" />
+                  <img id="search-go" onclick="" src="<?php print SITE_ROOT; ?>/img/play-go.png" />
                 </div>
               </div>
             </div>
@@ -158,7 +179,7 @@
             <div id="menu-container">
               <div id="menu" class="background-grey">
                 <div id="menu-icon">
-                  <img id="menu-icon-img" src="img/menuBar.svg" />
+                  <img id="menu-icon-img" src="<?php print SITE_ROOT; ?>/img/menuBar.svg" />
                 </div>
                 <div id="menu-text" class="anton text-white">Menu</div>
               </div>
@@ -195,13 +216,13 @@
         <div id="footer-links-container">
           <ul id="footer-links">
             <li id="footer-links-about">
-              <a href="html/about.html">about</a>
+              <a href="<?php print SITE_ROOT; ?>/html/about.html">about</a>
             </li>
             <li id="footer-links-credits">
-              <a href="html/credits.html">credits</a>
+              <a href="<?php print SITE_ROOT; ?>/html/credits.html">credits</a>
             </li>
             <li id="footer-links-dev-resources">
-              <a href="html/dev_resources.html">developer-resources</a>
+              <a href="<?php print SITE_ROOT; ?>/html/dev_resources.html">developer-resources</a>
             </li>
           </ul>
         </div>
@@ -216,5 +237,4 @@
       });
     </script>
   </body>
-  
 </html>
