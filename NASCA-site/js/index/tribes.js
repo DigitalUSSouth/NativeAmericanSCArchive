@@ -7,22 +7,21 @@ function init_tribes() {
   });*/
   $('.card-hover').fancybox({
     loop : true,
-    protect: true,
+    //protect: true,
     //fitToView: false,
     autoSize: false,
     autoScale: false,
     scrolling: false,
     autoDimensions: false,
-    padding: 20,
+    //padding: 20,
     //width: 900,
     //height: 315,
     beforeShow: function (){
       $('.fancybox-inner').addClass('tribes-inner');
       $('.fancybox-slide').addClass('tribes-slide');
-      $('.fancybox-slide.tribes-slide div').addClass('background-off-white');
     },
     afterLoad: function (){
-      var custom_fancybox = $('.fancybox-slide.tribes-slide div');
+      var custom_fancybox = $('.tribes-history-container');
       custom_fancybox.height(custom_fancybox.width()*0.41096);
     }
   });

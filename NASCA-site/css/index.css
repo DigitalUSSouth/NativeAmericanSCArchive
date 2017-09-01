@@ -205,6 +205,10 @@ hr.grey {
   width: 100%;
 }
 
+.custom-column {
+  height: 100%;
+}
+
 .shadow {
     position: absolute;
     top: 0;
@@ -213,6 +217,10 @@ hr.grey {
     height: 4.5%;
     background: linear-gradient(#222222 -280%, transparent 100%);
     z-index: 1;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 /*

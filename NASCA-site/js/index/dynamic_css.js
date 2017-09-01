@@ -167,7 +167,7 @@ function dynamic_css() {
       $('#tribes-list-container').css({'margin-left':newMargin,'margin-right':newMargin});
       $('.tribe-single-container').height($('.tribe-single-container').width()*0.6373);
       responsive_font('.tribe-single-title','parent-div',61.6667);
-      var custom_fancybox = $('.fancybox-slide.tribes-slide div');
+      var custom_fancybox = $('.tribes-history-container');
       custom_fancybox.height(custom_fancybox.width()*0.41096);
       break;
     case 'documentation':

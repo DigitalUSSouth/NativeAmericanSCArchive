@@ -55,9 +55,66 @@
 .fancybox-inner.tribes-inner{
   
 }
-.fancybox-slide.tribes-slide div{
+
+.tribes-history-container{
   width: 85%;
   min-width: 730px;
   border-radius: 8px;
   height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tribes-history-nav-container {
+  width: 6%;
+  position: relative;
+}
+
+.tribes-history-nav {
+  height: 6.948%;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tribes-history-next-container {
+  float: right;
+}
+
+.tribes-history-prev-container {
+  float: left;
+}
+
+.tribes-history-body {
+  width: 88%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+
+.tribes-history-logo-container {
+  height: 26%;
+  position: relative;
+}
+
+.tribes-history-logo-container img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  object-fit: contain;
+}
+
+.tribes-history-text {
+  font-size: 15px;
+  height: auto;
+  -webkit-columns: auto 2;
+  -moz-columns: auto 2;
+  columns: auto 2;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
 }
