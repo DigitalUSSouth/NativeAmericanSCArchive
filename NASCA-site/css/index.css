@@ -477,6 +477,10 @@ colors{
   text-decoration: none;
 }
 
+#tabs li div.tab-active {
+  border-bottom: 4px solid #AB0909;
+}
+
 #menu-container {
   position: absolute;
   right: 0;

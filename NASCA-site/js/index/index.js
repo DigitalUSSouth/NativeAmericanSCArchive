@@ -70,9 +70,15 @@ function init_index() {
   });
 };
 
-function changePage(page) {
+function updateActiveTab(tabElem){
+  $(".tab").removeClass("tab-active");
+  $(tabElem).addClass("tab-active");
+}
+
+function changePage(page,tabElem) {
   //check if page is already up
   if(!(page === currentPage)) {
+    updateActiveTab(tabElem);    
     //fade out content
     $('#page').fadeOut(650,function(){
       //callback when fadeOut complete
