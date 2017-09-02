@@ -13,7 +13,7 @@
 ?>
 <div class="tribes-history-container background-off-white">
   <div class="tribes-history-nav-container tribes-history-prev-container custom-column">
-    <div class="tribes-history-nav clickable custom-row text-center background-red text-white">
+    <div class="tribes-history-nav clickable custom-row text-center background-grey text-white" onclick="tribes_history_page_change('prev',$(this));">
       Previous Page
     </div>
   </div>
@@ -21,17 +21,18 @@
     <div class="tribes-history-logo-container custom-row">
       <img class="custom-column" src="<?php echo SITE_ROOT . $image_dir . '/' . $tribe->logo; ?>" alt="Tribal Logo" onerror="this.onerror=null;this.src=SITE_ROOT+'/img/error/error.png';"/>
     </div>
-    <div class="tribes-history-text custom-row source-serif">
-      <?php
-      for($i = 0; $i<200; $i++){
-        echo 'testing text ';
-      }
-      ?>
+    <div class="tribes-history-text-container custom-row">
+      <div class="additional">
+        <div id="current-tribe"><?php echo $id; ?></div>
+        <div id="current-page">1</div>
+      </div>
+      <div class="tribes-history-text custom-row source-serif">
+        
+      </div>
     </div>
   </div>
-    <!--87.8% wide-->
   <div class="tribes-history-nav-container tribes-history-next-container custom-column">
-    <div class="tribes-history-nav clickable custom-row text-center background-red text-white">
+    <div class="tribes-history-nav clickable custom-row text-center background-grey text-white" onclick="tribes_history_page_change('next',$(this));">
       Next Page
     </div>
   </div>

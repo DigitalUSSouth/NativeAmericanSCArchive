@@ -87,12 +87,13 @@
 }
 
 .tribes-history-body {
-  width: 88%;
+  width: 86%;
   overflow-y: auto;
   overflow-x: hidden;
   display: inline-block;
   position: relative;
-  margin: auto;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .tribes-history-logo-container {
@@ -117,4 +118,17 @@
   -webkit-column-gap: 30px;
   -moz-column-gap: 30px;
   column-gap: 30px;
+}
+
+.tribes-history-block div {
+  padding-bottom: 15px;
+}
+
+.tribes-history-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.tribes-history-author {
+  font-style: italic;
 }
