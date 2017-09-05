@@ -11,7 +11,12 @@
   //   [1] => 'page1',
   //   [2] => 'page2'
   // )
-  $currentUrl = array_filter(explode('/',$_GET['page']));
+  if (isset($_GET['page'])){
+    $currentUrl = array_filter(explode('/',$_GET['page']));
+  }
+  else {
+    $currentUrl = [];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
