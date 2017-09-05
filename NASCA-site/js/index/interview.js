@@ -27,13 +27,26 @@ function init_interview() {
     currentTabInterviews = tab;
   });
 
+  if (currentUrl.length ==3){//we have a modal uri
+    var modalUri = currentUrl[2];
+    $('.btn-interview[data-filename=\"'+modalUri+'-minified.json\"]').click();
+  }
+
   toggleSearch('on');
   $("#interviewsModal").on('shown.bs.modal', function(e){
-    launch_interview_modal(e.relatedTarget.dataset.filename);
+    var filename = e.relatedTarget.dataset.filename
+    launch_interview_modal(filename);
+    // /.+?(?=abc)/
+    var match = filename.match(/.+?(?=-minified\.json)/)
+    //console.log(match)
+    if (match!==null){
+      setNewState("interviews",currentTabInterviews,match[0]);
+    }
   });
   $("#interviewsModal").on('hidden.bs.modal',function(e){
     $('#jquery_jplayer_1').jPlayer("destroy");
     $('#interviewsModal .modal-body').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");
+    setNewState("interviews",currentTabInterviews)
   });
 }
 
