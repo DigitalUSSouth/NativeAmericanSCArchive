@@ -14,7 +14,7 @@ function init_interview() {
       return;
     }
   }
-  
+  $('.nav-tabs a[href="#'+currentTabInterviews+'"]').tab('show')
   toggleSearch('on');
   $("#interviewsModal").on('shown.bs.modal', function(e){
     launch_interview_modal(e.relatedTarget.dataset.filename);
