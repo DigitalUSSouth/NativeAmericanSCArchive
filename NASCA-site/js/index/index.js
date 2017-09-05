@@ -4,6 +4,8 @@
 
 var currentPage = 'home';
 
+var isFirstLoad = true;
+
 //init stuff for index.html
 function init_index() {
   //populate global variables with info from configuration file
@@ -60,7 +62,7 @@ function init_index() {
     var tabElem = document.getElementById("tabs-"+currentUrl[0]);
     //console.log(tabElem);
     var page;
-    if (!$.inArray(currentUrl[0],["home","interviews","letters", "images","video","map","timeline","tribes"])){
+    if ($.inArray(currentUrl[0],["interviews","letters", "images","video","map","timeline","tribes"]) == -1){
       page = "404";
       currentUrl = ["404"];
     }
@@ -68,6 +70,7 @@ function init_index() {
       page = currentUrl[0];
     }
     changePage(page,tabElem);
+    isFirstLoad = false;
   }
   else {//home page
     //get home page content
@@ -84,6 +87,7 @@ function init_index() {
         });
       }
     });
+    isFirstLoad = false;
   }
 };
 
@@ -144,18 +148,22 @@ function changePage(page,tabElem) {
       });
     });
     currentPage = page;
-    setNewState(currentPage);
+    if (!isFirstLoad){
+      currentUrl = [page];
+      setNewState(currentPage);      
+    }
   }
 }
 
 //the following code sets a new state for browser history
 //this allows users to bookmark individual pages in the site
-function setNewState(page,subPage=null){
+function setNewState(page,subPage=null,subPage2=null){
   var stateObject = {
     page: page,
     subPage: subPage
   }
   var sPage = (subPage===null)?"":subPage;
+  var sPage = (subPage2===null)?"":sPage+"/"+subPage2;
   var newUrl
   if (page!="home"){
     newUrl = SITE_ROOT+'/'+page+'/'+ sPage;

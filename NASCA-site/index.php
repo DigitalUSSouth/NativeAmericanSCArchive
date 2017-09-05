@@ -14,7 +14,7 @@
   if (isset($_GET['page'])){
     $currentUrl = array_filter(explode('/',$_GET['page']));
     $authorizedPages  = array(
-      "home","interviews","letters", "images","video","map","timeline","tribes"
+      "interviews","letters", "images","video","map","timeline","tribes"
     );
     if (!in_array($currentUrl[0],$authorizedPages)){
       $currentUrl = ["404"];
@@ -52,6 +52,7 @@
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/modernizr-custom.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/modal.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <!-- timelineJS base code pulls -->
@@ -215,7 +216,7 @@
       <div id="header-positioner-height-offset"></div>
       <div id="page-container">
         <div id="page">
-          Loading . . .
+          <div class="text-center"><h1>Loading...</h1><i class="fa fa-spinner fa-spin" style="font-size:76px"></i></h1></div>
         </div>
       </div>
     </div>
