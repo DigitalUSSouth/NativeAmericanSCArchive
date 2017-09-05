@@ -13,6 +13,12 @@
   // )
   if (isset($_GET['page'])){
     $currentUrl = array_filter(explode('/',$_GET['page']));
+    $authorizedPages  = array(
+      "home","interviews","letters", "images","video","map","timeline","tribes"
+    );
+    if (!in_array($currentUrl[0],$authorizedPages)){
+      $currentUrl = ["404"];
+    }
   }
   else {
     $currentUrl = [];

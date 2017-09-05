@@ -59,7 +59,15 @@ function init_index() {
     //we have a page other than home
     var tabElem = document.getElementById("tabs-"+currentUrl[0]);
     //console.log(tabElem);
-    changePage(currentUrl[0],tabElem);
+    var page;
+    if (!$.inArray(currentUrl[0],["home","interviews","letters", "images","video","map","timeline","tribes"])){
+      page = "404";
+      currentUrl = ["404"];
+    }
+    else {
+      page = currentUrl[0];
+    }
+    changePage(page,tabElem);
   }
   else {//home page
     //get home page content
