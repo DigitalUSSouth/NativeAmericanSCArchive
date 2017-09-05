@@ -2,13 +2,26 @@
 
 //<!-- //for old browsers
 
+var currentTabInterviews = "catawba";
+
 function init_interview() {
+  if (currentUrl.length >= 2){//we might have a sub uri
+    if ($.inArray(currentUrl[1],["catawba","beaver-creek","pee-dee","sumter-cheraw","varnertown"]) !== -1){
+      currentTabInterviews = currentUrl[1];      
+    }
+    else {
+      changePage("404","tabs-home");
+      return;
+    }
+  }
+  
   toggleSearch('on');
   $("#interviewsModal").on('shown.bs.modal', function(e){
     launch_interview_modal(e.relatedTarget.dataset.filename);
   });
   $("#interviewsModal").on('hidden.bs.modal',function(e){
     $('#jquery_jplayer_1').jPlayer("destroy");
+    $('#interviewsModal .modal-body').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");
   });
 }
 
