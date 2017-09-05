@@ -63,7 +63,7 @@ function init_timeline() {
           hash_bookmark: false
         }
 
-        var dataPath = "html/ht/data/data"+indexNum+".json"
+        var dataPath = SITE_ROOT+"/html/ht/data/data"+indexNum+".json"
         window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
         window.addEventListener('resize', function() {
           var embed = document.getElementById(wrapperElement);
