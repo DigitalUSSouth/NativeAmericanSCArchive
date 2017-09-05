@@ -9,7 +9,7 @@
       <h4 class="modal-title" id="interview-modal-title">Modal Header</h4>
     </div>
     <div class="modal-body">
-      <p>Some text in the modal.</p>
+      <div class="text-center"><h1>Loading...</h1><i class="fa fa-spinner fa-spin" style="font-size:76px"></i></h1></div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
