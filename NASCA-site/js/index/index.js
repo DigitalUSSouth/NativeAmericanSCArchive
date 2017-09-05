@@ -160,10 +160,11 @@ function changePage(page,tabElem) {
 function setNewState(page,subPage=null,subPage2=null){
   var stateObject = {
     page: page,
-    subPage: subPage
+    subPage: subPage,
+    subPage2 : subPage2
   }
   var sPage = (subPage===null)?"":subPage;
-  var sPage = (subPage2===null)?"":sPage+"/"+subPage2;
+  var sPage = (subPage2===null)? sPage : sPage+"/"+subPage2;
   var newUrl
   if (page!="home"){
     newUrl = SITE_ROOT+'/'+page+'/'+ sPage;

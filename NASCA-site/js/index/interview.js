@@ -13,8 +13,20 @@ function init_interview() {
       changePage("404","tabs-home");
       return;
     }
+    $('.nav-tabs a[href="#'+currentTabInterviews+'"]').tab('show')
   }
-  $('.nav-tabs a[href="#'+currentTabInterviews+'"]').tab('show')
+  else {//no sub uri, but we set the history to point to catawba
+    setNewState("interviews","catawba");
+  }
+
+  //register for tab changes, so we can update uri
+  $('.nav-tabs a').on('shown.bs.tab', function(event){
+    var hash = event.target.hash; // active tab
+    var tab = hash.substring(1); //remove leading '#'
+    setNewState("interviews",tab);
+    currentTabInterviews = tab;
+  });
+
   toggleSearch('on');
   $("#interviewsModal").on('shown.bs.modal', function(e){
     launch_interview_modal(e.relatedTarget.dataset.filename);
