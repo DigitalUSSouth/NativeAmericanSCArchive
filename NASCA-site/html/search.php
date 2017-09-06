@@ -1,11 +1,16 @@
 <h1 class="text-red">Search results</h1>
 
 <?php
+var_dump($_GET);
 
-$_GET = array(
+$queryString = isset($_GET['1']) ? $_GET['1']:"";
+$start = isset($_GET['2']) ? $_GET['2']: 0;
+/*$_GET = array(
   "start"=> 0,
-  "s"=>"charleston"
-);
+  "s"=>""
+);*/
+
+
 
 
 
@@ -55,8 +60,8 @@ function getExcerpt($text){
 		<div id="content" role="main">
 		<?php
 		    //var_dump($_GET); 
-		    $start = (isset($_GET['start']))? $_GET['start'] : 0;
-		    $query = 'http://www.digitalussouth.org/api?q='.urlencode($_GET['s']).'&start='.urlencode($start).'&fq[]="South+Carolina+Encyclopedia"&fq_field[]=archive_facet';
+		    //$start = (isset($_GET['start']))? $_GET['start'] : 0;
+		    $query = 'http://www.digitalussouth.org/api?q='.urlencode($queryString).'&start='.urlencode($start).'&fq[]="South+Carolina+Encyclopedia"&fq_field[]=archive_facet';
 		    $searchResultsJson = file_get_contents($query);
 		    //print $query;
 		    $searchResults = json_decode($searchResultsJson,true);
@@ -111,4 +116,4 @@ function getExcerpt($text){
 		<?php endif; ?>
 
 		</div><!-- #content -->
-	</section><!-
+	</section>

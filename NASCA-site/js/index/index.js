@@ -137,9 +137,17 @@ function changePage(page,tabElem) {
     $('#page').fadeOut(650,function(){
       //callback when fadeOut complete
       //set html content
+      var requestUrl = SITE_ROOT + '/html/' + page + '.php'
+      if (page=="search"){//pass appropriate params to search script
+        var params = [];
+        for(var i=0; i<currentUrl.length; i++){
+          params.push({ name: i, value: currentUrl[i] });
+        }
+        requestUrl = requestUrl+'?'+$.param(params);
+      }
       $.ajax({
         type:'POST',
-        url: SITE_ROOT + '/html/' + page + '.php',
+        url: requestUrl,
         async: true,
         dataType: 'html',
         success: function(data) {
