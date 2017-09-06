@@ -1,0 +1,1 @@
+<h1 class="text-red">Search results</h1>

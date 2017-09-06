@@ -14,7 +14,7 @@
   if (isset($_GET['page'])){
     $currentUrl = array_filter(explode('/',$_GET['page']));
     $authorizedPages  = array(
-      "interviews","letters", "images","video","map","timeline","tribes"
+      "interviews","letters", "images","video","map","timeline","tribes","search"
     );
     if (!in_array($currentUrl[0],$authorizedPages)){
       $currentUrl = ["404"];

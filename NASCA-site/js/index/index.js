@@ -96,7 +96,7 @@ function init_index() {
     var tabElem = document.getElementById("tabs-"+currentUrl[0]);
     //console.log(tabElem);
     var page;
-    if ($.inArray(currentUrl[0],["interviews","letters", "images","video","map","timeline","tribes"]) == -1){
+    if ($.inArray(currentUrl[0],["interviews","letters", "images","video","map","timeline","tribes","search"]) == -1){
       page = "404";
       currentUrl = ["404"];
     }
