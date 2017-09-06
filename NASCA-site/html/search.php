@@ -91,7 +91,7 @@ function getExcerpt($text){
 			foreach ($docs as $doc) :?>
           <div class="col-xs-11 col-xs-offset-1">
             <a class="text-red" href="<?php print $doc['url'];?>"><h1><?php print $doc['title']?></h1></a>
-            <p><big><?php print getExcerpt($doc['full_text']);?></big></p>
+            <p><big><?php print getExcerpt($doc['full_text']);?>... <a class="text-red" href="<?php print $doc['url'];?>">Read more</a></big></p>
           </div>
 
     <?php endforeach;
