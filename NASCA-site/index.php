@@ -202,14 +202,14 @@
       <div id="pullout-positioner">
         <div id="pullout-container" class="background-white">
           <ul id="pullout-list" class="source-serif">
-            <li id="pullout-list-home" class="pullout-list-el" onclick="changePage('home')">Home</li>
-            <li id="pullout-list-interviews" class="pullout-list-el" onclick="changePage('interviews')">Interviews</li>
-            <li id="pullout-list-letters" class="pullout-list-el" onclick="changePage('letters')">Letters</li>
-            <li id="pullout-list-images" class="pullout-list-el" onclick="changePage('images')">Images</li>
-            <li id="pullout-list-video" class="pullout-list-el" onclick="changePage('video')">Video</li>
-            <li id="pullout-list-map" class="pullout-list-el" onclick="changePage('map')">Map</li>
-            <li id="pullout-list-timeline" class="pullout-list-el" onclick="changePage('timeline')">Timeline</li>
-            <li id="pullout-list-tribes" class="pullout-list-el" onclick="changePage('tribes')">Tribes</li>
+            <li id="pullout-list-home" class="pullout-list-el">Home</li>
+            <li id="pullout-list-interviews" class="pullout-list-el">Interviews</li>
+            <li id="pullout-list-letters" class="pullout-list-el">Letters</li>
+            <li id="pullout-list-images" class="pullout-list-el">Images</li>
+            <li id="pullout-list-video" class="pullout-list-el">Video</li>
+            <li id="pullout-list-map" class="pullout-list-el">Map</li>
+            <li id="pullout-list-timeline" class="pullout-list-el">Timeline</li>
+            <li id="pullout-list-tribes" class="pullout-list-el">Tribes</li>
           </ul>
         </div>
       </div>
