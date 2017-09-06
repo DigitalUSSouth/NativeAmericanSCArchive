@@ -14,7 +14,7 @@
 <div class="tribes-history-container background-off-white">
   <div class="tribes-history-nav-container tribes-history-prev-container custom-column">
     <div class="tribes-history-nav clickable custom-row text-center background-grey text-white" onclick="tribes_history_page_change('prev',$(this));">
-      Previous Page
+      <div>Previous Page</div>
     </div>
   </div>
   <div class="tribes-history-body custom-column">
@@ -33,7 +33,7 @@
   </div>
   <div class="tribes-history-nav-container tribes-history-next-container custom-column">
     <div class="tribes-history-nav clickable custom-row text-center background-grey text-white" onclick="tribes_history_page_change('next',$(this));">
-      Next Page
+      <div>Next Page</div>
     </div>
   </div>
 </div>
