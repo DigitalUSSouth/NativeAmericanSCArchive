@@ -138,49 +138,49 @@
               <div id="nav-bar">
                 <ul id="tabs" class="source-serif text-white">
                   <li>
-                    <div id="tabs-home" class="tab tab-active" onclick="changePage('home',this)">
+                    <div id="tabs-home" class="tab tab-active">
                       Home
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-interviews" class="tab" onclick="changePage('interviews',this)">
+                    <div id="tabs-interviews" class="tab">
                       Interviews
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-letters" class="tab" onclick="changePage('letters',this)">
+                    <div id="tabs-letters" class="tab">
                       Letters
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-images" class="tab" onclick="changePage('images',this)">
+                    <div id="tabs-images" class="tab">
                       Images
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-video" class="tab" onclick="changePage('video',this)">
+                    <div id="tabs-video" class="tab">
                       Video
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-map" class="tab" onclick="changePage('map',this)">
+                    <div id="tabs-map" class="tab">
                       Map
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-timeline" class="tab" onclick="changePage('timeline',this)">
+                    <div id="tabs-timeline" class="tab">
                       Timeline
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-tribes" class="tab" onclick="changePage('tribes',this)">
+                    <div id="tabs-tribes" class="tab">
                       Tribes
                       <div class="tab-underline half-underline-white"></div>
                     </div>

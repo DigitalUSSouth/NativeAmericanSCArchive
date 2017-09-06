@@ -6,6 +6,21 @@ var currentPage = 'home';
 
 var isFirstLoad = true;
 
+
+
+window.onpopstate = function(event) {
+  var popstate = event.state;
+  currentUrl = [];
+  currentUrl.push(popstate.page);
+  if (popstate.subPage !== null){
+    currentUrl.push(popstate.subPage);
+    if (popstate.subPage2 !== null){
+      currentUrl.push(popstate.subPage2);
+    }
+  }
+  init_index();
+};
+
 //init stuff for index.html
 function init_index() {
   //populate global variables with info from configuration file
@@ -56,6 +71,25 @@ function init_index() {
   //fade in
   //intervalFade(fadeIns,500);
 
+  //refactor tab changes so we can set the correct history state
+  $('.tab').click(function(e){
+    var tab = $(e.currentTarget);
+    var tabId = tab.attr('id');
+    var target = tabId.substring(5);
+    currentUrl = [target];
+    changePage(target,tab);
+    setNewState(target);
+  });
+  $('.pullout-list-el').click(function(e){
+    var tab = $(e.currentTarget);
+    var tabId = tab.attr('id');
+    var target = tabId.substring(13);
+    currentUrl = [target];
+    changePage(target,tab);
+    setNewState(target);
+  });
+
+
   //check which main page is being requested and set page content automatically
   if(typeof currentUrl != "undefined" && currentUrl != null && currentUrl.length > 0){
     //we have a page other than home
@@ -70,7 +104,7 @@ function init_index() {
       page = currentUrl[0];
     }
     changePage(page,tabElem);
-    isFirstLoad = false;
+    //setNewState(page);
   }
   else {//home page
     //get home page content
@@ -87,7 +121,6 @@ function init_index() {
         });
       }
     });
-    isFirstLoad = false;
   }
 };
 
@@ -98,7 +131,7 @@ function updateActiveTab(tabElem){
 
 function changePage(page,tabElem) {
   //check if page is already up
-  if(!(page === currentPage)) {
+  if(true) {//disabling check to make sure page gets reloaded everytime
     updateActiveTab(tabElem);    
     //fade out content
     $('#page').fadeOut(650,function(){
@@ -119,7 +152,7 @@ function changePage(page,tabElem) {
                 init_home();
                 break;
               case 'interviews':
-                init_interview();
+                init_interviews();
                 break;
               case 'images':
                 init_images();
@@ -148,16 +181,19 @@ function changePage(page,tabElem) {
       });
     });
     currentPage = page;
-    if (!isFirstLoad){
-      currentUrl = [page];
-      setNewState(currentPage);      
-    }
   }
 }
 
 //the following code sets a new state for browser history
 //this allows users to bookmark individual pages in the site
 function setNewState(page,subPage=null,subPage2=null){
+  currentUrl = [page];
+  if (subPage!==null){
+    currentUrl.push(subPage);
+    if (subPage2!==null){
+      currentUrl.push(subPage2);
+    }
+  }
   var stateObject = {
     page: page,
     subPage: subPage,
@@ -173,7 +209,8 @@ function setNewState(page,subPage=null,subPage2=null){
     newUrl = SITE_ROOT+'/';
   }
   history.pushState(stateObject,page,newUrl);
-  //console.log(newUrl);
+  //console.log(currentUrl);
+  //console.trace();
 }
 
 function toggleSearch(val) {

@@ -4,7 +4,9 @@
 
 var currentTabInterviews = "catawba";
 
-function init_interview() {
+function init_interviews() {
+  //console.log("init interviews")
+  //console.log(currentUrl);
   if (currentUrl.length >= 2){//we might have a sub uri
     if ($.inArray(currentUrl[1],["catawba","beaver-creek","pee-dee","sumter-cheraw","varnertown"]) !== -1){
       currentTabInterviews = currentUrl[1];      
@@ -21,9 +23,11 @@ function init_interview() {
 
   //register for tab changes, so we can update uri
   $('.nav-tabs a').on('shown.bs.tab', function(event){
+    //console.log(event)
     var hash = event.target.hash; // active tab
     var tab = hash.substring(1); //remove leading '#'
     setNewState("interviews",tab);
+    //console.trace();
     currentTabInterviews = tab;
   });
 
