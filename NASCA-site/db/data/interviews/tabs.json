@@ -1,0 +1,63 @@
+[
+  {
+    "tribe": "Catawba Indian Nation",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "interviews": {
+      "Catawba_Earl-Robbins-May-1987-minified.json":"Earl Robbins",
+      "Catawba_Landrum-George-Mar-22-1983_Tape1-minified.json":"Landrum George Tape 1",
+      "Catawba_Landrum-George-Mar-22-1983_Tape2-minified.json":"Landrum George Tape 2",
+      "Catawba_Landrum-George-Mar-22-1983_Tape3-minified.json":"Landrum George Tape 3",
+      "Catawba_Landrum-George-Mar-22-1983_Tape4-minified.json":"Landrum George Tape 4",
+      "Catawba_Georgia-Harris-Mar-19-1980_Tape2-minified.json":"Georgia Harris Mar 19",
+      "Catawba_Georgia-Harris-Mar-20-1980-minified.json":"Georgia Harris Mar 20",
+      "Catawba_Lula-Samuel-Henrietta-Beck-Aug-11-1982-minified.json":"Lula Samuel Henrietta Beck",
+      "Catawba_Isabelle-George-Mar-22-1983-minified.json":"Isabelle George",
+      "Catawba_Sallie-Wade-1986-minified.json":"Sallie Wade"
+    },
+    "logo":"/img/tribesLogos/catawba.png",
+    "href":"catawba"
+  },
+  {
+    "tribe": "Beaver Creek Indians",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "interviews": {
+      "Beaver-Creek_Hazel-Thornton-minified.json":"Hazel Thornton",
+      "Beaver-Creek_Helen-Jeffcoat-minified.json":"Helen Jeffcoat",
+      "Beaver-Creek_John-Barry-Chavis-minified.json":"John Barry Chavis",
+      "Beaver-Creek_Ms-Williams-minified.json":"Ms Williams",
+      "Beaver-Creek_Louie-Chavis-minified.json":"Louie Chavis"
+    },
+    "logo": "/img/tribesLogos/beaver.png",
+    "href": "beaver-creek"
+  },
+  {
+    "tribe": "Pee Dee",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "interviews": {
+      "Pee-Dee_Chief-James-Caulder-minified.json":"Chief James Caulder",
+      "Pee-Dee_Clayton-RC-Cummings-minified.json":"Clayton RC Cummings"
+    },
+    "logo":"/img/tribesLogos/pee_dee_nation.png",
+    "href":"pee-dee"
+  },
+  {
+    "tribe": "Sumter Tribe of Cheraw",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "interviews": {
+      "Sumter-Cheraw_Ralph-Justice-Oxendine-minified.json":"Ralph Justice Oxendine"
+    },
+    "logo": "/img/tribesLogos/sumter.png",
+    "href": "sumter-cheraw"
+  },
+  {
+    "tribe": "Wassamassaw Tribe",
+    "description": "",
+    "interviews": {
+      "Varnertown_Chuck-Rodgers-minified.json":"Chuck Rodgers",
+      "Varnertown_Gloria-Varner_Ruby-Oliver-minified.json":"Gloaria Varner and Ruby Oliver",
+      "Varnertown_Horace-Winkle_Katherine-Clark-Varner-minified.json":"Horace Winkle and Katherine Clark Varner"
+    },
+    "logo":"/img/tribesLogos/wassamassa.png",
+    "href": "wassamassaw"
+  }
+]
