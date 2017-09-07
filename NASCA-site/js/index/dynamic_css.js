@@ -176,6 +176,8 @@ function dynamic_css() {
       responsive_font('.tribe-single-title','parent-div',61.6667);
       var custom_fancybox = $('.tribes-history-container');
       custom_fancybox.height(custom_fancybox.width()*0.41096);
+      var newsize = responsive_font('.tribes-history-nav div','parent-div',45.74);
+      $('.tribes-history-nav div').css('line-height',newsize.toString()+'px');
       break;
     case 'documentation':
       $('#page').css('height','auto');

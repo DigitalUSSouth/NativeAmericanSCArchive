@@ -32,6 +32,7 @@ function init_tribes() {
         $(this).switchClass('background-red','background-grey',0);
       });
       $('.tribes-history-prev-container .tribes-history-nav').css('display','none');
+      dynamic_css();
     },
     afterShow: function(){
       //load text for page 1

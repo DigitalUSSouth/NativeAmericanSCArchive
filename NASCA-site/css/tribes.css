@@ -78,6 +78,14 @@
   transform: translateY(-50%);
 }
 
+.tribes-history-nav div {
+  font-size: 13px;
+  line-height: 13px;
+  height: 100%;
+  width: 90%;
+  margin-top: 2%;
+}
+
 .tribes-history-next-container {
   float: right;
 }
@@ -131,4 +139,13 @@
 
 .tribes-history-author {
   font-style: italic;
+}
+
+.tribes-history-caption {
+  font-style: italic;
+}
+
+.tribes-history-img {
+  width: 85%;
+  height: auto;
 }
