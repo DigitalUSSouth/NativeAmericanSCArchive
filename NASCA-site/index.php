@@ -128,13 +128,13 @@
             <div id="search-container">
               <div id="search">
                 <div id="search-contents">
-                  <form class="form-horizontal" action="<?php print SITE_ROOT.'/';?>" method="POST">
+                  <div id="search-form" data-target="">
                     <div id="search-text" for="search-inputn" class="anton text-white">Search</div>
                     <input id="search-input" type="text" value="" name="query" style="display:inline">
-                    <button id="" type="submit"  style="display:inline">
+                    <button id="search-submit" type="submit"  style="display:inline">
                       <img src="<?php print SITE_ROOT;?>/img/play-go.png" style="width:22px; margin:-1px;">
                     </button>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>

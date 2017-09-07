@@ -18,7 +18,7 @@ function init_interviews() {
     $('.nav-tabs a[href="#'+currentTabInterviews+'"]').tab('show')
   }
   else {//no sub uri, but we set the history to point to catawba
-    setNewState("interviews","catawba");
+    replaceCurrentState("interviews","catawba");
   }
 
   //register for tab changes, so we can update uri

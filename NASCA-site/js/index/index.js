@@ -11,6 +11,7 @@ var isFirstLoad = true;
 window.onpopstate = function(event) {
   var popstate = event.state;
   if ($.isEmptyObject(popstate)) return;
+  console.log(popstate);
   currentUrl = [];
   currentUrl.push(popstate.page);
   if (popstate.subPage !== null){
@@ -96,7 +97,18 @@ function init_index() {
     value = encodeURIComponent(value);
     var uri = SITE_ROOT+'/search/'+value;
     //console.log(uri);
-    $(this).parent().attr('action',uri);
+    $(this).parent().attr('data-target',uri);
+  });
+  $('#search-input').keypress(function (e) {
+    var value = $(this).val();
+    value = encodeURIComponent(value);
+    var uri = SITE_ROOT+'/search/'+value;
+    if (e.which == 13) {
+      window.location = uri;
+    }
+  });
+  $("#search-submit").click(function(){
+    window.location = $("#search-form").attr('data-target');    
   });
 
 
@@ -114,7 +126,7 @@ function init_index() {
       page = currentUrl[0];
     }
     changePage(page,tabElem);
-    //setNewState(page);
+    //replaceCurrentState(page);
   }
   else {//home page
     //get home page content
@@ -232,6 +244,31 @@ function setNewState(page,subPage=null,subPage2=null){
   history.pushState(stateObject,page,newUrl);
   //console.log(currentUrl);
   //console.trace();
+}
+
+function replaceCurrentState(page,subPage=null,subPage2=null){
+  currentUrl = [page];
+  if (subPage!==null){
+    currentUrl.push(subPage);
+    if (subPage2!==null){
+      currentUrl.push(subPage2);
+    }
+  }
+  var stateObject = {
+    page: page,
+    subPage: subPage,
+    subPage2 : subPage2
+  }
+  var sPage = (subPage===null)?"":subPage;
+  var sPage = (subPage2===null)? sPage : sPage+"/"+subPage2;
+  var newUrl
+  if (page!="home"){
+    newUrl = SITE_ROOT+'/'+page+'/'+ sPage;
+  }
+  else {
+    newUrl = SITE_ROOT+'/';
+  }
+  history.replaceState(stateObject,page,newUrl);
 }
 
 function toggleSearch(val) {
