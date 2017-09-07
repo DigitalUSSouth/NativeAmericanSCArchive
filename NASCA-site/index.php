@@ -127,15 +127,11 @@
               <div id="search">
                 <div id="search-contents">
                   <form class="form-horizontal" action="<?php print SITE_ROOT.'/';?>" method="POST">
-                  <label id="search-text" for="search-input" class="anton text-white">Search</label>
-                  <div id="search-input-container">
-                    <input id="search-input" type="text" value="..." name="query"><br>
-                  </div>
-                    <button id="" type="submit" onsubmit>
-                      <!--<i class="icon-circle-arrow-right icon-large" style="color: red"></i>-->
+                    <div id="search-text" for="search-inputn" class="anton text-white">Search</div>
+                    <input id="search-input" type="text" value="" name="query" style="display:inline">
+                    <button id="" type="submit"  style="display:inline">
                       <img src="<?php print SITE_ROOT;?>/img/play-go.png" style="width:22px; margin:-1px;">
                     </button>
-                  <!--<button id="search-go" onclick="" src="/img/play-go.png" >d</b-->
                   </form>
                 </div>
               </div>

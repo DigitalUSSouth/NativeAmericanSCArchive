@@ -24,9 +24,9 @@ else {
 function dynamic_css() {
   //set anything in index
   responsive_font('#search-text','parent-div',78.9473,15);//22);
-  newWid = $('#search-container').height()*6.0256;
-  $('#search-container').width(newWid);
-  $('#search-text').css({'line-height':$('#search-text').height()+'px'});
+  //newWid = $('#search-container').height()*4.5;
+  $('#search-container').width(350);
+  //$('#search-text').css({'line-height':$('#search-text').height()+'px'});
   //correct width for header-left-container, based on height
   newWid = $('#header-left-container').height()*4.4298;
   $('#header-left-container').width(newWid+1);
