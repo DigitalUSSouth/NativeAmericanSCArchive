@@ -126,11 +126,12 @@
             <div id="search-container">
               <div id="search">
                 <div id="search-contents">
-                  <div id="search-text" class="anton text-white">Search</div>
+                  <form class="form-horizontal" action="<?php print SITE_ROOT.'/';?>" method="POST">
+                  <label id="search-text" for="search-input" class="anton text-white">Search</label>
                   <div id="search-input-container">
-                    <input id="search-input" type="text" value="..." />
+                    <input id="search-input" type="text" value="" name="query"/>
                   </div>
-                  <img id="search-go" onclick="" src="<?php print SITE_ROOT; ?>/img/play-go.png" />
+                  <btn id="search-go" onclick="" src="<?php print SITE_ROOT; ?>/img/play-go.png" >
                 </div>
               </div>
             </div>
