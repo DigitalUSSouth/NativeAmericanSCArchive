@@ -90,6 +90,15 @@ function init_index() {
     setNewState(target);
   });
 
+  //register for search input
+  $("#search-input").change(function(){
+    var value = $(this).val();
+    value = encodeURIComponent(value);
+    var uri = SITE_ROOT+'/search/'+value;
+    //console.log(uri);
+    $(this).parent().attr('action',uri);
+  });
+
 
   //check which main page is being requested and set page content automatically
   if(typeof currentUrl != "undefined" && currentUrl != null && currentUrl.length > 0){
@@ -180,6 +189,9 @@ function changePage(page,tabElem) {
                 break;
               case 'tribes':
                 init_tribes();
+                break;
+              case 'search':
+                init_search();
                 break;
               default:
                 //code

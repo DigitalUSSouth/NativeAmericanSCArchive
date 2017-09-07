@@ -100,6 +100,8 @@
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/map.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/timeline.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/tribes.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/search.js"></script>
+
   </head>
   <body>
     <?php

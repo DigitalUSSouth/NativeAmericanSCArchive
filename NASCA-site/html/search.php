@@ -1,6 +1,4 @@
 <?php require_once "../api/configuration.php";?>
-<h1 class="text-red">Search results</h1>
-
 <?php
 //var_dump($_GET);
 global $queryString;
@@ -72,7 +70,7 @@ function buildNavQuery($nextPrev){
 
 
   if ( $haveResults ): ?>
-    <h2>Showing results <?php print ($start+1)?> to <?php print ($numFound<=$start+$rows ) ?($numFound):($start+$rows );?> of <?php print ($numFound)?>
+    <h2>Showing results for "<?php print $queryString; ?>" <br><?php print ($start+1)?> to <?php print ($numFound<=$start+$rows ) ?($numFound):($start+$rows );?> of <?php print ($numFound)?>
 	<?php
 	if ($start>0):?>
     <span> <a class="text-red" href="<?php print SITE_ROOT.buildNavQuery('prev');?>"> Previous </a> </span>
