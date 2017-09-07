@@ -10,6 +10,8 @@ var isFirstLoad = true;
 
 window.onpopstate = function(event) {
   var popstate = event.state;
+  console.log(popstate)
+  if ($.isEmptyObject(popstate)) return;
   currentUrl = [];
   currentUrl.push(popstate.page);
   if (popstate.subPage !== null){
