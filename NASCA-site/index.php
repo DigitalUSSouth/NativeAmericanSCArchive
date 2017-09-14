@@ -49,7 +49,7 @@
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/jquery.fancybox.min.js"></script>
-    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/modernizr-custom.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/jquery/important.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/modal.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
