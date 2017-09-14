@@ -10,6 +10,7 @@ var CDM_API_UTILS = '';
   
 var REL_HOME = '';
 var SITE_ROOT = '';
+var PROTOCOL = '';
 
 function setGlobals() {
   var fileLocation = $('script[src*=globals]').attr('src');
@@ -30,6 +31,7 @@ function setGlobals() {
 
       REL_HOME = json.REL_HOME;
       SITE_ROOT = json.SITE_ROOT;
+      PROTOCOL = json.PROTOCOL;
   	}
   });
 }

@@ -12,8 +12,16 @@
     exit($str);
   }
 
+  $protocol = 'http://';
+  // checking $protocol in HTTP or HTTPS
+  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+      // this is HTTPS
+      $protocol  = "https://";
+  }
+  
   define('REL_HOME', $config->rel_home);
-  define('SITE_ROOT', 'http://' . $_SERVER['SERVER_NAME'] . REL_HOME);
+  define('SITE_ROOT', $protocol . $_SERVER['SERVER_NAME'] . REL_HOME);
+  define('PROTOCOL', $protocol);
 
   define('CDM_SERVER', $config->databases->cdm->server);
   define('CDM_PORT', $config->databases->cdm->port);
@@ -21,6 +29,6 @@
   define('CDM_UTILS', $config->databases->cdm->api_utils);
   define('CDM_COLLECTION', $config->databases->cdm->collection);
 
-  define('CDM_API_WEBSERVICE', 'http://' . CDM_SERVER . ':' . CDM_PORT . CDM_QUERY_BASE);
-  define('CDM_API_UTILS', 'http://' . CDM_SERVER . CDM_UTILS);
+  define('CDM_API_WEBSERVICE', $protocol . CDM_SERVER . ':' . CDM_PORT . CDM_QUERY_BASE);
+  define('CDM_API_UTILS', $protocol . CDM_SERVER . CDM_UTILS);
 ?>

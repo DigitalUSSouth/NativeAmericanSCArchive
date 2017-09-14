@@ -12,5 +12,6 @@
   $arr['CDM_API_UTILS'] = CDM_API_UTILS;
   $arr['REL_HOME'] = REL_HOME;
   $arr['SITE_ROOT'] = SITE_ROOT;
+  $arr['PROTOCOL'] = PROTOCOL;
   echo json_encode($arr);
 ?>
