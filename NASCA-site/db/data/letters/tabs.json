@@ -1,113 +1,120 @@
-[
-  {
+{
+  "tribe1":{
     "tribe": "tribe 1",
     "description": "",
-    "letters": [
-      {
+    "letters": {
+      "1": {
+        "id": "1",
         "thumb": "https://placeholdit.co//i/200x200",
         "pages" : [
           {
             "title": "page1",
             "transcript": "text1",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
+            
           },
           {
             "title": "page2",
             "transcript": "text2",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           }
         ],
         "description": "desc1"
       },
-      {
+      "2": {
+        "id": "2",
         "thumb": "https://placeholdit.co//i/200x200",
         "pages" : [
           {
             "title": "2page1",
             "transcript": "2text1",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           },
           {
             "title": "2page2",
             "transcript": "2text2",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           }
         ],
         "description": "desc2"
       },
-      {
+      "3": {
+        "id": "3",
         "thumb": "https://placeholdit.co//i/200x200",
         "pages" : [
           {
-            "title": "page1",
+            "title": "3page1",
             "transcript": "text1",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           },
           {
-            "title": "page2",
+            "title": "3page2",
             "transcript": "text2",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           }
         ],
-        "description": "desc1"
+        "description": "desc3"
       },
-      {
+      "4": {
+        "id": "4",
         "thumb": "https://placeholdit.co//i/200x200",
         "pages" : [
           {
-            "title": "2page1",
+            "title": "4page1",
             "transcript": "2text1",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           },
           {
-            "title": "2page2",
+            "title": "4page2",
             "transcript": "2text2",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           }
         ],
-        "description": "desc2"
+        "description": "desc4"
       },
-      {
+      "5": {
+        "id": "5",
         "thumb": "https://placeholdit.co//i/200x200",
         "pages" : [
           {
-            "title": "page1",
+            "title": "5page1",
             "transcript": "text1",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           },
           {
-            "title": "page2",
+            "title": "5page2",
             "transcript": "text2",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           }
         ],
-        "description": "desc1"
+        "description": "desc5"
       },
-      {
+      "6": {
+        "id": "6",
         "thumb": "https://placeholdit.co//i/200x200",
         "pages" : [
           {
-            "title": "2page1",
+            "title": "5page1",
             "transcript": "2text1",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           },
           {
-            "title": "2page2",
+            "title": "5page2",
             "transcript": "2text2",
-            "image": "https://placeholdit.co//i/600X800"
+            "image": "https://placeholdit.co//i/600x800"
           }
         ],
-        "description": "desc2"
+        "description": "desc6"
       }
-    ],
+    },
     "logo":"",
     "href":"tribe1"
   },
-  {
+  "tribe2":{
     "tribe": "tribe 2",
     "description": "",
     "letters": [],
     "logo": "",
     "href": "tribe2"
   }
-]
+}

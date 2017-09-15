@@ -4,7 +4,7 @@ require_once "../api/configuration.php";
 $jsonTabData = file_get_contents(SITE_ROOT."/db/data/letters/tabs.json");
 $tabData = json_decode($jsonTabData,true);
 ?>
-<ul class="nav nav-tabs nav-justified">
+<ul class="nav nav-tabs nav-justified letter-tab">
 <?php
   $counter=1;
   foreach ($tabData as $data):?>
@@ -15,12 +15,12 @@ $tabData = json_decode($jsonTabData,true);
 <div class="tab-content">
 <?php 
 $counter=1;
-foreach($tabData as $data):?>
+foreach($tabData as $name=>$data):?>
   <div id="<?php print $data['href'];?>" class="tab-pane fade<?php print ($counter==1)?" in active":""?>">
     <div class="row letters-row">
       <div class="col-xs-12">
 
-      <div id="lettersCarousel<?php print $counter;?>" class="carousel slide" data-ride="carousel">
+      <div id="lettersCarousel<?php print $counter;?>" class="carousel slide" data-ride="carousel" data-interval="false" data-tribe="<?php print $name;?>">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <?php 
@@ -41,7 +41,7 @@ foreach($tabData as $data):?>
             if ($counter2%4 == 0):?>
             <div class="col-xs-10 col-xs-offset-1 item<?php print ($counter2==0)?" active":""?>">
             <?php endif;?>
-              <div class="btn text-center col-xs-6 col-md-3" data-toggle="collapse" data-target="#letterDetail">
+              <div class="letter-toggle btn text-center col-xs-6 col-md-3" data-toggle="collhapse" data-target="#lettehrDetail" data-letter="<?php print $letter['id']?>">
                 <img class="img-responsive" src="<?php print $letter['thumb'];?>" alt="">
                 <p><?php print $letter['description'];?></p>
               </div>
