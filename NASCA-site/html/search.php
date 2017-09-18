@@ -90,9 +90,6 @@ function buildNavQuery($nextPrev){
   <?php endforeach;
 
     ?>
-
-    <?php //twentytwelve_content_nav( 'nav-below' ); ?>
-
   <?php else : //have results ?>
 
     <article id="post-0" class="post no-results not-found">
