@@ -2,7 +2,7 @@
 # objects to be used by our Solr backend
 
 import json
-
+import re
 from pprint import pprint
 
 archive = "Native American South Carolina Archive"
@@ -22,7 +22,7 @@ def interviews():
     with open("../data/interviews/tabs.json") as dataFile:
         interviews = json.load(dataFile)
         dataFile.close
-    print ("**Exporting interviews:")
+    print ("****Exporting interviews:")
     docs = []
     for interview in interviews:
         doc = {
@@ -40,8 +40,44 @@ def interviews():
         }
         pprint(doc['title'])
         docs.append(doc)
+        print ("*****Interview transcripts for: "+interview['tribe'])
+        docs.extend(interviewTranscripts(interview))
     return docs
 
+def interviewTranscripts(interview):
+    transcripts = interview['interviews']
+    docs = []
+    for datafile,shortTitle in transcripts.items():
+        print (datafile+'---'+shortTitle)
+        with open ("../data/interviews/transcripts/json/minified/"+datafile) as dataFile:
+            transcript = json.load(dataFile)
+            dataFile.close()
+        match = re.match('.+?(?=-minified\.json)',datafile)
+        if match:
+            href = (match.group(0)) #get href value from filename
+        
+        #generate the full text from text bits in the interview transcript
+        fulltext = ""
+        for bit in transcript['text']:
+            textbit = bit['text_bit']
+            fulltext = fulltext+' '+ textbit
+        doc = {
+            'archive': archive,
+            'contributing_institution': contributing_institution,
+            'title': transcript['title'],
+            'type_content': "Sound",
+            'type_digital': "Sound",
+            'url': site_root+'/interviews/'+interview['href']+'/'+href,
+            'id': site_root+'/interviews/'+interview['href']+'/'+href,
+            'description': transcript['description'],
+            'thumbnail_url': site_root+interview['logo'],
+            'geolocation_human': "South Carolina",
+            'file_format': 'audio/mpeg',
+            'is_part_of': site_root+'/interviews/'+interview['href'],
+            'full_text': fulltext
+        }
+        docs.append(doc)
+    return docs
 
 """
 req:
