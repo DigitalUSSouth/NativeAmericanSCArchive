@@ -20,6 +20,8 @@ window.onpopstate = function(event) {
       currentUrl.push(popstate.subPage2);
     }
   }
+  //hide all bootstrap modals
+  $(".modal").modal('hide')
   init_index();
 };
 
