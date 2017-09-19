@@ -3,13 +3,26 @@
 
 <?php 
 for($i=1; $i<=12; $i++):?>
-<div id="box<?php print $i;?>" class="box-t" data-box-index="<?php print $i?>">
-<a class="boxclose btn btn-danger" id="boxclose<?php print $i;?>"><strong>Close</strong></a>
-  <div id="timeline-embed-<?php print $i;?>" class="timeline-embed">
-    <!--<div id="timeline"></div>-->
+<!-- Modal -->
+<div id="timelineModal<?php print $i;?>" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div id="timeline-embed-<?php print $i;?>" class="timeline-embed">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>
-<!--<a id="openTimeline<?php// print $i;?>" href="#"><h2><?php //print $i;?></h2></a>-->
+
 <?php endfor;?>
 
 <section class="timeline">
@@ -29,7 +42,7 @@ for($i=1; $i<=12; $i++):?>
       <li class="background-red">
         <div class="background-red text-white">
           <h4><time><?php print $time;?></time> <?php print $title;?></h4>
-          <h4><a class="btn btn-default" id="openTimeline<?php print $i;?>" href="#" data-box-id="<?php print "box".$i;?>">
+          <h4><a class="btn btn-default" id="openTimeline<?php print $i;?>" href="#" data-box-id="<?php print $i;?>" data-toggle="modal" data-target="#timelineModal<?php print $i; ?>">
               Show Timeline
           </a></h4>
           
