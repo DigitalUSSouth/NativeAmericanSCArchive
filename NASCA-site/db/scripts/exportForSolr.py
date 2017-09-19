@@ -104,14 +104,14 @@ def timelines():
             'title': timeline['title']['text']['headline']+' '+timeline['title']['text']['text'],
             'type_content': "Text",
             'type_digital': "Text",
-            'url': site_root+'/timeline/',
-            'id': site_root+'/timeline/',
+            'url': site_root+'/timeline/'+str(fileCounter),
+            'id': site_root+'/timeline/'+str(fileCounter),
             'description': description,
             #'thumbnail_url': site_root+interview['logo'],
             'geolocation_human': "South Carolina",
             'file_format': 'text/html'
         }
-        print(doc['title'])
+        print(doc['title']+'-'+doc['url'])
         docs.append(doc)
         fileCounter = fileCounter+1
         currentFile = "../../html/ht/data/data"+str(fileCounter)+".json"
