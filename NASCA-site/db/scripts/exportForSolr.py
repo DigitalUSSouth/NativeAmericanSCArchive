@@ -4,6 +4,7 @@
 import json
 import re
 from pprint import pprint
+import os.path
 
 archive = "Native American South Carolina Archive"
 contributing_institution = "University of South Carolina"
@@ -17,6 +18,8 @@ def main():
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
         outfile.close
+    timelines()
+
 
 def interviews():
     with open("../data/interviews/tabs.json") as dataFile:
@@ -79,6 +82,40 @@ def interviewTranscripts(interview):
         docs.append(doc)
     return docs
 
+def timelines():
+    print ("****Exporting interviews:")
+    docs = []
+    fileCounter = 1
+    currentFile = "../../html/ht/data/data"+str(fileCounter)+".json"
+    while (os.path.isfile(currentFile)):
+        #print (currentFile)
+        with open(currentFile) as dataFile:
+            timeline = json.load(dataFile)
+            dataFile.close
+        description = ""
+        for event in timeline['events']:
+            description += ' '+event['media']['caption']
+            description += ' '+event['start_date']['year']
+            description += ' '+event['text']['headline']
+            description += ' '+event['text']['text']
+        doc = {
+            'archive': archive,
+            'contributing_institution': contributing_institution,
+            'title': timeline['title']['text']['headline']+' '+timeline['title']['text']['text'],
+            'type_content': "Text",
+            'type_digital': "Text",
+            'url': site_root+'/timeline/',
+            'id': site_root+'/timeline/',
+            'description': description,
+            #'thumbnail_url': site_root+interview['logo'],
+            'geolocation_human': "South Carolina",
+            'file_format': 'text/html'
+        }
+        print(doc['title'])
+        docs.append(doc)
+        fileCounter = fileCounter+1
+        currentFile = "../../html/ht/data/data"+str(fileCounter)+".json"
+    return docs
 """
 req:
     archive
