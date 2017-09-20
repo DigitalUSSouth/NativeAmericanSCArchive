@@ -14,12 +14,13 @@ def main():
     print("***Starting Solr export process")
     docs = []
     docs.extend(interviews())
+    docs.extend(timelines())
+    docs.extend(tribes())
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
         outfile.close
-    timelines()
-
+    
 
 def interviews():
     with open("../data/interviews/tabs.json") as dataFile:
@@ -83,7 +84,7 @@ def interviewTranscripts(interview):
     return docs
 
 def timelines():
-    print ("****Exporting interviews:")
+    print ("****Exporting timelines:")
     docs = []
     fileCounter = 1
     currentFile = "../../html/ht/data/data"+str(fileCounter)+".json"
@@ -115,6 +116,43 @@ def timelines():
         docs.append(doc)
         fileCounter = fileCounter+1
         currentFile = "../../html/ht/data/data"+str(fileCounter)+".json"
+    return docs
+
+def tribes():
+    print ("****Exporting tribes:")
+    docs = []
+    with open("../data/tribes/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    imgDir = data['directories']['image_directory']
+    descDir = data['directories']['description_directory']
+    tribes = data['data']
+    counter = 1
+    for tribe in tribes:
+        #pprint (tribe)
+        description = ""
+        path = "../.."+descDir+'/'+tribe['description']
+        if (os.path.isfile(path)):
+            with open(path,'r') as descFile:
+                description = descFile.read()
+        #print(description)
+        doc = {
+            'archive': archive,
+            'contributing_institution': contributing_institution,
+            'title': tribe['title'],
+            'type_content': "Sound",
+            'type_digital': "Sound",
+            'url': site_root+'/tribes/#Tribes-'+str(counter),
+            'id': site_root+'/tribes/'+str(counter),
+            'description': '',
+            'thumbnail_url': site_root+imgDir+'/'+tribe['logo'],
+            'geolocation_human': "South Carolina",
+            'file_format': 'text/html',
+            'full_text': description
+        }
+        pprint(doc['title'])
+        docs.append(doc)
+        counter = counter + 1
     return docs
 """
 req:
