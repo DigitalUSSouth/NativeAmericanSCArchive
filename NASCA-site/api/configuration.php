@@ -14,9 +14,17 @@
 
   $protocol = 'http://';
   // checking $protocol in HTTP or HTTPS
-  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+  /*if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
       // this is HTTPS
       $protocol  = "https://";
+  }*/
+
+  if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $protocol = 'https://';
+  }
+  else {
+    $protocol = 'http://';
   }
   
   define('REL_HOME', $config->rel_home);
