@@ -37,6 +37,6 @@
   define('CDM_UTILS', $config->databases->cdm->api_utils);
   define('CDM_COLLECTION', $config->databases->cdm->collection);
 
-  define('CDM_API_WEBSERVICE', $protocol . CDM_SERVER . ':' . CDM_PORT . CDM_QUERY_BASE);
-  define('CDM_API_UTILS', $protocol . CDM_SERVER . CDM_UTILS);
+  define('CDM_API_WEBSERVICE', 'http://' . CDM_SERVER . ':' . CDM_PORT . CDM_QUERY_BASE);
+  define('CDM_API_UTILS', 'http://' . CDM_SERVER . CDM_UTILS);
 ?>
