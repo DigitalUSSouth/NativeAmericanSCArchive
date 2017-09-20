@@ -55,7 +55,7 @@ function buildNavQuery($nextPrev){
   <?php
     //var_dump($_GET); 
     //$start = (isset($_GET['start']))? $_GET['start'] : 0;
-    $query = 'http://www.digitalussouth.org/api?q='.urlencode($queryString).'&start='.urlencode($start).'&fq[]="South+Carolina+Encyclopedia"&fq_field[]=archive_facet';
+    $query = 'https://test.digitalussouth.org/api?q='.urlencode($queryString).'&start='.urlencode($start).'&fq[]="Native+American+South+Carolina+Archive"&fq_field[]=archive_facet';
     $searchResultsJson = file_get_contents($query);
     //print $query;
     $searchResults = json_decode($searchResultsJson,true);
@@ -84,7 +84,7 @@ function buildNavQuery($nextPrev){
     foreach ($docs as $doc) :?>
     <div class="col-xs-11 col-xs-offset-1">
      <a class="text-red" href="<?php print $doc['url'];?>"><h1><?php print $doc['title']?></h1></a>
-     <p><big><?php print getExcerpt($doc['full_text']);?>... <a class="text-red" href="<?php print $doc['url'];?>">Read more</a></big></p>
+     <p><big><?php print getExcerpt(strip_tags($doc['full_text']));?>... <a class="text-red" href="<?php print $doc['url'];?>">Read more</a></big></p>
      </div>
 
   <?php endforeach;

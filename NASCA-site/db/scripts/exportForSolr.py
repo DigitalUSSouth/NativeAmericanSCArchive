@@ -107,10 +107,11 @@ def timelines():
             'type_digital': "Text",
             'url': site_root+'/timeline/'+str(fileCounter),
             'id': site_root+'/timeline/'+str(fileCounter),
-            'description': description,
+            'description': '',#description,
             #'thumbnail_url': site_root+interview['logo'],
             'geolocation_human': "South Carolina",
-            'file_format': 'text/html'
+            'file_format': 'text/html',
+            'full_text': description
         }
         print(doc['title']+'-'+doc['url'])
         docs.append(doc)
