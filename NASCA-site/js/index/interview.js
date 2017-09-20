@@ -8,7 +8,7 @@ function init_interviews() {
   //console.log("init interviews")
   //console.log(currentUrl);
   if (currentUrl.length >= 2){//we might have a sub uri
-    if ($.inArray(currentUrl[1],["catawba","beaver-creek","pee-dee","sumter-cheraw","wassamassaw"]) !== -1){
+    if ($.inArray(currentUrl[1],["catawba","beaver-creek","pee-dee","sumter-cheraw","wassamasaw"]) !== -1){
       currentTabInterviews = currentUrl[1];      
     }
     else {

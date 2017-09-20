@@ -50,14 +50,14 @@
     "href": "sumter-cheraw"
   },
   {
-    "tribe": "Wassamassaw Tribe",
+    "tribe": "Wassamasaw Tribe",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
     "interviews": {
       "Varnertown_Chuck-Rodgers-minified.json":"Chuck Rodgers",
       "Varnertown_Gloria-Varner_Ruby-Oliver-minified.json":"Gloaria Varner and Ruby Oliver",
       "Varnertown_Horace-Winkle_Katherine-Clark-Varner-minified.json":"Horace Winkle and Katherine Clark Varner"
     },
-    "logo":"/img/tribesLogos/wassamassa.png",
-    "href": "wassamassaw"
+    "logo":"/img/tribesLogos/wassamasaw.png",
+    "href": "wassamasaw"
   }
 ]
