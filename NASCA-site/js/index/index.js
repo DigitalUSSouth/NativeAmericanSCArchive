@@ -30,7 +30,7 @@ function init_index() {
   //populate global variables with info from configuration file
   setGlobals();
   
-  toggleSearch('off');
+  toggleSearch('on');
   
   //set invisible EVERYTHING that will fade in
   //var fadeIns = ['#header-positioner', '#page-container', '#footer-container'];

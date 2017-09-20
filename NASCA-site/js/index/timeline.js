@@ -8,7 +8,7 @@ var el;
 var currentTimeline
 
 function init_timeline() {
-  
+  toggleSearch('on');  
   //$("a").click(function(e) {
   //  e.preventDefault();
   //  $("#someFrame").attr("src", $(this).attr("href"));

@@ -1,5 +1,5 @@
 function init_tribes() {
-  toggleSearch("off");
+  toggleSearch("on");
   init_shadows();
   
   /*$('.card-hover').each(function () {
