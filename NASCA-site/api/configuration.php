@@ -29,6 +29,10 @@
   define('DB_INTERVIEW', $config->databases->db->interview_data);
   define('DB_LETTER', $config->databases->db->letter_data);
   define('DB_VIDEO', $config->databases->db->video_data);
+  define('IMAGE_FORMAT', $config->databases->db->image_technical->local_save_format);
+  define('IMAGE_SIZE_THUMBNAIL', (int)$config->databases->db->image_technical->thumbnail);
+  define('IMAGE_SIZE_SMALL', (int)$config->databases->db->image_technical->small);
+  define('IMAGE_SIZE_LARGE', (int)$config->databases->db->image_technical->large);
 
   define('CDM_SERVER', $config->databases->cdm->server);
   define('CDM_PORT', $config->databases->cdm->port);
@@ -36,6 +40,6 @@
   define('CDM_UTILS', $config->databases->cdm->api_utils);
   define('CDM_COLLECTION', $config->databases->cdm->collection);
 
-  define('CDM_API_WEBSERVICE', $protocol . CDM_SERVER . ':' . CDM_PORT . CDM_QUERY_BASE);
-  define('CDM_API_UTILS', $protocol . CDM_SERVER . CDM_UTILS);
+  define('CDM_API_WEBSERVICE', 'http://' . CDM_SERVER . ':' . CDM_PORT . CDM_QUERY_BASE);
+  define('CDM_API_UTILS', 'http://' . CDM_SERVER . CDM_UTILS);
 ?>

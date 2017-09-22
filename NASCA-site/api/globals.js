@@ -18,7 +18,8 @@ var DB_IMAGE = '';
 var DB_INTERVIEW = '';
 var DB_LETTER = '';
 var DB_VIDEO = '';
-
+var IMAGE_FORMAT = '';
+var IMAGE_SIZE = '';
 
 function setGlobals() {
   var fileLocation = $('script[src*=globals]').attr('src');
@@ -47,6 +48,8 @@ function setGlobals() {
       DB_INTERVIEW = json.DB_INTERVIEW;
       DB_LETTER = json.DB_LETTER;
       DB_VIDEO = json.DB_VIDEO;
+      IMAGE_FORMAT = json.IMAGE_FORMAT;
+      IMAGE_SIZE = json.IMAGE_SIZE;
   	}
   });
 }

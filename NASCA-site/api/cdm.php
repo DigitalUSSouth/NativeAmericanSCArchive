@@ -12,7 +12,7 @@
    * -10 to -19: Input arg issues
    * -20 to -29: Output issues
    * -30 to -39: Json issues
-   * -40 to -49: 'Doesn't exist' issues
+   * -40 to -49: 'Doesn't exist' and null issues
    * -90 to -99: Unexpected results issues (Something being null when it shouldn't, resolutions being 0 or negative, etcetera)
    * 0 success
    * -1 failure
@@ -235,6 +235,11 @@
    * $pointer - cdm pointer of image
    * $location - (int) type 0 to get straight from cdm, type 1 to get locally
    * 
+   * Return:
+   * $arr (array) with two keys:
+   *    'width' = (integer) width
+   *    'height' = (integer) height
+   * 
    * Error codes:
    * -1 - Couldn't get image info
    * -2 - Width and/or height are invalid (less than or equal to zero)
@@ -255,8 +260,8 @@
         error_log('getImageDimensions: Error -1: Couldn\'t get image info. (Check getCdmImageInfo for error.)',0);
         return -1;
       } else {
-        $arr['width'] = $info->width;
-        $arr['height'] = $info->height;
+        $arr['width'] = (int)$info->width;
+        $arr['height'] = (int)$info->height;
       }
       if($arr['width'] < 1 || $arr['height'] < 1) {
         error_log('getImageDimensions: Error -2: Received width and/or height are invalid. (less than or equal to zero)',0);
@@ -305,11 +310,11 @@
       //return width and height into $arr
       //$ind may be an int or an array with two values
       if(gettype($ind) === 'integer') {
-        $arr['width'] = $data_content->data[$ind]->width;
-        $arr['height'] = $data_content->data[$ind]->height;
+        $arr['width'] = (int)$data_content->data[$ind]->width;
+        $arr['height'] = (int)$data_content->data[$ind]->height;
       } else if(gettype($ind) === 'array') {
-        $arr['width'] = $data_content->data[$ind[0]][$ind[1]]->width;
-        $arr['height'] = $data_content->data[$ind[0]][$ind[1]]->height;
+        $arr['width'] = (int)$data_content->data[$ind[0]][$ind[1]]->width;
+        $arr['height'] = (int)$data_content->data[$ind[0]][$ind[1]]->height;
       }
       //if the width and height are 0 or less, throw error
       if($arr['width'] === null || $arr['width'] === 'undefined' || $arr['width'] === '' || $arr['height'] === null || $arr['height'] === 'undefined' || $arr['height'] === '') {
@@ -435,63 +440,165 @@
   
   /*
    * Tries to compile an appropriate query for the image with relevant sizing
+   * 
+   * Inputs:
+   * $pointer - (int or string) cdm pointer of image
+   * $size - (string)
+   * $location - (int) 0 to get straight from cdm, 1 to get locally
+   * 
+   * Return:
+   * $query - (string) url to image
+   * 
    * Error codes:
-   * -1 - Error getting image dimensions
-   * -2 - Either scale, new_width, or new_height have not been set properly or at all
+   * 
    */
-  function getImageReference($pointer, $size) {
-    $query = CDM_API_UTILS . 'CISOROOT=' . substr(CDM_COLLECTION, 1) . '&CISOPTR=' . $pointer . '&action=2&DMSCALE=';
-    $arr = getImageDimensions($pointer);
-    if($arr < 0) {
-      return -1;
+  function getImageReference($pointer, $size, $location) {
+    //check inputs
+    $type = (string)gettype($pointer);
+    if($type !== 'integer' && $type !== 'string') {
+      error_log('getImageReference: Error -10: Invalid input type. $pointer must be an int or string.',0);
+      return -10;
     }
-    $width = $arr['width'];
-    $height = $arr['height'];
-    $scale = -1;
-    $new_width = -1;
-    $new_height = -1;
-    if($size === 'full') {
-      $query .= '100' . '&DMWIDTH=' . $width . '&DMHEIGHT=' . $height;
-      return $query;
-    } else if($size === 'large') {
-      if($width >= $height) { //if width is larger
-        if($width > 1280) {
-          $new_width = 1280;
-        } else {
-          $new_width = $width;
-        }
-      } else { //if height is larger
-        if($height > 1280) {
-          $new_height = 1280;
-        } else {
-          $new_height = $height;
-        }
+    $type = (string)gettype($size);
+    if($type !== 'string') {
+      error_log('getImageReference: Error -10: Invalid input type. $size must be a string.',0);
+      return -10;
+    }
+    $type = (string)gettype($location);
+    if($type !== 'integer') {
+      error_log('getImageReference: Error -10: Invalid input type. $location must be an int.',0);
+      return -10;
+    }
+    //declare return variable
+    $query = null;
+    //check method of retrieving image
+    if($location === 0) {
+      //compile a php url query to cdm to get the image
+      $query = CDM_API_UTILS . 'CISOROOT=' . substr(CDM_COLLECTION, 1) . '&CISOPTR=' . $pointer . '&action=2&DMSCALE=';
+      $arr = getImageDimensions($pointer,$location);
+      if($arr < 0) {
+        error_log('getImageReference: Error -20: Bad output from getImageDimensions(). Input pointer was ' . $pointer . '. Check errors from getImageReference() for more details.',0);
+        return -20;
       }
-    } else if($size === 'small') {
-      if($width >= $height) { //if width is larger
-        if($width > 640) {
-          $new_width = 640;
-        } else {
-          $new_width = $width;
+      $width = (int)$arr['width'];
+      $height = (int)$arr['height'];
+      $scale = null;
+      $new_width = null;
+      $new_height = null;
+      if($size === 'full') {
+        $scale = 100;
+        $new_width = $width;
+        $new_height = $height;
+        //$query .= '100' . '&DMWIDTH=' . $width . '&DMHEIGHT=' . $height;
+      } else if($size === 'large') {
+        if($width >= $height) { //if width is larger
+          if($width > IMAGE_SIZE_LARGE) {
+            $new_width = IMAGE_SIZE_LARGE;
+          } else {
+            $new_width = $width;
+          }
+        } else { //if height is larger
+          if($height > IMAGE_SIZE_LARGE) {
+            $new_height = IMAGE_SIZE_LARGE;
+          } else {
+            $new_height = $height;
+          }
         }
-      } else { //if height is larger
-        if($height > 640) {
-          $new_height = 640;
-        } else {
-          $new_height = $height;
+      } else if($size === 'small') {
+        if($width >= $height) { //if width is larger
+          if($width > IMAGE_SIZE_SMALL) {
+            $new_width = IMAGE_SIZE_SMALL;
+          } else {
+            $new_width = $width;
+          }
+        } else { //if height is larger
+          if($height > IMAGE_SIZE_SMALL) {
+            $new_height = IMAGE_SIZE_SMALL;
+          } else {
+            $new_height = $height;
+          }
         }
+      } else if($size === 'thumbnail') {
+        if($width >= $height) { //if width is larger
+          if($width > IMAGE_SIZE_THUMBNAIL) {
+            $new_width = IMAGE_SIZE_THUMBNAIL;
+          } else {
+            $new_width = $width;
+          }
+        } else { //if height is larger
+          if($height > IMAGE_SIZE_THUMBNAIL) {
+            $new_height = IMAGE_SIZE_THUMBNAIL;
+          } else {
+            $new_height = $height;
+          }
+        }
+      } else {
+        error_log('getImageReference: Error -11: Invalid input value. $size must be \'thumbnail\', \'small\', \'large\', or \'full\'.',0);
+        return -11;
       }
+      if($new_height === null) {
+        $new_height = $new_width * $height / $width;
+      } else if($new_width === null) {
+        $new_width = $new_height * $width / $height;
+      }
+      $scale = 100 * $new_width / $width;
+      //if($size !== 'full') {
+      if($scale <= 0 || $new_width <= 0 || $new_height <= 0 || $scale === null || $new_width === null || $new_height === null) {
+        error_log('getImageReference: Error -90: Unexpected variable value. $scale, $new_width, or $new_height were not set properly or at all.',0);
+        return -90;
+      }
+      //}
+      $query .= $scale . '&DMWIDTH=' . $new_width . '&DMHEIGHT=' . $new_height;
+    } else if($location === 1) {
+      //compile a url query to our server to get the image
+      $query = SITE_ROOT . DB_ROOT;
+      $types_loc = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_TYPES;
+      $types_data = getJson($types_loc);
+      if(gettype($types_data) === 'integer' && $types_data < 0) {
+        error_log('getImageReference: Error -20: Bad output from getJson(). Input was ' . $types_loc . '. Check errors from getJson() for more details.',0);
+        return -20;
+      }
+      //take $types_data and find the index where the type of $pointer is kept
+      $ind = getId($types_data, $pointer);
+      if(gettype($ind) === 'integer' && $ind < 0) {
+        error_log('getImageReference: Error -20: Bad output from getId(). Input was json data from ' . $types_loc . ' and pointer ' . $pointer . '. Check errors from getId() for more details.',0);
+        return -20;
+      }
+      //take the index and check the type there
+      $obj = $types_data->data[$ind];
+      //check if the key 'type' exists or is set
+      if(array_key_exists('type',$obj) === FALSE) {
+        error_log('getImageReference: Error -40: Key called \'type\' does not exist at index ' . $ind . ' in json file ' . $types_loc . '.',0);
+        return -40;
+      }
+      $t = $obj->type;
+      if($t === null || trim($t) === '') {
+        error_log('getImageReference: Error -41: The \'type\' key in ' . $types_loc . ' at index ' . $ind . ' is empty or null.',0);
+        return -41;
+      }
+      //we know type exists, it's not null, it's not an empty string
+      $t = (string)$t; //cast as a string in case it was an object for some reason
+      $f = null;
+      if($t === 'image') {
+        $f = '/images/';
+      } else if($t === 'letter') {
+        $f = '/letters/';
+      } else {
+        //in this case the type is inappropriate to the function
+        error_log('getImageReference: Error -42: The \'type\' of the pointer ' . $pointer . ' at ' . $types_loc . ' is innapropriate for the function. Does not involve images.',0);
+        return -42;
+      }
+      $query = $query . $f . (string)$pointer . '_' . $size . '.' . IMAGE_FORMAT;
+    } else {
+      error_log('getImageReference: Error -11: Invalid input value. $location must be a 0 or 1.',0);
+      return -11;
     }
-    if($new_height === -1) {
-      $new_height = $new_width * $height / $width;
-    } else if($new_width === -1) {
-      $new_width = $new_height * $width / $height;
+    
+    if($query === null) {
+      error_log('getImageReference: Error -99: Unexpected results. $query is still null by the end of the function. If you are seeing this error, something was fatally mixed up and bugfixing is necessary.',0);
+      return -99;
     }
-    $scale = 100 * $new_width / $width;
-    if($scale <= 0 || $new_width <= 0 || $new_height <= 0) {
-      return -2;
-    }
-    $query .= $scale . '&DMWIDTH=' . $new_width . '&DMHEIGHT=' . $new_height;
+    
     return $query;
   }
   

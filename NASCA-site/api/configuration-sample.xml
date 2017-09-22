@@ -17,6 +17,12 @@
       <interview_data>/interviews/data.json</interview_data>
       <letter_data>/letters/data.json</letter_data>
       <video_data>/video/data.json</video_data>
+      <image_technical>
+        <local_save_format>jpg</local_save_format>
+        <thumbnail>320</thumbnail>
+        <small>640</small>
+        <large>1280</large>
+      </image_technical>
     </db>
   </databases>
   <frontend>

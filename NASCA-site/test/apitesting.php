@@ -17,8 +17,8 @@
   </div-->
   <div id="typetest">
     <?php
-      $dimensions = getImageTitle(586,1);
-      echo outputVar($dimensions);
+      $image = getImageReference(1541,'full',1);
+      echo outputVar($image);
     ?>
   </div>
   <script type='text/javascript' src='../js/jquery/jquery-3.2.1.min.js'></script>
