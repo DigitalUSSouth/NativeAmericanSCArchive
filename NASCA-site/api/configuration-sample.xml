@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <rel_home></rel_home>
+  <databases>
+    <cdm>
+      <server>digital.tcl...</server>
+      <port>#</port>
+      <api_query_base>/dmwebservices/index.php?q=</api_query_base>
+      <api_utils>/utils/ajaxhelper/?</api_utils>
+      <collection>/collectionname</collection>
+    </cdm>
+    <db>
+      <root>/db/data</root>
+      <type_key>/types.json</type_key>
+      <home_data>/home/data.json</home_data>
+      <image_data>/images/data.json</image_data>
+      <interview_data>/interviews/data.json</interview_data>
+      <letter_data>/letters/data.json</letter_data>
+      <video_data>/video/data.json</video_data>
+    </db>
+  </databases>
+  <frontend>
+    <home>
+      <card_count>8</card_count>
+    </home>
+    <images>
+      <cards_start>18</cards_start>
+      <cards_per_block>12</cards_per_block>
+    </images>
+  </frontend>
+  <backend>
+  	<python version="3.5.2"></python>
+  	<php version="7.0.15"></php>
+  </backend>
+</configuration>

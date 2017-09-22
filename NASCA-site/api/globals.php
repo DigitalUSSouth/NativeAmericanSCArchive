@@ -13,5 +13,12 @@
   $arr['REL_HOME'] = REL_HOME;
   $arr['SITE_ROOT'] = SITE_ROOT;
   $arr['PROTOCOL'] = PROTOCOL;
+  $arr['DB_ROOT'] = DB_ROOT;
+  $arr['DB_TYPES'] = DB_TYPES;
+  $arr['DB_HOME'] = DB_HOME;
+  $arr['DB_IMAGE'] = DB_IMAGE;
+  $arr['DB_INTERVIEW'] = DB_INTERVIEW;
+  $arr['DB_LETTER'] = DB_LETTER;
+  $arr['DB_VIDEO'] = DB_VIDEO;
   echo json_encode($arr);
 ?>

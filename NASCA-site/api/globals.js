@@ -11,6 +11,14 @@ var CDM_API_UTILS = '';
 var REL_HOME = '';
 var SITE_ROOT = '';
 var PROTOCOL = '';
+var DB_ROOT = '';
+var DB_TYPES = '';
+var DB_HOME = '';
+var DB_IMAGE = '';
+var DB_INTERVIEW = '';
+var DB_LETTER = '';
+var DB_VIDEO = '';
+
 
 function setGlobals() {
   var fileLocation = $('script[src*=globals]').attr('src');
@@ -32,6 +40,13 @@ function setGlobals() {
       REL_HOME = json.REL_HOME;
       SITE_ROOT = json.SITE_ROOT;
       PROTOCOL = json.PROTOCOL;
+      DB_ROOT = json.DB_ROOT;
+      DB_TYPES = json.DB_TYPES;
+      DB_HOME = json.DB_HOME;
+      DB_IMAGE = json.DB_IMAGE;
+      DB_INTERVIEW = json.DB_INTERVIEW;
+      DB_LETTER = json.DB_LETTER;
+      DB_VIDEO = json.DB_VIDEO;
   	}
   });
 }
