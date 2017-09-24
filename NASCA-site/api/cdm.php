@@ -185,6 +185,57 @@
   }
   
   /*
+   * Searches local types.json file for the given cdm pointer and returns the type.
+   * 
+   * Return:
+   * either
+   * NULL if there was a problem
+   * or
+   * (string) of the type of the cdm pointer
+   * 
+   * Inputs:
+   * $pointer - (int or string) cdm pointer to item
+   * 
+   * Error codes:
+   * 
+   */
+  function getTypeLocal($pointer) {
+    //check inputs
+    $type = (string)gettype($pointer);
+    if($type !== 'integer' && $type !== 'string') {
+      error_log('getTypeLocal: Error -10: Invalid input type. $pointer must be an int or string.',0);
+      return -10;
+    }
+    $query = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_TYPES;
+    $json = getJson($query);
+    if(gettype($json) === 'integer' && $json < 0) {
+      error_log('getTypeLocal: Error -20: Bad output from getJson(). Input was ' . $query . '. Check errors from getJson() for more details.',0);
+      return -20;
+    }
+    //take $json and find the index where the type of $pointer is kept
+    $ind = getId($json, $pointer);
+    if(gettype($ind) === 'integer' && $ind < 0) {
+      error_log('getTypeLocal: Error -20: Bad output from getId(). Input was json data from ' . $query . ' and pointer ' . $pointer . '. Check errors from getId() for more details.',0);
+      return -20;
+    }
+    //take the index and check the type there
+    $obj = $json->data[$ind];
+    //check if the key 'type' exists or is set
+    if(array_key_exists('type',$obj) === FALSE) {
+      error_log('getTypeLocal: Error -40: Key called \'type\' does not exist at index ' . $ind . ' in json file ' . $query . '.',0);
+      return -40;
+    }
+    //declare return variable
+    $t = $obj->type;
+    if($t === null || trim($t) === '') {
+      error_log('getTypeLocal: Error -41: The \'type\' key in ' . $query . ' at index ' . $ind . ' is empty or null.',0);
+      return -41;
+    }
+    
+    return $t;
+  }
+  
+  /*
    * Returns simpleXML object with information on the image, from cdm.
    * 
    * Inputs:
@@ -268,30 +319,19 @@
         return -2;
       }
     } else if($location === 1) {
-      $types = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_TYPES;
-      $types_content = getJson($types);
-      if(gettype($types_content) === 'integer' && $types_content < 0) {
-        error_log('getImageDimensions: Error -3: Error getting json file. Check getJson().',0);
-        return -3;
+      //first get type of pointer
+      $pointer_type = getTypeLocal($pointer);
+      if(gettype($pointer_type) === 'integer' && $pointer_type < 0) {
+        error_log('getImageDimensions: Error -20: Bad output from getTypeLocal(). Input was id ' . $pointer . '. Check errors from getTypeLocal() for more details.',0);
+        return -20;
       }
-      //$types_content is populated with data from types.json
-      //now find the type of $pointer
-      $ind = getId($types_content, $pointer);
-      if($ind < 0) {
-        error_log('getImageDimensions: Error -4: Error getting id of pointer. Check getId().',0);
-        return -4;
-      }
-      $pointer_type = $types_content->data[$ind]->type;
       $data_loc = null;
-      if($pointer_type === null || $pointer_type === 'undefined' || $pointer_type === '') {
-        error_log('getImageDimensions: Error -5: Type of pointer is undefined or does not exist at ' . $types,0);
-        return -5;
-      } else if($pointer_type === 'image') {
+      if($pointer_type === 'image') {
         $data_loc = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_IMAGE;
       } else if($pointer_type === 'letter') {
         $data_loc = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_LETTER;
       } else {
-        error_log('getImageDimensions: Error -6: Type of pointer is invalid or is not a type that supports dimensions. (Must be image or letter)',0);
+        error_log('getImageDimensions: Error -6: Type of pointer (' . $pointer . ', ' . $pointer_type . ') is invalid or is not a type that supports dimensions. (Must be image or letter)',0);
         return -6;
       }
       //$data_loc contains the path to the json file with the details on the pointer
@@ -632,23 +672,101 @@
    * $location - (int) type 0 to get straight from cdm, type 1 to get locally
    * 
    * Returns:
-   * PHP array with a value assigned to each attribute requested
+   * PHP array with a value assigned to each attribute requested. Any attributes that don't exist or aren't filled will be ignored in output.
+   * 
+   * Error codes:
+   * 
    */
   function getItemInfo($pointer, $attrib, $location) {
-    $response = array();
+    //check inputs
+    $type = (string)gettype($pointer);
+    if($type !== 'integer' && $type !== 'string') {
+      error_log('getItemInfo: Error -10: Invalid input type. $pointer must be an int or string.',0);
+      return -10;
+    }
+    $type = (string)gettype($attrib);
+    if($type !== 'array') {
+      error_log('getItemInfo: Error -10: Invalid input type. $attrib must be an array.',0);
+      return -10;
+    }
+    $type = (string)gettype($location);
+    if($type !== 'integer') {
+      error_log('getItemInfo: Error -10: Invalid input type. $location must be an int.',0);
+      return -10;
+    }
+    //declare return variable
+    $response = null;
+    $query = null;
+    $json = null;
     if($location === 0) {
       $query = CDM_API_WEBSERVICE . 'dmGetItemInfo' . CDM_COLLECTION . '/' . $pointer . '/json';
       $json = json_decode((string)curl($query), true);
     } else if($location === 1) {
-      //access db/data/data.json
-      //search for pointer and get object type (letter, image, etc)
+      //get the type of the pointer
+      $t = getTypeLocal($pointer);
+      if(gettype($t) === 'integer' && $t < 0) {
+        error_log('getItemInfo: Error -20: Bad output from getTypeLocal(). Input was id ' . $pointer . '. Check errors from getTypeLocal() for more details.',0);
+        return -20;
+      }
+      //search data/[type]/data.json for pointer
+      $query = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT;
+      switch($t) {
+        case 'image':
+          $query = $query . DB_IMAGE;
+          break;
+        case 'letter':
+          $query = $query . DB_LETTER;
+          break;
+        case 'interview':
+          $query = $query . DB_INTERVIEW;
+          break;
+        case 'video':
+          $query = $query . DB_VIDEO;
+          break;
+        default:
+          error_log('getItemInfo: Error -42: The \'type\' of the pointer ' . $pointer . ' at ' . $t . ' is not valid. Must be \'image\', \'letter\', \'interview\', or \'video\'.',0);
+          return -42;
+      }
+      $json = getJson($query);
+      if(gettype($json) === 'integer' && $json < 0) {
+        error_log('getItemInfo: Error -20: Bad output from getJson(). Input was ' . $query . '. Check errors from getJson() for more details.',0);
+        return -20;
+      }
+      //we have the data
+      //search for pointer
+      $ind = getId($json, $pointer);
       //throw error if it's not there
-      //if it is, search data/[type]/data.json for pointer
+      if(gettype($ind) === 'integer' && $ind < 0) {
+        error_log('getItemInfo: Error -20: Bad output from getId(). Input was json data from ' . $query . ' and pointer ' . $pointer . '. Check errors from getId() for more details.',0);
+        return -20;
+      }
       //put attributes from object in array called $json
+      //$ind may be an int or an array with two values
+      if(gettype($ind) === 'integer') {
+        $json = $json->data[$ind];
+      } else if(gettype($ind) === 'array') {
+        $json = $json->data[$ind[0]][$ind[1]];
+      }
     } else {
       //throw error that location argument had invalid input
+      error_log('getItemInfo: Error -11: Invalid input value. $location must be a 0 or 1.',0);
+      return -11;
     }
     
+    //now $json should be populated with an array of attributes for the pointer
+    if($json === null) {
+      error_log('getItemInfo: Error -98: Unexpected results. $json is still null where it should have been populated. If you are seeing this error, something was fatally mixed up and bugfixing is necessary.',0);
+      return -98;
+    }
+    
+    //sort out the requested attributes
+    //you can do this by flipping $attrib
+    //then return the key/value pairs from $json that have matching keys in $attrib
+    //this is called array intersection
+    $attrib = array_flip($attrib);
+    $response = array_intersect_key((array)$json,$attrib);
+    
+    /* old inefficient code
     for($i = 0; $i < count($attrib); $i++) {
       switch($attrib[$i]) {
         case 'relati':
@@ -697,6 +815,13 @@
           //nothing
       }
     }
+     * */
+    
+    if($response === null) {
+      error_log('getItemInfo: Error -99: Unexpected results. $response is still null by the end of the function. If you are seeing this error, something was fatally mixed up and bugfixing is necessary.',0);
+      return -99;
+    }
+    
     return $response;
   }
   
