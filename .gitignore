@@ -13,3 +13,5 @@ NASCA_Contact.xlsx
 /concept
 .vscode
 NASCA-site/db/data/solrDocs.json
+/NASCA-site/db/data/images/*.jpg
+/NASCA-site/db/data/letters/*.jpg
