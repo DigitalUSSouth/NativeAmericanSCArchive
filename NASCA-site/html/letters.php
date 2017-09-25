@@ -43,7 +43,7 @@ foreach($tabData as $name=>$data):?>
             <?php endif;?>
               <div class="letter-toggle btn text-center col-xs-6 col-md-3" data-toggle="collhapse" data-target="#lettehrDetail" data-letter="<?php print $letter['id']?>">
                 <img class="img-responsive" src="<?php print $letter['thumb'];?>" alt="">
-                <p><?php print $letter['description'];?></p>
+                <p class="letter-desc"><strong><?php print $letter['description'];?></strong></p>
               </div>
             <?php if($counter2%4 == 3):?>
             </div>

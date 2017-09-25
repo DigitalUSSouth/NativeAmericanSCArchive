@@ -19,7 +19,7 @@ if (isset($_GET['tribe']) && isset($_GET['id'])){
             </div>
             <div class="col-xs-10 col-md-7">
               <div>
-                <p><?php print $page['transcript'];?></p>
+                <p class="letter-transcript"><?php print preg_replace('/\\n/','<br>',$page['transcript']);?></p>
               </div>
             </div>
             <div class="clearfix"></div>
