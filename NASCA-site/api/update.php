@@ -103,7 +103,7 @@
       }
       if(count($t) !== 1) {
         printReturnNotes($returnNotes);
-        return -6;
+        continue;//return -6;
       }
       $arr = array();
       $arr['pointer'] = $pointer;
