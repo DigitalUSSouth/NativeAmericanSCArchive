@@ -17,8 +17,8 @@
   </div-->
   <div id="typetest">
     <?php
-      $info = getItemInfo("1126",array('title','type','filename','width'),1);
-      print_r($info);
+      $pointer = 624;
+      echo getImageReference($pointer,'thumbnail',0);
     ?>
   </div>
   <script type='text/javascript' src='../js/jquery/jquery-3.2.1.min.js'></script>

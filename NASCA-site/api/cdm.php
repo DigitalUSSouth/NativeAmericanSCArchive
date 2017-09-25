@@ -28,9 +28,33 @@
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $data = curl_exec($ch);
-    curl_close($ch);
-
-    return $data;
+    if(curl_errno($ch)) {
+      curl_close($ch);
+      return -1;
+    } else {
+      $resultStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+      if($resultStatus == 200) {
+        curl_close($ch);
+        return $data;
+      } else {
+        curl_close($ch);
+        return -1;
+      }
+    }
+  }
+  
+  /*
+   * Returns whether some given data from cdm is valid.
+   * 
+   * Input:
+   * (string) json data straight from cdm api
+   * 
+   * Return:
+   * TRUE if valid
+   * FALSE if invalid
+   */
+  function isCdmValid($data) {
+    
   }
   
   /*
@@ -63,6 +87,50 @@
         return -1;
       }
     }
+  }
+  
+  /*
+   * Takes image by pointer from cdm and saves it with proper directory and name, locally
+   * THIS FUNCTION REQUIRES given pointer to be populated in db/data/types.json
+   * 
+   * Input:
+   * $pointer - cdm pointer to image to be saved
+   * 
+   * Returns:
+   * 0 for success
+   * -negative number for failure
+   */
+  function saveImageLocal($pointer) {
+    //check inputs
+    $vartype = (string)gettype($pointer);
+    if($vartype !== 'integer' && $vartype !== 'string') {
+      error_log('saveImageLocal: Error -10: Invalid input type. $pointer must be an int or string.',0);
+      return -10;
+    }
+    $type = getItemInfo($pointer,array('type'),0);
+    if(gettype($type) === 'integer' && $type < 0) {
+      error_log('saveImageLocal: Error -20: Bad output from getItemInfo(). Input was pointer ' . $pointer . ' with $location=0. Check errors from getItemInfo() for more details.',0);
+      return -20;
+    }
+    $type = strtolower(trim((string)$type['type']));
+    $sizes = array('thumbnail', 'small', 'large', 'full');
+    $filename = $pointer . '_';
+    $dest = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT;
+    switch($type) {
+      case 'image':
+        $dest = $dest . '/images/';
+        break;
+      case 'letter':
+        $dest = $dest . '/letters/';
+        break;
+      default:
+        error_log('saveImageLocal: Error -42: The \'type\' of the pointer ' . $pointer . ' at cdm is innapropriate for the function. Is not image or letter.',0);
+        return -42;
+    }
+    for($i = 0; $i < count($sizes); $i++) {
+      curlSave(getImageReference($pointer,$sizes[$i],0),$dest . $filename . $sizes[$i] . '.' . IMAGE_FORMAT);
+    }
+    return 0;
   }
   
   function contains($str, $sub) {
@@ -103,7 +171,7 @@
   }
   
   /*
-   * Returns the contents of a json file at a given url.
+   * Returns the contents of a json file at a given absolute address.
    * 
    * Inputs:
    * $url - url of json file
@@ -115,29 +183,29 @@
    * -4 - Error decoding json data
    * -5 - Innapropriate input type
    */
-  function getJson($url) {
+  function getJsonLocal($url) {
     if(gettype($url) !== 'string') {
-      error_log('getJson: Error -5: Input must be a string (url or absolute path).',0);
+      error_log('getJsonLocal: Error -5: Input must be a string (url or absolute path).',0);
       return -5;
     }
     if(contains($url,'.json')) {
       //it's a json file
     } else {
-      error_log('getJson: Error -1: Input does not have a .json extension.',0);
+      error_log('getJsonLocal: Error -1: Input does not have a .json extension.',0);
       return -1;
     }
     $data = null;
     if(file_exists($url)) {
       $data = json_decode(file_get_contents($url));
       if($data === null && json_last_error() === JSON_ERROR_NONE) {
-        error_log('getJson: Error -3: Json data at given location is null.',0);
+        error_log('getJsonLocal: Error -3: Json data at given location is null.',0);
         return -3;
       } else if($data === null) {
-        error_log('getJson: Error -4: Error decoding json data. Probably malformed.',0);
+        error_log('getJsonLocal: Error -4: Error decoding json data. Probably malformed.',0);
         return -4;
       }
     } else {
-      error_log('getJson: Error -2: File does not exist at ' . $url,0);
+      error_log('getJsonLocal: Error -2: File does not exist at ' . $url,0);
       return -2;
     }
     return $data;
@@ -207,9 +275,9 @@
       return -10;
     }
     $query = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_TYPES;
-    $json = getJson($query);
+    $json = getJsonLocal($query);
     if(gettype($json) === 'integer' && $json < 0) {
-      error_log('getTypeLocal: Error -20: Bad output from getJson(). Input was ' . $query . '. Check errors from getJson() for more details.',0);
+      error_log('getTypeLocal: Error -20: Bad output from getJsonLocal(). Input was ' . $query . '. Check errors from getJsonLocal() for more details.',0);
       return -20;
     }
     //take $json and find the index where the type of $pointer is kept
@@ -335,9 +403,9 @@
         return -6;
       }
       //$data_loc contains the path to the json file with the details on the pointer
-      $data_content = getJson($data_loc);
+      $data_content = getJsonLocal($data_loc);
       if(gettype($data_content) === 'integer' && $data_content < 0) {
-        error_log('getImageDimensions: Error -3: Error getting json file. Check getJson().',0);
+        error_log('getImageDimensions: Error -3: Error getting json file. Check getJsonLocal().',0);
         return -3;
       }
       //$data_content is populated with json file with details on the pointer
@@ -415,9 +483,9 @@
       //get title from local server (source tree)
       
       $types = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_TYPES;
-      $types_content = getJson($types);
+      $types_content = getJsonLocal($types);
       if(gettype($types_content) === 'integer' && $types_content < 0) {
-        error_log('getImageTitle: Error -3: Error getting json file. Check getJson().',0);
+        error_log('getImageTitle: Error -3: Error getting json file. Check getJsonLocal().',0);
         return -3;
       }
       //$types_content is populated with data from types.json
@@ -441,9 +509,9 @@
         return -6;
       }
       //$data_loc contains the path to the json file with the details on the pointer
-      $data_content = getJson($data_loc);
+      $data_content = getJsonLocal($data_loc);
       if(gettype($data_content) === 'integer' && $data_content < 0) {
-        error_log('getImageTitle: Error -3: Error getting json file. Check getJson().',0);
+        error_log('getImageTitle: Error -3: Error getting json file. Check getJsonLocal().',0);
         return -3;
       }
       //$data_content is populated with json file with details on the pointer
@@ -593,9 +661,9 @@
       //compile a url query to our server to get the image
       $query = SITE_ROOT . DB_ROOT;
       $types_loc = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_TYPES;
-      $types_data = getJson($types_loc);
+      $types_data = getJsonLocal($types_loc);
       if(gettype($types_data) === 'integer' && $types_data < 0) {
-        error_log('getImageReference: Error -20: Bad output from getJson(). Input was ' . $types_loc . '. Check errors from getJson() for more details.',0);
+        error_log('getImageReference: Error -20: Bad output from getJsonLocal(). Input was ' . $types_loc . '. Check errors from getJsonLocal() for more details.',0);
         return -20;
       }
       //take $types_data and find the index where the type of $pointer is kept
@@ -727,9 +795,9 @@
           error_log('getItemInfo: Error -42: The \'type\' of the pointer ' . $pointer . ' at ' . $t . ' is not valid. Must be \'image\', \'letter\', \'interview\', or \'video\'.',0);
           return -42;
       }
-      $json = getJson($query);
+      $json = getJsonLocal($query);
       if(gettype($json) === 'integer' && $json < 0) {
-        error_log('getItemInfo: Error -20: Bad output from getJson(). Input was ' . $query . '. Check errors from getJson() for more details.',0);
+        error_log('getItemInfo: Error -20: Bad output from getJsonLocal(). Input was ' . $query . '. Check errors from getJsonLocal() for more details.',0);
         return -20;
       }
       //we have the data

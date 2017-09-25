@@ -5,84 +5,148 @@
   
   set_time_limit(0);
   
-  function updateImagesLetters() {
-    $query = 'http://digital.tcl.sc.edu:81/dmwebservices/index.php?q=dmQuery/nasca/0/fields/nosort/1024/0/0/0/0/0/0/0/json';
-    $collection = json_decode(curl($query));
-    $total = $collection->pager->total;
+  function updateSite() {
+    $returnNotes = array();
+    $query = CDM_API_WEBSERVICE . 'dmQuery' . CDM_COLLECTION . '/0/fields/nosort/1024/0/0/0/0/0/0/0/json';
+    $response = curl($query);
+    if(gettype($response) === 'integer' && $response < 0) {
+      return '-1 ' . (string)$response;
+    }
+    //response is successful, may not necessarily be the collection if the query is wrong or
+    //something changed with cdm's api\
+    //if(isCdmValid($response) === FALSE) {
+    //  return -1;
+    //}
+    //decode response into php array
+    $collection = json_decode($response);
+    $total = (int)$collection->pager->total;
     $letterData = array();
     $imageData = array();
     $homeData = array();
+    $typeData = array();
     for($i = 0; $i < $total; $i++) {
+      $pointer = (int)$collection->records[$i]->pointer;
+      $rec = $collection->records[$i];
+      $fn = $rec->find;
       if($collection->records[$i]->filetype === 'jp2') {
-        $rec = $collection->records[$i];
-        $title = getImageTitle($rec->pointer);
-        if($title < 0) {
-          exit('Something went wrong.');
-        }
-        $hw = getImageDimensions($rec->pointer);
+        $dims = getImageDimensions($pointer,0);
+        $attrib_req = array('title','relati','publis','descri','media','typea','creato','date','datea','dateb','geogra','source','subjec','extent','rights','langua','tribe','identi');
+        $attribs = getItemInfo($pointer,$attrib_req,0);
         $arr = array();
-        $arr['pointer'] = $rec->pointer;
-        $arr['filename'] = $rec->find;
-        $arr['title'] = (string)$title;
-        $arr['height'] = (string)$hw['height'][0];
-        $arr['width'] = (string)$hw['width'][0];
+        $arr['pointer'] = $pointer;
+        $arr['filename'] = $fn;
+        $arr['height'] = (int)$dims['height'];//[0]
+        $arr['width'] = (int)$dims['width'];
+        for($k = 0; $k < count($attrib_req); $k++) {
+          $key = (string)$attrib_req[$k];
+          $arr[$key] = outputVar($attribs[$key]);
+        }
         array_push($imageData, $arr);
-        $arr['type'] = 'images';
+        $arr['type'] = 'image';
         array_push($homeData, $arr);
+        $status = saveImageLocal($pointer);
+        if($status < 0) {
+          array_push($returnNotes,'Image ' . $pointer . 'could not be saved. Error code ' . $status . ' from saveImageLocal().\n');
+          //return '-2 ' . (string)$status;
+        }
       }
-    }
-    for($i = 0; $i < $total; $i++) {
-      if($collection->records[$i]->filetype === 'cpd') {
-        $pointer = $collection->records[$i]->pointer;
-        $find = $collection->records[$i]->find;
-        $query = 'digital.tcl.sc.edu/utils/getfile/collection' . CDM_COLLECTION . '/id/' . $pointer . '/filename/' . $find;
+      else if($collection->records[$i]->filetype === 'cpd') {
+        $query = 'http://' . CDM_SERVER . '/utils/getfile/collection' . CDM_COLLECTION . '/id/' . $pointer . '/filename/' . $fn;
         $cpd = new DOMDocument;
-        $cpd->loadXml(curl($query));
-        //sort through the pages of cpd, add their pointers to the omit list
+        $r = curl($query);
+        if(gettype($r) === 'integer' && $r < 0) {
+          printReturnNotes($returnNotes);
+          return '-3 ' . (string)$r;
+        }
+        $cpd->loadXml($r);
+        //sort through the pages of cpd
         $pages = $cpd->getElementsByTagName('page');
         $letter = array();
         for($j = 0; $j < $pages->length; $j++) {
           $page_ptr = $pages->item($j)->getElementsByTagName('pageptr')->item(0)->nodeValue;
           $page_file = $pages->item($j)->getElementsByTagName('pagefile')->item(0)->nodeValue;
           $page_title = $pages->item($j)->getElementsByTagName('pagetitle')->item(0)->nodeValue;
-          $hw = getImageDimensions($page_ptr);
+          $dims = getImageDimensions($page_ptr,0);
           $page = array();
-          $page['pointer'] = $page_ptr;
+          $page['pointer'] = (int)$page_ptr;
           $page['filename'] = $page_file;
           $page['title'] = $page_title;
-          $page['height'] = (string)$hw['height'][0];
-          $page['width'] = (string)$hw['width'][0];
+          $page['height'] = (int)$dims['height'];//[0];
+          $page['width'] = (int)$dims['width'];
+          $attrib_req = array('relati','publis','transc','descri','media','typea','creato','date','datea','dateb','geogra','source','subjec','extent','rights','langua','tribe','identi');
+          $attribs = getItemInfo($page_ptr,$attrib_req,0);
+          if(count($attrib_req) !== count($attribs)) {
+            printReturnNotes($returnNotes);
+            return '-4 ' . outputVar($attribs);
+          }
+          for($k = 0; $k < count($attrib_req); $k++) {
+            $key = (string)$attrib_req[$k];
+            $page[$key] = outputVar($attribs[$key]);
+          }
           array_push($letter, $page);
-          $page['type'] = 'letters';
+          $page['type'] = 'letter';
           if($j === 0) {
             array_push($homeData, $page);
+          }
+          $status = saveImageLocal($page_ptr);
+          if($status < 0) {
+            array_push($returnNotes,'Image ' . $pointer . 'could not be saved. Error code ' . $status . ' from saveImageLocal().\n');
           }
         }
         array_push($letterData, $letter);
       }
+      //get the type of $pointer and record it in $typeData
+      $t = getItemInfo($pointer,array('type'),0);
+      if(gettype($t) === 'integer' && $t < 0) {
+        printReturnNotes($returnNotes);
+        return -5;
+      }
+      if(count($t) !== 1) {
+        printReturnNotes($returnNotes);
+        return -6;
+      }
+      $arr = array();
+      $arr['pointer'] = $pointer;
+      $t = trim(strtolower((string)$t['type']));
+      $arr['type'] = $t;
+      array_push($typeData, $arr);
     }
     $path = $_SERVER['DOCUMENT_ROOT'] . REL_HOME;
-    error_log($path);
-    $fp = fopen($path . '/db/data/images/data.json', 'w');
+    //error_log($path);
+    $fp = fopen($path . DB_ROOT . DB_IMAGE, 'w');
     $arr = array();
     $arr['count'] = count($imageData);
     $arr['data'] = $imageData;
     fwrite($fp, json_encode($arr));
     fclose($fp);
-    $fp = fopen($path . '/db/data/letters/data.json', 'w');
+    $fp = fopen($path . DB_ROOT . DB_LETTER, 'w');
     $arr = array();
     $arr['count'] = count($letterData);
     $arr['data'] = $letterData;
     fwrite($fp, json_encode($arr));
     fclose($fp);
-    $fp = fopen($path . '/db/data/home/data.json', 'w');
+    $fp = fopen($path . DB_ROOT . DB_HOME, 'w');
     $arr = array();
     $arr['count'] = count($homeData);
     $arr['data'] = $homeData;
     fwrite($fp, json_encode($arr));
     fclose($fp);
-  }
+    $fp = fopen($path . DB_ROOT . DB_TYPES, 'w');
+    $arr = array();
+    $arr['count'] = count($typeData);
+    $arr['data'] = $typeData;
+    fwrite($fp, json_encode($arr));
+    fclose($fp);
     
-  updateImagesLetters();
+    return 0;
+  }
+  
+  function printReturnNotes($notes) {
+    for($i = 0; $i < count($notes); $i++) {
+      echo outputVal($notes[$i]);
+    }
+  }
+  
+  echo updateSite();
   
 ?>

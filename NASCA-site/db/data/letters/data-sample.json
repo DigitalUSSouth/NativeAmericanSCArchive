@@ -1,0 +1,70 @@
+{
+  "count":34,
+  "data":
+    [
+      [
+        {
+          "pointer":"1111",
+          "filename":"1112.jp2",
+          "title":"Whitesides for Agent, Cover",
+          "relati":"Catawba Letters to the Governor",
+          "publis":"South Carolina Department of Archives and History",
+          "transc":"Petition To His Excellency Gov JL Orr for the appointment of Indian Agent by York & Lancaster Delegate/appointed Thos Whitesides Agent of the\nCatawba Indians the 6th Dec. 1866/James L Orr Governor.\n",
+		  "descri":"Petition for York and Lancaster County SC House and Senate members.",
+          "media":"Letter",
+          "typea":"Letter",
+          "creato":"AB Springs, WM C Black, JW Rawlinson, Jas N McElwee, Jr., William A Moore, Benj. R Clyburn",
+          "date":"1866-12-06",
+          "datea":"2016-06-29",
+          "dateb":"1866-12-06",
+          "geogra":"York County and Lancaster in South Carolina",
+          "source":{},
+          "subjec":{},
+          "extent":{},
+          "rights":"Copyright 2016, The University of South Carolina. All rights reserved. For more information contact the Native American Studies Archives, University of South Carolina Lancaster. ",
+          "langua":"English",
+          "tribe":"Catawba",
+          "identi":"1866-12-06-whitesides-for-agent-letter-1",
+          "height":"2199",
+          "width":"2748"
+        },
+        {
+          "pointer":"1112",
+          "filename":"1113.jp2",
+          "title":"Letter for Governor James Orr from Representatives recommending Thomas Whitesides for a vacany",
+          "height":"2409",
+          "width":"2145"
+        }
+      ],
+      [
+        {
+          "pointer":"1114",
+          "filename":"1115.jp2",
+          "title":"BS, Page 1",
+          "height":"2932",
+          "width":"2292"
+        },
+        {
+          "pointer":"1115",
+          "filename":"1116.jp2",
+          "title":"BS, Page 2",
+          "height":"2980",
+          "width":"2388"
+        },
+        {
+          "pointer":"1116",
+          "filename":"1117.jp2",
+          "title":"BS, Page 2 Duplicate",
+          "height":"3232",
+          "width":"2424"
+        },
+        {
+          "pointer":"1117",
+          "filename":"1118.jp2",
+          "title":"BS, Page 3",
+          "height":"3232",
+          "width":"2424"
+        }
+      ]
+    ]
+}
