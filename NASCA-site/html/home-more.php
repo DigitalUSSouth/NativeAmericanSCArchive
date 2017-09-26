@@ -3,194 +3,231 @@
   include_once ($api_dir . 'configuration.php');
   include_once ($api_dir . 'cdm.php');
   
-  function driver() {
-    if(isset($_GET['homeptr'])) {
-      $homePointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
-      $homeptr = $_GET['homeptr'];
-      $type = $homePointers->data[$homeptr]->type;
-      $title = $homePointers->data[$homeptr]->title;
-      $id = $homePointers->data[$homeptr]->pointer;
-      $size = '';
-      if(is_numeric($id)) {
-        //if type isn't interview, images, video, then there's a problem as well 
-        switch($type) {
-          case 'interviews':
-            echo 'This is an interview';
-            break;
-          case 'images':
-            if(isset($_GET['size'])) {
-              $size = $_GET['size'];
-            } else {
-              errorMessage(-1);
-              return -1;
-            }
-            $err = printImageDetails($id,$title,$size);
-            if($err < 0) {
-              return -1;
-            }
-            break;
-          case 'video':
-            echo 'This is a video';
-            break;
-          case 'letters':
-            /*if(isset($_GET['size'])) {
-              $size = $_GET['size'];
-            } else {
-              errorMessage(-1);
-              return -1;
-            }*/
-            $err = printLetterDetails($id, $title);
-            if($err < 0) {
-              return -1;
-            }
-            break;
-          default:
-            errorMessage(-2);
-            return -1;
-        }
-      } else {
-        errorMessage(-3);
-        return -1;
-      }
-
-    }
-    //if there aren't any arguments, load a default page that goes in the view
-    //more box
-    else {
-      //default page
-      printDefault();
-    }
-    return 0;
-  }
+  $errors = array();
   
-  function errorMessage($code) {
-    echo '<div class="source-serif">';
-    echo 'I\'m afraid you have encountered a bug.<br/>';
-    echo 'Error Code: ' . $code . '<br/>';
-    
-    if($code === -4) {
-      echo '<br/>This means that the image, and probably the metadata with it, ';
-      echo 'could not be found in University of South Carolina\'s collection ';
-      echo 'hosted at ContentDM. It is most likely that the image is still there, ';
-      echo 'but the \'pointer\' has changed due to a change to the collection. If ';
-      echo 'this is the case, then the entry will be back up and running by 2 A.M., ';
-      echo 'when this website will be automatically updated in response.<br/><br/>';
-      echo 'Thank you for your patience!';
+  function printErrors($errors) {
+    for($i = 0; $i < count($errors); $i++) {
+      echo $errors[$i];
+      echo '<br />';
     }
-    
-    echo '<hr class="red"/>';
-    echo '"What can I do about this?"<br/><br/>';
-    echo 'If the problem has not solved itself within a day, please let the silly developers know that there\'s a problem in a file called \'home-more.php\'<br/>';
-    echo '</div>';
   }
   
   function printDefault(){ ?>
-  <div id="preview-layout" class="preview-default">
-    <div id="preview-title-container">
-      <div id="preview-title" class="anton text-dark-grey">
-        <b>Welcome</b>
+    <div id="preview-layout" class="preview-default">
+      <div id="preview-title-container">
+        <div id="preview-title" class="anton text-dark-grey">
+          <b>Welcome</b>
+        </div>
+        <div id="preview-title-secondary" class="anton text-red">
+          to the Native American South Carolina Archive!
+        </div>
       </div>
-      <div id="preview-title-secondary" class="anton text-red">
-        to the Native American South Carolina Archive!
+      <hr class="red"/>
+      <div id="preview-desc-container" class="source-serif text-dark-grey">
+        <div id="preview-desc">
+          <p>Click any of the cards on the left to get more information in this window about featured pictures, interviews, and more from our archive.</p>
+          <br/>
+          <p><i>OR</i></p>
+          <br/>
+          <p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You're also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>
+        </div>
       </div>
     </div>
-    <hr class="red"/>
-    <div id="preview-desc-container" class="source-serif text-dark-grey">
-      <div id="preview-desc">
-        <p>Click any of the cards on the left to get more information in this window about featured pictures, interviews, and more from our archive.</p>
-        <br/>
-        <p><i>OR</i></p>
-        <br/>
-        <p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You're also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>
-      </div>
-    </div>
-  </div>
-  <?php } //printDefault()
+<?php } //printDefault()
   
   function printImageDetails($id, $title, $size) {
+    global $errors;
     $trimmed = $title;
     if(strlen($trimmed) > 19) {
       $trimmed = substr($trimmed,0,19) . '...';
     }
-    $ref_large = getImageReference($id, 'large');
-    $ref_full = getImageReference($id, 'full');
-    $dimensions = getImageDimensions($id);
-    if(is_numeric($ref_large) && $ref_large < 0) {
-      errorMessage(-4);
-      return -1;
+    $ref_large = getImageReference($id,'large',1);
+    $ref_full = getImageReference($id,'full',1);
+    $dims = getImageDimensions($id,1);
+    if(gettype($ref_large) === 'integer' && $ref_large < 0) {
+      //couldn't get image reference
+      $ref_large = SITE_ROOT . '/img/error/error.png';
+      array_push($errors,'error in home-more.php line 50');
     }
-    if(is_numeric($ref_full) && $ref_full < 0) {
-      errorMessage(-4);
-      return -1;
+    if(gettype($ref_full) === 'integer' && $ref_full < 0) {
+      //couldn't get image reference
+      $ref_full = SITE_ROOT . '/img/error/error.png';
+      array_push($errors,'error in home-more.php line 55');
     }
-    echo '<div id="preview-layout" class="preview-' . $size . '">';
-    echo '  <div id="preview-title-container" class="custom-title-overflow overflow-off-white">';
-    echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
-    echo '  </div>';
-    echo '  <div id="preview-media-container" class="border-red">';
-    echo '    <a class="fancybox-home" href="' . $ref_full . '" data-fancybox="Featured" data-type="image" data-caption="' . $trimmed . '" data-width="' . $dimensions['width'] . '" data-height="' . $dimensions['height'] . '">';
-    echo '      <img src="' . $ref_large . '" id="preview-media" />';
-    echo '    </a>';
-    echo '  </div>';
-    echo '  <div id="preview-desc-container">';
     $attrib = array('descri','creato','tribe');
-    $details = getItemInfo($id,$attrib);
-    echo '    <div id="preview-desc" class="source-serif text-black">';
-    echo (string)$details['descri'] . '<br/>Photographer: ' . (string)$details['creato'] . '<br/>Tribe: ' . (string)$details['tribe'];
-    echo '    </div>';
-    echo '  </div>';
-    echo '  <div id="preview-lower" class="custom-row">';
-    echo '    <div id="view-all-container" onclick="changePage(\'images\');">';
-    echo '      <div id="view-all" class=text-red>View All Images</div>';
-    echo '      <div id="view-all-underline"></div>';
-    echo '    </div>';
-    echo '  </div>';
-    echo '</div>';
-    return 0;
-  }
+    $details = getItemInfo($id,$attrib,1);
+?>
+    <div id="preview-layout" class="<?php print 'preview-' . $size; ?>">
+      <div id="preview-title-container" class="custom-title-overflow overflow-off-white">
+        <div id="preview-title" class="anton text-dark-grey"><?php print $title; ?></div>
+      </div>
+      <div id="preview-media-container" class="border-red">
+        <?php
+          if(gettype($dims) === 'integer' && $dims < 0) {
+            array_push($errors,'error in home-more.php line 67');
+            //just print image, no link
+        ?>
+            <img src="<?php print $ref_large; ?>" id="preview-media" />
+        <?php
+          } else {
+            //print full with link
+        ?>
+            <a class="fancybox-home" href="<?php print $ref_full; ?>" data-fancybox="Featured" data-type="image" data-caption="<?php print $trimmed; ?>" data-width="<?php print $dims['width']; ?>" data-height="<?php print $dims['height']; ?>">
+              <img src="<?php print $ref_large; ?>" id="preview-media" />
+            </a>
+        <?php
+          }
+        ?>
+      </div>
+      <div id="preview-desc-container">
+        <div id="preview-desc" class="source-serif text-black">
+          <?php
+            //TODO check if the details even returned
+            $creato = (string)$details['creato'];
+            $creato = str_ireplace('(photographer)','',$creato);
+            $creato = trim($creato);
+            print (string)$details['descri'] . '<br />Photographer: ' . $creato . '<br />Tribe: ' . (string)$details['tribe']
+          ?>
+        </div>
+      </div>
+      <div id="preview-lower" class="custom-row">
+        <div id="view-all-container" onclick="changePage(\'images\');">
+          <div id="view-all" class=text-red>View All Images</div>
+          <div id="view-all-underline"></div>
+        </div>
+      </div>
+    </div>
+<?php
+  } //printImageDetails()
   
   function printLetterDetails($id, $title) {
+    global $errors;
     $trimmed = $title;
     if(strlen($trimmed) > 19) {
       $trimmed = substr($trimmed,0,19) . '...';
     }
-    $ref_large = getImageReference($id, 'large');
-    $ref_full = getImageReference($id, 'full');
-    $dimensions = getImageDimensions($id);
-    if(is_numeric($ref_large) && $ref_large < 0) {
-      errorMessage(-4);
-      return -1;
+    $ref_large = getImageReference($id,'large',1);
+    $ref_full = getImageReference($id,'full',1);
+    $dims = getImageDimensions($id,1);
+    if(gettype($ref_large) === 'integer' && $ref_large < 0) {
+      //couldn't get image reference
+      $ref_large = SITE_ROOT . '/img/error/error.png';
+      array_push($errors,'error in home-more.php line 115');
     }
-    if(is_numeric($ref_full) && $ref_full < 0) {
-      errorMessage(-4);
-      return -1;
+    if(gettype($ref_full) === 'integer' && $ref_full < 0) {
+      //couldn't get image reference
+      $ref_full = SITE_ROOT . '/img/error/error.png';
+      array_push($errors,'error in home-more.php line 120');
     }
-    echo '<div id="preview-layout" class="preview-letter">';
-    echo '  <div id="preview-title-container" class="custom-title-overflow overflow-off-white">';
-    echo '    <div id="preview-title" class="anton text-dark-grey">' . $title . '</div>';
-    echo '  </div>';
-    echo '  <div id="preview-media-container" class="border-red">';
-    echo '    <a class="fancybox-home" href="' . $ref_full . '" data-fancybox="Featured" data-type="image" data-caption="' . $trimmed . '" data-width="' . $dimensions['width'] . '" data-height="' . $dimensions['height'] . '">';
-    echo '      <img src="' . $ref_large . '" id="preview-media" />';
-    echo '    </a>';
-    echo '  </div>';
-    echo '  <div id="preview-desc-container">';
-    $attrib = array('descri','type','media','creato','dateb','datea');
-    $details = getItemInfo($id,$attrib);
-    echo '    <div id="preview-desc" class="source-serif text-black">';
-    echo '      Description: ' . (string)$details['descri'] . '<br/>Type: ' . (string)$details['type'] . '<br/>Media: ' . (string)$details['media'] . '<br/>Creator: ' . (string)$details['creato'] . '<br/>dateb: ' . (string)$details['dateb'] . '<br/>datea: ' . (string)$details['datea'];
-    echo '    </div>';
-    echo '  </div>';
-    echo '  <div id="preview-lower" class="custom-row">';
-    echo '    <div id="view-all-container" onclick="changePage(\'letters\');">';
-    echo '      <div id="view-all" class=text-red>View All Letters</div>';
-    echo '      <div id="view-all-underline"></div>';
-    echo '    </div>';
-    echo '  </div>';
-    echo '</div>';
-    return 0;
+    $attrib = array('transc');
+    $details = getItemInfo($id,$attrib,1);
+    ?>
+    <div id="preview-layout" class="preview-letter">
+      <div id="preview-title-container" class="custom-title-overflow overflow-off-white">
+        <div id="preview-title" class="anton text-dark-grey"><?php print $title; ?></div>
+      </div>
+      <div id="preview-media-container" class="border-red">
+        <?php
+          if(gettype($dims) === 'integer' && $dims < 0) {
+            array_push($errors,'error in home-more.php line 132');
+            //just print image, no link
+        ?>
+            <img src="<?php print $ref_large; ?>" id="preview-media" />
+        <?php
+          } else {
+            //print full with link
+        ?>
+            <a class="fancybox-home" href="<?php print $ref_full; ?>" data-fancybox="Featured" data-type="image" data-caption="<?php print $trimmed; ?>" data-width="<?php print $dims['width']; ?>" data-height="<?php print $dims['height']; ?>">
+              <img src="<?php print $ref_large; ?>" id="preview-media" />
+            </a>
+        <?php
+          }
+        ?>
+      </div>
+      <div id="preview-desc-container">
+        <div id="preview-desc" class="source-serif text-black">
+          <?php
+            $description = '';
+            if(gettype($details) === 'integer' && $details < 0) {
+              array_push($errors,'error in home-more.php line 152');
+              array_push($errors,'getItemInfo() returned error code ' . (string)$details);
+              $description .= 'Something went wrong while getting the transcription for this letter. Please check back later.';
+            } else {
+              if(array_key_exists('transc',$details)) {
+                $tran = trim((string)$details['transc']);
+                if($tran !== '') {
+                  $description .= $tran;
+                } else {
+                  $description .= 'A transcription is not yet available. Please check back later.';
+                }
+              } else {
+                $description .= 'A transcription is not yet available. Please check back later.';
+              }
+            }
+            print $description;
+          ?>
+        </div>
+      </div>
+      <div id="preview-lower" class="custom-row">
+        <div id="view-all-container" onclick="changePage(\'letters\');">
+          <div id="view-all" class=text-red>View All Letters</div>
+          <div id="view-all-underline"></div>
+        </div>
+      </div>
+    </div>
+<?php
   }
   
-  driver();
+  if(isset($_GET['homeptr'])) {
+    $homePointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
+    $homeptr = $_GET['homeptr'];
+    $home_obj = $homePointers->data[$homeptr];
+    $type = strtolower(trim($home_obj->type));
+    $title = $home_obj->title;
+    $id = $home_obj->pointer;
+    $size = '';
+    if(is_numeric($id)) {
+      //if type isn't interview, images, letters, video, then there's a problem
+      switch($type) {
+        case 'interview':
+          echo 'This is an interview';
+          break;
+        case 'image':
+          if(isset($_GET['size'])) {
+            $size = $_GET['size'];
+          } else {
+            array_push($errors,'size argument is unset for home-more.php. Displaying default page as fallback.');
+            printDefault();
+            break;
+          }
+          printImageDetails($id,$title,$size);
+          break;
+        case 'video':
+          echo 'This is a video';
+          break;
+        case 'letter':
+          printLetterDetails($id, $title);
+          break;
+        default:
+          array_push($errors,'error in home-more.php line 211');
+      }
+    } else {
+      array_push($errors,'error in home-more.php line 214');
+    }
+
+  }
+  //if there aren't any arguments, load a default page that goes in the view
+  //more box
+  else {
+    //default page
+    printDefault();
+  }
   
 ?>
+<div class="additional">
+  <p id="errors">
+    <?php
+      printErrors($errors);
+    ?>
+  </p>
+</div>

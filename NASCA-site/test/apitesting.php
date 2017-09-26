@@ -17,7 +17,7 @@
   </div-->
   <div id="typetest">
     <?php
-      $pointer = 1179;
+      $pointer = 1420;
       echo getImageReference($pointer,'full',0);
       echo "\n";
       echo outputVar(getImageDimensions($pointer,0));

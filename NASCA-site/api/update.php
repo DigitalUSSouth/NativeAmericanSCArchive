@@ -52,6 +52,10 @@
         array_push($imageData, $arr);
         $arr['type'] = 'image';
         array_push($homeData, $arr);
+        $arr = array();
+        $arr['pointer'] = $pointer;
+        $arr['type'] = 'image';
+        array_push($typeData, $arr);
         $status = saveImageLocal($pointer);
         if($status < 0) {
           array_push($returnNotes,'Image ' . $pointer . ' could not be saved. Error code ' . $status . ' from saveImageLocal().');
@@ -104,28 +108,27 @@
           if($j === 0) {
             array_push($homeData, $page);
           }
+          $arr = array();
+          $arr['pointer'] = $page_ptr;
+          $arr['type'] = 'letter';
+          array_push($typeData, $arr);
           $status = saveImageLocal($page_ptr);
           if($status < 0) {
-            array_push($returnNotes,'Letter page ' . $pointer . ' could not be saved. Error code ' . $status . ' from saveImageLocal().');
+            array_push($returnNotes,'Letter page ' . $page_ptr . ' could not be saved. Error code ' . $status . ' from saveImageLocal().');
           }
         }
         array_push($letterData, $letter);
       }
       //get the type of $pointer and record it in $typeData
-      $t = getItemInfo($pointer,array('type'),0);
-      if(gettype($t) === 'integer' && $t < 0) {
-        printReturnNotes($returnNotes);
-        return '-5 ' . (string)$t;
-      }
-      if(count($t) !== 1) {
-        array_push($returnNotes,'Item ' . $pointer . ' could not get \'type\' from getItemInfo() for types.json. Ignoring.');
-        continue;
-      }
-      $arr = array();
-      $arr['pointer'] = $pointer;
-      $t = trim(strtolower((string)$t['type']));
-      $arr['type'] = $t;
-      array_push($typeData, $arr);
+      //$t = getItemInfo($pointer,array('type'),0);
+      //if(gettype($t) === 'integer' && $t < 0) {
+      //  printReturnNotes($returnNotes);
+      //  return '-5 ' . (string)$t;
+      //}
+      //if(count($t) !== 1) {
+      //  array_push($returnNotes,'Item ' . $pointer . ' could not get \'type\' from getItemInfo() for types.json. Ignoring.');
+      //  continue;
+      //}
     }
     $path = $_SERVER['DOCUMENT_ROOT'] . REL_HOME;
     //error_log($path);
@@ -161,7 +164,7 @@
   function printReturnNotes($notes) {
     for($i = 0; $i < count($notes); $i++) {
       echo outputVar($notes[$i]);
-      echo "\n";
+      echo '<br />';
     }
   }
   
