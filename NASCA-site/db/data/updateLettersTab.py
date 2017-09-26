@@ -12,7 +12,7 @@ def main():
         dataFile.close
   print ("****:")
   #pprint (data)
-  tribes = {}
+  years = {}
   #letterId = 1
   for items in data['data']:
     letter = {
@@ -20,7 +20,14 @@ def main():
       'description': items[0]['descri'],
       'pages': []
     }
+
     letterTribe = items[0]['tribe'].strip()
+    letterYear = ''
+    match = re.search('[0-9]{4}',items[0]['date']) #match 4 digit year
+    if match:
+      letterYear = match.group(0)
+    else:
+      pprint(items[0]['date'])
     for item in items:
       page = {
         'title': item['title'],
@@ -28,20 +35,26 @@ def main():
         'image': getImgUrl(item['pointer'],'large')
       }
       letter['pages'].append(page)
-    if letterTribe in tribes:
-      letterId = len(tribes[letterTribe]['letters'])+1
+    letter['tribe'] =  letterTribe,
+    if letterYear in years:
+      letterId = len(years[letterYear]['letters'])+1
       letter['id'] = letterId
-      tribes[letterTribe]['letters'][letterId] = letter
+      years[letterYear]['letters'][letterId] = letter
     else:
-      tribes[letterTribe] = {
-        'tribe': letterTribe,
-        'letters': {},
+      pprint (letterYear)
+      pprint(items[0]['date'])
+
+      letter['id'] = 1
+      years[letterYear] = {
+        'letters': {
+          1: letter
+        },
         'logo':'',
-        'href': urllib.parse.quote_plus(letterTribe)
+        'href': urllib.parse.quote_plus(letterYear)
       }
   
   with open("letters/tabs.json","w") as outfile:
-        docFile = json.dumps(tribes,outfile,ensure_ascii=False,indent=4, sort_keys=False)
+        docFile = json.dumps(years,outfile,ensure_ascii=False,indent=4, sort_keys=False)
         outfile.write(docFile)
         outfile.close
       #pprint(page)
