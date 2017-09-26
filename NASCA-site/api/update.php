@@ -37,16 +37,24 @@
         $arr['filename'] = $fn;
         $arr['height'] = (int)$dims['height'];//[0]
         $arr['width'] = (int)$dims['width'];
-        for($k = 0; $k < count($attrib_req); $k++) {
-          $key = (string)$attrib_req[$k];
-          $arr[$key] = outputVar($attribs[$key]);
+        if(gettype($attribs) === 'integer' && $attribs < 0) {
+          printReturnNotes($returnNotes);
+          return '-2 ' . (string)$attribs;
+        }
+        if(count($attribs) !== count($attrib_req)) {
+          array_push($returnNotes,'Image ' . $pointer . ' did not get all requested item info from getItemInfo(). Ignoring.');
+        } else {
+          for($k = 0; $k < count($attrib_req); $k++) {
+            $key = (string)$attrib_req[$k];
+            $arr[$key] = outputVar($attribs[$key]);
+          }
         }
         array_push($imageData, $arr);
         $arr['type'] = 'image';
         array_push($homeData, $arr);
         $status = saveImageLocal($pointer);
         if($status < 0) {
-          array_push($returnNotes,'Image ' . $pointer . 'could not be saved. Error code ' . $status . ' from saveImageLocal().\n');
+          array_push($returnNotes,'Image ' . $pointer . ' could not be saved. Error code ' . $status . ' from saveImageLocal().');
           //return '-2 ' . (string)$status;
         }
       }
@@ -55,8 +63,8 @@
         $cpd = new DOMDocument;
         $r = curl($query);
         if(gettype($r) === 'integer' && $r < 0) {
-          printReturnNotes($returnNotes);
-          return '-3 ' . (string)$r;
+          array_push($returnNotes,'Information for .cpd letter ' . $pointer . ' could not be retrieved via cURL. Skipping to next item.');
+          continue;
         }
         $cpd->loadXml($r);
         //sort through the pages of cpd
@@ -66,22 +74,30 @@
           $page_ptr = $pages->item($j)->getElementsByTagName('pageptr')->item(0)->nodeValue;
           $page_file = $pages->item($j)->getElementsByTagName('pagefile')->item(0)->nodeValue;
           $page_title = $pages->item($j)->getElementsByTagName('pagetitle')->item(0)->nodeValue;
-          $dims = getImageDimensions($page_ptr,0);
           $page = array();
           $page['pointer'] = (int)$page_ptr;
           $page['filename'] = $page_file;
           $page['title'] = $page_title;
-          $page['height'] = (int)$dims['height'];//[0];
-          $page['width'] = (int)$dims['width'];
-          $attrib_req = array('relati','publis','transc','descri','media','typea','creato','date','datea','dateb','geogra','source','subjec','extent','rights','langua','tribe','identi');
-          $attribs = getItemInfo($page_ptr,$attrib_req,0);
-          if(count($attrib_req) !== count($attribs)) {
-            printReturnNotes($returnNotes);
-            return '-4 ' . outputVar($attribs);
+          $dims = getImageDimensions($page_ptr,0);
+          if(gettype($dims) === 'integer' && $dims < 0) {
+            array_push($returnNotes,'Dimensions for letter page ' . $page_ptr . ' could not be retrieved from getImageDimensions(). Error code from function is ' . $dims . '. Ignoring.');
+          } else {
+            $page['height'] = (int)$dims['height'];//[0];
+            $page['width'] = (int)$dims['width'];
           }
-          for($k = 0; $k < count($attrib_req); $k++) {
-            $key = (string)$attrib_req[$k];
-            $page[$key] = outputVar($attribs[$key]);
+          $attrib_req = array('relati','publis','transc','descri','media','typea','creato','date','datea','dateb','geogra','extent','rights','langua','tribe');
+          $attribs = getItemInfo($page_ptr,$attrib_req,0);
+          if(gettype($attribs) === 'integer' && $attribs < 0) {
+            printReturnNotes($returnNotes);
+            return '-4 ' . (string)$attribs;
+          }
+          if(count($attribs) !== count($attrib_req)) {
+            array_push($returnNotes,'Letter page ' . $page_ptr . ' did not get all requested item info from getItemInfo(). Ignoring.');
+          } else {
+            for($k = 0; $k < count($attrib_req); $k++) {
+              $key = (string)$attrib_req[$k];
+              $page[$key] = outputVar($attribs[$key]);
+            }
           }
           array_push($letter, $page);
           $page['type'] = 'letter';
@@ -90,7 +106,7 @@
           }
           $status = saveImageLocal($page_ptr);
           if($status < 0) {
-            array_push($returnNotes,'Image ' . $pointer . 'could not be saved. Error code ' . $status . ' from saveImageLocal().\n');
+            array_push($returnNotes,'Letter page ' . $pointer . ' could not be saved. Error code ' . $status . ' from saveImageLocal().');
           }
         }
         array_push($letterData, $letter);
@@ -99,11 +115,11 @@
       $t = getItemInfo($pointer,array('type'),0);
       if(gettype($t) === 'integer' && $t < 0) {
         printReturnNotes($returnNotes);
-        return -5;
+        return '-5 ' . (string)$t;
       }
       if(count($t) !== 1) {
-        printReturnNotes($returnNotes);
-        return -6;
+        array_push($returnNotes,'Item ' . $pointer . ' could not get \'type\' from getItemInfo() for types.json. Ignoring.');
+        continue;
       }
       $arr = array();
       $arr['pointer'] = $pointer;
@@ -138,12 +154,14 @@
     fwrite($fp, json_encode($arr));
     fclose($fp);
     
+    printReturnNotes($returnNotes);
     return 0;
   }
   
   function printReturnNotes($notes) {
     for($i = 0; $i < count($notes); $i++) {
-      echo outputVal($notes[$i]);
+      echo outputVar($notes[$i]);
+      echo "\n";
     }
   }
   

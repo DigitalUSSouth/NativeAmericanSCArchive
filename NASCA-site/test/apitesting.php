@@ -17,8 +17,10 @@
   </div-->
   <div id="typetest">
     <?php
-      $pointer = 624;
-      echo getImageReference($pointer,'thumbnail',0);
+      $pointer = 1179;
+      echo getImageReference($pointer,'full',0);
+      echo "\n";
+      echo outputVar(getImageDimensions($pointer,0));
     ?>
   </div>
   <script type='text/javascript' src='../js/jquery/jquery-3.2.1.min.js'></script>
