@@ -12,8 +12,27 @@
     exit($str);
   }
 
+  $protocol = 'http://';
+  // checking $protocol in HTTP or HTTPS
+  if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
+      // this is HTTPS
+      $protocol  = "https://";
+  }
+  
   define('REL_HOME', $config->rel_home);
-  define('SITE_ROOT', 'http://' . $_SERVER['SERVER_NAME'] . REL_HOME);
+  define('SITE_ROOT', $protocol . $_SERVER['SERVER_NAME'] . REL_HOME);
+  define('PROTOCOL', $protocol);
+  define('DB_ROOT', $config->databases->db->root);
+  define('DB_TYPES', $config->databases->db->type_key);
+  define('DB_HOME', $config->databases->db->home_data);
+  define('DB_IMAGE', $config->databases->db->image_data);
+  define('DB_INTERVIEW', $config->databases->db->interview_data);
+  define('DB_LETTER', $config->databases->db->letter_data);
+  define('DB_VIDEO', $config->databases->db->video_data);
+  define('IMAGE_FORMAT', $config->databases->db->image_technical->local_save_format);
+  define('IMAGE_SIZE_THUMBNAIL', (int)$config->databases->db->image_technical->thumbnail);
+  define('IMAGE_SIZE_SMALL', (int)$config->databases->db->image_technical->small);
+  define('IMAGE_SIZE_LARGE', (int)$config->databases->db->image_technical->large);
 
   define('CDM_SERVER', $config->databases->cdm->server);
   define('CDM_PORT', $config->databases->cdm->port);

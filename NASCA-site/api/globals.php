@@ -12,5 +12,15 @@
   $arr['CDM_API_UTILS'] = CDM_API_UTILS;
   $arr['REL_HOME'] = REL_HOME;
   $arr['SITE_ROOT'] = SITE_ROOT;
+  $arr['PROTOCOL'] = PROTOCOL;
+  $arr['DB_ROOT'] = DB_ROOT;
+  $arr['DB_TYPES'] = DB_TYPES;
+  $arr['DB_HOME'] = DB_HOME;
+  $arr['DB_IMAGE'] = DB_IMAGE;
+  $arr['DB_INTERVIEW'] = DB_INTERVIEW;
+  $arr['DB_LETTER'] = DB_LETTER;
+  $arr['DB_VIDEO'] = DB_VIDEO;
+  $arr['IMAGE_FORMAT'] = IMAGE_FORMAT;
+  $arr['IMAGE_SIZE'] = IMAGE_SIZE;
   echo json_encode($arr);
 ?>
