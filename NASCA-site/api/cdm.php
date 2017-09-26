@@ -128,7 +128,12 @@
         return -42;
     }
     for($i = 0; $i < count($sizes); $i++) {
-      curlSave(getImageReference($pointer,$sizes[$i],0),$dest . $filename . $sizes[$i] . '.' . IMAGE_FORMAT);
+      $ref = getImageReference($pointer,$sizes[$i],0);
+      if(gettype($ref) === 'integer' && $ref < 0) {
+        error_log('saveImageLocal: Error -20: Bad output from getImageReference(). Input was ' . $pointer . '. Error from getImageReference() was ' . $ref);
+        return -20;
+      }
+      curlSave($ref,$dest . $filename . $sizes[$i] . '.' . IMAGE_FORMAT);
     }
     return 0;
   }

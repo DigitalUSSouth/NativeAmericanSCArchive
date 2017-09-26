@@ -33,10 +33,10 @@ function init_home() {
       //$(this).parent().siblings('div.shadow').animate({top:'0'},card_anim_details);
     }
     var type = $(this).siblings('div.additional').children('#type').html();
-    if(type[type.length-1] === 's') {
-      type = type.substring(0,type.length-1);
-      type = jsUcfirst(type);
-    }
+    //if(type[type.length-1] === 's') {
+    //  type = type.substring(0,type.length-1);
+    //  type = jsUcfirst(type);
+    //}
     $(this).siblings('div.card-title-container').children('div.card-title').html(type);
   });
   /*var list = $('.home-card-container');
@@ -60,7 +60,7 @@ function animateOff(card) {
   $(card + ' .card-image').animate({opacity:0.9},card_anim_details);
   $(card).css({top: '0'});//, left: '0'});//,{duration: 100, queue: false});
   //$(card).css({'box-shadow':'3px 10px 18px -2px rgb(150,150,150)'});
-  $(card).siblings('div.shadow').animate({top:'0'},card_anim_details);
+  //$(card).siblings('div.shadow').animate({top:'0'},card_anim_details);
   $(card + ' .additional #toggle').html('0');
 }
 
@@ -74,7 +74,7 @@ function animateOn(card) {
   $(card + ' .card-image').animate({'opacity': 1.0},card_anim_details);
   $(card).css({top: '5px'});//, left: '1px'});//,{duration: 100, queue: false});
   //$(card).css({'box-shadow':'1px 3px 12px -2px rgb(150,150,150)'});
-  $(card).siblings('div.shadow').animate({top:'-3px'},card_anim_details);
+  //$(card).siblings('div.shadow').animate({top:'-3px'},card_anim_details);
   $(card + ' .additional #toggle').html('1');
 }
 

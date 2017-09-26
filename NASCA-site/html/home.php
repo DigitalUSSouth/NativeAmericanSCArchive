@@ -12,18 +12,19 @@ include_once ($api_dir . 'configuration.php');
 include_once ($api_dir . 'cdm.php');
 $count = intval($config->frontend->home->card_count);
 if($count <= 0) {
-  $count = 6;
+  $count = 8;
 }
-$pointers = json_decode(file_get_contents(SITE_ROOT . '/db/data/home/data.json'));
+$pointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
 $numbers = range(0,intval($pointers->count)-1);
 shuffle($numbers);
 //$numbers = array_slice($numbers, 0, $count);
 for($i = 1; $i <= $count; $i++) {
-  $id = $pointers->data[$numbers[$i-1]]->pointer;
-  $title = $pointers->data[$numbers[$i-1]]->title;
-  $type = $pointers->data[$numbers[$i-1]]->type;
-  $height = intval($pointers->data[$numbers[$i-1]]->height);
-  $width = intval($pointers->data[$numbers[$i-1]]->width);
+  $card = $pointers->data[$numbers[$i-1]];
+  $id = $card->pointer;
+  $title = $card->title;
+  $type = ucfirst($card->type);
+  $height = (int)$card->height;
+  $width = (int)$card->width;
   $size = 'wide';
   if($height > $width) {
     $size = 'tall';
@@ -36,11 +37,11 @@ for($i = 1; $i <= $count; $i++) {
   if(strlen($trimmed) > 19) {
     $trimmed = substr($trimmed,0,19) . '...';
   }
-  $small_ref = getImageReference($id, 'small');
-  if($small_ref < 0) {
-    echo 'small_ref = ' . $small_ref;
+  $small_ref = getImageReference($id,'small',1);
+  if(gettype($small_ref) === 'integer' && $small_ref < 0) {
+    echo 'small_ref = ' . (string)$small_ref;
     $small_ref = SITE_ROOT . '/img/error/error.png';
-    $size = 'wide';
+    $size = 'tall';
   }
   echo '    </p>';
   echo '    <p id="title">' . $trimmed . '</p>';
@@ -52,11 +53,11 @@ for($i = 1; $i <= $count; $i++) {
   echo '  </div>';
   echo '  <img class="card-image" src="' . $small_ref . '" />';
   echo '  <div class="card-title-container background-red">';
-  $type_formatted = $type;
-  if(substr($type,-1,1) === 's') {
-    $type_formatted = substr($type,0,strlen($type)-1);
-  }
-  echo '    <div class="card-title text-white source-serif">' . ucfirst($type_formatted) . '</div>';
+  //$type_formatted = $type;
+  //if(substr($type,-1,1) === 's') {
+  //  $type_formatted = substr($type,0,strlen($type)-1);
+  //}
+  echo '    <div class="card-title text-white source-serif">' . $type . '</div>';
   echo '  </div>';
   echo '  <div class="card-read-more background-red">';
   echo '    <div class="text-white source-serif">Read More</div>';
