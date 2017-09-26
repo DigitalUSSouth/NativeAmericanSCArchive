@@ -4,7 +4,7 @@ from pprint import pprint
 import os.path
 import urllib.parse
 
-site_root = "http://192.168.132.136"
+site_root = "https://www.nativesouthcarolina.org"
 
 def main():
   with open("letters/data.json") as dataFile:
