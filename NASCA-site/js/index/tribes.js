@@ -1,11 +1,11 @@
 function init_tribes() {
-  toggleSearch("off");
+  toggleSearch("on");
   init_shadows();
   
   /*$('.card-hover').each(function () {
     $(this).attr('href',SITE_ROOT + '/html/tribes.php');
   });*/
-  $('.card-hover').fancybox({
+  $('.card-hover').fancybox({ 
     loop : true,
     //protect: true,
     //fitToView: false,
@@ -56,6 +56,15 @@ function init_tribes() {
     title_container.children('div').css({'background': 'rgba(147,7,7,0)'});
     $(this).siblings('div.tribe-single-logo-container').find('img').css({'opacity': 0.5});
   });
+
+  if (window.location.hash){//we might have a sub uri
+    hash = window.location.hash
+    if (hash.startsWith("#Tribes")){
+      var tribeId = hash.substr(8);
+      tribeId--;
+      $('.card-hover[href="'+SITE_ROOT + '/html/tribes_history.php?tribe_id='+tribeId+'"').click();
+    }
+  }
 }
 
 function tribes_history_page_load() {
