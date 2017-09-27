@@ -238,9 +238,6 @@
             <li id="footer-links-credits">
               <a href="<?php print SITE_ROOT; ?>/html/credits.html">credits</a>
             </li>
-            <li id="footer-links-dev-resources">
-              <a href="<?php print SITE_ROOT; ?>/html/dev_resources.html">developer-resources</a>
-            </li>
           </ul>
         </div>
       </div>
