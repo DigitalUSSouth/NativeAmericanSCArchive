@@ -91,7 +91,7 @@
         </div>
       </div>
       <div id="preview-lower" class="custom-row">
-        <div id="view-all-container" onclick="changePage(\'images\');">
+        <div id="view-all-container" onclick="changePage('images');">
           <div id="view-all" class=text-red>View All Images</div>
           <div id="view-all-underline"></div>
         </div>
@@ -169,7 +169,7 @@
         </div>
       </div>
       <div id="preview-lower" class="custom-row">
-        <div id="view-all-container" onclick="changePage(\'letters\');">
+        <div id="view-all-container" onclick="changePage('letters');">
           <div id="view-all" class=text-red>View All Letters</div>
           <div id="view-all-underline"></div>
         </div>
@@ -209,10 +209,10 @@
           printLetterDetails($id, $title);
           break;
         default:
-          array_push($errors,'error in home-more.php line 211');
+          array_push($errors,'error in home-more.php line 212');
       }
     } else {
-      array_push($errors,'error in home-more.php line 214');
+      array_push($errors,'error in home-more.php line 215');
     }
 
   }

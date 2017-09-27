@@ -50,6 +50,9 @@ function init_interviews() {
   $("#interviewsModal").on('hidden.bs.modal',function(e){
     $('#jquery_jplayer_1').jPlayer("destroy");
     $('#interviewsModal .modal-body').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");
+    $("#interviews-modal-description").html("");
+    $("#interview-modal-title").html("");
+    
     setNewState("interviews",currentTabInterviews)
   });
 }
@@ -71,6 +74,7 @@ function launch_interview_modal(filename) {
 
       //set title
       document.getElementById('interview-modal-title').innerHTML = jsonobject.title;
+      $("#interviews-modal-description").html(jsonobject.description);
 
       var lastStepJson = {"lastTime": 0.0,"lastBruteForce": 0.0,"lastUpdate": 0.0,"lastHighlightedId": -1,"additionalHighlightedIds": 0};
 
