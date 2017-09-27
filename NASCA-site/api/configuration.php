@@ -30,6 +30,7 @@
   define('REL_HOME', $config->rel_home);
   define('SITE_ROOT', $protocol . $_SERVER['SERVER_NAME'] . REL_HOME);
   define('PROTOCOL', $protocol);
+  define('UPDATE_PW',$config->databases->db->update_pw);
   define('DB_ROOT', $config->databases->db->root);
   define('DB_TYPES', $config->databases->db->type_key);
   define('DB_HOME', $config->databases->db->home_data);

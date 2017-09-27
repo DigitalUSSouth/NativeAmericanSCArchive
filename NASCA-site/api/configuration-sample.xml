@@ -10,6 +10,7 @@
       <collection>/collectionname</collection>
     </cdm>
     <db>
+      <update_pw>...</update_pw>
       <root>/db/data</root>
       <type_key>/types.json</type_key>
       <home_data>/home/data.json</home_data>
