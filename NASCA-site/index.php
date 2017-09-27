@@ -1,5 +1,9 @@
 <?php
   require_once 'api/configuration.php';
+  if ((PROTOCOL != "https://" && $_SERVER['SERVER_NAME']=="www.nativesouthcarolina.org") || ($_SERVER['SERVER_NAME']=="nativesouthcarolina.org")){
+    header(PROTOCOL);
+    header ('Location: https://www.nativesouthcarolina.org/');
+  }
   global $currentUrl;
   //this global is an array containing
   // the elements of the url
@@ -237,9 +241,6 @@
             </li>
             <li id="footer-links-credits">
               <a href="<?php print SITE_ROOT; ?>/html/credits.html">credits</a>
-            </li>
-            <li id="footer-links-dev-resources">
-              <a href="<?php print SITE_ROOT; ?>/html/dev_resources.html">developer-resources</a>
             </li>
           </ul>
         </div>
