@@ -1,5 +1,8 @@
 <?php
   require_once 'api/configuration.php';
+  if ((PROTOCOL != "https" && $_SERVER['SERVER_NAME']=="www.nativesouthcarolina.org") || ($_SERVER['SERVER_NAME']=="nativesouthcarolina.org")){
+    header ('Location: https://www.nativesouthcarolina.org/');
+  }
   global $currentUrl;
   //this global is an array containing
   // the elements of the url
