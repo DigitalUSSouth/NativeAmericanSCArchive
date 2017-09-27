@@ -11,6 +11,7 @@ if (isset($_GET['tribe']) && isset($_GET['id'])){
       $letter = $tribe['letters'][$_GET['id']];?>
         <div class="panel row">
           <h3 class="text-red text-center"><?php print $letter['description'];?></h3>
+          <h4 class="text-center"><?php print $letter['tribe'][0];?></h4>
           <?php foreach($letter['pages'] as $page):?>
             <div class="col-xs-2 col-md-5">
               <div class="panel">
@@ -19,7 +20,7 @@ if (isset($_GET['tribe']) && isset($_GET['id'])){
             </div>
             <div class="col-xs-10 col-md-7">
               <div>
-                <p><?php print $page['transcript'];?></p>
+                <p class="letter-transcript"><?php print preg_replace('/\\n/','<br>',$page['transcript']);?></p>
               </div>
             </div>
             <div class="clearfix"></div>

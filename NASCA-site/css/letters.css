@@ -1,3 +1,19 @@
 .carousel-inner div {
   padding-top: 2em;
 }
+
+.letter-desc {
+  white-space: normal;
+}
+
+.btn.letter-toggle {
+  padding-top: 2em;
+  height: 450px;
+}
+
+.letter-transcript {
+  font-size: 2em;
+  text-align: justify;
+  padding: 1em;
+  padding-right: 2em;
+}

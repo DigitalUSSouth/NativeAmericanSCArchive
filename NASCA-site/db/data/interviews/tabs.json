@@ -35,9 +35,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
     "interviews": {
       "Pee-Dee_Chief-James-Caulder-minified.json":"Chief James Caulder",
-      "Pee-Dee_Clayton-RC-Cummings-minified.json":"Clayton RC Cummings"
+      "Pee-Dee_Clayton-RC-Cummings-minified.json":"Clayton RC Cummings",
+      "Pee-Dee_Pete-Parr-minified.json": "Pete Parr"
     },
-    "logo":"/img/tribesLogos/pee_dee_nation.png",
+    "logo":"/img/tribesLogos/pee_dee_tribe.png",
     "href":"pee-dee"
   },
   {
