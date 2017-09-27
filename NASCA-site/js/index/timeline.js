@@ -5,8 +5,10 @@
 var items;
 var el;
 
+var currentTimeline
+
 function init_timeline() {
-  
+  toggleSearch('on');  
   //$("a").click(function(e) {
   //  e.preventDefault();
   //  $("#someFrame").attr("src", $(this).attr("href"));
@@ -46,38 +48,51 @@ function init_timeline() {
 
 
   for(var i=1; i<=12; i++){
-    $("#openTimeline"+i).click(function(){
-      var i = $(this).attr('data-box-id') //have to redeclare because of scope
-      $("#overlay").fadeIn('fast',function(){
-        $("#"+i).animate({'top':'10%'},250);
-        var indexNum = $("#"+i).attr('data-box-index')
-        var selector = "#"+i+" .timeline-embed";
-        //console.log(selector);
-        wrapperElement = $(selector).attr('id');
-        //console.log(wrapperElement)
-        var embed = document.getElementById(wrapperElement);
-        embed.style.height = "400px";//getComputedStyle(document.body).height;
-        //embed.style.width = "100%"
-        $("#"+i).css('z-index','101');
-        var options =  { 
-          hash_bookmark: false
-        }
+    $("#timelineModal"+i).on('shown.bs.modal', function(e){
+      //console.log(e)
+      var i = e.relatedTarget.dataset.boxId //have to redeclare because of scope
+      //$("#overlay").fadeIn('fast',function(){
+      //$("#"+i).animate({'top':'10%'},250);
+      var indexNum = i
+      wrapperElement = $("#timeline-embed-"+i).attr('id');
+      //console.log(wrapperElement)
+      var embed = document.getElementById(wrapperElement);
+      //console.log(embed)
+      embed.style.height = "400px";//getComputedStyle(document.body).height;
+      //embed.style.width = "100%"
+      $("#"+i).css('z-index','101');
+      var options =  { 
+        hash_bookmark: false
+      }
 
-        var dataPath = SITE_ROOT+"/html/ht/data/data"+indexNum+".json"
-        window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
-        window.addEventListener('resize', function() {
-          var embed = document.getElementById(wrapperElement);
-          //embed.style.height = getComputedStyle(document.body).height;
-          //timeline.updateDisplay();
-        })
-      });
+      var dataPath = SITE_ROOT+"/html/ht/data/data"+indexNum+".json"
+      //console.log(dataPath)
+      window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
+      window.addEventListener('resize', function() {
+      var embed = document.getElementById(wrapperElement);
+        //embed.style.height = getComputedStyle(document.body).height;
+        //timeline.updateDisplay();
+      })
+
+      //update uri
+      setNewState("timeline",i);
+    //});
     });
-    $("#boxclose"+i).click(function(){
-      var i = $(this).parent().attr('id') //have to redeclare because of scope  
-        $("#"+i).animate({'top':'-500px'},250,function(){
-            $('#overlay').fadeOut('fast');
-        });
-    });
+    $("#timelineModal"+i).on('hidden.bs.modal',function(e){
+      setNewState("timeline")      
+    });      
+  }
+
+  if (currentUrl.length >= 2){//we might have a sub uri
+    nUrl = parseInt(currentUrl[1]);
+    if (nUrl>=1 && nUrl<=12){
+      currentTimeline = currentUrl[1];      
+    }
+    else {
+      changePage("404","tabs-home");
+      return;
+    }
+    $('#openTimeline'+currentTimeline).click()
   }
 }
   

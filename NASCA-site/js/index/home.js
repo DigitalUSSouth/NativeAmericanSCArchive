@@ -5,7 +5,7 @@
 var card_anim_details = {duration: 350, queue: false};
 
 function init_home() {
-  toggleSearch('off');
+  toggleSearch('on');
   init_shadows();
   //set hover for cards
   $('.card-hover').hover(function() {

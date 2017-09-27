@@ -71,6 +71,7 @@
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/home.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/timeline.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/images.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/letters.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/tribes.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/map.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/video.css"/>

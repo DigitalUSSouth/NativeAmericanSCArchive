@@ -1,3 +1,3 @@
 function init_map() {
-  toggleSearch('off');
+  toggleSearch('on');
 }
