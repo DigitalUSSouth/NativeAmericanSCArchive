@@ -2,13 +2,24 @@
 require_once "../api/configuration.php";
 
 $jsonTabData = file_get_contents(SITE_ROOT."/db/data/letters/tabs.json");
-$tabData = json_decode($jsonTabData,true);
+$rawTabData = json_decode($jsonTabData,true);
+$tabData = array();
+foreach ($rawTabData as $rawItem){
+  if ($rawItem['href']=="") continue;
+  if (empty(array_filter($rawItem['letters']))) continue;
+  $tabData[] = $rawItem;
+}
+usort($tabData, function($a,$b){
+  if ($a['href']==$b['href']) return 0;
+  return ((int)$a['href']<(int)$b['href']) ? -1 : 1;
+});
+
 ?>
 <ul class="nav nav-tabs nav-justified letter-tab">
 <?php
   $counter=1;
   foreach ($tabData as $data):?>
-  <li<?php print ($counter++==1)?" class=\"active\"":"";?>><a data-toggle="tab" href="#<?php print $data['href'];?>" class="text-red"><strong><big><?php print $data['tribe'];?></strong></big></a></li>
+  <li<?php print ($counter++==1)?" class=\"active\"":"";?>><a data-toggle="tab" href="#<?php print $data['href'];?>" class="text-red"><strong><big><?php print $data['href'];?></strong></big></a></li>
 <?php endforeach;?>
 </ul>
 
@@ -20,7 +31,7 @@ foreach($tabData as $name=>$data):?>
     <div class="row letters-row">
       <div class="col-xs-12">
 
-      <div id="lettersCarousel<?php print $counter;?>" class="carousel slide" data-ride="carousel" data-interval="false" data-tribe="<?php print $name;?>">
+      <div id="lettersCarousel<?php print $counter;?>" class="carousel slide" data-ride="carousel" data-interval="false" data-tribe="<?php print $data['href'];?>">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <?php 

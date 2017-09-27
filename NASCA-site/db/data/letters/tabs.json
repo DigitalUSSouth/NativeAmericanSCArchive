@@ -1,42 +1,315 @@
 {
-    "": {
-        "href": "",
-        "tribe": "",
+    "1879": {
         "logo": "",
         "letters": {
             "1": {
                 "pages": [
                     {
-                        "transcript": "York/Petition of the Members of the Catawba Indians asking the removal of RL Crooke and the appointment in his stead William D White as agent.\n\n",
-                        "title": "Catwba Petition Cover 1",
-                        "image": "http://192.168.132.136/db/data/letters/1213_large.jpg"
+                        "transcript": "Rock Hill SC May 24 1879 To his Excellency Gov WD Simpson\nIn compliance with your request, I hereby forward a full statement of claims established before JC Crib? Commissioner at Columbia S.C. by JD Witherspoon. Comptroller General warrants No 393, two warrants each for $715.00 payable to R.L. Crook agent of the Catawba Indians - dated February 28, 1876, with interest after date out of taxes for fiscal year 1876 & 1877 under act March 24 1875 balance due on unpaid appropriation since 1870, due Catawba Indians. = No 719 FL Cardozo received July 24, 1876 of RL Crook Treasurer due bill No. 188 upon which paid $50.00 leaving balance due $100.00 deficiency. 1875 & 1875 = No 718 FL Cardozo received of RL Crook Treasurers due bill No 621 upon which paid $91.25 leaving bal due of $91.25 unpaid appropriations 1875 & 1874. March 25 1879 turned over to RL Crook former agt of Catawba Indians, and took receipts = \nState Bonds No. 125 consolidated - July 1, 1878 $500.00\nState Bonds No. 400 consolidated - July 1, 1878 $100.00 \nState Certificate 334 consolidated - February 18, 1879 $337.27 \n",
+                        "title": "Letter to Governor William Dunlap Simpson from William Whyte-1",
+                        "image": "http://192.168.132.136/db/data/letters/1190_large.jpg"
                     },
                     {
-                        "transcript": "Catawba Nation York County South Carolina/To the Senate and House of Representatives, Columbia, SC \nWe the undersigned Catawba Indians of York County do most respectfully petition your honorable bodies to remove from office, as agent RL Crook Esquire of Rock Hill, SC.\n1st because he has not treated us as we should have been treated. \n2nd because he has not distributed our funds appropriated by the State in a just and equitable manner. We further petition your honorable bodies to appoint as our agent William David White of Rock Hill, SC. A man in whom we have confidence and who we believe to be our friends and will do justly toward us. We have the honor to be most respectfully yours etcetera \nNames (all make their marks) Peter Harris, James Patterson, William George, Wesley Harris, John Gandy,   James Watts, Taylor George, John Scott Junior \n",
-                        "title": "Letter to the House and Senate about appointing William D. White as Agent and petition-1",
-                        "image": "http://192.168.132.136/db/data/letters/1214_large.jpg"
-                    },
-                    {
-                        "transcript": "We the undersigned Representatives of York County in the legislature would respectfully recommend William Whyte as a proper person to receive the appointment as agent for the Catawba Indians. May 1, 1887 \nJD Witherspoon Senator, BH Massey Senator, Representative WB Byers, Representative JA Deal, Representative AE Hutchinson\n\n",
-                        "title": "Letter to the House and Senate about appointing William D. White as Agent and petition-2",
-                        "image": "http://192.168.132.136/db/data/letters/1215_large.jpg"
+                        "transcript": "Total out of Bonds & Stock turned over to RL Crook $937.27 \nI am under the impression that there is still a balance on the comptrollers books, as past due appropriation. I desire information, as to whether I as successor to RL Crook former agent of the Catawba Indians have a right to settle with him, as such, to pay any claim or claims he may present as accruing to him during his agency. By what authority, (if any I have) I can dispose of the bonds, so as to realize cash to them, in order to be able to distribute the sums among the Catawba Indians according to the pro-rata shares - I desire that the Attorney General decide upon a proper person to make a settlement with RL Crook, former agent, also as to what course I am to pursue with reference to claims against the Indians held by different persons, which accrued during the agency of RL Crook former agent, also what disposition of the above mentioned bal has been made, whether in bonds or otherwise. By furnishing me with the above information you will greatly oblige your most obedient servant William Whyte Agent Catawba Indians P.S. I desire to call your attention to the report of R. L. Crook former agt. of the years 1876 & 1877 - Journal of the Senate & House page 112.\n",
+                        "title": "Letter to Governor William Dunlap Simpson from William Whyte 2",
+                        "image": "http://192.168.132.136/db/data/letters/1191_large.jpg"
                     }
                 ],
+                "description": "Letter to Governor William Dunlap Simpson from William Whyte.",
+                "tribe": [
+                    "Catawba"
+                ],
                 "id": 1,
-                "thumb": "http://192.168.132.136/db/data/letters/1213_thumbnail.jpg",
-                "description": "Petitions from the Catawba Indian Nation and York County legislators."
+                "thumb": "http://192.168.132.136/db/data/letters/1190_thumbnail.jpg"
             }
-        }
+        },
+        "href": "1879"
     },
-    "1881-12-13-Taylor-George-Cover-1": {
-        "href": "1881-12-13-Taylor-George-Cover-1",
-        "tribe": "1881-12-13-Taylor-George-Cover-1",
+    "": {
         "logo": "",
-        "letters": {}
+        "letters": {
+            "1": {
+                "pages": [
+                    {
+                        "transcript": "",
+                        "title": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759",
+                        "image": "http://192.168.132.136/db/data/letters/1196_large.jpg"
+                    },
+                    {
+                        "transcript": "",
+                        "title": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759",
+                        "image": "http://192.168.132.136/db/data/letters/1197_large.jpg"
+                    },
+                    {
+                        "transcript": "",
+                        "title": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759",
+                        "image": "http://192.168.132.136/db/data/letters/1198_large.jpg"
+                    }
+                ],
+                "description": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759",
+                "tribe": [
+                    "Cherokee"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1196_thumbnail.jpg"
+            }
+        },
+        "href": ""
     },
-    "Catawba": {
-        "href": "Catawba",
-        "tribe": "Catawba",
+    "1871": {
+        "logo": "",
+        "letters": {
+            "1": {
+                "pages": [
+                    {
+                        "transcript": "South Carolina York County\nTo His Excellency Gov. RK Scott \nWe the undersigned citizens of York County respectfully recommend the appointment of Col. CJ Pride as Indian Agt.  (Names of Indians, all make their marks)John Harris, George Canty, Thomas Stevens, James Harris, Rody (Rhoda) Harris, Sally Wahoo, Betsey Harris, Polly Wahoo - Signed in the presence of James Daniels, AR smith, SM Lewell \n",
+                        "title": "Catawba Petition for CJ Pride 1",
+                        "image": "http://192.168.132.136/db/data/letters/1130_large.jpg"
+                    },
+                    {
+                        "transcript": "York County respectfully recommend the appointment of Col. C.J. Pride as Indian Agt. \nFH Barber, JR Allen, LM Davis, JCH Duff, A Friedheim, C Silgreaves, WL Roach, JM Ivy, JJ Roach, Allen Jones, JB Hope, ES Campbell, RF Hoag, John R S------, Iredell Jones, John Butters, RR Caldwell, Jno. P Gage, Wm. M. McCully, RS Galbraith, Jno. W Fewell, —L Johnston \n\n\n",
+                        "title": "Catawba Petition for CJ Pride 2",
+                        "image": "http://192.168.132.136/db/data/letters/1131_large.jpg"
+                    }
+                ],
+                "description": "The Catawbas wish Colonel CJ Pride to be their new agent. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1130_thumbnail.jpg"
+            }
+        },
+        "href": "1871"
+    },
+    "1887": {
+        "logo": "",
+        "letters": {
+            "1": {
+                "pages": [
+                    {
+                        "transcript": "",
+                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
+                        "image": "http://192.168.132.136/db/data/letters/1548_large.jpg"
+                    },
+                    {
+                        "transcript": "Jan. 20, 1887/Dear Governor,\nSince writing to you in regard to Catawba Indians I find your inquiry, that there is only one well founded complaint against Capt. AE Smith. The Captain does not think it comes within his duties as agent to remove white trespassers on Indian Reservation. Capt. Smith says now he is willing to take steps to remove the trespassers - but would like to have instructions from you - I saw Harris on yesterday - the one who was in Columbia - He says now he is willing to accept Smith - only he wants two white trespassers removed viz: Brady and Wiley by name - of course the appointment of agent rests with you - but it is my opinion under the circumstances that it would be best to retain Captain Smith and I think it would give [illegible] satisfaction. Yours very respectfully/ Iredell Jones/ Rock Hill\n",
+                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
+                        "image": "http://192.168.132.136/db/data/letters/1549_large.jpg"
+                    }
+                ],
+                "description": "Report on Catawba Indian Agent AE Smith.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1548_thumbnail.jpg"
+            },
+            "2": {
+                "pages": [
+                    {
+                        "transcript": "York/Catawba Indians/In re: appointment of agent",
+                        "title": "Letter to Gov. John Peter Richardson from Catawba Indians Pickney Head and James Patterson ",
+                        "image": "http://192.168.132.136/db/data/letters/1551_large.jpg"
+                    },
+                    {
+                        "transcript": "Rock Hill, SC/ Jan 17, 1887 Gov. JP Richardson/Columbia, SC \nOur Agent Mr. Smith says that it has come to your ears that we the Catawba Indians are dissatisfied with him as agent – the truth is there are not 5 out of the whole tribe but want him [dis]continued as our Agent. We state this that you may know the true state of things. Yours with great respect.\nPinkney Head, James Patterson, Catawba Indians\n",
+                        "title": "Letter to Gov. John Peter Richardson from Catawba Indians Pickney Head and James Patterson ",
+                        "image": "http://192.168.132.136/db/data/letters/1552_large.jpg"
+                    }
+                ],
+                "description": "The Catawbas wish AE Smith to remain as their agent. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 2,
+                "thumb": "http://192.168.132.136/db/data/letters/1551_thumbnail.jpg"
+            },
+            "3": {
+                "pages": [
+                    {
+                        "transcript": "Rock Hill, SC/Jan 15, 1887/Dear Governor,\nI write to suggest that you do not act too hastily in regard to reappointment of agent for Catawba Indians. Marshall spoke with you in regard [illegible] accepting the appointment, but I would prefer for you to do so under the circumstances. In my humble judgment you could not possibly do better than retain the present agent Capt. AE Smith. If any reports have been made prejudiced to him, it would be well for you to address a communication to him and ask an explanation. Captain Smith has given peak satisfaction with the Indians and claims that he could show it by ascertaining the current opinion of the Indians.  He claims that 7/8 of them are satisfied; with the committee such that the committee sent down does not represent the sentiment. For instance, that Morrison has no claims against the state, having gone \n",
+                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
+                        "image": "http://192.168.132.136/db/data/letters/1554_large.jpg"
+                    },
+                    {
+                        "transcript": "west years ago, and lived there until recently. Before his departure the State – by act of legislation paid him up in full to his satisfaction. In regards to Harris the other committee man, [illegible] he is a troublesome discontented man – There is enough in all this to get at the facts and even the other side before you change their agent. I believe Smith – is as good an agent as you could get in this section – has as high character as any man in our community, and will serve as faithfully and do right as easily. I remain yours with great respect, Iredell Jones\nIt appears that Harris and Morrison were a self-constituted committee. \n",
+                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
+                        "image": "http://192.168.132.136/db/data/letters/1555_large.jpg"
+                    }
+                ],
+                "description": "In support of retaining AE Smith as Catawba Indian Agent.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 3,
+                "thumb": "http://192.168.132.136/db/data/letters/1554_thumbnail.jpg"
+            },
+            "4": {
+                "pages": [
+                    {
+                        "transcript": "Rock Hill, SC/Jan. 28, 1887/To His Excellency Gov. JP Richardson, Columbia, SC\nThe writer has been the states agent to disburse funds appropriated for the support of Catawba Indians since 9th of July 1882 under appointment of Governor Hagood. It has been the custom of agents heretofore to employ medical attention (for those living on the reservation) by the year. Physicians refuse to attend them without this guarantee. The agency in in doubt – and no such arrangement has been made to them this year, and besides crops on Catawba River were nearly complete failure in consequence of freshets last year  - and many of them are in real want. At the instance of James Harris and others who are here to day making inquiry I state these facts, and they can suggest whatever action you may deem wise in the matter.\nYours Truly/ AE Smith\n",
+                        "title": "Letter to Gov. John Peter Richardson from Catawba Indian Agent AE Smith",
+                        "image": "http://192.168.132.136/db/data/letters/1557_large.jpg"
+                    },
+                    {
+                        "transcript": "these facts, and they can suggest whatever action you may deem wise in the matter.\nYours Truly/ AE Smith\n",
+                        "title": "Letter to Gov. John Peter Richardson from Catawba Indian Agent AE Smith",
+                        "image": "http://192.168.132.136/db/data/letters/1558_large.jpg"
+                    }
+                ],
+                "description": "Adverse conditions on the Catawba Indian Nation.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 4,
+                "thumb": "http://192.168.132.136/db/data/letters/1557_thumbnail.jpg"
+            },
+            "5": {
+                "pages": [
+                    {
+                        "transcript": "York Co. S. Carolina March 16th, 1887\nHon. Governor Richardson\n\nDear Sir,\n\nI have taken this liberty to write you a few lines in regards to the following - to wit -\n\n[Illegible] It seems that our business as regards our nation is somewhat much disturbed owing to some influence coming in contact with it and there is some doubts for the Catawbas all to rec’d their just money. It is supposed that it is owning to the requirements of our law [illegible] requiring registration before drafting. It seems that our agent is informed as to whom he should issue and to whom he should not. Therefore this is placed before you that you may be able to give us to know whether this comes forth by your hand or not. So I will close this and will wait for a reply for you. \n\nJames Harris\t\nEpp Harris \n\n",
+                        "title": "Letter to Gov. John Peter Richardson from Catawba Indians James Harris and Absalom \"\"Epp\"\" Harris ",
+                        "image": "http://192.168.132.136/db/data/letters/1560_large.jpg"
+                    }
+                ],
+                "description": "Concerns about the Catawbas recieiving the appropriation. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 5,
+                "thumb": "http://192.168.132.136/db/data/letters/1560_thumbnail.jpg"
+            },
+            "6": {
+                "pages": [
+                    {
+                        "transcript": "York/ Catawba Indians/ In the removal from reservation certain white men",
+                        "title": "Letter to Gov. John Peter Richardson from several Catawba Indians ",
+                        "image": "http://192.168.132.136/db/data/letters/1562_large.jpg"
+                    },
+                    {
+                        "transcript": "York Co. SC/ Dec 15th, 1887/Hon. JL Marshall, Dear Sir –\t\nWe want you to take a step toward putting these lawless white men out of the nation for they are a big trouble to the nation. JW Brady & J Roggers are the men living in direct violation of law here. Please to apply to the Governor for an immediate help for us and oblige us. We wish to know whether the law of the State requires more citizens and more tax payers to render services on the public highway or not for we have done some work on the public’s road. ",
+                        "title": "Letter to Gov. John Peter Richardson from several Catawba Indians ",
+                        "image": "http://192.168.132.136/db/data/letters/1563_large.jpg"
+                    },
+                    {
+                        "transcript": "We desire to have one of our own men for our agent this time so as to [illegible] that [illegible] to the nation. The bearer of this is the one we pick on for the nation. Please to remember us and give us our wishes. Very respectfully yours. Billy George, Lewis Gordon, Epp Harris, \nRL (Robert Lee) Harris, [Illegible] Harris\n",
+                        "title": "Letter to Gov. John Peter Richardson from several Catawba Indians ",
+                        "image": "http://192.168.132.136/db/data/letters/1564_large.jpg"
+                    }
+                ],
+                "description": "Concerning the removal of white men from the Catawba Indian Nation. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 6,
+                "thumb": "http://192.168.132.136/db/data/letters/1562_thumbnail.jpg"
+            },
+            "7": {
+                "pages": [
+                    {
+                        "transcript": "York Co SC/ Feb 2nd 1887/Mr. Solomon Harris\nSir-\nThis is to inform you that I have sent these delegates to you to give you to know that you are wanted as agent for the nation, and therefore you are requested hereby to concur with these men in the matter & oblige you. Thomas Morrison Chief/ delegates/ James Harris, John Sanders, Billy Harris                                                               \n\n",
+                        "title": "Letter to Solomon Harris from Catawba Chief Thomas Morrison",
+                        "image": "http://192.168.132.136/db/data/letters/1566_large.jpg"
+                    }
+                ],
+                "description": "Chief Morrison appoints Solomon Harris as Catawba Indian Agent. This letter was found in unsorted Governor's correspondence so unsure if Gov. John Peter Richardson ever saw it or how it made its way to Columbia. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 7,
+                "thumb": "http://192.168.132.136/db/data/letters/1566_thumbnail.jpg"
+            },
+            "8": {
+                "pages": [
+                    {
+                        "transcript": "York/Catawba Indians/In re. Appointment of agent/Appoint Captain AE Smith/WM Richardson Gov/\nFeb 4th 1887\n",
+                        "title": "Letter to Gov. John Peter Richardson from Solomon Harris ",
+                        "image": "http://192.168.132.136/db/data/letters/1568_large.jpg"
+                    },
+                    {
+                        "transcript": "Feb 4 Fort Mill, 1887/ To your honor JP Richardson \nas to those Catawba Indian[s], they are in needy, very needy circumstances for food. They are unemployed and can’t get anything to keep sole and bodely to gather. They will be to see me this evening, so as to learn if yet – I have got of their funds at your hand for their relief as to what they are claiming at your hand assistance thru my hand as soon as possible. To your honor I will submit this instrument from then as their authority under which I ask those Indians now over fifty three in number. Your honor sending moneys by express will be promtly dealt out. Your obedient servant/ Solomon Harris \n",
+                        "title": "Letter to Gov. John Peter Richardson from Solomon Harris ",
+                        "image": "http://192.168.132.136/db/data/letters/1569_large.jpg"
+                    }
+                ],
+                "description": "Solomon Harris ask the Gov. for aid for the Catawbas. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 8,
+                "thumb": "http://192.168.132.136/db/data/letters/1568_thumbnail.jpg"
+            }
+        },
+        "href": "1887"
+    },
+    "1872": {
+        "logo": "",
+        "letters": {
+            "1": {
+                "pages": [
+                    {
+                        "transcript": "1872/ John Scott Chief Indian Nation Feby 26th/ Requesting the influence of the governor in hurrying up the appropriation for the Cherokees (Catawbas) Indian Nation Feb 26, 1872 \n",
+                        "title": "Chief John Scott Cover",
+                        "image": "http://192.168.132.136/db/data/letters/1498_large.jpg"
+                    },
+                    {
+                        "transcript": "To His Excellency Robt. K. Scott Gov. of South Carolina\nMy dear Governor, My object in addressing you is to solicit your influence in hurrying up the appropriation for the Indians of this State. And if possible to find out when the appropriation will be paid out - to the agent - or to us. We are very much in need of it. As your Excellency well knows, this has been a very hard winter, consequently the funds on hand have been all expended in providing comforts for the winter. I would be more than pleased if you would at your convenience see the agent - and request his personal attention in distributing the funds. By complying with the above you will confer a favor on your friend John Scott Chief.\n\n",
+                        "title": "Letter to Governor Robert K. Scott from Chief John Scott ",
+                        "image": "http://192.168.132.136/db/data/letters/1499_large.jpg"
+                    }
+                ],
+                "description": "Requesting the Governor use his influence to speed up the appropriation.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1498_thumbnail.jpg"
+            },
+            "2": {
+                "pages": [
+                    {
+                        "transcript": "1872/Catawba Nation York Co. March 8/  Requesting the appointment Of Solomon Harris as Their Agent. \n",
+                        "title": "Catawba Petition for Solomon Harris as Agent Cover",
+                        "image": "http://192.168.132.136/db/data/letters/1507_large.jpg"
+                    },
+                    {
+                        "transcript": "State of South Carolina York County March 8th/72 To His Excellency RK Scott Governor of the State \naforesaid \n\nWe the subscribers of the Catawba Nation respectfully prayeth that your Excellency do grant or appoint Solomon Harris of Lancaster County and State aforesaid to be and act as our Agt to see that we are not trespassed upon and to protect us in every respect. If his Excellency remembers last July our Chief John Harris was down to see you and his Excellency promised to remove our present Agt if he did not act right which we are sorry to say he has not done. Our object in asking for Mr. Harris is because that he is a good citizen and Republican in politics. If this petition shall meet with his Excellencys approval we would request him to forward the appointment to Rock Hill. Signed under our hand this the 8th March 1872 in presence of: (Names of Indians, all make their marks) Attest [illegible] Y Collins, Bobby Harris, Susan Harris,  John Harris, Epp Harris, George Canty, James Harris , John Tims.\n",
+                        "title": "Catawba Petition to Governor Robert K. Scott for Solomon Harris as Agent ",
+                        "image": "http://192.168.132.136/db/data/letters/1508_large.jpg"
+                    }
+                ],
+                "description": "The Catawbas request that Solomon Harris be their agent. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 2,
+                "thumb": "http://192.168.132.136/db/data/letters/1507_thumbnail.jpg"
+            },
+            "3": {
+                "pages": [
+                    {
+                        "transcript": "York/ ML Owens/Agent of Catawba Indians \nMake this appointment and notify Secretary of State that I have made it. FJ Moses Gov.\n",
+                        "title": "Letter to Governor Franklin J. Moses Jr. from the York Country delegation\n",
+                        "image": "http://192.168.132.136/db/data/letters/1574_large.jpg"
+                    },
+                    {
+                        "transcript": "State of South Carolina/York County/To His Excellency FJ Moses, Jr.\nSir:\nThe undersigned members of the delegation from the County of York would most respectfully recommend\nHon. ML Owens for appointment as Agent of the Catawba Indians vice PJ Connell resigned\nVery respectfully, Dec 17th 1872, JH White Senator, JA Ratchford (House) \n",
+                        "title": "Letter to Governor Franklin J. Moses Jr. from the York Country delegation\n",
+                        "image": "http://192.168.132.136/db/data/letters/1575_large.jpg"
+                    }
+                ],
+                "description": "Recommendations of ML Owens for appointment as Catawba Indian Agent.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 3,
+                "thumb": "http://192.168.132.136/db/data/letters/1574_thumbnail.jpg"
+            }
+        },
+        "href": "1872"
+    },
+    "1869": {
         "logo": "",
         "letters": {
             "1": {
@@ -52,11 +325,46 @@
                         "image": "http://192.168.132.136/db/data/letters/1120_large.jpg"
                     }
                 ],
+                "description": "Unhappiness over the way Agent Thomas Whitesides has distributed appropriations money. ",
+                "tribe": [
+                    "Catawba"
+                ],
                 "id": 1,
-                "thumb": "http://192.168.132.136/db/data/letters/1119_thumbnail.jpg",
-                "description": "Unhappiness over the way Agent Thomas Whitesides has distributed appropriations money. "
-            },
-            "2": {
+                "thumb": "http://192.168.132.136/db/data/letters/1119_thumbnail.jpg"
+            }
+        },
+        "href": "1869"
+    },
+    "1866": {
+        "logo": "",
+        "letters": {
+            "1": {
+                "pages": [
+                    {
+                        "transcript": "Petition/To His Excellency Gov JL Orr for the appointment of Indian Agent by York & Lancaster Delegate/appointed Thos Whitesides Agent of the\nCatawba Indians the 6th Dec. 1866/James L Orr Governor.\n",
+                        "title": "Whitesides for Agent, Cover",
+                        "image": "http://192.168.132.136/db/data/letters/1111_large.jpg"
+                    },
+                    {
+                        "transcript": "James L Orr Gov To his Excellency Gov. Jas. L Orr The undersigned Delegates to the General Assembly from the Districts of York and Lancaster, respectfully recommend Thos. Whitesides, as a suitable person to fill the vacancy, occasioned by the resignation of JR Patton, resigned, as Agent for the Catawba Indians. \n\nGW Williams – Senator [illegible], AB Springs, WM C Black, JW Rawlinson, James N Mcelwee, Jr., Representatives York District, William A Moore,                                             \nBenjamin R Clyburn, Representatives Lancaster District.\n\n",
+                        "title": "Letter for Governor James Orr from Representatives recommending Thomas Whitesides for a vacany",
+                        "image": "http://192.168.132.136/db/data/letters/1112_large.jpg"
+                    }
+                ],
+                "description": "Petition from York and Lancaster County SC House and Senate memebers.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1111_thumbnail.jpg"
+            }
+        },
+        "href": "1866"
+    },
+    "1868": {
+        "logo": "",
+        "letters": {
+            "1": {
                 "pages": [
                     {
                         "transcript": "Yorkville, S.C. March 17th 1868. To his Excellency, Gov. J. L. Orr: Sir: Your letter to WI Clawson Esq., under date of19th Feby last, in reference to the account on Report of Thomas Whitesides, Catawba Indian Agent,  has been shown me. You are pleased to say: “If Judge Beatty of the District Court will therefore carefully examine the vouchers, and will certify that they are correct, & that the expenditures are according to the market value of his purchases at the time the purchases were made, I (you) will draw, --“ Under all the circumstances of the case, I felt it a duty, not altogether official however, to undertake the matter referred to me, and now state, I have carefully examined said account of $1287.41 of said Agent, and vouchers; and hereby certify, that proper and satisfactory receipts have been submitted for the whole of said account, with the exception of one item of $354.20 - not to mention another sum of $125.00, credited or claimed for Agent’s services.\n",
@@ -74,45 +382,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1124_large.jpg"
                     }
                 ],
-                "id": 2,
-                "thumb": "http://192.168.132.136/db/data/letters/1122_thumbnail.jpg",
-                "description": "Certification of Catawba Indian Agent expenses. "
-            },
-            "3": {
-                "pages": [
-                    {
-                        "transcript": "Thomas Whitesides Agt – to F H Barber -- 9 bushels & 2 pecks of corn at 1.50 per bushel Received payment in full on the $14.62 above account April 5th 1867 F. H. Barber \nYork County South Carolina person appeared before me Ferguson H Barber and maid oath that the above is just and true F. H. Barber                  Thomas Whiteside Agt.\n",
-                        "title": "Whitesides Receipts 1",
-                        "image": "http://192.168.132.136/db/data/letters/1126_large.jpg"
-                    },
-                    {
-                        "transcript": "Rock Hill, SC April 5, 1867\nMr. Thomas Whiteside Agt for Catawba Indians\nTo FH Barber\nThe amount of corn for John Harris per order 4.86, The amount of corn for Lu Canty per order 4.86, The amount of corn for Epp Harris per order 4.86  (Total $14.58)\nReceived May 26, 1868 of Thomas Whitesides Agt. for Catawba Indians Fourteen 58/100th dollars in full of the above account.   FH Barber per WL Roddy \n",
-                        "title": "Whitesides Receipts 2",
-                        "image": "http://192.168.132.136/db/data/letters/1127_large.jpg"
-                    }
+                "description": "Certification of Catawba Indian Agent expenses. ",
+                "tribe": [
+                    "Catawba"
                 ],
-                "id": 3,
-                "thumb": "http://192.168.132.136/db/data/letters/1126_thumbnail.jpg",
-                "description": "Buying corn for the Catawba Nation. "
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1122_thumbnail.jpg"
             },
-            "4": {
-                "pages": [
-                    {
-                        "transcript": "South Carolina York County\nTo His Excellency Gov. RK Scott \nWe the undersigned citizens of York County respectfully recommend the appointment of Col. CJ Pride as Indian Agt.  (Names of Indians, all make their marks)John Harris, George Canty, Thomas Stevens, James Harris, Rody (Rhoda) Harris, Sally Wahoo, Betsey Harris, Polly Wahoo - Signed in the presence of James Daniels, AR smith, SM Lewell \n",
-                        "title": "Catawba Petition for CJ Pride 1",
-                        "image": "http://192.168.132.136/db/data/letters/1130_large.jpg"
-                    },
-                    {
-                        "transcript": "York County respectfully recommend the appointment of Col. C.J. Pride as Indian Agt. \nFH Barber, JR Allen, LM Davis, JCH Duff, A Friedheim, C Silgreaves, WL Roach, JM Ivy, JJ Roach, Allen Jones, JB Hope, ES Campbell, RF Hoag, John R S------, Iredell Jones, John Butters, RR Caldwell, Jno. P Gage, Wm. M. McCully, RS Galbraith, Jno. W Fewell, —L Johnston \n\n\n",
-                        "title": "Catawba Petition for CJ Pride 2",
-                        "image": "http://192.168.132.136/db/data/letters/1131_large.jpg"
-                    }
-                ],
-                "id": 4,
-                "thumb": "http://192.168.132.136/db/data/letters/1130_thumbnail.jpg",
-                "description": "The Catawbas wish Colonel CJ Pride to be their new agent. "
-            },
-            "5": {
+            "2": {
                 "pages": [
                     {
                         "transcript": "Executive Department SC/ Columbia, March 31, 1868/ \nThomas Whitesides, Esq/ Yorkville. SC. /Agent of the Catawba Indians \nSir: I enclose you herewith, a draft for six hundred dollars, it being one half of the amount appropriated by Gen. Canby’s Order for the support of the Catawba Indians the present year. I received your account, transmitted to me together with Judge Beattie’s remarks and recommendations, thereon, through Mr. Clawson; and regret to say to you, that, the account is not by any means satisfactorily rendered. The disbursements made by you the previous year, have been in such a loose manner that I am now inclined to send you only one half of the sum to relieve the pressing necessities of the Indians. Before I send you the balance, if you cannot procure receipts from the Indians for the corn which you say you purchased in Charlotte, and for which you paid $354.00. You must procure receipts from the parties from whom you made the purchase there and forward them to me. \n",
@@ -130,11 +407,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1135_large.jpg"
                     }
                 ],
-                "id": 5,
-                "thumb": "http://192.168.132.136/db/data/letters/1133_thumbnail.jpg",
-                "description": " Discussion of proper accounting procedures to be used by the agent."
+                "description": " Discussion of proper accounting procedures to be used by the agent.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 2,
+                "thumb": "http://192.168.132.136/db/data/letters/1133_thumbnail.jpg"
             },
-            "6": {
+            "3": {
                 "pages": [
                     {
                         "transcript": "May 26, 1868 York District South Carolina\nPersonally appeared F. H Barber before me and made oath that the within account Fourteen 58/100 is just and that no part of the same has been paid\nSworn to and subscribed before me this 26 day of May 1868.\n",
@@ -142,11 +422,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1138_large.jpg"
                     }
                 ],
-                "id": 6,
-                "thumb": "http://192.168.132.136/db/data/letters/1138_thumbnail.jpg",
-                "description": "On April 5, 1867 Agent Whitesides purchased corn from FH Barber. The receipt was incomplete and could not be certified. This is the vendor trying to collect for that long overdue bill and making a sworn statement before an unknown individual. "
+                "description": "On April 5, 1867 Agent Whitesides purchased corn from FH Barber. The receipt was incomplete and could not be certified. This is the vendor trying to collect for that long overdue bill and making a sworn statement before an unknown individual. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 3,
+                "thumb": "http://192.168.132.136/db/data/letters/1138_thumbnail.jpg"
             },
-            "7": {
+            "4": {
                 "pages": [
                     {
                         "transcript": "\n11th May ‘68\nRock Hill, S.C.\nThomas Whiteside\nAgent Catawba Indians\n\nReceipts for draft $600 - --\nFile \n",
@@ -159,33 +442,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1140_large.jpg"
                     }
                 ],
-                "id": 7,
-                "thumb": "http://192.168.132.136/db/data/letters/1141_thumbnail.jpg",
-                "description": "Draft for Catawba appropriation. "
-            },
-            "8": {
-                "pages": [
-                    {
-                        "transcript": "",
-                        "title": "Whitesides Cover",
-                        "image": "http://192.168.132.136/db/data/letters/1150_large.jpg"
-                    },
-                    {
-                        "transcript": "Rock Hill Y. D. SC.\nDecb. 9, 1867\nTo his Excelleny,\nJ L Orr, Governor of So. Carolina\nDear Sir – I am agent – appointed by the State of SC for the Catawba Indians and at a loss under the existing state of affairs in the winter – how to proceed – therefore apply to your Excellence for instructions as to my duty – heretofore the Agent reported to the Court & the Court to the Legislature – some families of the Indians are at this time in a very destitute condition, and it is not in my power to assist them. I hope ",
-                        "title": "Letter to JL Orr from Thos. Whitesides, 1",
-                        "image": "http://192.168.132.136/db/data/letters/1151_large.jpg"
-                    },
-                    {
-                        "transcript": " your Excellency will advise or devise some means of reliving their necessities – I do not know under existing circumstances how or whether the appropriation made by the State can be obtained. I hope you will instruct me as to my duty at your earliest convenience.\nYour Excellency’s humble servant\nTho. Whiteside\nAgent, Catawba Indians\nYork Dist, SC\nRock Hill, PO\n\nTo His Excellency\nGov J. L. Orr \n\n",
-                        "title": "Letter to JL Orr from Thos. Whitesides 2",
-                        "image": "http://192.168.132.136/db/data/letters/1152_large.jpg"
-                    }
+                "description": "Draft for Catawba appropriation. ",
+                "tribe": [
+                    "Catawba"
                 ],
-                "id": 8,
-                "thumb": "http://192.168.132.136/db/data/letters/1150_thumbnail.jpg",
-                "description": "The agent discusses poor conditions on the reservation and asks for guidance. "
+                "id": 4,
+                "thumb": "http://192.168.132.136/db/data/letters/1141_thumbnail.jpg"
             },
-            "9": {
+            "5": {
                 "pages": [
                     {
                         "transcript": "17 March 188/ Yorkville, SC/ Thomas Whitesides Agent Catawba Indians/ Judge Beatty certificate/WJ Clawson letter/ In regard to appropriation for benefit of Indians/ answered [illegible] check for $600 the balance to be sent when proper vouchers are ordered/\n",
@@ -203,11 +467,29 @@
                         "image": "http://192.168.132.136/db/data/letters/1155_large.jpg"
                     }
                 ],
-                "id": 9,
-                "thumb": "http://192.168.132.136/db/data/letters/1156_thumbnail.jpg",
-                "description": "Letter from WI Clawson to Gov. James Lawrence Orr.\n"
+                "description": "Letter from WI Clawson to Gov. James Lawrence Orr.\n",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 5,
+                "thumb": "http://192.168.132.136/db/data/letters/1156_thumbnail.jpg"
             },
-            "10": {
+            "6": {
+                "pages": [
+                    {
+                        "transcript": "Rock hill S.C\nApril 18th, 1868\n\nTo His Excellency Gov Orr\nDear\n\nSir your communication of the 31sts in regard to the Indian Agency has been receved, the contents of which have been careffully noticed. I am quite Sorry indeed that it has not been managed, So as to meet your entire approbation. but you will please allow me dear Sir, to Simply Say to your Excly that I did the best I could, not having any instructions from your Excellency, in Regard to the management of the Same. As regards the accts being itemised, I had no idea that it was atall necessary, or Required, as I was – present on most occasions, and Seen the gods Brought and Cashed the accts. at the time or verry Shortly after, and am perfectly Satisfied that the Indians, have not been imposed upon by the Merchant, either in price or commodtee. The Chief was also present on all occasion, whenever there was Trading to any amount to be done. he Expects to Visit you and carry this communication to your Excellency. You will find h",
+                        "title": "Letter to J.L. Orr from Thomas Whitesides",
+                        "image": "http://192.168.132.136/db/data/letters/1158_large.jpg"
+                    }
+                ],
+                "description": "Letter to Governor James L. Orr from Thomas Whitesides",
+                "tribe": [
+                    ""
+                ],
+                "id": 6,
+                "thumb": "http://192.168.132.136/db/data/letters/1158_thumbnail.jpg"
+            },
+            "7": {
                 "pages": [
                     {
                         "transcript": "Copy/ Executive Department, SC Anderson, 19 Feb 1868/ H J Clawson Esq Yorkville, SC \nDear Sir, I have the honor to acknowledge the receipt of your letter on the 10th last addressed to me at Charleston and forwarded to the place in which you bring to my attention the fact the vouchers of the [illegible] of Agent of the Catawba Indians cannot be submitted to the inspection of a Grand Jury before the recessment, inasmuch as you all are likely to have no court at York before that time and in the meantime that the Indians are in a very destitute insufficient condition. The regular fall term of your court was not held on account of the absence of the Judge & when this report should have been [illegible] submitted at – this was no default on the part of the Indians or their Agent and they should not suffer therefore. The object\n",
@@ -220,11 +502,91 @@
                         "image": "http://192.168.132.136/db/data/letters/1161_large.jpg"
                     }
                 ],
-                "id": 10,
-                "thumb": "http://192.168.132.136/db/data/letters/1160_thumbnail.jpg",
-                "description": "Discusses Catawba Indian appropriation. "
+                "description": "Discusses Catawba Indian appropriation. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 7,
+                "thumb": "http://192.168.132.136/db/data/letters/1160_thumbnail.jpg"
             },
-            "11": {
+            "8": {
+                "pages": [
+                    {
+                        "transcript": "York District July 15th 1868/ Catawba Indians/ Present agent declining to act recommend Jas. Morrow as agent and petition for appropriation/\n\n",
+                        "title": "Catawba Indian Petition Cover",
+                        "image": "http://192.168.132.136/db/data/letters/1171_large.jpg"
+                    },
+                    {
+                        "transcript": "\nYork District S Co July the 15th 1868 \nTo His Excellency R. K. Scott Gov of South Carolina\nWe the undersigned petitioners respectfully ask the attention of your Excellency to the following petition from the Catawba Tribe of Indians. The present agent Thomas Whitesides desiring no longer to act as agent; we beg leave to recommend to your favourable consideration the appointment of James Morrow as our future agent; being satisfied that he is the choice of a large majority of the tribe, and have not doubt, but that the deligations of York and Lancaster Districts will fully satisfy your Excellency that James Morrow is in every respect competent and reliable. We beg leave further to state that in as much as many of our people are old, feble, and infirm, and owing to the impoverished condition of the country, and the high rates of all kinds of provisions, many will inevitably suffer for food. We therefore earnestly entreat your Excellency to use your influence with the Legislature to make as liberal an appropriations as is possible for the State to do at this time. And your petitioners as in duty bound will pray etc.\nNames of Indians (All make their marks): John Skott Senior, Thomas Stephens, John Skott Junior, Peter Harris, John A Tims, Nelson George Senior, Talor (Taylor) George Junior, James Patterson, Gilbert George, William George, John Gandy\nNames of Citizens around the Indians: WB Dill, William Cornwell, JD Cornwell, TT Garrison, JW Robertson, JG Brown Jr.,  Adam Ivy an old Agent, JS Williamson \n",
+                        "title": "Letter to R.K. Scott from Catawba Indians",
+                        "image": "http://192.168.132.136/db/data/letters/1172_large.jpg"
+                    }
+                ],
+                "description": "The Catawbas wish James Morrow to be their new Agent with Thomas Whitesides no longer wanting the job. ",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 8,
+                "thumb": "http://192.168.132.136/db/data/letters/1171_thumbnail.jpg"
+            },
+            "9": {
+                "pages": [
+                    {
+                        "transcript": "10 Feb 68/WJ Clawson Esq/Yorkville SC/ \n[illegible] of appropriation for Catawba Indians will be paid on certificate of Dist. Judge that vouchers are all correct/ Answered 19th Feb. 68 that payment will be ordered in that fashion/James L Orr/Gv\n",
+                        "title": "Clawson Cover",
+                        "image": "http://192.168.132.136/db/data/letters/1183_large.jpg"
+                    },
+                    {
+                        "transcript": "Yorkville S.C. Feb 10th 1868 Gov JL Orr\nDear Sir Thomas Whitesides the Agent of the Catawba Indians, has submitted his report of receipts and expenditures for the Indians, for the year 1867 to Judge Beatty of the District Court – to gather your letter of instructions, and he declines to act in the matter on the ground that your instructions contemplates that the matter shall be laid before the Grand Jury. Whilst a member of the Legislature I think in 1852, 1854 or 1855 had the resolution passed by the Legislature, regarding Indian Agents, to file their reports in the Clerks office at the Fall term of each Court, and making it the duty of the Circuit Judge to refer the same to the Grand Jury, in the same manner that the reports of the [illegible] of the Poor, and other Police Boards required to be referred. Under the District Court Law, all matters of Police are now referred to the District Judge, and with it, I respectfully\n",
+                        "title": "Letter to J.L. Orr from W.J. Clawson, 1",
+                        "image": "http://192.168.132.136/db/data/letters/1184_large.jpg"
+                    },
+                    {
+                        "transcript": "submit, the accounts of the Indian Agent. I am informed by Mr. Whitesides that many of the Indians are in a destitute and almost starving condition and that it is important that the small pittance allowed them should be drawn at once. I understand that it is probable that we have no Court at this place until sometime in the summer and if this Agents Report is to go before the Grand Jury it is not likely that the Indians will receive any benefit from the appropriation made for them until sometime next fall. Under the circumstances would you be willing to give the Catawba Agent an order on the Treasurer for the Appropriation – provided he procures the certificate of Judge Beatty that his account of expenditures for the past year is correct? Your early reply will very much oblige. Your Obt servant W G Clawson",
+                        "title": "Letter to J.L. Orr from W.J. Clawson, 2",
+                        "image": "http://192.168.132.136/db/data/letters/1185_large.jpg"
+                    }
+                ],
+                "description": "Letters about appropriation of funds for Catawba Indians.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 9,
+                "thumb": "http://192.168.132.136/db/data/letters/1183_thumbnail.jpg"
+            }
+        },
+        "href": "1868"
+    },
+    "1777": {
+        "logo": "",
+        "letters": {
+            "1": {
+                "pages": [
+                    {
+                        "transcript": "",
+                        "title": "The Definitive Treaty of Peace Between South Carolina and Georgia on the one part, and the Cherokee Nation on the other; concluded at Dewit's Corner in South Carolina the 20th of May, in the Year of our Lord 1777; and in the 2d Year of the Independence of America",
+                        "image": "http://192.168.132.136/db/data/letters/1206_large.jpg"
+                    },
+                    {
+                        "transcript": "",
+                        "title": "The Definitive Treaty of Peace Between South Carolina and Georgia on the one part, and the Cherokee Nation on the other; concluded at Dewit's Corner in South Carolina the 20th of May, in the Year of our Lord 1777; and in the 2d Year of the Independence of America",
+                        "image": "http://192.168.132.136/db/data/letters/1207_large.jpg"
+                    }
+                ],
+                "description": "A Treaty of Peace and Friendship finally concluded and ratified between the Honorable William Bull Esqr Lieut Governor and Commander in Chief, in  and over His Majesty's said Provience of South Carolina and Attakullakulla; Kettagusta, Brother to the Great Warrior, commonly called the Prince of Choteh; Skalleloski of Stickowih Brother of Jud's Friend Cappy of Tomatly adopted son of Old Hope, Onatoy of Toquoh Brother of the Round O; Halfbreed Will of Noucasih; the Old Warrior of Estatowih, commonly called the Good Warrior; Tettatelaski of Settiquoh, and Ottassitith the Mankiller of Kenowee Head? men & Deputies from the Different Settlements of the Cherokee Nation ",
+                "tribe": [
+                    "Cherokee"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1206_thumbnail.jpg"
+            }
+        },
+        "href": "1777"
+    },
+    "1874": {
+        "logo": "",
+        "letters": {
+            "1": {
                 "pages": [
                     {
                         "transcript": "York/ The Catawba Indians \nTo Petition His Excellency/ Franklin J Moses/Governor of SoCa\n",
@@ -247,101 +609,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1165_large.jpg"
                     }
                 ],
-                "id": 11,
-                "thumb": "http://192.168.132.136/db/data/letters/1166_thumbnail.jpg",
-                "description": "Agents PJ O'Connell and ML Owens have taken Catawba appropriation money. The Catawba request that William Whyte of Rock Hill be appointed agent. "
-            },
-            "12": {
-                "pages": [
-                    {
-                        "transcript": "York District July 15th 1868/ Catawba Indians/ Present agent declining to act recommend Jas. Morrow as agent and petition for appropriation/\n\n",
-                        "title": "Catawba Indian Petition Cover",
-                        "image": "http://192.168.132.136/db/data/letters/1171_large.jpg"
-                    },
-                    {
-                        "transcript": "\nYork District S Co July the 15th 1868 \nTo His Excellency R. K. Scott Gov of South Carolina\nWe the undersigned petitioners respectfully ask the attention of your Excellency to the following petition from the Catawba Tribe of Indians. The present agent Thomas Whitesides desiring no longer to act as agent; we beg leave to recommend to your favourable consideration the appointment of James Morrow as our future agent; being satisfied that he is the choice of a large majority of the tribe, and have not doubt, but that the deligations of York and Lancaster Districts will fully satisfy your Excellency that James Morrow is in every respect competent and reliable. We beg leave further to state that in as much as many of our people are old, feble, and infirm, and owing to the impoverished condition of the country, and the high rates of all kinds of provisions, many will inevitably suffer for food. We therefore earnestly entreat your Excellency to use your influence with the Legislature to make as liberal an appropriations as is possible for the State to do at this time. And your petitioners as in duty bound will pray etc.\nNames of Indians (All make their marks): John Skott Senior, Thomas Stephens, John Skott Junior, Peter Harris, John A Tims, Nelson George Senior, Talor (Taylor) George Junior, James Patterson, Gilbert George, William George, John Gandy\nNames of Citizens around the Indians: WB Dill, William Cornwell, JD Cornwell, TT Garrison, JW Robertson, JG Brown Jr.,  Adam Ivy an old Agent, JS Williamson \n",
-                        "title": "Letter to R.K. Scott from Catawba Indians",
-                        "image": "http://192.168.132.136/db/data/letters/1172_large.jpg"
-                    }
+                "description": "Agents PJ O'Connell and ML Owens have taken Catawba appropriation money. The Catawba request that William Whyte of Rock Hill be appointed agent. ",
+                "tribe": [
+                    "Catawba"
                 ],
-                "id": 12,
-                "thumb": "http://192.168.132.136/db/data/letters/1171_thumbnail.jpg",
-                "description": "The Catawbas wish James Morrow to be their new Agent with Thomas Whitesides no longer wanting the job. "
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1166_thumbnail.jpg"
             },
-            "13": {
-                "pages": [
-                    {
-                        "transcript": "10 Feb 68/WJ Clawson Esq/Yorkville SC/ \n[illegible] of appropriation for Catawba Indians will be paid on certificate of Dist. Judge that vouchers are all correct/ Answered 19th Feb. 68 that payment will be ordered in that fashion/James L Orr/Gv\n",
-                        "title": "Clawson Cover",
-                        "image": "http://192.168.132.136/db/data/letters/1183_large.jpg"
-                    },
-                    {
-                        "transcript": "Yorkville S.C. Feb 10th 1868 Gov JL Orr\nDear Sir Thomas Whitesides the Agent of the Catawba Indians, has submitted his report of receipts and expenditures for the Indians, for the year 1867 to Judge Beatty of the District Court – to gather your letter of instructions, and he declines to act in the matter on the ground that your instructions contemplates that the matter shall be laid before the Grand Jury. Whilst a member of the Legislature I think in 1852, 1854 or 1855 had the resolution passed by the Legislature, regarding Indian Agents, to file their reports in the Clerks office at the Fall term of each Court, and making it the duty of the Circuit Judge to refer the same to the Grand Jury, in the same manner that the reports of the [illegible] of the Poor, and other Police Boards required to be referred. Under the District Court Law, all matters of Police are now referred to the District Judge, and with it, I respectfully\n",
-                        "title": "Letter to J.L. Orr from W.J. Clawson, 1",
-                        "image": "http://192.168.132.136/db/data/letters/1184_large.jpg"
-                    },
-                    {
-                        "transcript": "submit, the accounts of the Indian Agent. I am informed by Mr. Whitesides that many of the Indians are in a destitute and almost starving condition and that it is important that the small pittance allowed them should be drawn at once. I understand that it is probable that we have no Court at this place until sometime in the summer and if this Agents Report is to go before the Grand Jury it is not likely that the Indians will receive any benefit from the appropriation made for them until sometime next fall. Under the circumstances would you be willing to give the Catawba Agent an order on the Treasurer for the Appropriation – provided he procures the certificate of Judge Beatty that his account of expenditures for the past year is correct? Your early reply will very much oblige. Your Obt servant W G Clawson",
-                        "title": "Letter to J.L. Orr from W.J. Clawson, 2",
-                        "image": "http://192.168.132.136/db/data/letters/1185_large.jpg"
-                    }
-                ],
-                "id": 13,
-                "thumb": "http://192.168.132.136/db/data/letters/1183_thumbnail.jpg",
-                "description": "Letters about appropriation of funds for Catawba Indians."
-            },
-            "14": {
-                "pages": [
-                    {
-                        "transcript": "2059/ York/ Catawba Indians ask removal of Crook & Appt. of Whyte May 5th 1877. \n",
-                        "title": "Cover, Catawba Indians ask removal of Crook & Appt. of Whyte",
-                        "image": "http://192.168.132.136/db/data/letters/1187_large.jpg"
-                    },
-                    {
-                        "transcript": "To his Excellency, Wade Hampton, Governor of the State of South Carolina\nYour Petitioners, members of the tribe of Catawba Indians, located in the eastern portion of York County, respectfully request the removal of our present agent Mr. RL Crook, and that Mr. William Whyte of Rock Hill be appointed to the position in his stead - May 5th 1877\n(All make their marks) A Tims Chief, Billy George, George Canty, Epp Harris, John Scott, Taylor George, James Patterson, John Gandy, Witness A Tims.\n",
-                        "title": "Letter to Governor Wade Hampton requesting the appointment of William Whyte",
-                        "image": "http://192.168.132.136/db/data/letters/1188_large.jpg"
-                    }
-                ],
-                "id": 14,
-                "thumb": "http://192.168.132.136/db/data/letters/1187_thumbnail.jpg",
-                "description": "The Catawbas ask that RL Crook be removed as their agent and William Whyte appointed.\n"
-            },
-            "15": {
-                "pages": [
-                    {
-                        "transcript": "Rock Hill SC May 24 1879 To his Excellency Gov WD Simpson\nIn compliance with your request, I hereby forward a full statement of claims established before JC Crib? Commissioner at Columbia S.C. by JD Witherspoon. Comptroller General warrants No 393, two warrants each for $715.00 payable to R.L. Crook agent of the Catawba Indians - dated February 28, 1876, with interest after date out of taxes for fiscal year 1876 & 1877 under act March 24 1875 balance due on unpaid appropriation since 1870, due Catawba Indians. = No 719 FL Cardozo received July 24, 1876 of RL Crook Treasurer due bill No. 188 upon which paid $50.00 leaving balance due $100.00 deficiency. 1875 & 1875 = No 718 FL Cardozo received of RL Crook Treasurers due bill No 621 upon which paid $91.25 leaving bal due of $91.25 unpaid appropriations 1875 & 1874. March 25 1879 turned over to RL Crook former agt of Catawba Indians, and took receipts = \nState Bonds No. 125 consolidated - July 1, 1878 $500.00\nState Bonds No. 400 consolidated - July 1, 1878 $100.00 \nState Certificate 334 consolidated - February 18, 1879 $337.27 \n",
-                        "title": "Letter to Governor William Dunlap Simpson from William Whyte-1",
-                        "image": "http://192.168.132.136/db/data/letters/1190_large.jpg"
-                    },
-                    {
-                        "transcript": "Total out of Bonds & Stock turned over to RL Crook $937.27 \nI am under the impression that there is still a balance on the comptrollers books, as past due appropriation. I desire information, as to whether I as successor to RL Crook former agent of the Catawba Indians have a right to settle with him, as such, to pay any claim or claims he may present as accruing to him during his agency. By what authority, (if any I have) I can dispose of the bonds, so as to realize cash to them, in order to be able to distribute the sums among the Catawba Indians according to the pro-rata shares - I desire that the Attorney General decide upon a proper person to make a settlement with RL Crook, former agent, also as to what course I am to pursue with reference to claims against the Indians held by different persons, which accrued during the agency of RL Crook former agent, also what disposition of the above mentioned bal has been made, whether in bonds or otherwise. By furnishing me with the above information you will greatly oblige your most obedient servant William Whyte Agent Catawba Indians P.S. I desire to call your attention to the report of R. L. Crook former agt. of the years 1876 & 1877 - Journal of the Senate & House page 112.\n",
-                        "title": "Letter to Governor William Dunlap Simpson from William Whyte 2",
-                        "image": "http://192.168.132.136/db/data/letters/1191_large.jpg"
-                    }
-                ],
-                "id": 15,
-                "thumb": "http://192.168.132.136/db/data/letters/1190_thumbnail.jpg",
-                "description": "Letter to Governor William Dunlap Simpson from William Whyte."
-            },
-            "16": {
-                "pages": [
-                    {
-                        "transcript": "2035/RL Crooke/ Rock Hill/ Funds for the Catawba Indians/ January 15th 1877 \n",
-                        "title": "RD Crook Cover, Funds for the Catawba Indians",
-                        "image": "http://192.168.132.136/db/data/letters/1194_large.jpg"
-                    },
-                    {
-                        "transcript": "Rock Hill SC January 15th 1877 Gov. Wade Hampton\nMy Dear Sir I observe that you are making every effort you can to supply the needs of the Asylum. I therefore presume to request some little consideration favoring the Catawba Indians. This being a hard winter they are in much need of clothing and other ordinary comforts. There is a considerable balance in favor of them due by the State (Say $1200). If it is possible I would like [to] get as much as $500 Five Hundred dollars, for the present. Please inform me what I may expect. \nYours with much respect RD Crook Agent Catawba Indians Rock Hill SC.\n",
-                        "title": "Letter to Governor Wade Hampton from R.D. Crooke about funds for the Catawba Indians",
-                        "image": "http://192.168.132.136/db/data/letters/1193_large.jpg"
-                    }
-                ],
-                "id": 16,
-                "thumb": "http://192.168.132.136/db/data/letters/1194_thumbnail.jpg",
-                "description": "The agent requests partial payment of the amount due the Catawbas.\n"
-            },
-            "17": {
+            "2": {
                 "pages": [
                     {
                         "transcript": "No. 308/ RL Crook York/Commissioner of Catawba Indians /vice ML Owens removed\nAppointed Dec. 19, 1874 ML Owens removed WH Chamberlain Gov. Dec. 19. 1874\n",
@@ -354,11 +629,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1200_large.jpg"
                     }
                 ],
-                "id": 17,
-                "thumb": "http://192.168.132.136/db/data/letters/1201_thumbnail.jpg",
-                "description": "Seeking the appointment of RL Crook as Catawba Indian Agent."
+                "description": "Seeking the appointment of RL Crook as Catawba Indian Agent.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 2,
+                "thumb": "http://192.168.132.136/db/data/letters/1201_thumbnail.jpg"
             },
-            "18": {
+            "3": {
                 "pages": [
                     {
                         "transcript": "No. 535/ DC Woolf Lancaster/ For Commissioner of Catawba Indians.\n",
@@ -371,11 +649,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1204_large.jpg"
                     }
                 ],
-                "id": 18,
-                "thumb": "http://192.168.132.136/db/data/letters/1203_thumbnail.jpg",
-                "description": "The Catawbas ask that DC Wolf be appointed as their agent.\n"
+                "description": "The Catawbas ask that DC Wolf be appointed as their agent.\n",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 3,
+                "thumb": "http://192.168.132.136/db/data/letters/1203_thumbnail.jpg"
             },
-            "19": {
+            "4": {
                 "pages": [
                     {
                         "transcript": "No. 316/JP Hunter/York/For Indian Agent \n",
@@ -393,11 +674,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1211_large.jpg"
                     }
                 ],
-                "id": 19,
-                "thumb": "http://192.168.132.136/db/data/letters/1209_thumbnail.jpg",
-                "description": "Petitions from the Catawba Indian Nation and also local Fort Mill, SC area residents.\n"
+                "description": "Petitions from the Catawba Indian Nation and also local Fort Mill, SC area residents.\n",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 4,
+                "thumb": "http://192.168.132.136/db/data/letters/1209_thumbnail.jpg"
             },
-            "20": {
+            "5": {
                 "pages": [
                     {
                         "transcript": "State – South Carolina\nCounty – York \n\nPersonally appeared before me CJ Pride Trial Justice\n\nThos N Dunlap and James J Shaw who say on oath – that we are near neighbors of the Catawba Indians and know they are very destitute and have failed to receive their annuity appointed by the State of SoCa – and respectfully recommend the removal of the present Agent, M. L.  Owens on account he has never given [illegible] or paid any money over to Said Indians – and most respectfully recommend RS _____ as a suitable man who will do justice to the Catawba Indians if any things is put in his hands. \n\nSworn to before me [illegible] 9 day July [illegible] 1874   \nTN Dunlap\nJJ Shaw \n\nCJ Pride\nTJ (Trial Justice) \n\n",
@@ -405,11 +689,91 @@
                         "image": "http://192.168.132.136/db/data/letters/1220_large.jpg"
                     }
                 ],
-                "id": 20,
-                "thumb": "http://192.168.132.136/db/data/letters/1220_thumbnail.jpg",
-                "description": "Removal of Catawba Indian Agent ML Owens for his position. \n"
+                "description": "Removal of Catawba Indian Agent ML Owens for his position. \n",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 5,
+                "thumb": "http://192.168.132.136/db/data/letters/1220_thumbnail.jpg"
+            }
+        },
+        "href": "1874"
+    },
+    "1877": {
+        "logo": "",
+        "letters": {
+            "1": {
+                "pages": [
+                    {
+                        "transcript": "2059/ York/ Catawba Indians ask removal of Crook & Appt. of Whyte May 5th 1877. \n",
+                        "title": "Cover, Catawba Indians ask removal of Crook & Appt. of Whyte",
+                        "image": "http://192.168.132.136/db/data/letters/1187_large.jpg"
+                    },
+                    {
+                        "transcript": "To his Excellency, Wade Hampton, Governor of the State of South Carolina\nYour Petitioners, members of the tribe of Catawba Indians, located in the eastern portion of York County, respectfully request the removal of our present agent Mr. RL Crook, and that Mr. William Whyte of Rock Hill be appointed to the position in his stead - May 5th 1877\n(All make their marks) A Tims Chief, Billy George, George Canty, Epp Harris, John Scott, Taylor George, James Patterson, John Gandy, Witness A Tims.\n",
+                        "title": "Letter to Governor Wade Hampton requesting the appointment of William Whyte",
+                        "image": "http://192.168.132.136/db/data/letters/1188_large.jpg"
+                    }
+                ],
+                "description": "The Catawbas ask that RL Crook be removed as their agent and William Whyte appointed.\n",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1187_thumbnail.jpg"
             },
-            "21": {
+            "2": {
+                "pages": [
+                    {
+                        "transcript": "2035/RL Crooke/ Rock Hill/ Funds for the Catawba Indians/ January 15th 1877 \n",
+                        "title": "RD Crook Cover, Funds for the Catawba Indians",
+                        "image": "http://192.168.132.136/db/data/letters/1194_large.jpg"
+                    },
+                    {
+                        "transcript": "Rock Hill SC January 15th 1877 Gov. Wade Hampton\nMy Dear Sir I observe that you are making every effort you can to supply the needs of the Asylum. I therefore presume to request some little consideration favoring the Catawba Indians. This being a hard winter they are in much need of clothing and other ordinary comforts. There is a considerable balance in favor of them due by the State (Say $1200). If it is possible I would like [to] get as much as $500 Five Hundred dollars, for the present. Please inform me what I may expect. \nYours with much respect RD Crook Agent Catawba Indians Rock Hill SC.\n",
+                        "title": "Letter to Governor Wade Hampton from R.D. Crooke about funds for the Catawba Indians",
+                        "image": "http://192.168.132.136/db/data/letters/1193_large.jpg"
+                    }
+                ],
+                "description": "The agent requests partial payment of the amount due the Catawbas.\n",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 2,
+                "thumb": "http://192.168.132.136/db/data/letters/1194_thumbnail.jpg"
+            },
+            "3": {
+                "pages": [
+                    {
+                        "transcript": "York/Petition of the Members of the Catawba Indians asking the removal of RL Crooke and the appointment in his stead William D White as agent.\n\n",
+                        "title": "Catwba Petition Cover 1",
+                        "image": "http://192.168.132.136/db/data/letters/1213_large.jpg"
+                    },
+                    {
+                        "transcript": "Catawba Nation York County South Carolina/To the Senate and House of Representatives, Columbia, SC \nWe the undersigned Catawba Indians of York County do most respectfully petition your honorable bodies to remove from office, as agent RL Crook Esquire of Rock Hill, SC.\n1st because he has not treated us as we should have been treated. \n2nd because he has not distributed our funds appropriated by the State in a just and equitable manner. We further petition your honorable bodies to appoint as our agent William David White of Rock Hill, SC. A man in whom we have confidence and who we believe to be our friends and will do justly toward us. We have the honor to be most respectfully yours etcetera \nNames (all make their marks) Peter Harris, James Patterson, William George, Wesley Harris, John Gandy,   James Watts, Taylor George, John Scott Junior \n",
+                        "title": "Letter to the House and Senate about appointing William D. White as Agent and petition-1",
+                        "image": "http://192.168.132.136/db/data/letters/1214_large.jpg"
+                    },
+                    {
+                        "transcript": "We the undersigned Representatives of York County in the legislature would respectfully recommend William Whyte as a proper person to receive the appointment as agent for the Catawba Indians. May 1, 1887 \nJD Witherspoon Senator, BH Massey Senator, Representative WB Byers, Representative JA Deal, Representative AE Hutchinson\n\n",
+                        "title": "Letter to the House and Senate about appointing William D. White as Agent and petition-2",
+                        "image": "http://192.168.132.136/db/data/letters/1215_large.jpg"
+                    }
+                ],
+                "description": "Petitions from the Catawba Indian Nation and York County legislators.",
+                "tribe": [
+                    ""
+                ],
+                "id": 3,
+                "thumb": "http://192.168.132.136/db/data/letters/1213_thumbnail.jpg"
+            }
+        },
+        "href": "1877"
+    },
+    "1881": {
+        "logo": "",
+        "letters": {
+            "1": {
                 "pages": [
                     {
                         "transcript": "Rock Hill, South Carolina\nDecember 12, 1881\n\nDear [illegible]\n\nAfter leaving you today the Indians handed me the enclosed petitions with the request that I forward to you as I expect to be away after today. I now enclose all together. You will see from these that have signed the majority are for him and I think more would have signed but did not have time to see these. I enclose the petition as I have full confidence in Mr. Smith and believe he will do his whole duty.\nExcuse haste.\n\nYours\n\nWilliam Whyte \n\n",
@@ -417,28 +781,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1496_large.jpg"
                     }
                 ],
-                "id": 21,
-                "thumb": "http://192.168.132.136/db/data/letters/1496_thumbnail.jpg",
-                "description": "Encloses petitions from the majority of the Catawba and the York County delegation. "
-            },
-            "22": {
-                "pages": [
-                    {
-                        "transcript": "1872/ John Scott Chief Indian Nation Feby 26th/ Requesting the influence of the governor in hurrying up the appropriation for the Cherokees (Catawbas) Indian Nation Feb 26, 1872 \n",
-                        "title": "Chief John Scott Cover",
-                        "image": "http://192.168.132.136/db/data/letters/1498_large.jpg"
-                    },
-                    {
-                        "transcript": "To His Excellency Robt. K. Scott Gov. of South Carolina\nMy dear Governor, My object in addressing you is to solicit your influence in hurrying up the appropriation for the Indians of this State. And if possible to find out when the appropriation will be paid out - to the agent - or to us. We are very much in need of it. As your Excellency well knows, this has been a very hard winter, consequently the funds on hand have been all expended in providing comforts for the winter. I would be more than pleased if you would at your convenience see the agent - and request his personal attention in distributing the funds. By complying with the above you will confer a favor on your friend John Scott Chief.\n\n",
-                        "title": "Letter to Governor Robert K. Scott from Chief John Scott ",
-                        "image": "http://192.168.132.136/db/data/letters/1499_large.jpg"
-                    }
+                "description": "Encloses petitions from the majority of the Catawba and the York County delegation. ",
+                "tribe": [
+                    "Catawba"
                 ],
-                "id": 22,
-                "thumb": "http://192.168.132.136/db/data/letters/1498_thumbnail.jpg",
-                "description": "Requesting the Governor use his influence to speed up the appropriation."
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1496_thumbnail.jpg"
             },
-            "23": {
+            "2": {
                 "pages": [
                     {
                         "transcript": "Rock Hill, SC December 10, 1881 To His Excellency, Governor Hagood \nWe the undersigned heads of families of the Catawba Indians do want AE Smith of Rock Hill to be appointed by you as our agent for the next year. Hoping earnestly that our wishes in this appointment may meet You Excellency’s approval we are: Alexander Tims, George Canty, William Harris, Taylor George, John Gandy, Tom Stevens, James Harris, [Illegible] Canty, John Sanders, Lucinda Harris,  Jeff Ayers, Nancy George, Susannah Owl, Rhoda Harris, Betsey Harris, Nancy Harris, Nancy White, Margaret Brown, Epp Harris,      Sara Head \n",
@@ -451,45 +801,14 @@
                         "image": "http://192.168.132.136/db/data/letters/1502_large.jpg"
                     }
                 ],
-                "id": 23,
-                "thumb": "http://192.168.132.136/db/data/letters/1501_thumbnail.jpg",
-                "description": "The Catawbas wish AE Smith to be their new agent.\n"
-            },
-            "24": {
-                "pages": [
-                    {
-                        "transcript": "1872/Catawba Nation York Co. March 8/  Requesting the appointment Of Solomon Harris as Their Agent. \n",
-                        "title": "Catawba Petition for Solomon Harris as Agent Cover",
-                        "image": "http://192.168.132.136/db/data/letters/1507_large.jpg"
-                    },
-                    {
-                        "transcript": "State of South Carolina York County March 8th/72 To His Excellency RK Scott Governor of the State \naforesaid \n\nWe the subscribers of the Catawba Nation respectfully prayeth that your Excellency do grant or appoint Solomon Harris of Lancaster County and State aforesaid to be and act as our Agt to see that we are not trespassed upon and to protect us in every respect. If his Excellency remembers last July our Chief John Harris was down to see you and his Excellency promised to remove our present Agt if he did not act right which we are sorry to say he has not done. Our object in asking for Mr. Harris is because that he is a good citizen and Republican in politics. If this petition shall meet with his Excellencys approval we would request him to forward the appointment to Rock Hill. Signed under our hand this the 8th March 1872 in presence of: (Names of Indians, all make their marks) Attest [illegible] Y Collins, Bobby Harris, Susan Harris,  John Harris, Epp Harris, George Canty, James Harris , John Tims.\n",
-                        "title": "Catawba Petition to Governor Robert K. Scott for Solomon Harris as Agent ",
-                        "image": "http://192.168.132.136/db/data/letters/1508_large.jpg"
-                    }
+                "description": "The Catawbas wish AE Smith to be their new agent.\n",
+                "tribe": [
+                    "Catawba"
                 ],
-                "id": 24,
-                "thumb": "http://192.168.132.136/db/data/letters/1507_thumbnail.jpg",
-                "description": "The Catawbas request that Solomon Harris be their agent. "
+                "id": 2,
+                "thumb": "http://192.168.132.136/db/data/letters/1501_thumbnail.jpg"
             },
-            "25": {
-                "pages": [
-                    {
-                        "transcript": "Executive Department/ SC Columbia, 14th Dec, 1867\nThomas Whitesides, Esq. Agt. Catawba Indians Rock Hill, S. C \nSir, I have rec’d your inquiry with reference to the annual appropriation for the support of the Catawba Indians in York and Lancaster. Under the recent appropriation fund by Gen. Canby the sum of 1200 has been set apart for the benefit of the Catawba Indians which is the amount that has been appropriated for them for several years past. You state that heretofore, the account of the expenditure made by the Agent has been submitted to the Court, and through the Court to the Legislature. You will adopt the same course in the present instance, that is, have your vouchers properly audited as heretofore, send on the original certificate of the judge that the same has been audited, or get from the clerk a certificate of the finding of the Grand \n",
-                        "title": "",
-                        "image": "http://192.168.132.136/db/data/letters/1542_large.jpg"
-                    },
-                    {
-                        "transcript": "Jury thereupon, and I will draw a draft upon the Treasurer for the amount of the appropriation in behalf of the Catawba Indians for the next year. Very Resptly. Your obt svt James L Orr Gov of SC.\n",
-                        "title": "",
-                        "image": "http://192.168.132.136/db/data/letters/1543_large.jpg"
-                    }
-                ],
-                "id": 25,
-                "thumb": "http://192.168.132.136/db/data/letters/1542_thumbnail.jpg",
-                "description": "The governor discusses proper accounting procedures for the Agent. "
-            },
-            "26": {
+            "3": {
                 "pages": [
                     {
                         "transcript": "York County/DC Williams/Recommended for appointment as Indian Agent/ Executive Chamber/14 Dec 87\nReferred to Delegation York County/ Hagood Gov/Appointment AE Smith Indian Agent\n",
@@ -502,159 +821,86 @@
                         "image": "http://192.168.132.136/db/data/letters/1546_large.jpg"
                     }
                 ],
-                "id": 26,
-                "thumb": "http://192.168.132.136/db/data/letters/1545_thumbnail.jpg",
-                "description": "Requesting DC Williams become the new Catawba Indian Agent. \n"
+                "description": "Requesting DC Williams become the new Catawba Indian Agent. \n",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 3,
+                "thumb": "http://192.168.132.136/db/data/letters/1545_thumbnail.jpg"
             },
-            "27": {
+            "4": {
                 "pages": [
                     {
                         "transcript": "",
-                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
-                        "image": "http://192.168.132.136/db/data/letters/1548_large.jpg"
+                        "title": "Letter to Gov. Hagood Johnson from Catawba Indian Taylor George",
+                        "image": "http://192.168.132.136/db/data/letters/1571_large.jpg"
                     },
                     {
-                        "transcript": "Jan. 20, 1887/Dear Governor,\nSince writing to you in regard to Catawba Indians I find your inquiry, that there is only one well founded complaint against Capt. AE Smith. The Captain does not think it comes within his duties as agent to remove white trespassers on Indian Reservation. Capt. Smith says now he is willing to take steps to remove the trespassers - but would like to have instructions from you - I saw Harris on yesterday - the one who was in Columbia - He says now he is willing to accept Smith - only he wants two white trespassers removed viz: Brady and Wiley by name - of course the appointment of agent rests with you - but it is my opinion under the circumstances that it would be best to retain Captain Smith and I think it would give [illegible] satisfaction. Yours very respectfully/ Iredell Jones/ Rock Hill\n",
-                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
-                        "image": "http://192.168.132.136/db/data/letters/1549_large.jpg"
+                        "transcript": "",
+                        "title": "Letter to Gov. Hagood Johnson from Catawba Indian Taylor George",
+                        "image": "http://192.168.132.136/db/data/letters/1572_large.jpg"
                     }
                 ],
-                "id": 27,
-                "thumb": "http://192.168.132.136/db/data/letters/1548_thumbnail.jpg",
-                "description": "Report on Catawba Indian Agent AE Smith."
-            },
-            "28": {
+                "description": "Requesting DC Williams become the new Catawba Indian Agent.",
+                "tribe": [
+                    "1881-12-13-Taylor-George-Cover-1"
+                ],
+                "id": 4,
+                "thumb": "http://192.168.132.136/db/data/letters/1571_thumbnail.jpg"
+            }
+        },
+        "href": "1881"
+    },
+    "1761": {
+        "logo": "",
+        "letters": {
+            "1": {
                 "pages": [
                     {
-                        "transcript": "York/Catawba Indians/In re: appointment of agent",
-                        "title": "Letter to Gov. John Peter Richardson from Catawba Indians Pickney Head and James Patterson ",
-                        "image": "http://192.168.132.136/db/data/letters/1551_large.jpg"
+                        "transcript": "",
+                        "title": "A Treaty of Peace and Friendship finally concluded and ratified between the Honorable William Bull Esqr Lieut Governor and Commander in Chief, in  and over His Majesty's said Provience of South Carolina and Attakullakulla; Kettagusta, Brother to the Great Warrior, commonly called the Prince of Choteh; Skalleloski of Stickowih Brother of Jud's Friend Cappy of Tomatly adopted son of Old Hope, Onatoy of Toquoh Brother of the Round O; Halfbreed Will of Noucasih; the Old Warrior of Estatowih, commonly called the Good Warrior; Tettatelaski of Settiquoh, and Ottassitith the Mankiller of Kenowee Head? men & Deputies from the Different Settlements of the Cherokee Nation ",
+                        "image": "http://192.168.132.136/db/data/letters/1177_large.jpg"
                     },
                     {
-                        "transcript": "Rock Hill, SC/ Jan 17, 1887 Gov. JP Richardson/Columbia, SC \nOur Agent Mr. Smith says that it has come to your ears that we the Catawba Indians are dissatisfied with him as agent – the truth is there are not 5 out of the whole tribe but want him [dis]continued as our Agent. We state this that you may know the true state of things. Yours with great respect.\nPinkney Head, James Patterson, Catawba Indians\n",
-                        "title": "Letter to Gov. John Peter Richardson from Catawba Indians Pickney Head and James Patterson ",
-                        "image": "http://192.168.132.136/db/data/letters/1552_large.jpg"
+                        "transcript": "",
+                        "title": "A Treaty of Peace and Friendship finally concluded and ratified between the Honorable William Bull Esqr Lieut Governor and Commander in Chief, in  and over His Majesty's said Provience of South Carolina and Attakullakulla; Kettagusta, Brother to the Great Warrior, commonly called the Prince of Choteh; Skalleloski of Stickowih Brother of Jud's Friend Cappy of Tomatly adopted son of Old Hope, Onatoy of Toquoh Brother of the Round O; Halfbreed Will of Noucasih; the Old Warrior of Estatowih, commonly called the Good Warrior; Tettatelaski of Settiquoh, and Ottassitith the Mankiller of Kenowee Head? men & Deputies from the Different Settlements of the Cherokee Nation ",
+                        "image": "http://192.168.132.136/db/data/letters/1178_large.jpg"
                     }
                 ],
-                "id": 28,
-                "thumb": "http://192.168.132.136/db/data/letters/1551_thumbnail.jpg",
-                "description": "The Catawbas wish AE Smith to remain as their agent. "
+                "description": "A Treaty of Peace and Friendship finally concluded and ratified between the Honorable William Bull Esqr Lieut Governor and Commander in Chief, in  and over His Majesty's said Provience of South Carolina and Attakullakulla; Kettagusta, Brother to the Great Warrior, commonly called the Prince of Choteh; Skalleloski of Stickowih Brother of Jud's Friend Cappy of Tomatly adopted son of Old Hope, Onatoy of Toquoh Brother of the Round O; Halfbreed Will of Noucasih; the Old Warrior of Estatowih, commonly called the Good Warrior; Tettatelaski of Settiquoh, and Ottassitith the Mankiller of Kenowee Head? men & Deputies from the Different Settlements of the Cherokee Nation ",
+                "tribe": [
+                    "Cherokee"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1177_thumbnail.jpg"
             },
-            "29": {
+            "2": {
                 "pages": [
                     {
-                        "transcript": "Rock Hill, SC/Jan 15, 1887/Dear Governor,\nI write to suggest that you do not act too hastily in regard to reappointment of agent for Catawba Indians. Marshall spoke with you in regard [illegible] accepting the appointment, but I would prefer for you to do so under the circumstances. In my humble judgment you could not possibly do better than retain the present agent Capt. AE Smith. If any reports have been made prejudiced to him, it would be well for you to address a communication to him and ask an explanation. Captain Smith has given peak satisfaction with the Indians and claims that he could show it by ascertaining the current opinion of the Indians.  He claims that 7/8 of them are satisfied; with the committee such that the committee sent down does not represent the sentiment. For instance, that Morrison has no claims against the state, having gone \n",
-                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
-                        "image": "http://192.168.132.136/db/data/letters/1554_large.jpg"
+                        "transcript": "",
+                        "title": "Terms to Peace to be Granted to the Cherokee Indians ",
+                        "image": "http://192.168.132.136/db/data/letters/1217_large.jpg"
                     },
                     {
-                        "transcript": "west years ago, and lived there until recently. Before his departure the State – by act of legislation paid him up in full to his satisfaction. In regards to Harris the other committee man, [illegible] he is a troublesome discontented man – There is enough in all this to get at the facts and even the other side before you change their agent. I believe Smith – is as good an agent as you could get in this section – has as high character as any man in our community, and will serve as faithfully and do right as easily. I remain yours with great respect, Iredell Jones\nIt appears that Harris and Morrison were a self-constituted committee. \n",
-                        "title": "Letter to Gov. John Peter Richardson from Iredell Jones",
-                        "image": "http://192.168.132.136/db/data/letters/1555_large.jpg"
+                        "transcript": "",
+                        "title": "Terms to Peace to be Granted to the Cherokee Indians ",
+                        "image": "http://192.168.132.136/db/data/letters/1218_large.jpg"
                     }
                 ],
-                "id": 29,
-                "thumb": "http://192.168.132.136/db/data/letters/1554_thumbnail.jpg",
-                "description": "In support of retaining AE Smith as Catawba Indian Agent."
-            },
-            "30": {
-                "pages": [
-                    {
-                        "transcript": "Rock Hill, SC/Jan. 28, 1887/To His Excellency Gov. JP Richardson, Columbia, SC\nThe writer has been the states agent to disburse funds appropriated for the support of Catawba Indians since 9th of July 1882 under appointment of Governor Hagood. It has been the custom of agents heretofore to employ medical attention (for those living on the reservation) by the year. Physicians refuse to attend them without this guarantee. The agency in in doubt – and no such arrangement has been made to them this year, and besides crops on Catawba River were nearly complete failure in consequence of freshets last year  - and many of them are in real want. At the instance of James Harris and others who are here to day making inquiry I state these facts, and they can suggest whatever action you may deem wise in the matter.\nYours Truly/ AE Smith\n",
-                        "title": "Letter to Gov. John Peter Richardson from Catawba Indian Agent AE Smith",
-                        "image": "http://192.168.132.136/db/data/letters/1557_large.jpg"
-                    },
-                    {
-                        "transcript": "these facts, and they can suggest whatever action you may deem wise in the matter.\nYours Truly/ AE Smith\n",
-                        "title": "Letter to Gov. John Peter Richardson from Catawba Indian Agent AE Smith",
-                        "image": "http://192.168.132.136/db/data/letters/1558_large.jpg"
-                    }
+                "description": "Terms to Peace to be Granted to the Cherokee Indians ",
+                "tribe": [
+                    "Cherokee"
                 ],
-                "id": 30,
-                "thumb": "http://192.168.132.136/db/data/letters/1557_thumbnail.jpg",
-                "description": "Adverse conditions on the Catawba Indian Nation."
-            },
-            "31": {
-                "pages": [
-                    {
-                        "transcript": "York Co. S. Carolina March 16th, 1887\nHon. Governor Richardson\n\nDear Sir,\n\nI have taken this liberty to write you a few lines in regards to the following - to wit -\n\n[Illegible] It seems that our business as regards our nation is somewhat much disturbed owing to some influence coming in contact with it and there is some doubts for the Catawbas all to rec’d their just money. It is supposed that it is owning to the requirements of our law [illegible] requiring registration before drafting. It seems that our agent is informed as to whom he should issue and to whom he should not. Therefore this is placed before you that you may be able to give us to know whether this comes forth by your hand or not. So I will close this and will wait for a reply for you. \n\nJames Harris\t\nEpp Harris \n\n",
-                        "title": "Letter to Gov. John Peter Richardson from Catawba Indians James Harris and Absalom \"\"Epp\"\" Harris ",
-                        "image": "http://192.168.132.136/db/data/letters/1560_large.jpg"
-                    }
-                ],
-                "id": 31,
-                "thumb": "http://192.168.132.136/db/data/letters/1560_thumbnail.jpg",
-                "description": "Concerns about the Catawbas recieiving the appropriation. "
-            },
-            "32": {
-                "pages": [
-                    {
-                        "transcript": "York/ Catawba Indians/ In the removal from reservation certain white men",
-                        "title": "Letter to Gov. John Peter Richardson from several Catawba Indians ",
-                        "image": "http://192.168.132.136/db/data/letters/1562_large.jpg"
-                    },
-                    {
-                        "transcript": "York Co. SC/ Dec 15th, 1887/Hon. JL Marshall, Dear Sir –\t\nWe want you to take a step toward putting these lawless white men out of the nation for they are a big trouble to the nation. JW Brady & J Roggers are the men living in direct violation of law here. Please to apply to the Governor for an immediate help for us and oblige us. We wish to know whether the law of the State requires more citizens and more tax payers to render services on the public highway or not for we have done some work on the public’s road. ",
-                        "title": "Letter to Gov. John Peter Richardson from several Catawba Indians ",
-                        "image": "http://192.168.132.136/db/data/letters/1563_large.jpg"
-                    },
-                    {
-                        "transcript": "We desire to have one of our own men for our agent this time so as to [illegible] that [illegible] to the nation. The bearer of this is the one we pick on for the nation. Please to remember us and give us our wishes. Very respectfully yours. Billy George, Lewis Gordon, Epp Harris, \nRL (Robert Lee) Harris, [Illegible] Harris\n",
-                        "title": "Letter to Gov. John Peter Richardson from several Catawba Indians ",
-                        "image": "http://192.168.132.136/db/data/letters/1564_large.jpg"
-                    }
-                ],
-                "id": 32,
-                "thumb": "http://192.168.132.136/db/data/letters/1562_thumbnail.jpg",
-                "description": "Concerning the removal of white men from the Catawba Indian Nation. "
-            },
-            "33": {
-                "pages": [
-                    {
-                        "transcript": "York Co SC/ Feb 2nd 1887/Mr. Solomon Harris\nSir-\nThis is to inform you that I have sent these delegates to you to give you to know that you are wanted as agent for the nation, and therefore you are requested hereby to concur with these men in the matter & oblige you. Thomas Morrison Chief/ delegates/ James Harris, John Sanders, Billy Harris                                                               \n\n",
-                        "title": "Letter to Solomon Harris from Catawba Chief Thomas Morrison",
-                        "image": "http://192.168.132.136/db/data/letters/1566_large.jpg"
-                    }
-                ],
-                "id": 33,
-                "thumb": "http://192.168.132.136/db/data/letters/1566_thumbnail.jpg",
-                "description": "Chief Morrison appoints Solomon Harris as Catawba Indian Agent. This letter was found in unsorted Governor's correspondence so unsure if Gov. John Peter Richardson ever saw it or how it made its way to Columbia. "
-            },
-            "34": {
-                "pages": [
-                    {
-                        "transcript": "York/Catawba Indians/In re. Appointment of agent/Appoint Captain AE Smith/WM Richardson Gov/\nFeb 4th 1887\n",
-                        "title": "Letter to Gov. John Peter Richardson from Solomon Harris ",
-                        "image": "http://192.168.132.136/db/data/letters/1568_large.jpg"
-                    },
-                    {
-                        "transcript": "Feb 4 Fort Mill, 1887/ To your honor JP Richardson \nas to those Catawba Indian[s], they are in needy, very needy circumstances for food. They are unemployed and can’t get anything to keep sole and bodely to gather. They will be to see me this evening, so as to learn if yet – I have got of their funds at your hand for their relief as to what they are claiming at your hand assistance thru my hand as soon as possible. To your honor I will submit this instrument from then as their authority under which I ask those Indians now over fifty three in number. Your honor sending moneys by express will be promtly dealt out. Your obedient servant/ Solomon Harris \n",
-                        "title": "Letter to Gov. John Peter Richardson from Solomon Harris ",
-                        "image": "http://192.168.132.136/db/data/letters/1569_large.jpg"
-                    }
-                ],
-                "id": 34,
-                "thumb": "http://192.168.132.136/db/data/letters/1568_thumbnail.jpg",
-                "description": "Solomon Harris ask the Gov. for aid for the Catawbas. "
-            },
-            "35": {
-                "pages": [
-                    {
-                        "transcript": "York/ ML Owens/Agent of Catawba Indians \nMake this appointment and notify Secretary of State that I have made it. FJ Moses Gov.\n",
-                        "title": "Letter to Governor Franklin J. Moses Jr. from the York Country delegation\n",
-                        "image": "http://192.168.132.136/db/data/letters/1574_large.jpg"
-                    },
-                    {
-                        "transcript": "State of South Carolina/York County/To His Excellency FJ Moses, Jr.\nSir:\nThe undersigned members of the delegation from the County of York would most respectfully recommend\nHon. ML Owens for appointment as Agent of the Catawba Indians vice PJ Connell resigned\nVery respectfully, Dec 17th 1872, JH White Senator, JA Ratchford (House) \n",
-                        "title": "Letter to Governor Franklin J. Moses Jr. from the York Country delegation\n",
-                        "image": "http://192.168.132.136/db/data/letters/1575_large.jpg"
-                    }
-                ],
-                "id": 35,
-                "thumb": "http://192.168.132.136/db/data/letters/1574_thumbnail.jpg",
-                "description": "Recommendations of ML Owens for appointment as Catawba Indian Agent."
-            },
-            "36": {
+                "id": 2,
+                "thumb": "http://192.168.132.136/db/data/letters/1217_thumbnail.jpg"
+            }
+        },
+        "href": "1761"
+    },
+    "1849": {
+        "logo": "",
+        "letters": {
+            "1": {
                 "pages": [
                     {
                         "transcript": "29 Sept. 1849/ To Gov. Whitemarsh B Seabrook\nIn obedience of your Excellencys instructions, I have performed the duties assigned me, which I now take great pleasure in laying before your excellency a statement, of my trip and all this business in relation to the mission assigned to me. Before I started to Haywood County, NC I went in to Mecklenburg County, NC where I knew old Billy Ayers had removed to, and bought some land and settled on, but when I go their, I found he was dead and his children left and gone to Haywood . He bought 10 acres of land and it was worn out and but of little value He was an old industrious Catawba. I search then after those in Chester District So. Ca. and found as you will see on the exhibit C. I then went onto the plantation owned by the state and found as you will see on the paper exhibit C. Allen Harris then came to me and wisht to go with me to Haywood as he had lived two years there and was acquainted with the rout and the whereabouts of the Indians and he is an intelligent Indian. I thought it would be to the interest of the state to take him with me and so agreed to pay his expenses if he wold find his own horse, when he met me he had a cattisll?  and horse and his little daughter 9 years of age he said she was so anctious to see her grandmother that he was obliged to take her with him. I agreed to it and we started on the 3rd of Sept. and we arrived at Ashville N.C. on Friday 7th. Allen Harris came to me after we had been there about 2 ours and said he had heard of a Catawba Indian \n\n",
@@ -682,73 +928,85 @@
                         "image": "http://192.168.132.136/db/data/letters/1581_large.jpg"
                     }
                 ],
-                "id": 36,
-                "thumb": "http://192.168.132.136/db/data/letters/1577_thumbnail.jpg",
-                "description": "Agent report and list of Catawba Indians residing near Echota mission church in Cherokee, NC."
+                "description": "Agent report and list of Catawba Indians residing near Echota mission church in Cherokee, NC.",
+                "tribe": [
+                    "Catawba"
+                ],
+                "id": 1,
+                "thumb": "http://192.168.132.136/db/data/letters/1577_thumbnail.jpg"
             }
-        }
+        },
+        "href": "1849"
     },
-    "Cherokee": {
-        "href": "Cherokee",
-        "tribe": "Cherokee",
+    "1867": {
         "logo": "",
         "letters": {
             "1": {
                 "pages": [
                     {
-                        "transcript": "",
-                        "title": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759",
-                        "image": "http://192.168.132.136/db/data/letters/1196_large.jpg"
+                        "transcript": "Thomas Whitesides Agt – to F H Barber -- 9 bushels & 2 pecks of corn at 1.50 per bushel Received payment in full on the $14.62 above account April 5th 1867 F. H. Barber \nYork County South Carolina person appeared before me Ferguson H Barber and maid oath that the above is just and true F. H. Barber                  Thomas Whiteside Agt.\n",
+                        "title": "Whitesides Receipts 1",
+                        "image": "http://192.168.132.136/db/data/letters/1126_large.jpg"
                     },
                     {
-                        "transcript": "",
-                        "title": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759",
-                        "image": "http://192.168.132.136/db/data/letters/1197_large.jpg"
-                    },
-                    {
-                        "transcript": "",
-                        "title": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759",
-                        "image": "http://192.168.132.136/db/data/letters/1198_large.jpg"
+                        "transcript": "Rock Hill, SC April 5, 1867\nMr. Thomas Whiteside Agt for Catawba Indians\nTo FH Barber\nThe amount of corn for John Harris per order 4.86, The amount of corn for Lu Canty per order 4.86, The amount of corn for Epp Harris per order 4.86  (Total $14.58)\nReceived May 26, 1868 of Thomas Whitesides Agt. for Catawba Indians Fourteen 58/100th dollars in full of the above account.   FH Barber per WL Roddy \n",
+                        "title": "Whitesides Receipts 2",
+                        "image": "http://192.168.132.136/db/data/letters/1127_large.jpg"
                     }
                 ],
+                "description": "Buying corn for the Catawba Nation. ",
+                "tribe": [
+                    "Catawba"
+                ],
                 "id": 1,
-                "thumb": "http://192.168.132.136/db/data/letters/1196_thumbnail.jpg",
-                "description": "Treaty of Peace and Friendshop concluded by his excellancy William Henry Lyttlelton Esq; Captain General and Govenor in Chief of His majesty's Province of South Carolina with Attakulla, Deputy of the whole Cherokee Nation, and other Head Men & Warriors thereof at Fort Prince George, on the 26th day of December 1759"
+                "thumb": "http://192.168.132.136/db/data/letters/1126_thumbnail.jpg"
             },
             "2": {
                 "pages": [
                     {
                         "transcript": "",
-                        "title": "The Definitive Treaty of Peace Between South Carolina and Georgia on the one part, and the Cherokee Nation on the other; concluded at Dewit's Corner in South Carolina the 20th of May, in the Year of our Lord 1777; and in the 2d Year of the Independence of America",
-                        "image": "http://192.168.132.136/db/data/letters/1206_large.jpg"
+                        "title": "Whitesides Cover",
+                        "image": "http://192.168.132.136/db/data/letters/1150_large.jpg"
                     },
                     {
-                        "transcript": "",
-                        "title": "The Definitive Treaty of Peace Between South Carolina and Georgia on the one part, and the Cherokee Nation on the other; concluded at Dewit's Corner in South Carolina the 20th of May, in the Year of our Lord 1777; and in the 2d Year of the Independence of America",
-                        "image": "http://192.168.132.136/db/data/letters/1207_large.jpg"
+                        "transcript": "Rock Hill Y. D. SC.\nDecb. 9, 1867\nTo his Excelleny,\nJ L Orr, Governor of So. Carolina\nDear Sir – I am agent – appointed by the State of SC for the Catawba Indians and at a loss under the existing state of affairs in the winter – how to proceed – therefore apply to your Excellence for instructions as to my duty – heretofore the Agent reported to the Court & the Court to the Legislature – some families of the Indians are at this time in a very destitute condition, and it is not in my power to assist them. I hope ",
+                        "title": "Letter to JL Orr from Thos. Whitesides, 1",
+                        "image": "http://192.168.132.136/db/data/letters/1151_large.jpg"
+                    },
+                    {
+                        "transcript": " your Excellency will advise or devise some means of reliving their necessities – I do not know under existing circumstances how or whether the appropriation made by the State can be obtained. I hope you will instruct me as to my duty at your earliest convenience.\nYour Excellency’s humble servant\nTho. Whiteside\nAgent, Catawba Indians\nYork Dist, SC\nRock Hill, PO\n\nTo His Excellency\nGov J. L. Orr \n\n",
+                        "title": "Letter to JL Orr from Thos. Whitesides 2",
+                        "image": "http://192.168.132.136/db/data/letters/1152_large.jpg"
                     }
                 ],
+                "description": "The agent discusses poor conditions on the reservation and asks for guidance. ",
+                "tribe": [
+                    "Catawba"
+                ],
                 "id": 2,
-                "thumb": "http://192.168.132.136/db/data/letters/1206_thumbnail.jpg",
-                "description": "A Treaty of Peace and Friendship finally concluded and ratified between the Honorable William Bull Esqr Lieut Governor and Commander in Chief, in  and over His Majesty's said Provience of South Carolina and Attakullakulla; Kettagusta, Brother to the Great Warrior, commonly called the Prince of Choteh; Skalleloski of Stickowih Brother of Jud's Friend Cappy of Tomatly adopted son of Old Hope, Onatoy of Toquoh Brother of the Round O; Halfbreed Will of Noucasih; the Old Warrior of Estatowih, commonly called the Good Warrior; Tettatelaski of Settiquoh, and Ottassitith the Mankiller of Kenowee Head? men & Deputies from the Different Settlements of the Cherokee Nation "
+                "thumb": "http://192.168.132.136/db/data/letters/1150_thumbnail.jpg"
             },
             "3": {
                 "pages": [
                     {
-                        "transcript": "",
-                        "title": "Terms to Peace to be Granted to the Cherokee Indians ",
-                        "image": "http://192.168.132.136/db/data/letters/1217_large.jpg"
+                        "transcript": "Executive Department/ SC Columbia, 14th Dec, 1867\nThomas Whitesides, Esq. Agt. Catawba Indians Rock Hill, S. C \nSir, I have rec’d your inquiry with reference to the annual appropriation for the support of the Catawba Indians in York and Lancaster. Under the recent appropriation fund by Gen. Canby the sum of 1200 has been set apart for the benefit of the Catawba Indians which is the amount that has been appropriated for them for several years past. You state that heretofore, the account of the expenditure made by the Agent has been submitted to the Court, and through the Court to the Legislature. You will adopt the same course in the present instance, that is, have your vouchers properly audited as heretofore, send on the original certificate of the judge that the same has been audited, or get from the clerk a certificate of the finding of the Grand \n",
+                        "title": "",
+                        "image": "http://192.168.132.136/db/data/letters/1542_large.jpg"
                     },
                     {
-                        "transcript": "",
-                        "title": "Terms to Peace to be Granted to the Cherokee Indians ",
-                        "image": "http://192.168.132.136/db/data/letters/1218_large.jpg"
+                        "transcript": "Jury thereupon, and I will draw a draft upon the Treasurer for the amount of the appropriation in behalf of the Catawba Indians for the next year. Very Resptly. Your obt svt James L Orr Gov of SC.\n",
+                        "title": "",
+                        "image": "http://192.168.132.136/db/data/letters/1543_large.jpg"
                     }
                 ],
+                "description": "The governor discusses proper accounting procedures for the Agent. ",
+                "tribe": [
+                    "Catawba"
+                ],
                 "id": 3,
-                "thumb": "http://192.168.132.136/db/data/letters/1217_thumbnail.jpg",
-                "description": "Terms to Peace to be Granted to the Cherokee Indians "
+                "thumb": "http://192.168.132.136/db/data/letters/1542_thumbnail.jpg"
             }
-        }
+        },
+        "href": "1867"
     }
 }

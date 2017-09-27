@@ -24,8 +24,11 @@ foreach($tabData as $data):?>
     </div>
     <div class="row">
       <div class="col-xs-12">
-      <?php foreach($data['interviews'] as $dataFile=>$name):?>
-        <div class="col-xs-4"><button class="btn btn-lg btn-default btn-interview col-xs-12" data-target="#interviewsModal" data-toggle="modal" data-filename="<?php print $dataFile;?>"><?php print $name;?></button></div> 
+      <?php foreach($data['interviews'] as $dataFile=>$name):
+        $interview = json_decode(file_get_contents(SITE_ROOT.'/db/data/interviews/transcripts/json/minified/'.$dataFile),true);
+        $interviewTitle = $interview['title'];
+        ?>
+        <div class="col-xs-6"><button class="btn btn-lg btn-default btn-interview col-xs-12" data-target="#interviewsModal" data-toggle="modal" data-filename="<?php print $dataFile;?>"><?php print $interviewTitle;?></button></div> 
       <?php endforeach;?>
       </div>
     </div>
