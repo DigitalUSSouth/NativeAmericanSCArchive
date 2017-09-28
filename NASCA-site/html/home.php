@@ -10,65 +10,94 @@
 $api_dir = preg_replace('/html.home\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
 include_once ($api_dir . 'configuration.php');
 include_once ($api_dir . 'cdm.php');
-$count = intval($config->frontend->home->card_count);
-if($count <= 0) {
+$count = $config->frontend->home->card_count;
+if($count === null || (int)$count <= 0 || (string)$count === '') {
   $count = 8;
+} else {
+  $count = intval($count);
 }
 $pointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
 $numbers = range(0,intval($pointers->count)-1);
 shuffle($numbers);
 //$numbers = array_slice($numbers, 0, $count);
+$offset = 0;
 for($i = 1; $i <= $count; $i++) {
   $card = $pointers->data[$numbers[$i-1]];
   $id = $card->pointer;
   $title = $card->title;
   $type = ucfirst($card->type);
-  $height = (int)$card->height;
-  $width = (int)$card->width;
   $size = 'wide';
-  if($height > $width) {
-    $size = 'tall';
+  $ref = null;
+  if($type === 'Image' || $type === 'Letter') {
+    $height = (int)$card->height;
+    $width = (int)$card->width;
+    if($height > $width) {
+      $size = 'tall';
+    }
+    $ref = getImageReference($id,'small',1);
+    if(gettype($ref) === 'integer' && $ref < 0) {
+      $count += 1;
+      $offset += 1;
+      error_log('home.php: Couldn\'t get image reference for pointer ' . $id . ' while generating home page cards. Trying another card.',0);
+      continue;
+    }
+  } else if($type === 'Video') {
+    //give the video a reference image
+    $url = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_VIDEO;
+    $vid_data = getJsonLocal($url);
+    $index = getId($vid_data, $id);
+    $obj = $vid_data->data[$index];
+    $url_data = $vid_data->urls;
+    $ref = (string)$url_data->thumbnail_prefix . (string)$obj->key . (string)$url_data->thumbnail_suffix;
+    if(checkRemoteFile($ref) === FALSE) {
+      //if the reference is invalid
+      $count += 1;
+      $offset += 1;
+      error_log('home.php: Thumbnail reference for video pointer ' . $id . ' was not a valid link. Reference was ' . $ref . '. Trying another card.',0);
+      continue;
+    }
+  } else {
+    $count += 1;
+    $offset += 1;
+    error_log('home.php: Type is not recognized for pointer ' . $id . ' while generating home page cards. Trying another card.',0);
+    continue;
   }
-  echo '<div class="home-card-container">';
-  echo '<div class="home-card background-black shadow-caster" id="home-card-' . $i . '">';// . indexValue
-  echo '  <div class="additional">';
-  echo '    <p id="errors">';
-  $trimmed = $title;
-  if(strlen($trimmed) > 19) {
-    $trimmed = substr($trimmed,0,19) . '...';
+  if($ref === null) {
+    $count += 1;
+    $offset += 1;
+    error_log('home.php: Something went wrong while printing card for pointer ' . $id . '. Trying another card.',0);
+    continue;
   }
-  $small_ref = getImageReference($id,'small',1);
-  if(gettype($small_ref) === 'integer' && $small_ref < 0) {
-    echo 'small_ref = ' . (string)$small_ref;
-    $small_ref = SITE_ROOT . '/img/error/error.png';
-    $size = 'tall';
+  $title_s = $title;
+  if(strlen($title_s) > 18) {
+    $title_s = substr($title_s,0,18) . '...';
   }
-  echo '    </p>';
-  echo '    <p id="title">' . $trimmed . '</p>';
-  echo '    <p id="type">' . $type . '</p>';
-  echo '    <p id="ref-small">' . $small_ref . '</p>';
-  echo '    <p id="size">' . $size . '</p>';
-  echo '    <p id="index">' . $id . '</p>';
-  echo '    <p id="toggle">0</p>';
-  echo '  </div>';
-  echo '  <img class="card-image" src="' . $small_ref . '" />';
-  echo '  <div class="card-title-container background-red">';
-  //$type_formatted = $type;
-  //if(substr($type,-1,1) === 's') {
-  //  $type_formatted = substr($type,0,strlen($type)-1);
-  //}
-  echo '    <div class="card-title text-white source-serif">' . $type . '</div>';
-  echo '  </div>';
-  echo '  <div class="card-read-more background-red">';
-  echo '    <div class="text-white source-serif">Read More</div>';
-  echo '  </div>'; //readMoreToggle(homePtr, cdmPtr, type, card
-  echo '  <div class="card-point background-red">';
-  echo '    <img src="img/cardPoint.svg" />';
-  echo '  </div>';
-  echo '  <div class="card-hover" onclick="readMoreToggle(' . $numbers[$i-1] . ',\'#home-card-' . $i . '\')"></div>';
-  echo '</div>';
-  echo '<div class="shadow"></div>';
-  echo '</div>';
+?>
+<div class="home-card-container">
+  <div class="home-card background-black shadow-caster" id="home-card-<?php print (string)($i-$offset); ?>">
+    <div class="additional">
+      <p id="title"><?php print $title_s; ?></p>
+      <p id="type"><?php print $type; ?></p>
+      <p id="ref-small"><?php print $ref; ?></p>
+      <p id="size"><?php print $size; ?></p>
+      <p id="index"><?php print $id; ?></p>
+      <p id="toggle">0</p>
+    </div>
+    <img class="card-image" src="<?php print $ref; ?>" />
+    <div class="card-title-container background-red">
+      <div class="card-title text-white source-serif"><?php print $type; ?></div>
+    </div>
+    <div class="card-read-more background-red">
+      <div class="text-white source-serif">Read More</div>
+    </div>
+    <div class="card-point background-red">
+      <img src="img/cardPoint.svg" />
+    </div>
+    <div class="card-hover" onclick="readMoreToggle('<?php print $numbers[$i-1]; ?>','#home-card-<?php print (string)($i-$offset); ?>')"></div>
+  </div>
+  <div class="shadow"></div>
+</div>
+<?php
 }
 ?>
   </div>

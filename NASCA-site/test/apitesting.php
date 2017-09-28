@@ -17,10 +17,18 @@
   </div-->
   <div id="typetest">
     <?php
+      /*
       $pointer = 1118;
       echo getImageReference($pointer,'full',0);
       echo "\n";
       echo outputVar(getImageDimensions($pointer,0));
+      */
+      $url = 'https://img.youtube.com/vi/er8cR/hqdefault.jpg';
+      if(checkRemoteFile($url)) {
+        echo 'true';
+      } else {
+        echo 'false';
+      }
     ?>
   </div>
   <script type='text/javascript' src='../js/jquery/jquery-3.2.1.min.js'></script>

@@ -213,11 +213,10 @@
     //now to index videos in home/data.json
     $query = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_VIDEO;
     $json = getJsonLocal($query);
-    $ptr_vid_prfx = 10000;
     for($i = 0; $i < $json->count; $i++) {
       $obj = $json->data[$i];
       $arr = array();
-      $arr['pointer'] = $ptr_vid_prfx + $i;
+      $arr['pointer'] = $obj->pointer;
       $arr['type'] = 'video';
       array_push($typeData,$arr);
       $arr['title'] = $obj->title;

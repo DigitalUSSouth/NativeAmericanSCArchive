@@ -20,7 +20,5 @@
   $arr['DB_INTERVIEW'] = DB_INTERVIEW;
   $arr['DB_LETTER'] = DB_LETTER;
   $arr['DB_VIDEO'] = DB_VIDEO;
-  $arr['IMAGE_FORMAT'] = IMAGE_FORMAT;
-  $arr['IMAGE_SIZE'] = IMAGE_SIZE;
   echo json_encode($arr);
 ?>

@@ -43,6 +43,24 @@
     }
   }
   
+  function checkRemoteFile($url) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_URL,$url);
+    // don't download content
+    curl_setopt($ch, CURLOPT_NOBODY, 1);
+    curl_setopt($ch, CURLOPT_FAILONERROR, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    if(curl_exec($ch)!==FALSE) {
+      curl_close($ch);
+      return TRUE;
+    } else {
+      curl_close($ch);
+      return FALSE;
+    }
+  }
+  
   /*
    * Returns whether some given data from cdm is valid.
    * 
