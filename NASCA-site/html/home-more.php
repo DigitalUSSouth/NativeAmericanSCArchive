@@ -178,11 +178,50 @@
 <?php
   }
   
+  function printVideoDetails($home_obj) {
+    global $errors;
+    $trimmed = $home_obj->title;
+    if(strlen($trimmed) > 18) {
+      $trimmed = substr($trimmed,0,18) . '...';
+    }
+    //get video info
+    $url = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_VIDEO;
+    $vid_data = getJsonLocal($url);
+    $index = getId($vid_data, $home_obj->pointer);
+    $obj = $vid_data->data[$index];
+    $url_data = $vid_data->urls;
+    $ref = (string)$url_data->thumbnail_prefix . (string)$obj->key . (string)$url_data->thumbnail_suffix;
+    $vid = (string)$url_data->video_prefix . (string)$obj->key;
+    ?>
+    <div id="preview-layout" class="preview-wide">
+      <div id="preview-title-container" class="custom-title-overflow overflow-off-white">
+        <div id="preview-title" class="anton text-dark-grey"><?php print $home_obj->title; ?></div>
+      </div>
+      <div id="preview-media-container" class="border-red">
+        <a class="fancybox-home" href="<?php print $vid; ?>" data-fancybox="Featured" data-type="iframe" data-caption="<?php print $trimmed; ?>" data-width="560" data-height="315">
+          <img src="<?php print $ref; ?>" id="preview-media">
+        </a>
+      </div>
+      <div id="preview-desc-container">
+        <div id="preview-desc" class="source-serif text-black">
+          <?php print $home_obj->description; ?>
+        </div>
+      </div>
+      <div id="preview-lower" class="custom-row">
+        <div id="view-all-container" onclick="changePage('video');">
+          <div id="view-all" class=text-red>View All Videos</div>
+          <div id="view-all-underline"></div>
+        </div>
+      </div>
+    </div>
+<?php
+  }
+  
   if(isset($_GET['homeptr'])) {
     $homePointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
     $homeptr = $_GET['homeptr'];
     $home_obj = $homePointers->data[$homeptr];
-    $type = strtolower(trim($home_obj->type));
+    $type = strtolower($home_obj->type);
     $title = $home_obj->title;
     $id = $home_obj->pointer;
     $size = '';
@@ -203,10 +242,10 @@
           printImageDetails($id,$title,$size);
           break;
         case 'video':
-          echo 'This is a video';
+          printVideoDetails($home_obj);
           break;
         case 'letter':
-          printLetterDetails($id, $title);
+          printLetterDetails($id,$title);
           break;
         default:
           array_push($errors,'error in home-more.php line 212');

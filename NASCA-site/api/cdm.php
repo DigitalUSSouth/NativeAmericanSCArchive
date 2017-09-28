@@ -43,6 +43,24 @@
     }
   }
   
+  function checkRemoteFile($url) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_URL,$url);
+    // don't download content
+    curl_setopt($ch, CURLOPT_NOBODY, 1);
+    curl_setopt($ch, CURLOPT_FAILONERROR, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    if(curl_exec($ch)!==FALSE) {
+      curl_close($ch);
+      return TRUE;
+    } else {
+      curl_close($ch);
+      return FALSE;
+    }
+  }
+  
   /*
    * Returns whether some given data from cdm is valid.
    * 
@@ -468,19 +486,19 @@
       //get title from cdm
       $info = getCdmImageInfo($pointer);
       if(gettype($info) === 'integer' && $info < 0) {
-        error_log('getImageTitle: Error -1: Couldn\'t get image info. (Check getCdmImageInfo for error.)',0);
+        error_log('getImageTitle: Error -1: Couldn\'t get image info of pointer ' . $pointer . '. (Check getCdmImageInfo for error.)',0);
         return -1;
       } else {
-        $t = (string)$info->title;
+        $t = trim((string)$info->title);
         if(isset($info->title) && $t !== '') {
           $title = $t;
         } //not set, but could exist and just be null or empty
-        else if($t === null || trim($t) === '') {
-          error_log('getImageTitle: Error -2: Title is null or empty.',0);
+        else if($t === null || $t === '') {
+          error_log('getImageTitle: Error -2: Title of pointer ' . $pointer . ' is null or empty.',0);
           return -2;
         } //not set and not null or empty, doesn't exist
         else {
-          error_log('getImageTitle: Error -45: Title key does not exist in cdm. (Check output of getCdmImageInfo.)',0);
+          error_log('getImageTitle: Error -45: Title key does not exist in cdm for pointer ' . $pointer . '. (Check output of getCdmImageInfo.)',0);
           return -45;
         }
       }
