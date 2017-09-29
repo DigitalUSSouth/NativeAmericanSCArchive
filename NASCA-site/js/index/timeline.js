@@ -49,34 +49,20 @@ function init_timeline() {
 
   for(var i=1; i<=12; i++){
     $("#timelineModal"+i).on('shown.bs.modal', function(e){
-      //console.log(e)
       var i = e.relatedTarget.dataset.boxId //have to redeclare because of scope
-      //$("#overlay").fadeIn('fast',function(){
-      //$("#"+i).animate({'top':'10%'},250);
       var indexNum = i
       wrapperElement = $("#timeline-embed-"+i).attr('id');
-      //console.log(wrapperElement)
       var embed = document.getElementById(wrapperElement);
-      //console.log(embed)
-      embed.style.height = "400px";//getComputedStyle(document.body).height;
-      //embed.style.width = "100%"
+      embed.style.height = "500px";//getComputedStyle(document.body).height;
       $("#"+i).css('z-index','101');
       var options =  { 
         hash_bookmark: false
       }
-
       var dataPath = SITE_ROOT+"/html/ht/data/data"+indexNum+".json"
-      //console.log(dataPath)
       window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
-      window.addEventListener('resize', function() {
-      var embed = document.getElementById(wrapperElement);
-        //embed.style.height = getComputedStyle(document.body).height;
-        //timeline.updateDisplay();
-      })
 
       //update uri
       setNewState("timeline",i);
-    //});
     });
     $("#timelineModal"+i).on('hidden.bs.modal',function(e){
       setNewState("timeline")      

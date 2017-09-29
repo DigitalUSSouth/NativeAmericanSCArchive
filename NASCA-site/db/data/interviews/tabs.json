@@ -1,7 +1,7 @@
 [
   {
     "tribe": "Catawba Indian Nation",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "descriptiont":"",
     "interviews": {
       "Catawba_Earl-Robbins-May-1987-minified.json":"Earl Robbins",
       "Catawba_Landrum-George-Mar-22-1983_Tape1-minified.json":"Landrum George Tape 1",
@@ -19,7 +19,7 @@
   },
   {
     "tribe": "Beaver Creek Indians",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "descriptiont":"",
     "interviews": {
       "Beaver-Creek_Hazel-Thornton-minified.json":"Hazel Thornton",
       "Beaver-Creek_Helen-Jeffcoat-minified.json":"Helen Jeffcoat",
@@ -31,8 +31,8 @@
     "href": "beaver-creek"
   },
   {
-    "tribe": "Pee Dee",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "tribe": "Pee Dee Indian Tribe of SC",
+    "descriptiont":"",
     "interviews": {
       "Pee-Dee_Chief-James-Caulder-minified.json":"Chief James Caulder",
       "Pee-Dee_Clayton-RC-Cummings-minified.json":"Clayton RC Cummings",
@@ -43,7 +43,7 @@
   },
   {
     "tribe": "Sumter Tribe of Cheraw",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "descriptiont":"",
     "interviews": {
       "Sumter-Cheraw_Ralph-Justice-Oxendine-minified.json":"Ralph Justice Oxendine"
     },
@@ -52,7 +52,7 @@
   },
   {
     "tribe": "Wassamasaw Tribe",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla commodo eu sem id vulputate. Sed iaculis turpis rhoncus nulla aliquam, nec mattis magna consequat. Praesent ac dolor diam. Cras facilisis venenatis pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus augue et quam tempor, ac pulvinar lacus laoreet. Duis finibus nibh nulla, interdum fringilla ex tristique condimentum. Vestibulum tincidunt est a congue facilisis. Praesent a nisi ut nulla finibus tincidunt eget ac odio. Ut turpis lorem, scelerisque cursus venenatis non, varius vel metus. Nunc tellus mauris, dapibus eget velit eu, rutrum ullamcorper nisl. Aliquam egestas dapibus ligula. Donec quis nisi tellus.",
+    "descriptiont":"",
     "interviews": {
       "Varnertown_Chuck-Rodgers-minified.json":"Chuck Rodgers",
       "Varnertown_Gloria-Varner_Ruby-Oliver-minified.json":"Gloaria Varner and Ruby Oliver",
