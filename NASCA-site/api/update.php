@@ -5,6 +5,13 @@
   
   set_time_limit(0);
   
+  /*
+   * When running this script it is a good idea to first delete all .jpg files from
+   * db/data/images
+   * and
+   * db/data/letters
+   */
+  
   function updateSite() {
     $returnNotes = array();
     $query = CDM_API_WEBSERVICE . 'dmQuery' . CDM_COLLECTION . '/0/fields/nosort/1024/0/0/0/0/0/0/0/json';
@@ -30,7 +37,7 @@
       $fn = $rec->find;
       if($collection->records[$i]->filetype === 'jp2') {
         $dims = getImageDimensions($pointer,0);
-        $attrib_req = array('title','relati','publis','descri','media','typea','creato','date','datea','dateb','geogra','source','subjec','extent','rights','langua','tribe','identi');
+        $attrib_req = array('title','relati','publis','descri','creato','date','datea','dateb','geogra','extent','rights','langua','tribe');
         $attribs = getItemInfo($pointer,$attrib_req,0);
         $arr = array();
         $arr['pointer'] = $pointer;
@@ -89,7 +96,7 @@
             $page['height'] = (int)$dims['height'];//[0];
             $page['width'] = (int)$dims['width'];
           }
-          $attrib_req = array('relati','publis','transc','descri','media','typea','creato','date','datea','dateb','geogra','extent','rights','langua','tribe');
+          $attrib_req = array('relati','publis','transc','descri','creato','date','datea','dateb','geogra','extent','rights','langua','tribe');
           $attribs = getItemInfo($page_ptr,$attrib_req,0);
           if(gettype($attribs) === 'integer' && $attribs < 0) {
             printReturnNotes($returnNotes);
@@ -168,6 +175,11 @@
     }
   }
   
-  echo updateSite();
+  if(isset($_GET['pw']) && $_GET['pw'] === UPDATE_PW) {
+    echo updateSite();
+  } else {
+    echo 'You do not have sufficient permissions.';
+  }
+  
   
 ?>
