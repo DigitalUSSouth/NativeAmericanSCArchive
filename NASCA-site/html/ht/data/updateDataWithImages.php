@@ -20,7 +20,7 @@ for ($i=1; $i<=12; $i++){
     foreach ($slideImages['img'] as $path => $desc){
       $thumbPath = SITE_ROOT.'/db/data/timelines/timeline-img-300/'.$path.'thumb.jpg';
       $fullPath = SITE_ROOT.'/db/data/timelines/timeline-img-large/'.$path.'large.jpg';
-      $outString = $outString . '<div class="col-xs-6"><img src="'.$thumbPath.'"><br><a target="_blank" href="'.$fullPath.'">View larger</a></div>';
+      $outString = $outString . '<div class="clearfix"></div><div class="col-xs-6"><img src="'.$thumbPath.'"><br><a target="_blank" href="'.$fullPath.'">View larger</a></div>';
     }
     //print htmlspecialchars($outString).'<br>';
     //print ($outString).'<br>';
