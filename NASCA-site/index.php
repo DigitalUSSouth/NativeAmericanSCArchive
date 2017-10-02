@@ -17,7 +17,7 @@
   if (isset($_GET['page'])){
     $currentUrl = array_filter(explode('/',$_GET['page']));
     $authorizedPages  = array(
-      "interviews","letters", "images","video","map","timeline","tribes","search"
+      "interviews","letters", "images","video","map","timeline","tribes","search","about"
     );
     if (!in_array($currentUrl[0],$authorizedPages)){
       $currentUrl = ["404"];
@@ -193,6 +193,12 @@
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
+                  <li>
+                    <div id="tabs-about" class="tab">
+                      About
+                      <div class="tab-underline half-underline-white"></div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -235,12 +241,6 @@
         </div>
         <div id="footer-links-container">
           <ul id="footer-links">
-            <li id="footer-links-about">
-              <a href="<?php print SITE_ROOT; ?>/html/about.html">about</a>
-            </li>
-            <li id="footer-links-credits">
-              <a href="<?php print SITE_ROOT; ?>/html/credits.html">credits</a>
-            </li>
           </ul>
         </div>
       </div>
