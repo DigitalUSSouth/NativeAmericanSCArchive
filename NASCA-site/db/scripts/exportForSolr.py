@@ -8,7 +8,7 @@ import os.path
 
 archive = "Native American South Carolina Archive"
 contributing_institution = "University of South Carolina"
-site_root = "https://test.nativesouthcarolina.org"
+site_root = "https://www.nativesouthcarolina.org"
 
 def main():
     print("***Starting Solr export process")
@@ -16,6 +16,7 @@ def main():
     docs.extend(interviews())
     docs.extend(timelines())
     docs.extend(tribes())
+    docs.extend(letters())
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
@@ -29,7 +30,7 @@ def interviews():
     print ("****Exporting interviews:")
     docs = []
     for interview in interviews:
-        doc = {
+        """doc = {
             'archive': archive,
             'contributing_institution': contributing_institution,
             'title': interview['tribe'],
@@ -43,7 +44,7 @@ def interviews():
             'file_format': 'text/html'
         }
         pprint(doc['title'])
-        docs.append(doc)
+        docs.append(doc)"""
         print ("*****Interview transcripts for: "+interview['tribe'])
         docs.extend(interviewTranscripts(interview))
     return docs
@@ -141,8 +142,8 @@ def tribes():
             'archive': archive,
             'contributing_institution': contributing_institution,
             'title': tribe['title'],
-            'type_content': "Sound",
-            'type_digital': "Sound",
+            'type_content': "Text",
+            'type_digital': "Text",
             'url': site_root+'/tribes/#Tribes-'+str(counter),
             'id': site_root+'/tribes/'+str(counter),
             'description': '',
@@ -155,6 +156,47 @@ def tribes():
         docs.append(doc)
         counter = counter + 1
     return docs
+
+def letters():
+    print ("****Exporting letters:")
+    docs = []
+    with open("../data/letters/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    data = data['data']
+    counter = 1
+
+    for letter in data:
+        pageCounter = 1
+        for page in letter:
+            letterYear = 0
+            match = re.search('[0-9]{4}',page['date']) #match 4 digit year
+            if match:
+                letterYear = match.group(0)
+            if letterYear==0:
+                continue
+            if page['title'] == "":
+                continue
+            doc = {
+                'archive': archive,
+                'contributing_institution': contributing_institution,
+                'title': page['title'],
+                'type_content': "Text",
+                'type_digital': "Text",
+                'url': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
+                'id': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
+                'description': page['descri'],
+                'geolocation_human': "South Carolina",
+                'file_format': 'text/html',
+                'full_text': page['transc']
+            }
+            pprint(doc['url'])
+            docs.append(doc)
+            pageCounter = pageCounter + 1
+        counter = counter + 1
+    return docs
+
+
 """
 req:
     archive
