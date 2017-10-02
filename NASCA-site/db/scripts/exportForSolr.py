@@ -177,6 +177,11 @@ def letters():
                 continue
             if page['title'] == "":
                 continue
+            imgPath1 = "../data/letters/"+str(page['pointer'])+"_large.jpg"
+            imgPath2 = "../data/letters/"+str(page['pointer'])+"_thumbnail.jpg"
+            if not(os.path.isfile(imgPath1)) or not(os.path.isfile(imgPath2)):
+                print (imgPath1)
+                continue
             doc = {
                 'archive': archive,
                 'contributing_institution': contributing_institution,
