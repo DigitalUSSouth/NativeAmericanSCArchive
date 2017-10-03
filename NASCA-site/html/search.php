@@ -81,11 +81,37 @@ function buildNavQuery($nextPrev){
     </h2>
     <?php
    $docs = $searchResults['response']['docs'];
-    foreach ($docs as $doc) :?>
-    <div class="col-xs-11 col-xs-offset-1">
-     <a class="text-red" href="<?php print $doc['url'];?>"><h1><?php print $doc['title']?></h1></a>
-     <p><big><?php print getExcerpt(strip_tags($doc['full_text']));?>... <a class="text-red" href="<?php print $doc['url'];?>">Read more</a></big></p>
-     </div>
+    foreach ($docs as $doc) :
+      $fa = ' question';
+      if(preg_match('/\/images\//',$doc['url'])){
+        $fa = ' fa-picture-o';
+      }
+      if(preg_match('/\/interviews\//',$doc['url'])){
+        $fa = ' fa-volume-up';
+      }
+      if(preg_match('/\/letters\//',$doc['url'])){
+        $fa = ' fa-envelope';
+      }
+      if(preg_match('/\/video\//',$doc['url'])){
+        $fa = ' fa-video-camera';
+      }
+      if(preg_match('/\/map\//',$doc['url'])){
+        $fa = ' fa-map-o';
+      }
+      if(preg_match('/\/timeline\//',$doc['url'])){
+        $fa = ' fa-calendar';
+      }
+      if(preg_match('/\/tribes\//',$doc['url'])){
+        $fa = ' fa-file-text-o';
+      }
+    ?>
+    <div class="col-xs-1">
+    <i class="fa<?php print $fa ;?>" style="font-size:64px;padding-top:.7em;"></i>
+    </div>
+    <div class="col-xs-11">
+      <a class="text-red" href="<?php print $doc['url'];?>"><h1><?php print $doc['title']?></h1></a>
+      <p><big><?php print getExcerpt(strip_tags($doc['full_text']));?>... <a class="text-red" href="<?php print $doc['url'];?>">Read more</a></big></p>
+    </div>
 
   <?php endforeach;
 
