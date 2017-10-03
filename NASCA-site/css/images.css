@@ -25,3 +25,18 @@
   padding-bottom: 15px;
   color: #ffffff;
 }
+
+.images-img{
+  width: 100%;
+}
+
+.images-col {
+  padding-left:0px !important;
+  padding-right: 0px !important;
+}
+
+.images-div {
+  padding-left:0px !important;
+  padding-right: 0px !important;
+  white-space: normal !important;
+}
