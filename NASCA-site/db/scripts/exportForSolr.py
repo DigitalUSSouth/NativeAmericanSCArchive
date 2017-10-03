@@ -174,7 +174,7 @@ def images():
         loc = "South Carolina" if image['geogra']=="" else image['geogra']
         doc = {
             'archive': archive,
-            'contributing_institution': contributing_institution,
+            'contributing_institution': image['publis'],
             'title': image['title'],
             'type_content': "Image",
             'type_digital': "Image",
@@ -184,7 +184,6 @@ def images():
             'thumbnail_url': thumbnail,
             'geolocation_human': loc,
             'file_format': 'image/jpeg',
-            'publisher':image['publis'],
             'full_text': image['descri']
         }
         pprint(doc['title'])
