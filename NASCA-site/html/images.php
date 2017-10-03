@@ -84,8 +84,6 @@ foreach ($rawImageData['data'] as $rawItem){
     ?>
 </div>
 
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#imagesModal">Open Modal</button>
-
 <!-- Modal -->
 <div id="imagesModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
