@@ -17,6 +17,7 @@ def main():
     docs.extend(timelines())
     docs.extend(tribes())
     docs.extend(letters())
+    docs.extend(images())
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
@@ -145,7 +146,7 @@ def tribes():
             'type_content': "Text",
             'type_digital': "Text",
             'url': site_root+'/tribes/#Tribes-'+str(counter),
-            'id': site_root+'/tribes/'+str(counter),
+            'id': site_root+'/tribes/#Tribes'+str(counter),
             'description': '',
             'thumbnail_url': site_root+imgDir+'/'+tribe['logo'],
             'geolocation_human': "South Carolina",
@@ -157,6 +158,38 @@ def tribes():
         counter = counter + 1
     return docs
 
+def images():
+    print ("****Exporting Images:")
+    docs = []
+    with open("../data/images/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    for image in data['data']:
+        path = "../data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+        if (os.path.isfile(path)):
+            thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+        else:
+            thumbnail = ""
+        #print(description)
+        loc = "South Carolina" if image['geogra']=="" else image['geogra']
+        doc = {
+            'archive': archive,
+            'contributing_institution': image['publis'],
+            'title': image['title'],
+            'type_content': "Image",
+            'type_digital': "Image",
+            'url': site_root+'/images/'+str(image['pointer']),
+            'id': site_root+'/images/'+str(image['pointer']),
+            'description': '',
+            'thumbnail_url': thumbnail,
+            'geolocation_human': loc,
+            'file_format': 'image/jpeg',
+            'full_text': image['descri']
+        }
+        pprint(doc['title'])
+        docs.append(doc)
+    return docs
+
 def letters():
     print ("****Exporting letters:")
     docs = []
@@ -165,9 +198,10 @@ def letters():
         dataFile.close
     data = data['data']
     counter = 1
-
+    years = {}
     for letter in data:
         pageCounter = 1
+        letterInit = True
         for page in letter:
             letterYear = 0
             match = re.search('[0-9]{4}',page['date']) #match 4 digit year
@@ -175,6 +209,12 @@ def letters():
                 letterYear = match.group(0)
             if letterYear==0:
                 continue
+            if letterInit:
+                if letterYear in years:
+                    years[letterYear] = years[letterYear] + 1
+                else:
+                    years[letterYear] = 1
+                letterInit = False
             if page['title'] == "":
                 continue
             imgPath1 = "../data/letters/"+str(page['pointer'])+"_large.jpg"
@@ -188,8 +228,9 @@ def letters():
                 'title': page['title'],
                 'type_content': "Text",
                 'type_digital': "Text",
-                'url': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
-                'id': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
+                'url': site_root+'/letters/'+str(letterYear)+'/'+str(years[letterYear])+'#page'+str(pageCounter),
+                'id': site_root+'/letters/'+str(letterYear)+'/'+str(years[letterYear])+'#page'+str(pageCounter),
+                'thumbnail_url': site_root+"/db/data/letters/"+str(page['pointer'])+"_thumbnail.jpg",
                 'description': page['descri'],
                 'geolocation_human': "South Carolina",
                 'file_format': 'text/html',

@@ -236,13 +236,14 @@
     </div>
     <div id="footer-container" class="background-black">
       <div id="footer" class="source-serif text-white">
-        <div id="copyright-container">
+          <div class="footer-logos col-xs-10 col-xs-offset-1">
+            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/Lancaster_PC_Linear_202.svg">
+            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/Libraries_Linear_WebRGB.svg">
+            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/ISS_Linear_WebRGB.svg">
+          </div>
+          <div class="clearfix"></div>
           <div id="copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
-        </div>
-        <div id="footer-links-container">
-          <ul id="footer-links">
-          </ul>
-        </div>
+
       </div>
     </div>
     <!-- Local Javascript, Jquery, Ajax -->
