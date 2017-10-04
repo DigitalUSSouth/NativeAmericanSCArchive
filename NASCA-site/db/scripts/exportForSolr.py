@@ -18,7 +18,7 @@ def main():
     docs.extend(tribes())
     docs.extend(letters())
     docs.extend(images())
-    docs.extent(videos())
+    docs.extend(videos())
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
@@ -203,7 +203,7 @@ def videos():
     for video in data['data']:
         if counter>count:
             break
-        thumbnail = urls['video_prefix']+video['key']+urls['thumbnail_suffix']
+        thumbnail = urls['thumbnail_prefix']+video['key']+urls['thumbnail_suffix']
         #print(description)
         doc = {
             'archive': archive,
