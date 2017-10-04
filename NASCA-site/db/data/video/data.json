@@ -1,4 +1,4 @@
-{"count":5,
+{"count":6,
 "urls":{
 "video_prefix":"https://www.youtube.com/embed/",
 "thumbnail_prefix":"https://img.youtube.com/vi/",
@@ -26,10 +26,14 @@
 "title":"Mississippian Period",
 "description":"In this final film, learn about the Mississippian Period from 1,000 to 400 years ago. Large villages surrounded by wooden walls and large flat topped mounds are indicative of this final stage in the prehistory of South Carolina. Maize agriculture became important during this time and a class structure emerged within these societies.  Learn about the Lady of Cofitachequi who encountered Spaniard Hernando DeSoto and his expedition in May of A.D. 1540."},
 {"pointer":10005,
+"key":"kfk8_8PHcRw",
+"title":"Native American Studies Center Fly-Through",
+"description":"This brief video gives an overview of the resources contained in the University of South Carolina-Lancaster's Native American Studies center, as well as showing the Center's connections to the larger Lancaster community."},
+{"pointer":10006,
 "key":"6pfNpJV9rvE",
 "title":"Fig Island",
 "description":"Video description not available"},
-{"pointer":10006,
+{"pointer":10007,
 "key":"Ngrq7z8lcj4",
 "title":"Jason Smith Cam",
 "description":"Video description not available"}
