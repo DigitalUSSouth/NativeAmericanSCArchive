@@ -34,7 +34,7 @@ for($i = 1; $i <= $count; $i++) {
     if($height > $width) {
       $size = 'tall';
     }
-    $ref = getImageReference($id,'small',1);
+    $ref = getImageReference($id,'thumbnail',1);
     if(gettype($ref) === 'integer' && $ref < 0) {
       $count += 1;
       $offset += 1;
@@ -78,7 +78,7 @@ for($i = 1; $i <= $count; $i++) {
     <div class="additional">
       <p id="title"><?php print $title_s; ?></p>
       <p id="type"><?php print $type; ?></p>
-      <p id="ref-small"><?php print $ref; ?></p>
+      <p id="ref"><?php print $ref; ?></p>
       <p id="size"><?php print $size; ?></p>
       <p id="index"><?php print $id; ?></p>
       <p id="toggle">0</p>

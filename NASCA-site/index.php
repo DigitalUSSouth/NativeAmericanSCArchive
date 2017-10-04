@@ -164,7 +164,7 @@
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-images" class="tab">
+                    <div id="tabs-images-base" class="tab">
                       Images
                       <div class="tab-underline half-underline-white"></div>
                     </div>
