@@ -167,7 +167,11 @@ def images():
     for image in data['data']:
         path = "../data/images/"+str(image['pointer'])+"_thumbnail.jpg"
         if (os.path.isfile(path)):
+<<<<<<< HEAD
             thumbnail = site_root+"/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+=======
+            thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+>>>>>>> search/main
         else:
             thumbnail = ""
         #print(description)
@@ -223,6 +227,7 @@ def letters():
                 'type_digital': "Text",
                 'url': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
                 'id': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
+                '': site_root+'/db/data/letters/'+str(page['pointer']+'_thumbnail.jpg',
                 'description': page['descri'],
                 'geolocation_human': "South Carolina",
                 'file_format': 'text/html',
