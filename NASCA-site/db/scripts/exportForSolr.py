@@ -168,10 +168,14 @@ def images():
         path = "../data/images/"+str(image['pointer'])+"_thumbnail.jpg"
         if (os.path.isfile(path)):
 <<<<<<< HEAD
+<<<<<<< HEAD
             thumbnail = site_root+"/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
 =======
             thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
 >>>>>>> search/main
+=======
+            thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+>>>>>>> master
         else:
             thumbnail = ""
         #print(description)
@@ -202,9 +206,10 @@ def letters():
         dataFile.close
     data = data['data']
     counter = 1
-
+    years = {}
     for letter in data:
         pageCounter = 1
+        letterInit = True
         for page in letter:
             letterYear = 0
             match = re.search('[0-9]{4}',page['date']) #match 4 digit year
@@ -212,6 +217,12 @@ def letters():
                 letterYear = match.group(0)
             if letterYear==0:
                 continue
+            if letterInit:
+                if letterYear in years:
+                    years[letterYear] = years[letterYear] + 1
+                else:
+                    years[letterYear] = 1
+                letterInit = False
             if page['title'] == "":
                 continue
             imgPath1 = "../data/letters/"+str(page['pointer'])+"_large.jpg"
@@ -225,9 +236,9 @@ def letters():
                 'title': page['title'],
                 'type_content': "Text",
                 'type_digital': "Text",
-                'url': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
-                'id': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
-                '': site_root+'/db/data/letters/'+str(page['pointer']+'_thumbnail.jpg',
+                'url': site_root+'/letters/'+str(letterYear)+'/'+str(years[letterYear])+'#page'+str(pageCounter),
+                'id': site_root+'/letters/'+str(letterYear)+'/'+str(years[letterYear])+'#page'+str(pageCounter),
+                'thumbnail_url': site_root+"/db/data/letters/"+str(page['pointer'])+"_thumbnail.jpg",
                 'description': page['descri'],
                 'geolocation_human': "South Carolina",
                 'file_format': 'text/html',

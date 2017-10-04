@@ -112,12 +112,12 @@ function buildNavQuery($nextPrev){
       <a class="text-red" href="<?php print $doc['url'];?>"><h1><?php print $doc['title']?></h1></a>
       <p><big><?php print getExcerpt(strip_tags($doc['full_text']));?>... <a class="text-red" href="<?php print $doc['url'];?>">Read more</a></big></p>
     </div>
-    <?php if ($fa=="fa-picture-o"):?>
+    <?php if ($fa=="fa-picture-o" || $fa=="fa-envelope" || $fa=="fa-file-text-o"):?>
     <div class="col-xs-2">
-      <img class="img-responsive" src="<?php print $doc['thumbnail_url'];?>">
+      <div class="panel" style="padding:1.5em;margin-top:.5em;"><img class="img-responsive center-block" src="<?php print $doc['thumbnail_url'];?>" style="max-height:10em;"></div>
     </div>
     <?php endif;?>
-    <div class="clearfix"></div>
+    <div class="col-xs-12"><hr></div>
   <?php endforeach;
 
     ?>
