@@ -224,6 +224,7 @@
             <li id="pullout-list-map" class="pullout-list-el">Map</li>
             <li id="pullout-list-timeline" class="pullout-list-el">Timeline</li>
             <li id="pullout-list-tribes" class="pullout-list-el">Tribes</li>
+            <li id="pullout-list-about" class="pullout-list-el">About</li>
           </ul>
         </div>
       </div>
