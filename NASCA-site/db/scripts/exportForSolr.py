@@ -17,6 +17,7 @@ def main():
     docs.extend(timelines())
     docs.extend(tribes())
     docs.extend(letters())
+    docs.extend(images())
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
@@ -155,6 +156,38 @@ def tribes():
         pprint(doc['title'])
         docs.append(doc)
         counter = counter + 1
+    return docs
+
+def images():
+    print ("****Exporting Images:")
+    docs = []
+    with open("../data/images/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    for image in data['data']:
+        path = "../data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+        if (os.path.isfile(path)):
+            thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+        else:
+            thumbnail = ""
+        #print(description)
+        loc = "South Carolina" if image['geogra']=="" else image['geogra']
+        doc = {
+            'archive': archive,
+            'contributing_institution': image['publis'],
+            'title': image['title'],
+            'type_content': "Image",
+            'type_digital': "Image",
+            'url': site_root+'/images/'+str(image['pointer']),
+            'id': site_root+'/images/'+str(image['pointer']),
+            'description': '',
+            'thumbnail_url': thumbnail,
+            'geolocation_human': loc,
+            'file_format': 'image/jpeg',
+            'full_text': image['descri']
+        }
+        pprint(doc['title'])
+        docs.append(doc)
     return docs
 
 def letters():
