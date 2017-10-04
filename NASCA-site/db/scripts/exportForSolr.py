@@ -190,6 +190,7 @@ def letters():
                 'type_digital': "Text",
                 'url': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
                 'id': site_root+'/letters/'+str(letterYear)+'/'+str(counter)+'#page'+str(pageCounter),
+                '': site_root+'/db/data/letters/'+str(page['pointer']+'_thumbnail.jpg',
                 'description': page['descri'],
                 'geolocation_human': "South Carolina",
                 'file_format': 'text/html',
