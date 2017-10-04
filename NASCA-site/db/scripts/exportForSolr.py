@@ -18,7 +18,7 @@ def main():
     docs.extend(tribes())
     docs.extend(letters())
     docs.extend(images())
-    videos()
+    docs.extent(videos())
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
@@ -192,7 +192,7 @@ def images():
     return docs
 
 def videos():
-    print ("****Exporting Images:")
+    print ("****Exporting Videos:")
     docs = []
     with open("../data/video/data.json") as dataFile:
         data = json.load(dataFile)
