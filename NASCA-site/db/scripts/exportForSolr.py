@@ -18,6 +18,7 @@ def main():
     docs.extend(tribes())
     docs.extend(letters())
     docs.extend(images())
+    videos()
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
@@ -167,15 +168,7 @@ def images():
     for image in data['data']:
         path = "../data/images/"+str(image['pointer'])+"_thumbnail.jpg"
         if (os.path.isfile(path)):
-<<<<<<< HEAD
-<<<<<<< HEAD
-            thumbnail = site_root+"/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
-=======
             thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
->>>>>>> search/main
-=======
-            thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
->>>>>>> master
         else:
             thumbnail = ""
         #print(description)
@@ -196,6 +189,38 @@ def images():
         }
         pprint(doc['title'])
         docs.append(doc)
+    return docs
+
+def videos():
+    print ("****Exporting Images:")
+    docs = []
+    with open("../data/video/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    urls = data['urls']
+    count = data['count']
+    counter = 1
+    for video in data['data']:
+        if counter>count:
+            break
+        thumbnail = urls['video_prefix']+video['key']+urls['thumbnail_suffix']
+        #print(description)
+        doc = {
+            'archive': archive,
+            'contributing_institution': contributing_institution,
+            'title': video['title'],
+            'type_content': "Image",
+            'type_digital': "Image",
+            'url': site_root+'/video/#Videos-'+str(counter),
+            'id': site_root+'/video/#Videos-'+str(counter),
+            'description': video['description'],
+            'thumbnail_url': thumbnail,
+            'geolocation_human': "South Carolina",
+            'file_format': 'video/x-youtube'
+        }
+        pprint(doc)
+        docs.append(doc)
+        counter = counter + 1
     return docs
 
 def letters():
