@@ -1,12 +1,12 @@
 <?php
-  $api_dir = preg_replace('/html.images-base\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
+  $api_dir = preg_replace('/html.images\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
   include_once ($api_dir . 'configuration.php');
   include_once ($api_dir . 'cdm.php');
 
   //pull images data, outside functions
   $data_loc = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_IMAGE;
   $data = getJsonLocal($data_loc);
-  //$count = $data->count;
+  $count = $data->count;
   $data = $data->data;
   $card_start = (int)$config->frontend->images->cards_start;
   
@@ -47,7 +47,7 @@
         }
         ?>
         <div class="image-card-container">
-          <div class="card background-black shadow-caster" id="image-card-<?php print (string)$ind; ?>">
+          <div class="image-card card-natural background-black shadow-caster" id="image-card-<?php print $ind; ?>">
             <div class="additional">
               <p id="size"><?php print $size; ?></p>
               <p id="pointer"><?php print $pntr; ?></p>
@@ -58,13 +58,7 @@
             <div class="card-title-container background-red">
               <div class="card-title text-white source-serif"><?php print $title_s; ?></div>
             </div>
-            <div class="card-read-more background-red">
-              <div class="text-white source-serif">Read More</div>
-            </div>
-            <div class="card-point background-red">
-              <img src="img/cardPoint.svg" />
-            </div>
-            <div class="card-hover" onclick=""></div>
+            <div class="card-hover" onclick="imagesReadMoreToggle('<?php print $ind; ?>','#image-card-<?php print $ind; ?>')"></div>
           </div>
           <div class="shadow"></div>
         </div>
@@ -72,26 +66,18 @@
       }
       ?>
     </div>
+    <div id="images-loading" class="custom-row">
+      <img src="<?php print SITE_ROOT; ?>/img/loadingBar.gif" alt="Loading...">
+    </div>
     <?php
   }
   
-  //check if $print is set in url argument
-  //if so, run baseDriver(). Otherwise, including this file would only
+  //check if $noprint is set in url argument
+  //if not, run baseDriver(). If it is, this file would only
   //access whatever may be added at the top of the file
-  /*if(isset($_GET['print'])) {
-    $print = $_GET['print'];
-    //print needs to be a 1
-    if(isnumeric($print)) {
-      //ensure the variable is int and not string
-      $print = (int)$print;
-      if($print === 1) {
-        baseDriver();
-      }
-    } else {
-      error_log('images-base.php: Error: php file was accessed with necessary arguments but they were not correct value.',0);
-    }
+  if(isset($_GET['noprint']) || isset($noprint)) {
+    //do nothing
   } else {
-    error_log('images-base.php: Notice: php file was accessed without necessary arguments to print base.',0);
-  }*/
-  baseDriver();
+    baseDriver();
+  }
 ?>

@@ -19,6 +19,9 @@ function intervalFade(fadeIns,interval) {
 
 function init_shadows() {
   var caster = $('.shadow').siblings('div.shadow-caster');
+  if(caster.length === 0) {
+    return 1;
+  }
   var width = caster.width();
   var parentWidth = caster.parent().width();
   var percentWidth = 100*width/parentWidth;
@@ -29,7 +32,12 @@ function init_shadows() {
   left = pxAsInt(left);
   var percentLeft = 100*left/parentWidth;
   var shadows = $('.shadow');
-  shadows.css({'width': asPercent(percentWidth), 'top': asPercent(percentHeight), 'left': asPercent(percentLeft)});
+  var transformVal = caster.css('transform');
+  if(transformVal === 'translateX(0)' || transformVal === null) {
+    shadows.css({'width': asPercent(percentWidth), 'top': asPercent(percentHeight), 'left': asPercent(percentLeft)});
+  } else {
+    shadows.css({'width': asPercent(percentWidth), 'top': asPercent(percentHeight), 'left': asPercent(percentLeft), 'transform': transformVal});
+  }
 }
 
 function asPercent(i) {

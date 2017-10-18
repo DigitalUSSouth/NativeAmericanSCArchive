@@ -74,7 +74,7 @@ for($i = 1; $i <= $count; $i++) {
   }
 ?>
 <div class="home-card-container">
-  <div class="home-card background-black shadow-caster" id="home-card-<?php print (string)($i-$offset); ?>">
+  <div class="home-card card-natural background-black shadow-caster" id="home-card-<?php print (string)($i-$offset); ?>">
     <div class="additional">
       <p id="title"><?php print $title_s; ?></p>
       <p id="type"><?php print $type; ?></p>
@@ -91,9 +91,9 @@ for($i = 1; $i <= $count; $i++) {
       <div class="text-white source-serif">Read More</div>
     </div>
     <div class="card-point background-red">
-      <img src="img/cardPoint.svg" />
+      <img src="<?php print SITE_ROOT; ?>/img/cardPoint.svg" />
     </div>
-    <div class="card-hover" onclick="readMoreToggle('<?php print $numbers[$i-1]; ?>','#home-card-<?php print (string)($i-$offset); ?>')"></div>
+    <div class="card-hover" onclick="homeReadMoreToggle('<?php print $numbers[$i-1]; ?>','#home-card-<?php print (string)($i-$offset); ?>')"></div>
   </div>
   <div class="shadow"></div>
 </div>

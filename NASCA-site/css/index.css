@@ -218,13 +218,13 @@ hr.grey {
 }
 
 .shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 4.5%;
-    background: linear-gradient(#222222 -280%, transparent 100%);
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4.5%;
+  background: linear-gradient(#222222 -280%, transparent 100%);
+  z-index: 1;
 }
 
 .clickable {
@@ -352,7 +352,7 @@ colors{
   height: 36.4486%;
   min-height: 39px; /*52px;*/
   /*min-width: 235px; /*331px;*/
-  /*width: 235px; /*331px;*/
+  width: 350px; /*331px;*/
   opacity: 0;
 }
 

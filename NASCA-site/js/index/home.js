@@ -10,93 +10,87 @@ function init_home() {
   //set hover for cards
   $('.card-hover').hover(function() {
     //enter
-    if($(this).siblings('div.additional').children('#toggle').html() === '0') {
-      $(this).siblings('img.card-image').animate({opacity:1.0},card_anim_details);
-      $(this).parent().css({top: "5px"});//, left: "1px"});//,{duration: 100, queue: false});
-      //$(this).parent().css({"box-shadow":"1px 3px 12px -2px rgb(150,150,150)"});
-      $(this).siblings('div.card-read-more').animate({left:0},card_anim_details);
-      $(this).siblings('div.card-point').animate({left:'100%'},card_anim_details);
-      $(this).siblings('div.card-point').css({'-webkit-transform':'translateX(-100%)'});
+    var jthis = $(this);
+    var additional = jthis.siblings('div.additional');
+    if(additional.children('#toggle').html() === '0') {
+      jthis.siblings('img.card-image').animate({opacity:1.0},card_anim_details);
+      jthis.parent().css({top: "5px"});//, left: "1px"});//,{duration: 100, queue: false});
+      jthis.siblings('div.card-read-more').animate({left:0},card_anim_details);
+      var cardpoint = jthis.siblings('div.card-point');
+      cardpoint.animate({left:'100%'},card_anim_details);
+      cardpoint.css({'-webkit-transform':'translateX(-100%)'});
       //$(this).parent().siblings('div.shadow').animate({top:'-3px'},card_anim_details);
     }
-    var title = $(this).siblings('div.additional').children('#title').html();
-    $(this).siblings('div.card-title-container').children('div.card-title').html(title);
+    var title = additional.children('#title').html();
+    jthis.siblings('div.card-title-container').children('div.card-title').html(title);
   }, function() {
     //exit
-    if($(this).siblings('div.additional').children('#toggle').html() === '0') {
-      $(this).siblings('img.card-image').animate({opacity:0.9},card_anim_details);
-      $(this).parent().css({top: "0"});//, left: "0"});//,{duration: 100, queue: false});
-      //$(this).parent().css({"box-shadow":"3px 10px 18px -2px rgb(150,150,150)"});
-      $(this).siblings('div.card-read-more').animate({left:'-50%'},card_anim_details);
-      $(this).siblings('div.card-point').animate({left:0},card_anim_details);
-      $(this).siblings('div.card-point').css({'-webkit-transform':'translateX(0)'});
+    var jthis = $(this);
+    var additional = jthis.siblings('div.additional');
+    if(additional.children('#toggle').html() === '0') {
+      jthis.siblings('img.card-image').animate({opacity:0.9},card_anim_details);
+      jthis.parent().css({top: "0"});//, left: "0"});//,{duration: 100, queue: false});
+      jthis.siblings('div.card-read-more').animate({left:'-50%'},card_anim_details);
+      var cardpoint = jthis.siblings('div.card-point');
+      cardpoint.animate({left:0},card_anim_details);
+      cardpoint.css({'-webkit-transform':'translateX(0)'});
       //$(this).parent().siblings('div.shadow').animate({top:'0'},card_anim_details);
     }
-    var type = $(this).siblings('div.additional').children('#type').html();
-    //if(type[type.length-1] === 's') {
-    //  type = type.substring(0,type.length-1);
-    //  type = jsUcfirst(type);
-    //}
-    $(this).siblings('div.card-title-container').children('div.card-title').html(type);
+    var type = additional.children('#type').html();
+    jthis.siblings('div.card-title-container').children('div.card-title').html(type);
   });
-  /*var list = $('.home-card-container');
-  var size = 'wide';
-  for(var i = 0; i < list.length; i++) {
-    size = list.eq(i).find('#size').html();
-    if(size === 'tall') {
-      var el = list.eq(i).children('.home-card').children('img');
-      el.css({height: 'auto', width: '100%'});
-    }
-  }*/
-}
-
-/*
- * @param {type} card - jQuery selector for cards to animate off
- */
-function animateOff(card) {
-  $(card + ' .card-read-more').animate({left:'-50%'},card_anim_details);
-  $(card + ' .card-point').animate({left:0},card_anim_details);
-  $(card + ' .card-point').css({'-webkit-transform':'translateX(0)'});
-  $(card + ' .card-image').animate({opacity:0.9},card_anim_details);
-  $(card).css({top: '0'});//, left: '0'});//,{duration: 100, queue: false});
-  //$(card).css({'box-shadow':'3px 10px 18px -2px rgb(150,150,150)'});
-  //$(card).siblings('div.shadow').animate({top:'0'},card_anim_details);
-  $(card + ' .additional #toggle').html('0');
-}
-
-/*
- * @param {type} card - jQuery selector for cards to animate on
- */
-function animateOn(card) {
-  $(card + ' .card-read-more').animate({'left': 0},card_anim_details);
-  $(card + ' .card-point').animate({'left': '100%'},card_anim_details);
-  $(card + ' .card-point').css({'-webkit-transform':'translateX(-100%)'});
-  $(card + ' .card-image').animate({'opacity': 1.0},card_anim_details);
-  $(card).css({top: '5px'});//, left: '1px'});//,{duration: 100, queue: false});
-  //$(card).css({'box-shadow':'1px 3px 12px -2px rgb(150,150,150)'});
-  //$(card).siblings('div.shadow').animate({top:'-3px'},card_anim_details);
-  $(card + ' .additional #toggle').html('1');
 }
 
 /*
  * @param {string} card - id of card to display on the right
  * @param {number/int} homePtr - index of card information in home/data.json
  */
-function readMoreToggle(homePtr, card) {
-  var state = parseInt($(card + ' .additional #toggle').text());
+function homeReadMoreToggle(homePtr, card) {
+  
+  function animateOff(_card) {
+    _card.children('.card-read-more').animate({left:'-50%'},card_anim_details);
+    var cardpoint = _card.children('.card-point');
+    cardpoint.animate({left:0},card_anim_details);
+    cardpoint.css({'-webkit-transform':'translateX(0)'});
+    _card.children('.card-image').animate({opacity:0.9},card_anim_details);
+    _card.css({top: '0'});
+    //$(_card).siblings('div.shadow').animate({top:'0'},card_anim_details);
+    _card.find('.additional #toggle').html('0');
+  }
+
+  function animateOn(_card) {
+    _card.children('.card-read-more').animate({'left': 0},card_anim_details);
+    var cardpoint = _card.children('.card-point');
+    cardpoint.animate({'left': '100%'},card_anim_details);
+    cardpoint.css({'-webkit-transform':'translateX(-100%)'});
+    _card.children('.card-image').animate({'opacity': 1.0},card_anim_details);
+    _card.css({top: '5px'});
+    //$(_card).siblings('div.shadow').animate({top:'-3px'},card_anim_details);
+    _card.find('.additional #toggle').html('1');
+  }
+  
+  var additional = $(card + ' .additional');
+  var state = parseInt(additional.children('#toggle').text());
   var url = SITE_ROOT + '/html/home-more.php';
   if(state === 0) {
-    //turn every other card off
-    animateOff('.home-card');
+    //get cards that are 'on'
+    var ons = $('.home-card').filter(function() {
+      if($(this).find('.additional #toggle').html() == 0) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    //turn every on card off
+    animateOff(ons);
     //turn current card on
-    animateOn(card);
-    var cardType = $(card + ' .additional #type').text();
-    var size = $(card + ' .additional #size').text();
+    animateOn($(card));
+    var size = additional.children('#size').text();
     //add relevant info to url
     url += '?homeptr=' + homePtr + '&size=' + size;
   } else {
     //Then the card is already on. Turn it off.
-    animateOff(card);
+    animateOff($(card));
   }
   $.ajax({
     type:'POST',
@@ -113,7 +107,7 @@ function readMoreToggle(homePtr, card) {
       });
     }
   });
-  dynamic_css();
+  //dynamic_css();
 }
 
 //for old browsers -->

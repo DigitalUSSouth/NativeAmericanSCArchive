@@ -1,9 +1,11 @@
 <?php
   $api_dir = preg_replace('/html.images-card\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
-  $html_dir = preg_replace('images-card\.php/','',__FILE__);// 'html\home.php','',__FILE__);
+  $html_dir = preg_replace('/images-card\.php/','',__FILE__);// 'html\home.php','',__FILE__);
   include_once ($api_dir . 'configuration.php');
   include_once ($api_dir . 'cdm.php');
-  include_once ($html_dir . 'images-base.php');
+  //set noprint var for images.php
+  $noprint = TRUE;
+  include_once ($html_dir . 'images.php');
   
   $cards_per_block = (int)$config->frontend->images->cards_per_block;
   
@@ -55,7 +57,7 @@
       }
       ?>
       <div class="image-card-container">
-        <div class="card background-black shadow-caster" id="image-card-<?php print (string)$ind; ?>">
+        <div class="image-card card-natural background-black shadow-caster" id="image-card-<?php print (string)$ind; ?>">
           <div class="additional">
             <p id="size"><?php print $size; ?></p>
             <p id="pointer"><?php print $pntr; ?></p>
@@ -66,13 +68,7 @@
           <div class="card-title-container background-red">
             <div class="card-title text-white source-serif"><?php print $title_s; ?></div>
           </div>
-          <div class="card-read-more background-red">
-            <div class="text-white source-serif">Read More</div>
-          </div>
-          <div class="card-point background-red">
-            <img src="img/cardPoint.svg" />
-          </div>
-          <div class="card-hover" onclick=""></div>
+          <div class="card-hover" onclick="imagesReadMoreToggle('<?php print $ind; ?>','#image-card-<?php print $ind; ?>')"></div>
         </div>
         <div class="shadow"></div>
       </div>
@@ -86,7 +82,7 @@
   if(isset($_GET['sli'])) {// && isset($_GET['cc'])) {
     $sli = $_GET['sli'];
     //$cc = $_GET['cc'];
-    if(isnumeric($sli)) {// && isnumeric($cc)) {
+    if(is_numeric($sli)) {// && isnumeric($cc)) {
       //ensure the variables are ints and not strings
       $sli = (int)$sli;
       //$cc = (int)$cc;
