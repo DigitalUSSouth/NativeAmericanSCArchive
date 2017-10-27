@@ -19,7 +19,12 @@ var DB_INTERVIEW = '';
 var DB_LETTER = '';
 var DB_VIDEO = '';
 var IMAGE_FORMAT = '';
-var IMAGE_SIZE = '';
+var IMAGE_SIZE_THUMBNAIL = '';
+var IMAGE_SIZE_SMALL = '';
+var IMAGE_SIZE_LARGE = '';
+
+var IMAGES_START = '';
+var IMAGES_CONT = '';
 
 function setGlobals() {
   var fileLocation = $('script[src*=globals]').attr('src');
@@ -49,7 +54,12 @@ function setGlobals() {
       DB_LETTER = json.DB_LETTER;
       DB_VIDEO = json.DB_VIDEO;
       IMAGE_FORMAT = json.IMAGE_FORMAT;
-      IMAGE_SIZE = json.IMAGE_SIZE;
+      IMAGE_SIZE_THUMBNAIL = json.IMAGE_SIZE_THUMBNAIL;
+      IMAGE_SIZE_SMALL = json.IMAGE_SIZE_SMALL;
+      IMAGE_SIZE_LARGE = json.IMAGE_SIZE_LARGE;
+      
+      IMAGES_START = json.IMAGES_START;
+      IMAGES_CONT = json.IMAGES_CONT;
   	}
   });
 }

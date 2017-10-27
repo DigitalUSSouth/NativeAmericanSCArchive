@@ -20,5 +20,11 @@
   $arr['DB_INTERVIEW'] = DB_INTERVIEW;
   $arr['DB_LETTER'] = DB_LETTER;
   $arr['DB_VIDEO'] = DB_VIDEO;
+  $arr['IMAGE_FORMAT'] = IMAGE_FORMAT;
+  $arr['IMAGE_SIZE_THUMBNAIL'] = IMAGE_SIZE_THUMBNAIL;
+  $arr['IMAGE_SIZE_SMALL'] = IMAGE_SIZE_SMALL;
+  $arr['IMAGE_SIZE_LARGE'] = IMAGE_SIZE_LARGE;
+  $arr['IMAGES_START'] = (int)$config->frontend->images->cards_start;
+  $arr['IMAGES_CONT'] = (int)$config->frontend->images->cards_per_block;
   echo json_encode($arr);
 ?>

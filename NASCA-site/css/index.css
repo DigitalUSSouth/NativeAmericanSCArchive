@@ -108,7 +108,7 @@ hr.grey {
   transform: translateX(-50%);
   width: 50%;
   height: 100%;
-  border-bottom: 2px solid black;
+  border-bottom: 2.5px solid black;
   transition-duration: 0.1s;
 }
 

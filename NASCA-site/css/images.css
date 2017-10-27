@@ -1,3 +1,27 @@
+#select-container {
+  background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+  background-size: contain;
+  overflow: hidden;
+  width: 16%;
+  min-width: 227px;
+  position: relative;
+}
+
+#select-container .half-underline-black {
+  transform: translateX(-43%);
+  z-index: 1;
+}
+
+#select {
+  position: relative;
+  background: transparent;
+  border: 1px solid #ccc;
+  width: 110%;
+  font-weight: 600;
+  text-align: center;
+  z-index: 2;
+}
+
 #image-cards-flex {
   position: relative;
   margin-left: -12px;

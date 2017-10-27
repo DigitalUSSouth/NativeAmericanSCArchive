@@ -275,9 +275,13 @@ function dynamic_css() {
       newMargin = '-' + newMargin.toString() + 'px';
       $('#image-cards-flex').css({'margin-left': newMargin, 'margin-right': newMargin});
       {
-        var featured = $('#featured');
-        responsive_font(featured, 'window', 1.6287, 10);//12);
-        featured.css('margin-bottom', featured.height());
+        var select = $('#select-container');
+        nHght = select.width()*0.1;
+        select.height(nHght);
+        var child = select.children('#select');
+        child.height(nHght);
+        select.css('margin-bottom', select.height());
+        responsive_font(child, 'parent-div', 70);
       }
       {
         var image_card_cont = $('.image-card-container');
@@ -378,15 +382,17 @@ function dynamic_css() {
 var activate_dynamic_css;
 var last_css_firing = 0;
 var css_timeout_reaction = 10; //in hertz
-var css_frequency = 2; //in hertz
+var css_frequency = 0; //in hertz
 
 if (window.attachEvent) {
   window.attachEvent('onresize', function () {
     clearTimeout(activate_dynamic_css);
-    if ((Date.now() - last_css_firing) > (1000 / css_frequency)) {
-      dynamic_css();
-      last_css_firing = Date.now();
-      return 0;
+    if(css_frequency !== 0) {
+      if ((Date.now() - last_css_firing) > (1000 / css_frequency)) {
+        dynamic_css();
+        last_css_firing = Date.now();
+        return 0;
+      }
     }
     activate_dynamic_css = setTimeout(function () {
       dynamic_css();
@@ -396,10 +402,12 @@ if (window.attachEvent) {
 } else if (window.addEventListener) {
   window.addEventListener('resize', function () {
     clearTimeout(activate_dynamic_css);
-    if ((Date.now() - last_css_firing) > (1000 / css_frequency)) {
-      dynamic_css();
-      last_css_firing = Date.now();
-      return 0;
+    if(css_frequency !== 0) {
+      if ((Date.now() - last_css_firing) > (1000 / css_frequency)) {
+        dynamic_css();
+        last_css_firing = Date.now();
+        return 0;
+      }
     }
     activate_dynamic_css = setTimeout(function () {
       dynamic_css();
