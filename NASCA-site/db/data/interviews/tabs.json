@@ -1,7 +1,7 @@
 [
   {
     "tribe": "Catawba Indian Nation",
-    "descriptiont":"",
+    "description":"",
     "interviews": {
       "Catawba_Earl-Robbins-May-1987-minified.json":"Earl Robbins",
       "Catawba_Landrum-George-Mar-22-1983_Tape1-minified.json":"Landrum George Tape 1",
@@ -19,7 +19,7 @@
   },
   {
     "tribe": "Beaver Creek Indians",
-    "descriptiont":"",
+    "description":"",
     "interviews": {
       "Beaver-Creek_Hazel-Thornton-minified.json":"Hazel Thornton",
       "Beaver-Creek_Helen-Jeffcoat-minified.json":"Helen Jeffcoat",
@@ -32,7 +32,7 @@
   },
   {
     "tribe": "Pee Dee Indian Tribe of SC",
-    "descriptiont":"",
+    "description":"",
     "interviews": {
       "Pee-Dee_Chief-James-Caulder-minified.json":"Chief James Caulder",
       "Pee-Dee_Clayton-RC-Cummings-minified.json":"Clayton RC Cummings",
@@ -43,7 +43,7 @@
   },
   {
     "tribe": "Sumter Tribe of Cheraw",
-    "descriptiont":"",
+    "description":"",
     "interviews": {
       "Sumter-Cheraw_Ralph-Justice-Oxendine-minified.json":"Ralph Justice Oxendine"
     },
@@ -52,7 +52,7 @@
   },
   {
     "tribe": "Wassamasaw Tribe",
-    "descriptiont":"",
+    "description":"",
     "interviews": {
       "Varnertown_Chuck-Rodgers-minified.json":"Chuck Rodgers",
       "Varnertown_Gloria-Varner_Ruby-Oliver-minified.json":"Gloaria Varner and Ruby Oliver",

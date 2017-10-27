@@ -1,4 +1,4 @@
-{"count":13,
+{"count":14,
   "directories":{
   "image_directory":"/img/tribesLogos",
   "description_directory":"/db/data/tribes"},
@@ -11,6 +11,10 @@
     "title":"Catawba Indian Nation",
     "description":"catawba.html",
     "pages":4},
+  {"logo":"chicora.png",
+  "title":"Chicora Indian Tribe of South Carolina",
+  "description":"chicora.html",
+  "pages":2},
   {"logo":"edisto_natchez.png",
   "title":"Edisto Natchez Kusso Tribe",
   "description":"edisto-natchez.html",
@@ -53,6 +57,6 @@
   "pages":4},
   {"logo":"wassamasaw.png",
   "title":"Wassamasaw Tribe",
-  "description":"",
-  "pages":2}
+  "description":"wassamasaw.html",
+  "pages":4}
   ]}

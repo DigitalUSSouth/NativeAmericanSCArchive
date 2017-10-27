@@ -4,17 +4,38 @@ require_once "../api/configuration.php";
 $jsonTabData = file_get_contents(SITE_ROOT."/db/data/letters/tabs.json");
 $rawTabData = json_decode($jsonTabData,true);
 $tabData = array();
+$tabHrefs = array();
+
+//filter out bad data
+//This is horribly inneficient but we have to do it
+//because we keep getting bad data from ContentDM
 foreach ($rawTabData as $rawItem){
   if ($rawItem['href']=="") continue;
   if (empty(array_filter($rawItem['letters']))) continue;
+  $validLetter = true;
+  foreach ($rawItem['letters'] as $letter){
+    foreach($letter['pages'] as $page){
+      $fullPath = $page['image'];
+      $img = end(explode('/',$fullPath));
+      $imgPath = "../db/data/letters/".$img;
+      if (!(file_exists($imgPath))){
+        $validLetter = false;
+        break;
+      }
+    }
+    if (!$validLetter) break;
+  }
+  if (!$validLetter) continue;
   $tabData[] = $rawItem;
+  $tabHrefs[] = $rawItem['href'];
 }
 usort($tabData, function($a,$b){
   if ($a['href']==$b['href']) return 0;
   return ((int)$a['href']<(int)$b['href']) ? -1 : 1;
 });
-
+sort($tabHrefs);
 ?>
+<script>var tabHrefs = <?php print json_encode($tabHrefs);?>;</script>
 <ul class="nav nav-tabs nav-justified letter-tab">
 <?php
   $counter=1;

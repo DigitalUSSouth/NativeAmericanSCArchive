@@ -17,7 +17,7 @@
   if (isset($_GET['page'])){
     $currentUrl = array_filter(explode('/',$_GET['page']));
     $authorizedPages  = array(
-      "interviews","letters", "images","video","map","timeline","tribes","search"
+      "interviews","letters", "images","video","map","timeline","tribes","search","about"
     );
     if (!in_array($currentUrl[0],$authorizedPages)){
       $currentUrl = ["404"];
@@ -193,6 +193,12 @@
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
+                  <li>
+                    <div id="tabs-about" class="tab">
+                      About
+                      <div class="tab-underline half-underline-white"></div>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -218,6 +224,7 @@
             <li id="pullout-list-map" class="pullout-list-el">Map</li>
             <li id="pullout-list-timeline" class="pullout-list-el">Timeline</li>
             <li id="pullout-list-tribes" class="pullout-list-el">Tribes</li>
+            <li id="pullout-list-about" class="pullout-list-el">About</li>
           </ul>
         </div>
       </div>
@@ -230,19 +237,14 @@
     </div>
     <div id="footer-container" class="background-black">
       <div id="footer" class="source-serif text-white">
-        <div id="copyright-container">
+          <div class="footer-logos col-xs-10 col-xs-offset-1">
+            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/Lancaster_PC_Linear_202.svg">
+            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/Libraries_Linear_WebRGB.svg">
+            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/ISS_Linear_WebRGB.svg">
+          </div>
+          <div class="clearfix"></div>
           <div id="copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
-        </div>
-        <div id="footer-links-container">
-          <ul id="footer-links">
-            <li id="footer-links-about">
-              <a href="<?php print SITE_ROOT; ?>/html/about.html">about</a>
-            </li>
-            <li id="footer-links-credits">
-              <a href="<?php print SITE_ROOT; ?>/html/credits.html">credits</a>
-            </li>
-          </ul>
-        </div>
+
       </div>
     </div>
     <!-- Local Javascript, Jquery, Ajax -->

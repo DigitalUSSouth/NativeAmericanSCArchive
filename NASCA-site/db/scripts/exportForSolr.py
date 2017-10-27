@@ -8,7 +8,7 @@ import os.path
 
 archive = "Native American South Carolina Archive"
 contributing_institution = "University of South Carolina"
-site_root = "https://test.nativesouthcarolina.org"
+site_root = "https://www.nativesouthcarolina.org"
 
 def main():
     print("***Starting Solr export process")
@@ -16,6 +16,9 @@ def main():
     docs.extend(interviews())
     docs.extend(timelines())
     docs.extend(tribes())
+    docs.extend(letters())
+    docs.extend(images())
+    docs.extend(videos())
     with open("../data/solrDocs.json","w") as outfile:
         docFile = json.dumps(docs,outfile,ensure_ascii=False,indent=4, sort_keys=True)
         outfile.write(docFile)
@@ -29,7 +32,7 @@ def interviews():
     print ("****Exporting interviews:")
     docs = []
     for interview in interviews:
-        doc = {
+        """doc = {
             'archive': archive,
             'contributing_institution': contributing_institution,
             'title': interview['tribe'],
@@ -43,7 +46,7 @@ def interviews():
             'file_format': 'text/html'
         }
         pprint(doc['title'])
-        docs.append(doc)
+        docs.append(doc)"""
         print ("*****Interview transcripts for: "+interview['tribe'])
         docs.extend(interviewTranscripts(interview))
     return docs
@@ -141,10 +144,10 @@ def tribes():
             'archive': archive,
             'contributing_institution': contributing_institution,
             'title': tribe['title'],
-            'type_content': "Sound",
-            'type_digital': "Sound",
+            'type_content': "Text",
+            'type_digital': "Text",
             'url': site_root+'/tribes/#Tribes-'+str(counter),
-            'id': site_root+'/tribes/'+str(counter),
+            'id': site_root+'/tribes/#Tribes'+str(counter),
             'description': '',
             'thumbnail_url': site_root+imgDir+'/'+tribe['logo'],
             'geolocation_human': "South Carolina",
@@ -155,6 +158,124 @@ def tribes():
         docs.append(doc)
         counter = counter + 1
     return docs
+
+def images():
+    print ("****Exporting Images:")
+    docs = []
+    with open("../data/images/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    for image in data['data']:
+        path = "../data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+        if (os.path.isfile(path)):
+            thumbnail = site_root+"/db/data/images/"+str(image['pointer'])+"_thumbnail.jpg"
+        else:
+            thumbnail = ""
+        #print(description)
+        loc = "South Carolina" if image['geogra']=="" else image['geogra']
+        doc = {
+            'archive': archive,
+            'contributing_institution': image['publis'],
+            'title': image['title'],
+            'type_content': "Image",
+            'type_digital': "Image",
+            'url': site_root+'/images/'+str(image['pointer']),
+            'id': site_root+'/images/'+str(image['pointer']),
+            'description': '',
+            'thumbnail_url': thumbnail,
+            'geolocation_human': loc,
+            'file_format': 'image/jpeg',
+            'full_text': image['descri']
+        }
+        pprint(doc['title'])
+        docs.append(doc)
+    return docs
+
+def videos():
+    print ("****Exporting Videos:")
+    docs = []
+    with open("../data/video/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    urls = data['urls']
+    count = data['count']
+    counter = 1
+    for video in data['data']:
+        if counter>count:
+            break
+        thumbnail = urls['thumbnail_prefix']+video['key']+urls['thumbnail_suffix']
+        #print(description)
+        doc = {
+            'archive': archive,
+            'contributing_institution': contributing_institution,
+            'title': video['title'],
+            'type_content': "Image",
+            'type_digital': "Image",
+            'url': site_root+'/video/#Videos-'+str(counter),
+            'id': site_root+'/video/#Videos-'+str(counter),
+            'description': video['description'],
+            'thumbnail_url': thumbnail,
+            'geolocation_human': "South Carolina",
+            'file_format': 'video/x-youtube'
+        }
+        pprint(doc)
+        docs.append(doc)
+        counter = counter + 1
+    return docs
+
+def letters():
+    print ("****Exporting letters:")
+    docs = []
+    with open("../data/letters/data.json") as dataFile:
+        data = json.load(dataFile)
+        dataFile.close
+    data = data['data']
+    counter = 1
+    years = {}
+    for letter in data:
+        pageCounter = 1
+        letterInit = True
+        for page in letter:
+            letterYear = 0
+            match = re.search('[0-9]{4}',page['date']) #match 4 digit year
+            if match:
+                letterYear = match.group(0)
+            if letterYear==0:
+                continue
+            if letterInit:
+                if letterYear in years:
+                    years[letterYear] = years[letterYear] + 1
+                else:
+                    years[letterYear] = 1
+                letterInit = False
+            if page['title'] == "":
+                continue
+            imgPath1 = "../data/letters/"+str(page['pointer'])+"_large.jpg"
+            imgPath2 = "../data/letters/"+str(page['pointer'])+"_thumbnail.jpg"
+            if not(os.path.isfile(imgPath1)) or not(os.path.isfile(imgPath2)):
+                print (imgPath1)
+                continue
+            doc = {
+                'archive': archive,
+                'contributing_institution': contributing_institution,
+                'title': page['title'],
+                'type_content': "Text",
+                'type_digital': "Text",
+                'url': site_root+'/letters/'+str(letterYear)+'/'+str(years[letterYear])+'#page'+str(pageCounter),
+                'id': site_root+'/letters/'+str(letterYear)+'/'+str(years[letterYear])+'#page'+str(pageCounter),
+                'thumbnail_url': site_root+"/db/data/letters/"+str(page['pointer'])+"_thumbnail.jpg",
+                'description': page['descri'],
+                'geolocation_human': "South Carolina",
+                'file_format': 'text/html',
+                'full_text': page['transc']
+            }
+            pprint(doc['url'])
+            docs.append(doc)
+            pageCounter = pageCounter + 1
+        counter = counter + 1
+    return docs
+
+
 """
 req:
     archive
