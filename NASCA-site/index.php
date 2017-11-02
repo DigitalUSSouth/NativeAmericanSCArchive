@@ -243,6 +243,7 @@
             <img class="footer-logo-img" src="<?php print SITE_ROOT;?>/img/logos/Lancaster_PC_Linear_202.svg">
             <img class="footer-logo-img" src="<?php print SITE_ROOT;?>/img/logos/Libraries_Linear_WebRGB.svg">
             <img class="footer-logo-img" src="<?php print SITE_ROOT;?>/img/logos/ISS_Linear_WebRGB.svg">
+            <img class="footer-logo-img" src="<?php print SITE_ROOT;?>/img/logos/Lancaster_NAS_color-USCL.svg">
           </div>
           <div id="footer-copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
 

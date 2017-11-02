@@ -614,10 +614,13 @@ div.tab-active > div.tab-underline {
 }
 
 img.footer-logo-img {
-  width: auto;
-  height: 100%;
+  width: 25%;
+  height: auto;
   position: relative;
   margin: 0 auto;
+  padding-left: 1%;
+  padding-right: 1%;
+  min-width: 180px;
 }
 
 #footer-copyright {
