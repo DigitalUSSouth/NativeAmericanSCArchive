@@ -34,12 +34,20 @@
 }
 
 .home-card-container {
+  position: relative;
   min-width: 172px;
-  /*width: 25%;*/
+  width: 25%;
   /*min-height: 222px;*/
-  height: 222px;
+  display: inline-block;
+  /*height: 0;*/
   position: relative;
   z-index: 2;
+}
+
+.home-card-container::after {
+  padding-top: 129%;
+  display: block;
+  content: '';
 }
 
 .card-natural {
@@ -68,7 +76,7 @@
   transition-duration: 0.4s;*/
 }
 
-.card-natural img {
+.card-natural > img {
   opacity: 0.9;
   height: 100%;
   width: 100%;
@@ -113,7 +121,7 @@
   width: auto;
 }
 
-.card-read-more div {
+.card-read-more > div {
   z-index: 3;
   height: 100%;
   font-size: 11.5px;
@@ -131,11 +139,14 @@
   -webkit-transform: translateX(0);
 }
 
-.card-point img {
+.card-point > img {
   z-index: 4;
   width: 100%;
   height: auto;
   opacity: 1.0;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .card-hover:hover {
@@ -148,50 +159,50 @@
   position: relative;
 }
 
-.preview-wide #preview-title-container {
+.preview-wide > #preview-title-container {
   width: 100%;
   min-height: 94px;
 }
 
-.preview-tall #preview-title-container {
+.preview-tall > #preview-title-container {
   min-height: 90px;
   width: 47.9905%;
   float: right;
   margin-top: 66px;
 }
 
-.preview-letter #preview-title-container {
+.preview-letter > #preview-title-container {
   min-height: 49px;
   width: 100%;
 }
 
-.preview-default #preview-title-container {
+.preview-default > #preview-title-container {
   width: 100%;
 }
 
-.preview-wide #preview-title-container #preview-title {
+.preview-wide > #preview-title-container > #preview-title {
   font-size: 34px;
   line-height: 47px;
 }
 
-.preview-tall #preview-title-container #preview-title {
+.preview-tall > #preview-title-container > #preview-title {
   font-size: 33px;
   line-height: 45px;
 }
 
-.preview-letter #preview-title-container #preview-title {
+.preview-letter > #preview-title-container > #preview-title {
   font-size: 32px;
   line-height: 49px;
 }
 
-.preview-default #preview-title-container #preview-title {
+.preview-default > #preview-title-container > #preview-title {
   width: 100%;
   font-size: 42px;
   line-height: 53px;
   letter-spacing: 0.5px;
 }
 
-.preview-default #preview-title-container #preview-title-secondary {
+.preview-default > #preview-title-container > #preview-title-secondary {
   width: 100%;
   font-size: 20px;
   line-height: 65px;
@@ -202,7 +213,7 @@
   position: relative;
 }
 
-#preview-media-container a img {
+.fancybox-home > #preview-media {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -212,13 +223,13 @@
   object-fit: cover;
 }
 
-.preview-wide #preview-media-container {
+.preview-wide > #preview-media-container {
   min-width: 423px;
   width: 100%;
   height: 193px;
 }
 
-.preview-tall #preview-media-container {
+.preview-tall > #preview-media-container {
   min-width: 189px;
   width: 44.6809%;
   height: 335px;
@@ -226,14 +237,14 @@
   float: left;
 }
 
-.preview-letter #preview-media-container {
+.preview-letter > #preview-media-container {
   min-width: 189px;
   width: 44.6809%;
   height: 335px;
   float: left;
 }
 
-.preview-wide #preview-desc-container {
+.preview-wide > #preview-desc-container {
   width: 100%;
   height: 64px; /*make dynamic*/
   margin-top: 30px; /*make dynamic*/
@@ -242,14 +253,14 @@
   padding-right: 16px; /*make dynamic*/
 }
 
-.preview-tall #preview-desc-container {
+.preview-tall > #preview-desc-container {
   width: 47.9905%;
   margin-top: 22px; /*make dynamic*/
   height: 187px; /*make dynamic*/
   float: right;
 }
 
-.preview-letter #preview-desc-container {
+.preview-letter > #preview-desc-container {
   width: 47.9905%;
   height: 335px;
   float: right;
@@ -270,21 +281,21 @@
   position: relative;
 }
 
-.preview-wide #preview-lower {
+.preview-wide > #preview-lower {
   margin-top: 19px;
 }
 
-.preview-tall #preview-lower {
+.preview-tall > #preview-lower {
   margin-top: 35px;
   float: left;
 }
 
-.preview-letter #preview-lower {
+.preview-letter > #preview-lower {
   margin-top: 16px;
   float: left;
 }
 
-.preview-default #preview-desc-container {
+.preview-default > #preview-desc-container {
   font-size: 14px; /*make dynamic*/
   line-height: 16px; /*make dynamic*/
 }

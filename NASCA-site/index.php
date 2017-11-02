@@ -117,13 +117,13 @@
           <div id="header-left-container">
             <div id="header-left">
               <div id="logo">
-                <a href="<?php print SITE_ROOT; ?>/">
-                  <img src="<?php print SITE_ROOT; ?>/img/coloredLogos/logo/NASCA_single_logo_white.svg" />
+                <a id="logo-anchor" href="<?php print SITE_ROOT; ?>/">
+                  <img id="logo-image" src="<?php print SITE_ROOT; ?>/img/coloredLogos/logo/NASCA_single_logo_white.svg" />
                 </a>
               </div>
               <div id="logo-verbose-container">
                 <div id="logo-verbose">
-                  <img src="<?php print SITE_ROOT; ?>/img/coloredLogos/type/NASCA_type_white.svg" />
+                  <img id="logo-verbose-image" src="<?php print SITE_ROOT; ?>/img/coloredLogos/type/NASCA_type_white.svg" />
                 </div>
               </div>
             </div>
@@ -131,15 +131,17 @@
           <div id="header-right" class="text-white">
             <div id="search-container">
               <div id="search">
-                <div id="search-contents">
+                <!--<div id="search-contents">-->
                   <div id="search-form" data-target="">
-                    <div id="search-text" for="search-inputn" class="anton text-white">Search</div>
-                    <input id="search-input" type="text" value="" name="query" style="display:inline">
-                    <button id="search-submit" type="submit"  style="display:inline">
-                      <img src="<?php print SITE_ROOT;?>/img/play-go.png" style="width:22px; margin:-1px;">
+                    <div id="search-text" for="search-inputn" class="anton">Search</div>
+                    <div id="search-input-container">
+                      <input id="search-input" class="background-black source-serif" type="text" value="" name="query">
+                    </div>
+                    <button id="search-submit" class="background-black" type="submit">
+                      <img id="search-submit-img" src="<?php print SITE_ROOT;?>/img/play-go.png">
                     </button>
                   </div>
-                </div>
+                <!--</div>-->
               </div>
             </div>
             <div id="nav-bar-container">
@@ -237,13 +239,12 @@
     </div>
     <div id="footer-container" class="background-black">
       <div id="footer" class="source-serif text-white">
-          <div class="footer-logos col-xs-10 col-xs-offset-1">
-            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/Lancaster_PC_Linear_202.svg">
-            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/Libraries_Linear_WebRGB.svg">
-            <img class="col-xs-4" src="<?php print SITE_ROOT;?>/img/logos/ISS_Linear_WebRGB.svg">
+          <div id="footer-logos">
+            <img class="footer-logo-img" src="<?php print SITE_ROOT;?>/img/logos/Lancaster_PC_Linear_202.svg">
+            <img class="footer-logo-img" src="<?php print SITE_ROOT;?>/img/logos/Libraries_Linear_WebRGB.svg">
+            <img class="footer-logo-img" src="<?php print SITE_ROOT;?>/img/logos/ISS_Linear_WebRGB.svg">
           </div>
-          <div class="clearfix"></div>
-          <div id="copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
+          <div id="footer-copyright">Native American South Carolina Archive (NASCA) &copy; 2016</div>
 
       </div>
     </div>

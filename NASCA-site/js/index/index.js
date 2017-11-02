@@ -69,7 +69,7 @@ function init_index() {
   
   //set date of copyright
   var d = new Date();
-  document.getElementById('copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();
+  document.getElementById('footer-copyright').innerHTML = "Native American South Carolina Archive (NASCA) &copy; " + d.getFullYear();
   
   dynamic_css();
   //fade in
@@ -99,7 +99,7 @@ function init_index() {
     value = encodeURIComponent(value);
     var uri = SITE_ROOT+'/search/'+value;
     //console.log(uri);
-    $(this).parent().attr('data-target',uri);
+    $('#search-form').attr('data-target',uri);
   });
   $('#search-input').keypress(function (e) {
     var value = $(this).val();

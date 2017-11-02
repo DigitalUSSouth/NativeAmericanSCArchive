@@ -19,6 +19,8 @@
   width: 110%;
   font-weight: 600;
   text-align: center;
+  text-align-last: center;
+  -ms-text-align-last: center;
   z-index: 2;
 }
 
@@ -35,12 +37,19 @@
 }
 
 .image-card-container {
-  /*width: 16.6667%;*/
-  min-width: 195px;
-  height: 253px;
-  /*min-height: 253px;*/
   position: relative;
+  min-width: 195px;
+  width: 16.666%;
+  /*min-height: 253px;*/
+  display: inline-block;
+  /*height: 0;*/
   z-index: 2;
+}
+
+.image-card-container::after {
+  padding-top: 129%;
+  display: block;
+  content: '';
 }
 
 #images-loading {

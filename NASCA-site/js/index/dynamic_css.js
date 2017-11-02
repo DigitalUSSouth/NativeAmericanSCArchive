@@ -86,7 +86,11 @@ function dynamic_css() {
 
   //DYNAMIC CSS FOR INDEX GOES HERE
   //VVVVVVVVVVVVVVVVVVVVVVVVV
-  responsive_font($('#search-text'), 'parent-div', 78.9473, 15);//22);
+  var search_container = $('#search-container');
+  search_container.width(search_container.height()*6.0256);
+  var search_text = $('#search-text');
+  nHght = responsive_font(search_text, 'parent-div', 78.9473, 15);//22);
+  search_text.css({'line-height':nHght+'px'});
   {
     var header_left_container = $('#header-left-container');
     nWid = header_left_container.height() * 4.4298;
@@ -124,7 +128,7 @@ function dynamic_css() {
     menu_container.css({display: 'none'});
     nav_bar_container.css({display: 'block'});
   } else {// if(currentPage !== 'documentation') {
-    responsive_font($('.pullout-list-el'), 'window', 1.9544, 12, 26);//16,30);
+    responsive_font($('li.pullout-list-el'), 'window', 1.9544, 12, 26);//16,30);
     pullout_positioner.css({top: $('#header-container').height() + 'px'});
     menu_container.width(menu_container.height() * 2.5435);
     nav_bar_container.css({display: 'none'});
@@ -140,24 +144,24 @@ function dynamic_css() {
       //VVVVVVVVVVVVVVVVVVVVVVVV
       page.css('height', 'auto');
       {
-        var featured = $('#featured');
+        var featured = page.find('#featured');
         responsive_font(featured, 'window', 1.6287, 10);//12);
         $(featured).css('margin-bottom', featured.height());
       }
-      {
-        var home_card_container = $('.home-card-container');
+      /*{
+        var home_card_container = page.find('div.home-card-container');
         nWid = home_card_container.parent().width() * 0.245; //keep in mind this is not taking into account minimum width
         home_card_container.width(nWid);
         home_card_container.height(home_card_container.width() * 1.2907);
-      }
-      responsive_font($('.card-title'), 'parent-div', 33.3333, 11);//14);
+      }*/
+      responsive_font(page.find('div.card-title'), 'parent-div', 33.3333, 11);//14);
       {
-        var read_more = $('.card-read-more div');
+        var read_more = page.find('.card-read-more').children('div');
         nHght = responsive_font(read_more, 'parent-div', 95.6522, 11);//15);
         read_more.css('line-height', nHght.toString() + 'px');
       }
       TITLE_DEFAULT: {
-        var default_title_cont = $('.preview-default #preview-title-container');
+        var default_title_cont = page.find('.preview-default #preview-title-container');
         if (!default_title_cont.length) {
           break TITLE_DEFAULT;
         }
@@ -174,7 +178,7 @@ function dynamic_css() {
         prev_title_sec.css({'line-height': (nHght * 3.25).toString() + 'px'});
       }
       LAYOUT_WIDE: {
-        var layout_wide = $('.preview-wide');
+        var layout_wide = page.find('div.preview-wide');
         if (!layout_wide.length) {
           break LAYOUT_WIDE;
         }
@@ -195,7 +199,7 @@ function dynamic_css() {
         }
       }
       LAYOUT_TALL: {
-        var layout_tall = $('.preview-tall');
+        var layout_tall = page.find('div.preview-tall');
         if (!layout_tall.length) {
           break LAYOUT_TALL;
         }
@@ -216,7 +220,7 @@ function dynamic_css() {
         }
       }
       LAYOUT_LETTER: {
-        var layout_letter = $('.preview-letter');
+        var layout_letter = page.find('div.preview-letter');
         if (!layout_letter.length) {
           break LAYOUT_LETTER;
         }
@@ -239,18 +243,19 @@ function dynamic_css() {
         }
       }
       //lower view all css
-      nHght = $('#preview-lower').width() * 0.05437;
-      $('#preview-lower').height(nHght);
+      var prev_lower = page.find('#preview-lower');
+      nHght = prev_lower.width() * 0.05437;
+      prev_lower.height(nHght);
       var border = (nHght / 6) + 'px solid #930707';
-      $('#view-all-underline').css({'border-top': border});
+      page.find('#view-all-underline').css({'border-top': border});
       font = nHght * 0.3913;
-      $('#view-all').css({'font-size': font + 'px'});
+      page.find('#view-all').css({'font-size': font + 'px'});
       //lower view padding for wide layout
-      $('.preview-wide #preview-lower').css('margin-top', (nHght * 0.8261) + 'px');
+      page.find('.preview-wide #preview-lower').css('margin-top', (nHght * 0.8261) + 'px');
       //lower view padding for tall layout
-      $('.preview-tall #preview-lower').css('margin-top', (nHght * 1.5217) + 'px');
+      page.find('.preview-tall #preview-lower').css('margin-top', (nHght * 1.5217) + 'px');
       //lower view padding for letter layout
-      $('.preview-letter #preview-lower').css('margin-top', (nHght * 0.6957) + 'px');
+      page.find('.preview-letter #preview-lower').css('margin-top', (nHght * 0.6957) + 'px');
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
       break;
@@ -273,9 +278,10 @@ function dynamic_css() {
         newMargin = 12;
       }
       newMargin = '-' + newMargin.toString() + 'px';
-      $('#image-cards-flex').css({'margin-left': newMargin, 'margin-right': newMargin});
+      var cards_flex = page.find('#image-cards-flex');
+      cards_flex.css({'margin-left': newMargin, 'margin-right': newMargin});
       {
-        var select = $('#select-container');
+        var select = page.find('#select-container');
         nHght = select.width()*0.1;
         select.height(nHght);
         var child = select.children('#select');
@@ -283,18 +289,15 @@ function dynamic_css() {
         select.css('margin-bottom', select.height());
         responsive_font(child, 'parent-div', 70);
       }
-      {
-        var image_card_cont = $('.image-card-container');
-        nWid = image_card_cont.parent().width() * 0.166665; //keep in mind this is not taking into account minimum width
-        image_card_cont.width(nWid);
-        image_card_cont.height(image_card_cont.width() * 1.2907);
-      }
-      responsive_font($('.card-title'), 'parent-div', 33.3333);
-      {
-        var read_more = $('.card-read-more div');
+      var image_card_cont = page.find('div.image-card-container');
+      /*nWid = cards_flex.width() * 0.165; //keep in mind this is not taking into account minimum width
+      image_card_cont.width(nWid).height(image_card_cont.width() * 1.2907);*/
+      responsive_font(image_card_cont.find('div.card-title'), 'parent-div', 33.3333);
+      /*{
+        var read_more = image_card_cont.find('div.card-read-more').children('div');
         nHght = responsive_font(read_more, 'parent-div', 95.6522);
         read_more.css('line-height', nHght.toString() + 'px');
-      }
+      }*/
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
       break;
@@ -381,8 +384,8 @@ function dynamic_css() {
 
 var activate_dynamic_css;
 var last_css_firing = 0;
-var css_timeout_reaction = 10; //in hertz
-var css_frequency = 0; //in hertz
+var css_timeout_reaction = 23.976/4; //in hertz
+var css_frequency = 23.976; //in hertz
 
 if (window.attachEvent) {
   window.attachEvent('onresize', function () {
