@@ -42,30 +42,30 @@ function init_timeline() {
   //TODO remove .each() loop below. we don't need it anymore
   var elements = [];
   $(".timeline-embed").each(function(i,obj){
-    elements.push($(this).attr('id'))
+    elements.push($(this).attr('id'));
   });
   console.log(elements);
 
 
   for(var i=1; i<=12; i++){
     $("#timelineModal"+i).on('shown.bs.modal', function(e){
-      var i = e.relatedTarget.dataset.boxId //have to redeclare because of scope
-      var indexNum = i
+      var i = e.relatedTarget.dataset.boxId; //have to redeclare because of scope
+      var indexNum = i;
       wrapperElement = $("#timeline-embed-"+i).attr('id');
       var embed = document.getElementById(wrapperElement);
       embed.style.height = "500px";//getComputedStyle(document.body).height;
       $("#"+i).css('z-index','101');
       var options =  { 
         hash_bookmark: false
-      }
-      var dataPath = SITE_ROOT+"/html/ht/data/data"+indexNum+".json"
+      };
+      var dataPath = SITE_ROOT+"/html/ht/data/data"+indexNum+".json";
       window.timeline = new TL.Timeline(wrapperElement,dataPath,options);
 
       //update uri
       setNewState("timeline",i);
     });
     $("#timelineModal"+i).on('hidden.bs.modal',function(e){
-      setNewState("timeline")      
+      setNewState("timeline");
     });      
   }
 
@@ -78,7 +78,7 @@ function init_timeline() {
       changePage("404","tabs-home");
       return;
     }
-    $('#openTimeline'+currentTimeline).click()
+    $('#openTimeline'+currentTimeline).click();
   }
 }
   

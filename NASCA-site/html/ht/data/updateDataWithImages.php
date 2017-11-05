@@ -20,7 +20,7 @@ for ($i=1; $i<=12; $i++){
     foreach ($slideImages['img'] as $path => $desc){
       $thumbPath = SITE_ROOT.'/db/data/timelines/timeline-img-300/'.$path.'thumb.jpg';
       $fullPath = SITE_ROOT.'/db/data/timelines/timeline-img-large/'.$path.'large.jpg';
-      $outString = $outString . '<div class="clearfix"></div><div class="col-xs-6"><img src="'.$thumbPath.'"><br><a target="_blank" href="'.$fullPath.'">View larger</a></div>';
+      $outString = $outString . '<div class="clearfix"></div><div class="col-xs-6"><a class="fancybox-timeline" href="'.$fullPath.'" data-type="image" data-caption="'.$desc.'"><img src="'.$thumbPath.'" id="preview-media"></a><br><p>'.$desc.'</p></div>';
     }
     //print htmlspecialchars($outString).'<br>';
     //print ($outString).'<br>';
@@ -34,3 +34,4 @@ for ($i=1; $i<=12; $i++){
   file_put_contents($filename,$newData);
 }  
 //print '</pre>';
+?>

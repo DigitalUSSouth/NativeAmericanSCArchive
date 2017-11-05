@@ -118,6 +118,30 @@
 		"img": {
 			"43- Yuchi Indians along the Savannah in 1736.jpg-":"Von Reck water color"
 		}
+		},
+    {
+		"pos":13,
+		"img": {
+			"1759-12-26-Cherokee-Treaties-1.jpg-":"",
+      "1759-12-26-Cherokee-Treaties-2.jpg-":"",
+      "1759-12-26-Cherokee-Treaties-3.jpg-":""
+		}
+		},
+    {
+		"pos":15,
+		"img": {
+			"1761-09-23-Cherokee-Treaties-1.jpg-":"",
+      "1761-09-23-Cherokee-Treaties-2.jpg-":"",
+      "1761-12-18-Cherokee-Treaties-1.jpg-":"",
+      "1761-12-18-Cherokee-Treaties-2.jpg-":""
+		}
+		},
+		{
+		"pos":17,
+		"img": {
+			"1777-05-20-Cherokee-Treaties-1.jpg-":"",
+      "1777-05-20-Cherokee-Treaties-2.jpg-":""
+		}
 		}
 	]
 ]
