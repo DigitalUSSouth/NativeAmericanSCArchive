@@ -1,0 +1,32 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "French Expedition",
+          "text": "<p>A.D. 1562</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1562"
+        },
+        "text": {
+          "headline": "Charlesfort",
+          "text": "<p>LeMoyne-French with Timicua</p> Beaufort, SC <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/ribault-ribaut-jean/\">More</a> "
+        }
+      }
+      
+    ]
+}

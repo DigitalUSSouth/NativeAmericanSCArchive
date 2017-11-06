@@ -1,0 +1,48 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "Early Archaic Period",
+          "text": "<p>10,000-8,000 years ago</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-7000"
+        },
+        "text": {
+          "headline": "Anderson/Hanson & Daniels",
+          "text": "More"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-6000"
+        },
+        "text": {
+          "headline": "Atlatl",
+          "text": "More"
+        }
+      }
+      
+    ]
+}
