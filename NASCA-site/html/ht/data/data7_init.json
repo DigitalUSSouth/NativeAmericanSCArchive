@@ -1,0 +1,81 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "Woodland Period",
+          "text": "<p>3,000-1,000 years ago</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": " Archaeology in South Carolina:  Exploring the Hidden Heritage of the Palmetto State"
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-1000"
+        },
+        "text": {
+          "headline": "Painting by Martin Pate",
+          "text": ""
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-500"
+        },
+        "text": {
+          "headline": "Woodland Pottery",
+          "text": "photo by Carl Steen <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scpottery.com/\">More</a> "
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 3",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "500"
+        },
+        "text": {
+          "headline": "Bow & Arrow",
+          "text": "<p>Kolb Triangular Points</p> <br> Darlington, SC "
+        }
+      },
+	
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 4",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "600"
+        },
+        "text": {
+          "headline": "Burial Mounds",
+          "text": "<p>McLeod Mound</p> <br> Darlington, SC <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.rla.unc.edu/Publications/NCArch/NCA_48.pdf\">More</a> "
+        }
+      }
+      
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "Spanish Exploration",
+          "text": "<p>A.D. 1566-1608</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1566"
+        },
+        "text": {
+          "headline": "Santa Elena",
+          "text": "<p>Spanish & Indian Pottery</p> Beaufort, SC <br> A.D. 1566-1587 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://santa-elena.org\">Santa Elena website </a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/santa-elena/\">Santa Elena More Info</a>"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": "http://scholarcommons.sc.edu/popular_series/2/ "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1568"
+        },
+        "text": {
+          "headline": "Pardo Expeditions",
+          "text": "<p>Expedition route map</p> A.D. 1566-1568 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"https://exploringjoara.org/\">More Info </a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> "
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 3",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1608"
+        },
+        "text": {
+          "headline": "Ejica",
+          "text": "Santee River Mouth"
+        }
+      }
+      
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "title": {
+        "media": {
+          "url": "",
+          "caption": "",
+          "credit": ""
+        },
+        "text": {
+          "headline": "Late Archaic Period",
+          "text": "<p>5,000-3,000 years ago</p>"
+        }
+    },
+    "events": [
+      { 
+        "media": {
+          "url": "",
+          "caption": "Slide 1",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-3000"
+        },
+        "text": {
+          "headline": "Sara's Ridge by Martin Pate",
+          "text": "More"
+        }
+      },
+	  { 
+        "media": {
+          "url": "",
+          "caption": "Slide 2",
+          "credit": "  Archaeology in South Carolina:  Exploring the Hidden Heritage of the Palmetto State"
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-2500"
+        },
+        "text": {
+          "headline": "First Native Pottery in U.S.",
+          "text": "Stallings Island Pottery <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scpottery.com/\">More</a> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://users.clas.ufl.edu/sassaman/pages/research/stallings/NGR.htm\">Visit</a>"
+        }
+      },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 3",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "-2000"
+        },
+        "text": {
+          "headline": "Shell Rings",
+          "text": "<p>Air Photo Fig Island Shell Ring</p> <br> SC coast s. of McClellanville <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://shpo.sc.gov/research/Documents/ArchaicShellRingsThemeStudy.pdf\">More</a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.fs.usda.gov/recarea/scnfs/recarea/?recid=47387\">Visit</a>"
+        }
+      }
+      
+    ]
+}
