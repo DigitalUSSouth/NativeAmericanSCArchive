@@ -289,14 +289,15 @@ function dynamic_css() {
         select.css('margin-bottom', select.height());
         responsive_font(child, 'parent-div', 70);
       }
-      var image_card_cont = page.find('div.image-card-container');
       var card_details = $('#card-details');
       if (card_details.length) {
         card_details.css({'left':'-'+card_details.parent().offset().left+'px'});
       }
       /*nWid = cards_flex.width() * 0.165; //keep in mind this is not taking into account minimum width
       image_card_cont.width(nWid).height(image_card_cont.width() * 1.2907);*/
+      var image_card_cont = page.find('div.image-card-container');
       responsive_font(image_card_cont.find('div.card-title'), 'parent-div', 33.3333);
+      modifyMargins(false);
       /*{
         var read_more = image_card_cont.find('div.card-read-more').children('div');
         nHght = responsive_font(read_more, 'parent-div', 95.6522);

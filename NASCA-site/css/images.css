@@ -46,6 +46,7 @@
   /*height: 0;*/
   z-index: 2;
   overflow: visible;
+  margin-bottom: 0;
 }
 
 .image-card-container::after {
@@ -83,6 +84,16 @@
 }
 
 #card-details {
+  display: block;
+  background: white;
+  position: absolute;
+  width: 100vw;
+  top: 100%;
+  height: 0;
+  min-width: 700px;
+}
+
+#card-details-exit {
   display: block;
   background: white;
   position: absolute;
