@@ -266,7 +266,7 @@ colors{
   height: 17.4267vh;
   min-height: 107px; /*163px;*/
   width: 100%;
-  min-width: 600px;
+  min-width: 700px;
 }
 
 #header-positioner-height-offset {
@@ -598,6 +598,7 @@ div.tab-active > div.tab-underline {
   height: 150px;
   max-height: 150px;
   z-index: 6;
+  min-width: 700px;
 }
 
 #footer {
@@ -620,7 +621,7 @@ img.footer-logo-img {
   margin: 0 auto;
   padding-left: 1%;
   padding-right: 1%;
-  min-width: 180px;
+  /*min-width: 180px;*/
 }
 
 #footer-copyright {

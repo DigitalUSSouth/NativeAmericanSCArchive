@@ -117,16 +117,16 @@ function dynamic_css() {
   var nav_bar_container = $('#nav-bar-container');
   var menu_container = $('#menu-container');
   if (headerproportion > 7) {// && currentPage !== 'documentation') {
+    menu_container.css({display: 'none'});
+    nav_bar_container.css({display: 'block'});
+    nWid = nav_bar_container.height() * 13.9565;
+    nav_bar_container.width(nWid);
     var cssval = pullout_positioner.css('right');
     cssval = cssval.substring(0, 1);
     if (cssval === '0') {
       pullout_positioner.animate({right: '-100%'}, 'fast');
     }
-    nWid = nav_bar_container.height() * 13.9565;
-    nav_bar_container.width(nWid);
     responsive_font($('#tabs'), 'parent-div', 46.1538, 12);//16);
-    menu_container.css({display: 'none'});
-    nav_bar_container.css({display: 'block'});
   } else {// if(currentPage !== 'documentation') {
     responsive_font($('li.pullout-list-el'), 'window', 1.9544, 12, 26);//16,30);
     pullout_positioner.css({top: $('#header-container').height() + 'px'});
@@ -290,6 +290,10 @@ function dynamic_css() {
         responsive_font(child, 'parent-div', 70);
       }
       var image_card_cont = page.find('div.image-card-container');
+      var card_details = $('#card-details');
+      if (card_details.length) {
+        card_details.css({'left':'-'+card_details.parent().offset().left+'px'});
+      }
       /*nWid = cards_flex.width() * 0.165; //keep in mind this is not taking into account minimum width
       image_card_cont.width(nWid).height(image_card_cont.width() * 1.2907);*/
       responsive_font(image_card_cont.find('div.card-title'), 'parent-div', 33.3333);
@@ -384,8 +388,8 @@ function dynamic_css() {
 
 var activate_dynamic_css;
 var last_css_firing = 0;
-var css_timeout_reaction = 23.976/4; //in hertz
-var css_frequency = 23.976; //in hertz
+var css_timeout_reaction = 12; //in hertz
+var css_frequency = 48; //in hertz
 
 if (window.attachEvent) {
   window.attachEvent('onresize', function () {

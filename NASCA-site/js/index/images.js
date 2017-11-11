@@ -120,28 +120,44 @@ function init_images_cards() {
   });
 }
 
+function getElementsPerRow() {
+  var firstCard = $('#image-card-0').parent();
+  var cardWidth = firstCard.width();
+  var flexWidth = firstCard.parent().width();
+  //how many times does card width fit into flex width?
+  return Math.floor(flexWidth/cardWidth);
+}
+
+function getColumnOfElement(id) {
+  var cardNum = id.replace('#image-card-','');
+  return (parseInt(cardNum)%getElementsPerRow())+1;
+}
+
 function imagesReadMoreToggle(imagePtr, card) {
   
   function animateOff(_card) {
-    //_card.children('.card-read-more').animate({left:'-50%'},card_anim_details);
-    //var cardpoint = _card.children('.card-point');
-    //cardpoint.animate({left:0},card_anim_details);
-    //cardpoint.css({'-webkit-transform':'translateX(0)'});
     _card.children('.card-image').animate({opacity:0.9},card_anim_details);
-    _card.css({top: '0'});//, left: '0'});//,{duration: 100, queue: false});
-    //_card.siblings('div.shadow').animate({top:'0'},card_anim_details);
+    _card.css({top: '0'});
     _card.find('.additional #toggle').html('0');
+    var parent = _card.parent();
+    var detailDiv = parent.children('#card-details');
+    detailDiv.animate({'height':'0%'},{duration:200,queue:false,complete:function(){
+      parent.css({'z-index':2});
+      detailDiv.remove();
+    }});
   }
 
   function animateOn(_card) {
-    //_card.children(' .card-read-more').animate({'left': 0},card_anim_details);
-    //var cardpoint = _card.children('.card-point');
-    //cardpoint.animate({'left': '100%'},card_anim_details);
-    //cardpoint.css({'-webkit-transform':'translateX(-100%)'});
     _card.children('.card-image').animate({'opacity': 1.0},card_anim_details);
-    _card.css({top: '5px'});//, left: '1px'});//,{duration: 100, queue: false});
-    //_card.siblings('div.shadow').animate({top:'-3px'},card_anim_details);
+    _card.css({top: '5px'});
     _card.find('.additional #toggle').html('1');
+    var parent = _card.parent();
+    parent.css({'z-index':3});
+    var detailDiv = '<div id="card-details"><div id="details-loading" class="custom-row"><img src="'+SITE_ROOT+'/img/loadingBar.gif" alt="Loading..."></div></div>';
+    parent.append(detailDiv);
+    detailDiv = parent.children('#card-details');
+    detailDiv.css({'left':'-'+parent.offset().left+'px'});
+    detailDiv.animate({'height':'150%'},{duration: 200, queue: false});
   }
   
   var jcard = $(card);
@@ -149,7 +165,7 @@ function imagesReadMoreToggle(imagePtr, card) {
   //var url = SITE_ROOT + '/html/home-more.php';
   if(state === 0) {
     //get cards that are 'on'
-    var ons = $('.image-card').filter(function() {
+    var ons = $('div.image-card').filter(function() {
       if($(this).find('.additional #toggle').html() == 0) {
         return false;
       } else {
