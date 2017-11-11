@@ -5,9 +5,9 @@ include_once ($api_dir . 'configuration.php');
 <div class="custom-row source-serif text-dark-grey">
   <div id="select-container">
     <select id="select">
-      <option value="indexical">All (By Index)</option>
-      <option value="alphabetical">All (By Title)</option>
-      <option value="tribal">All (By Tribe)</option>
+      <!--option value="indexical">All (By Index)</option-->
+      <option value="alphabetical">All</option>
+      <!--option value="tribal">All (By Tribe)</option-->
       <option value="catawba">Catawba Tribe</option>
       <option value="chicora">Chicora Tribe</option>
       <option value="ecsiut">ECSIUT Tribe</option>

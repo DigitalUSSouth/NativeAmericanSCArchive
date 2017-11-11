@@ -6,7 +6,7 @@ function init_images() {
   var loadbar = $('#images-loading img');
   loadbar.css('opacity','1');
   $.ajax({
-    url: SITE_ROOT + '/html/images-card.php?si=0&cc='+IMAGES_START+'&srt=indexical',
+    url: SITE_ROOT + '/html/images-card.php?si=0&cc='+IMAGES_START+'&srt=alphabetical',
     dataType: 'html',
     success: function(data) {
       //check for error code at end
