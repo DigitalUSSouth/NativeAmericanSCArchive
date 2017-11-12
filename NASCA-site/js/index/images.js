@@ -100,7 +100,7 @@ function init_images_cards() {
     var jthis = $(this);
     if(jthis.siblings('div.additional').children('#toggle').html() === '0') {
       jthis.siblings('img.card-image').animate({opacity:1.0},card_anim_details);
-      jthis.parent().css({top: "5px"});
+      jthis.parent().css({top: "7px"});
     }
   }, function() {
     //exit
@@ -183,7 +183,7 @@ function imagesReadMoreToggle(imagePtr, card) {
 
   function animateOn(_card) {
     _card.children('.card-image').animate({'opacity': 1.0},card_anim_details);
-    _card.css({top: '5px'});
+    _card.css({top: '7px'});
     _card.find('#toggle').html('1');
     var parent = _card.parent();
     parent.css({'z-index':3});
