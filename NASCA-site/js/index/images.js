@@ -112,6 +112,10 @@ function init_images_cards() {
   });
 }
 
+function init_images_details() {
+  
+}
+
 function getElementsPerRow() {
   var firstCard = $('#image-card-0').parent();
   var cardWidth = firstCard.width();
@@ -166,14 +170,19 @@ function modifyMargins(anim) {
   }
 }
 
-function imagesReadMoreToggle(imagePtr, card) {
+function imagesReadMoreToggle(card) {
+  
+  var loadingHtml = '<div id="details-loading" class="custom-row"><img src="'+SITE_ROOT+'/img/loadingBar.gif" alt="Loading..."></div>';
+  var jcard = $(card);
+  var pointer = jcard.attr("data-pointer");
   
   function animateOff(_card) {
+    var parent = _card.parent();
+    var detailDiv = parent.children('#card-details');
+    detailDiv.empty();
     _card.children('.card-image').animate({opacity:0.9},card_anim_details);
     _card.css({top: '0'});
     _card.find('#toggle').html('0');
-    var parent = _card.parent();
-    var detailDiv = parent.children('#card-details');
     detailDiv.attr('id','card-details-exit');
     detailDiv.animate({'height':'0%'},{duration:200,queue:false,complete:function(){
       parent.css({'z-index':2});
@@ -187,15 +196,14 @@ function imagesReadMoreToggle(imagePtr, card) {
     _card.find('#toggle').html('1');
     var parent = _card.parent();
     parent.css({'z-index':3});
-    var detailDiv = '<div id="card-details"><div id="details-loading" class="custom-row"><img src="'+SITE_ROOT+'/img/loadingBar.gif" alt="Loading..."></div></div>';
+    var detailDiv = '<div id="card-details">'+loadingHtml+'</div>';
     parent.append(detailDiv);
     detailDiv = parent.children('#card-details');
     detailDiv.css({'left':'-'+parent.offset().left+'px'});
     detailDiv.animate({'height':'150%'},{duration: 200, queue: false});
   }
   
-  var jcard = $(card);
-  var state = parseInt(jcard.find('.additional #toggle').text());
+  var state = parseInt(jcard.find('#toggle').text());
   if(state === 0) {
     //get cards that are 'on'
     var ons = $('div.image-card').filter(function() {
@@ -209,12 +217,34 @@ function imagesReadMoreToggle(imagePtr, card) {
     animateOff(ons);
     //turn current card on
     animateOn(jcard);
-    /*console.log('row: '+getRowOfElement(card));
-    console.log('column: '+getColumnOfElement(card));
-    console.log('elements per row: '+getElementsPerRow(card));*/
+    $.ajax({
+      url: SITE_ROOT + '/html/images-details.php?ptr='+pointer,
+      dataType: 'html',
+      success: function(data) {
+        jcard.siblings('#card-details').html(data).promise().done(function() {
+          setNewState('images',pointer);
+          init_images_details();
+          dynamic_css();
+        });
+      }
+    });
   } else {
     //Then the card is already on. Turn it off.
     animateOff(jcard);
+    setNewState('images');
   }
   modifyMargins(true);
 }
+
+/*
+ * if (currentUrl.length == 2){//we have a sub uri
+    if ($.inArray(currentUrl[1],imagePointers) !== -1){
+      currentImage = currentUrl[1];      
+    }
+    else {
+      changePage("404","tabs-home");
+      return;
+    }
+    $('.images-div[data-pointer="'+currentImage+'"]').click()
+  }
+ */

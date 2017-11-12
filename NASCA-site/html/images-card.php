@@ -98,18 +98,15 @@
       }
       ?>
       <div class="image-card-container">
-        <div class="image-card card-natural background-black shadow-caster" id="image-card-<?php print (string)$ind; ?>">
+        <div class="image-card card-natural background-black shadow-caster" id="image-card-<?php print (string)$ind; ?>" data-pointer="<?php print $pntr; ?>">
           <div class="additional">
-            <p id="size"><?php print $size; ?></p>
-            <p id="pointer"><?php print $pntr; ?></p>
-            <p id="index"><?php print $ind; ?></p>
             <p id="toggle">0</p>
           </div>
           <img class="card-image" src="<?php print $ref; ?>" />
           <div class="card-title-container background-red">
             <div class="card-title text-white source-serif"><?php print $title_s; ?></div>
           </div>
-          <div class="card-hover" onclick="imagesReadMoreToggle('<?php print $ind; ?>','#image-card-<?php print $ind; ?>')"></div>
+          <div class="card-hover" onclick="imagesReadMoreToggle('#image-card-<?php print $ind; ?>')"></div>
         </div>
         <div class="shadow"></div>
       </div>
