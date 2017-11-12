@@ -273,13 +273,13 @@ function dynamic_css() {
       //VVVVVVVVVVVVVVVVVVVVVVVV
       page.css('height', 'auto');
       //set margins
-      var newMargin = $(window).width() * 0.009509;
+      /*var newMargin = $(window).width() * 0.009509;
       if (newMargin < 12) {
         newMargin = 12;
       }
       newMargin = '-' + newMargin.toString() + 'px';
       var cards_flex = page.find('#image-cards-flex');
-      cards_flex.css({'margin-left': newMargin, 'margin-right': newMargin});
+      cards_flex.css({'margin-left': newMargin, 'margin-right': newMargin});*/
       {
         var select = page.find('#select-container');
         nHght = select.width()*0.1;
@@ -289,9 +289,15 @@ function dynamic_css() {
         select.css('margin-bottom', select.height());
         responsive_font(child, 'parent-div', 70);
       }
-      var card_details = $('#card-details');
-      if (card_details.length) {
-        card_details.css({'left':'-'+card_details.parent().offset().left+'px'});
+      var images_modal = $('#images-modal');
+      if (images_modal.length) {
+        images_modal.css({'left':'-'+images_modal.parent().offset().left+'px'});
+        var images_modal_title = images_modal.find('#images-modal-title');
+        nHght = responsive_font(images_modal_title,'parent-div',93);
+        images_modal_title.css({'line-height':nHght+'px'});
+        var images_modal_clicknote = images_modal.find('#images-modal-left-clicknote');
+        nHght = responsive_font(images_modal_clicknote,'parent-div',93);
+        images_modal_clicknote.css({'line-height':nHght+'px'});
       }
       /*nWid = cards_flex.width() * 0.165; //keep in mind this is not taking into account minimum width
       image_card_cont.width(nWid).height(image_card_cont.width() * 1.2907);*/

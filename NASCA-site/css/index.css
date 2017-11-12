@@ -147,6 +147,10 @@ hr.grey {
   background: rgba(239,237,237,0);
 }
 
+.overflow-white > div {
+  background: rgba(255,255,255,0);
+}
+
 .overflow-grey > div {
   background: rgba(50,58,59,0);
 }
@@ -162,6 +166,10 @@ hr.grey {
 
 .overflow-off-white:hover > div {
   background: rgba(239,237,237,0.75);
+}
+
+.overflow-white:hover > div {
+  background: rgba(255,255,255,0.75);
 }
 
 .overflow-grey:hover > div {

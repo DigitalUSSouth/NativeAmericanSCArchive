@@ -1,9 +1,25 @@
-/* global card_anim_details, SITE_ROOT, IMAGES_START, IMAGES_CONT */
+/* global card_anim_details, SITE_ROOT, IMAGES_START, IMAGES_CONT, currentUrl */
 
 function init_images() {
   toggleSearch('on');
+  
+  var currentImagePtr = null;
+  
+  var _page = $('#page');
+  
+  if(currentUrl.length == 2) { //there's a sub uri
+    if($.inArray(currentUrl[1],imagePointers) !== -1) {
+      //pointer in url exists in images/data.json
+      currentImagePtr = currentUrl[1];
+      _page.css('opacity',0);
+    } else {
+      changePage('404','tabs-home');
+      return;
+    }
+  }
+  
   //load init cards
-  var loadbar = $('#images-loading img');
+  var loadbar = $('#images-loading').children('img');
   loadbar.css('opacity','1');
   $.ajax({
     url: SITE_ROOT + '/html/images-card.php?si=0&cc='+IMAGES_START+'&srt=alphabetical',
@@ -47,6 +63,15 @@ function init_images() {
       }
     });
   });
+  
+  if(currentImagePtr !== null) {
+    //TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+    //TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+    //append blocks of cards until pointer is found in a data-pointer
+    //then click on child of .image-card (with data-pointer) called .card-hover
+    //scroll until #images-modal is fully in view
+    _page.animate({'opacity':1},{duration:200,queue:false});
+  }
 }
 
 var isLoading = false;
@@ -113,7 +138,8 @@ function init_images_cards() {
 }
 
 function init_images_details() {
-  
+  //TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+  //TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
 }
 
 function getElementsPerRow() {
@@ -141,7 +167,7 @@ function getRowOfElement(id) {
  */
 function modifyMargins(anim) {
   //first get cards of selected row
-  var selectedId = $('#card-details').siblings('div.image-card').attr('id');
+  var selectedId = $('#images-modal').siblings('div.image-card').attr('id');
   var allCards = $('div.image-card-container');
   //if there are no card details open
   if(!selectedId) {
@@ -172,18 +198,18 @@ function modifyMargins(anim) {
 
 function imagesReadMoreToggle(card) {
   
-  var loadingHtml = '<div id="details-loading" class="custom-row"><img src="'+SITE_ROOT+'/img/loadingBar.gif" alt="Loading..."></div>';
+  var loadingHtml = '<div id="images-modal-loading" class="custom-row"><img src="'+SITE_ROOT+'/img/loadingBar.gif" alt="Loading..."></div>';
   var jcard = $(card);
   var pointer = jcard.attr("data-pointer");
   
   function animateOff(_card) {
     var parent = _card.parent();
-    var detailDiv = parent.children('#card-details');
+    var detailDiv = parent.children('#images-modal');
     detailDiv.empty();
     _card.children('.card-image').animate({opacity:0.9},card_anim_details);
     _card.css({top: '0'});
     _card.find('#toggle').html('0');
-    detailDiv.attr('id','card-details-exit');
+    detailDiv.attr('id','images-modal-exit');
     detailDiv.animate({'height':'0%'},{duration:200,queue:false,complete:function(){
       parent.css({'z-index':2});
       detailDiv.remove();
@@ -196,9 +222,9 @@ function imagesReadMoreToggle(card) {
     _card.find('#toggle').html('1');
     var parent = _card.parent();
     parent.css({'z-index':3});
-    var detailDiv = '<div id="card-details">'+loadingHtml+'</div>';
+    var detailDiv = '<div id="images-modal">'+loadingHtml+'</div>';
     parent.append(detailDiv);
-    detailDiv = parent.children('#card-details');
+    detailDiv = parent.children('#images-modal');
     detailDiv.css({'left':'-'+parent.offset().left+'px'});
     detailDiv.animate({'height':'150%'},{duration: 200, queue: false});
   }
@@ -221,10 +247,11 @@ function imagesReadMoreToggle(card) {
       url: SITE_ROOT + '/html/images-details.php?ptr='+pointer,
       dataType: 'html',
       success: function(data) {
-        jcard.siblings('#card-details').html(data).promise().done(function() {
+        jcard.siblings('#images-modal').html(data).promise().done(function() {
           setNewState('images',pointer);
           init_images_details();
           dynamic_css();
+          $('#images-modal-padding').animate({'opacity':1},{duration: 250, queue: false});
         });
       }
     });
@@ -235,16 +262,3 @@ function imagesReadMoreToggle(card) {
   }
   modifyMargins(true);
 }
-
-/*
- * if (currentUrl.length == 2){//we have a sub uri
-    if ($.inArray(currentUrl[1],imagePointers) !== -1){
-      currentImage = currentUrl[1];      
-    }
-    else {
-      changePage("404","tabs-home");
-      return;
-    }
-    $('.images-div[data-pointer="'+currentImage+'"]').click()
-  }
- */

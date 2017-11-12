@@ -1,7 +1,24 @@
 <?php
 $api_dir = preg_replace('/html.images\.php/','api/',__FILE__);
 include_once ($api_dir . 'configuration.php');
+include_once ($api_dir . 'cdm.php');
+
+$url = $_SERVER['DOCUMENT_ROOT'].REL_HOME.DB_ROOT.DB_IMAGE;
+$jsonImageData = getJsonLocal($url);
+$imagePointers = array();
+if(gettype($jsonImageData) === 'integer' && $jsonImageData < 0) {
+  die('There was a problem. Please check back later');
+}
+$jsonImageData = json_decode(json_encode($jsonImageData), true);
+foreach($jsonImageData['data'] as $el) {
+  $imagePointers[] = ''.$el['pointer'];
+}
+
 ?>
+<script>
+  var imagePointers = <?php print json_encode($imagePointers); ?>;
+</script>
+
 <div class="custom-row source-serif text-dark-grey">
   <div id="select-container">
     <select id="select">
