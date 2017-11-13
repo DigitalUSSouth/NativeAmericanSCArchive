@@ -34,12 +34,61 @@ function init_images() {
       init_images_cards();
       dynamic_css();
       loadbar.css('opacity','0');
+      
+      if(currentImagePtr !== null) {
+        var win = $(window);
+        var findCard = _page.find("div.image-card[data-pointer='"+currentImagePtr+"']");
+        while(findCard.length === 0) {
+          //load new block
+          var sort = $('#select').val();
+          //find start index to load
+          var si = $('div.image-card-container').last().children('div.image-card').filter(':first').attr('id');
+          si = parseInt(si.substring(11,si.length))+1;
+          //load extra block of images
+          $.ajax({
+            url: SITE_ROOT + '/html/images-card.php?si='+si+'&cc='+IMAGES_CONT+'&srt='+sort,
+            dataType: 'html',
+            async: false,
+            success: function(data) {
+              if($.isNumeric(data) && parseInt(data) < 0) {
+                win.off("scroll");
+              } else {
+                //check for error code at end
+                var end = data.substring(data.length-2,data.length);
+                if($.isNumeric(end) && end < 0) {
+                  data = data.substring(0,data.length-2);
+                }
+                $('#image-cards-flex').append(data);
+              }
+            }
+          });
+          findCard = _page.find("div.image-card[data-pointer='"+currentImagePtr+"']");
+        }
+        //by now a match should have been found
+        if(findCard.length === 1) {
+          findCard.children('div.card-hover').click();
+          var modal = $('#images-modal');
+          var modal_offset = modal.offset().top;
+          var modal_height = modal.height();
+          var win_height = win.height();
+          var offset;
+          if(modal_height < win_height) {
+            offset = modal_offset - ((win_height / 2) - (modal_height / 2));
+          } else {
+            offset = modal_offset;
+          }
+          win.scrollTop(offset);
+        }
+        init_images_cards();
+        dynamic_css();
+        _page.animate({'opacity':1},{duration:200,queue:false});
+      }
     }
   });
   
   init_infinite_scroll();
   
-  //add functionality for dropdown
+  //add functionality for sort select
   $('#select').change(function() {
     var flexbox = $('#image-cards-flex');
     flexbox.empty();
@@ -64,23 +113,16 @@ function init_images() {
     });
   });
   
-  if(currentImagePtr !== null) {
-    //TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
-    //TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
-    //append blocks of cards until pointer is found in a data-pointer
-    //then click on child of .image-card (with data-pointer) called .card-hover
-    //scroll until #images-modal is fully in view
-    _page.animate({'opacity':1},{duration:200,queue:false});
-  }
 }
 
 var isLoading = false;
+var loadImageUrl = false;
 
 function init_infinite_scroll() {
   var win = $(window);
   win.scroll(function() {
     //end of document reached
-    if($(document).height() - win.height() === win.scrollTop() && isLoading === false) {
+    if( ( ( $(document).height() - win.height() === win.scrollTop() ) || loadImageUrl ) && isLoading === false ) {
       var sort = $('#select').val();
       var loadbar = $('#images-loading img');
       loadbar.css('opacity','1');
