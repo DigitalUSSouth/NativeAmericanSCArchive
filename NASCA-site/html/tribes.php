@@ -21,7 +21,7 @@
     echo '      </div>';
     echo '    </div>';
     //<!-- LOGO HERE -->
-    echo '    <div class="tribe-single-logo-container custom-row background-grey">';
+    echo '    <div class="tribe-single-logo-container custom-row background-off-white">';
     //echo '      <a class="tribe-single-logo-fancybox custom-row" href="html/tribes_history.php?tribe_id=' . $i . '" data-fancybox="Tribes" data-type="iframe" data-width="560" data-height="315">';
     echo '        <img class="tribe-single-logo custom-row" src="' . SITE_ROOT . $image_dir . '/' . $el->logo . '" alt="Error fetching tribal logo" onerror="this.onerror=null;this.src=\'' . SITE_ROOT . '/img/error/error.png\';" />';
     //echo '      </a>';
