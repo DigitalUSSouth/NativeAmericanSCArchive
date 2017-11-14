@@ -3,6 +3,8 @@
 function init_images() {
   toggleSearch('on');
   
+  //console.log(currentPage);
+  
   var currentImagePtr = null;
   
   var _page = $('#page');
@@ -10,10 +12,13 @@ function init_images() {
   if(currentUrl.length == 2) { //there's a sub uri
     if($.inArray(currentUrl[1],imagePointers) !== -1) {
       //pointer in url exists in images/data.json
+      console.log(currentUrl[1]);
       currentImagePtr = currentUrl[1];
       _page.css('opacity',0);
     } else {
+      //console.log(currentUrl[1]);
       changePage('404','tabs-home');
+      //console.log("not found");
       return;
     }
   }
@@ -116,13 +121,13 @@ function init_images() {
 }
 
 var isLoading = false;
-var loadImageUrl = false;
+//var loadImageUrl = false;
 
 function init_infinite_scroll() {
   var win = $(window);
   win.scroll(function() {
     //end of document reached
-    if( ( ( $(document).height() - win.height() === win.scrollTop() ) || loadImageUrl ) && isLoading === false ) {
+    if( ( $(document).height() - win.height() === win.scrollTop() ) && isLoading === false ) {
       var sort = $('#select').val();
       var loadbar = $('#images-loading img');
       loadbar.css('opacity','1');
@@ -291,7 +296,7 @@ function imagesReadMoreToggle(card) {
       success: function(data) {
         jcard.siblings('#images-modal').html(data).promise().done(function() {
           setNewState('images',pointer);
-          init_images_details();
+          //init_images_details();
           dynamic_css();
           $('#images-modal-padding').animate({'opacity':1},{duration: 250, queue: false});
         });

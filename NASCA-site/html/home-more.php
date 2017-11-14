@@ -91,8 +91,8 @@
         </div>
       </div>
       <div id="preview-lower" class="custom-row">
-        <div id="view-all-container" onclick="changePage('images');">
-          <div id="view-all" class=text-red>View All Images</div>
+        <div id="view-all-container" onclick="setNewState('images','<?php print $id ?>'); changePage('images','#tabs-images');">
+          <div id="view-all" class=text-red>Open In Images</div>
           <div id="view-all-underline"></div>
         </div>
       </div>
@@ -169,8 +169,8 @@
         </div>
       </div>
       <div id="preview-lower" class="custom-row">
-        <div id="view-all-container" onclick="changePage('letters');">
-          <div id="view-all" class=text-red>View All Letters</div>
+        <div id="view-all-container" onclick="changePage('letters','#tabs-letters');">
+          <div id="view-all" class=text-red>View More Letters</div>
           <div id="view-all-underline"></div>
         </div>
       </div>

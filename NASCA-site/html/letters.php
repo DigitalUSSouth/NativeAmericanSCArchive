@@ -16,7 +16,8 @@ foreach ($rawTabData as $rawItem){
   foreach ($rawItem['letters'] as $letter){
     foreach($letter['pages'] as $page){
       $fullPath = $page['image'];
-      $img = end(explode('/',$fullPath));
+      $img = explode('/',$fullPath);
+      $img = end($img);
       $imgPath = "../db/data/letters/".$img;
       if (!(file_exists($imgPath))){
         $validLetter = false;

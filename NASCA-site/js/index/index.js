@@ -21,7 +21,7 @@ window.onpopstate = function(event) {
     }
   }
   //hide all bootstrap modals
-  $(".modal").modal('hide')
+  $(".modal").modal('hide');
   init_index();
 };
 
@@ -139,7 +139,7 @@ function init_index() {
       dataType: 'html',
       success: function(data) {
         $('#page').html(data).promise().done(function() {
-          dynamic_css();
+          //dynamic_css();
           init_home();
           dynamic_css();
         });
@@ -154,11 +154,12 @@ function updateActiveTab(tabElem){
 }
 
 function changePage(page,tabElem) {
+  var page_element = $('#page');
   //check if page is already up
   if(true) {//disabling check to make sure page gets reloaded everytime
     updateActiveTab(tabElem);    
     //fade out content
-    $('#page').fadeOut(650,function(){
+    page_element.fadeOut(650,function(){
       //callback when fadeOut complete
       //set html content
       var requestUrl = SITE_ROOT + '/html/' + page + '.php';
@@ -176,9 +177,9 @@ function changePage(page,tabElem) {
         dataType: 'html',
         success: function(data) {
           //callback when html retrieved
-          $('#page').html(data).promise().done(function() {
-            dynamic_css();
-            $('#page').fadeIn(650);
+          page_element.html(data).promise().done(function() {
+            //dynamic_css();
+            page_element.fadeIn(650);
             switch(page) {
               case 'home':
                 init_home();
@@ -207,8 +208,6 @@ function changePage(page,tabElem) {
               case 'search':
                 init_search();
                 break;
-              default:
-                //code
             }
             dynamic_css();
           });
