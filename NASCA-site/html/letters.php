@@ -44,7 +44,7 @@ sort($tabHrefs);
   <div id="letters-custom-about-section-row" class="anton">
     <div id="letters-custom-about-section-inner">
       <div id="letters-custom-about-section-content" class="text-black">
-        The Letters section covers correspondence written by Catawba Indians, South Carolina governors, <a href="<?php print SITE_ROOT.DB_ROOT.'/letters/catawba-indian-agent.pdf'?>" target="_blank" title="About the Catawba Indian Agent">Catawba Indian agent</a>s and other interested parties relative to financial affairs on the Catawba Indian Nation.
+        The Letters section covers correspondence written by Catawba Indians, South Carolina governors, <a href="<?php print SITE_ROOT.DB_ROOT.'/letters/catawba-indian-agent.pdf'?>" target="_blank" title="About the Catawba Indian Agent" class="text-red">Catawba Indian agent</a>s and other interested parties relative to financial affairs on the Catawba Indian Nation.
       </div>
       <div id="letters-custom-about-section-click" class="clickable text-red">About this page</div>
     </div>
