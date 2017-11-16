@@ -36,7 +36,21 @@ usort($tabData, function($a,$b){
 });
 sort($tabHrefs);
 ?>
-<script>var tabHrefs = <?php print json_encode($tabHrefs);?>;</script>
+<div class="custom-row text-dark-grey" id="featured-container">
+  <div id="featured" class="source-serif">
+    Letters to the Governor
+    <div class="half-underline-black"></div>
+  </div>
+  <div id="letters-custom-about-section-row" class="anton">
+    <div id="letters-custom-about-section-inner">
+      <div id="letters-custom-about-section-content" class="text-black">
+        The Letters section covers correspondence written by Catawba Indians, South Carolina governors, <a href="<?php print SITE_ROOT.DB_ROOT.'/letters/catawba-indian-agent.pdf'?>" target="_blank" title="About the Catawba Indian Agent">Catawba Indian agent</a>s and other interested parties relative to financial affairs on the Catawba Indian Nation.
+      </div>
+      <div id="letters-custom-about-section-click" class="clickable text-red">About this page</div>
+    </div>
+  </div>
+</div>
+<script>var tabHrefs = <?php print json_encode($tabHrefs); ?>;</script>
 <ul class="nav nav-tabs nav-justified letter-tab">
 <?php
   $counter=1;

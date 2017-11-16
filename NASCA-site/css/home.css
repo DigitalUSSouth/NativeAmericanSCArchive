@@ -1,11 +1,17 @@
+#featured-container {
+  position: relative;
+  display: block;
+}
+
 #featured {
   position: relative;
   float: left;
-  font-size: 10px;
+  /*font-size: 10px;*/
   font-weight: 600;
   height: auto;
   width: auto;
   margin-bottom: 10px;
+  display: inline-block;
 }
 
 #home-book {

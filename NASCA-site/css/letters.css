@@ -17,3 +17,33 @@
   padding: 1em;
   padding-right: 2em;
 }
+
+#letters-custom-about-section-row {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+#letters-custom-about-section-inner {
+  position: relative;
+  float: left;
+  height: auto;
+  width: auto;
+  max-width: 50%;
+}
+
+#letters-custom-about-section-click {
+  display: inline;
+}
+
+#letters-custom-about-section-click:hover {
+  color: black;
+}
+
+#letters-custom-about-section-content {
+  letter-spacing:-0.5ex;
+  opacity: 0;
+  display: none;
+}
