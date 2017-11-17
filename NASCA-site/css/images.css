@@ -34,7 +34,7 @@
   justify-content: center;
   align-content: flex-start;
   width: 101.04987%;
-  min-width: 585px;
+  /*min-width: 585px;*/
   max-width: 1920px;
   height: auto;
 }

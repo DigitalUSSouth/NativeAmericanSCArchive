@@ -293,8 +293,8 @@ function dynamic_css() {
       if (images_modal.length) {
         images_modal.css({'left':'-'+images_modal.parent().offset().left+'px'});
         var images_modal_title = images_modal.find('#images-modal-title');
-        nHght = responsive_font(images_modal_title,'parent-div',93);
-        images_modal_title.css({'line-height':nHght+'px'});
+        nHght = responsive_font(images_modal_title,'parent-div',90.91);
+        images_modal_title.css({'line-height':(nHght*1.1)+'px'});
         var images_modal_clicknote = images_modal.find('#images-modal-left-clicknote');
         nHght = responsive_font(images_modal_clicknote,'parent-div',93);
         images_modal_clicknote.css({'line-height':nHght+'px'});
