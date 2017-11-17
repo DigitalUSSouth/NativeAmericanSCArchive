@@ -323,11 +323,17 @@ function dynamic_css() {
         newMargin = 33;
       }
       newMargin = '-' + newMargin.toString() + 'px';
-      $('#video-list-container').css({'margin-left': newMargin, 'margin-right': newMargin});
+      var list_container = page.children('#video-list-container');
+      list_container.css({'margin-left': newMargin, 'margin-right': newMargin});
       //set other things
-      $('.video-single-container').height($('.video-single-container').width() * 0.6424);
-      var newsize = responsive_font($('.video-single-title'), 'parent-div', 72.4138, 42);
-      $('.video-single-title').css('line-height', (newsize * 1.381).toString() + 'px');
+      var single_containers = list_container.children('.video-single-container');
+      single_containers.height(single_containers.width() * 0.6424);
+      var single_titles = single_containers.find('div.video-single-title');
+      var newsize = responsive_font(single_titles, 'parent-div', 72.4138, 42);
+      single_titles.css('line-height', (newsize * 1.381).toString() + 'px');
+      var single_descriptions = single_containers.find('div.video-single-description');
+      newsize = responsive_font(single_descriptions,'parent-div',17.95);
+      single_descriptions.css('line-height',(newsize * 1.143).toString() + 'px');
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
       break;
