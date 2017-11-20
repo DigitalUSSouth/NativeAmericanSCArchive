@@ -4,8 +4,8 @@ var currentTabLetters = "";
 var initialLoad = true;
 function init_letters() {
   toggleSearch('on');
-  var custom_about_click = $('#letters-custom-about-section-click');
-  var custom_about_content = custom_about_click.siblings('#letters-custom-about-section-content');
+  var custom_about_click = $('#custom-about-section-click');
+  var custom_about_content = custom_about_click.siblings('#custom-about-section-content');
   custom_about_click.click(function() {
     if(custom_about_content.css('display') === 'none') {
       custom_about_content.animate({'opacity':1,'letter-spacing':'0ex'},{duration:200,queue:false}).css({'display':'inline'});
@@ -14,7 +14,6 @@ function init_letters() {
       custom_about_content.animate({'opacity':0,'letter-spacing':'-0.5ex'},{duration:200,queue:false}).css({'display':'none'});
       custom_about_click.html('About this page');
     }
-    
   });
   
   $(".letter-toggle").click(function (e){

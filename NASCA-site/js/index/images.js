@@ -23,6 +23,18 @@ function init_images() {
     }
   }
   
+  var custom_about_click = $('#custom-about-section-click');
+  var custom_about_content = custom_about_click.siblings('#custom-about-section-content');
+  custom_about_click.click(function() {
+    if(custom_about_content.css('display') === 'none') {
+      custom_about_content.animate({'opacity':1,'letter-spacing':'0ex'},{duration:200,queue:false}).css({'display':'inline'});
+      custom_about_click.html('Collapse');
+    } else {
+      custom_about_content.animate({'opacity':0,'letter-spacing':'-0.5ex'},{duration:200,queue:false}).css({'display':'none'});
+      custom_about_click.html('About this page');
+    }  
+  });
+  
   //load init cards
   var loadbar = $('#images-loading').children('img');
   loadbar.css('opacity','1');

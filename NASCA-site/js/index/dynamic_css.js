@@ -264,6 +264,12 @@ function dynamic_css() {
       //INTERVIEWS CSS GOES HERE
       //VVVVVVVVVVVVVVVVVVVVVVVV
       page.css('height', 'auto');
+      
+      {
+        var featured = page.find('#featured-container');
+        nHght = responsive_font(featured, 'window', 1.6287, 10);//12);
+        $(featured.children()).css('margin-bottom', nHght+'px');
+      }
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
       break;
@@ -272,6 +278,12 @@ function dynamic_css() {
       //IMAGES CSS GOES HERE
       //VVVVVVVVVVVVVVVVVVVVVVVV
       page.css('height', 'auto');
+      
+      {
+        var featured = page.find('#featured-container');
+        nHght = responsive_font(featured, 'window', 1.6287, 10);//12);
+        $(featured.children()).css('margin-bottom', nHght+'px');
+      }
       //set margins
       /*var newMargin = $(window).width() * 0.009509;
       if (newMargin < 12) {

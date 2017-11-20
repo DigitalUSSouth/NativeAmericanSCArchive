@@ -648,3 +648,33 @@ img.footer-logo-img {
   margin: auto;
   width: 100%;
 }
+
+#custom-about-section-row {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+#custom-about-section-inner {
+  position: relative;
+  float: left;
+  height: auto;
+  width: auto;
+  max-width: 50%;
+}
+
+#custom-about-section-click {
+  display: inline;
+}
+
+#custom-about-section-click:hover {
+  color: black;
+}
+
+#custom-about-section-content {
+  letter-spacing:-0.5ex;
+  opacity: 0;
+  display: none;
+}

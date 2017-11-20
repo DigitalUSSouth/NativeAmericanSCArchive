@@ -20,6 +20,18 @@ function init_interviews() {
   else {//no sub uri, but we set the history to point to catawba
     replaceCurrentState("interviews","catawba");
   }
+  
+  var custom_about_click = $('#custom-about-section-click');
+  var custom_about_content = custom_about_click.siblings('#custom-about-section-content');
+  custom_about_click.click(function() {
+    if(custom_about_content.css('display') === 'none') {
+      custom_about_content.animate({'opacity':1,'letter-spacing':'0ex'},{duration:200,queue:false}).css({'display':'inline'});
+      custom_about_click.html('Collapse');
+    } else {
+      custom_about_content.animate({'opacity':0,'letter-spacing':'-0.5ex'},{duration:200,queue:false}).css({'display':'none'});
+      custom_about_click.html('About this page');
+    } 
+  });
 
   //register for tab changes, so we can update uri
   $('.nav-tabs a').on('shown.bs.tab', function(event){

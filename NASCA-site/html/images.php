@@ -19,6 +19,21 @@ foreach($jsonImageData['data'] as $el) {
   var imagePointers = <?php print json_encode($imagePointers); ?>;
 </script>
 
+<div class="custom-row text-dark-grey" id="featured-container">
+  <div id="featured" class="source-serif">
+    Images
+    <div class="half-underline-black"></div>
+  </div>
+  <div id="custom-about-section-row" class="anton">
+    <div id="custom-about-section-inner">
+      <div id="custom-about-section-content" class="text-black">
+        Images About Placeholder <a href="#" target="_blank" title="Go To Images Link" class="text-red">link here</a>
+      </div>
+      <div id="custom-about-section-click" class="clickable text-red">About this page</div>
+    </div>
+  </div>
+</div>
+
 <div class="custom-row source-serif text-dark-grey">
   <div id="select-container">
     <select id="select">

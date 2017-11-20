@@ -41,12 +41,12 @@ sort($tabHrefs);
     Letters to the Governor
     <div class="half-underline-black"></div>
   </div>
-  <div id="letters-custom-about-section-row" class="anton">
-    <div id="letters-custom-about-section-inner">
-      <div id="letters-custom-about-section-content" class="text-black">
+  <div id="custom-about-section-row" class="anton">
+    <div id="custom-about-section-inner">
+      <div id="custom-about-section-content" class="text-black">
         The Letters section covers correspondence written by Catawba Indians, South Carolina governors, <a href="<?php print SITE_ROOT.DB_ROOT.'/letters/catawba-indian-agent.pdf'?>" target="_blank" title="About the Catawba Indian Agents" class="text-red">Catawba Indian agents</a> and other interested parties relative to financial affairs on the Catawba Indian Nation. Letters are taken from the South Carolina State Archives Governor's Correspondence files.
       </div>
-      <div id="letters-custom-about-section-click" class="clickable text-red">About this page</div>
+      <div id="custom-about-section-click" class="clickable text-red">About this page</div>
     </div>
   </div>
 </div>
