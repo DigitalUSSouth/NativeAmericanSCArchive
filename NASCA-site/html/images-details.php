@@ -22,7 +22,21 @@
   if(strlen($title_s) > 31) {
     $title_s = substr($title_s,0,31);
   }
-    
+  $desc = $info->descri;
+  //$inst = $info->relati;
+  $publ = $info->publis; //contrib inst
+  $creat = str_ireplace('(photographer)','',$info->creato);
+  $creat_label = '';
+  if(strtolower($creat) === strtolower($info->creato)) { //then nothing was replaced
+    $creat_label = 'Creator';
+  } else { //then photographer exists in title
+    $creat_label = 'Photographer';
+  }
+  $creat = trim($creat);
+  $date = $info->date;
+  $date_orig = $info->dateb;
+  $locat = $info->geogra;
+  $tribe = $info->tribe;
 ?>
 <div id="images-modal-padding">
   <div id="images-modal-left">
@@ -38,7 +52,60 @@
       <div id="images-modal-title" class="anton"><?php print $info->title; ?></div>
     </div>
     <div id="images-modal-details" class="source-serif">
-      test details
+      <?php
+        if($tribe !== '') {
+          //tribe is available
+          ?>
+          <p id="images-modal-details-tribe">From the <?php echo $tribe; ?> tribe.</p>
+          <?php
+        }
+        if($locat !== '') {
+          //location is available
+          ?>
+          <p id="images-modal-details-locat">Photographed in <?php echo $locat; ?>.</p>
+          <?php
+        }
+      ?>
+      <p id="images-modal-details-descr">
+      <?php
+        if(trim($desc) === '') {
+          //desc not available
+          ?>
+          <i>A description for this image is not available</i>
+          <?php
+        } else {
+          //desc available
+          echo $desc;
+        }
+      ?>
+      </p>
+      <?php
+        if(trim($publ) !== '') {
+          //contributing institution is available
+          ?>
+          <p id="images-modal-details-contr"><b>Contributing Institution:</b> <?php echo $publ; ?></p>
+          <?php
+        }
+        if($creat !== '') {
+          //creator/photographer is available
+          ?>
+          <p id="images-modal-details-creat"><?php echo '<b>'.$creat_label.':</b> '.$creat; ?></p>
+          <?php
+        }
+        if($date !== '') {
+          //date is available
+          ?>
+          <p id="images-modal-details-date"><?php echo '<b>Date:</b> '.$date; ?></p>
+          <?php
+        }
+        if($date_orig !== '') {
+          //date of original artifact is available
+          ?>
+          <p id="images-modal-details-dateb"><?php echo '<b>Date of Original Artifact:</b> '.$date_orig; ?></p>
+          <?php
+        }
+      ?>
+          
     </div>
   </div>
 </div>

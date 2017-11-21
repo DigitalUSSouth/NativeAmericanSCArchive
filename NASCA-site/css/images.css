@@ -177,3 +177,33 @@
   font-size: 15px;
   line-height: 15px;
 }
+
+#images-modal-details-tribe {
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+#images-modal-details-locat {
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+#images-modal-details-descr {
+  margin: 1.9em 0;
+}
+
+#images-modal-details-contr {
+  margin-bottom: 1em;
+}
+
+#images-modal-details-creat {
+  margin-bottom: 1em;
+}
+
+#images-modal-details-date {
+  margin-bottom: 1em;
+}
+
+#images-modal-details-dateb {
+  margin-bottom: 1em;
+}
