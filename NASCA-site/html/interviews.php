@@ -22,7 +22,7 @@ $tabData = json_decode($jsonTabData,true);
 <?php
   $counter=1;
   foreach ($tabData as $data):?>
-  <li<?php print ($counter++==1)?" class=\"active\"":"";?>><a data-toggle="tab" href="#<?php print $data['href'];?>" class="text-red"><strong><big><?php print $data['tribe'];?></strong></big></a></li>
+  <li<?php print ($counter++==1)?" class=\"active\"":"";?>><a data-toggle="tab" href="#<?php print $data['href'];?>" class="text-red source-serif"><strong><big><?php print $data['tribe'];?></strong></big></a></li>
 <?php endforeach;?>
 </ul>
 
@@ -36,7 +36,7 @@ foreach($tabData as $data):?>
         <img class="img-responsive interview-logo center-block" src="<?php print SITE_ROOT;?><?php print $data['logo'];?>">
       </div>
     </div>
-    <div class="row">
+    <div class="row source-serif">
       <div class="col-xs-12">
       <?php foreach($data['interviews'] as $dataFile=>$name):
         $interview = json_decode(file_get_contents(SITE_ROOT.'/db/data/interviews/transcripts/json/minified/'.$dataFile),true);
