@@ -406,6 +406,7 @@ function dynamic_css() {
       custom_fancybox.height(custom_fancybox.width() * 0.41096);
       var newsize = responsive_font($('.tribes-history-nav div'), 'parent-div', 45.74);
       $('.tribes-history-nav div').css('line-height', newsize.toString() + 'px');
+      responsive_font($('.tribes-history-text'),'width',1.2568,12.5);
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
       break;
