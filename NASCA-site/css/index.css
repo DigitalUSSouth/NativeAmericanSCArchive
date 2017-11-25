@@ -273,6 +273,7 @@ colors{
   display: inline-flex;
   height: 17.4267vh;
   min-height: 107px; /*163px;*/
+  max-height: 214px;
   width: 100%;
   min-width: 700px;
 }
@@ -280,6 +281,7 @@ colors{
 #header-positioner-height-offset {
   height: 17.4267vh;
   min-height: 107px; /*163px;*/
+  max-height: 214px;
   width: 100%;
 }
 
