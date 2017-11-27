@@ -407,6 +407,7 @@ colors{
   padding-right: 5px;
   font-weight: 600;
   font-size: 12px; /*15px;*/
+  background: #1d1f20;
 }
 
 #search-submit {

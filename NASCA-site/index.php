@@ -135,7 +135,7 @@
                   <div id="search-form" data-target="">
                     <div id="search-text" for="search-inputn" class="anton">Search</div>
                     <div id="search-input-container">
-                      <input id="search-input" class="background-black source-serif" type="text" value="" name="query">
+                      <input id="search-input" class="source-serif" type="text" value="" name="query">
                     </div>
                     <button id="search-submit" class="background-black" type="submit">
                       <img id="search-submit-img" src="<?php print SITE_ROOT;?>/img/play-go.png">
