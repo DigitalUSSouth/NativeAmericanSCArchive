@@ -5,8 +5,8 @@
 var currentTabInterviews = "catawba";
 
 function init_interviews() {
-  //console.log("init interviews")
-  //console.log(currentUrl);
+  toggleSearch('on');
+  
   if (currentUrl.length >= 2){//we might have a sub uri
     if ($.inArray(currentUrl[1],["catawba","beaver-creek","pee-dee","sumter-cheraw","wassamasaw"]) !== -1){
       currentTabInterviews = currentUrl[1];      
@@ -15,7 +15,7 @@ function init_interviews() {
       changePage("404","tabs-home");
       return;
     }
-    $('.nav-tabs a[href="#'+currentTabInterviews+'"]').tab('show')
+    $('#interviews-nav a[href="#'+currentTabInterviews+'"]').tab('show');
   }
   else {//no sub uri, but we set the history to point to catawba
     replaceCurrentState("interviews","catawba");
@@ -34,7 +34,7 @@ function init_interviews() {
   });
 
   //register for tab changes, so we can update uri
-  $('.nav-tabs a').on('shown.bs.tab', function(event){
+  $('#interviews-nav a').on('shown.bs.tab', function(event){
     //console.log(event)
     var hash = event.target.hash; // active tab
     var tab = hash.substring(1); //remove leading '#'
@@ -43,17 +43,18 @@ function init_interviews() {
     currentTabInterviews = tab;
   });
 
+/*
   if (currentUrl.length ==3){//we have a modal uri
     var modalUri = currentUrl[2];
     $('.btn-interview[data-filename=\"'+modalUri+'-minified.json\"]').click();
   }
 
-  toggleSearch('on');
+  
   $("#interviewsModal").on('shown.bs.modal', function(e){
-    var filename = e.relatedTarget.dataset.filename
+    var filename = e.relatedTarget.dataset.filename;
     launch_interview_modal(filename);
     // /.+?(?=abc)/
-    var match = filename.match(/.+?(?=-minified\.json)/)
+    var match = filename.match(/.+?(?=-minified\.json)/);
     //console.log(match)
     if (match!==null){
       setNewState("interviews",currentTabInterviews,match[0]);
@@ -65,8 +66,9 @@ function init_interviews() {
     $("#interviews-modal-description").html("");
     $("#interview-modal-title").html("");
     
-    setNewState("interviews",currentTabInterviews)
+    setNewState("interviews",currentTabInterviews);
   });
+  */
 }
 
 //init stuff for oral_histories.html

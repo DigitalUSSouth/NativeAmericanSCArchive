@@ -8,9 +8,9 @@
       "Catawba_Landrum-George-Mar-22-1983_Tape2-minified.json":"Landrum George Tape 2",
       "Catawba_Landrum-George-Mar-22-1983_Tape3-minified.json":"Landrum George Tape 3",
       "Catawba_Landrum-George-Mar-22-1983_Tape4-minified.json":"Landrum George Tape 4",
-      "Catawba_Georgia-Harris-Mar-19-1980_Tape2-minified.json":"Georgia Harris Mar 19",
-      "Catawba_Georgia-Harris-Mar-20-1980-minified.json":"Georgia Harris Mar 20",
-      "Catawba_Lula-Samuel-Henrietta-Beck-Aug-11-1982-minified.json":"Lula Samuel Henrietta Beck",
+      "Catawba_Georgia-Harris-Mar-19-1980_Tape2-minified.json":"Georgia Harris Tape 2",
+      "Catawba_Georgia-Harris-Mar-20-1980-minified.json":"Georgia Harris Tape 3",
+      "Catawba_Lula-Samuel-Henrietta-Beck-Aug-11-1982-minified.json":"Lula Beck",
       "Catawba_Isabelle-George-Mar-22-1983-minified.json":"Isabelle George",
       "Catawba_Sallie-Wade-1986-minified.json":"Sallie Wade"
     },
@@ -24,7 +24,7 @@
       "Beaver-Creek_Hazel-Thornton-minified.json":"Hazel Thornton",
       "Beaver-Creek_Helen-Jeffcoat-minified.json":"Helen Jeffcoat",
       "Beaver-Creek_John-Barry-Chavis-minified.json":"John Barry Chavis",
-      "Beaver-Creek_Ms-Williams-minified.json":"Ms Williams",
+      "Beaver-Creek_Ms-Williams-minified.json":"Ms. Williams",
       "Beaver-Creek_Louie-Chavis-minified.json":"Louie Chavis"
     },
     "logo": "/img/tribesLogos/beaver.png",
@@ -35,8 +35,8 @@
     "description":"",
     "interviews": {
       "Pee-Dee_Chief-James-Caulder-minified.json":"Chief James Caulder",
-      "Pee-Dee_Clayton-RC-Cummings-minified.json":"Clayton RC Cummings",
-      "Pee-Dee_Pete-Parr-minified.json": "Pete Parr"
+      "Pee-Dee_Clayton-RC-Cummings-minified.json":"Clayton \"RC\" Cummings",
+      "Pee-Dee_Pete-Parr-minified.json": "Chief Pete Parr"
     },
     "logo":"/img/tribesLogos/pee_dee_tribe.png",
     "href":"pee-dee"
@@ -55,8 +55,8 @@
     "description":"",
     "interviews": {
       "Varnertown_Chuck-Rodgers-minified.json":"Chuck Rodgers",
-      "Varnertown_Gloria-Varner_Ruby-Oliver-minified.json":"Gloaria Varner and Ruby Oliver",
-      "Varnertown_Horace-Winkle_Katherine-Clark-Varner-minified.json":"Horace Winkle and Katherine Clark Varner"
+      "Varnertown_Gloria-Varner_Ruby-Oliver-minified.json":"Gloria Varner and Ruby Oliver",
+      "Varnertown_Horace-Winkle_Katherine-Clark-Varner-minified.json":"Horace Winkle and Katherine Varner Clark"
     },
     "logo":"/img/tribesLogos/wassamasaw.png",
     "href": "wassamasaw"
