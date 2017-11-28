@@ -40,21 +40,51 @@
 }
 
 #interviews-nav {
+  position: relative;
+  display: flex;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+div.interviews-nav-button {
+  margin: 0.5em auto;
+  position: relative;
+  height: auto;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+div.interviews-nav-button:hover {
   
 }
 
-#interviews-nav > li {
+div.interviews-nav-button.tab-active {
   
 }
 
-#interviews-nav > li:hover {
-  
+#interviews-nav > .text-dark-grey > div.half-underline-red {
+  border-bottom: 0px solid white;
 }
 
-#interviews-nav > li.custom-active {
-  
+.interviews-nav-button > a, .interviews-nav-button > a:visited, .interviews-nav-button > a:link {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  padding: 0 21px;
 }
 
-#interviews-nav > li > a {
-  
+.interviews-nav-button > .half-underline-red {
+  z-index: 1;
+}
+
+.interviews-nav-button > a:hover, .interviews-nav-button > a:active {
+  text-decoration: none;
+  color: #B20A0A !important;
+}
+
+.interviews-nav-button > div.half-underline-red {
+  height: 2em !important;
 }

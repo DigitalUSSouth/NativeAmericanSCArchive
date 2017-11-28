@@ -271,6 +271,7 @@ function dynamic_css() {
         var featured = page.find('#featured-container');
         nHght = responsive_font(featured, 'width', 1.04987, 12);//12);
         $(featured.children()).css('margin-bottom', nHght+'px');
+        $('#interviews-nav').css({'font-size':(nHght+4).toString()+'px'});
       }
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

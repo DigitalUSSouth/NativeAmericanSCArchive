@@ -21,13 +21,18 @@ $tabData = json_decode($jsonTabData,true);
 </div>
 
 
-<ul id="interviews-nav">
+<div id="interviews-nav" class="custom-row">
 <?php
   $counter=1;
   foreach ($tabData as $data):?>
-  <li<?php print ($counter++==1)?" class=\"custom-active\"":"";?>><a data-toggle="tab" href="#<?php print $data['href'];?>" class="text-dark-grey source-serif"><strong><big><?php print $data['tribe'];?></strong></big></a></li>
+  <div<?php print ($counter++==1)?' class="interviews-nav-button text-red tab-active"':' class="interviews-nav-button text-dark-grey"';?>>
+    <a data-toggle="tab" href="#<?php print $data['href'];?>" class="source-serif clickable">
+      <?php print $data['tribe'];?>
+    </a>
+    <div class="half-underline-red"></div>
+  </div>
 <?php endforeach;?>
-</ul>
+</div>
 <div class="tab-content">
   <?php
     $counter=1;

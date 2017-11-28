@@ -119,6 +119,18 @@ hr.grey {
   transition-duration: 0.1s;
 }
 
+.half-underline-red {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 100%;
+  border-bottom: 2px solid #930707;
+  transition-duration: 0.1s;
+}
+
 .text-center {
   text-align: center;
 }
