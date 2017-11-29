@@ -3,6 +3,10 @@ require_once "../api/configuration.php";
 
 $jsonTabData = file_get_contents(SITE_ROOT.DB_ROOT."/interviews/tabs.json");
 $tabData = json_decode($jsonTabData,true);
+//sort tabData alphabetically by tribe name
+usort($tabData,function($a,$b) {
+  return strcmp(strtolower(trim($a['tribe'])),strtolower(trim($b['tribe'])));
+});
 
 ?>
 <div class="custom-row text-dark-grey" id="featured-container">
