@@ -36,13 +36,25 @@ function init_interviews() {
   //register for tab changes, so we can update uri
   $('#interviews-nav a').on('shown.bs.tab', function(event){
     //console.log(event)
-    $(event.target).parent().addClass('tab-active').switchClass('text-dark-grey','text-red').siblings('.tab-active').removeClass('tab-active').switchClass('text-red','text-dark-grey');
+    $(event.target).parent().addClass('tab-active').switchClass('text-dark-grey','text-red',{duration:60,queue:true}).siblings('.tab-active').removeClass('tab-active').switchClass('text-red','text-dark-grey',{duration:60,queue:true});
     //$('div.tab-active').removeClass('tab-active').switchClass('text-red','text-dark-grey');
     var hash = event.target.hash; // active tab
     var tab = hash.substring(1); //remove leading '#'
     setNewState("interviews",tab);
     //console.trace();
     currentTabInterviews = tab;
+  });
+  
+  $('div.card-hover').hover(function(event) {
+    //enter
+    var jthis = $(event.target);
+    jthis.parent().switchClass('background-red','background-white',{duration:60,queue:true});
+    jthis.siblings().first().switchClass('text-white','text-dark-grey',{duration:60,queue:true});
+  }, function(event) {
+    //exit
+    var jthis = $(event.target);
+    jthis.parent().switchClass('background-white','background-red',{duration:60,queue:true});
+    jthis.siblings().first().switchClass('text-dark-grey','text-white',{duration:60,queue:true});
   });
 
 /*

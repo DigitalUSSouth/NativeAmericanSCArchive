@@ -136,7 +136,7 @@ hr.grey {
 }
 
 .box-shadow {
-  box-shadow: 2px 5px 7px #323A3B;
+  box-shadow: -1px -1px 5px #323A3B;
 }
 
 .border-red {
@@ -215,13 +215,8 @@ hr.grey {
   display: -webkit-flex;
   display: flex;
   flex-wrap: nowrap;
-  /*flex-basis: content;*/
-  /*flex-direction: row;*/
-  /*flex-flow: row;*/
   height: auto;
   width: 100%;
-  /*align-items: center;*/
-  /*justify-content: center;*/
 }
 
 .custom-row {

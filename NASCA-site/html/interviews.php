@@ -16,7 +16,7 @@ usort($tabData,function($a,$b) {
   </div>
   <div id="custom-about-section-row" class="anton">
     <div id="custom-about-section-inner">
-      <div id="custom-about-section-content" class="text-black">
+      <div id="custom-about-section-content" class="text-dark-grey">
         Interviews About Placeholder <a href="#" target="_blank" title="Go To Interviews Link" class="text-red">link here</a>
       </div>
       <div id="custom-about-section-click" class="clickable text-red">About this page</div>
@@ -41,8 +41,50 @@ usort($tabData,function($a,$b) {
   <?php
     $counter=1;
     foreach($tabData as $tab):?>
-      <div id="<?php print $tab['href']; ?>" class="tab-pane fade<?php print ($counter++==1)?' in active':'' ?>">
-        <?php print $tab['href']; ?>
+      <div id="<?php print $tab['href']; ?>" class="book tab-pane fade<?php print ($counter++==1)?' in active':'' ?>">
+        <div class="interviews-book book">
+          <div class="interviews-left">
+            <div class="interviews-left-logo">
+              <img src="<?php print SITE_ROOT.$tab['logo']; ?>" alt="Tribal Logo">
+            </div>
+          </div>
+          <div class="interviews-right">
+            <?php
+            $interviews = $tab['interviews'];
+            asort($interviews);
+            $count = count($interviews);
+            $row1 = floor($count/2)+($count%2);
+            ?>
+            <div class="interviews-right-column">
+              <?php
+              foreach(array_slice($interviews,0,$row1) as $dataFile=>$name):
+                //$interview = json_decode(file_get_contents(SITE_ROOT.DB_ROOT.'/interviews/transcripts/json/minified/'.$dataFile),true);
+                //$interviewTitle = $interview['title'];
+                ?>
+                <div class="interviews-button-container">
+                  <div class="interviews-button background-red box-shadow">
+                    <div class="card-hover clickable"></div>
+                    <div class="interviews-button-text source-serif text-white text-center custom-row"><?php print $name; ?></div>
+                  </div>
+                </div> 
+              <?php endforeach;?>
+            </div>
+            <div class="interviews-right-column">
+              <?php
+              foreach(array_slice($interviews,$row1,$count) as $dataFile=>$name):
+                //$interview = json_decode(file_get_contents(SITE_ROOT.DB_ROOT.'/interviews/transcripts/json/minified/'.$dataFile),true);
+                //$interviewTitle = $interview['title'];
+                ?>
+                <div class="interviews-button-container">
+                  <div class="interviews-button background-red box-shadow">
+                    <div class="card-hover clickable"></div>
+                    <div class="interviews-button-text source-serif text-white text-center custom-row"><?php print $name; ?></div>
+                  </div>
+                </div> 
+              <?php endforeach;?>
+            </div>
+          </div>
+        </div>
       </div>
     <?php endforeach; ?>
 </div>

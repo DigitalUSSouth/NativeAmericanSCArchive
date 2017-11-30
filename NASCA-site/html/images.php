@@ -26,7 +26,7 @@ foreach($jsonImageData['data'] as $el) {
   </div>
   <div id="custom-about-section-row" class="anton">
     <div id="custom-about-section-inner">
-      <div id="custom-about-section-content" class="text-black">
+      <div id="custom-about-section-content" class="text-dark-grey">
         Images About Placeholder <a href="#" target="_blank" title="Go To Images Link" class="text-red">link here</a>
       </div>
       <div id="custom-about-section-click" class="clickable text-red">About this page</div>
