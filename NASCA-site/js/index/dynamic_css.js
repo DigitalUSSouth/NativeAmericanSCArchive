@@ -273,7 +273,7 @@ function dynamic_css() {
         $(featured.children()).css('margin-bottom', nHght+'px');
         $('#interviews-nav').css({'font-size':(nHght+4).toString()+'px'});
       }
-      responsive_font($('div.interviews-button-text'),'parent-div',50);
+      responsive_font($('div.interviews-button-text:visible'),'parent-div',50);
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
       break;

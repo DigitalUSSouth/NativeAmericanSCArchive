@@ -42,6 +42,7 @@ function init_interviews() {
     var tab = hash.substring(1); //remove leading '#'
     setNewState("interviews",tab);
     //console.trace();
+    dynamic_css();
     currentTabInterviews = tab;
   });
   
