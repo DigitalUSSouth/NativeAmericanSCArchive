@@ -70,8 +70,19 @@ function init_interviews() {
 function launch_interview_modal(e) {
   var filename = e.dataset.transcript;
   var html = '';
+  var match = filename.match(/.+?(?=-minified\.json)/);
   //append ajax results of interview template to html
-  html = '<div class="interview-template-container">'+filename+'</div>';//temp line
+  $.ajax({
+		type:'POST',
+    url: SITE_ROOT+'/html/interviews-template.php?f='+match[0],
+    async: false,
+    dataType: 'html',
+    success: function(data) {
+      html = data;
+    }
+  });
+  //console.log(html);
+  //html = '<div class="interview-template-container">'+html+'</div>';//temp line
   $.fancybox.open(
     html,
     {
@@ -81,7 +92,6 @@ function launch_interview_modal(e) {
       scrolling: false,
       autoDimensions: false,
       beforeShow: function (){
-        var match = filename.match(/.+?(?=-minified\.json)/);
         if (match!==null){
           setNewState("interviews",currentTabInterviews,match[0]);
         }
@@ -91,8 +101,7 @@ function launch_interview_modal(e) {
       },
       beforeClose: function (){
         //$('#jquery_jplayer_1').jPlayer("destroy");
-        $('div.interview-template-container').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");    
-        console.log('reverting to tab state');
+        $('div.interview-template-container').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");
         setNewState("interviews",currentTabInterviews);
       }
     }
