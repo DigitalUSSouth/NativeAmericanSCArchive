@@ -52,13 +52,9 @@
   padding: 5px;
 }
 
-.fancybox-inner.tribes-inner{
-  
-}
-
 .tribes-history-container{
   width: 85%;
-  min-width: 730px;
+  min-width: 699px;
   border-radius: 8px;
   height: 300px;
   position: relative;

@@ -274,6 +274,10 @@ function dynamic_css() {
         $('#interviews-nav').css({'font-size':(nHght+4).toString()+'px'});
       }
       responsive_font($('div.interviews-button-text:visible'),'parent-div',50);
+      var custom_fancybox = $('div.interview-template-container');
+      if(custom_fancybox.length) {
+        custom_fancybox.height(custom_fancybox.width() * 0.41096);
+      }
       //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
       break;

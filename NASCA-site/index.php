@@ -109,7 +109,7 @@
   </head>
   <body>
     <?php
-      include_once 'html/modal.php';
+      //include_once 'html/modal.php';
     ?>
     <div id="body-container" class="background-checker">
       <div id="header-positioner">

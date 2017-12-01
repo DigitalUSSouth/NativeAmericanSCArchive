@@ -2,7 +2,7 @@
 
 //<!-- //for old browsers
 
-var currentTabInterviews = "catawba";
+var currentTabInterviews = "beaver-creek";
 
 function init_interviews() {
   toggleSearch('on');
@@ -18,7 +18,7 @@ function init_interviews() {
     $('#interviews-nav a[href="#'+currentTabInterviews+'"]').tab('show');
   }
   else {//no sub uri, but we set the history to point to catawba
-    replaceCurrentState("interviews","catawba");
+    replaceCurrentState("interviews","beaver-creek");
   }
   
   var custom_about_click = $('#custom-about-section-click');
@@ -87,9 +87,31 @@ function init_interviews() {
 }
 
 //init stuff for oral_histories.html
-function launch_interview_modal(filename) {
+function launch_interview_modal(e) {
+  var filename = e.dataset.transcript;
+  var html = '';
+  //append ajax results of interview template to html
+  html = '<div class="interview-template-container">'+filename+'</div>';//temp line
+  $.fancybox.open(
+    html,
+    {
+      closeBtn: true,
+      autoSize: false,
+      autoScale: false,
+      scrolling: false,
+      autoDimensions: false,
+      /*beforeShow: function (){
+        $('.fancybox-inner').addClass('modal-inner');
+        $('.fancybox-slide').addClass('modal-slide');
+      },*/
+      afterLoad: function (){
+        dynamic_css();
+      }
+    }
+  );
+  
   //put html in modal
-  $.ajax({
+  /*$.ajax({
 		type:'POST',
     url: SITE_ROOT + '/html/interviews-template.php',
     async: true,
@@ -138,10 +160,10 @@ function launch_interview_modal(filename) {
       document.getElementById('transcript').innerHTML = htmloutput;
     }
   });
-  
+  */
   //$('.modal').css('display','block');
 
-};
+}
 
 /*
  * @param {event} event - the jPlayer timeUpdate event

@@ -16,11 +16,11 @@ function init_tribes() {
     //padding: 20,
     //width: 900,
     //height: 315,
-    beforeShow: function (){
+    /*beforeShow: function (){
       $('.fancybox-inner').addClass('tribes-inner');
       $('.fancybox-slide').addClass('tribes-slide');
       
-    },
+    },*/
     afterLoad: function (){
       var custom_fancybox = $('.tribes-history-container');
       custom_fancybox.height(custom_fancybox.width()*0.41096);

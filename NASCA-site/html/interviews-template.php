@@ -1,3 +1,4 @@
+<div class="interview-template-container">
 <!-- === Audio Title === -->
 <!-- === Audio Title === -->
 <!-- === Audio Title === -->
@@ -56,4 +57,5 @@
 <!-- === Cards === -->
 <div class="transcript" id="transcript">
     Transcript goes here.
+</div>
 </div>

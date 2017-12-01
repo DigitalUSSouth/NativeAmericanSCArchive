@@ -63,7 +63,7 @@ usort($tabData,function($a,$b) {
                 ?>
                 <div class="interviews-button-container">
                   <div class="interviews-button background-red box-shadow">
-                    <div class="card-hover clickable"></div>
+                    <div class="card-hover clickable" data-transcript="<?php print $dataFile; ?>" onclick="launch_interview_modal(this);"></div>
                     <div class="interviews-button-text source-serif text-white text-center custom-row"><?php print $name; ?></div>
                   </div>
                 </div> 
@@ -77,7 +77,7 @@ usort($tabData,function($a,$b) {
                 ?>
                 <div class="interviews-button-container">
                   <div class="interviews-button background-red box-shadow">
-                    <div class="card-hover clickable"></div>
+                    <div class="card-hover clickable" data-transcript="<?php print $dataFile; ?>" onclick="launch_interview_modal(this);"></div>
                     <div class="interviews-button-text source-serif text-white text-center custom-row"><?php print $name; ?></div>
                   </div>
                 </div> 
