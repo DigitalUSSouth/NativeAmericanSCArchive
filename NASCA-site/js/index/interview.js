@@ -40,7 +40,9 @@ function init_interviews() {
     //$('div.tab-active').removeClass('tab-active').switchClass('text-red','text-dark-grey');
     var hash = event.target.hash; // active tab
     var tab = hash.substring(1); //remove leading '#'
-    setNewState("interviews",tab);
+    if(currentUrl.length < 3) {
+      setNewState("interviews",tab);
+    }
     //console.trace();
     dynamic_css();
     currentTabInterviews = tab;
@@ -58,32 +60,10 @@ function init_interviews() {
     jthis.siblings().first().switchClass('text-dark-grey','text-white',{duration:60,queue:true});
   });
 
-/*
-  if (currentUrl.length ==3){//we have a modal uri
+  if (currentUrl.length === 3){//we have a modal uri
     var modalUri = currentUrl[2];
-    $('.btn-interview[data-filename=\"'+modalUri+'-minified.json\"]').click();
+    $('div.card-hover[data-transcript=\"'+modalUri+'-minified.json\"]').click();
   }
-
-  
-  $("#interviewsModal").on('shown.bs.modal', function(e){
-    var filename = e.relatedTarget.dataset.filename;
-    launch_interview_modal(filename);
-    // /.+?(?=abc)/
-    var match = filename.match(/.+?(?=-minified\.json)/);
-    //console.log(match)
-    if (match!==null){
-      setNewState("interviews",currentTabInterviews,match[0]);
-    }
-  });
-  $("#interviewsModal").on('hidden.bs.modal',function(e){
-    $('#jquery_jplayer_1').jPlayer("destroy");
-    $('#interviewsModal .modal-body').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");
-    $("#interviews-modal-description").html("");
-    $("#interview-modal-title").html("");
-    
-    setNewState("interviews",currentTabInterviews);
-  });
-  */
 }
 
 //init stuff for oral_histories.html
@@ -100,12 +80,20 @@ function launch_interview_modal(e) {
       autoScale: false,
       scrolling: false,
       autoDimensions: false,
-      /*beforeShow: function (){
-        $('.fancybox-inner').addClass('modal-inner');
-        $('.fancybox-slide').addClass('modal-slide');
-      },*/
+      beforeShow: function (){
+        var match = filename.match(/.+?(?=-minified\.json)/);
+        if (match!==null){
+          setNewState("interviews",currentTabInterviews,match[0]);
+        }
+      },
       afterLoad: function (){
         dynamic_css();
+      },
+      beforeClose: function (){
+        //$('#jquery_jplayer_1').jPlayer("destroy");
+        $('div.interview-template-container').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");    
+        console.log('reverting to tab state');
+        setNewState("interviews",currentTabInterviews);
       }
     }
   );
