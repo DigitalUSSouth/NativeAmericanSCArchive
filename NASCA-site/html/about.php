@@ -15,7 +15,7 @@
 <hr class="red"/>
 
 <div class="text-dark-grey source-serif">
-  <p class="anton">PROJECT OVERVIEW:</p>
+  <h3 class="anton">PROJECT OVERVIEW:</h3>
   <p>A joint project of the Native American Studies Archive at the University of South Carolina Lancaster, the University of South Carolina’s Institute for Southern Studies, and the University of South Carolina Libraries’ Digital Collections.</p>
   <p>NASCA will expand the research and service impact of the University of South Carolina Lancaster’s Native American Studies Center and Archive, increasing the use and footprint of its resources and creating new possibilities for collaboration.</p>
   <p>Native South Carolinians have been, and continue to be, an essential part of our state’s history. However, the average South Carolinian would be hard-pressed to name more than one of the state-recognized tribes, and might think of the history of Native South Carolina largely ending with the colonial-era Yamasee War.  NASCA looks to correct these misconceptions, helping to tell the story of Native South Carolina with complexity, nuance, and respect. In pursuing the goals, this project will take the form of an evolving website, providing access to significant primary source materials and other resources.</p>
@@ -24,7 +24,7 @@
 <hr class="red"/>
 
 <div class="text-dark-grey source-serif">
-  <p class="anton">ACKNOWLEDGEMENTS:</p>
+  <h3 class="anton">ACKNOWLEDGEMENTS:</h3>
   <p>Grants and Support Services:</p>
   <p class="bullet-point">Office of the VP for Research at the University of South Carolina, ASPIRE II Grant</p>
   <p class="bullet-point">Research and Productive Scholarship Grant, University of South Carolina Lancaster</p>
@@ -36,7 +36,7 @@
 <hr class="red"/>
 
 <div class="text-dark-grey source-serif">
-  <p class="anton">PEOPLE:</p>
+  <h3 class="anton">PEOPLE:</h3>
   <p>Many thanks to the following:</p>
   <h3><b>Institute of Southern Studies</b></h3>
   <p>Dr. Matthew Simmons, Project Coordinator, Digital US South Initiative</p>
@@ -60,7 +60,7 @@
 
 <hr class="red"/>
 
-<p class="text-dark-grey anton">TECHNICAL INFORMATION:</p>
+<h3 class="text-dark-grey anton">TECHNICAL INFORMATION:</h3>
 <p class="text-dark-grey source-serif">Code for NASCA is licensed under the GNU General Purpose License V3. See the project's <a class="text-red" target="_blank" href="https://github.com/DigitalUSSouth/NativeAmericanSCArchive">GitHub Project Repository</a> for more details.</p>
 
 </div>
