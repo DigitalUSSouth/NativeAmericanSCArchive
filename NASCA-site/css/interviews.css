@@ -120,18 +120,26 @@ div.interview-template-container {
   overflow: hidden;
 }
 
+#interview-template-left {
+  width: 39%;
+  position: relative;
+  height: 100%;
+}
+
 .title {
     font-size: 2rem;
     /*font-family: 'Roboto Slab', serif;*
     color: #AEADB8;*/
 }
 
-.transcript {
+#transcript {
     /*color: #F7F7F7;
     /*font-family: 'Open Sans', sans-serif;*
     padding-left: 0;
     height: 100%;*/
     overflow-y: scroll;
+    height:100%;
+    width: 60%;
 }
 
 .ts-bit {

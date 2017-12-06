@@ -97,10 +97,11 @@ function launch_interview_modal(e) {
         }
       },
       afterLoad: function (){
+        $('button.fancybox-close-small').addClass('custom-fancybox-close');
         dynamic_css();
       },
       beforeClose: function (){
-        //$('#jquery_jplayer_1').jPlayer("destroy");
+        $('#jquery_jplayer_1').jPlayer("destroy");
         $('div.interview-template-container').html("<div class=\"text-center\"><h1>Loading...</h1><i class=\"fa fa-spinner fa-spin\" style=\"font-size:76px\"></i></h1></div>");
         setNewState("interviews",currentTabInterviews);
       }

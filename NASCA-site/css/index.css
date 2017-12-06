@@ -247,6 +247,11 @@ hr.grey {
   margin-left: 1.3em;
 }
 
+button.custom-fancybox-close:after {
+  color: white;
+  background: #930707;
+}
+
 /*
 colors{
     white - #FFFFFF
