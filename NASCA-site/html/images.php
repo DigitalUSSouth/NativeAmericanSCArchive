@@ -27,7 +27,7 @@ foreach($jsonImageData['data'] as $el) {
   <div id="custom-about-section-row" class="anton">
     <div id="custom-about-section-inner">
       <div id="custom-about-section-content" class="text-dark-grey">
-        Images About Placeholder <a href="#" target="_blank" title="Go To Images Link" class="text-red">link here</a>
+        The Images section includes photographs of various South Carolina tribal entities from the early 1980s to present day. Most of these photographs were taken by noted University of South Carolina photographer Gene Crediford.
       </div>
       <div id="custom-about-section-click" class="clickable text-red">About this page</div>
     </div>
