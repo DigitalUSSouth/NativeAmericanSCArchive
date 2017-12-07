@@ -168,3 +168,17 @@ div.interview-template-container {
 div.jp-type-single {
   border-radius: 5px;
 }*/
+
+p.transcript-highlight{
+  background-color: #930707;
+  color:white;
+}
+
+#transcript-scroll-button{
+  position:absolute;
+  top:20px;
+  right:60px;
+  border:none;
+  border-radius:5px;
+  padding:5px 10px
+}

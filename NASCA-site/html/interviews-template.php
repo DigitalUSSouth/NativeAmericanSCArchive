@@ -126,5 +126,8 @@
       }
       ?>
     </div>
+    <button id="transcript-scroll-button" class="anton text-white background-red">
+      Scroll to Current Text
+    </button>
   </div>
 </div>

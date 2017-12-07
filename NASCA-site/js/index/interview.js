@@ -98,6 +98,17 @@ function launch_interview_modal(e) {
       },
       afterLoad: function (){
         $('button.fancybox-close-small').addClass('custom-fancybox-close');
+        $('#transcript-scroll-button').click(function() {
+          var firstHighlight = $('p.transcript-highlight').first();
+          if(firstHighlight.length) {
+            console.log(firstHighlight.attr('id'));
+            $('#transcript').animate({
+              scrollTop: $('#transcript').scrollTop() + firstHighlight.position().top
+            },1250);
+          } else{
+            console.log('nothing highlighted');
+          }
+        });
         dynamic_css();
       },
       beforeClose: function (){
@@ -107,59 +118,6 @@ function launch_interview_modal(e) {
       }
     }
   );
-  
-  //put html in modal
-  /*$.ajax({
-		type:'POST',
-    url: SITE_ROOT + '/html/interviews-template.php',
-    async: true,
-    dataType: 'html',
-    success: function(data) {
-      $('#interviewsModal .modal-body').html(data);
-      
-      //grab json
-      var datalocation = SITE_ROOT + '/db/data/interviews/';
-      var jsonobject = getJsonObject(datalocation + "transcripts/json/minified/" + filename);
-
-      //set title
-      document.getElementById('interview-modal-title').innerHTML = jsonobject.title;
-      $("#interviews-modal-description").html(jsonobject.description);
-
-      var lastStepJson = {"lastTime": 0.0,"lastBruteForce": 0.0,"lastUpdate": 0.0,"lastHighlightedId": -1,"additionalHighlightedIds": 0};
-
-      //set up jplayer with appropriate media
-      $('#jquery_jplayer_1').jPlayer({
-        ready: function() {
-          $(this).jPlayer('setMedia', {
-            title: jsonobject.title,
-            mp3: (datalocation + "compressed/" + jsonobject.audio_file)
-          });
-        },
-        timeupdate: function(event) {
-          lastStepJson = updateTranscript(event, jsonobject, '#ts', lastStepJson);
-        },
-        cssSelectorAncestor: '#jp_container_1',
-        swfPath: '../js',
-        supplied: 'mp3',
-        useStateClassSkin: true,
-        autoBlur: false,
-        smoothPlayBar: true,
-        keyEnabled: true,
-        remainingDuration: true,
-        toggleDuration: true
-      });
-
-      //put all json in text field
-      var htmloutput = '';
-      for(var i = 0; i < jsonobject.text.length; i++) {
-        htmloutput += '<p class="ts-bit" id="ts' + i + '">' + jsonobject.text[i].speaker + ':<br>';
-        htmloutput += jsonobject.text[i].text_bit + '<br></p>';
-      }
-      document.getElementById('transcript').innerHTML = htmloutput;
-    }
-  });
-  */
-  //$('.modal').css('display','block');
 
 }
 
@@ -377,27 +335,27 @@ function timecodeToInt(timecode) {
 function highlight(id,state) {
   if(state === 'on') {
     //console.log("on")
-    $(id).toggleClass("bg-danger",250)
+    $(id).toggleClass("transcript-highlight",250);
     //if the id IS NOT already highlighted
-    if(rgb2hex($(id).css('color')) === '#f7f7f7') {//default
+    //if(rgb2hex($(id).css('color')) === '#f7f7f7') {//default
       //animate it on
       /*$(id).animate({
         backgroundColor: '#ffff60',
         color: '#787788'//highlight
       }, 250);*/
-    }
+    //}
   } else if(state === "off") {
     //console.log("off")
-    $(id).toggleClass("bg-danger",250)
+    $(id).toggleClass("transcript-highlight",250);
     
     //if the id IS highlighted
-    if(rgb2hex($(id).css('color')) === '#787788') {
+    //if(rgb2hex($(id).css('color')) === '#787788') {
       //animate it off
       /*$(id).animate({
         backgroundColor: '#840004',
         color: '#f7f7f7'
       }, 250);*/
-    }
+    //}
   } else {
     console.log('oral_histories.js:highlight(id,state) BAD INPUT');
   }
