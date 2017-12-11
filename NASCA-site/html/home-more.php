@@ -208,8 +208,8 @@
         </div>
       </div>
       <div id="preview-lower" class="custom-row">
-        <div id="view-all-container" onclick="changePage('video');">
-          <div id="view-all" class=text-red>View All Videos</div>
+        <div id="view-all-container" onclick="setNewState('video','#Videos-'+<?php print substr("$home_obj->pointer",4); ?>); changePage('video');">
+          <div id="view-all" class=text-red>Open in Videos</div>
           <div id="view-all-underline"></div>
         </div>
       </div>
