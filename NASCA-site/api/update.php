@@ -14,6 +14,8 @@
    * and over 20 minutes with images.
    */
 
+  header('content-type: text/html; charset=utf-8');
+
   $current_dir = str_replace('update.php','',__FILE__);
   require_once($current_dir . 'configuration.php');
   require_once($current_dir . 'cdm.php');
@@ -39,7 +41,15 @@
     $imageData = array();
     $homeData = array();
     $typeData = array();
+    echo '<p id="status" style="display:inline">Working on entry #<p id="progress" style="display:inline">0</p></p><br/>';
+    //flush();
+    //ob_flush();
+    //sleep(1);
     for($i = 0; $i < $total; $i++) {
+      echo '<script>document.getElementById("progress").innerHTML = ' . ($i+1) . ';</script>';
+      flush();
+      ob_flush();
+      sleep(1);
       $rec = $collection->records[$i];
       $pointer = (int)$rec->pointer;
       $fn = $rec->find;
