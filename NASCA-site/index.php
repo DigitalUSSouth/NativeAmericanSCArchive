@@ -69,7 +69,6 @@
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/jquery.fancybox.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/index.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/jplayer.blue.monday.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/modal.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/interviews.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/home.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/timeline.css"/>
