@@ -26,6 +26,7 @@
   background-color:#323A3B;
   width:100%;
   border-radius:5px;
+  -webkit-border-radius:5px;
   font-size: 18pt
 }
 .jp-audio .jp-interface{
@@ -157,7 +158,8 @@
   bottom:48px;
   left:50%;
   width:50%;
-  transform:translateX(-50%)
+  transform:translateX(-50%);
+  -webkit-transform:translateX(-50%)
 }
 .jp-audio-stream .jp-volume-controls{
   left:70px
@@ -205,7 +207,8 @@
   width:80%;
   height:5px;
   cursor:pointer;
-  transform:translateX(-50%)
+  transform:translateX(-50%);
+  -webkit-transform:translateX(-50%)
 }
 .jp-volume-bar-value{
   background:url("../img/jplayer/jplayer.blue.monday.jpg") 0 -256px repeat-x;

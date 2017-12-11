@@ -9,6 +9,7 @@
 
 #select-container .half-underline-black {
   transform: translateX(-43%);
+  -webkit-transform: translateX(-43%);
   z-index: 1;
 }
 
@@ -30,9 +31,12 @@
   margin-right: -12px;*/
   margin: 0 auto;
   display: flex;
+  display: -webkit-flex;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
+  align-content: -webkit-flex-start;
   width: 101.04987%;
   /*min-width: 585px;*/
   max-width: 1920px;
@@ -67,6 +71,7 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   width: 15%;
   min-width: 64px;
   max-width: 128px;
@@ -79,6 +84,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
   width: 15%;
   min-width: 64px;
   max-width: 128px;

@@ -3,9 +3,12 @@
   margin-left: -33px;
   margin-right: -33px;
   display: flex;
+  display: -webkit-flex;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
+  align-content: -webkit-flex-start;
   width: auto;
   height: auto;
 }
@@ -46,7 +49,8 @@
 
 .video-single-media-container {
   height: 51.6854%;
-  transition-duration: 0.1s
+  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s
 }
 
 .video-single-media-container:hover .video-single-media {
@@ -65,7 +69,8 @@
   width: 100%;
   position: relative;
   object-fit: cover;
-  transition-duration: 0.1s
+  transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s
 }
 
 .video-single-description-container {

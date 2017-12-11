@@ -19,6 +19,7 @@ https://webdesign.tutsplus.com/ */
 
 .timeline ul li div {
   border-radius: .7em;
+  -webkit-border-radius: .7em;
   /*background: #930707 !important;*/
   
   
@@ -30,9 +31,11 @@ https://webdesign.tutsplus.com/ */
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   background: inherit;
 }
 
@@ -85,6 +88,7 @@ time {
 
 .timeline ul li::after {
   transition: background .5s ease-in-out;
+  -webkit-transition: background .5s ease-in-out;
 }
 
 .timeline ul li.in-view::after {
@@ -95,18 +99,22 @@ time {
   visibility: hidden;
   opacity: 0;
   transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
 }
 
 .timeline ul li:nth-child(odd) div {
   transform: translate3d(200px, 0, 0);
+  -webkit-transform: translate3d(200px, 0, 0);
 }
 
 .timeline ul li:nth-child(even) div {
   transform: translate3d(-200px, 0, 0);
+  -webkit-transform: translate3d(-200px, 0, 0);
 }
 
 .timeline ul li.in-view div {
   transform: none;
+  -webkit-transform: none;
   visibility: visible;
   opacity: 1;
 }
