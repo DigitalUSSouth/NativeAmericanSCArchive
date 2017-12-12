@@ -1,155 +1,132 @@
-#tribes-list-container {
-  position: relative;
-  margin-left: -19px;
-  margin-right: -19px;
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
-  align-content: -webkit-flex-start;
-  width: auto;
-  height: auto;
+#tribes-list-container{
+position:relative;
+margin-left:-19px;
+margin-right:-19px;
+display:flex;
+display:-webkit-flex;
+flex-wrap:wrap;
+-webkit-flex-wrap:wrap;
+justify-content:center;
+align-content:flex-start;
+align-content:-webkit-flex-start;
+width:auto;
+height:auto
 }
-
-.tribe-single-container {
-  width: 25%;
-  min-width: 295px;
-  height: 188px;
-  position: relative;
-  z-index: 2;
+.tribe-single-container{
+width:25%;
+min-width:295px;
+height:188px;
+position:relative;
+z-index:2
 }
-
-.tribe-single {
-  position: absolute;
-  top: 0;
-  left: 6.4407%;
-  width: 87.119%;
-  height: 93.085%;
-  transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  z-index: 2;
+.tribe-single{
+position:absolute;
+top:0;
+left:6.4407%;
+width:87.119%;
+height:93.085%;
+transition-duration:0.4s;
+-webkit-transition-duration:0.4s;
+z-index:2
 }
-
-.tribe-single-title-container {
-  position: relative;
-  height: 17.143%;
+.tribe-single-title-container{
+position:relative;
+height:17.143%
 }
-
-.tribe-single-title {
-  /*line-height: 28px;*/
-  font-size: 18.5px;
-  padding-left: 6%;
-  padding-right: 6%;
+.tribe-single-title{
+font-size:18.5px;
+padding-left:6%;
+padding-right:6%
 }
-
-.tribe-single-logo-container {
-  position: relative;
-  height: 82.857%;
+.tribe-single-logo-container{
+position:relative;
+height:82.857%
 }
-
-.tribe-single-logo {
-  opacity: 0.5;
-  height: 100%;
-  object-fit: contain;
-  padding: 5px;
+.tribe-single-logo{
+opacity:0.5;
+height:100%;
+object-fit:contain;
+padding:5px
 }
-
 .tribes-history-container{
-  width: 85%;
-  min-width: 699px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  height: 300px;
-  position: relative;
-  overflow: hidden;
+width:85%;
+min-width:699px;
+border-radius:8px;
+-webkit-border-radius:8px;
+height:300px;
+position:relative;
+overflow:hidden
 }
-
-.tribes-history-nav-container {
-  width: 6%;
-  position: relative;
+.tribes-history-nav-container{
+width:6%;
+position:relative
 }
-
-.tribes-history-nav {
-  height: 6.948%;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+.tribes-history-nav{
+height:6.948%;
+border-radius:6px;
+-webkit-border-radius:6px;
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+-webkit-transform:translateY(-50%)
 }
-
-.tribes-history-nav > div {
-  font-size: 13px;
-  line-height: 13px;
-  height: 100%;
-  width: 90%;
-  margin-top: 2%;
+.tribes-history-nav > div{
+font-size:13px;
+line-height:13px;
+height:100%;
+width:90%;
+margin-top:2%
 }
-
-.tribes-history-next-container {
-  float: right;
+.tribes-history-next-container{
+float:right
 }
-
-.tribes-history-prev-container {
-  float: left;
+.tribes-history-prev-container{
+float:left
 }
-
-.tribes-history-body {
-  width: 86%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  display: inline-block;
-  position: relative;
-  margin-left: 1%;
-  margin-right: 1%;
+.tribes-history-body{
+width:86%;
+overflow-y:auto;
+overflow-x:hidden;
+display:inline-block;
+position:relative;
+margin-left:1%;
+margin-right:1%
 }
-
-.tribes-history-logo-container {
-  height: 26%;
-  position: relative;
+.tribes-history-logo-container{
+height:26%;
+position:relative
 }
-
-.tribes-history-logo-container img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  width: auto;
-  object-fit: contain;
+.tribes-history-logo-container img{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+-webkit-transform:translateX(-50%);
+width:auto;
+object-fit:contain
 }
-
-.tribes-history-text {
-  /*font-size: 15px;*/
-  height: auto;
-  -webkit-columns: auto 2;
-  -moz-columns: auto 2;
-  columns: auto 2;
-  -webkit-column-gap: 30px;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
+.tribes-history-text{
+height:auto;
+-webkit-columns:auto 2;
+-moz-columns:auto 2;
+columns:auto 2;
+-webkit-column-gap:30px;
+-moz-column-gap:30px;
+column-gap:30px
 }
-
-.tribes-history-block > div {
-  padding-bottom: 15px;
+.tribes-history-block > div{
+padding-bottom:15px
 }
-
-.tribes-history-title {
-  font-weight: 600;
-  font-size: 110%;
+.tribes-history-title{
+font-weight:600;
+font-size:110%
 }
-
-.tribes-history-author {
-  font-style: italic;
+.tribes-history-author{
+font-style:italic
 }
-
-.tribes-history-caption {
-  font-style: italic;
+.tribes-history-caption{
+font-style:italic
 }
-
-.tribes-history-img {
-  width: 85%;
-  height: auto;
+.tribes-history-img{
+width:85%;
+height:auto
 }

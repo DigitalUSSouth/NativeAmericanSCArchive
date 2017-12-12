@@ -1,16 +1,4 @@
-/*.jp-audio *:focus,
-.jp-audio-stream *:focus,
-.jp-audio-stream button::-moz-focus-inner,
-.jp-audio-stream{
-  font-size:16px;
-  font-family:Verdana, Arial, sans-serif;
-  line-height:1.6;
-  color:#666;
-  border:1px solid #009be3;
-  background-color:#eee
-}*/
 .jp-audio{
-  /*width:420px*/
   width:90%;
   min-width:265px;
   height:auto;
@@ -18,24 +6,17 @@
   float:left;
   padding:10px 15px
 }
-/*.jp-audio-stream{
-  width:182px
-}*/
 .jp-interface{
   position:relative;
   background-color:#323A3B;
   width:100%;
   border-radius:5px;
   -webkit-border-radius:5px;
-  font-size: 18pt
+  font-size:18pt
 }
 .jp-audio .jp-interface{
-  /*height:80px*/
   height:160px
 }
-/*.jp-audio-stream .jp-interface{
-  height:80px
-}*/
 .jp-controls-holder{
   clear:both;
   width:90%;
@@ -55,12 +36,6 @@
   display:inline-block;
   min-width:100px
 }
-/*.jp-audio-stream .jp-controls{
-  position:absolute;
-  top:20px;
-  left:20px;
-  width:142px
-}*/
 .jp-controls button{
   display:block;
   float:left;
@@ -85,9 +60,7 @@
 .jp-state-playing .jp-play:focus{
   background:url("../img/jplayer/jplayer.blue.monday.jpg") -41px -42px no-repeat
 }
-.jp-stop,
-.jp-previous,
-.jp-next{
+.jp-stop,.jp-previous,.jp-next{
   width:28px;
   height:28px;
   margin-top:6px
@@ -119,23 +92,9 @@
 }
 .jp-progress{
   overflow:hidden;
-  /*background-color:#ddd*/
   width:100%;
   height:15px
 }
-/*.jp-audio .jp-progress{
-  position:absolute;
-  top:32px;
-  height:15px
-}
-.jp-audio .jp-type-single .jp-progress{
-  left:110px;
-  width:186px
-}
-.jp-audio .jp-type-playlist .jp-progress{
-  left:166px;
-  width:130px
-}*/
 .jp-seek-bar{
   background:url("../img/jplayer/jplayer.blue.monday.jpg") 0 -202px repeat-x;
   width:0px;
@@ -172,8 +131,7 @@
   border:none;
   cursor:pointer
 }
-.jp-mute,
-.jp-volume-max{
+.jp-mute,.jp-volume-max{
   width:18px;
   height:15px
 }
@@ -227,8 +185,7 @@
   left:166px;
   width:130px
 }
-.jp-current-time,
-.jp-duration{
+.jp-current-time,.jp-duration{
   width:60px;
   font-size:.64em;
   font-style:oblique
@@ -249,14 +206,12 @@
   text-align:center;
   cursor:default
 }
-.jp-details,
-.jp-playlist{
+.jp-details,.jp-playlist{
   width:100%;
   background-color:#ccc;
   border-top:1px solid #009be3
 }
-.jp-type-single .jp-details,
-.jp-type-playlist .jp-details{
+.jp-type-single .jp-details,.jp-type-playlist .jp-details{
   border-top:none
 }
 .jp-details .jp-title{
@@ -269,8 +224,7 @@ span.jp-artist{
   font-size:.8em;
   color:#666
 }
-.jp-jplayer audio,
-.jp-jplayer{
+.jp-jplayer audio,.jp-jplayer{
   width:0px;
   height:0px
 }

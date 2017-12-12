@@ -1,84 +1,72 @@
-#video-list-container {
-  position: relative;
-  margin-left: -33px;
-  margin-right: -33px;
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
-  align-content: -webkit-flex-start;
-  width: auto;
-  height: auto;
+#video-list-container{
+position:relative;
+margin-left:-33px;
+margin-right:-33px;
+display:flex;
+display:-webkit-flex;
+flex-wrap:wrap;
+-webkit-flex-wrap:wrap;
+justify-content:center;
+align-content:flex-start;
+align-content:-webkit-flex-start;
+width:auto;
+height:auto
 }
-
-.video-single-container {
-  position: relative;
-  width: 50%;
-  min-width: 604px;
-  min-height: 388px;
-  height: 388px;
+.video-single-container{
+position:relative;
+width:50%;
+min-width:604px;
+min-height:388px;
+height:388px
 }
-
-.video-single {
-  position: absolute;
-  width: 89.2384%;
-  height: 91.7526%;
-  top: 0;
-  left: 5.3808%;
+.video-single{
+position:absolute;
+width:89.2384%;
+height:91.7526%;
+top:0;
+left:5.3808%
 }
-
-.video-single-title-container {
-  height: 16.2921%;
+.video-single-title-container{
+height:16.2921%
 }
-
-.video-single-title {
-  font-size: 42px;
-  line-height: 58px;
+.video-single-title{
+font-size:42px;
+line-height:58px
 }
-
-.video-single-padding {
-  position: relative;
-  height: 5.0562%;
+.video-single-padding{
+position:relative;
+height:5.0562%
 }
-
-.video-single-padding hr {
-  position: relative;
+.video-single-padding hr{
+position:relative
 }
-
-.video-single-media-container {
-  height: 51.6854%;
-  transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s
+.video-single-media-container{
+height:51.6854%;
+transition-duration:0.1s;
+-webkit-transition-duration:0.1s
 }
-
-.video-single-media-container:hover .video-single-media {
-  opacity: 1.0;
+.video-single-media-container:hover .video-single-media{
+opacity: 1
 }
-
-.video-single-media-fancybox {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.video-single-media-fancybox{
+position:relative;
+width:100%;
+height:100%
 }
-
-.video-single-media {
-  opacity: 0.6;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  object-fit: cover;
-  transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s
+.video-single-media{
+opacity:0.6;
+height:100%;
+width:100%;
+position:relative;
+object-fit:cover;
+transition-duration:0.1s;
+-webkit-transition-duration:0.1s
 }
-
-.video-single-description-container {
-  height: 21.9101%;
-  overflow-y: scroll;
+.video-single-description-container{
+height:21.9101%;
+overflow-y:scroll;
 }
-
-.video-single-description {
-  font-size: 14px;
-  line-height: 16px;
+.video-single-description{
+font-size:14px;
+line-height:16px
 }

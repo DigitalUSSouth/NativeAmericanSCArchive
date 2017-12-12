@@ -1,196 +1,148 @@
-#interviews-nav {
-  position: relative;
-  display: flex;
-  display: -webkit-flex;
-  font-size: 16px;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  border-bottom: 2px solid black;
-  margin-bottom: 2em;
+#interviews-nav{
+position:relative;
+display:flex;
+display:-webkit-flex;
+font-size:16px;
+flex-wrap:wrap;
+-webkit-flex-wrap:wrap;
+border-bottom:2px solid black;
+margin-bottom:2em
 }
-
-div.interviews-nav-button {
-  margin: 0.5em auto;
-  position: relative;
-  height: auto;
-  display: inline-flex;
-  display: -webkit-inline-flex;
-  flex-shrink: 0;
-  -webkit-flex-shrink: 0;
+div.interviews-nav-button{
+margin:0.5em auto;
+position:relative;
+height:auto;
+display:inline-flex;
+display:-webkit-inline-flex;
+flex-shrink:0;
+-webkit-flex-shrink:0
 }
-
-.interviews-nav-button > div.half-underline-red {
-  border-bottom: 4px solid #930707;
+.interviews-nav-button > div.half-underline-red{
+border-bottom:4px solid #930707
 }
-
-#interviews-nav > .text-dark-grey > div.half-underline-red {
-  border-bottom: 0px solid white;
+#interviews-nav > .text-dark-grey > div.half-underline-red{
+border-bottom:0px solid white
 }
-
-.interviews-nav-button > a, .interviews-nav-button > a:visited, .interviews-nav-button > a:link {
-  color: inherit !important;
-  font-size: inherit !important;
-  font-weight: bold;
-  position: relative;
-  z-index: 2;
-  text-decoration: none;
-  padding: 0 21px;
+.interviews-nav-button > a,.interviews-nav-button > a:visited,.interviews-nav-button > a:link{
+color:inherit !important;
+font-size:inherit !important;
+font-weight:bold;
+position:relative;
+z-index:2;
+text-decoration:none;
+padding:0 21px
 }
-
-.interviews-nav-button > .half-underline-red {
-  z-index: 1;
+.interviews-nav-button > .half-underline-red{
+z-index:1
 }
-
-.interviews-nav-button > a:hover, .interviews-nav-button > a:active {
-  text-decoration: none;
-  color: #B20A0A !important;
+.interviews-nav-button > a:hover,.interviews-nav-button > a:active{
+text-decoration:none;
+color:#B20A0A !important
 }
-
-.interviews-nav-button > div.half-underline-red {
-  height: 2em !important;
+.interviews-nav-button > div.half-underline-red{
+height:2em !important
 }
-
-div.tab-pane {
-  width: 100%;
+div.tab-pane{
+width:100%
 }
-
-div.interviews-book {
-  padding-bottom: 30px;
+div.interviews-book{
+padding-bottom:30px
 }
-
-div.interviews-left {
-  min-width: 366.5px;
-  width: 35.87%;
-  
+div.interviews-left{
+min-width:366.5px;
+width:35.87%
 }
-
-div.interviews-left-logo {
-  width: 58.54%;
-  min-width: 240px;
-  margin: auto auto;
+div.interviews-left-logo{
+width:58.54%;
+min-width:240px;
+margin:auto auto
 }
-
-.interviews-left-logo > img {
-  width: 100%;
+.interviews-left-logo > img{
+width:100%
 }
-
-div.interviews-right {
-  min-width: 366.5px;
-  width: 64.13%;
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  align-content: flex-start;
-  align-content: -webkit-flex-start;
-  justify-content: center;
+div.interviews-right{
+min-width:366.5px;
+width:64.13%;
+display:flex;
+display:-webkit-flex;
+flex-wrap:wrap;
+-webkit-flex-wrap:wrap;
+align-content:flex-start;
+align-content:-webkit-flex-start;
+justify-content:center
 }
-
-div.interviews-right-column {
-  width: 50%;
-  min-width: 366px;
+div.interviews-right-column{
+width:50%;
+min-width:366px
 }
-
-div.interviews-button {
-  width: 96.45%;
-  height: 77%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
+div.interviews-button{
+width:96.45%;
+height:77%;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+-webkit-transform:translate(-50%,-50%);
+border-radius:4px;
+-webkit-border-radius:4px
 }
-
-div.interviews-button-container {
-  width: 100%;
-  position: relative;
+div.interviews-button-container{
+width:100%;
+position:relative
 }
-
-div.interviews-button-container:after {
-  padding-top: 12%;
-  display: block;
-  content: '';
+div.interviews-button-container:after{
+padding-top:12%;
+display:block;
+content:''
 }
-
-div.interviews-button-text {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+div.interviews-button-text{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+-webkit-transform:translateY(-50%)
 }
-
-div.interview-template-container {
-  width: 85%;
-  min-width: 699px;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  height: 300px;
-  position: relative;
-  overflow: hidden;
+div.interview-template-container{
+width:85%;
+min-width:699px;
+border-radius:8px;
+-webkit-border-radius:8px;
+height:300px;
+position:relative;
+overflow:hidden
 }
-
-#interview-template-left {
-  width: 39%;
-  position: relative;
-  height: 100%;
+#interview-template-left{
+width:39%;
+position:relative;
+height:100%
 }
-
-.title {
-    font-size: 2rem;
-    /*font-family: 'Roboto Slab', serif;*
-    color: #AEADB8;*/
+.title{
+font-size:2rem
 }
-
-#transcript {
-    /*color: #F7F7F7;
-    /*font-family: 'Open Sans', sans-serif;*
-    padding-left: 0;
-    height: 100%;*/
-    overflow-y: scroll;
-    height:100%;
-    width: 60%;
+#transcript{
+overflow-y:scroll;
+height:100%;
+width:60%
 }
-
-.ts-bit {
-    /*width: 80%;
-    /color: #F7F7F7;*/
+.interview-row{
+padding-top:3em;
+padding-bottom:5em
 }
-
-.interview-row {
-    padding-top: 3em;
-    padding-bottom: 5em;
+.btn-interview{
+white-space:normal !important
 }
-
-.btn-interview {
-    white-space: normal !important;
-}
-
 .interview-logo{
-    height: 275px !important;
+height:275px !important
 }
-
-/*div.jp-audio {
-  padding: 10px 15px;
-  height: auto;
-}
-
-div.jp-type-single {
-  border-radius: 5px;
-}*/
-
 p.transcript-highlight{
-  background-color: #930707;
-  color:white;
+background-color:#930707;
+color:white
 }
-
 #transcript-scroll-button{
-  position:absolute;
-  top:20px;
-  right:60px;
-  border:none;
-  border-radius:5px;
-  -webkit-border-radius:5px;
-  padding:5px 10px
+position:absolute;
+top:20px;
+right:60px;
+border:none;
+border-radius:5px;
+-webkit-border-radius:5px;
+padding:5px 10px
 }
