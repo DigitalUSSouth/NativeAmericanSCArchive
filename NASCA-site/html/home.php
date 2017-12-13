@@ -56,6 +56,19 @@ for($i = 1; $i <= $count; $i++) {
       error_log('home.php: Thumbnail reference for video pointer ' . $id . ' was not a valid link. Reference was ' . $ref . '. Trying another card.',0);
       continue;
     }
+  } else if($type === 'Interview') {
+    //for interviews
+    //id is 2000# where # is index of interview 1 to n
+    //title is title of interview
+    //type is interview
+    //size is default wide (unused)
+    //ref is a reference to the related tribe
+    //set ref here
+    $url = $_SERVER['DOCUMENT_ROOT'].REL_HOME.DB_ROOT.DB_INTERVIEW;
+    $inter_data = getJsonLocal($url);
+    $index = getId($inter_data,$id);
+    $obj = $inter_data->data[$index];
+    $ref = SITE_ROOT.$obj->ref;
   } else {
     $count += 1;
     $offset += 1;
