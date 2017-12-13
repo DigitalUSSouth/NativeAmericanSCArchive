@@ -206,7 +206,10 @@
    * -4 - Error decoding json data
    * -5 - Innapropriate input type
    */
-  function getJsonLocal($url) {
+  function getJsonLocal($url,$assoc=false) {
+    /*if($assoc === null) {
+      $assoc = false;
+    }*/
     if(gettype($url) !== 'string') {
       error_log('getJsonLocal: Error -5: Input must be a string (url or absolute path).',0);
       return -5;
@@ -219,7 +222,7 @@
     }
     $data = null;
     if(file_exists($url)) {
-      $data = json_decode(file_get_contents($url));
+      $data = json_decode(file_get_contents($url),$assoc);
       if($data === null && json_last_error() === JSON_ERROR_NONE) {
         error_log('getJsonLocal: Error -3: Json data at given location is null.',0);
         return -3;
