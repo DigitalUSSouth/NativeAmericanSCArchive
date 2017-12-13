@@ -39,13 +39,15 @@
     $total = (int)$collection->pager->total;
     $letterData = array();
     $imageData = array();
+    $interviewData = array();
     $homeData = array();
     $typeData = array();
-    echo '<p id="status" style="display:inline">Working on entry #<p id="progress" style="display:inline">0</p></p><br/>';
+    echo '<p id="status" style="display:inline">Indexing <p id="type" style="display:inline"></p> entry #<p id="progress" style="display:inline">0</p></p><br/>';
     //flush();
     //ob_flush();
     //sleep(1);
     for($i = 0; $i < $total; $i++) {
+      if($i === 0) {echo '<script>document.getElementById("type").innerHTML = "image/letter";</script>';}
       echo '<script>document.getElementById("progress").innerHTML = ' . ($i+1) . ';</script>';
       flush();
       ob_flush();
@@ -224,6 +226,11 @@
     $query = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_VIDEO;
     $json = getJsonLocal($query);
     for($i = 0; $i < $json->count; $i++) {
+      if($i === 0) {echo '<script>document.getElementById("type").innerHTML = "video";</script>';}
+      echo '<script>document.getElementById("progress").innerHTML = ' . ($i+1) . ';</script>';
+      flush();
+      ob_flush();
+      sleep(1);
       $obj = $json->data[$i];
       $arr = array();
       $arr['pointer'] = $obj->pointer;
@@ -233,6 +240,32 @@
       $arr['description'] = $obj->description;
       $arr['key'] = $obj->key;
       array_push($homeData,$arr);
+    }
+    
+    //no to index interviews in interviews/tabs.json
+    $query = $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . '/interviews/tabs.json';
+    $json = getJsonLocal($query,true);
+    $lastIndex = 0;
+    $index_root = '2000';
+    foreach($json as $tribe_section) {
+      $arr = array();
+      foreach($tribe_section['interviews'] as $transcript=>$interview) {
+        if($lastIndex === 0) {echo '<script>document.getElementById("type").innerHTML = "interview";</script>';}
+        echo '<script>document.getElementById("progress").innerHTML = ' . ($lastIndex+1) . ';</script>';
+        flush();
+        ob_flush();
+        sleep(1);
+        $arr['pointer'] = (int)($index_root.$lastIndex++);
+        $arr['type'] = 'interview';
+        array_push($typeData,$arr);
+        $arr['title'] = $interview;
+        $arr['script_file'] = $transcript;
+        $arr['tribe'] = $tribe_section['tribe'];
+        $arr['ref'] = $tribe_section['logo'];
+        $arr['href'] = $tribe_section['href'];
+        array_push($interviewData,$arr);
+        array_push($homeData,$arr);
+      }
     }
     
     $path = $_SERVER['DOCUMENT_ROOT'] . REL_HOME;
@@ -247,6 +280,12 @@
     $arr = array();
     $arr['count'] = count($letterData);
     $arr['data'] = $letterData;
+    fwrite($fp, json_encode($arr));
+    fclose($fp);
+    $fp = fopen($path . DB_ROOT . DB_INTERVIEW, 'w');
+    $arr = array();
+    $arr['count'] = count($interviewData);
+    $arr['data'] = $interviewData;
     fwrite($fp, json_encode($arr));
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_HOME, 'w');
