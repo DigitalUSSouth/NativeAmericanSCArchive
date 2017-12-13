@@ -217,6 +217,44 @@
 <?php
   }
   
+  function printInterviewDetails($home_obj) {
+    global $errors;
+    $title = $home_obj->title;
+    $ref = SITE_ROOT.$home_obj->ref;
+    $script_file = $_SERVER['DOCUMENT_ROOT'].REL_HOME.DB_ROOT.'/interviews/transcripts/json/minified/'.$home_obj->script_file;
+    $json = getJsonLocal($script_file,true);
+    $transcript = $json['text'];
+    ?>
+    <div id="preview-layout" class="preview-letter">
+      <div id="preview-title-container" class="custom-title-overflow overflow-off-white">
+        <div id="preview-title" class="anton text-dark-grey"><?php print $title; ?></div>
+      </div>
+      <div id="preview-media-container">
+        <img src="<?php print $ref; ?>" alt="Tribal Banner" id="preview-media-interview-custom">
+      </div>
+      <div id="preview-desc-container">
+        <div id="preview-desc" class="source-serif text-black">
+          <p><i>The following is a transcript sample from a recorded interview labeled, <b><?php print $title; ?></b></i></p><br/>
+          <?php
+            foreach($transcript as $i=>$ts) {
+              if($i>10){break;}
+              ?>
+              <p class="ts-bit"><?php print $ts['speaker']; ?>: <?php print $ts['text_bit']; ?><br></p>
+              <?php
+            }
+          ?>
+        </div>
+      </div>
+      <div id="preview-lower" class="custom-row">
+        <div id="view-all-container" onclick="setNewState('interviews','<?php print $home_obj->href; ?>','<?php print str_replace('-minified.json','',$home_obj->script_file); ?>');changePage('interviews','#tabs-interviews');">
+          <div id="view-all" class=text-red>Listen To Interview</div>
+          <div id="view-all-underline"></div>
+        </div>
+      </div>
+    </div>
+<?php
+  }
+  
   if(isset($_GET['homeptr'])) {
     $homePointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
     $homeptr = $_GET['homeptr'];
@@ -229,7 +267,7 @@
       //if type isn't interview, images, letters, video, then there's a problem
       switch($type) {
         case 'interview':
-          echo 'This is an interview';
+          printInterviewDetails($home_obj);
           break;
         case 'image':
           if(isset($_GET['size'])) {

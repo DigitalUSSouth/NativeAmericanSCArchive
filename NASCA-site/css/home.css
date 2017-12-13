@@ -159,7 +159,6 @@ line-height:47px
 font-size:33px;
 line-height:45px
 }
-
 .preview-letter > #preview-title-container > #preview-title{
 font-size:32px;
 line-height:49px
@@ -188,6 +187,13 @@ top:50%;
 transform:translateY(-50%) translateX(-50%);
 -webkit-transform:translateY(-50%) translateX(-50%);
 object-fit:cover
+}
+#preview-media-interview-custom{
+width:100%;
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+-webkit-transform:translateY(-50%)
 }
 .preview-wide > #preview-media-container{
 min-width:423px;

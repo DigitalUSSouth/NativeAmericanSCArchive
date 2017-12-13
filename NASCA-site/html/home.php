@@ -28,6 +28,7 @@ for($i = 1; $i <= $count; $i++) {
   $type = ucfirst($card->type);
   $size = 'wide';
   $ref = null;
+  $background_color = 'background-black';
   if($type === 'Image' || $type === 'Letter') {
     $height = (int)$card->height;
     $width = (int)$card->width;
@@ -64,6 +65,7 @@ for($i = 1; $i <= $count; $i++) {
     //size is default wide (unused)
     //ref is a reference to the related tribe
     //set ref here
+    $background_color = 'background-off-white';
     $url = $_SERVER['DOCUMENT_ROOT'].REL_HOME.DB_ROOT.DB_INTERVIEW;
     $inter_data = getJsonLocal($url);
     $index = getId($inter_data,$id);
@@ -87,7 +89,7 @@ for($i = 1; $i <= $count; $i++) {
   }
 ?>
 <div class="home-card-container">
-  <div class="home-card card-natural background-black shadow-caster" id="home-card-<?php print (string)($i-$offset); ?>">
+  <div class="home-card card-natural <?php echo $background_color; ?> shadow-caster" id="home-card-<?php print (string)($i-$offset); ?>">
     <div class="additional">
       <p id="title"><?php print $title_s; ?></p>
       <p id="type"><?php print $type; ?></p>
