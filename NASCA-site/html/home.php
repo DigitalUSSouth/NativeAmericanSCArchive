@@ -16,7 +16,13 @@ if($count === null || (int)$count <= 0 || (string)$count === '') {
 } else {
   $count = intval($count);
 }
+//$pointers = getJsonLocal(SITE_ROOT . DB_ROOT . DB_HOME);
 $pointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
+error_log('home.php: getting pointers from ' . SITE_ROOT . DB_ROOT . DB_HOME);
+if(gettype($pointers) === 'integer' && $pointers < 0) {
+  error_log('home.php: failed to get pointers');
+  die('There was a problem. Please check back later');
+}
 $numbers = range(0,intval($pointers->count)-1);
 shuffle($numbers);
 //$numbers = array_slice($numbers, 0, $count);
