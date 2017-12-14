@@ -221,6 +221,7 @@
       return -1;
     }
     $data = null;
+    clearstatcache();
     if(file_exists($url)) {
       $data = json_decode(file_get_contents($url),$assoc);
       if($data === null && json_last_error() === JSON_ERROR_NONE) {

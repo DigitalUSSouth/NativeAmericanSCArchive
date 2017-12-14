@@ -16,9 +16,9 @@ if($count === null || (int)$count <= 0 || (string)$count === '') {
 } else {
   $count = intval($count);
 }
-//$pointers = getJsonLocal(SITE_ROOT . DB_ROOT . DB_HOME);
-$pointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
-error_log('home.php: getting pointers from ' . SITE_ROOT . DB_ROOT . DB_HOME);
+$pointers = getJsonLocal($_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_HOME);
+//$pointers = json_decode(file_get_contents(SITE_ROOT . DB_ROOT . DB_HOME));
+error_log('home.php: getting pointers from ' . $_SERVER['DOCUMENT_ROOT'] . REL_HOME . DB_ROOT . DB_HOME);
 if(gettype($pointers) === 'integer' && $pointers < 0) {
   error_log('home.php: failed to get pointers');
   die('There was a problem. Please check back later');
