@@ -248,13 +248,13 @@
     $lastIndex = 0;
     $index_root = '2000';
     foreach($json as $tribe_section) {
-      $arr = array();
       foreach($tribe_section['interviews'] as $transcript=>$interview) {
         if($lastIndex === 0) {echo '<script>document.getElementById("type").innerHTML = "interview";</script>';}
         echo '<script>document.getElementById("progress").innerHTML = ' . ($lastIndex+1) . ';</script>';
         flush();
         ob_flush();
         sleep(1);
+        $arr = array();
         $arr['pointer'] = (int)($index_root.$lastIndex++);
         $arr['type'] = 'interview';
         array_push($typeData,$arr);
@@ -274,31 +274,41 @@
     $arr = array();
     $arr['count'] = count($imageData);
     $arr['data'] = $imageData;
-    fwrite($fp, json_encode($arr));
+    if(fwrite($fp, json_encode($arr))===FALSE){
+      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+    }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_LETTER, 'w');
     $arr = array();
     $arr['count'] = count($letterData);
     $arr['data'] = $letterData;
-    fwrite($fp, json_encode($arr));
+    if(fwrite($fp, json_encode($arr))===FALSE){
+      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+    }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_INTERVIEW, 'w');
     $arr = array();
     $arr['count'] = count($interviewData);
     $arr['data'] = $interviewData;
-    fwrite($fp, json_encode($arr));
+    if(fwrite($fp, json_encode($arr))===FALSE){
+      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+    }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_HOME, 'w');
     $arr = array();
     $arr['count'] = count($homeData);
     $arr['data'] = $homeData;
-    fwrite($fp, json_encode($arr));
+    if(fwrite($fp, json_encode($arr))===FALSE){
+      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+    }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_TYPES, 'w');
     $arr = array();
     $arr['count'] = count($typeData);
     $arr['data'] = $typeData;
-    fwrite($fp, json_encode($arr));
+    if(fwrite($fp, json_encode($arr))===FALSE){
+      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+    }
     fclose($fp);
     
     printReturnNotes($returnNotes);
