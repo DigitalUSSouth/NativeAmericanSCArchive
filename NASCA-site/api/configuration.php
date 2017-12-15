@@ -1,4 +1,8 @@
 <?php
+
+/*
+ * Sample documentation
+ */
   libxml_use_internal_errors(true);
 
   $current_dir = str_replace('configuration.php','',__FILE__);
