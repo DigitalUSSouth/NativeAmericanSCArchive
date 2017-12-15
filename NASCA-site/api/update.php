@@ -275,7 +275,7 @@
     $arr['count'] = count($imageData);
     $arr['data'] = $imageData;
     if(fwrite($fp, json_encode($arr))===FALSE){
-      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+      array_push($returnNotes,'Couldn\'t write to ' . $path . DB_ROOT . DB_IMAGE);
     }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_LETTER, 'w');
@@ -283,7 +283,7 @@
     $arr['count'] = count($letterData);
     $arr['data'] = $letterData;
     if(fwrite($fp, json_encode($arr))===FALSE){
-      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+      array_push($returnNotes,'Couldn\'t write to ' . $path . DB_ROOT . DB_LETTER);
     }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_INTERVIEW, 'w');
@@ -291,7 +291,7 @@
     $arr['count'] = count($interviewData);
     $arr['data'] = $interviewData;
     if(fwrite($fp, json_encode($arr))===FALSE){
-      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+      array_push($returnNotes,'Couldn\'t write to ' . $path . DB_ROOT . DB_INTERVIEW);
     }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_HOME, 'w');
@@ -299,7 +299,7 @@
     $arr['count'] = count($homeData);
     $arr['data'] = $homeData;
     if(fwrite($fp, json_encode($arr))===FALSE){
-      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+      array_push($returnNotes,'Couldn\'t write to ' . $path . DB_ROOT . DB_HOME);
     }
     fclose($fp);
     $fp = fopen($path . DB_ROOT . DB_TYPES, 'w');
@@ -307,7 +307,7 @@
     $arr['count'] = count($typeData);
     $arr['data'] = $typeData;
     if(fwrite($fp, json_encode($arr))===FALSE){
-      array_push($returnNotes,'Couldn\'t write to ' . $fp);
+      array_push($returnNotes,'Couldn\'t write to ' . $path . DB_ROOT . DB_TYPES);
     }
     fclose($fp);
     
