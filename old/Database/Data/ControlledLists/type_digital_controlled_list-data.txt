@@ -1,5 +1,0 @@
-#[type_digital_id TINYINT(255), type_digital VARCHAR(63), description TEXT(1023)]
-[
-[(0),(Digital Image),(Description of Digital Image.)],
-[(1),(Digital Transcription of Text),(Description of Digital Transcription of Text)],
-]
