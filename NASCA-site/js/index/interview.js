@@ -20,7 +20,7 @@ function init_interviews() {
   else {//no sub uri, but we set the history to point to catawba
     replaceCurrentState("interviews","beaver-creek");
   }
-  
+  /*
   var custom_about_click = $('#custom-about-section-click');
   var custom_about_content = custom_about_click.siblings('#custom-about-section-content');
   custom_about_click.click(function() {
@@ -32,7 +32,7 @@ function init_interviews() {
       custom_about_click.html('About this page');
     } 
   });
-
+*/
   //register for tab changes, so we can update uri
   $('#interviews-nav a').on('shown.bs.tab', function(event){
     //console.log(event)

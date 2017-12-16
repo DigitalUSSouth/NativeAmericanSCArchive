@@ -9,7 +9,7 @@ usort($tabData,function($a,$b) {
 });
 
 ?>
-<div class="custom-row text-dark-grey" id="featured-container">
+<!--div class="custom-row text-dark-grey" id="featured-container">
   <div id="featured" class="source-serif">
     Interviews
     <div class="half-underline-black"></div>
@@ -22,7 +22,7 @@ usort($tabData,function($a,$b) {
       <div id="custom-about-section-click" class="clickable text-red">About this page</div>
     </div>
   </div>
-</div>
+</div-->
 
 
 <div id="interviews-nav" class="custom-row">
