@@ -56,6 +56,7 @@
   <p>Ashley Lowrimore, Public Relations Coordinator</p>
   <p>Elizabeth Streeter, Student Assistant</p>
   <p>Katie Shull, Student Assistant</p>
+  <p>William C. Judge, Videographer</p>
 </div>
 
 <hr class="red"/>
