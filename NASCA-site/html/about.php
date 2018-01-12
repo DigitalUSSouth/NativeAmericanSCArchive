@@ -31,6 +31,8 @@
   <p class="bullet-point"><a class="text-red" target="_blank" href="http://www.digitalussouth.org">Digital US South</a>, Institute of Southern Studies, University of South Carolina</p>
   <p class="bullet-point"><a class="text-red" target="_blank" href="http://library.sc.edu/p/Collections/Digital">University Libraries Digital Collections</a>, University of South Carolina</p>
   <p class="bullet-point"><a class="text-red" target="_blank" href="http://www.sc.edu/about/system_and_campuses/lancaster/study/student_opportunities/native_american_studies_center/archives/nas_archive/index.php">Native American Studies Archive</a>, University of South Carolina Lancaster</p>
+  <p class="bullet-point">South Caroliniana Library, University of South Carolina</p>
+  <p class="bullet-point">McKissick Museum, University of South Carolina</p>
 </div>
 
 <hr class="red"/>
