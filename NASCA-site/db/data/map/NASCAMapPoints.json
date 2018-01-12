@@ -7,7 +7,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -80.770182,
-        "lat": 34.719727
+        "lat": 34.719727,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Johannes Kolb Site",
@@ -17,7 +18,8 @@
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/wWh5bveJAo8",
         "lng": -79.707045,
-        "lat": 34.381568
+        "lat": 34.381568,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Winyah Bay",
@@ -27,7 +29,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -79.242887,
-        "lat": 33.278699
+        "lat": 33.278699,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Catawba Reservation",
@@ -37,7 +40,8 @@
         "img_embed": "http://www.scencyclopedia.org/sce/wp-content/uploads/2016/04/Catawba-People-in-Rock-Hill-SC-300x226.jpg",
         "yt_embed": "",
         "lng": -80.884859,
-        "lat": 34.902013
+        "lat": 34.902013,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Sewee Shell Ring",
@@ -47,7 +51,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -79.609097,
-        "lat": 33.001073
+        "lat": 33.001073,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Fort Watson Mound",
@@ -57,7 +62,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -80.43783,
-        "lat": 33.53896
+        "lat": 33.53896,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Topper Site",
@@ -67,7 +73,8 @@
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/-eQIZqofvwg",
         "lng": -81.244916,
-        "lat": 33.013573
+        "lat": 33.013573,
+        "marker-color": "#990000"
     },
     {
         "site_name": "South Carolina State Museum",
@@ -77,7 +84,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -81.048125,
-        "lat": 33.999332
+        "lat": 33.999332,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Sea Pines Shell Ring",
@@ -87,7 +95,8 @@
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/HqBThdC4zAE",
         "lng": -80.776078,
-        "lat": 32.139857
+        "lat": 32.139857,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Museum of the Cherokee",
@@ -97,7 +106,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -83.068118,
-        "lat": 34.764566
+        "lat": 34.764566,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Coosaw Island Shell Ring",
@@ -107,7 +117,8 @@
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/7P55Do4oQ1c",
         "lng": -80.5923250250261,
-        "lat": 32.4715039394753
+        "lat": 32.4715039394753,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Hagood Creek Petroglyph Site",
@@ -117,7 +128,8 @@
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/GgtPoEzFAs",
         "lng": -82.72231,
-        "lat": 34.927329
+        "lat": 34.927329,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Coastal Discovery Native Pottery Exhibit",
@@ -127,8 +139,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -80.744012,
-        "lat": 32.211744
-
+        "lat": 32.211744,
+        "marker-color": "#990000"
     },
     {
         "site_name": "The Charleston Museum",
@@ -138,8 +150,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -79.936053,
-        "lat": 32.792292
-
+        "lat": 32.792292,
+        "marker-color": "#990000"
     },
     {
         "site_name": "12,000 Year History Park",
@@ -149,7 +161,8 @@
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/tZEG3Lz62Ms",
         "lng": -81.028665,
-        "lat": 33.937396
+        "lat": 33.937396,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Fort Congaree",
@@ -159,8 +172,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -81.02775,
-        "lat": 33.94022
-
+        "lat": 33.94022,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Fort Moore",
@@ -170,8 +183,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -81.910106,
-        "lat": 33.439594
-
+        "lat": 33.439594,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Charlesfort",
@@ -181,8 +194,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -80.675512,
-        "lat": 32.3085
-
+        "lat": 32.3085,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Santa Elena",
@@ -192,8 +205,8 @@
         "img_embed": "",
         "yt_embed": "",
         "lng": -80.675512,
-        "lat": 32.3085
-
+        "lat": 32.3085,
+        "marker-color": "#990000"
     },
     {
         "site_name": "Fig Island Shell Ring/Spanish Mount",
@@ -203,7 +216,7 @@
         "img_embed": "",
         "yt_embed": "https://www.youtube.com/embed/7P55Do4oQ1c",
         "lng": -80.253431,
-        "lat": 32.54454
-
+        "lat": 32.54454,
+        "marker-color": "#990000"
     }
 ]}

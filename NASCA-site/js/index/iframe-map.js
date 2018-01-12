@@ -12,6 +12,7 @@ function generateGeoJson(_dataFile) {
 	//iteratively add to json string
 	for(var i = 0; i < data.features.length; i++) {
     geojson.push(jQuery.extend(true, {}, geojson_template));
+    
     if(data.features[i].hasOwnProperty('lng') && data.features[i].hasOwnProperty('lat')) {
       if(data.features[i].lng !== 0.0 && data.features[i].lat !== 0.0) {
         geojson[i].geometry.coordinates = [data.features[i].lng, data.features[i].lat];
@@ -137,6 +138,10 @@ function generateGeoJson(_dataFile) {
      * 
      */
     geojson[i].properties.description = descriptionStr;
+    //add marker color to geojson
+    if (data.features[i].hasOwnProperty('marker-color')){
+      geojson[i].properties['marker-color'] = data.features[i]['marker-color'];
+    }
 	}
 	return geojson;
 }

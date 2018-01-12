@@ -8,7 +8,7 @@
   "properties":
   {
     "description": "Sample Description",
-    "marker-color": "#990000",
+    "marker-color": "#000000",
     "marker-size": "medium",
     "marker-symbol": ""
   }
