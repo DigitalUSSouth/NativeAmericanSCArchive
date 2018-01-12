@@ -218,5 +218,593 @@
         "lng": -80.253431,
         "lat": 32.54454,
         "marker-color": "#990000"
+    },
+        {
+        "site_name": "Beech Island Historical Society",
+        "web_link": "https://www.beechislandhistory.org",
+        "web_link_hover": "Beech Island Historical Society Website",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.889838,
+        "lat": 33.425770
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Arts & Heritage Center of North Augusta",
+        "web_link": "http://www.artsandheritagecenter.com/",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.972639, 
+        "lat": 33.489402,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Pendleton District Historical, Recreation, and Tourism Commission",
+        "web_link": "http://www.crownofthecarolinas.org/explore-the-past",
+        "web_link_hover": "",
+        "description": "Links to information about historic sites and special research collections in the Pendleton District",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.783682,
+        "lat": 34.651974,
+		"marker-color": "#000000"
+
+    },
+    {
+       "site_name": "Coastal Discovery Museum",
+        "web_link": "http://www.coastaldiscovery.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.744023,
+        "lat": 32.211481,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Parris Island Museum",
+        "web_link": "http://www.parrisislandmuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.677305,
+        "lat": 32.347668,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Berkeley Conty Museum and Heritage Center",
+        "web_link": "http://www.berkeleymuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.972733,
+        "lat": 33.193212,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "The Village Museum",
+        "web_link": "http://www.villagemuseum.com",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.458846,
+        "lat": 33.08087,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Charleston Library Society",
+        "web_link": "http://www.charlestonlibrarysociety.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.932696,
+        "lat": 32.778445,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "The Charleston Museum",
+        "web_link": "http://www.charlestonmuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.935753,
+        "lat": 32.789884,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "South Carolina Historical Society",
+        "web_link": "http://www.schistory.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.930872,
+        "lat": 32.777257,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Chester Country Historical Society and Museum",
+        "web_link": "http://www.chesterschistory.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.214327,
+        "lat": 34.706331,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Cheraw Lyceum Museum",
+        "web_link": "http://www.cheraw.com/what_to_do.php?What-to-Do-Activities-to-Do-Museums-15",
+        "web_link_hover": "",
+        "description": "List of museums in Cheraw, including the Cheraw Lyceum Museum",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.883596,
+        "lat": 34.697686,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Edgefield Discovery Center",
+        "web_link": "https://discoversouthcarolina.com/products/26175",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.927108,
+        "lat": 33.789309,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Florence County Museum",
+        "web_link": "http://www.flocomuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.766224,
+        "lat": 34.195554,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Museum and Library of Confederate History",
+        "web_link": "http://confederatemuseumandlibrary.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.387277,
+        "lat": 34.849985,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Greer Heritage Museum",
+        "web_link": "http://www.cityofgreer.org/visit/heritage_museum.php",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.228097,
+        "lat": 34.9382,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Upcountry History Museum",
+        "web_link": "http://www.upcountryhistory.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.402908,
+        "lat": 34.857128,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Greenwood Museum",
+        "web_link": "http://www.emeraldtriangle.us/museum-railroad-center",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.160523,
+        "lat": 34.193055,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Horry County Museum",
+        "web_link": "http://www.horrycountymuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -79.051586,
+        "lat": 33.841906,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Pauline Pratt Webel Museum",
+        "web_link": "http://jaspersc.org/discover_jasper_county/point_of_interest.htm",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.977766,
+        "lat": 32.481597,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Camden Archives and Museum",
+        "web_link": "http://cityofcamden.org/archivesmuseum.aspx",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.606798,
+        "lat": 34.251168,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Historic Camden Foundation",
+        "web_link": "http://www.historic-camden.net",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.604694,
+        "lat": 34.233535,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "USC Lancaster Native American Studies Center",
+        "web_link": "http://www.sc.edu/about/system_and_campuses/lancaster/study/student_opportunities/native_american_studies_center/index.php",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.769909,
+        "lat": 34.719572,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Gray Court Owings Historical Society",
+        "web_link": "http://www.gcohistoricalsociety.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.11005,
+        "lat": 34.605885,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Laurens County Museum Association",
+        "web_link": "http://www.laurenscountymuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.016118,
+        "lat": 34.499507,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Lexington County Museum",
+        "web_link": "http://www.lex-co.sc.gov/museum",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.239822,
+        "lat": 33.986771,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Cayce Historical Museum",
+        "web_link": "http://www.cityofcayce-sc.gov/museum.asp",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.065329,
+        "lat": 33.96908,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Oconee Heritage Center",
+        "web_link": "http://www.oconeeheritagecenter.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -83.067241,
+        "lat": 34.764122,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Museum of the Cherokee Indians of SC",
+        "web_link": "http://www.cherokeemuseumsc.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -83.068082,
+        "lat": 34.76433,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Elloree Heritage Museum and Cultural Center",
+        "web_link": "http://www.elloreemuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.572883,
+        "lat": 33.530641,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Clemson University, Hopewell Plantation",
+        "web_link": "http://www.clemson.edu/about/history/properties/hopewell",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.837117,
+        "lat": 34.654191,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Clemson University Special Collections Library",
+        "web_link": "http://library.clemson.edu/depts/specialcollections",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.838078,
+        "lat": 34.673512,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Pickens County Museum",
+        "web_link": "http://www.visitpickenscounty.com/vendor/108/pickens-county-museum-of-art-history",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.705529,
+        "lat": 34.881324,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Hagood Mill Site",
+        "web_link": "http://www.visitpickenscounty.com/vendor/61/hagood-mill-historic-folklife-center/",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -82.722278,
+        "lat": 34.927052,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "SC Confederate Relic Room and Military Museum",
+        "web_link": "http://crr.sc.gov",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.048006,
+        "lat": 33.998294,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "SC Institute of Archaeology and Anthropology",
+        "web_link": "http://artsandsciences.sc.edu/sciaa/front-page",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.029942,
+        "lat": 33.999587,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "SC Department of Archives and History",
+        "web_link": "http://scdah.sc.gov",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.961606,
+        "lat": 34.09264,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "SC State Museum",
+        "web_link": "http://www.scmuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.048006,
+        "lat": 33.998294,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "South Caroliniana Library, USC Columbia",
+        "web_link": "http://library.sc.edu/p/Collections/SCL?",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.029961,
+        "lat": 33.99837,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "McKissick Museum, USC Columbia",
+        "web_link": "http://www.sc.edu/study/colleges_schools/artsandsciences/mckissick_museum/index.php/",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.026296,
+        "lat": 33.997263,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Saluda County Museum",
+        "web_link": "https://discoversouthcarolina.com/products/2619",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.77106,
+        "lat": 34.001378,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Spartanburg Art Museum",
+        "web_link": "http://www.spartanburgartmuseum.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.929739,
+        "lat": 34.953106,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Sumter County Museum and Historical Society",
+        "web_link": "http://www.sumtersc.gov/sumter-county-museum",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.344927,
+        "lat": 33.923323,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Catawba Indian Nation Archives and Cultural Center",
+        "web_link": "http://www.catawbaindian.net/about-us/our-culture/catawba-cultural-center",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.883026,
+        "lat": 34.901476,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Historical Center of York County (McCelvey Center)",
+        "web_link": "http://www.chmuseums.org/history-hc",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.240636,
+        "lat": 34.989301,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Museum of York County",
+        "web_link": "http://www.chmuseums.org/myco",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.062655,
+        "lat": 35.010088,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "Springs/Close Archives (White Homestead)",
+        "web_link": "http://www.springscolsefamilyarchives.com/home.html",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -80.950185,
+        "lat": 35.01641,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "York County Library",
+        "web_link": "http://www.yclibrary.org",
+        "web_link_hover": "",
+        "description": "",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.028471,
+        "lat": 34.92458,
+		"marker-color": "#000000"
+
+    },
+    {
+        "site_name": "USC Salkehatchie",
+        "web_link": "http://www.sc.edu/about/system_and_campuses/salkehatchie/community/topper_site/index.php",
+        "web_link_hover": "",
+        "description": "Press release about Topper Site archaelogical artifacts housed at USC-Salkehatchie library",
+        "img_embed": "",
+        "yt_embed": "",
+        "lng": -81.299641,
+        "lat": 33.013126,
+		"marker-color": "#000000"
+
     }
 ]}
