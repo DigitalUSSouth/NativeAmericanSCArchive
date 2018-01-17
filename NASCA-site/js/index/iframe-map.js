@@ -153,5 +153,11 @@ var myLayer = L.mapbox.featureLayer().addTo(mapTooltips);
 var geojson = generateGeoJson(parent.SITE_ROOT + '/db/data/map/NASCAMapPoints.json');
 myLayer.setGeoJSON(geojson);
 mapTooltips.scrollWheelZoom.enable();
+mapLegend = L.mapbox.legendControl({position:'topright'});
+mapLegend.addLegend("<div>"+
+  "<p><span style=\"background-color:#000000;\">__</span>&nbsp;<strong>Description</strong></p>"+
+  "<p><span style=\"background-color:#990000;\">__</span>&nbsp;<strong>Description</strong></p>"+
+  "</div>");
+mapLegend.addTo(mapTooltips);
 
 //for old browsers -->
