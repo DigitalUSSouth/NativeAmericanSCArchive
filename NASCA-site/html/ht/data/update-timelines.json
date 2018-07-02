@@ -1,6 +1,14 @@
 [
 	[
 		{
+		"pos":1,
+		"img": {
+			"TopperStratigraphy.jpg-": "Topper tools and stratigraphy"
+		}
+		}
+	],
+	[
+		{
 		"pos":2,
 		"img": {
 			"3 Haw River Point Pre-Clovis.JPG-": "Possible Pre-Clovis Haw River Point"
@@ -69,7 +77,7 @@
 		{
 		"pos":1,
 		"img": {
-			"15 Village potters Woodland.jpg-":"Painting by Martin Pate"
+			"15 Village potters Woodland.jpg-":"Middle Woodland potters scene by Martin Pate"
 		}
 		},
 		{
@@ -81,7 +89,7 @@
 		{
 		"pos":3,
 		"img":{
-			"17 Large Triangular Arowpoint Woodland.jpg-":"Kolb Triangular Points"
+			"17 Large Triangular Arowpoint Woodland.jpg-":"Triangular Points. Santee River arrowhead-photo by Bob Costello."
 		}
 		},
 		{
