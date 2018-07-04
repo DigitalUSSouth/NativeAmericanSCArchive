@@ -47,7 +47,7 @@ function init_timeline() {
   console.log(elements);
 
 
-  for(var i=1; i<=12; i++){
+  for(var i=1; i<=13; i++){
     $("#timelineModal"+i).on('shown.bs.modal', function(e){
       var i = e.relatedTarget.dataset.boxId; //have to redeclare because of scope
       var indexNum = i;
@@ -71,7 +71,7 @@ function init_timeline() {
 
   if (currentUrl.length >= 2){//we might have a sub uri
     nUrl = parseInt(currentUrl[1]);
-    if (nUrl>=1 && nUrl<=12){
+    if (nUrl>=1 && nUrl<=13){
       currentTimeline = currentUrl[1];      
     }
     else {
