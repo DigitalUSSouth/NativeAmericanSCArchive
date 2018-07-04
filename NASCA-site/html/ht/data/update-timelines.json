@@ -114,19 +114,26 @@
 	],
 	[
 		{
-		"pos":10,
+		"pos":13,
+		"img": {
+			"CulminatingBattleoftheTuscaroraWar1713.jpg-":"NC history marker",
+			"ADatchViewoftheYamaseeWarinSC.jpg-":"1715 Dutch illustration of war"
+		}
+		},
+		{
+		"pos":16,
 		"img": {
 			"42 Fort Congaree 1718-1722.jpg-":"Ft Congaree painting by Martin Pate"
 		}
 		},
 		{
-		"pos":11,
+		"pos":17,
 		"img": {
 			"43- Yuchi Indians along the Savannah in 1736.jpg-":"Von Reck water color"
 		}
 		},
     {
-		"pos":13,
+		"pos":20,
 		"img": {
 			"1759-12-26-Cherokee-Treaties-1.jpg-":"",
       "1759-12-26-Cherokee-Treaties-2.jpg-":"",
@@ -134,7 +141,7 @@
 		}
 		},
     {
-		"pos":15,
+		"pos":21,
 		"img": {
 			"1761-09-23-Cherokee-Treaties-1.jpg-":"",
       "1761-09-23-Cherokee-Treaties-2.jpg-":"",
@@ -143,7 +150,7 @@
 		}
 		},
 		{
-		"pos":17,
+		"pos":23,
 		"img": {
 			"1777-05-20-Cherokee-Treaties-1.jpg-":"",
       "1777-05-20-Cherokee-Treaties-2.jpg-":""
