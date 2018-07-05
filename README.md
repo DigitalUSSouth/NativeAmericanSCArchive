@@ -11,12 +11,13 @@ Latest Flash Player
 
 ## APPROVED BROWSERS
 
-*************************| Windows 7+ | Mac OSX 10.0+ | Linux Ubuntu 14.04+ |
-Google Chrome & Chromium | Supported  |   Untested    |     Supported       |
-Mozilla Firefox          | Supported  |   Untested    |      Untested       |
-Microsoft Edge           |  Untested  |   Untested    |      Untested       |
-Apple Safari             |  Untested  |   Untested    |      Untested       |
-Opera                    |  Untested  |   Untested    |      Untested       |
+|                          | Windows 7+ | Mac OSX 10.0+ | Linux Ubuntu 14.04+ |
+|--------------------------|------------|---------------|---------------------|
+| Google Chrome & Chromium | Supported  |   Supported   |     Supported       |
+| Mozilla Firefox          | Supported  |   Supported   |     Supported       |
+| Microsoft Edge           |  Untested  |   Untested    |      Untested       |
+| Apple Safari             |  Untested  |   Supported   |      Untested       |
+| Opera                    |  Untested  |   Untested    |      Untested       |
 
 ## BUILT WITH
 
@@ -52,12 +53,14 @@ Opera                    |  Untested  |   Untested    |      Untested       |
 
 - Timeline revisions
 
-*TODO: add archivists
+## ARCHIVISTS
+
+*TO DO: add archivists*
 
 ## LICENSE
 
 This project is licensed under the GNU General Purpose License V3 - see the LICENSE.md file for details
 
-## ACKNOWLEDGMENTS
+## ACNKOWLEDGMENTS 
 
-*TODO: add acknowledgments*
+*TO DO: add acknowledgments*
