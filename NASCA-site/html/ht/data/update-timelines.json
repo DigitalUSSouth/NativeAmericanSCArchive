@@ -1,24 +1,15 @@
 [
 	[
 		{
-		"pos":2,
-		"img": {
-			"3 Haw River Point Pre-Clovis.JPG-": "Haw River photo"
-		}
-		}
-	],
-	[
-		{
 		"pos":1,
 		"img": {
-			"4 Eggstone Paleoindian or Early Archaic.jpg-":"",
-			"4 The Story Teller  Paleoindian.jpg-":"The Storyteller by Martin Pate"
+			"TopperStratigraphy.jpg-": "Topper tools and stratigraphy"
 		}
 		},
 		{
 		"pos":2,
 		"img": {
-			"5 Fluted Points PALEOINDIAN.JPG-": "fluted projectile point"
+			"3 Haw River Point Pre-Clovis.JPG-": "Possible Pre-Clovis Haw River Point"
 		}
 		}
 	],
@@ -26,7 +17,22 @@
 		{
 		"pos":1,
 		"img": {
-			"6 Dalton Point.jpg-":"Steen Daltons",
+			"4 The Story Teller  Paleoindian.jpg-":"The Storyteller by Martin Pate",
+			"4 Eggstone Paleoindian or Early Archaic.jpg-":"Eggstone possibly used as a bola"
+		}
+		},
+		{
+		"pos":2,
+		"img": {
+			"5 Fluted Points PALEOINDIAN.JPG-": "Dalton Spearpoints"
+		}
+		}
+	],
+	[
+		{
+		"pos":1,
+		"img": {
+			"6 Dalton Point.jpg-":"Dalton spearpoints",
 			"6 Dalton Spear Point late Paleoindian.JPG-":""
 		}
 		}
@@ -41,10 +47,10 @@
 		{
 		"pos":2,
 		"img": {
-			"9 Atlatl replica close up.JPG-":"Atlatl",
+			"9 Atlatl replica close up.JPG-":"Replica Atlatl (spearthrower)",
 			"9 Atlatl replica.JPG-":"",
-			"9 Corner Notched Spear Point Early Archaic.JPG-":"",
-			"9 Kirk Spear Points Early Archaic.JPG-":""
+			"9 Corner Notched Spear Point Early Archaic.JPG-":"Early Archaic corner notch point used with Atlatl",
+			"9 Kirk Spear Points Early Archaic.JPG-":"Three Kirk serrated projectile points/knifes"
 		}
 		}
 	],
@@ -54,8 +60,8 @@
 		"pos":1,
 		"img": {
 			"12 Sara's Ridge Site LAte Archaic.jpg-":"Sara's Ridge by Martin Pate",
-			"12 perforated soapstone cooking discs.jpg-":"",
-			"12 Thoms Creek Pottery Late ArchaicEarly Woodland.JPG-":""
+			"12 perforated soapstone cooking discs.jpg-":"Perforated Soapstone cooking disk",
+			"12 Thoms Creek Pottery Late ArchaicEarly Woodland.JPG-":"Late Archaic Thoms Creek pottery sherds from Kolb site"
 		}
 		},
 		{
@@ -69,7 +75,7 @@
 		{
 		"pos":1,
 		"img": {
-			"15 Village potters Woodland.jpg-":"Painting by Martin Pate"
+			"15 Village potters Woodland.jpg-":"Middle Woodland potters scene by Martin Pate"
 		}
 		},
 		{
@@ -81,14 +87,14 @@
 		{
 		"pos":3,
 		"img":{
-			"17 Large Triangular Arowpoint Woodland.jpg-":"Kolb Triangular Points"
+			"17 Large Triangular Arowpoint Woodland.jpg-":"Triangular Points. Santee River arrowhead-photo by Bob Costello."
 		}
 		},
 		{
 		"pos":4,
 		"img":{
 			"18 Woodland Burial Mound.jpg-":"McLeod Mound",
-			"18 Woodland Burila Mound.jpg-":""
+			"18 Woodland Burila Mound.jpg-":"Courtesy American Mesuem of Natural History"
 		}
 		}
 	],
@@ -96,7 +102,7 @@
 		{
 		"pos":1,
 		"img": {
-			"19 Ruckers Bottom Site Mississippian.jpg-":"Ruckers Bottom by Martin Pate"
+			"19 Ruckers Bottom Site Mississippian.jpg-":"Ruckers Bottom Mississippian Village by Martin Pate"
 		}
 		}
 	],
@@ -108,19 +114,26 @@
 	],
 	[
 		{
-		"pos":10,
+		"pos":13,
+		"img": {
+			"CulminatingBattleoftheTuscaroraWar1713.jpg-":"NC history marker",
+			"ADatchViewoftheYamaseeWarinSC.jpg-":"1715 Dutch illustration of war"
+		}
+		},
+		{
+		"pos":16,
 		"img": {
 			"42 Fort Congaree 1718-1722.jpg-":"Ft Congaree painting by Martin Pate"
 		}
 		},
 		{
-		"pos":11,
+		"pos":17,
 		"img": {
 			"43- Yuchi Indians along the Savannah in 1736.jpg-":"Von Reck water color"
 		}
 		},
     {
-		"pos":13,
+		"pos":20,
 		"img": {
 			"1759-12-26-Cherokee-Treaties-1.jpg-":"",
       "1759-12-26-Cherokee-Treaties-2.jpg-":"",
@@ -128,7 +141,7 @@
 		}
 		},
     {
-		"pos":15,
+		"pos":21,
 		"img": {
 			"1761-09-23-Cherokee-Treaties-1.jpg-":"",
       "1761-09-23-Cherokee-Treaties-2.jpg-":"",
@@ -137,10 +150,28 @@
 		}
 		},
 		{
-		"pos":17,
+		"pos":23,
 		"img": {
 			"1777-05-20-Cherokee-Treaties-1.jpg-":"",
       "1777-05-20-Cherokee-Treaties-2.jpg-":""
+		}
+		},
+		{
+		"pos":24,
+		"img": {
+			"CatawbaIndianReservation.jpg-":"",
+			"catres1772.jpg-":"Map of Catawba Indian Reservation"
+		}
+		}
+	],
+	[
+		{
+		"pos":5,
+		"img": {
+			"LelandGroveDillonCounty.jpg-":"Leland Grove Indian School",
+			"SardisLattaDillonCounty.jpg-":"Sardis Indian School",
+			"TurkSumterCounty.jpg-":"Dalzell Indian School",
+			"CatawbaIndianReservationYorkCounty.jpg-":"Catawba Indian School"
 		}
 		}
 	]
