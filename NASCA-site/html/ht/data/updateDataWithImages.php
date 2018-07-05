@@ -5,13 +5,13 @@
 */
 
 require_once "../../../api/configuration.php";
-/* Reenable password check before pushing to live server - JR
+
 if(isset($_GET['pw']) && $_GET['pw'] === UPDATE_PW) {
   echo 'Password Accepted';
 } else {
   die('You do not have sufficient permissions.');
 }
-*/
+
 //header("Content-Type: application/json");
 //print '<pre>';
 for ($i=1; $i<=13; $i++){
@@ -27,9 +27,8 @@ for ($i=1; $i<=13; $i++){
     $eventIndex = (int)$slideImages['pos']-1;  
     $outString = '';
     foreach ($slideImages['img'] as $path => $desc){
-      /* Changed to relative URLs for better portability of project - JR */
-      $thumbPath = /*SITE_ROOT.*/'/db/data/timelines/timeline-img-300/'.$path.'thumb.jpg'; 
-      $fullPath = /*SITE_ROOT.*/'/db/data/timelines/timeline-img-large/'.$path.'large.jpg';
+      $thumbPath = SITE_ROOT.'/db/data/timelines/timeline-img-300/'.$path.'thumb.jpg'; 
+      $fullPath = SITE_ROOT.'/db/data/timelines/timeline-img-large/'.$path.'large.jpg';
       $outString = $outString . '<div class="clearfix"></div><div class="col-xs-6"><a class="fancybox-timeline" href="'.$fullPath.'" data-fancybox="Timeline Images" data-type="image" data-caption="'.$desc.'"><img src="'.$thumbPath.'" id="preview-media"></a><br><p>'.$desc.'</p></div>';
     }
     //print htmlspecialchars($outString).'<br>';
