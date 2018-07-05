@@ -158,5 +158,14 @@
 		}
 	],
 	[
+		{
+		"pos":5,
+		"img": {
+			"LelandGroveDillonCounty.jpg-":"Leland Grove Indian School",
+			"SardisLattaDillonCounty.jpg-":"Sardis Indian School",
+			"TurkSumterCounty.jpg-":"Dalzell Indian School",
+			"CatawbaIndianReservationYorkCounty.jpg-":"Catawba Indian School"
+		}
+		}
 	]
 ]
