@@ -6,7 +6,7 @@
           "credit": ""
         },
         "text": {
-          "headline": "Spanish Exploration",
+          "headline": "Later Spanish Contact and Colonization",
           "text": "<p>A.D. 1566-1608</p>"
         }
     },
@@ -24,7 +24,7 @@
         },
         "text": {
           "headline": "Santa Elena",
-          "text": "<p>Spanish & Indian Pottery</p> Beaufort, SC <br> A.D. 1566-1587 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://santa-elena.org\">Santa Elena website </a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/santa-elena/\">Santa Elena More Info</a>"
+          "text": "<p>Spanish & Indian Pottery</p> Beaufort, SC <br> A.D. 1566-1587 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://santa-elena.org\">Santa Elena website </a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/fort-san-felipe/\">Fort San Felipe More Information</a> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/santa-elena/\">Santa Elena More Information</a>"
         }
       },
 	  { 
@@ -39,7 +39,7 @@
           "year": "1568"
         },
         "text": {
-          "headline": "Pardo Expeditions",
+          "headline": "Juan Pardo Expeditions 1566-1568",
           "text": "<p>Expedition route map</p> A.D. 1566-1568 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"https://exploringjoara.org/\">More Info </a><br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/pardo-juan/\">Pardo Juan Info</a> "
         }
       },
@@ -55,8 +55,8 @@
           "year": "1608"
         },
         "text": {
-          "headline": "Ejica",
-          "text": "Santee River Mouth"
+          "headline": "Francisco Fernandez Ejica",
+          "text": "Spanish sailor explores mouth of the Santee River"
         }
       }
       
