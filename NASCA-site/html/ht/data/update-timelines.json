@@ -173,6 +173,12 @@
 			"TurkSumterCounty.jpg-":"Dalzell Indian School",
 			"CatawbaIndianReservationYorkCounty.jpg-":"Catawba Indian School"
 		}
+		},
+		{
+		"pos":7,
+		"img": {
+			"MoroniGeorge.jpg-":"Moroni George"
+		}
 		}
 	]
 ]
