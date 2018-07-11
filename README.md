@@ -52,6 +52,7 @@ Latest Flash Player
 ### Joshua Rystedt:
 
 - Timeline revisions
+- Tabbed Communities page
 
 ## ARCHIVISTS
 
