@@ -399,6 +399,7 @@ function dynamic_css() {
       //TRIBES CSS GOES HERE
       //VVVVVVVVVVVVVVVVVVVVVVVV
       page.css('height', 'auto');
+      
       //set margins
       var newMargin = $(window).width() * 0.01507;
       if (newMargin < 19) {
