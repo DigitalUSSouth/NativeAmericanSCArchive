@@ -8,10 +8,22 @@
     die('Something went wrong.');
   }
   $id = $_GET['tribe_id'];
+  $tab_id = $_GET['tab_id'];
   $page_num = $_GET['page_num'];
   $api_dir = preg_replace('/html.tribes_history_page\.php/','api/',__FILE__);// 'html\home.php','',__FILE__);
   include_once ($api_dir . 'configuration.php');
-  $details = json_decode(file_get_contents(SITE_ROOT . '/db/data/tribes/data.json'));
+  
+  // grab current tab's json database
+  if ($tab_id == 'federally-recognized') {
+    $details = json_decode(file_get_contents(SITE_ROOT . '/db/data/tribes/data-federally-recognized.json'));
+  } elseif ($tab_id == 'state-recognized-groups') {
+    $details = json_decode(file_get_contents(SITE_ROOT . '/db/data/tribes/data-state-recognized-groups.json'));
+  } elseif ($tab_id == 'state-recognized-tribes') {
+    $details = json_decode(file_get_contents(SITE_ROOT . '/db/data/tribes/data-state-recognized-tribes.json'));
+  } elseif ($tab_id == 'unrecognized') {
+    $details = json_decode(file_get_contents(SITE_ROOT . '/db/data/tribes/data-unrecognized.json'));
+  }
+  
   $desc_dir = $details->directories->description_directory;
   $tribe = $details->data[$id];
   include_once ($api_dir . 'cdm.php');
