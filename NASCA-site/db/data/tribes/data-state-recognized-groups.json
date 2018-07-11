@@ -1,6 +1,18 @@
-{"count":0,
+{"count":3,
   "directories":{
   "image_directory":"/img/tribesLogos",
   "description_directory":"/db/data/tribes"},
   "data":[
+    {"logo":"ecsiut.png",
+    "title":"ECSIUT",
+    "description":"ecsiut.html",
+    "pages":3},
+    {"logo":"natchez.png",
+    "title":"Natchez Tribe of South Carolina",
+    "description":"natchez.html",
+    "pages":3},
+    {"logo":"pee_dee_tribe_bc.png",
+    "title":"The Pee Dee Indian Tribe of Beaver Creek",
+    "description":"peedee-tribe-bc.html",
+    "pages":6}
   ]}
