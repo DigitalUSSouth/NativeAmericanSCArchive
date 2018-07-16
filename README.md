@@ -54,6 +54,7 @@ Latest Flash Player
 - Timeline revisions
 - Tabbed Communities page
 - Additional map points
+- Interview additions
 
 ## ARCHIVISTS
 
