@@ -1,0 +1,10 @@
+{"count":1,
+  "directories":{
+  "image_directory":"/img/tribesLogos",
+  "description_directory":"/db/data/tribes"},
+  "data":[
+  {"logo":"chicora.png",
+  "title":"Chicora Indian Tribe of South Carolina",
+  "description":"chicora.html",
+  "pages":2}
+  ]}

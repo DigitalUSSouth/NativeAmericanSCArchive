@@ -60,5 +60,14 @@
     },
     "logo":"/img/tribesLogos/wassamasaw.png",
     "href": "wassamasaw"
+  },
+  {
+    "tribe": "Santee Indian Organization",
+    "description":"",
+    "interviews": {
+      "Oscar-Pratt-2004-minified.json":"Oscar Pratt"
+    },
+    "logo":"/img/tribesLogos/santee.png",
+    "href": "santee"
   }
 ]

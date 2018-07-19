@@ -1,0 +1,23 @@
+[
+  
+  {
+    "tab": "Federally Recognized",
+    "href": "federally-recognized"
+  },
+  
+  {
+    "tab": "State Recognized Tribes",
+    "href": "state-recognized-tribes"
+  },
+  
+  {
+    "tab": "State Recognized Groups",
+    "href": "state-recognized-groups"
+  },
+  
+  {
+    "tab": "Unrecognized",
+    "href": "unrecognized"
+  }
+  
+]
