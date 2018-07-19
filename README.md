@@ -15,8 +15,8 @@ Latest Flash Player
 |--------------------------|------------|---------------|---------------------|
 | Google Chrome & Chromium | Supported  |   Supported   |     Supported       |
 | Mozilla Firefox          | Supported  |   Supported   |     Supported       |
-| Microsoft Edge           |  Untested  |   Untested    |      Untested       |
-| Apple Safari             |  Untested  |   Supported   |      Untested       |
+| Microsoft Edge           |  Untested  |   N/A    	|      N/A            |
+| Apple Safari             |   N/A    	|   Supported   |      N/A    	      |
 | Opera                    |  Untested  |   Untested    |      Untested       |
 
 ## BUILT WITH
