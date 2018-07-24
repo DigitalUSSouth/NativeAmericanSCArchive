@@ -29,7 +29,7 @@
           <br/>
           <p><i>OR</i></p>
           <br/>
-          <p>Click the tabs in the nav bar to see all the images, interviews, etcetera, in one place. You're also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>
+          <p>Click the tabs in the menu above to see all the images, interviews, etcetera, in one place. You're also encouraged to visually learn about local Native American history under the Video, Map, and Timeline tabs!</p>
         </div>
       </div>
     </div>
