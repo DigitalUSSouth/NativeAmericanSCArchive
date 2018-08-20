@@ -130,3 +130,47 @@ font-style:italic
 width:85%;
 height:auto
 }
+#tribes-nav{
+position:relative;
+display:flex;
+display:-webkit-flex;
+font-size:16px;
+flex-wrap:wrap;
+-webkit-flex-wrap:wrap;
+border-bottom:2px solid black;
+margin-bottom:2em
+}
+div.tribes-nav-button{
+margin:0.5em auto;
+position:relative;
+height:auto;
+display:inline-flex;
+display:-webkit-inline-flex;
+flex-shrink:0;
+-webkit-flex-shrink:0
+}
+.tribes-nav-button > div.half-underline-red{
+border-bottom:4px solid #930707
+}
+#tribes-nav > .text-dark-grey > div.half-underline-red{
+border-bottom:0px solid white
+}
+.tribes-nav-button > a,.tribes-nav-button > a:visited,.tribes-nav-button > a:link{
+color:inherit !important;
+font-size:inherit !important;
+font-weight:bold;
+position:relative;
+z-index:2;
+text-decoration:none;
+padding:0 21px
+}
+.tribes-nav-button > .half-underline-red{
+z-index:1
+}
+.tribes-nav-button > a:hover,.tribes-nav-button > a:active{
+text-decoration:none;
+color:#B20A0A !important
+}
+.tribes-nav-button > div.half-underline-red{
+height:2em !important
+}

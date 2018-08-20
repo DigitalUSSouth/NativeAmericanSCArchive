@@ -2,6 +2,36 @@ function init_tribes() {
   toggleSearch("on");
   init_shadows();
   
+  // Navbar
+  if (currentUrl.length >= 2){//we might have a sub uri
+    if ($.inArray(currentUrl[1],["federally-recognized","state-recognized-groups","state-recognized-tribes","unrecognized"]) !== -1){
+      currentTabTribes = currentUrl[1];      
+    }
+    else {
+      changePage("404","tabs-home");
+      return;
+    }
+    $('#tribes-nav a[href="#'+currentTabTribes+'"]').tab('show');
+  }
+  else {//no sub uri, but we set the history to point to federally-recognized
+    replaceCurrentState("tribes","federally-recognized");
+  }
+  
+  //register for tab changes, so we can update uri
+  $('#tribes-nav a').on('shown.bs.tab', function(event){
+    //console.log(event)
+    $(event.target).parent().addClass('tab-active').switchClass('text-dark-grey','text-red',{duration:60,queue:true}).siblings('.tab-active').removeClass('tab-active').switchClass('text-red','text-dark-grey',{duration:60,queue:true});
+    //$('div.tab-active').removeClass('tab-active').switchClass('text-red','text-dark-grey');
+    var hash = event.target.hash; // active tab
+    var tab = hash.substring(1); //remove leading '#'
+    if(currentUrl.length < 3) {
+      setNewState("tribes",tab);
+    }
+    //console.trace();
+    // dynamic_css();
+    currentTabTribes = tab;
+  });
+  
   /*$('.card-hover').each(function () {
     $(this).attr('href',SITE_ROOT + '/html/tribes.php');
   });*/
@@ -33,7 +63,7 @@ function init_tribes() {
       });
       $('.tribes-history-prev-container .tribes-history-nav').css('display','none');
       $('button.fancybox-close-small').addClass('custom-fancybox-close');
-      dynamic_css();
+      //dynamic_css();
     },
     afterShow: function(){
       //load text for page 1
@@ -68,11 +98,21 @@ function init_tribes() {
   }
 }
 
-function tribes_history_page_load() {
+function tribes_history_page_load(jtag) {
   var tribe_id = parseInt($('.tribes-history-text-container .additional #current-tribe').html());
+  var tab_int = parseInt($('.tribes-history-text-container .additional #current-tab').html());
+  if (tab_int == 1) {
+    var tab_id = 'federally-recognized';
+  } else if (tab_int == 2) {
+    var tab_id = 'state-recognized-tribes';
+  } else if (tab_int == 3) {
+    var tab_id = 'state-recognized-groups';
+  } else if (tab_int == 4) {
+    var tab_id = 'unrecognized';
+  } 
   var page_num = parseInt($('.tribes-history-text-container .additional #current-page').html());
   var url = SITE_ROOT + '/html/tribes_history_page.php';
-  url += '?tribe_id='+tribe_id+'&page_num='+page_num;
+  url += '?tribe_id='+tribe_id+'&page_num='+page_num+'&tab_id='+tab_id;
   $.ajax({
     type:'POST',
     url: url,
@@ -91,9 +131,24 @@ function tribes_history_page_change(direction,jtag) {
   var info = jtag.parent().siblings('.tribes-history-body').find('.tribes-history-text-container .additional');
   var tribe_id = parseInt(info.find('#current-tribe').html());
   //console.log(tribe_id);
+  var tab_int = parseInt(info.find('#current-tab').html());
+  // console.log(tribe_int);
   var current_page = parseInt(info.find('#current-page').html());
   //console.log(current_page);
-  var tribes_data = getJsonObject(SITE_ROOT+'/db/data/tribes/data.json');
+  
+  // load current tab's json database
+  if (tab_int == 1) {
+    var tribes_data = getJsonObject(SITE_ROOT+'/db/data/tribes/data-federally-recognized.json');
+  } else if (tab_int == 2) {
+    var tribes_data = getJsonObject(SITE_ROOT+'/db/data/tribes/data-state-recognized-tribes.json');
+  } else if (tab_int == 3) {
+    var tribes_data = getJsonObject(SITE_ROOT+'/db/data/tribes/data-state-recognized-groups.json');
+  } else if (tab_int == 4) {
+    var tribes_data = getJsonObject(SITE_ROOT+'/db/data/tribes/data-unrecognized.json');
+  }  else {
+    var tribes_data = getJsonObject(SITE_ROOT+'/db/data/tribes/data.json');
+  }
+  
   var pages = tribes_data.data[tribe_id].pages;
   if(pages === 'undefined' || pages === null || pages <= 1) {
     pages = 1;

@@ -561,13 +561,13 @@ width:auto;
 max-width:50%
 }
 #custom-about-section-click{
-display:inline
+display:none
 }
 #custom-about-section-click:hover{
 color:black
 }
 #custom-about-section-content{
-letter-spacing:-0.5ex;
-opacity:0;
-display:none
+letter-spacing:0ex;
+opacity:1;
+display:inline
 }

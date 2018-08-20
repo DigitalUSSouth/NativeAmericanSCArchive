@@ -31,14 +31,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    
+
     <title>NASCA</title>
-    
+
     <!-- metadata tags here -->
     <meta name="description" content="Native American South Carolina Archive"/>
     <meta name="author" content="Matthew Jendrasiak"/>
-    
-    <?php 
+
+    <?php
       // the following global js variable contains the same elements as the php $currentUrl
     ?>
     <script>
@@ -61,7 +61,7 @@
     <!-- timelineJS base code pulls -->
   <link rel="stylesheet" href="//cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
   <script type="text/javascript" src="//cdn.knightlab.com/libs/timeline3/latest/js/timeline-min.js"></script>
-    
+
     <!-- CSS & BootStrap -->
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/js/jquery/jquery-ui/jquery-ui.min.css"/>
     <!--link rel="stylesheet" type="text/css" href="js/jquery/jquery-ui.structure.min.css"/>
@@ -79,11 +79,11 @@
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/video.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/bootstrap.min.css"/>
 
-    
+
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Source+Serif+Pro" rel="stylesheet">
-    
-    
+
+
     <!-- ICON -->
     <link rel="icon" type="image/x-icon" href="<?php print SITE_ROOT?>/img/favicon/favicon.ico"/>
 
@@ -94,7 +94,7 @@
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/api/globals.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/api/functions.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/index.js"></script>
-    
+
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/home.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/interview.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/letters.js"></script>
@@ -127,15 +127,16 @@
           <div id="header-right" class="text-white">
             <div id="search-container">
               <div id="search">
+                <!-- Search feature not yet functional -->
                 <!--<div id="search-contents">-->
                   <div id="search-form" data-target="">
-                    <div id="search-text" for="search-inputn" class="anton">Search</div>
-                    <div id="search-input-container">
+                    <!--<div id="search-text" for="search-inputn" class="anton">Search</div>-->
+                    <!--<div id="search-input-container">
                       <input id="search-input" class="source-serif" type="text" value="" name="query">
-                    </div>
-                    <button id="search-submit" class="background-black" type="submit">
+                    </div>-->
+                    <!--<button id="search-submit" class="background-black" type="submit">
                       <img id="search-submit-img" src="<?php print SITE_ROOT;?>/img/play-go.png">
-                    </button>
+                    </button>-->
                   </div>
                 <!--</div>-->
               </div>
@@ -187,7 +188,7 @@
                   </li>
                   <li>
                     <div id="tabs-tribes" class="tab">
-                      Tribes
+                      Communities
                       <div class="tab-underline half-underline-white"></div>
                     </div>
                   </li>
@@ -221,7 +222,7 @@
             <li id="pullout-list-video" class="pullout-list-el">Video</li>
             <li id="pullout-list-map" class="pullout-list-el">Map</li>
             <li id="pullout-list-timeline" class="pullout-list-el">Timeline</li>
-            <li id="pullout-list-tribes" class="pullout-list-el">Tribes</li>
+            <li id="pullout-list-tribes" class="pullout-list-el">Communities</li>
             <li id="pullout-list-about" class="pullout-list-el">About</li>
           </ul>
         </div>

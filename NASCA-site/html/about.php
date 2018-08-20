@@ -3,7 +3,7 @@
 <div style="font-size: large;">
 <div class="text-dark-grey source-serif">
   <p>NASCA contains the following components:</p>
-  <p><b>TRIBES:</b> Information on present day South Carolina Native American entities.</p>
+  <p><b>COMMUNITIES:</b> Information on present day South Carolina Native American entities.</p>
   <p><b>TIMELINE:</b> An interactive timeline with photographs and links to South Carolina Native Americans, their history and material culture, from the last Ice Age 19,000 years ago to the present.</p>
   <p><b>MAP:</b> A map of Native American points of interest around South Carolina, some of which are open to public visitation and education. The map includes a listing of institutions around the state curating various materials, information and/or resources on South Carolina’s Native Americans.</p>
   <p><b>IMAGES:</b> Black and white and color still photographs of various South Carolina tribal entities from the early 1980s to present day.  At this point, most of these photographs were taken by noted University of South Carolina photographer Gene Crediford.</p>
@@ -33,6 +33,7 @@
   <p class="bullet-point"><a class="text-red" target="_blank" href="http://www.sc.edu/about/system_and_campuses/lancaster/study/student_opportunities/native_american_studies_center/archives/nas_archive/index.php">Native American Studies Archive</a>, University of South Carolina Lancaster</p>
   <p class="bullet-point">South Caroliniana Library, University of South Carolina</p>
   <p class="bullet-point">McKissick Museum, University of South Carolina</p>
+  <p class="bullet-point"><a class="text-red" target="_blank" href="http://cma.sc.gov/native-american-affairs/">Native American Affairs</a>, the South Carolina Commission for Minority Affairs</p>
 </div>
 
 <hr class="red"/>

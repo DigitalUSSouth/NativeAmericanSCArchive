@@ -2,7 +2,7 @@
 <div class="overlay" id="overlay" style="display:none;"></div>
 
 <?php 
-for($i=1; $i<=12; $i++):?>
+for($i=1; $i<=13; $i++):?>
 <!-- Modal -->
 <div id="timelineModal<?php print $i;?>" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
@@ -33,7 +33,7 @@ for($i=1; $i<=12; $i++):?>
   </script>
   <ul class="">
     <?php 
-    for ($i=1; $i<=12; $i++):
+    for ($i=1; $i<=13; $i++):
       $filename = "ht/data/data".$i.".json";
       $data = json_decode(file_get_contents($filename),true);
       $time=$data["title"]["text"]["text"];
@@ -77,4 +77,3 @@ for($i=1; $i<=12; $i++):?>
 </div>
 
 <div class="opacity"></div>
-

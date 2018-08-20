@@ -23,7 +23,7 @@
           "year": "-1000"
         },
         "text": {
-          "headline": "Painting by Martin Pate",
+          "headline": "Middle Woodland potters scene by Martin Pate",
           "text": ""
         }
       },
@@ -40,7 +40,7 @@
         },
         "text": {
           "headline": "Woodland Pottery",
-          "text": "photo by Carl Steen <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scpottery.com/\">More</a> "
+          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scpottery.com/\">More</a> "
         }
       },
 	 { 
@@ -52,11 +52,11 @@
         "start_date": {
           "month": "",
           "day": "",
-          "year": "500"
+          "year": "-400"
         },
         "text": {
           "headline": "Bow & Arrow",
-          "text": "<p>Kolb Triangular Points</p> <br> Darlington, SC "
+          "text": "<p>Triangular Points</p>"
         }
       },
 	
@@ -69,11 +69,11 @@
         "start_date": {
           "month": "",
           "day": "",
-          "year": "600"
+          "year": "-500"
         },
         "text": {
-          "headline": "Burial Mounds",
-          "text": "<p>McLeod Mound</p> <br> Darlington, SC <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.rla.unc.edu/Publications/NCArch/NCA_48.pdf\">More</a> "
+          "headline": "Woodland Mounds",
+          "text": "<p>McLeod Mound</p> <br><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.rla.unc.edu/Publications/NCArch/NCA_48.pdf\">More</a> "
         }
       }
       

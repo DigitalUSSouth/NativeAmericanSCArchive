@@ -6,8 +6,8 @@
           "credit": ""
         },
         "text": {
-          "headline": "English Contact",
-          "text": "<p>A.D. 1668-2015</p>"
+          "headline": "English Contact and Colonization",
+          "text": "<p>A.D. 1663-1783</p>"
         }
     },
     "events": [
@@ -20,11 +20,11 @@
         "start_date": {
           "month": "",
           "day": "",
-          "year": "1668"
+          "year": "1663"
         },
         "text": {
-          "headline": "Hilton among the Edisto",
-          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/hilton-head-island/\">More</a>"
+          "headline": "Captain William Hilton Among the Edisto",
+          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/hilton-head-island/\">More about Hilton Head Island</a> <br /> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.carolana.com/Carolina/Explorers/williamhiltonjraccount.html\">Hilton's 1663 account of his journey</a>"
         }
       },
 	  { 
@@ -39,8 +39,8 @@
           "year": "1669"
         },
         "text": {
-          "headline": "Woodward among coastal Tribes",
-          "text": "A.D. 1668-1670 <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/ayllon-lucas-vasquez-de/\">More</a>"
+          "headline": "Henry Woodward Among Coastal Tribes",
+          "text": "A.D. 1668-1670 <br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/woodward-henry/\">Henry Woodward</a><br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/edisto/\">Edisto</a>"
         }
       },
 	 { 
@@ -59,26 +59,74 @@
           "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.southcarolinaparks.com/ctl/introduction.aspx\">More</a>"
         }
       },
-	 { 
+    { 
+         "media": {
+           "url": "",
+           "caption": "Slide 4",
+           "credit": " "
+         },
+         "start_date": {
+           "month": "",
+           "day": "",
+           "year": "1670"
+         },
+         "text": {
+           "headline": "Deerskin trade",
+           "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/deerskin-trade/\">More</a>"
+         }
+       },
+    { 
         "media": {
           "url": "",
-          "caption": "Slide 4",
+          "caption": "Slide 5",
           "credit": " "
         },
         "start_date": {
           "month": "",
           "day": "",
-          "year": "1672"
+          "year": "1670"
         },
         "text": {
-          "headline": "Woodward visits Cofitachequi",
-          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/woodward-henry/\">More</a>"
+          "headline": "Indian trade",
+          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/indian-trade/\">More</a>"
+        }
+      },
+  { 
+       "media": {
+         "url": "",
+         "caption": "Slide 6",
+         "credit": ""
+       },
+       "start_date": {
+         "month": "",
+         "day": "",
+         "year": "1670"
+       },
+       "text": {
+         "headline": "Indian Slavery in SC",
+         "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://ldhi.library.cofc.edu/exhibits/show/africanpassageslowcountryadapt/sectionii_introduction/american_indian_slavery_caroli\">More</a>"
+       }
+     },
+	 { 
+        "media": {
+          "url": "",
+          "caption": "Slide 7",
+          "credit": " "
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1670"
+        },
+        "text": {
+          "headline": "Woodward Visits Cofitachequi",
+          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"https://digital.scetv.org/teachingAmerhistory/lessons/Woodward.htm\">More</a>"
         }
       },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 5",
+          "caption": "Slide 8",
           "credit": " "
         },
         "start_date": {
@@ -91,10 +139,42 @@
           "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.charlestonfootprints.com/charleston-blog/1675-deed-for-kiawah-island/2013/09/05/\">More</a>"
         }
       },
+    { 
+         "media": {
+           "url": "",
+           "caption": "Slide 9",
+           "credit": " "
+         },
+         "start_date": {
+           "month": "",
+           "day": "",
+           "year": "1680"
+         },
+         "text": {
+           "headline": "Westo War",
+           "text": "A.D. 1680-1683<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/westos/\">More</a>"
+         }
+       },
+    { 
+        "media": {
+          "url": "",
+          "caption": "Slide 10",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "",
+          "day": "",
+          "year": "1698"
+        },
+        "text": {
+          "headline": "Great Smallpox Epidemic I",
+          "text": "<p>Charleston 1698, A smallpox epidemic so monstrous that the Reverend Hugh Adams, a recently arrived Congregationalist minister from New England, wrote, “The dead were carried in carts, being heaped one upon another. Worse by far than the Great Plague of London, considering the smallness of the town. Shops shut up for six weeks; nothing but carrying medicines, digging graves, carting the dead.” It is thought that this epidemic also entirely eradicated the Wando Indian tribe. <i>(Diary of Samuel Sewall, 1674-1729, Vol. II)</i></p>"
+        }
+      },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 6",
+          "caption": "Slide 11",
           "credit": "http://docsouth.unc.edu/nc/lawson/menu.html"
         },
         "start_date": {
@@ -103,14 +183,30 @@
           "year": "1700"
         },
         "text": {
-          "headline": "Lawson's Travels",
-          "text": "<p>Lawson's map</p> A.D. 1700-1701<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.lawsontrek.com/\">More</a>"
+          "headline": "John Lawson's Travels",
+          "text": "A.D. 1700-1701<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.lawsontrek.com/\">Lawson's map</a>"
         }
       },
+    { 
+         "media": {
+           "url": "",
+           "caption": "Slide 12",
+           "credit": ""
+         },
+         "start_date": {
+           "month": "",
+           "day": "",
+           "year": "1707"
+         },
+         "text": {
+           "headline": "Commission of Indian Trade",
+           "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/commission-of-indian-trade/\">Commission of Indian Trade</a><br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/nairne-thomas/\">Thomas Nairne</a>"
+         }
+       },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 7",
+          "caption": "Slide 13",
           "credit": "http://docsouth.unc.edu/commland/monument/369/"
         },
         "start_date": {
@@ -120,29 +216,13 @@
         },
         "text": {
           "headline": "Tuscarora War",
-          "text": "A.D. 1711-1715<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/tuscarora-war/\">More</a>"
+          "text": "A.D. 1711-1713<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/tuscarora-war/\">Tuscarora War</a><br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://docsouth.unc.edu/commland/monument/369/\">Tuscarora Monument</a>"
         }
       },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 8",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1714"
-        },
-        "text": {
-          "headline": "Indian Slavery in SC",
-          "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://ldhi.library.cofc.edu/exhibits/show/africanpassageslowcountryadapt/sectionii_introduction/american_indian_slavery_caroli\">More</a>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 9",
+          "caption": "Slide 14",
           "credit": "http://www.scencyclopedia.org/sce/entries/yamassee-war/"
         },
         "start_date": {
@@ -152,13 +232,29 @@
         },
         "text": {
           "headline": "Yamasee War",
-          "text": "A.D. 1715-1717<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/yamassee-war/\">More</a>"
+          "text": "A.D. 1715-1717<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/yamassee-war/\">Yamasee War</a>"
         }
       },
+  { 
+       "media": {
+         "url": "",
+         "caption": "Slide 15",
+         "credit": ""
+       },
+       "start_date": {
+         "month": "",
+         "day": "",
+         "year": "1716"
+       },
+       "text": {
+         "headline": "Fort Moore established near Augusta",
+         "text": "<a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/fort-moore/\">More</a>"
+       }
+     },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 10",
+          "caption": "Slide 16",
           "credit": ""
         },
         "start_date": {
@@ -168,13 +264,13 @@
         },
         "text": {
           "headline": "Forts/Indian Trading Posts Established",
-          "text": "<p>Ft Congaree painting by Martin Pate</p>A.D. 1718"
+          "text": "A.D. 1718<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/congaree-river/\">More</a>"
         }
       },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 11",
+          "caption": "Slide 17",
           "credit": ""
         },
         "start_date": {
@@ -183,14 +279,46 @@
           "year": "1736"
         },
         "text": {
-          "headline": "Cheraw sell lands along Pee Dee River",
-          "text": "<p>Von Reck water color</p>A.D. 1736"
+          "headline": "Cheraw and Pee Dee Tribes Sell Lands East of the Pee Dee River ",
+          "text": "A.D. 1736<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.carolana.com/Carolina/Native_Americans/native_americans_cheraw.html\">More</a>"
         }
       },
+  { 
+       "media": {
+         "url": "",
+         "caption": "Slide 18",
+         "credit": ""
+       },
+       "start_date": {
+         "month": "",
+         "day": "",
+         "year": "1738"
+       },
+       "text": {
+         "headline": "Great Smallpox Epidemic II",
+         "text": "A.D. 1738-1739<br /><p>“The Smallpox epidemic that struck the Southeast in 1738 killed one of every two Cherokees, and it may have been equally lethal among Catawbas, whose tightly clustered settlements made it impossible to prevent the spread of the scourge.”<br />- James Merrell “The Indians’ New World: Catawbas and Their Neighbors from European Contact through the Era of Removal”</p>"
+       }
+     },
+  { 
+      "media": {
+        "url": "",
+        "caption": "Slide 19",
+        "credit": ""
+      },
+      "start_date": {
+        "month": "",
+        "day": "",
+        "year": "1759"
+      },
+      "text": {
+        "headline": "Great Smallpox Epidemic III",
+        "text": "A.D. 1759<br /><p>“It is pretty certain that the smallpox has lately raged with great violence among the Catawba Indians, and that it has carried off near one-half of that nation… This distemper has since appeared among the inhabitants of the Cheraws and Waterees, where many families are down, so that unless especial care is taken, it must spread thro’ the whole country, the consequences of which are much to be dreaded…”<br />- South Carolina Gazette, 1759</p>"
+      }
+    },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 12",
+          "caption": "Slide 20",
           "credit": ""
         },
         "start_date": {
@@ -206,7 +334,7 @@
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 13",
+          "caption": "Slide 21",
           "credit": ""
         },
         "start_date": {
@@ -222,7 +350,7 @@
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 14",
+          "caption": "Slide 22",
           "credit": ""
         },
         "start_date": {
@@ -232,13 +360,13 @@
         },
         "text": {
           "headline": "Treaty of Pine Tree Hill",
-          "text": "A.D. 1760"
+          "text": "A.D. 1760<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/hagler/\">More</a>"
         }
       },
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 15",
+          "caption": "Slide 23",
           "credit": ""
         },
         "start_date": {
@@ -254,7 +382,7 @@
 	 { 
         "media": {
           "url": "",
-          "caption": "Slide 16",
+          "caption": "Slide 24",
           "credit": ""
         },
         "start_date": {
@@ -264,153 +392,25 @@
         },
         "text": {
           "headline": "Treaty of Augusta",
-          "text": "(Catawbas retreat to 15 square mile reservation) <br> A.D. 1763"
+          "text": "A.D. 1763<br />(Catawbas retreat to 15 square mile reservation)<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/treaty-of-augusta/\">Treaty of Augusta</a><br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"http://docsouth.unc.edu/csr/index.html/document/csr11-0084\">Transcripts of proceedings</a>"
         }
       },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 17",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1777"
-        },
-        "text": {
-          "headline": "Treaty of Dewit's Corner (Cherokee) ",
-          "text": "<p>State archive copies</p>A.D. 1777 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/cherokee-war-1776/\">More</a>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 18",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1816"
-        },
-        "text": {
-          "headline": "Treaties of Washington ",
-          "text": " (Cherokee give up last lands in SC, Pickens and Oconee Counties for $5,000) <br> A.D. 1816"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 19",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1840"
-        },
-        "text": {
-          "headline": "Treaty of Nation Ford ",
-          "text": " (Catawba have 1 square mile reseervation) <br> A.D. 1840 <br> <p>The Constitution of the United States decrees that all treaties with an Indian Nation must be negotiated with the Federal Government. This treaty, solely conducted by South Carolina is illegal and the reason for subsequent Catawba lawsuits.</p> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.teachingushistory.org/TreatyofNationsFordbetweentheCatawbaandtheStateofSouthCarolina1840.html\">More</a>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 20",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1879"
-        },
-        "text": {
-          "headline": "SC Miscegenation law",
-          "text": "  A.D. 1879 <br> <p>Marriage between a white person and an Indian, Negro, mulatto, mestizo, or half-breed shall be null and void. Penalty: Misdemeanor, $500 fine or imprisoned for not less than a year. Ministers who performed such marriages are subject to the same penalty. </p> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 21",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1943"
-        },
-        "text": {
-          "headline": "Memorandum of Understanding",
-          "text": "  A.D. 1943 <br> <p>Catawba Indians are Federally recognized, and 3400 acres are added to the existing 1840 reservation.</p> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.nativesouthcarolina.org/db/data/timelines/pdf/1943-Memorandum-of-Understanding.pdf\">Full Document</a>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 22",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1952"
-        },
-        "text": {
-          "headline": "SC Miscegenation law",
-          "text": "  A.D. 1952 <br> <p>Marriage of white with Negro, mulatto, Indian, or mestizo declared void. Penalty: Not less than $500 and/or not less than 12 months imprisonment.  </p> <br> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 23",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1959"
-        },
-        "text": {
-          "headline": "Termination of Catawba Reservation",
-          "text": "  A.D. 1959 <br> <p>Termination of Catawba Nation, all assets sold by 1962, leaving the Catawbas with the 1 square mile 1840 reservation.</p> <br> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 24",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "04",
-          "day": "",
-          "year": "1960"
-        },
-        "text": {
-          "headline": "SC Marriage between white and Native is legal",
-          "text": "  A.D. 1960 <br> <p>1879 Law amended, became law in April 1960 </p> <br> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 25",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1975"
-        },
-        "text": {
-          "headline": "Santee Indian Tribe created as a corporation",
-          "text": "  A.D. 1975 <br> "
-        }
-      },
+    { 
+         "media": {
+           "url": "",
+           "caption": "Slide 25",
+           "credit": ""
+         },
+         "start_date": {
+           "month": "",
+           "day": "",
+           "year": "1776"
+         },
+         "text": {
+           "headline": "South Carolina Indians in the Revolutionary War",
+           "text": "A.D. 1776-1783<br /><a class=\"timeline-external-link\" target=\"_blank\" href=\"https://www.nps.gov/cowp/learn/education/otherresources.htm\">More</a>"
+         }
+       },
 	 { 
         "media": {
           "url": "",
@@ -420,317 +420,13 @@
         "start_date": {
           "month": "",
           "day": "",
-          "year": "1979"
+          "year": "1777"
         },
         "text": {
-          "headline": "Council of Native Americans",
-          "text": "  A.D. 1979 <br> <p>South Carolina's First Native American Advocacy Group. The Catawba, PeeDee, Santee, and Edisto Indians  </p> <br> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 27",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1980"
-        },
-        "text": {
-          "headline": "Proposed State Recognition",
-          "text": "  A.D. 1980 <br> <p>Representative Parker Evatt, R-Richland, proposed state recognition for the Pee Dee, Santee, and Edisto Indian people. The bill did not pass.  </p> <br> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 28",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1986"
-        },
-        "text": {
-          "headline": "Palmetto Indian Affairs Commission (PIAC)",
-          "text": " A.D. 1986 <br> <p>Created by Governor Riley but expires with the end of his term in office.</p> <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://dc.statelibrary.sc.gov/bitstream/handle/10827/889/Executive_Order_86-24.pdf?sequence=1&isAllowed=y\">More</a>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 29",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1990"
-        },
-        "text": {
-          "headline": "NAGPRA (Federal Law)",
-          "text": " A.D. 1990 <br> <p>The Native American Graves Protection and Repatriation Act describes the rights of Native American lineal descendants, Indian tribes, and Native Hawaii organizations with respect to the treatment, repatriation, and disposition of Native American human remains, funterary objects, sacred objects, and objects of cultural patrimony, referred to collectively in the statute as cultural items, with which they can show a relationship of lineal descent or cultural affiliation.</p> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 30",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1993"
-        },
-        "text": {
-          "headline": "Catawbas regain Federal Recognition",
-          "text": " A.D. 1993 <br> <p>Catawbas regain Federal Recognition after a difficult 20 year court battle. They remain the only federeally recognized tribe in SC.</p> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 31",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2001"
-        },
-        "text": {
-          "headline": "Native American Ad Hoc Committee",
-          "text": " A.D. 2001 <br> <p>First meeting of the Native American Ad Hoc Committee heald at the SC Commission for Minority Affairs. Chiefs and leaders from 16 tribes and tribal groups were in attendance.</p> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 32",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2003"
-        },
-        "text": {
-          "headline": "SC Commission of Minority Affairs",
-          "text": " A.D. 2003 <br> <p>SC CMA's statute was amended to include African-Americans, Hispanics, and Native Americans, creating a state point of contact for each.</p> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 33",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2004"
-        },
-        "text": {
-          "headline": "State Recognition Standards",
-          "text": " A.D. 2004 <br> <p>The SC General Assembly approved new regulations allowing State Recognition of Native Americans.</p> "
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 34",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2005"
-        },
-        "text": {
-          "headline": "State Recognition Awarded",
-          "text": " A.D. 2005 <br> <p>The Waccamaw Indian People and the Pee Dee Nation of Upper South Carolina are the first State Recognized SC Tribes. The Eastern Cherokee, Southern Iroquois and United Tribes (ESCUIT) were recognized as a group, as were the Wassamasaw Tribe of Varnertown Indians and the Chaloklowa Chickasaw Indian People.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 35",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2006"
-        },
-        "text": {
-          "headline": "State Recognition Awarded",
-          "text": " A.D. 2006 <br> <p>Beaver Creek Indians, Pee Dee Indian Tribe of SC and Santee Indian Organization become state recognized tribes. The Piedmont American Indian Association/Lower Eastern Cherokee (PAIA) becomes a state recognized group. The American Indian Chamber of Commerce becomes the first special interest organization to receive state recognition.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 36",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2007"
-        },
-        "text": {
-          "headline": "State Recognition Awarded",
-          "text": " A.D. 2007 <br> <p>Natchez Indian Tribe and Pee Dee Indian Nation of Beaver Creek become state recognized groups.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 37",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "10",
-          "day": "",
-          "year": "2008"
-        },
-        "text": {
-          "headline": "SC Legislation",
-          "text": " A.D. 2008 <br> <p>Governor Mark Sanford signs Senate Bill 1122, modifies existing laws and allows SC Naitve Americans to use wild turkey feathers in the regalia, arts and crafts.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 38",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "11",
-          "day": "",
-          "year": "2008"
-        },
-        "text": {
-          "headline": "SC Legislation",
-          "text": " A.D. 2008 <br> <p>Governor Mark Sanford signs House Bill H3798 allowing Native American chiefs and spiritual leaders recognized by the SC Commission of Minority Affairs to perform marriage ceremonies and sign marriage licenses. </p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 39",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2009"
-        },
-        "text": {
-          "headline": "State Recognition Awarded",
-          "text": " A.D. 2009 <br> <p>Wassamasaw Tribe of Varnertown Indians recognized as a tribe.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 40",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2010"
-        },
-        "text": {
-          "headline": "State Recognition Awarded",
-          "text": " A.D. 2010 <br> <p>Edisto Natchez Kusso people recognized as a tribe.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 41",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2013"
-        },
-        "text": {
-          "headline": "State Recognition Awarded",
-          "text": " A.D. 2013 <br> <p>Sumter Tribe of Cheraw Indians recognized as a tribe.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "Slide 42",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "2015"
-        },
-        "text": {
-          "headline": "State Recognition Awarded",
-          "text": " A.D. 2015 <br> <p>Piedmont American Indian Association/Lower Eastern Cherokee Nation (PAIA) recognized as a tribe.</p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1698"
-        },
-        "text": {
-          "headline": "Great Smallpox Epidemic I",
-          "text": " A.D. 1698 <br> <p>Charleston 1698, a smallpox epidemic so monstrous that the Reverend Hugh Adams, a recently arrived Congregationalist minister from New England, wrote, “The dead were carried in carts, being heaped one upon another. Worse by far than the Great Plague of London, considering the smallness of the town. Shops shut up for six weeks; nothing but carrying medicines, digging graves, carting the dead.” It is thought that this epidemic also entirely eradicated the Wando Indian tribe. <i>(Diary of Samuel Sewall, 1674-1729, Vol. II)</i></p>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1739"
-        },
-        "text": {
-          "headline": "Great Smallpox Epidemic II",
-          "text": " A.D. 1739 <br>"
-        }
-      },
-	 { 
-        "media": {
-          "url": "",
-          "caption": "",
-          "credit": ""
-        },
-        "start_date": {
-          "month": "",
-          "day": "",
-          "year": "1759"
-        },
-        "text": {
-          "headline": "Great Smallpox Epidemic III",
-          "text": " A.D. 1759 <br>"
+          "headline": "Treaty of Dewitt's Corner (Cherokee) ",
+          "text": "<p>State archive copies</p>A.D. 1777 <br> <a class=\"timeline-external-link\" target=\"_blank\" href=\"http://www.scencyclopedia.org/sce/entries/cherokee-war-1776/\">More</a>"
         }
       }
-      
+           
     ]
 }
