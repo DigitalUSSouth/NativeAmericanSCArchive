@@ -187,7 +187,7 @@
                     </div>
                   </li>
                   <li>
-                    <div id="tabs-communities" class="tab">
+                    <div id="tabs-tribes" class="tab">
                       Communities
                       <div class="tab-underline half-underline-white"></div>
                     </div>
