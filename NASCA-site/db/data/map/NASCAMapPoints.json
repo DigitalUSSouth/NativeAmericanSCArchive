@@ -238,7 +238,7 @@
         "description": "",
         "img_embed": "",
         "yt_embed": "",
-        "lng": -81.972639, 
+        "lng": -81.972639,
         "lat": 33.489402,
 		"marker-color": "#73000a"
 
@@ -280,7 +280,7 @@
 
     },
     {
-        "site_name": "Berkeley Conty Museum and Heritage Center",
+        "site_name": "Berkeley County Museum and Heritage Center",
         "web_link": "http://www.berkeleymuseum.org",
         "web_link_hover": "",
         "description": "",
@@ -312,18 +312,6 @@
         "yt_embed": "",
         "lng": -79.932696,
         "lat": 32.778445,
-		"marker-color": "#73000a"
-
-    },
-    {
-        "site_name": "The Charleston Museum",
-        "web_link": "http://www.charlestonmuseum.org",
-        "web_link_hover": "",
-        "description": "",
-        "img_embed": "",
-        "yt_embed": "",
-        "lng": -79.935753,
-        "lat": 32.789884,
 		"marker-color": "#73000a"
 
     },
@@ -449,7 +437,7 @@
     },
     {
         "site_name": "Pauline Pratt Webel Museum",
-        "web_link": "http://jaspersc.org/discover_jasper_county/point_of_interest.htm",
+        "web_link": "https://southcarolinalowcountry.com/jasper-county-area/",
         "web_link_hover": "",
         "description": "",
         "img_embed": "",
@@ -660,18 +648,6 @@
         "yt_embed": "",
         "lng": -80.961606,
         "lat": 34.09264,
-		"marker-color": "#73000a"
-
-    },
-    {
-        "site_name": "SC State Museum",
-        "web_link": "http://www.scmuseum.org",
-        "web_link_hover": "",
-        "description": "",
-        "img_embed": "",
-        "yt_embed": "",
-        "lng": -81.048006,
-        "lat": 33.998294,
 		"marker-color": "#73000a"
 
     },
