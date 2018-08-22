@@ -17,7 +17,7 @@
   if (isset($_GET['page'])){
     $currentUrl = array_filter(explode('/',$_GET['page']));
     $authorizedPages  = array(
-      "interviews","letters", "images","video","map","timeline","tribes","search","about"
+      "interviews","letters", "images","video","map","timeline","communities","search","about"
     );
     if (!in_array($currentUrl[0],$authorizedPages)){
       $currentUrl = ["404"];
@@ -74,7 +74,7 @@
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/timeline.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/images.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/letters.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/tribes.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/communities.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/map.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/video.css"/>
     <link rel="stylesheet" type="text/css" href="<?php print SITE_ROOT; ?>/css/bootstrap.min.css"/>
@@ -102,7 +102,7 @@
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/video.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/map.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/timeline.js"></script>
-    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/tribes.js"></script>
+    <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/communities.js"></script>
     <script type="text/javascript" src="<?php print SITE_ROOT; ?>/js/index/search.js"></script>
 
   </head>
@@ -222,7 +222,7 @@
             <li id="pullout-list-video" class="pullout-list-el">Video</li>
             <li id="pullout-list-map" class="pullout-list-el">Map</li>
             <li id="pullout-list-timeline" class="pullout-list-el">Timeline</li>
-            <li id="pullout-list-tribes" class="pullout-list-el">Communities</li>
+            <li id="pullout-list-communities" class="pullout-list-el">Communities</li>
             <li id="pullout-list-about" class="pullout-list-el">About</li>
           </ul>
         </div>
