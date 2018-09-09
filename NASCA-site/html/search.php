@@ -28,7 +28,7 @@ function closetags($html) {
     }
   }
   return $html;
-} 
+}
 
 function getExcerpt($text){
   $text = substr($text,0,300);
@@ -53,17 +53,17 @@ function buildNavQuery($nextPrev){
   <section id="primary" class="site-content">
   <div id="content" role="main">
   <?php
-    //var_dump($_GET); 
+    //var_dump($_GET);
     //$start = (isset($_GET['start']))? $_GET['start'] : 0;
-    $query = 'https://test.digitalussouth.org/api?q='.urlencode($queryString).'&start='.urlencode($start).'&fq[]="Native+American+South+Carolina+Archive"&fq_field[]=archive_facet';
+    $query = 'https://digitalussouth.org/api?q='.urlencode($queryString).'&start='.urlencode($start).'&fq[]="Native+American+South+Carolina+Archive"&fq_field[]=archive_facet';
     $searchResultsJson = file_get_contents($query);
     //print $query;
     $searchResults = json_decode($searchResultsJson,true);
     //var_dump($searchResults);
     $haveResults = true;
-    
+
     if ($searchResults['error']!='None') $haveResults = false;
-    
+
     if ($searchResults['response']['numFound']==0) $haveResults = false;
     $numFound = $searchResults['response']['numFound'];
     $rows = 20;
