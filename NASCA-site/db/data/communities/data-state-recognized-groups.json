@@ -1,4 +1,4 @@
-{"count":3,
+{"count":4,
   "directories":{
   "image_directory":"/img/tribesLogos",
   "description_directory":"/db/data/tribes"},
@@ -14,5 +14,9 @@
     {"logo":"pee_dee_tribe_bc.png",
     "title":"The Pee Dee Indian Tribe of Beaver Creek",
     "description":"peedee-tribe-bc.html",
-    "pages":6}
+    "pages":6},
+    {"logo":"pinehillindians.png",
+    "title":"Pine Hill Indians",
+    "description":"pinehillindians.html",
+    "pages":4}
   ]}
